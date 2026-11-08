@@ -19,6 +19,7 @@ from typing import ClassVar
 from urllib.parse import parse_qs, urlparse
 
 from agents.omarai import LeadStore, analyze, normalize
+from agents.sales_domain import MarketProfile, ProductProfile, build_buyer_queries
 from agents.web_agent import WebAgent
 
 ROOT = Path(__file__).resolve().parents[1] / "web"
@@ -112,9 +113,53 @@ REQUEST_BODY_READ_CHUNK_BYTES = 8_192
 
 
 def _lead_store_from_environment() -> LeadStore:
-    """Use an operator-configured database path when a persistent volume is available."""
+    """Select managed PostgreSQL when configured; otherwise retain local SQLite."""
+    database_url = (
+        os.getenv("OMARAI_DATABASE_URL", "").strip()
+        or os.getenv("DATABASE_URL", "").strip()
+    )
     configured_path = os.getenv("OMARAI_DB_PATH", "").strip()
-    return LeadStore(configured_path or None)
+    if database_url and configured_path:
+        raise ValueError(
+            "configure either OMARAI_DATABASE_URL/DATABASE_URL or OMARAI_DB_PATH, not both"
+        )
+    return LeadStore(configured_path or None, database_url=database_url or None)
+
+
+def _profile_terms(value, field_name: str) -> tuple[str, ...]:
+    """Validate bounded ProductProfile/MarketProfile string arrays."""
+    if value is None:
+        return ()
+    if not isinstance(value, list) or len(value) > 40:
+        raise ValueError(f"{field_name} must be a list of at most 40 strings")
+    if any(not isinstance(item, str) or len(item) > 240 for item in value):
+        raise ValueError(f"{field_name} items must be strings of at most 240 characters")
+    return tuple(value)
+
+
+def _product_market_from_payload(data: dict):
+    product_data = data.get("product")
+    market_data = data.get("market")
+    if not isinstance(product_data, dict) or not isinstance(market_data, dict):
+        raise TypeError("product and market objects are required")
+    product = ProductProfile(
+        name=product_data.get("name", ""),
+        aliases=_profile_terms(product_data.get("aliases"), "aliases"),
+        category_path=_profile_terms(product_data.get("category_path"), "category_path"),
+        use_cases=_profile_terms(product_data.get("use_cases"), "use_cases"),
+        problems_solved=_profile_terms(product_data.get("problems_solved"), "problems_solved"),
+    )
+    market = MarketProfile(
+        locations=_profile_terms(market_data.get("locations"), "locations"),
+        industries=_profile_terms(market_data.get("industries"), "industries"),
+        customer_types=_profile_terms(market_data.get("customer_types"), "customer_types"),
+        decision_roles=_profile_terms(market_data.get("decision_roles"), "decision_roles"),
+        exclusions=_profile_terms(market_data.get("exclusions"), "exclusions"),
+    )
+    locale = data.get("locale", "auto")
+    if not isinstance(locale, str) or locale not in {"auto", "ar", "en", "mixed"}:
+        raise ValueError("locale must be auto, ar, en, or mixed")
+    return product, market, locale
 
 
 class _DeadlineRequestReader:
@@ -385,6 +430,14 @@ class Handler(BaseHTTPRequestHandler):
             return self.store.default_principal()
         return self.store.resolve_api_token(token)
 
+    _FORWARDING_HEADERS = (
+        "X-Forwarded-For", "X-Forwarded-Host", "X-Forwarded-Proto",
+        "X-Real-IP", "Forwarded", "CF-Connecting-IP", "True-Client-IP",
+    )
+
+    def _has_forwarding_headers(self) -> bool:
+        return any(self.headers.get(name) for name in self._FORWARDING_HEADERS)
+
     def _authorized(self):
         """Resolve a verified bearer token or HttpOnly browser cookie.
 
@@ -418,7 +471,14 @@ class Handler(BaseHTTPRequestHandler):
                     self._browser_session_id = token
                 return self._cookie_authenticated
 
-        if os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() != "1":
+        # Loopback is not proof of a human identity: reverse proxies and tunnels
+        # may connect from 127.0.0.1 while forwarding untrusted remote requests.
+        # Local development must opt in explicitly; public deployments never do.
+        if (
+            os.getenv("OMARAI_PUBLIC_DEPLOYMENT", "").strip() != "1"
+            and os.getenv("OMARAI_ALLOW_LOOPBACK_AUTH", "").strip() == "1"
+            and not self._has_forwarding_headers()
+        ):
             try:
                 if ipaddress.ip_address(self.client_address[0]).is_loopback:
                     self._authenticated_principal = self.store.default_principal()
@@ -615,18 +675,18 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         parsed = urlparse(self.path)
-        if parsed.path in {"/", "/agent"}:
+        if parsed.path == "/agent":
             if not AGENT_DASHBOARD.exists():
                 return self.respond(404, {"error": "agent dashboard missing"})
             return self.respond(200, AGENT_DASHBOARD.read_text(encoding="utf-8"), "text/html; charset=utf-8")
+        if parsed.path in {"/", "/workspace"}:
+            if not WORKSPACE_DASHBOARD.exists():
+                return self.respond(404, {"error": "workspace dashboard missing"})
+            return self.respond(200, WORKSPACE_DASHBOARD.read_text(encoding="utf-8"), "text/html; charset=utf-8")
         if parsed.path == "/leads":
             if not LEADS_DASHBOARD.exists():
                 return self.respond(404, {"error": "leads dashboard missing"})
             return self.respond(200, LEADS_DASHBOARD.read_text(encoding="utf-8"), "text/html; charset=utf-8")
-        if parsed.path == "/workspace":
-            if not WORKSPACE_DASHBOARD.exists():
-                return self.respond(404, {"error": "workspace dashboard missing"})
-            return self.respond(200, WORKSPACE_DASHBOARD.read_text(encoding="utf-8"), "text/html; charset=utf-8")
         if parsed.path == "/api/health":
             return self.respond(
                 200,
@@ -635,6 +695,34 @@ class Handler(BaseHTTPRequestHandler):
                     "app": "Omarai",
                     "mode": "web-research",
                     "agent": WebAgent.status(),
+                    "storage": {
+                        "backend": getattr(self.store, "backend", "unknown"),
+                        "database_url_configured": bool(
+                            os.getenv("OMARAI_DATABASE_URL", "").strip()
+                            or os.getenv("DATABASE_URL", "").strip()
+                        ),
+                        "database_path_override_configured": bool(
+                            os.getenv("OMARAI_DB_PATH", "").strip()
+                        ),
+                        # This is an operator assertion, not automatic mount detection.
+                        "persistent_volume_operator_asserted": (
+                            os.getenv("OMARAI_DB_PERSISTENT", "").strip() == "1"
+                        ),
+                        "durability_status": (
+                            "external_database_configured"
+                            if getattr(self.store, "backend", "unknown") == "postgresql"
+                            else "operator_asserted"
+                            if os.getenv("OMARAI_DB_PERSISTENT", "").strip() == "1"
+                            else "not_guaranteed"
+                        ),
+                        "warning": (
+                            "PostgreSQL is selected; provider durability and backups are outside this health check."
+                            if getattr(self.store, "backend", "unknown") == "postgresql"
+                            else None
+                            if os.getenv("OMARAI_DB_PERSISTENT", "").strip() == "1"
+                            else "SQLite records may be lost when the host replaces its ephemeral filesystem."
+                        ),
+                    },
                     "build": {
                         "sha": _build_identity()[0],
                         "sha_status": (
@@ -644,6 +732,39 @@ class Handler(BaseHTTPRequestHandler):
                     },
                 },
             )
+        if parsed.path == "/api/product-profiles":
+            if not self._rate_limit_ok():
+                return self.respond(429, {"error": "تجاوزت حد الطلبات المؤقت؛ حاول بعد دقيقة."})
+            if not self._authorized():
+                return self.respond(401, {"error": "يلزم تسجيل الدخول لقراءة ملفات المنتجات."})
+            profiles = self.store.list_product_profiles(
+                tenant_id=self._authenticated_principal["tenant_id"]
+            )
+            return self.respond(200, {"profiles": profiles, "count": len(profiles)})
+        if parsed.path == "/api/discoveries":
+            if not self._rate_limit_ok():
+                return self.respond(429, {"error": "تجاوزت حد الطلبات المؤقت؛ حاول بعد دقيقة."})
+            if not self._authorized():
+                return self.respond(401, {"error": "يلزم تسجيل الدخول لقراءة سجل الاكتشاف."})
+            runs = self.store.list_discovery_runs(
+                tenant_id=self._authenticated_principal["tenant_id"]
+            )
+            return self.respond(200, {"runs": runs, "count": len(runs)})
+        discovery_route = parsed.path.split("/")
+        if (
+            len(discovery_route) == 4
+            and discovery_route[1:3] == ["api", "discoveries"]
+            and discovery_route[3]
+        ):
+            if not self._rate_limit_ok():
+                return self.respond(429, {"error": "تجاوزت حد الطلبات المؤقت؛ حاول بعد دقيقة."})
+            if not self._authorized():
+                return self.respond(401, {"error": "يلزم تسجيل الدخول لقراءة عملية الاكتشاف."})
+            run = self.store.get_discovery_run(
+                discovery_route[3],
+                tenant_id=self._authenticated_principal["tenant_id"],
+            )
+            return self.respond(200, run) if run else self.respond(404, {"error": "discovery run not found"})
         if parsed.path == "/api/session":
             if not self._rate_limit_ok():
                 return self.respond(429, {"error": "تجاوزت حد الطلبات المؤقت؛ حاول بعد دقيقة."})
@@ -740,6 +861,113 @@ class Handler(BaseHTTPRequestHandler):
                     {"logged_out": True},
                     extra_headers=[("Set-Cookie", self._clear_session_cookie_header())],
                 )
+
+            if path == "/api/product-profiles":
+                principal = self._authenticated_principal
+                if principal.get("role") == "viewer":
+                    return self.respond(403, {"error": "هذه العضوية للقراءة فقط."})
+                product, market, locale = _product_market_from_payload(data)
+                saved = self.store.save_product_profile(
+                    {
+                        "product": product.to_dict(),
+                        "market": market.to_dict(),
+                        "locale": locale,
+                    },
+                    tenant_id=principal["tenant_id"],
+                )
+                return self.respond(201, saved)
+
+            if path == "/api/discoveries":
+                principal = self._authenticated_principal
+                if principal.get("role") == "viewer":
+                    return self.respond(403, {"error": "هذه العضوية للقراءة فقط؛ لا يمكنها تشغيل الاكتشاف."})
+                profile_id = data.get("profile_id")
+                if not isinstance(profile_id, str) or not profile_id.strip():
+                    return self.respond(400, {"error": "profile_id is required"})
+                allow_optional = data.get("allow_optional_providers", False)
+                if not isinstance(allow_optional, bool):
+                    return self.respond(400, {"error": "allow_optional_providers must be a boolean"})
+                if allow_optional and principal.get("role") != "owner":
+                    return self.respond(
+                        403,
+                        {"error": "تفعيل موصلات البحث الاختيارية ذات الحصص متاح لمالك مساحة العمل فقط."},
+                    )
+                profile = self.store.get_product_profile(
+                    profile_id, tenant_id=principal["tenant_id"]
+                )
+                if profile is None:
+                    return self.respond(404, {"error": "product profile not found"})
+                product_data = profile["profile"].get("product", {})
+                market_data = profile["profile"].get("market", {})
+                product, market, locale = _product_market_from_payload({
+                    "product": product_data,
+                    "market": market_data,
+                    "locale": profile["profile"].get("locale", "auto"),
+                })
+                buyer_queries = build_buyer_queries(product, market, locale=locale)
+                if not buyer_queries:
+                    return self.respond(422, {"error": "تعذر إنشاء استعلامات مرتبطة بملف المنتج والسوق."})
+                locations = "، ".join(market.locations) if market.locations else "الموقع غير محدد"
+                question = (
+                    "اكتشف إشارات طلب شراء أو توريد معلنة، وميّز الطلب المباشر عن الاهتمام العام. "
+                    "المنتج أو الخدمة: " + product.name + ". السوق والمناطق: " + locations + ". "
+                    "لا تعتبر ذكر المنتج وحده دليل شراء، ولا تخمّن هوية الكاتب."
+                )
+                agent = WebAgent()
+                agent.allow_optional_providers = allow_optional
+                if not allow_optional:
+                    agent.openrouter_web_search_enabled = False
+                cls = type(self)
+                if not cls._agent_semaphore.acquire(blocking=False):
+                    return self.respond(
+                        503,
+                        {
+                            "error": "خدمة البحث مشغولة حاليًا؛ أعد المحاولة بعد قليل.",
+                            "retry_after_seconds": 5,
+                            "process_concurrency_limit": cls.AGENT_CONCURRENCY_LIMIT,
+                        },
+                    )
+                try:
+                    result = agent.answer(question, buyer_queries=buyer_queries)
+                    run = self.store.save_discovery_run(
+                        profile_id, result, tenant_id=principal["tenant_id"]
+                    )
+                    if run is None:
+                        return self.respond(404, {"error": "product profile not found"})
+                    return self.respond(201, run)
+                finally:
+                    cls._agent_semaphore.release()
+
+            if path.startswith("/api/discoveries/"):
+                parts = path.split("/")
+                if (
+                    len(parts) == 7
+                    and parts[1:3] == ["api", "discoveries"]
+                    and parts[4] == "signals"
+                    and parts[6] == "save"
+                ):
+                    principal = self._authenticated_principal
+                    if principal.get("role") == "viewer":
+                        return self.respond(403, {"error": "هذه العضوية للقراءة فقط."})
+                    try:
+                        source_index = int(parts[5])
+                    except ValueError:
+                        return self.respond(400, {"error": "source index must be an integer"})
+                    saved = self.store.save_discovery_signal(
+                        parts[3],
+                        source_index,
+                        tenant_id=principal["tenant_id"],
+                    )
+                    if saved is None:
+                        return self.respond(
+                            409,
+                            {"error": "هذه النتيجة ليست إشارة طلب مؤهلة في سجل الاكتشاف أو لا تنتمي إلى مساحة العمل."},
+                        )
+                    lead, created = saved
+                    return self.respond(
+                        201 if created else 200,
+                        {"lead": lead, "created": created},
+                    )
 
             if path == "/api/tokens/revoke":
                 supplied = self.headers.get("Authorization", "")
@@ -926,7 +1154,7 @@ def answer_question(question, store, *, tenant_id=None):
             lead = max(active, key=lambda item: (item["assessment"]["score"], item["updated_at"]))
             answer = "مسودة للمراجعة البشرية فقط: «أهلًا، لاحظت سؤالك المنشور عن العقار/الوحدة. لو ما زلت مهتمًا، هل تحب الاطلاع على التفاصيل المتاحة وخيارات المعاينة؟» مرتبطة بالإشارة " + lead["id"][:8] + ". لم يتم إرسال أي رسالة."
         return {"answer": answer, "kind": "message_draft", "lead_id": active[0]["id"] if active else None}
-    return {"answer": "أنا المساعد المحلي الخاص بسجل العملاء. استخدم وكيل البحث العام من الصفحة الرئيسية لطرح أسئلة مفتوحة والبحث في الويب.", "kind": "help", "lead_id": None}
+    return {"answer": "أنا المساعد المحلي الخاص بسجل العملاء. استخدم وكيل البحث العام من المسار /agent لطرح أسئلة مفتوحة والبحث في الويب.", "kind": "help", "lead_id": None}
 
 
 class BoundedThreadingHTTPServer(ThreadingHTTPServer):

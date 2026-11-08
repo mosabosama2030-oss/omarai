@@ -19,8 +19,12 @@ from api.omarai import Handler
 
 
 @pytest.fixture
-def local_api(tmp_path):
-    """Run the real handler on an ephemeral loopback port with an isolated database."""
+def local_api(tmp_path, monkeypatch):
+    """Run the real handler on loopback with explicit local-development auth opt-in."""
+    monkeypatch.setenv("OMARAI_ALLOW_LOOPBACK_AUTH", "1")
+    monkeypatch.delenv("OMARAI_PUBLIC_DEPLOYMENT", raising=False)
+    monkeypatch.delenv("OMARAI_DB_PERSISTENT", raising=False)
+    monkeypatch.delenv("OMARAI_DB_PATH", raising=False)
     previous_store = Handler.store
     previous_request_times = Handler._request_times
     previous_rate_cleanup = Handler._rate_last_cleanup
@@ -39,6 +43,15 @@ def local_api(tmp_path):
         Handler.store = previous_store
         Handler._request_times = previous_request_times
         Handler._rate_last_cleanup = previous_rate_cleanup
+
+
+
+
+def test_loopback_auth_requires_explicit_local_opt_in(local_api, monkeypatch):
+    monkeypatch.delenv("OMARAI_ALLOW_LOOPBACK_AUTH", raising=False)
+    status, error = request_json(local_api, "/api/leads")
+    assert status == 401
+    assert "رمز الوصول" in error["error"]
 
 
 def request_json(base, path, method="GET", payload=None, headers=None):
@@ -72,6 +85,12 @@ def test_api_health_analyze_save_duplicate_list_and_status(local_api):
     assert status == 200
     assert health["app"] == "Omarai"
     assert health["mode"] == "web-research"
+    assert health["storage"]["durability_status"] == "not_guaranteed"
+    assert health["storage"]["persistent_volume_operator_asserted"] is False
+    assert "ephemeral filesystem" in health["storage"]["warning"]
+    assert health["storage"]["durability_status"] == "not_guaranteed"
+    assert health["storage"]["persistent_volume_operator_asserted"] is False
+    assert "ephemeral filesystem" in health["storage"]["warning"]
     assert health["agent"]["verification_scope"]["live_network_checks_performed"] is False
     assert health["agent"]["verification_scope"]["live_diagnostics_endpoint"] == "POST /api/diagnostics"
 
@@ -919,6 +938,8 @@ def test_invalid_platform_commit_does_not_create_build_identity(monkeypatch, tmp
 def test_lead_store_uses_configured_database_path(monkeypatch, tmp_path):
     from api.omarai import _lead_store_from_environment
 
+    monkeypatch.delenv("OMARAI_DATABASE_URL", raising=False)
+    monkeypatch.delenv("DATABASE_URL", raising=False)
     database_path = tmp_path / "persistent" / "omarai.sqlite3"
     monkeypatch.setenv("OMARAI_DB_PATH", str(database_path))
 
@@ -1266,23 +1287,254 @@ def test_workspace_route_serves_the_arabic_rtl_workspace_shell(local_api):
     assert "localStorage" not in html
     assert "sessionStorage" not in html
 
-def test_workspace_route_does_not_replace_existing_home_agent_or_leads_pages(local_api):
+def test_sales_workspace_is_default_home_and_preserves_agent_and_legacy_leads(local_api):
     with urlopen(local_api + "/", timeout=3) as response:
         home = response.read().decode("utf-8")
         assert response.status == 200
-        assert "وكيل البحث والتحليل" in home
-
-    with urlopen(local_api + "/agent", timeout=3) as response:
-        agent = response.read().decode("utf-8")
-        assert response.status == 200
-        assert agent == home
+        assert '<html lang="ar" dir="rtl">' in home
+        assert "OMARAI SECURE WORKSPACE" in home
 
     with urlopen(local_api + "/workspace", timeout=3) as response:
         workspace = response.read().decode("utf-8")
         assert response.status == 200
-        assert '<html lang="ar" dir="rtl">' in workspace
+        assert workspace == home
+
+    with urlopen(local_api + "/agent", timeout=3) as response:
+        agent = response.read().decode("utf-8")
+        assert response.status == 200
+        assert agent != home
+        assert "وكيل البحث الحي والتحليل متعدد المصادر" in agent
 
     with urlopen(local_api + "/leads", timeout=3) as response:
         leads = response.read().decode("utf-8")
         assert response.status == 200
         assert "مساعد اكتشاف العملاء" in leads
+
+
+def test_product_profile_and_buyer_discovery_api_persist_evidence_and_save_only_qualified_sources(
+    local_api, monkeypatch
+):
+    from api.omarai import WebAgent
+
+    captured = {}
+
+    def fake_answer(
+        self, question, history=None, mode="auto", *, budget_profile="default", buyer_queries=None
+    ):
+        captured["question"] = question
+        captured["buyer_queries"] = buyer_queries
+        captured["allow_optional_providers"] = self.allow_optional_providers
+        captured["openrouter_web_search_enabled"] = self.openrouter_web_search_enabled
+        return {
+            "answer": "عُثر على إشارة طلب واحدة.",
+            "search_queries": buyer_queries,
+            "search_report": {
+                "lead_generation": {
+                    "status": "candidate_signals_found",
+                    "candidate_signal_count": 1,
+                    "related_results_reviewed": 2,
+                    "qualification_rule": "public_demand_signal_phrase_by_type",
+                    "identity_verified": False,
+                },
+                "pipeline_completion_status": "completed",
+            },
+            "sources": [
+                {
+                    "title": "طلب توريد لوحة إنذار",
+                    "url": "https://example.org/public-request/1",
+                    "snippet": "نبحث عن مورد لتوريد لوحة إنذار حريق لمشروع في القاهرة.",
+                    "platform": "web",
+                    "published_at": None,
+                    "page_fetched": False,
+                    "lead_qualification": "public_demand_signal",
+                    "lead_intent_evidence": {
+                        "phrase": "نبحث عن مورد",
+                        "basis": "snippet",
+                        "signal_type": "request_for_quotation",
+                        "product_fit": "unassessed",
+                    },
+                },
+                {
+                    "title": "كتالوج لوحة إنذار",
+                    "url": "https://example.net/catalog",
+                    "snippet": "كتالوج تعريفي بلوحات إنذار الحريق.",
+                    "platform": "web",
+                    "published_at": None,
+                    "page_fetched": False,
+                    "lead_qualification": "related_result_not_lead",
+                    "lead_intent_evidence": None,
+                },
+            ],
+        }
+
+    monkeypatch.setenv("OMARAI_OPENROUTER_WEB_SEARCH", "1")
+    monkeypatch.setattr(WebAgent, "answer", fake_answer)
+    profile_status, profile = request_json(
+        local_api,
+        "/api/product-profiles",
+        method="POST",
+        payload={
+            "product": {
+                "name": "لوحة إنذار الحريق",
+                "aliases": ["FACP"],
+                "category_path": ["السلامة", "إنذار الحريق"],
+                "use_cases": ["حماية المباني"],
+                "problems_solved": ["اكتشاف الحريق مبكرًا"],
+            },
+            "market": {
+                "locations": ["القاهرة", "الجيزة"],
+                "industries": ["المقاولات"],
+                "customer_types": ["مقاولون"],
+                "decision_roles": ["مدير مشتريات"],
+                "exclusions": [],
+            },
+            "locale": "ar",
+        },
+    )
+    assert profile_status == 201
+    assert profile["profile"]["product"]["name"] == "لوحة إنذار الحريق"
+
+    run_status, run = request_json(
+        local_api,
+        "/api/discoveries",
+        method="POST",
+        payload={"profile_id": profile["id"], "allow_optional_providers": False},
+    )
+    assert run_status == 201
+    assert run["sources"][0]["lead_qualification"] == "public_demand_signal"
+    assert run["sources"][1]["lead_qualification"] == "related_result_not_lead"
+    assert captured["buyer_queries"]
+    assert all("القاهرة" in query or "الجيزة" in query for query in captured["buyer_queries"])
+    assert all("لوحة إنذار الحريق" in query or "FACP" in query for query in captured["buyer_queries"])
+    assert captured["allow_optional_providers"] is False
+    assert captured["openrouter_web_search_enabled"] is False
+
+    history_status, history = request_json(local_api, "/api/discoveries")
+    assert history_status == 200
+    assert history["count"] == 1
+    assert history["runs"][0]["id"] == run["id"]
+
+    rejected_status, rejected = request_json(
+        local_api,
+        f"/api/discoveries/{run['id']}/signals/1/save",
+        method="POST",
+        payload={},
+    )
+    assert rejected_status == 409
+    assert "ليست إشارة طلب" in rejected["error"]
+
+    saved_status, saved = request_json(
+        local_api,
+        f"/api/discoveries/{run['id']}/signals/0/save",
+        method="POST",
+        payload={},
+    )
+    assert saved_status == 201
+    assert saved["lead"]["source_url"] == "https://example.org/public-request/1"
+    assert "نبحث عن مورد" in saved["lead"]["note"]
+
+
+def test_discovery_api_denies_optional_provider_usage_to_non_owner(local_api, monkeypatch):
+    monkeypatch.setenv("OMARAI_PUBLIC_DEPLOYMENT", "1")
+    store = Handler.store
+    tenant = store.create_tenant("Sales Team", "sales-team")
+    user = store.create_user("sales@example.invalid", "Sales Agent")
+    store.add_membership(tenant, user, "sales_agent")
+    token = "sales-agent-test-token-1234567890"
+    store.create_api_token(token, tenant, user, "test")
+    headers = {"Authorization": "Bearer " + token}
+
+    profile_status, profile = request_json(
+        local_api,
+        "/api/product-profiles",
+        method="POST",
+        payload={
+            "product": {"name": "FACP", "aliases": ["لوحة إنذار"], "use_cases": [], "problems_solved": []},
+            "market": {"locations": ["Cairo"], "industries": [], "customer_types": [], "decision_roles": [], "exclusions": []},
+            "locale": "en",
+        },
+        headers=headers,
+    )
+    assert profile_status == 201
+
+    status, error = request_json(
+        local_api,
+        "/api/discoveries",
+        method="POST",
+        payload={"profile_id": profile["id"], "allow_optional_providers": True},
+        headers=headers,
+    )
+    assert status == 403
+    assert "مالك مساحة العمل" in error["error"]
+
+
+@pytest.mark.parametrize(
+    "forwarding_header",
+    [
+        {"X-Forwarded-For": "203.0.113.9"},
+        {"CF-Connecting-IP": "203.0.113.9"},
+        {"Forwarded": "for=203.0.113.9"},
+    ],
+)
+def test_loopback_auth_is_refused_for_forwarded_requests_even_with_local_opt_in(
+    local_api, forwarding_header
+):
+    status, _ = request_json(local_api, "/api/leads", headers=forwarding_header)
+    assert status == 401
+
+
+
+def test_lead_store_uses_postgres_database_url_when_configured(monkeypatch):
+    import api.omarai as api_module
+
+    monkeypatch.delenv("OMARAI_DB_PATH", raising=False)
+    monkeypatch.delenv("DATABASE_URL", raising=False)
+    database_url = "postgresql://user:secret@example.neon.tech/omarai?sslmode=require"
+    monkeypatch.setenv("OMARAI_DATABASE_URL", database_url)
+    captured = {}
+
+    class Store:
+        def __init__(self, path=None, *, database_url=None):
+            captured["path"] = path
+            captured["database_url"] = database_url
+
+    monkeypatch.setattr(api_module, "LeadStore", Store)
+
+    store = api_module._lead_store_from_environment()
+
+    assert isinstance(store, Store)
+    assert captured == {"path": None, "database_url": database_url}
+
+
+def test_lead_store_rejects_conflicting_postgres_url_and_sqlite_path(monkeypatch, tmp_path):
+    import api.omarai as api_module
+    import pytest
+
+    monkeypatch.setenv("OMARAI_DATABASE_URL", "postgresql://user:secret@example.neon.tech/omarai")
+    monkeypatch.setenv("OMARAI_DB_PATH", str(tmp_path / "omarai.sqlite3"))
+
+    with pytest.raises(ValueError, match="configure either OMARAI_DATABASE_URL"):
+        api_module._lead_store_from_environment()
+
+
+
+def test_health_reports_storage_backend_without_exposing_database_credentials(monkeypatch, local_api):
+    import json
+    from types import SimpleNamespace
+    from urllib.request import urlopen
+
+    import api.omarai as api_module
+
+    monkeypatch.setattr(api_module.Handler, "store", SimpleNamespace(backend="postgresql"))
+    monkeypatch.setenv(
+        "OMARAI_DATABASE_URL",
+        "postgresql://health-user:health-password@example.neon.tech/omarai?sslmode=require",
+    )
+
+    with urlopen(f"{local_api}/api/health", timeout=3) as response:
+        payload = json.loads(response.read().decode("utf-8"))
+
+    assert payload["storage"]["backend"] == "postgresql"
+    assert payload["storage"]["database_url_configured"] is True
+    assert payload["storage"]["durability_status"] == "external_database_configured"
+    assert "health-password" not in json.dumps(payload)

@@ -87,6 +87,11 @@ def _bounded_http_request(method: str, url: str, **kwargs):
     if not math.isfinite(total_timeout) or total_timeout <= 0:
         raise ValueError("total_timeout must be a positive number")
     deadline = time.monotonic() + total_timeout
+    # Ask providers for an uncompressed body. HTTPX otherwise negotiates automatic
+    # decompression, which can raise DecodingError on malformed intermediary payloads.
+    request_headers = dict(kwargs.pop("headers", {}) or {})
+    request_headers.setdefault("Accept-Encoding", "identity")
+    kwargs["headers"] = request_headers
     # Redirects are never followed for search/social APIs, including credentialed calls.
     kwargs.pop("follow_redirects", None)
     with httpx.Client(
@@ -94,6 +99,10 @@ def _bounded_http_request(method: str, url: str, **kwargs):
         follow_redirects=False,
         trust_env=False,
     ) as client, client.stream(method, url, **kwargs) as response:
+        # A 202 challenge/acceptance page is not a completed search result. Do not
+        # poll or retry it: close this response and mark this provider blocked.
+        if response.status_code == 202:
+            raise RuntimeError("HTTP 202")
         declared_length = response.headers.get("content-length")
         if declared_length:
             try:
@@ -694,6 +703,9 @@ class WebAgent:
 
         self.primary_provider = primary_provider
         self.api_key, self.base_url = primary_api_key, primary_base_url
+        # Legacy research keeps its current connector policy; structured workspace
+        # discovery can disable optional providers per request.
+        self.allow_optional_providers = True
         self.answer_model = os.getenv(
             "OMARAI_ANSWER_MODEL", global_model or default_answer_model
         ).strip()
@@ -1098,6 +1110,16 @@ class WebAgent:
     def _is_self_question(question: str) -> bool:
         """Recognize questions about Omarai itself so they do not need web search."""
         value = _normalize_search_query(question).casefold()
+        # Do not mistake a capability-flavoured request with a concrete subject
+        # for a question about Omarai's capabilities (e.g. "can you search for X?").
+        if re.search(
+            r"(?:هل\s+)?(?:تستطيع|يمكنك|تقدر)\s+(?:ان\s+)?(?:تبحث|البحث)\s+عن\s+\w{2,}",
+            value,
+        ) or re.search(
+            r"\b(?:can|could)\s+you\s+(?:search\s+for|look\s+up|find)\s+\w{2,}\b",
+            value,
+        ):
+            return False
         capability_phrases = (
             "كيف تستطيع مساعدتي", "ازاي تقدر تساعدني", "ازاي ممكن تساعدني",
             "ماذا تستطيع ان تفعل", "ما الذي تستطيع فعله", "ايه اللي تقدر تعمله",
@@ -1132,11 +1154,29 @@ class WebAgent:
     def _is_navigation_request(question: str) -> bool:
         """A link-finding task can be useful with one clearly labelled candidate result."""
         value = _normalize_search_query(question).casefold()
-        terms = (
-            "موقع", "رابط", "لينك", "الموقع الرسمي", "الصفحة الرسمية",
-            "official website", "website", "homepage", "link to",
+        explicit_web_terms = (
+            "رابط", "لينك", "الموقع الرسمي", "الصفحة الرسمية", "رابط الموقع",
+            "لينك الموقع", "موقع الانترنت", "موقع الويب", "موقع الكتروني",
+            "الموقع الالكتروني", "official website", "website", "homepage",
+            "web page", "webpage", "link to",
         )
-        return any(term in value for term in terms)
+        if any(term in value for term in explicit_web_terms):
+            return True
+        geographic_terms = (
+            "جغرافيا", "جغرافي", "على الخريطه", "اين تقع", "اين يقع",
+            "جغرافيه", "geographic location", "geographical location",
+            "geographically", "where is located",
+        )
+        if any(term in value for term in geographic_terms):
+            return False
+        # Bare "موقع" is ambiguous in Arabic. Keep the useful candidate-result
+        # exception only when the wording asks us to find/open a website.
+        website_actions = (
+            "ابحث عن موقع", "ابحث عن الموقع", "دور على موقع", "دورلي على موقع",
+            "هات موقع", "هاتلي موقع", "اعطني موقع", "عايز موقع", "عاوز موقع",
+            "محتاج موقع", "افتح موقع",
+        )
+        return any(term in value for term in website_actions)
 
     @staticmethod
     def _is_lead_search(question: str) -> bool:
@@ -1258,6 +1298,23 @@ class WebAgent:
                             "product_fit": "unassessed",
                         }
         return None
+
+    @staticmethod
+    def _is_buyer_intent_search_query(query: str) -> bool:
+        """Identify purchaser-language queries that must not be sent to news search."""
+        normalized = _normalize_search_query(query).casefold()
+        buyer_phrases = (
+            "مطلوب شراء", "عايز اشتري", "عاوز اشتري", "اريد شراء",
+            "ارغب في شراء", "بدور على", "طلب عرض سعر", "نبحث عن مورد",
+            "نحتاج الى مورد", "محتاج مورد", "looking to buy",
+            "looking to purchase", "want to buy", "wants to buy",
+            "want to purchase", "request for quotation", "request for quote",
+            "looking for a supplier", "need a supplier", "seeking a supplier",
+        )
+        return any(
+            _normalize_search_query(phrase).casefold() in normalized
+            for phrase in buyer_phrases
+        )
 
     @staticmethod
     def _lead_generation_queries(
@@ -1861,55 +1918,67 @@ class WebAgent:
             ("duckduckgo_html", self._search_duckduckgo_html),
             ("bing_rss", self._search_bing_rss),
         ]
-        # Experimental opt-in only: DeepSeek Search is billed per successful request.
-        # Do not promote it to primary without a measured comparison.
-        if not os.getenv("DEEPSEEK_SEARCH_API_KEY", "").strip():
-            self._record_provider_diagnostic(
-                "deepseek_search_api", search_query, "not_configured",
-                error="DEEPSEEK_SEARCH_API_KEY is not set",
-            )
-        elif self._reserve_deepseek_search_request():
-            adapters.append(("deepseek_search_api", self._search_deepseek_api))
+        if not getattr(self, "allow_optional_providers", True):
+            for provider in (
+                "deepseek_search_api", "brave_search_api", "tavily_search_api",
+                "firecrawl_search_api",
+            ):
+                self._record_provider_diagnostic(
+                    provider, search_query, "disabled_by_request",
+                    error="optional provider use was not approved for this discovery run",
+                )
         else:
-            self._record_provider_diagnostic(
-                "deepseek_search_api", search_query, "budget_exhausted",
-                error="per-operation DeepSeek Search request budget exhausted",
-            )
-        if os.getenv("BRAVE_SEARCH_API_KEY", "").strip():
-            adapters.append(("brave_search_api", self._search_brave))
-        else:
-            self._record_provider_diagnostic(
-                "brave_search_api", search_query, "not_configured",
-                error="BRAVE_SEARCH_API_KEY is not set",
-            )
-        if os.getenv("TAVILY_API_KEY", "").strip():
-            adapters.append(("tavily_search_api", self._search_tavily))
-        else:
-            self._record_provider_diagnostic(
-                "tavily_search_api", search_query, "not_configured",
-                error="TAVILY_API_KEY is not set",
-            )
-        # Firecrawl search can consume paid credits: off by default and capped at
-        # one explicitly budgeted request per answer/diagnostics operation.
-        firecrawl_key = os.getenv("FIRECRAWL_API_KEY", "").strip()
-        if os.getenv("FIRECRAWL_SEARCH_ENABLED", "").strip() != "1":
-            self._record_provider_diagnostic(
-                "firecrawl_search_api", search_query, "disabled",
-                error="Firecrawl search is disabled by configuration",
-            )
-        elif not firecrawl_key:
-            self._record_provider_diagnostic(
-                "firecrawl_search_api", search_query, "not_configured",
-                error="FIRECRAWL_API_KEY is not set",
-            )
-        elif self._reserve_firecrawl_search_request():
-            adapters.append(("firecrawl_search_api", self._search_firecrawl))
-        else:
-            self._record_provider_diagnostic(
-                "firecrawl_search_api", search_query, "budget_exhausted",
-                error="Firecrawl request budget is zero, invalid, or already used",
-            )
-        if detect_freshness(search_query):
+            # DeepSeek Search is quota/usage metered and remains bounded per operation.
+            if not os.getenv("DEEPSEEK_SEARCH_API_KEY", "").strip():
+                self._record_provider_diagnostic(
+                    "deepseek_search_api", search_query, "not_configured",
+                    error="DEEPSEEK_SEARCH_API_KEY is not set",
+                )
+            elif self._reserve_deepseek_search_request():
+                adapters.append(("deepseek_search_api", self._search_deepseek_api))
+            else:
+                self._record_provider_diagnostic(
+                    "deepseek_search_api", search_query, "budget_exhausted",
+                    error="per-operation DeepSeek Search request budget exhausted",
+                )
+            if os.getenv("BRAVE_SEARCH_API_KEY", "").strip():
+                adapters.append(("brave_search_api", self._search_brave))
+            else:
+                self._record_provider_diagnostic(
+                    "brave_search_api", search_query, "not_configured",
+                    error="BRAVE_SEARCH_API_KEY is not set",
+                )
+            if os.getenv("TAVILY_API_KEY", "").strip():
+                adapters.append(("tavily_search_api", self._search_tavily))
+            else:
+                self._record_provider_diagnostic(
+                    "tavily_search_api", search_query, "not_configured",
+                    error="TAVILY_API_KEY is not set",
+                )
+            # Firecrawl can consume paid credits. It is disabled by default and
+            # remains subject to the per-request optional-provider policy above.
+            firecrawl_key = os.getenv("FIRECRAWL_API_KEY", "").strip()
+            if os.getenv("FIRECRAWL_SEARCH_ENABLED", "").strip() != "1":
+                self._record_provider_diagnostic(
+                    "firecrawl_search_api", search_query, "disabled",
+                    error="Firecrawl search is disabled by configuration",
+                )
+            elif not firecrawl_key:
+                self._record_provider_diagnostic(
+                    "firecrawl_search_api", search_query, "not_configured",
+                    error="FIRECRAWL_API_KEY is not set",
+                )
+            elif self._reserve_firecrawl_search_request():
+                adapters.append(("firecrawl_search_api", self._search_firecrawl))
+            else:
+                self._record_provider_diagnostic(
+                    "firecrawl_search_api", search_query, "budget_exhausted",
+                    error="Firecrawl request budget is zero, invalid, or already used",
+                )
+        if (
+            detect_freshness(search_query)
+            and not self._is_buyer_intent_search_query(search_query)
+        ):
             adapters.append(("google_news_rss", self._search_news))
 
         async def run_one(name: str, method: Any) -> list[dict[str, Any]]:
@@ -1975,18 +2044,24 @@ class WebAgent:
                     name, search_query, "timeout", error="provider exceeded its bounded request timeout"
                 )
             except Exception as exc:  # noqa: BLE001 - isolate a connector without leaking provider bodies/secrets
-                detail = f"{type(exc).__name__}: {exc}" if isinstance(exc, RuntimeError) else type(exc).__name__
-                status = "failed"
-                status_match = re.search(r"(?i)\bHTTP\s+(\d{3})\b", str(exc))
-                if status_match:
-                    status_code = int(status_match.group(1))
-                    if status_code == 429:
-                        status = "rate_limited"
-                    elif status_code in {401, 403}:
-                        status = "unauthorized"
-                    elif status_code == 202 or 300 <= status_code < 600:
-                        # Do not bypass anti-bot/challenge responses; mark the provider degraded.
-                        status = "http_error"
+                if type(exc).__name__ == "DecodingError":
+                    detail = "provider response decoding failed"
+                    status = "invalid_response"
+                else:
+                    detail = f"{type(exc).__name__}: {exc}" if isinstance(exc, RuntimeError) else type(exc).__name__
+                    status = "failed"
+                    status_match = re.search(r"(?i)\bHTTP\s+(\d{3})\b", str(exc))
+                    if status_match:
+                        status_code = int(status_match.group(1))
+                        if status_code == 202:
+                            status = "blocked"
+                        elif status_code == 429:
+                            status = "rate_limited"
+                        elif status_code in {401, 403}:
+                            status = "unauthorized"
+                        elif 300 <= status_code < 600:
+                            # Do not bypass redirects/challenges or retry a blocked response.
+                            status = "http_error"
                 self._record_provider_diagnostic(name, search_query, status, error=detail)
             return []
 
@@ -2147,6 +2222,23 @@ class WebAgent:
                 break
         return rows
 
+    @staticmethod
+    def _firecrawl_search_country(query: str) -> str:
+        """Choose a coarse Firecrawl country only from explicit geographic wording."""
+        normalized = _normalize_search_query(query).casefold()
+        rules = (
+            ("SA", r"(?<!\w)(?:saudi arabia|ksa|riyadh|jeddah)(?!\w)|السعودي(?:ة|ه)"),
+            ("AE", r"(?<!\w)(?:uae|united arab emirates|dubai|abu dhabi)(?!\w)|الامارات"),
+            ("GB", r"(?<!\w)(?:united kingdom|great britain|uk|london)(?!\w)|المملكه المتحده|بريطانيا"),
+            ("EG", r"(?<!\w)(?:egypt|egyptian|cairo|alexandria|giza)(?!\w)|مصر|القاهره|الاسكندريه|الجيزه"),
+        )
+        for country, pattern in rules:
+            if re.search(pattern, normalized, flags=re.IGNORECASE):
+                return country
+        # Existing Arabic-language discovery defaults to Egypt; English defaults
+        # to US only when the request gives no stronger geographic evidence.
+        return "EG" if re.search(r"[\u0600-\u06FF]", query) else "US"
+
     def _search_firecrawl(self, query: str) -> list[dict[str, Any]]:
         """Use Firecrawl v2 web search; caller enforces explicit enablement and budget."""
         api_key = os.getenv("FIRECRAWL_API_KEY", "").strip()
@@ -2159,7 +2251,7 @@ class WebAgent:
                 "query": query[:500],
                 "sources": [{"type": "web"}],
                 "limit": MAX_PROVIDER_RESULTS,
-                "country": "EG" if re.search(r"[\u0600-\u06FF]", query) else "US",
+                "country": self._firecrawl_search_country(query),
             },
             headers={
                 "Accept": "application/json",
@@ -2197,7 +2289,6 @@ class WebAgent:
                 "published_at": _clean_text(
                     item.get("publishedAt", "") or item.get("published_at", ""), 100
                 ),
-                "source_class": "web",
             })
             if len(rows) >= MAX_PROVIDER_RESULTS:
                 break
@@ -2295,8 +2386,15 @@ class WebAgent:
             "Accept-Language": "ar,en;q=0.9",
         }
 
-        reddit_client_id = os.getenv("REDDIT_CLIENT_ID", "").strip()
-        reddit_client_secret = os.getenv("REDDIT_CLIENT_SECRET", "").strip()
+        optional_providers_enabled = getattr(self, "allow_optional_providers", True)
+        reddit_client_id = (
+            os.getenv("REDDIT_CLIENT_ID", "").strip()
+            if optional_providers_enabled else ""
+        )
+        reddit_client_secret = (
+            os.getenv("REDDIT_CLIENT_SECRET", "").strip()
+            if optional_providers_enabled else ""
+        )
         reddit_user_agent = os.getenv(
             "REDDIT_USER_AGENT",
             "web:omarai-research-agent:v0.3 (public-content research)",
@@ -2781,6 +2879,7 @@ class WebAgent:
         headers = {
             "User-Agent": "OmaraiResearchBot/1.1 (public page research; no login)",
             "Accept": "text/html,application/xhtml+xml,text/plain;q=0.8",
+            "Accept-Encoding": "identity",
         }
         media_type = ""
         html = ""
@@ -2856,6 +2955,8 @@ class WebAgent:
                         break
                 else:
                     return result(status="redirect_limit", error_class="RedirectLimit")
+        except httpx.DecodingError:
+            return result(status="decoding_error", error_class="ContentDecodingError")
         except (OSError, ValueError, httpx.HTTPError) as exc:
             return result(status="network_error", error_class=type(exc).__name__)
 
@@ -2976,7 +3077,8 @@ class WebAgent:
             provider for item in preliminary for provider in item.get("providers", [])
         }
         needs_expansion = (
-            plan.get("depth") == "deep"
+            plan.get("intent_route") != "LEAD_GENERATION"
+            and plan.get("depth") == "deep"
             and (len(preliminary) < 8 or len(preliminary_domains) < 5 or len(preliminary_providers) < 2)
         )
         preliminary_ledger = build_evidence_ledger(target_aspects, preliminary)
@@ -2986,7 +3088,8 @@ class WebAgent:
         # Legacy plans without those query records still need the bounded missing-aspect fallback;
         # deep research may expand further even after targeted queries.
         if (
-            (missing_aspects or needs_expansion)
+            plan.get("intent_route") != "LEAD_GENERATION"
+            and (missing_aspects or needs_expansion)
             and len(queries) < query_limit
             and queries
             and (
@@ -3423,10 +3526,11 @@ class WebAgent:
                 useful[name] = useful.get(name, 0) + 1
         priority = {"ok": 0, "no_results": 1, "filtered_all": 2, "not_attempted": 3,
                     "disabled": 4, "not_configured": 5, "budget_exhausted": 6,
-                    "unknown": 6, "rate_limited": 7, "unauthorized": 8, "http_error": 9,
+                    "unknown": 6, "rate_limited": 7, "unauthorized": 8, "blocked": 9,
+                    "http_error": 9, "invalid_response": 10,
                     "timeout": 10, "failed": 11, "error": 11}
         confirmed_attempt_statuses = _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES | {
-            "http_error", "unauthorized", "rate_limited", "invalid_response"
+            "blocked", "http_error", "unauthorized", "rate_limited", "invalid_response"
         }
         uncertain_attempt_statuses = {"timeout", "failed", "error", "unknown", "inconclusive"}
 
@@ -3452,7 +3556,9 @@ class WebAgent:
             else:
                 attempted = False
             successful_statuses = set(statuses) & _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES
-            error_response_statuses = set(statuses) & {"http_error", "unauthorized", "rate_limited"}
+            error_response_statuses = set(statuses) & {
+                "blocked", "http_error", "unauthorized", "rate_limited", "invalid_response"
+            }
             uncertain_failure_statuses = set(statuses) & {"timeout", "failed", "error", "unknown", "inconclusive"}
             failure_observed = bool(error_response_statuses or uncertain_failure_statuses or "budget_exhausted" in statuses)
             available: bool | None = (
@@ -3520,7 +3626,10 @@ class WebAgent:
             "scope": "this_request_only",
             "semantics": "result_count is connector-reported rows; useful_result_count counts final fused source records attributed to a connector; neither proves factual accuracy or editorial independence.",
             "attempted_count": sum(bool(item["attempted"]) for item in connectors),
-            "failed_count": sum(item["status"] in {"failed", "error", "timeout", "http_error", "unauthorized", "rate_limited"} for item in connectors),
+            "failed_count": sum(item["status"] in {
+                "failed", "error", "timeout", "blocked", "http_error",
+                "unauthorized", "rate_limited", "invalid_response",
+            } for item in connectors),
             "connectors": connectors[:24],
         }
 
@@ -3883,6 +3992,10 @@ class WebAgent:
                     "بلغة رسالة المستخدم نفسها مع الحفاظ على الأسماء والقيود. افهم العربية المصرية "
                     "والفصحى والإنجليزية والأخطاء المعتادة. ميّز بين استمرار الموضوع وتغيير الموضوع، "
                     "واستعد الكيان والقيود والجانب المطلوب والبلد والنسخة والفترة الزمنية عند وجودها. "
+                    "إذا قال المستخدم «لا، قصدي...» أو «بدل...» فتعامل معها كتصحيح للكيان/قيمة القيد "
+                    "في الموضوع نفسه لا كتغيير موضوع؛ وعند تضييق الموقع أو الفترة أو الميزانية احتفظ "
+                    "ببقية الكيانات والقيود ما لم يذكر المستخدم تغييرها. سجّل اسم القيد المعدل في "
+                    "changed_slots، ولا تحذف بقية slots الصحيحة. "
                     "لا تنقل موضوعًا سابقًا إلى سؤال مستقل. إذا كان للضمير أكثر من مرجع معقول ويغيّر "
                     "ذلك الإجابة، اجعل needs_clarification=true واكتب سؤال توضيح قصيرًا بلغة المستخدم. "
                     "لا تخترع مرجعًا ولا تعتبر درجة الثقة حقيقة مقاسة. needs_web=true فقط عندما "
@@ -4904,17 +5017,30 @@ class WebAgent:
 
     def answer(
         self, question: str, history: Any = None, mode: str = "auto",
-        *, budget_profile: str = "default",
+        *, budget_profile: str = "default", buyer_queries: list[str] | None = None,
     ) -> dict[str, Any]:
         """Run one answer with an isolated, observable resource budget."""
+        if buyer_queries is not None:
+            if not isinstance(buyer_queries, list) or not buyer_queries:
+                raise ValueError("buyer_queries must be a non-empty list")
+            if len(buyer_queries) > 8 or any(
+                not isinstance(query, str) or not query.strip() or len(query) > 500
+                for query in buyer_queries
+            ):
+                raise ValueError("buyer_queries must contain at most 8 non-empty queries of 500 characters")
+            buyer_queries = list(dict.fromkeys(query.strip() for query in buyer_queries))
         previous_budget = getattr(self, "_request_budget", None)
         self.generation_diagnostics = []
         self._generation_attempt_sequence = 0
-        self._reset_deepseek_search_budget()
         budget = RequestBudget.from_environment(profile=budget_profile)
         self._request_budget = budget
         try:
-            result = self._answer_with_budget(question, history, mode)
+            if buyer_queries is None:
+                result = self._answer_with_budget(question, history, mode)
+            else:
+                result = self._answer_with_budget(
+                    question, history, mode, buyer_queries=buyer_queries
+                )
         except RequestBudgetExceeded as exc:
             safe_question = (
                 question.strip()[:MAX_QUESTION_CHARS]
@@ -5275,7 +5401,8 @@ class WebAgent:
         return result
 
     def _answer_with_budget(
-        self, question: str, history: Any = None, mode: str = "auto"
+        self, question: str, history: Any = None, mode: str = "auto",
+        *, buyer_queries: list[str] | None = None,
     ) -> dict[str, Any]:
         if not isinstance(question, str) or not question.strip():
             raise ValueError("اكتب سؤالًا غير فارغ.")
@@ -5311,6 +5438,9 @@ class WebAgent:
         )
         intent_route = str(decision["route"])
         intent_reason = str(decision["reason"])
+        if buyer_queries is not None:
+            intent_route = "LEAD_GENERATION"
+            intent_reason = "structured_product_market_profile"
         context_override: dict[str, Any] | None = None
 
         # Rules only decide when a context probe may be needed. The model interprets
@@ -5436,7 +5566,16 @@ class WebAgent:
             intent_route = "WEB_SIMPLE"
             intent_reason = "model_unavailable_fallback_to_existing_web_research"
 
-        if context_override is None:
+        if context_override is None and buyer_queries is not None:
+            plan = {
+                "queries": list(buyer_queries),
+                "depth": "standard",
+                "freshness": "current",
+                "social_focus": True,
+                "platforms": [],
+                "planning_method": "structured_product_market_profile",
+            }
+        elif context_override is None:
             # Preserve compatibility with existing integrations and test doubles.
             plan = self._plan_search(question, clean_history)
         else:
@@ -5546,19 +5685,6 @@ class WebAgent:
                     f"{base_query} risks limitations alternatives",
                     f"{base_query} recent data reviews comparison",
                 ]
-                normalized_question = _normalize_search_query(working_question).casefold()
-                property_terms = (
-                    "شقه", "شقق", "عقار", "عقارات", "فيلا", "فلل",
-                    "apartment", "apartments", "flat", "real estate", "property", "house", "villa",
-                )
-                if self._is_listing_discovery(working_question) and any(
-                    term in normalized_question for term in property_terms
-                ):
-                    deep_candidates.extend([
-                        f"{base_query} إعلانات عقارية ومواقع العقارات",
-                        f"{base_query} متوسط أسعار السوق للمتر",
-                        f"{base_query} مواصفات الوحدات والمساحات وطرق السداد",
-                    ])
                 # Close the planning loop: give every explicit user criterion its own
                 # query before generic "deep research" queries consume the fixed budget.
                 # This is a retrieval heuristic, not a guarantee that evidence exists.
@@ -5591,19 +5717,6 @@ class WebAgent:
                     f"{base_query} risks limitations alternatives",
                     f"{base_query} case studies recent analysis",
                 ]
-                normalized_question = _normalize_search_query(working_question).casefold()
-                property_terms = (
-                    "شقه", "شقق", "عقار", "عقارات", "فيلا", "فلل",
-                    "apartment", "apartments", "flat", "real estate", "property", "house", "villa",
-                )
-                if self._is_listing_discovery(working_question) and any(
-                    term in normalized_question for term in property_terms
-                ):
-                    candidates.extend([
-                        f"{base_query} إعلانات عقارية ومواقع العقارات",
-                        f"{base_query} متوسط أسعار السوق للمتر",
-                        f"{base_query} مواصفات الوحدات والمساحات وطرق السداد",
-                    ])
                 # Explicit deep mode follows the same criterion-first budget allocation
                 # as automatic deep mode, so generic modifiers cannot crowd out requested
                 # dimensions such as price, battery, camera, privacy, or reliability.
@@ -5660,28 +5773,33 @@ class WebAgent:
                 plan["queries"] = list(dict.fromkeys((plan.get("queries") or [])[:5] + candidates))[
                     :MAX_PLAN_QUERIES
                 ]
-            if intent_route == "LEAD_GENERATION" and clean_mode == "auto":
-                # Prospect discovery needs buyer-intent queries and public social signals,
-                # not just broad pages advertising the requested product.
-                plan["queries"] = self._lead_generation_queries(working_question, plan.get("queries", []))
-                plan["depth"] = "standard"
+            if intent_route == "LEAD_GENERATION":
+                # Buyer discovery uses purchaser-language queries in every search mode.
+                # It must not inherit general research/report/risk query expansions.
+                plan["queries"] = (
+                    list(buyer_queries)
+                    if buyer_queries is not None
+                    else self._lead_generation_queries(working_question, plan.get("queries", []))
+                )
+                plan["depth"] = "deep" if clean_mode == "deep" else "standard"
                 plan["freshness"] = "current"
                 plan["social_focus"] = True
                 allowed_public_platforms = ["reddit", "bluesky"]
-                if (
-                    os.getenv("FACEBOOK_PAGE_ACCESS_TOKEN", "").strip()
-                    and os.getenv("FACEBOOK_PAGE_IDS", "").strip()
-                ):
-                    allowed_public_platforms.append("facebook")
-                if os.getenv("X_BEARER_TOKEN", "").strip():
-                    allowed_public_platforms.append("x")
-                if os.getenv("YOUTUBE_API_KEY", "").strip():
-                    allowed_public_platforms.append("youtube")
-                if (
-                    os.getenv("INSTAGRAM_USER_ID", "").strip()
-                    and os.getenv("INSTAGRAM_ACCESS_TOKEN", "").strip()
-                ):
-                    allowed_public_platforms.append("instagram")
+                if getattr(self, "allow_optional_providers", True):
+                    if (
+                        os.getenv("FACEBOOK_PAGE_ACCESS_TOKEN", "").strip()
+                        and os.getenv("FACEBOOK_PAGE_IDS", "").strip()
+                    ):
+                        allowed_public_platforms.append("facebook")
+                    if os.getenv("X_BEARER_TOKEN", "").strip():
+                        allowed_public_platforms.append("x")
+                    if os.getenv("YOUTUBE_API_KEY", "").strip():
+                        allowed_public_platforms.append("youtube")
+                    if (
+                        os.getenv("INSTAGRAM_USER_ID", "").strip()
+                        and os.getenv("INSTAGRAM_ACCESS_TOKEN", "").strip()
+                    ):
+                        allowed_public_platforms.append("instagram")
                 plan["platforms"] = list(dict.fromkeys(allowed_public_platforms))
 
         pipeline = build_research_pipeline(

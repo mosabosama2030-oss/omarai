@@ -4,6 +4,7 @@ from __future__ import annotations
 import csv
 import hashlib
 import hmac
+import ipaddress
 import json
 import re
 import secrets
@@ -11,22 +12,80 @@ import sqlite3
 import unicodedata
 from contextlib import contextmanager
 from collections.abc import Iterator
+from typing import Any
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
 import uuid
 from urllib.parse import urlparse
+
+from agents.sales_domain import (
+    ContactabilityStatus,
+    DemandEvidence,
+    DemandSignal,
+    DemandSignalType,
+    EvidenceBasis,
+    FreshnessStatus,
+    IdentityStatus,
+    LeadQualification,
+    ProductFit,
+    SourceQuality,
+)
 
 MAX_TEXT = 12000
 DEFAULT_TENANT_ID = "tenant_default"
 DEFAULT_USER_ID = "user_local_admin"
 _TRANSLATION = str.maketrans({"أ":"ا","إ":"ا","آ":"ا","ٱ":"ا","ى":"ي","ئ":"ي","ؤ":"و","ـ":""})
 SIGNALS = {
-    "high": (35, ("عايز اشتري", "عاوز اشتري", "بدور على شقة", "بدور على عقار", "مطلوب شقة", "عايز وحدة", "محتاج اشتري")),
-    "next_step": (20, ("ممكن معاينة", "عايز اعاين", "عاوز اعاين", "ابعت التفاصيل", "ابعت اللوكيشن", "ميعاد للمعاينة")),
-    "budget": (15, ("السعر كام", "مقدم كام", "ميزانيتي", "معايا مقدم", "تقسيط", "على اقساط", "في حدود")),
-    "explore": (10, ("بدور على", "فيه شقق", "ايه المتاح", "عايز اعرف الاسعار")),
+    # Direct demand language is sector-neutral. A product mention alone is never
+    # sufficient to establish buying intent.
+    "high": (35, (
+        "عايز اشتري", "عاوز اشتري", "محتاج اشتري",
+        # Retain established property-language compatibility while allowing any sector.
+        "بدور على شقة", "بدور على عقار", "مطلوب شقة", "عايز وحدة",
+    )),
+    "direct_demand": (55, (
+        "نحتاج شراء", "نبحث عن مورد", "مطلوب مورد", "مطلوب توريد",
+        "نحتاج توريد", "محتاجين توريد", "نحتاج نظام", "محتاجين نظام",
+        "نحتاج خدمة", "نحتاج عرض سعر", "مطلوب شراء", "طلب شراء", "طلب عرض سعر",
+        "طلب عروض اسعار", "مناقصة توريد", "نبحث عن شركة", "نحتاج شركة",
+        "looking to buy", "need to purchase", "seeking a supplier",
+        "need a supplier", "request for quotation", "purchase request",
+        "procurement request", "rfq", "request a quote",
+    )),
+    "next_step": (20, (
+        "ممكن معاينة", "عايز اعاين", "عاوز اعاين", "ابعت التفاصيل",
+        "ابعت اللوكيشن", "ميعاد للمعاينة", "ابعت عرض سعر", "ارسل عرض سعر",
+        "نحتاج عرض سعر", "يرجى تقديم عرض", "send a quotation",
+        "send quote", "contact for quote",
+    )),
+    "budget": (15, (
+        "السعر كام", "مقدم كام", "ميزانيتي", "معايا مقدم", "تقسيط",
+        "على اقساط", "في حدود", "ما هي التكلفة", "what is the price",
+        "what does it cost", "budget is",
+    )),
+    "explore": (10, (
+        "بدور على", "فيه شقق", "ايه المتاح", "عايز اعرف الاسعار",
+        "ابحث عن", "نبحث عن", "looking for", "seeking information",
+    )),
 }
-NOT_BUYER = ("مش عايز اشتري", "مش عاوز اشتري", "عايز ابيع", "عاوز ابيع", "عندي شقة للبيع", "انا وسيط", "انا سمسار", "عايز ايجار", "للايجار")
+NOT_BUYER = (
+    "مش عايز اشتري", "مش عاوز اشتري", "مش بدور على", "مش محتاج",
+    "مش محتاجين", "لا نحتاج", "لا نبحث عن", "لسنا بحاجة",
+    "ما عنديش نية", "مش ناوي", "مش مهتم", "مش هشتري",
+    "not interested", "not looking for", "do not need", "don't need", "not seeking",
+    "عايز ابيع", "عاوز ابيع", "عندي شقة للبيع", "انا وسيط", "انا سمسار",
+    "عايز ايجار", "للايجار", "not looking for", "do not need",
+    "don't need", "not seeking",
+)
+CLOSED_OR_STALE = (
+    "تم الغاء الطلب", "الغيت الطلب", "لغيت الطلب",
+    "تم الشراء", "اشترينا", "اشتريت بالفعل", "تم التعاقد", "تعاقدنا",
+    "وجدنا مورد", "تم اختيار المورد", "تم التوريد", "اكتمل التوريد",
+    "تم حل المشكلة", "لم نعد بحاجة", "already purchased", "we purchased",
+    "contract awarded", "supplier selected", "need fulfilled",
+    "no longer needed", "كنت بدور على", "كنت محتاج", "كنت ابحث عن",
+    "was looking for", "previously needed",
+)
 
 def normalize(text: str) -> str:
     value = unicodedata.normalize("NFKC", str(text)).translate(_TRANSLATION)
@@ -55,27 +114,135 @@ def _csv_safe_cell(value: object) -> str:
         return "\t" + text
     return text
 
+def _signal_type_for_matches(matches: list[dict]) -> DemandSignalType:
+    categories = {item["category"] for item in matches}
+    phrases = {normalize(item["phrase"]) for item in matches}
+    if "direct_demand" in categories:
+        if any(token in phrases for token in {
+            normalize("طلب عرض سعر"), normalize("طلب عروض اسعار"),
+            normalize("نحتاج عرض سعر"), normalize("request for quotation"), normalize("rfq"),
+            normalize("request a quote"),
+        }):
+            return DemandSignalType.REQUEST_FOR_QUOTATION
+        if any(token in phrases for token in {
+            normalize("مناقصة توريد"), normalize("procurement request"),
+        }):
+            return DemandSignalType.TENDER_OR_PROCUREMENT
+        return DemandSignalType.DIRECT_PURCHASE_REQUEST
+    if "high" in categories:
+        return DemandSignalType.STATED_NEED
+    if categories.intersection({"next_step", "budget", "explore"}):
+        return DemandSignalType.INDIRECT_INDICATOR
+    return DemandSignalType.UNKNOWN
+
+
+def _contains_normalized_phrase(body: str, phrase: str) -> bool:
+    """Match a normalized phrase while allowing common attached Arabic clitics."""
+    normalized_phrase = normalize(phrase)
+    if not normalized_phrase:
+        return False
+    # Arabic conjunctions/prepositions are commonly attached to the next word
+    # (e.g. "وممكن معاينة"); allow one such prefix without partial-word matches.
+    pattern = rf"(?<!\w)(?:[وفبكل])?{re.escape(normalized_phrase)}(?!\w)"
+    return re.search(pattern, body, flags=re.UNICODE) is not None
+
+
 def analyze(text: str, product_terms=(), location_terms=()) -> dict:
+    """Score explicit demand language without treating product fit as purchase intent."""
     if not isinstance(text, str) or not text.strip():
         raise ValueError("text must not be empty")
     if len(text) > MAX_TEXT:
         raise ValueError(f"text must be at most {MAX_TEXT} characters")
+
     body = normalize(text)
-    excluded = [p for p in NOT_BUYER if normalize(p) in body]
+    closed = [phrase for phrase in CLOSED_OR_STALE if _contains_normalized_phrase(body, phrase)]
+    if closed:
+        return {
+            "score": 0,
+            "label": "closed_or_stale_signal",
+            "signal_type": (
+                DemandSignalType.CANCELLED.value
+                if any(normalize(phrase) in {normalize("تم الغاء الطلب"), normalize("الغيت الطلب"), normalize("لغيت الطلب")} for phrase in closed)
+                else DemandSignalType.EXPIRED.value
+            ),
+            "summary": "الإشارة قديمة أو تم تلبية الاحتياج؛ لا تُعامل كطلب شراء نشط.",
+            "matched_signals": [
+                {"phrase": phrase, "category": "closed_or_stale", "points": 0}
+                for phrase in closed
+            ],
+            "warnings": ["تحقق من التاريخ والسياق قبل أي متابعة."],
+        }
+
+    excluded = [phrase for phrase in NOT_BUYER if _contains_normalized_phrase(body, phrase)]
     if excluded:
-        return {"score": 0, "label": "not_buyer_signal", "summary": "قد لا تكون إشارة شراء مباشرة؛ راجع النص يدويًا.", "matched_signals": [{"phrase": p, "category": "exclusion", "points": 0} for p in excluded], "warnings": ["تصنيف أولي وليس حكمًا نهائيًا."]}
+        return {
+            "score": 0,
+            "label": "not_buyer_signal",
+            "signal_type": DemandSignalType.NEGATED.value,
+            "summary": "النص ينفي الاحتياج أو لا يمثل طلب شراء نشطًا؛ راجعه يدويًا.",
+            "matched_signals": [
+                {"phrase": phrase, "category": "exclusion", "points": 0}
+                for phrase in excluded
+            ],
+            "warnings": ["لا تُصنّف النفي كإشارة شراء."],
+        }
+
     matches = []
     for category, (points, phrases) in SIGNALS.items():
-        found = next((p for p in phrases if normalize(p) in body), None)
+        found = next(
+            (phrase for phrase in phrases if _contains_normalized_phrase(body, phrase)),
+            None,
+        )
         if found:
             matches.append({"phrase": found, "category": category, "points": points})
+
+    # Product and location matches are contextual dimensions only. They must
+    # never inflate the demand score or turn a catalogue mention into a lead.
     for category, terms in (("product_context", product_terms), ("location_context", location_terms)):
-        found = next((normalize(t) for t in terms if isinstance(t, str) and normalize(t) and normalize(t) in body), None)
+        found = next(
+            (
+                normalize(term)
+                for term in terms
+                if isinstance(term, str)
+                and normalize(term)
+                and _contains_normalized_phrase(body, term)
+            ),
+            None,
+        )
         if found:
-            matches.append({"phrase": found, "category": category, "points": 10})
-    score = min(100, sum(x["points"] for x in matches))
-    label = "high_intent" if score >= 55 and any(x["category"] == "high" for x in matches) else "medium_intent" if score >= 40 else "early_research" if score >= 20 else "unclear"
-    return {"score": score, "label": label, "summary": {"high_intent":"إشارة قوية نسبيًا وفق قواعد بسيطة وتحتاج مراجعة بشرية.","medium_intent":"مؤشرات اهتمام تستحق التأهيل والتحقق.","early_research":"اهتمام مبكر؛ ليس عميلًا مؤهلًا بعد.","unclear":"لا توجد مؤشرات كافية."}[label], "matched_signals": matches, "warnings": ["الدرجة ليست احتمالًا إحصائيًا للشراء.", "لا تثبت هوية الكاتب أو قدرته على الدفع أو نيته.", "استخدم مصادر عامة ومسموحًا بمعالجتها فقط."]}
+            matches.append({"phrase": found, "category": category, "points": 0})
+
+    signal_type = _signal_type_for_matches(matches)
+    score = min(100, sum(item["points"] for item in matches))
+    label = (
+        "high_intent"
+        if score >= 55 and any(
+            item["category"] in {"high", "direct_demand"} for item in matches
+        )
+        else "medium_intent"
+        if score >= 40
+        else "early_research"
+        if score >= 20
+        else "unclear"
+    )
+    return {
+        "score": score,
+        "label": label,
+        "signal_type": signal_type.value,
+        "summary": {
+            "high_intent": "إشارة طلب مباشرة نسبيًا؛ يلزم التحقق من المصدر والحداثة.",
+            "medium_intent": "مؤشرات اهتمام تستحق التأهيل والتحقق.",
+            "early_research": "اهتمام مبكر؛ ليس طلب شراء مؤكدًا.",
+            "unclear": "لا توجد لغة طلب كافية؛ ذكر المنتج وحده لا يكفي.",
+        }[label],
+        "matched_signals": matches,
+        "warnings": [
+            "الدرجة ترتيبية وليست احتمالًا إحصائيًا للشراء.",
+            "لا تثبت هوية الكاتب أو قدرته على الدفع أو نيته.",
+            "ملاءمة المنتج والموقع سياق منفصل ولا يرفعان درجة الطلب.",
+            "استخدم مصادر عامة ومسموحًا بمعالجتها فقط.",
+        ],
+    }
 
 def validate_url(url: str) -> str:
     parsed = urlparse(str(url or "").strip())
@@ -85,27 +252,97 @@ def validate_url(url: str) -> str:
         raise ValueError("source_url is too long")
     return url.strip()
 
+def _qmark_to_psycopg(sql: str) -> str:
+    """Translate DB-API qmark placeholders without touching quoted SQL literals."""
+    output: list[str] = []
+    quote: str | None = None
+    index = 0
+    while index < len(sql):
+        char = sql[index]
+        if quote is not None:
+            output.append(char)
+            if char == quote:
+                if index + 1 < len(sql) and sql[index + 1] == quote:
+                    output.append(sql[index + 1])
+                    index += 1
+                else:
+                    quote = None
+        elif char in ("'", '"'):
+            quote = char
+            output.append(char)
+        elif char == "?":
+            output.append("%s")
+        else:
+            output.append(char)
+        index += 1
+    return "".join(output)
+
+
+class _PostgresConnection:
+    """Small execute adapter keeping LeadStore SQL parameters backend-neutral."""
+
+    def __init__(self, connection):
+        self._connection = connection
+
+    def execute(self, sql: str, params=()):
+        statement = sql
+        if statement.lstrip().upper().startswith("INSERT OR IGNORE INTO"):
+            statement = statement.replace("INSERT OR IGNORE INTO", "INSERT INTO", 1)
+            statement = statement.rstrip().rstrip(";") + " ON CONFLICT DO NOTHING"
+        return self._connection.execute(_qmark_to_psycopg(statement), params)
+
+
 class LeadStore:
-    """Tenant-scoped SQLite lead storage with a safe single-company bootstrap."""
+    """Tenant-scoped local SQLite or managed PostgreSQL lead storage."""
 
     ALLOWED_STATUSES = frozenset({
         "new", "qualified", "contacted", "converted", "rejected", "needs_review"
     })
     ALLOWED_ROLES = frozenset({"owner", "admin", "manager", "sales_agent", "viewer"})
 
-    def __init__(self, path: str | Path | None = None):
-        self.path = Path(path or Path.home() / ".omarai" / "omarai.sqlite3").expanduser()
-        self.path.parent.mkdir(parents=True, exist_ok=True)
+    def __init__(
+        self,
+        path: str | Path | None = None,
+        *,
+        database_url: str | None = None,
+    ):
+        clean_database_url = str(database_url or "").strip()
+        if clean_database_url and path is not None:
+            raise ValueError("configure either database_url or a SQLite path, not both")
+        if clean_database_url:
+            if not clean_database_url.startswith(("postgresql://", "postgres://")):
+                raise ValueError("database_url must use the PostgreSQL URL scheme")
+            self.backend = "postgresql"
+            self.database_url = clean_database_url
+            self.path = None
+        else:
+            self.backend = "sqlite"
+            self.database_url = None
+            self.path = Path(path or Path.home() / ".omarai" / "omarai.sqlite3").expanduser()
+            self.path.parent.mkdir(parents=True, exist_ok=True)
+
         with self.connect() as db:
             self._initialize_schema(db)
 
     @contextmanager
-    def connect(self) -> Iterator[sqlite3.Connection]:
-        """Yield one transaction-scoped connection and always close it.
+    def connect(self) -> Iterator[Any]:
+        """Yield one transaction-scoped connection and always close it."""
+        if self.backend == "postgresql":
+            try:
+                import psycopg
+                from psycopg.rows import dict_row
+            except ImportError as exc:
+                raise RuntimeError(
+                    "PostgreSQL storage requires the psycopg package"
+                ) from exc
+            with psycopg.connect(
+                self.database_url,
+                connect_timeout=10,
+                row_factory=dict_row,
+            ) as connection:
+                yield _PostgresConnection(connection)
+            return
 
-        sqlite3.Connection's built-in context manager commits or rolls back;
-        it does not close the connection. This wrapper provides both guarantees.
-        """
         db = sqlite3.connect(self.path, timeout=10)
         try:
             db.row_factory = sqlite3.Row
@@ -148,7 +385,7 @@ class LeadStore:
         db.execute(
             """CREATE TABLE IF NOT EXISTS users (
                 id TEXT PRIMARY KEY,
-                email TEXT NOT NULL UNIQUE COLLATE NOCASE,
+                email TEXT NOT NULL UNIQUE,
                 display_name TEXT NOT NULL,
                 active INTEGER NOT NULL DEFAULT 1,
                 created_at TEXT NOT NULL
@@ -215,84 +452,87 @@ class LeadStore:
             (DEFAULT_TENANT_ID, DEFAULT_USER_ID, now),
         )
 
-        table = db.execute(
-            "SELECT 1 FROM sqlite_master WHERE type='table' AND name='leads'"
-        ).fetchone()
-        if table:
-            columns = {
-                row["name"] for row in db.execute("PRAGMA table_info(leads)").fetchall()
-            }
-            unique_fingerprint = False
-            for index in db.execute("PRAGMA index_list(leads)").fetchall():
-                if not index["unique"]:
-                    continue
-                index_columns = [
-                    row["name"]
-                    for row in db.execute(
-                        f"PRAGMA index_info('{index['name']}')"
-                    ).fetchall()
-                ]
-                if index_columns == ["fingerprint"]:
-                    unique_fingerprint = True
-                    break
-            if "tenant_id" not in columns or unique_fingerprint:
-                db.execute("ALTER TABLE leads RENAME TO leads_legacy_migration")
-                self._create_leads_table(db)
-                legacy_columns = {
-                    row["name"]
-                    for row in db.execute(
-                        "PRAGMA table_info(leads_legacy_migration)"
-                    ).fetchall()
+        if self.backend == "sqlite":
+            table = db.execute(
+                "SELECT 1 FROM sqlite_master WHERE type='table' AND name='leads'"
+            ).fetchone()
+            if table:
+                columns = {
+                    row["name"] for row in db.execute("PRAGMA table_info(leads)").fetchall()
                 }
-                tenant_expression = (
-                    "tenant_id" if "tenant_id" in legacy_columns else "?"
-                )
-                if tenant_expression == "?":
-                    db.execute(
-                        """INSERT OR IGNORE INTO leads
-                            (id, tenant_id, fingerprint, text, source_url, platform,
-                             observed_at, assessment, status, note, created_at, updated_at)
-                            SELECT id, ?, fingerprint, text, source_url, platform,
-                                   observed_at, assessment, status, note, created_at, updated_at
-                            FROM leads_legacy_migration""",
-                        (DEFAULT_TENANT_ID,),
+                unique_fingerprint = False
+                for index in db.execute("PRAGMA index_list(leads)").fetchall():
+                    if not index["unique"]:
+                        continue
+                    index_columns = [
+                        row["name"]
+                        for row in db.execute(
+                            f"PRAGMA index_info('{index['name']}')"
+                        ).fetchall()
+                    ]
+                    if index_columns == ["fingerprint"]:
+                        unique_fingerprint = True
+                        break
+                if "tenant_id" not in columns or unique_fingerprint:
+                    db.execute("ALTER TABLE leads RENAME TO leads_legacy_migration")
+                    self._create_leads_table(db)
+                    legacy_columns = {
+                        row["name"]
+                        for row in db.execute(
+                            "PRAGMA table_info(leads_legacy_migration)"
+                        ).fetchall()
+                    }
+                    tenant_expression = (
+                        "tenant_id" if "tenant_id" in legacy_columns else "?"
                     )
-                else:
-                    db.execute(
-                        """INSERT OR IGNORE INTO leads
-                            (id, tenant_id, fingerprint, text, source_url, platform,
-                             observed_at, assessment, status, note, created_at, updated_at)
-                            SELECT id, tenant_id, fingerprint, text, source_url, platform,
-                                   observed_at, assessment, status, note, created_at, updated_at
-                            FROM leads_legacy_migration"""
-                    )
-                legacy_count = db.execute(
-                    "SELECT COUNT(*) FROM leads_legacy_migration"
-                ).fetchone()[0]
-                migrated_count = db.execute(
-                    "SELECT COUNT(*) FROM leads"
-                ).fetchone()[0]
-                missing_rows = db.execute(
-                    """SELECT COUNT(*)
-                       FROM leads_legacy_migration legacy
-                       LEFT JOIN leads migrated
-                         ON migrated.id=legacy.id
-                        AND migrated.fingerprint=legacy.fingerprint
-                       WHERE migrated.id IS NULL"""
-                ).fetchone()[0]
-                foreign_key_errors = db.execute(
-                    "PRAGMA foreign_key_check(leads)"
-                ).fetchall()
-                if (
-                    migrated_count != legacy_count
-                    or missing_rows
-                    or foreign_key_errors
-                ):
-                    raise RuntimeError(
-                        "lead migration verification failed; legacy data was retained"
-                    )
-                # Drop the old table only after count, identity, and FK checks pass.
-                db.execute("DROP TABLE leads_legacy_migration")
+                    if tenant_expression == "?":
+                        db.execute(
+                            """INSERT OR IGNORE INTO leads
+                                (id, tenant_id, fingerprint, text, source_url, platform,
+                                 observed_at, assessment, status, note, created_at, updated_at)
+                                SELECT id, ?, fingerprint, text, source_url, platform,
+                                       observed_at, assessment, status, note, created_at, updated_at
+                                FROM leads_legacy_migration""",
+                            (DEFAULT_TENANT_ID,),
+                        )
+                    else:
+                        db.execute(
+                            """INSERT OR IGNORE INTO leads
+                                (id, tenant_id, fingerprint, text, source_url, platform,
+                                 observed_at, assessment, status, note, created_at, updated_at)
+                                SELECT id, tenant_id, fingerprint, text, source_url, platform,
+                                       observed_at, assessment, status, note, created_at, updated_at
+                                FROM leads_legacy_migration"""
+                        )
+                    legacy_count = db.execute(
+                        "SELECT COUNT(*) FROM leads_legacy_migration"
+                    ).fetchone()[0]
+                    migrated_count = db.execute(
+                        "SELECT COUNT(*) FROM leads"
+                    ).fetchone()[0]
+                    missing_rows = db.execute(
+                        """SELECT COUNT(*)
+                           FROM leads_legacy_migration legacy
+                           LEFT JOIN leads migrated
+                             ON migrated.id=legacy.id
+                            AND migrated.fingerprint=legacy.fingerprint
+                           WHERE migrated.id IS NULL"""
+                    ).fetchone()[0]
+                    foreign_key_errors = db.execute(
+                        "PRAGMA foreign_key_check(leads)"
+                    ).fetchall()
+                    if (
+                        migrated_count != legacy_count
+                        or missing_rows
+                        or foreign_key_errors
+                    ):
+                        raise RuntimeError(
+                            "lead migration verification failed; legacy data was retained"
+                        )
+                    # Drop the old table only after count, identity, and FK checks pass.
+                    db.execute("DROP TABLE leads_legacy_migration")
+            else:
+                self._create_leads_table(db)
         else:
             self._create_leads_table(db)
 
@@ -304,6 +544,43 @@ class LeadStore:
         db.execute(
             "CREATE INDEX IF NOT EXISTS memberships_user_active_idx "
             "ON tenant_memberships(user_id, active, tenant_id)"
+        )
+
+        db.execute(
+            """CREATE TABLE IF NOT EXISTS product_profiles (
+                id TEXT PRIMARY KEY,
+                tenant_id TEXT NOT NULL REFERENCES tenants(id),
+                normalized_name TEXT NOT NULL,
+                name TEXT NOT NULL,
+                profile_json TEXT NOT NULL,
+                created_at TEXT NOT NULL,
+                updated_at TEXT NOT NULL,
+                UNIQUE (id, tenant_id),
+                UNIQUE (tenant_id, normalized_name)
+            )"""
+        )
+        db.execute(
+            """CREATE TABLE IF NOT EXISTS discovery_runs (
+                id TEXT PRIMARY KEY,
+                tenant_id TEXT NOT NULL,
+                profile_id TEXT NOT NULL,
+                answer TEXT NOT NULL,
+                kind TEXT NOT NULL,
+                search_queries_json TEXT NOT NULL,
+                search_report_json TEXT NOT NULL,
+                sources_json TEXT NOT NULL,
+                created_at TEXT NOT NULL,
+                FOREIGN KEY (profile_id, tenant_id)
+                    REFERENCES product_profiles(id, tenant_id)
+            )"""
+        )
+        db.execute(
+            "CREATE INDEX IF NOT EXISTS product_profiles_tenant_updated_idx "
+            "ON product_profiles(tenant_id, updated_at DESC)"
+        )
+        db.execute(
+            "CREATE INDEX IF NOT EXISTS discovery_runs_tenant_created_idx "
+            "ON discovery_runs(tenant_id, created_at DESC)"
         )
 
     @staticmethod
@@ -637,6 +914,43 @@ class LeadStore:
         ).hexdigest()[:24]
         timestamp = observed_at or now_utc()
         assessment = analyze(text, product_terms=product_terms, location_terms=location_terms)
+        domain_observed_at = timestamp
+        try:
+            parsed_observed_at = datetime.fromisoformat(str(timestamp))
+            if parsed_observed_at.tzinfo is None:
+                domain_observed_at = None
+        except (TypeError, ValueError):
+            domain_observed_at = None
+        evidence = DemandEvidence(
+            source_id=lead_id,
+            source_url=url,
+            excerpt=text.strip()[:2_000],
+            content_basis=EvidenceBasis.USER_PROVIDED,
+            observed_at=domain_observed_at,
+            page_read=False,
+        )
+        domain_signal = DemandSignal(
+            signal_id=lead_id,
+            signal_type=DemandSignalType(assessment["signal_type"]),
+            evidence=evidence,
+            product_fit=ProductFit.UNASSESSED,
+            identity_status=IdentityStatus.UNKNOWN,
+            classification_reason=assessment["summary"],
+        )
+        qualification = LeadQualification(
+            signal_id=lead_id,
+            product_fit=ProductFit.UNASSESSED,
+            source_quality=SourceQuality.UNKNOWN,
+            freshness=FreshnessStatus.UNKNOWN,
+            identity_status=IdentityStatus.UNKNOWN,
+            contactability=ContactabilityStatus.NOT_ASSESSED,
+            missing_information=(
+                "product_fit", "source_quality", "freshness",
+                "identity", "contactability",
+            ),
+        )
+        assessment["domain_signal"] = domain_signal.to_dict()
+        assessment["qualification"] = qualification.to_dict()
         now = now_utc()
         with self.connect() as db:
             active_tenant = db.execute(
@@ -677,13 +991,15 @@ class LeadStore:
     ):
         tenant = self._tenant(tenant_id)
         limit = max(1, min(int(limit), 500))
+        query = "SELECT * FROM leads WHERE tenant_id=?"
+        params: list[object] = [tenant]
+        if status is not None:
+            query += " AND status=?"
+            params.append(status)
+        query += " ORDER BY created_at DESC LIMIT ?"
+        params.append(limit)
         with self.connect() as db:
-            rows = db.execute(
-                """SELECT * FROM leads
-                   WHERE tenant_id=? AND (? IS NULL OR status=?)
-                   ORDER BY created_at DESC LIMIT ?""",
-                (tenant, status, status, limit),
-            ).fetchall()
+            rows = db.execute(query, tuple(params)).fetchall()
         return [self.to_dict(row) for row in rows]
 
     def update_status(
@@ -706,6 +1022,313 @@ class LeadStore:
                 (lead_id, tenant),
             ).fetchone()
         return self.to_dict(row) if row else None
+
+    @staticmethod
+    def _product_profile_row(row):
+        if row is None:
+            return None
+        return {
+            "id": row["id"],
+            "name": row["name"],
+            "profile": json.loads(row["profile_json"]),
+            "created_at": row["created_at"],
+            "updated_at": row["updated_at"],
+        }
+
+    def save_product_profile(self, profile: dict, *, tenant_id: str):
+        if not isinstance(profile, dict):
+            raise TypeError("profile must be an object")
+        product = profile.get("product")
+        if not isinstance(product, dict):
+            raise TypeError("product profile is required")
+        name = str(product.get("name") or "").strip()
+        if not name or len(name) > 240:
+            raise ValueError("product name is required and must be at most 240 characters")
+        normalized_name = normalize(name)
+        if not normalized_name:
+            raise ValueError("product name is invalid")
+        encoded = json.dumps(profile, ensure_ascii=False, separators=(",", ":"))
+        if len(encoded) > 30000:
+            raise ValueError("product profile is too large")
+        tenant = self._tenant(tenant_id)
+        now = now_utc()
+        profile_id = "profile_" + uuid.uuid4().hex
+        with self.connect() as db:
+            active_tenant = db.execute(
+                "SELECT 1 FROM tenants WHERE id=? AND active=1", (tenant,)
+            ).fetchone()
+            if not active_tenant:
+                raise ValueError("active tenant is required")
+            db.execute(
+                """INSERT INTO product_profiles
+                   (id, tenant_id, normalized_name, name, profile_json, created_at, updated_at)
+                   VALUES (?, ?, ?, ?, ?, ?, ?)
+                   ON CONFLICT(tenant_id, normalized_name)
+                   DO UPDATE SET name=excluded.name,
+                                 profile_json=excluded.profile_json,
+                                 updated_at=excluded.updated_at""",
+                (profile_id, tenant, normalized_name, name, encoded, now, now),
+            )
+            row = db.execute(
+                """SELECT id, name, profile_json, created_at, updated_at
+                   FROM product_profiles
+                   WHERE tenant_id=? AND normalized_name=?""",
+                (tenant, normalized_name),
+            ).fetchone()
+        return self._product_profile_row(row)
+
+    def list_product_profiles(self, *, tenant_id: str):
+        tenant = self._tenant(tenant_id)
+        with self.connect() as db:
+            rows = db.execute(
+                """SELECT id, name, profile_json, created_at, updated_at
+                   FROM product_profiles WHERE tenant_id=?
+                   ORDER BY updated_at DESC, id LIMIT 100""",
+                (tenant,),
+            ).fetchall()
+        return [self._product_profile_row(row) for row in rows]
+
+    def get_product_profile(self, profile_id: str, *, tenant_id: str):
+        if not isinstance(profile_id, str) or not profile_id.strip():
+            return None
+        tenant = self._tenant(tenant_id)
+        with self.connect() as db:
+            row = db.execute(
+                """SELECT id, name, profile_json, created_at, updated_at
+                   FROM product_profiles WHERE id=? AND tenant_id=?""",
+                (profile_id.strip(), tenant),
+            ).fetchone()
+        return self._product_profile_row(row)
+
+    @staticmethod
+    def _safe_discovery_source(source: dict):
+        from urllib.parse import urlparse
+
+        title = str(source.get("title") or "")[:300].strip()
+        snippet = str(source.get("snippet") or "")[:1600].strip()
+        source_url = validate_url(source.get("url", ""))
+        parsed = urlparse(source_url)
+        hostname = (parsed.hostname or "").lower().rstrip(".")
+        if hostname == "localhost" or hostname.endswith((".localhost", ".local")):
+            raise ValueError("discovery source URL is not public")
+        try:
+            address = ipaddress.ip_address(hostname)
+        except ValueError:
+            address = None
+        if address is not None and not address.is_global:
+            raise ValueError("discovery source URL is not public")
+        evidence = source.get("lead_intent_evidence")
+        safe_evidence = None
+        if isinstance(evidence, dict):
+            safe_evidence = {
+                "phrase": str(evidence.get("phrase") or "")[:500],
+                "basis": str(evidence.get("basis") or "")[:40],
+                "signal_type": str(evidence.get("signal_type") or "")[:80],
+                "product_fit": str(evidence.get("product_fit") or "unassessed")[:40],
+            }
+        providers = source.get("providers")
+        queries = source.get("queries")
+        return {
+            "title": title,
+            "url": source_url,
+            "snippet": snippet,
+            "platform": str(source.get("platform") or "web")[:80],
+            "domain": str(source.get("domain") or "")[:253],
+            "published_at": (
+                str(source.get("published_at"))[:120]
+                if source.get("published_at") is not None else None
+            ),
+            "page_fetched": source.get("page_fetched") is True,
+            "readable_page_text_available": source.get("readable_page_text_available") is True,
+            "providers": [
+                str(value)[:80] for value in providers[:8] if isinstance(value, str)
+            ] if isinstance(providers, list) else [],
+            "queries": [
+                str(value)[:500] for value in queries[:8] if isinstance(value, str)
+            ] if isinstance(queries, list) else [],
+            "lead_qualification": (
+                "public_demand_signal"
+                if source.get("lead_qualification") == "public_demand_signal"
+                else "related_result_not_lead"
+            ),
+            "lead_intent_evidence": safe_evidence,
+        }
+
+    def save_discovery_run(self, profile_id: str, run: dict, *, tenant_id: str):
+        if not isinstance(run, dict):
+            raise TypeError("discovery run must be an object")
+        tenant = self._tenant(tenant_id)
+        profile = self.get_product_profile(profile_id, tenant_id=tenant)
+        if profile is None:
+            return None
+        raw_sources = run.get("sources")
+        raw_sources = raw_sources if isinstance(raw_sources, list) else []
+        sources = [
+            self._safe_discovery_source(item)
+            for item in raw_sources[:30] if isinstance(item, dict)
+        ]
+        raw_queries = run.get("search_queries")
+        if not isinstance(raw_queries, list):
+            raw_queries = []
+        queries = [str(item)[:500] for item in raw_queries[:8] if isinstance(item, str)]
+        raw_report = run.get("search_report")
+        raw_report = raw_report if isinstance(raw_report, dict) else {}
+        lead_report = raw_report.get("lead_generation")
+        report = {
+            "lead_generation": lead_report if isinstance(lead_report, dict) else {},
+            "pipeline_completion_status": str(
+                raw_report.get("pipeline_completion_status")
+                or run.get("pipeline_completion_status")
+                or "unknown"
+            )[:80],
+            "search_outcome": str(raw_report.get("search_outcome") or "unknown")[:80],
+            "search_attempted": raw_report.get("search_attempted"),
+            "used_web_search": run.get("used_web_search") is True,
+            "used_social_search": run.get("used_social_search") is True,
+        }
+        report_json = json.dumps(report, ensure_ascii=False, separators=(",", ":"))
+        queries_json = json.dumps(queries, ensure_ascii=False, separators=(",", ":"))
+        sources_json = json.dumps(sources, ensure_ascii=False, separators=(",", ":"))
+        if sum(map(len, (report_json, queries_json, sources_json))) > 120000:
+            raise ValueError("discovery result exceeds the storage limit")
+        run_id = "discovery_" + uuid.uuid4().hex
+        now = now_utc()
+        answer = str(run.get("answer") or "")[:5000]
+        kind = str(run.get("kind") or "lead_discovery")[:100]
+        with self.connect() as db:
+            db.execute(
+                """INSERT INTO discovery_runs
+                   (id, tenant_id, profile_id, answer, kind, search_queries_json,
+                    search_report_json, sources_json, created_at)
+                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                (
+                    run_id, tenant, profile_id, answer, kind, queries_json,
+                    report_json, sources_json, now,
+                ),
+            )
+            row = db.execute(
+                """SELECT r.id, r.tenant_id, r.profile_id, p.name AS profile_name,
+                          r.answer, r.kind, r.search_queries_json, r.search_report_json,
+                          r.sources_json, r.created_at
+                   FROM discovery_runs r
+                   JOIN product_profiles p
+                     ON p.id=r.profile_id AND p.tenant_id=r.tenant_id
+                   WHERE r.id=? AND r.tenant_id=?""",
+                (run_id, tenant),
+            ).fetchone()
+        return self._discovery_run_row(row)
+
+    @staticmethod
+    def _discovery_run_row(row):
+        if row is None:
+            return None
+        item = dict(row)
+        item["search_queries"] = json.loads(item.pop("search_queries_json"))
+        item["search_report"] = json.loads(item.pop("search_report_json"))
+        item["sources"] = json.loads(item.pop("sources_json"))
+        return item
+
+    def list_discovery_runs(self, *, tenant_id: str, limit: int = 50):
+        tenant = self._tenant(tenant_id)
+        limit = max(1, min(int(limit), 100))
+        with self.connect() as db:
+            rows = db.execute(
+                """SELECT r.id, r.tenant_id, r.profile_id, p.name AS profile_name,
+                          r.answer, r.kind, r.search_queries_json, r.search_report_json,
+                          r.sources_json, r.created_at
+                   FROM discovery_runs r
+                   JOIN product_profiles p
+                     ON p.id=r.profile_id AND p.tenant_id=r.tenant_id
+                   WHERE r.tenant_id=?
+                   ORDER BY r.created_at DESC, r.id LIMIT ?""",
+                (tenant, limit),
+            ).fetchall()
+        results = []
+        for row in rows:
+            item = self._discovery_run_row(row)
+            results.append({
+                "id": item["id"],
+                "profile_id": item["profile_id"],
+                "profile_name": item["profile_name"],
+                "answer": item["answer"],
+                "kind": item["kind"],
+                "created_at": item["created_at"],
+                "source_count": len(item["sources"]),
+                "qualified_signal_count": sum(
+                    source.get("lead_qualification") == "public_demand_signal"
+                    for source in item["sources"]
+                ),
+                "pipeline_completion_status": item["search_report"].get(
+                    "pipeline_completion_status", "unknown"
+                ),
+            })
+        return results
+
+    def get_discovery_run(self, run_id: str, *, tenant_id: str):
+        if not isinstance(run_id, str) or not run_id.strip():
+            return None
+        tenant = self._tenant(tenant_id)
+        with self.connect() as db:
+            row = db.execute(
+                """SELECT r.id, r.tenant_id, r.profile_id, p.name AS profile_name,
+                          r.answer, r.kind, r.search_queries_json, r.search_report_json,
+                          r.sources_json, r.created_at
+                   FROM discovery_runs r
+                   JOIN product_profiles p
+                     ON p.id=r.profile_id AND p.tenant_id=r.tenant_id
+                   WHERE r.id=? AND r.tenant_id=?""",
+                (run_id.strip(), tenant),
+            ).fetchone()
+        return self._discovery_run_row(row)
+
+    def save_discovery_signal(
+        self, run_id: str, source_index: int, *, tenant_id: str
+    ):
+        if not isinstance(source_index, int) or isinstance(source_index, bool):
+            return None
+        run = self.get_discovery_run(run_id, tenant_id=tenant_id)
+        if run is None or not 0 <= source_index < len(run["sources"]):
+            return None
+        source = run["sources"][source_index]
+        if source.get("lead_qualification") != "public_demand_signal":
+            return None
+        evidence = source.get("lead_intent_evidence")
+        if not isinstance(evidence, dict) or not str(evidence.get("phrase") or "").strip():
+            return None
+        profile = self.get_product_profile(run["profile_id"], tenant_id=tenant_id)
+        if profile is None:
+            return None
+        product = profile["profile"].get("product", {})
+        market = profile["profile"].get("market", {})
+        product_terms = [
+            str(item) for item in [product.get("name"), *(product.get("aliases") or [])]
+            if isinstance(item, str) and item.strip()
+        ]
+        location_terms = [
+            str(item) for item in (market.get("locations") or [])
+            if isinstance(item, str) and item.strip()
+        ]
+        source_text = str(source.get("snippet") or source.get("title") or "").strip()
+        if not source_text:
+            return None
+        note = (
+            "Omarai public demand evidence | "
+            + "phrase=" + str(evidence.get("phrase") or "")[:240]
+            + " | basis=" + str(evidence.get("basis") or "unknown")[:40]
+            + " | signal_type=" + str(evidence.get("signal_type") or "unknown")[:80]
+            + " | profile=" + str(profile.get("name") or "")[:160]
+            + " | run=" + run["id"]
+        )
+        return self.add(
+            source_text[:MAX_TEXT],
+            source["url"],
+            str(source.get("platform") or "web")[:80],
+            observed_at=now_utc(),
+            note=note[:1000],
+            product_terms=product_terms,
+            location_terms=location_terms,
+            tenant_id=tenant_id,
+        )
 
     def import_csv(self, filename: str, *, tenant_id: str | None = None):
         tenant = self._tenant(tenant_id)

@@ -43,6 +43,47 @@ def test_lead_generation_task_separates_demand_signal_from_product_fit():
     assert "product_anchored_stated_need" in strategies
 
 
+def test_lead_generation_query_matrix_preserves_only_buyer_language_queries():
+    # Structured product profiles can arrive without buyer wording in the original prompt.
+    question = "نظام إنذار حريق صناعي في مصر"
+    buyer_queries = [
+        '"مطلوب شراء" "نظام إنذار حريق صناعي" مصر',
+        '"طلب عرض سعر" "نظام إنذار حريق صناعي" مصر',
+        '"looking to buy" "industrial fire alarm system" Egypt',
+    ]
+    spec = build_task_spec(
+        question,
+        mode="deep",
+        intent_route="LEAD_GENERATION",
+    )
+
+    rows = build_query_strategy_matrix(question, spec, buyer_queries, limit=8)
+
+    assert spec["task_family"] == "lead_generation"
+    assert [row["query"] for row in rows] == buyer_queries
+    assert all(row["strategy"] == "buyer_intent" for row in rows)
+    assert all(row["rationale"] for row in rows)
+    assert not any(
+        marker in row["query"].casefold()
+        for row in rows
+        for marker in ("risk", "risks", "report", "reports", "مخاطر", "تقارير")
+    )
+
+
+def test_discovery_strategy_has_no_hardcoded_property_only_query_angles():
+    question = "ابحث عن شقق للبيع في العاصمة الإدارية"
+    spec = build_task_spec(question, mode="deep", intent_route="WEB_DEEP")
+
+    rows = build_query_strategy_matrix(question, spec, [question], limit=8)
+    queries = [row["query"] for row in rows]
+
+    assert not any(
+        marker in query
+        for query in queries
+        for marker in ("إعلانات عقارية", "متوسط أسعار السوق للمتر", "أسعار البيع الفعلية")
+    )
+
+
 def test_task_spec_preserves_only_explicit_constraints():
     spec = build_task_spec(
         "قارن نيسان صني 2022 مع BYD Dolphin في مصر، بميزانية أقل من 400 ألف جنيه",
@@ -405,3 +446,94 @@ def test_reasoning_ids_are_allowlisted_and_decision_matrix_is_code_owned():
     ]
     assert not any(row.get("stage") == "exfiltrate" for row in safe["decision_matrix"])
     assert "reasoning_guidance" not in safe
+
+
+def test_task_spec_merges_inherited_location_and_budget_slots_into_constraints():
+    question = "مراكز صيانة لابتوب اليوم"
+    context = {
+        "resolved_question": "مراكز صيانة لابتوب اليوم في الإسكندرية بميزانية أقل من 20000 جنيه",
+        "topic": "مراكز صيانة لابتوب",
+        "entities": ["لابتوب"],
+        "slots": {
+            "location": "الإسكندرية",
+            "budget": "أقل من 20000 جنيه",
+        },
+        "changed_slots": ["location", "budget"],
+        "is_follow_up": True,
+        "topic_shift": False,
+        "needs_clarification": False,
+    }
+
+    spec = build_task_spec(
+        question,
+        mode="latest",
+        intent_route="WEB_SIMPLE",
+        dialogue_context=context,
+    )
+
+    assert "الإسكندرية" in spec["constraints"]["explicit_locations"]
+    assert "أقل من 20000 جنيه" in spec["constraints"]["explicit_budgets"]
+
+    rows = build_query_strategy_matrix(
+        question,
+        spec,
+        [spec["context_resolution"]["resolved_question"]],
+        limit=8,
+    )
+    assert any("الإسكندرية" in row["query"] for row in rows)
+
+
+def test_task_spec_does_not_inherit_location_or_budget_from_topic_shift():
+    question = "مواصفات لاب توب ديل"
+    context = {
+        "resolved_question": question,
+        "topic": "",
+        "entities": [],
+        "slots": {
+            "location": "الإسكندرية",
+            "budget": "أقل من 20000 جنيه",
+        },
+        "changed_slots": [],
+        "is_follow_up": False,
+        "topic_shift": True,
+        "needs_clarification": False,
+    }
+
+    spec = build_task_spec(
+        question,
+        mode="auto",
+        intent_route="WEB_SIMPLE",
+        dialogue_context=context,
+    )
+
+    assert "الإسكندرية" not in spec["constraints"]["explicit_locations"]
+    assert "أقل من 20000 جنيه" not in spec["constraints"]["explicit_budgets"]
+
+
+def test_query_strategy_matrix_applies_inherited_location_and_budget_to_all_candidates():
+    question = "رشح لي أفضل لابتوب للعمل"
+    context = {
+        "resolved_question": "رشح لي أفضل لابتوب للعمل في الإسكندرية بميزانية أقل من 20000 جنيه",
+        "topic": "لابتوب للعمل",
+        "entities": ["لابتوب"],
+        "slots": {
+            "location": "الإسكندرية",
+            "budget": "أقل من 20000 جنيه",
+        },
+        "changed_slots": [],
+        "is_follow_up": True,
+        "topic_shift": False,
+        "needs_clarification": False,
+    }
+    spec = build_task_spec(
+        question,
+        mode="deep",
+        intent_route="WEB_DEEP",
+        dialogue_context=context,
+    )
+
+    rows = build_query_strategy_matrix(question, spec, [question], limit=8)
+
+    assert len(rows) >= 2
+    assert all("الإسكندرية" in row["query"] for row in rows)
+    assert all("أقل من 20000 جنيه" in row["query"] for row in rows)

@@ -12,6 +12,8 @@ These rules apply to every AI agent, human contributor, code change, test report
 - The charter is a design requirement, not evidence that controls already exist. Inspect the actual code and tests before describing implementation status.
 - Treat `README.md` as a description of the current documented behavior, but verify claims against code and runtime evidence when the task requires it.
 
+- Read `docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md` when making product-scope, roadmap, delivery-status, or release-readiness claims. It is a dated snapshot: re-read the current `main` SHA and open PR/branch state from GitHub before acting; never treat its historical PR states as live.
+
 ## Evidence discipline
 - Label consequential findings **VERIFIED**, **INFERRED**, **PROPOSED**, or **UNKNOWN**.
 - Never invent files, functions, branches, commits, workflows, test results, tool capabilities, deployment status, capacity numbers, or security guarantees.
@@ -74,7 +76,7 @@ A capability is not complete because it appears in a plan, comment, prompt, or d
 
 ## Repository hygiene and documentation ownership
 - Use [`docs/README.md`](docs/README.md) as the navigation map. Before adding a document, search for an existing owner of the same concern; update the canonical file instead of creating a parallel status or checklist.
-- Keep one current source of truth per concern: implementation boundaries in `docs/IMPLEMENTATION_SCOPE.md`; issue/finding IDs in `docs/OMARAI_REMEDIATION_REGISTER_AR.md`; current post-merge evidence in `docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md`; test categories and limitations in `docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md`.
+- Keep one current source of truth per concern: the dated product/delivery snapshot in `docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md` (revalidate against GitHub before use); implementation details and historical boundaries in `docs/IMPLEMENTATION_SCOPE.md`; issue/finding IDs and chronology in `docs/OMARAI_REMEDIATION_REGISTER_AR.md`; historical post-merge evidence in `docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md`; test categories and limitations in `docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md`.
 - Historical audit snapshots belong under `docs/archive/`. Mark their baseline SHA/date and link to current guidance; never silently rewrite old test evidence to look current.
 - Do not keep a second live-status document with a different PR state or baseline SHA. Read current PR/branch state from GitHub; avoid hard-coding the state of an open PR in durable docs.
 - Never hand-edit generated files under `docs/source_index/`, `docs/MASTER_INDEX.md`, `docs/SOURCE_LINES_INDEX.md`, or `docs/INDEX_COVERAGE_AUDIT.md`. Run `python docs/generate_index.py` and `python docs/generate_index.py --check`; inspect the generated diff. For documentation-only or repository-hygiene PRs, do not add index page churn solely because source lines shifted: the test workflow regenerates and verifies indexes in its isolated checkout, and the publisher refreshes committed indexes on `main` after merge. Keep the strict committed-index check on `main`.

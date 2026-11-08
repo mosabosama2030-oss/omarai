@@ -124,18 +124,38 @@ def validate_dialogue_context(
         and item.get("content", "").strip()
         for item in history
     )
-    topic_shift = candidate.get("topic_shift") is True
+    explicit_context_refinement = _has_explicit_context_refinement(current)
+    # A clear correction/refinement ("I meant EUR", "Alexandria only") edits the
+    # current topic/slot; a model topic_shift flag must not discard that relation.
+    topic_shift = candidate.get("topic_shift") is True and not explicit_context_refinement
     model_marked_follow_up = candidate.get("is_follow_up") is True
-    is_follow_up = model_marked_follow_up and has_history and not topic_shift
-
-    # Context is inherited only when the semantic resolver explicitly says this is
-    # a follow-up. A standalone turn must not retain an old entity merely because
-    # the model accidentally emitted a blended resolved_question.
-    rejected_stale_context = (
-        not model_marked_follow_up
-        and resolved.casefold() != current.casefold()
+    # The model flag is insufficient on its own. The current message must contain
+    # a recognizable reference, correction, or constraint refinement before prior
+    # entities and slots are inherited.
+    current_has_context_signal = (
+        might_be_context_dependent(current)
+        or _has_implicit_context_reference(current)
     )
-    reset_context = topic_shift or not has_history or rejected_stale_context
+    context_relation_marked = model_marked_follow_up or explicit_context_refinement
+    is_follow_up = (
+        context_relation_marked
+        and has_history
+        and not topic_shift
+        and current_has_context_signal
+    )
+
+    # Reject model-generated blends when a standalone question is marked as a
+    # follow-up. Preserve the user's current wording and clear inherited metadata.
+    rejected_stale_context = (
+        resolved.casefold() != current.casefold()
+        and (not context_relation_marked or not current_has_context_signal)
+    )
+    reset_context = (
+        topic_shift
+        or not has_history
+        or rejected_stale_context
+        or (context_relation_marked and not current_has_context_signal)
+    )
     if reset_context:
         resolved = current
         is_follow_up = False
@@ -153,7 +173,7 @@ def validate_dialogue_context(
     slots: dict[str, str] = {}
     # Do not carry extracted entities/slots from a rejected or explicitly shifted
     # topic into downstream planning. The current message will be parsed on its own.
-    clear_inherited_metadata = topic_shift or rejected_stale_context or not has_history
+    clear_inherited_metadata = reset_context
     if isinstance(raw_slots, dict) and not clear_inherited_metadata:
         for raw_key, raw_value in list(raw_slots.items())[:MAX_SLOT_VALUES]:
             key = _clean_text(raw_key, 40)
@@ -170,7 +190,7 @@ def validate_dialogue_context(
     resolution_basis = candidate.get("resolution_basis")
     if not isinstance(resolution_basis, str) or resolution_basis not in _ALLOWED_RESOLUTION_BASES:
         resolution_basis = "history_inferred" if is_follow_up else "current_message"
-    if topic_shift:
+    if reset_context:
         resolution_basis = "current_message"
 
     depth = candidate.get("research_depth")
@@ -220,6 +240,47 @@ def validate_dialogue_context(
     }
 
 
+def _has_explicit_context_refinement(question: str) -> bool:
+    """Recognize a correction/refinement that edits an earlier dialogue slot."""
+    current = _clean_text(question, MAX_RESOLVED_QUESTION_CHARS).casefold()
+    if not current or len(current) > 220:
+        return False
+    correction = re.search(
+        r"^(?:(?:لا|مش|مو)\s*[،,]?\s*)?(?:قصدي|اقصد|أقصد|اعني|أعني)\s+\S.{0,100}$"
+        r"|^(?:مش|مو|ليس)\s+[^،,]{1,45}[،,]\s*\S.{0,80}$"
+        r"|^(?:بدل|بدلا\s+من|بدلاً\s+من)\s+\S.{0,80}$",
+        current,
+    )
+    location_refinement = re.search(
+        r"^(?:في|ب|بمحافظة|بمدينة)\s+[\u0600-\u06FFa-z0-9]"
+        r"[\u0600-\u06FFa-z0-9\s'-]{1,48}\s+(?:بس|فقط|حصرا)$"
+        r"|^(?:only\s+in|just\s+in|in)\s+[a-z][a-z\s'-]{1,45}"
+        r"(?:\s+(?:only|just))?$",
+        current,
+    )
+    return bool(correction or location_refinement)
+
+
+def _has_implicit_context_reference(question: str) -> bool:
+    """Recognize situation-dependent phrasing reserved for semantic context review."""
+    current = _clean_text(question, MAX_RESOLVED_QUESTION_CHARS).casefold()
+    if not current or len(current) > 220:
+        return False
+    return bool(
+        re.search(r"^(?:في|على)\s+(?:وضعي|حالتي|ظروفي|ظروفى)\b", current)
+        or re.search(
+            r"^(?:بناء على|بناءً على|حسب)\s+(?:ما|اللي|كلام)\s+"
+            r"(?:قلت|ذكرته|وضحته|شرحته)",
+            current,
+        )
+        or re.search(
+            r"^(?:in my case|given my situation|based on my situation|"
+            r"with my constraints|based on what i (?:said|shared))\b",
+            current,
+        )
+    )
+
+
 def might_be_context_dependent(question: str) -> bool:
     """Cheap trigger only; it does not decide the meaning of a contextual message."""
     current = _clean_text(question, MAX_RESOLVED_QUESTION_CHARS).casefold()
@@ -256,4 +317,4 @@ def might_be_context_dependent(question: str) -> bool:
         r"[\u0600-\u06FF]{0,18}(?:ه|ها|هم|هما|هن|ك|كم|كن)\b",
         current,
     )
-    return bool(lead_in or reference or fragment or attached_reference)
+    return bool(lead_in or reference or fragment or attached_reference or _has_explicit_context_refinement(current))

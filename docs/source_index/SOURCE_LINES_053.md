@@ -4,860 +4,860 @@
 
 - الصفحة: **053**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AC9D8384E8-L000316 إلى SRC-F725E90B2A-L000034
+- النطاق: SRC-4405E7912C-L000353 إلى SRC-C353AAAC10-L000114
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
 
-### FILE-AC9D8384E8 — [tests/test_semantic_claim_verifier.py](../../tests/test_semantic_claim_verifier.py#L1)
+### FILE-4405E7912C — [tests/test_multitenant_api.py](../../tests/test_multitenant_api.py#L1)
 
 - النوع: **Python**
 - نطاق الفهرسة: جرد الملف + AST Python
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-AC9D8384E8-L000316](../../tests/test_semantic_claim_verifier.py#L316) | 316 | `""` | — |
-| [SRC-AC9D8384E8-L000317](../../tests/test_semantic_claim_verifier.py#L317) | 317 | `"    assert request[\"status\"] == \"not_verifiable\""` | — |
-| [SRC-AC9D8384E8-L000318](../../tests/test_semantic_claim_verifier.py#L318) | 318 | `"    assert request[\"reason\"] == \"invalid_source_manifest\""` | — |
-| [SRC-AC9D8384E8-L000319](../../tests/test_semantic_claim_verifier.py#L319) | 319 | `""` | — |
-| [SRC-AC9D8384E8-L000320](../../tests/test_semantic_claim_verifier.py#L320) | 320 | `""` | — |
-| [SRC-AC9D8384E8-L000321](../../tests/test_semantic_claim_verifier.py#L321) | 321 | `"def test_model_cannot_reclassify_an_uncited_factual_sentence_as_non_factual():"` | — |
-| [SRC-AC9D8384E8-L000322](../../tests/test_semantic_claim_verifier.py#L322) | 322 | `"    request = prepared(answer=\"The capital of Egypt is Cairo.\")"` | — |
-| [SRC-AC9D8384E8-L000323](../../tests/test_semantic_claim_verifier.py#L323) | 323 | `"    result = parse_semantic_verification_response("` | — |
-| [SRC-AC9D8384E8-L000324](../../tests/test_semantic_claim_verifier.py#L324) | 324 | `"        response([row(assessment=\"non_factual\", supporting=[], contradicting=[])]),"` | — |
-| [SRC-AC9D8384E8-L000325](../../tests/test_semantic_claim_verifier.py#L325) | 325 | `"        request,"` | — |
-| [SRC-AC9D8384E8-L000326](../../tests/test_semantic_claim_verifier.py#L326) | 326 | `"    )"` | — |
-| [SRC-AC9D8384E8-L000327](../../tests/test_semantic_claim_verifier.py#L327) | 327 | `""` | — |
-| [SRC-AC9D8384E8-L000328](../../tests/test_semantic_claim_verifier.py#L328) | 328 | `"    assert result[\"status\"] == \"not_verifiable\""` | — |
-| [SRC-AC9D8384E8-L000329](../../tests/test_semantic_claim_verifier.py#L329) | 329 | `"    assert result[\"reason\"] == \"non_factual_label_not_deterministically_safe\""` | — |
-| [SRC-AC9D8384E8-L000330](../../tests/test_semantic_claim_verifier.py#L330) | 330 | `"    assert result[\"withhold_answer\"] is True"` | — |
-| [SRC-AC9D8384E8-L000331](../../tests/test_semantic_claim_verifier.py#L331) | 331 | `""` | — |
+| [SRC-4405E7912C-L000353](../../tests/test_multitenant_api.py#L353) | 353 | `"    status, result = request_json("` | — |
+| [SRC-4405E7912C-L000354](../../tests/test_multitenant_api.py#L354) | 354 | `"        base,"` | — |
+| [SRC-4405E7912C-L000355](../../tests/test_multitenant_api.py#L355) | 355 | `"        \"/api/agent\","` | — |
+| [SRC-4405E7912C-L000356](../../tests/test_multitenant_api.py#L356) | 356 | `"        method=\"POST\","` | — |
+| [SRC-4405E7912C-L000357](../../tests/test_multitenant_api.py#L357) | 357 | `"        token=token,"` | — |
+| [SRC-4405E7912C-L000358](../../tests/test_multitenant_api.py#L358) | 358 | `"        payload={"` | — |
+| [SRC-4405E7912C-L000359](../../tests/test_multitenant_api.py#L359) | 359 | `"            \"question\": \"اختبار ميزانية القبول\","` | — |
+| [SRC-4405E7912C-L000360](../../tests/test_multitenant_api.py#L360) | 360 | `"            \"mode\": \"auto\","` | — |
+| [SRC-4405E7912C-L000361](../../tests/test_multitenant_api.py#L361) | 361 | `"            \"request_profile\": \"hosted_smoke\","` | — |
+| [SRC-4405E7912C-L000362](../../tests/test_multitenant_api.py#L362) | 362 | `"        },"` | — |
+| [SRC-4405E7912C-L000363](../../tests/test_multitenant_api.py#L363) | 363 | `"    )"` | — |
+| [SRC-4405E7912C-L000364](../../tests/test_multitenant_api.py#L364) | 364 | `"    assert status == 200"` | — |
+| [SRC-4405E7912C-L000365](../../tests/test_multitenant_api.py#L365) | 365 | `"    assert result[\"answer\"] == \"test answer\""` | — |
+| [SRC-4405E7912C-L000366](../../tests/test_multitenant_api.py#L366) | 366 | `"    assert observed == {"` | — |
+| [SRC-4405E7912C-L000367](../../tests/test_multitenant_api.py#L367) | 367 | `"        \"question\": \"اختبار ميزانية القبول\","` | — |
+| [SRC-4405E7912C-L000368](../../tests/test_multitenant_api.py#L368) | 368 | `"        \"history\": [],"` | — |
+| [SRC-4405E7912C-L000369](../../tests/test_multitenant_api.py#L369) | 369 | `"        \"mode\": \"auto\","` | — |
+| [SRC-4405E7912C-L000370](../../tests/test_multitenant_api.py#L370) | 370 | `"        \"budget_profile\": \"hosted_smoke\","` | — |
+| [SRC-4405E7912C-L000371](../../tests/test_multitenant_api.py#L371) | 371 | `"    }"` | — |
+| [SRC-4405E7912C-L000372](../../tests/test_multitenant_api.py#L372) | 372 | `""` | — |
+| [SRC-4405E7912C-L000373](../../tests/test_multitenant_api.py#L373) | 373 | `"    status, error = request_json("` | — |
+| [SRC-4405E7912C-L000374](../../tests/test_multitenant_api.py#L374) | 374 | `"        base,"` | — |
+| [SRC-4405E7912C-L000375](../../tests/test_multitenant_api.py#L375) | 375 | `"        \"/api/agent\","` | — |
+| [SRC-4405E7912C-L000376](../../tests/test_multitenant_api.py#L376) | 376 | `"        method=\"POST\","` | — |
+| [SRC-4405E7912C-L000377](../../tests/test_multitenant_api.py#L377) | 377 | `"        token=token,"` | — |
+| [SRC-4405E7912C-L000378](../../tests/test_multitenant_api.py#L378) | 378 | `"        payload={\"question\": \"اختبار ملف غير مسموح\", \"request_profile\": \"unbounded\"},"` | — |
+| [SRC-4405E7912C-L000379](../../tests/test_multitenant_api.py#L379) | 379 | `"    )"` | — |
+| [SRC-4405E7912C-L000380](../../tests/test_multitenant_api.py#L380) | 380 | `"    assert status == 400"` | — |
+| [SRC-4405E7912C-L000381](../../tests/test_multitenant_api.py#L381) | 381 | `"    assert \"request_profile\" in error[\"error\"]"` | — |
+| [SRC-4405E7912C-L000382](../../tests/test_multitenant_api.py#L382) | 382 | `"    assert observed[\"budget_profile\"] == \"hosted_smoke\""` | — |
+| [SRC-4405E7912C-L000383](../../tests/test_multitenant_api.py#L383) | 383 | `""` | — |
+| [SRC-4405E7912C-L000384](../../tests/test_multitenant_api.py#L384) | 384 | `"    status, result = request_json("` | — |
+| [SRC-4405E7912C-L000385](../../tests/test_multitenant_api.py#L385) | 385 | `"        base,"` | — |
+| [SRC-4405E7912C-L000386](../../tests/test_multitenant_api.py#L386) | 386 | `"        \"/api/agent\","` | — |
+| [SRC-4405E7912C-L000387](../../tests/test_multitenant_api.py#L387) | 387 | `"        method=\"POST\","` | — |
+| [SRC-4405E7912C-L000388](../../tests/test_multitenant_api.py#L388) | 388 | `"        token=token,"` | — |
+| [SRC-4405E7912C-L000389](../../tests/test_multitenant_api.py#L389) | 389 | `"        payload={\"question\": \"اختبار التوافق مع الملف الافتراضي\"},"` | — |
+| [SRC-4405E7912C-L000390](../../tests/test_multitenant_api.py#L390) | 390 | `"    )"` | — |
+| [SRC-4405E7912C-L000391](../../tests/test_multitenant_api.py#L391) | 391 | `"    assert status == 200"` | — |
+| [SRC-4405E7912C-L000392](../../tests/test_multitenant_api.py#L392) | 392 | `"    assert result[\"answer\"] == \"test answer\""` | — |
+| [SRC-4405E7912C-L000393](../../tests/test_multitenant_api.py#L393) | 393 | `"    assert observed[\"budget_profile\"] == \"default\""` | — |
 ## اختبارات
 
-### FILE-D033B34F41 — [tests/test_source_metadata_audit.py](../../tests/test_source_metadata_audit.py#L1)
+### FILE-44CDA52D01 — [tests/test_omarai.py](../../tests/test_omarai.py#L1)
 
 - النوع: **Python**
 - نطاق الفهرسة: جرد الملف + AST Python
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-D033B34F41-L000001](../../tests/test_source_metadata_audit.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-D033B34F41-L000002](../../tests/test_source_metadata_audit.py#L2) | 2 | `""` | — |
-| [SRC-D033B34F41-L000003](../../tests/test_source_metadata_audit.py#L3) | 3 | `"from agents.answer_validation import audit_answer_integrity"` | — |
-| [SRC-D033B34F41-L000004](../../tests/test_source_metadata_audit.py#L4) | 4 | `""` | — |
-| [SRC-D033B34F41-L000005](../../tests/test_source_metadata_audit.py#L5) | 5 | `""` | — |
-| [SRC-D033B34F41-L000006](../../tests/test_source_metadata_audit.py#L6) | 6 | `"def test_population_question_reports_missing_url_publication_date_period_and_scope():"` | — |
-| [SRC-D033B34F41-L000007](../../tests/test_source_metadata_audit.py#L7) | 7 | `"    result = audit_answer_integrity("` | — |
-| [SRC-D033B34F41-L000008](../../tests/test_source_metadata_audit.py#L8) | 8 | `"        \"ما عدد سكان القاهرة؟\","` | — |
-| [SRC-D033B34F41-L000009](../../tests/test_source_metadata_audit.py#L9) | 9 | `"        \"حسب التقديرات، العدد 9.7 مليون.\","` | — |
-| [SRC-D033B34F41-L000010](../../tests/test_source_metadata_audit.py#L10) | 10 | `"        [{"` | — |
-| [SRC-D033B34F41-L000011](../../tests/test_source_metadata_audit.py#L11) | 11 | `"            \"title\": \"تقديرات سكانية\","` | — |
-| [SRC-D033B34F41-L000012](../../tests/test_source_metadata_audit.py#L12) | 12 | `"            \"snippet\": \"عدد السكان 9.7 مليون\","` | — |
-| [SRC-D033B34F41-L000013](../../tests/test_source_metadata_audit.py#L13) | 13 | `"            \"page_fetched\": False,"` | — |
-| [SRC-D033B34F41-L000014](../../tests/test_source_metadata_audit.py#L14) | 14 | `"        }],"` | — |
-| [SRC-D033B34F41-L000015](../../tests/test_source_metadata_audit.py#L15) | 15 | `"    )"` | — |
-| [SRC-D033B34F41-L000016](../../tests/test_source_metadata_audit.py#L16) | 16 | `""` | — |
-| [SRC-D033B34F41-L000017](../../tests/test_source_metadata_audit.py#L17) | 17 | `"    audit = result[\"source_metadata_audit\"]"` | — |
-| [SRC-D033B34F41-L000018](../../tests/test_source_metadata_audit.py#L18) | 18 | `"    assert audit[\"status\"] == \"metadata_gaps_found\""` | — |
-| [SRC-D033B34F41-L000019](../../tests/test_source_metadata_audit.py#L19) | 19 | `"    assert audit[\"population_claim_context_detected\"] is True"` | — |
-| [SRC-D033B34F41-L000020](../../tests/test_source_metadata_audit.py#L20) | 20 | `"    assert audit[\"sources_missing_or_invalid_url_count\"] == 1"` | — |
-| [SRC-D033B34F41-L000021](../../tests/test_source_metadata_audit.py#L21) | 21 | `"    assert audit[\"sources_missing_publication_date_count\"] == 1"` | — |
-| [SRC-D033B34F41-L000022](../../tests/test_source_metadata_audit.py#L22) | 22 | `"    assert audit[\"sources_missing_data_reference_period_count\"] == 1"` | — |
-| [SRC-D033B34F41-L000023](../../tests/test_source_metadata_audit.py#L23) | 23 | `"    assert audit[\"sources_missing_publication_or_data_date_count\"] == 1"` | — |
-| [SRC-D033B34F41-L000024](../../tests/test_source_metadata_audit.py#L24) | 24 | `"    assert audit[\"sources_missing_geographic_scope_count\"] == 1"` | — |
-| [SRC-D033B34F41-L000025](../../tests/test_source_metadata_audit.py#L25) | 25 | `"    assert audit[\"semantic_verification\"] is False"` | — |
-| [SRC-D033B34F41-L000026](../../tests/test_source_metadata_audit.py#L26) | 26 | `"    assert audit[\"source_entailment_verified\"] is False"` | — |
-| [SRC-D033B34F41-L000027](../../tests/test_source_metadata_audit.py#L27) | 27 | `""` | — |
-| [SRC-D033B34F41-L000028](../../tests/test_source_metadata_audit.py#L28) | 28 | `""` | — |
-| [SRC-D033B34F41-L000029](../../tests/test_source_metadata_audit.py#L29) | 29 | `"def test_population_source_metadata_presence_does_not_claim_truth_verification():"` | — |
-| [SRC-D033B34F41-L000030](../../tests/test_source_metadata_audit.py#L30) | 30 | `"    result = audit_answer_integrity("` | — |
-| [SRC-D033B34F41-L000031](../../tests/test_source_metadata_audit.py#L31) | 31 | `"        \"ما عدد سكان القاهرة؟\","` | — |
-| [SRC-D033B34F41-L000032](../../tests/test_source_metadata_audit.py#L32) | 32 | `"        \"العدد وفق المصدر [المصدر 1].\","` | — |
-| [SRC-D033B34F41-L000033](../../tests/test_source_metadata_audit.py#L33) | 33 | `"        [{"` | — |
-| [SRC-D033B34F41-L000034](../../tests/test_source_metadata_audit.py#L34) | 34 | `"            \"title\": \"Population report\","` | — |
-| [SRC-D033B34F41-L000035](../../tests/test_source_metadata_audit.py#L35) | 35 | `"            \"publisher\": \"Example Statistics Office\","` | — |
-| [SRC-D033B34F41-L000036](../../tests/test_source_metadata_audit.py#L36) | 36 | `"            \"url\": \"https://example.org/population\","` | — |
-| [SRC-D033B34F41-L000037](../../tests/test_source_metadata_audit.py#L37) | 37 | `"            \"published_at\": \"2025-06-01\","` | — |
-| [SRC-D033B34F41-L000038](../../tests/test_source_metadata_audit.py#L38) | 38 | `"            \"data_reference_period\": \"2025 estimate\","` | — |
-| [SRC-D033B34F41-L000039](../../tests/test_source_metadata_audit.py#L39) | 39 | `"            \"geographic_scope\": \"Cairo Governorate administrative boundary\","` | — |
-| [SRC-D033B34F41-L000040](../../tests/test_source_metadata_audit.py#L40) | 40 | `"            \"snippet\": \"Population estimate for Cairo Governorate.\","` | — |
-| [SRC-D033B34F41-L000041](../../tests/test_source_metadata_audit.py#L41) | 41 | `"            \"page_fetched\": False,"` | — |
-| [SRC-D033B34F41-L000042](../../tests/test_source_metadata_audit.py#L42) | 42 | `"        }],"` | — |
-| [SRC-D033B34F41-L000043](../../tests/test_source_metadata_audit.py#L43) | 43 | `"    )"` | — |
-| [SRC-D033B34F41-L000044](../../tests/test_source_metadata_audit.py#L44) | 44 | `""` | — |
-| [SRC-D033B34F41-L000045](../../tests/test_source_metadata_audit.py#L45) | 45 | `"    audit = result[\"source_metadata_audit\"]"` | — |
-| [SRC-D033B34F41-L000046](../../tests/test_source_metadata_audit.py#L46) | 46 | `"    assert audit[\"status\"] == \"minimum_metadata_present\""` | — |
-| [SRC-D033B34F41-L000047](../../tests/test_source_metadata_audit.py#L47) | 47 | `"    assert audit[\"sources_missing_or_invalid_url_count\"] == 0"` | — |
-| [SRC-D033B34F41-L000048](../../tests/test_source_metadata_audit.py#L48) | 48 | `"    assert audit[\"sources_missing_publisher_identity_count\"] == 0"` | — |
-| [SRC-D033B34F41-L000049](../../tests/test_source_metadata_audit.py#L49) | 49 | `"    assert audit[\"sources_missing_publication_date_count\"] == 0"` | — |
-| [SRC-D033B34F41-L000050](../../tests/test_source_metadata_audit.py#L50) | 50 | `"    assert audit[\"sources_missing_data_reference_period_count\"] == 0"` | — |
-| [SRC-D033B34F41-L000051](../../tests/test_source_metadata_audit.py#L51) | 51 | `"    assert audit[\"sources_missing_publication_or_data_date_count\"] == 0"` | — |
-| [SRC-D033B34F41-L000052](../../tests/test_source_metadata_audit.py#L52) | 52 | `"    assert audit[\"sources_missing_geographic_scope_count\"] == 0"` | — |
-| [SRC-D033B34F41-L000053](../../tests/test_source_metadata_audit.py#L53) | 53 | `"    assert audit[\"semantic_verification\"] is False"` | — |
-| [SRC-D033B34F41-L000054](../../tests/test_source_metadata_audit.py#L54) | 54 | `"    assert audit[\"source_entailment_verified\"] is False"` | — |
-| [SRC-D033B34F41-L000055](../../tests/test_source_metadata_audit.py#L55) | 55 | `""` | — |
-| [SRC-D033B34F41-L000056](../../tests/test_source_metadata_audit.py#L56) | 56 | `""` | — |
-| [SRC-D033B34F41-L000057](../../tests/test_source_metadata_audit.py#L57) | 57 | `"def test_zero_sources_are_not_reported_as_metadata_complete():"` | — |
-| [SRC-D033B34F41-L000058](../../tests/test_source_metadata_audit.py#L58) | 58 | `"    result = audit_answer_integrity("` | — |
-| [SRC-D033B34F41-L000059](../../tests/test_source_metadata_audit.py#L59) | 59 | `"        \"ما عدد سكان القاهرة؟\","` | — |
-| [SRC-D033B34F41-L000060](../../tests/test_source_metadata_audit.py#L60) | 60 | `"        \"لا تتوفر لدي مصادر قابلة للمراجعة.\","` | — |
-| [SRC-D033B34F41-L000061](../../tests/test_source_metadata_audit.py#L61) | 61 | `"        [],"` | — |
-| [SRC-D033B34F41-L000062](../../tests/test_source_metadata_audit.py#L62) | 62 | `"    )"` | — |
-| [SRC-D033B34F41-L000063](../../tests/test_source_metadata_audit.py#L63) | 63 | `""` | — |
-| [SRC-D033B34F41-L000064](../../tests/test_source_metadata_audit.py#L64) | 64 | `"    audit = result[\"source_metadata_audit\"]"` | — |
-| [SRC-D033B34F41-L000065](../../tests/test_source_metadata_audit.py#L65) | 65 | `"    assert audit[\"status\"] == \"no_sources_to_audit\""` | — |
-| [SRC-D033B34F41-L000066](../../tests/test_source_metadata_audit.py#L66) | 66 | `"    assert audit[\"source_count_checked\"] == 0"` | — |
-| [SRC-D033B34F41-L000067](../../tests/test_source_metadata_audit.py#L67) | 67 | `"    assert audit[\"semantic_verification\"] is False"` | — |
-| [SRC-D033B34F41-L000068](../../tests/test_source_metadata_audit.py#L68) | 68 | `"    assert audit[\"source_entailment_verified\"] is False"` | — |
-| [SRC-D033B34F41-L000069](../../tests/test_source_metadata_audit.py#L69) | 69 | `""` | — |
-| [SRC-D033B34F41-L000070](../../tests/test_source_metadata_audit.py#L70) | 70 | `""` | — |
-| [SRC-D033B34F41-L000071](../../tests/test_source_metadata_audit.py#L71) | 71 | `"def test_population_scope_is_required_even_when_answer_uses_only_a_number():"` | — |
-| [SRC-D033B34F41-L000072](../../tests/test_source_metadata_audit.py#L72) | 72 | `"    result = audit_answer_integrity("` | — |
-| [SRC-D033B34F41-L000073](../../tests/test_source_metadata_audit.py#L73) | 73 | `"        \"How many people live in Cairo?\","` | — |
-| [SRC-D033B34F41-L000074](../../tests/test_source_metadata_audit.py#L74) | 74 | `"        \"The estimate is 9.7 million.\","` | — |
-| [SRC-D033B34F41-L000075](../../tests/test_source_metadata_audit.py#L75) | 75 | `"        [{"` | — |
-| [SRC-D033B34F41-L000076](../../tests/test_source_metadata_audit.py#L76) | 76 | `"            \"title\": \"Population estimate\","` | — |
-| [SRC-D033B34F41-L000077](../../tests/test_source_metadata_audit.py#L77) | 77 | `"            \"publisher\": \"Example Statistics Office\","` | — |
-| [SRC-D033B34F41-L000078](../../tests/test_source_metadata_audit.py#L78) | 78 | `"            \"url\": \"https://example.org/cairo\","` | — |
-| [SRC-D033B34F41-L000079](../../tests/test_source_metadata_audit.py#L79) | 79 | `"            \"published_at\": \"2025-06-01\","` | — |
-| [SRC-D033B34F41-L000080](../../tests/test_source_metadata_audit.py#L80) | 80 | `"            \"data_year\": 2025,"` | — |
-| [SRC-D033B34F41-L000081](../../tests/test_source_metadata_audit.py#L81) | 81 | `"            \"snippet\": \"An estimate for Cairo.\","` | — |
-| [SRC-D033B34F41-L000082](../../tests/test_source_metadata_audit.py#L82) | 82 | `"            \"page_fetched\": False,"` | — |
-| [SRC-D033B34F41-L000083](../../tests/test_source_metadata_audit.py#L83) | 83 | `"        }],"` | — |
-| [SRC-D033B34F41-L000084](../../tests/test_source_metadata_audit.py#L84) | 84 | `"    )"` | — |
-| [SRC-D033B34F41-L000085](../../tests/test_source_metadata_audit.py#L85) | 85 | `""` | — |
-| [SRC-D033B34F41-L000086](../../tests/test_source_metadata_audit.py#L86) | 86 | `"    audit = result[\"source_metadata_audit\"]"` | — |
-| [SRC-D033B34F41-L000087](../../tests/test_source_metadata_audit.py#L87) | 87 | `"    assert audit[\"population_claim_context_detected\"] is True"` | — |
-| [SRC-D033B34F41-L000088](../../tests/test_source_metadata_audit.py#L88) | 88 | `"    assert audit[\"sources_missing_geographic_scope_count\"] == 1"` | — |
-| [SRC-D033B34F41-L000089](../../tests/test_source_metadata_audit.py#L89) | 89 | `"    assert \"geographic_scope_for_population_claim\" in audit[\"sources\"][0][\"missing_fields\"]"` | — |
+| [SRC-44CDA52D01-L000001](../../tests/test_omarai.py#L1) | 1 | `"import csv"` | — |
+| [SRC-44CDA52D01-L000002](../../tests/test_omarai.py#L2) | 2 | `""` | — |
+| [SRC-44CDA52D01-L000003](../../tests/test_omarai.py#L3) | 3 | `"import pytest"` | — |
+| [SRC-44CDA52D01-L000004](../../tests/test_omarai.py#L4) | 4 | `""` | — |
+| [SRC-44CDA52D01-L000005](../../tests/test_omarai.py#L5) | 5 | `"from agents.omarai import LeadStore, analyze, normalize"` | — |
+| [SRC-44CDA52D01-L000006](../../tests/test_omarai.py#L6) | 6 | `""` | — |
+| [SRC-44CDA52D01-L000007](../../tests/test_omarai.py#L7) | 7 | `""` | — |
+| [SRC-44CDA52D01-L000008](../../tests/test_omarai.py#L8) | 8 | `"def test_arabic_normalization():"` | — |
+| [SRC-44CDA52D01-L000009](../../tests/test_omarai.py#L9) | 9 | `"    assert normalize(\"إيجارٌ ـ شقة\") == normalize(\"ايجار شقة\")"` | — |
+| [SRC-44CDA52D01-L000010](../../tests/test_omarai.py#L10) | 10 | `""` | — |
+| [SRC-44CDA52D01-L000011](../../tests/test_omarai.py#L11) | 11 | `"def test_high_intent_with_next_step():"` | — |
+| [SRC-44CDA52D01-L000012](../../tests/test_omarai.py#L12) | 12 | `"    result=analyze(\"بدور على شقة وممكن معاينة\")"` | — |
+| [SRC-44CDA52D01-L000013](../../tests/test_omarai.py#L13) | 13 | `"    assert result[\"label\"]==\"high_intent\""` | — |
+| [SRC-44CDA52D01-L000014](../../tests/test_omarai.py#L14) | 14 | `"    assert result[\"score\"]>=55"` | — |
+| [SRC-44CDA52D01-L000015](../../tests/test_omarai.py#L15) | 15 | `""` | — |
+| [SRC-44CDA52D01-L000016](../../tests/test_omarai.py#L16) | 16 | `"def test_non_buyer_override():"` | — |
+| [SRC-44CDA52D01-L000017](../../tests/test_omarai.py#L17) | 17 | `"    result=analyze(\"مش عايز اشتري، عايز ابيع شقة\")"` | — |
+| [SRC-44CDA52D01-L000018](../../tests/test_omarai.py#L18) | 18 | `"    assert result[\"label\"]==\"not_buyer_signal\""` | — |
+| [SRC-44CDA52D01-L000019](../../tests/test_omarai.py#L19) | 19 | `"    assert result[\"score\"]==0"` | — |
+| [SRC-44CDA52D01-L000020](../../tests/test_omarai.py#L20) | 20 | `""` | — |
+| [SRC-44CDA52D01-L000021](../../tests/test_omarai.py#L21) | 21 | `"def test_empty_text_rejected():"` | — |
+| [SRC-44CDA52D01-L000022](../../tests/test_omarai.py#L22) | 22 | `"    with pytest.raises(ValueError):"` | — |
+| [SRC-44CDA52D01-L000023](../../tests/test_omarai.py#L23) | 23 | `"        analyze(\" \")"` | — |
+| [SRC-44CDA52D01-L000024](../../tests/test_omarai.py#L24) | 24 | `""` | — |
+| [SRC-44CDA52D01-L000025](../../tests/test_omarai.py#L25) | 25 | `"def test_url_required_and_validated(tmp_path):"` | — |
+| [SRC-44CDA52D01-L000026](../../tests/test_omarai.py#L26) | 26 | `"    store=LeadStore(tmp_path/\"db.sqlite3\")"` | — |
+| [SRC-44CDA52D01-L000027](../../tests/test_omarai.py#L27) | 27 | `"    with pytest.raises(ValueError):"` | — |
+| [SRC-44CDA52D01-L000028](../../tests/test_omarai.py#L28) | 28 | `"        store.add(\"بدور على شقة\",\"\",\"manual\")"` | — |
+| [SRC-44CDA52D01-L000029](../../tests/test_omarai.py#L29) | 29 | `"    with pytest.raises(ValueError):"` | — |
+| [SRC-44CDA52D01-L000030](../../tests/test_omarai.py#L30) | 30 | `"        store.add(\"بدور على شقة\",\"file:///tmp/private\",\"manual\")"` | — |
+| [SRC-44CDA52D01-L000031](../../tests/test_omarai.py#L31) | 31 | `""` | — |
+| [SRC-44CDA52D01-L000032](../../tests/test_omarai.py#L32) | 32 | `"def test_duplicate_is_idempotent(tmp_path):"` | — |
+| [SRC-44CDA52D01-L000033](../../tests/test_omarai.py#L33) | 33 | `"    store=LeadStore(tmp_path/\"db.sqlite3\")"` | — |
+| [SRC-44CDA52D01-L000034](../../tests/test_omarai.py#L34) | 34 | `"    one,created1=store.add(\"بدور على شقة\",\"https://example.com/post/1\",\"facebook\")"` | — |
+| [SRC-44CDA52D01-L000035](../../tests/test_omarai.py#L35) | 35 | `"    two,created2=store.add(\"بدور على شقة\",\"https://example.com/post/1\",\"facebook\")"` | — |
+| [SRC-44CDA52D01-L000036](../../tests/test_omarai.py#L36) | 36 | `"    assert created1 is True and created2 is False"` | — |
+| [SRC-44CDA52D01-L000037](../../tests/test_omarai.py#L37) | 37 | `"    assert one[\"id\"]==two[\"id\"]"` | — |
+| [SRC-44CDA52D01-L000038](../../tests/test_omarai.py#L38) | 38 | `"    assert len(store.list())==1"` | — |
+| [SRC-44CDA52D01-L000039](../../tests/test_omarai.py#L39) | 39 | `""` | — |
+| [SRC-44CDA52D01-L000040](../../tests/test_omarai.py#L40) | 40 | `"def test_status_updates_are_explicit(tmp_path):"` | — |
+| [SRC-44CDA52D01-L000041](../../tests/test_omarai.py#L41) | 41 | `"    store=LeadStore(tmp_path/\"db.sqlite3\")"` | — |
+| [SRC-44CDA52D01-L000042](../../tests/test_omarai.py#L42) | 42 | `"    lead,_=store.add(\"بدور على شقة\",\"https://example.com/p\",\"manual\")"` | — |
+| [SRC-44CDA52D01-L000043](../../tests/test_omarai.py#L43) | 43 | `"    updated=store.update_status(lead[\"id\"],\"qualified\")"` | — |
+| [SRC-44CDA52D01-L000044](../../tests/test_omarai.py#L44) | 44 | `"    assert updated[\"status\"]==\"qualified\""` | — |
+| [SRC-44CDA52D01-L000045](../../tests/test_omarai.py#L45) | 45 | `"    with pytest.raises(ValueError):"` | — |
+| [SRC-44CDA52D01-L000046](../../tests/test_omarai.py#L46) | 46 | `"        store.update_status(lead[\"id\"],\"magic\")"` | — |
+| [SRC-44CDA52D01-L000047](../../tests/test_omarai.py#L47) | 47 | `""` | — |
+| [SRC-44CDA52D01-L000048](../../tests/test_omarai.py#L48) | 48 | `"def test_csv_requires_columns(tmp_path):"` | — |
+| [SRC-44CDA52D01-L000049](../../tests/test_omarai.py#L49) | 49 | `"    bad=tmp_path/\"bad.csv\""` | — |
+| [SRC-44CDA52D01-L000050](../../tests/test_omarai.py#L50) | 50 | `"    bad.write_text(\"foo,bar\\na,b\\n\",encoding=\"utf-8\")"` | — |
+| [SRC-44CDA52D01-L000051](../../tests/test_omarai.py#L51) | 51 | `"    store=LeadStore(tmp_path/\"db.sqlite3\")"` | — |
+| [SRC-44CDA52D01-L000052](../../tests/test_omarai.py#L52) | 52 | `"    with pytest.raises(ValueError):"` | — |
+| [SRC-44CDA52D01-L000053](../../tests/test_omarai.py#L53) | 53 | `"        store.import_csv(bad)"` | — |
+| [SRC-44CDA52D01-L000054](../../tests/test_omarai.py#L54) | 54 | `""` | — |
+| [SRC-44CDA52D01-L000055](../../tests/test_omarai.py#L55) | 55 | `"def test_csv_export_neutralizes_spreadsheet_formula_injection(tmp_path):"` | — |
+| [SRC-44CDA52D01-L000056](../../tests/test_omarai.py#L56) | 56 | `"    store = LeadStore(tmp_path / \"db.sqlite3\")"` | — |
+| [SRC-44CDA52D01-L000057](../../tests/test_omarai.py#L57) | 57 | `"    store.add("` | — |
+| [SRC-44CDA52D01-L000058](../../tests/test_omarai.py#L58) | 58 | `"        '=HYPERLINK(\"https://evil.example\",\"click\")',"` | — |
+| [SRC-44CDA52D01-L000059](../../tests/test_omarai.py#L59) | 59 | `"        \"https://example.com/post/1\","` | — |
+| [SRC-44CDA52D01-L000060](../../tests/test_omarai.py#L60) | 60 | `"        platform=\"manual\","` | — |
+| [SRC-44CDA52D01-L000061](../../tests/test_omarai.py#L61) | 61 | `"        note=\"  +SUM(1,1)\","` | — |
+| [SRC-44CDA52D01-L000062](../../tests/test_omarai.py#L62) | 62 | `"    )"` | — |
+| [SRC-44CDA52D01-L000063](../../tests/test_omarai.py#L63) | 63 | `"    store.add("` | — |
+| [SRC-44CDA52D01-L000064](../../tests/test_omarai.py#L64) | 64 | `"        \"\\u00a0\\ufeff=1+1\","` | — |
+| [SRC-44CDA52D01-L000065](../../tests/test_omarai.py#L65) | 65 | `"        \"https://example.com/post/2\","` | — |
+| [SRC-44CDA52D01-L000066](../../tests/test_omarai.py#L66) | 66 | `"        platform=\"manual\","` | — |
+| [SRC-44CDA52D01-L000067](../../tests/test_omarai.py#L67) | 67 | `"        note=\"\\u00a0\\ufeff=SUM(1,1)\","` | — |
+| [SRC-44CDA52D01-L000068](../../tests/test_omarai.py#L68) | 68 | `"    )"` | — |
+| [SRC-44CDA52D01-L000069](../../tests/test_omarai.py#L69) | 69 | `"    destination = tmp_path / \"export.csv\""` | — |
+| [SRC-44CDA52D01-L000070](../../tests/test_omarai.py#L70) | 70 | `"    assert store.export_csv(destination) == 2"` | — |
+| [SRC-44CDA52D01-L000071](../../tests/test_omarai.py#L71) | 71 | `"    raw_csv = destination.read_text(encoding=\"utf-8-sig\")"` | — |
+| [SRC-44CDA52D01-L000072](../../tests/test_omarai.py#L72) | 72 | `"    assert '\"\\t=HYPERLINK(' in raw_csv"` | — |
+| [SRC-44CDA52D01-L000073](../../tests/test_omarai.py#L73) | 73 | `"    assert '\"\\t  +SUM' in raw_csv"` | — |
+| [SRC-44CDA52D01-L000074](../../tests/test_omarai.py#L74) | 74 | `""` | — |
+| [SRC-44CDA52D01-L000075](../../tests/test_omarai.py#L75) | 75 | `"    with destination.open(newline=\"\", encoding=\"utf-8-sig\") as stream:"` | — |
+| [SRC-44CDA52D01-L000076](../../tests/test_omarai.py#L76) | 76 | `"        rows = list(csv.DictReader(stream))"` | — |
+| [SRC-44CDA52D01-L000077](../../tests/test_omarai.py#L77) | 77 | `""` | — |
+| [SRC-44CDA52D01-L000078](../../tests/test_omarai.py#L78) | 78 | `"    row1 = next(row for row in rows if row[\"source_url\"] == \"https://example.com/post/1\")"` | — |
+| [SRC-44CDA52D01-L000079](../../tests/test_omarai.py#L79) | 79 | `"    row2 = next(row for row in rows if row[\"source_url\"] == \"https://example.com/post/2\")"` | — |
+| [SRC-44CDA52D01-L000080](../../tests/test_omarai.py#L80) | 80 | `"    assert row1[\"text\"].startswith(\"\\t=\")"` | — |
+| [SRC-44CDA52D01-L000081](../../tests/test_omarai.py#L81) | 81 | `"    assert row1[\"note\"].startswith(\"\\t  +\")"` | — |
+| [SRC-44CDA52D01-L000082](../../tests/test_omarai.py#L82) | 82 | `"    assert row2[\"text\"].startswith(\"\\t\\ufeff=\")"` | — |
+| [SRC-44CDA52D01-L000083](../../tests/test_omarai.py#L83) | 83 | `"    assert row2[\"note\"].startswith(\"\\t\\u00a0\\ufeff=\")"` | — |
+| [SRC-44CDA52D01-L000084](../../tests/test_omarai.py#L84) | 84 | `""` | — |
+| [SRC-44CDA52D01-L000085](../../tests/test_omarai.py#L85) | 85 | `""` | — |
+| [SRC-44CDA52D01-L000086](../../tests/test_omarai.py#L86) | 86 | `""` | — |
+| [SRC-44CDA52D01-L000087](../../tests/test_omarai.py#L87) | 87 | `"def test_generic_fire_alarm_and_supplier_requests_are_sector_neutral():"` | — |
+| [SRC-44CDA52D01-L000088](../../tests/test_omarai.py#L88) | 88 | `"    fire_alarm = analyze(\"نحتاج نظام إنذار حريق للمصنع\")"` | — |
+| [SRC-44CDA52D01-L000089](../../tests/test_omarai.py#L89) | 89 | `"    supplier = analyze(\"نبحث عن مورد لافتات لمشروع جديد\")"` | — |
+| [SRC-44CDA52D01-L000090](../../tests/test_omarai.py#L90) | 90 | `"    assert fire_alarm[\"label\"] == \"high_intent\""` | — |
+| [SRC-44CDA52D01-L000091](../../tests/test_omarai.py#L91) | 91 | `"    assert supplier[\"label\"] == \"high_intent\""` | — |
+| [SRC-44CDA52D01-L000092](../../tests/test_omarai.py#L92) | 92 | `"    assert fire_alarm[\"score\"] >= 55"` | — |
+| [SRC-44CDA52D01-L000093](../../tests/test_omarai.py#L93) | 93 | `"    assert supplier[\"score\"] >= 55"` | — |
+| [SRC-44CDA52D01-L000094](../../tests/test_omarai.py#L94) | 94 | `""` | — |
+| [SRC-44CDA52D01-L000095](../../tests/test_omarai.py#L95) | 95 | `""` | — |
+| [SRC-44CDA52D01-L000096](../../tests/test_omarai.py#L96) | 96 | `"def test_product_mention_alone_does_not_create_a_demand_signal():"` | — |
+| [SRC-44CDA52D01-L000097](../../tests/test_omarai.py#L97) | 97 | `"    result = analyze(\"نظام إنذار حريق\")"` | — |
+| [SRC-44CDA52D01-L000098](../../tests/test_omarai.py#L98) | 98 | `"    assert result[\"label\"] == \"unclear\""` | — |
+| [SRC-44CDA52D01-L000099](../../tests/test_omarai.py#L99) | 99 | `"    assert result[\"score\"] == 0"` | — |
+| [SRC-44CDA52D01-L000100](../../tests/test_omarai.py#L100) | 100 | `""` | — |
+| [SRC-44CDA52D01-L000101](../../tests/test_omarai.py#L101) | 101 | `""` | — |
+| [SRC-44CDA52D01-L000102](../../tests/test_omarai.py#L102) | 102 | `"@pytest.mark.parametrize("` | — |
+| [SRC-44CDA52D01-L000103](../../tests/test_omarai.py#L103) | 103 | `"    \"text\","` | — |
+| [SRC-44CDA52D01-L000104](../../tests/test_omarai.py#L104) | 104 | `"    ["` | — |
+| [SRC-44CDA52D01-L000105](../../tests/test_omarai.py#L105) | 105 | `"        \"مش بدور على شقة\","` | — |
+| [SRC-44CDA52D01-L000106](../../tests/test_omarai.py#L106) | 106 | `"        \"مش محتاج نظام إنذار حريق\","` | — |
+| [SRC-44CDA52D01-L000107](../../tests/test_omarai.py#L107) | 107 | `"        \"لا نحتاج مورد لافتات\","` | — |
+| [SRC-44CDA52D01-L000108](../../tests/test_omarai.py#L108) | 108 | `"        \"not looking for a supplier\","` | — |
+| [SRC-44CDA52D01-L000109](../../tests/test_omarai.py#L109) | 109 | `"        \"we do not need a fire alarm system\","` | — |
+| [SRC-44CDA52D01-L000110](../../tests/test_omarai.py#L110) | 110 | `"    ],"` | — |
+| [SRC-44CDA52D01-L000111](../../tests/test_omarai.py#L111) | 111 | `")"` | — |
+| [SRC-44CDA52D01-L000112](../../tests/test_omarai.py#L112) | 112 | `"def test_explicit_negation_never_scores_as_buyer_intent(text):"` | — |
+| [SRC-44CDA52D01-L000113](../../tests/test_omarai.py#L113) | 113 | `"    result = analyze(text)"` | — |
+| [SRC-44CDA52D01-L000114](../../tests/test_omarai.py#L114) | 114 | `"    assert result[\"label\"] == \"not_buyer_signal\""` | — |
+| [SRC-44CDA52D01-L000115](../../tests/test_omarai.py#L115) | 115 | `"    assert result[\"score\"] == 0"` | — |
+| [SRC-44CDA52D01-L000116](../../tests/test_omarai.py#L116) | 116 | `""` | — |
+| [SRC-44CDA52D01-L000117](../../tests/test_omarai.py#L117) | 117 | `""` | — |
+| [SRC-44CDA52D01-L000118](../../tests/test_omarai.py#L118) | 118 | `"@pytest.mark.parametrize("` | — |
+| [SRC-44CDA52D01-L000119](../../tests/test_omarai.py#L119) | 119 | `"    \"text\","` | — |
+| [SRC-44CDA52D01-L000120](../../tests/test_omarai.py#L120) | 120 | `"    ["` | — |
+| [SRC-44CDA52D01-L000121](../../tests/test_omarai.py#L121) | 121 | `"        \"تم الشراء بالفعل\","` | — |
+| [SRC-44CDA52D01-L000122](../../tests/test_omarai.py#L122) | 122 | `"        \"وجدنا مورد وتم التعاقد\","` | — |
+| [SRC-44CDA52D01-L000123](../../tests/test_omarai.py#L123) | 123 | `"        \"already purchased the equipment\","` | — |
+| [SRC-44CDA52D01-L000124](../../tests/test_omarai.py#L124) | 124 | `"        \"supplier selected\","` | — |
+| [SRC-44CDA52D01-L000125](../../tests/test_omarai.py#L125) | 125 | `"        \"كنت بدور على شقة\","` | — |
+| [SRC-44CDA52D01-L000126](../../tests/test_omarai.py#L126) | 126 | `"    ],"` | — |
+| [SRC-44CDA52D01-L000127](../../tests/test_omarai.py#L127) | 127 | `")"` | — |
+| [SRC-44CDA52D01-L000128](../../tests/test_omarai.py#L128) | 128 | `"def test_completed_or_past_need_is_not_active_demand(text):"` | — |
+| [SRC-44CDA52D01-L000129](../../tests/test_omarai.py#L129) | 129 | `"    result = analyze(text)"` | — |
+| [SRC-44CDA52D01-L000130](../../tests/test_omarai.py#L130) | 130 | `"    assert result[\"label\"] == \"closed_or_stale_signal\""` | — |
+| [SRC-44CDA52D01-L000131](../../tests/test_omarai.py#L131) | 131 | `"    assert result[\"score\"] == 0"` | — |
+| [SRC-44CDA52D01-L000132](../../tests/test_omarai.py#L132) | 132 | `""` | — |
+| [SRC-44CDA52D01-L000133](../../tests/test_omarai.py#L133) | 133 | `""` | — |
+| [SRC-44CDA52D01-L000134](../../tests/test_omarai.py#L134) | 134 | `"def test_product_and_location_context_do_not_inflate_demand_score():"` | — |
+| [SRC-44CDA52D01-L000135](../../tests/test_omarai.py#L135) | 135 | `"    result = analyze("` | — |
+| [SRC-44CDA52D01-L000136](../../tests/test_omarai.py#L136) | 136 | `"        \"نظام إنذار حريق في القاهرة\","` | — |
+| [SRC-44CDA52D01-L000137](../../tests/test_omarai.py#L137) | 137 | `"        product_terms=[\"نظام إنذار حريق\"],"` | — |
+| [SRC-44CDA52D01-L000138](../../tests/test_omarai.py#L138) | 138 | `"        location_terms=[\"القاهرة\"],"` | — |
+| [SRC-44CDA52D01-L000139](../../tests/test_omarai.py#L139) | 139 | `"    )"` | — |
+| [SRC-44CDA52D01-L000140](../../tests/test_omarai.py#L140) | 140 | `"    assert result[\"score\"] == 0"` | — |
+| [SRC-44CDA52D01-L000141](../../tests/test_omarai.py#L141) | 141 | `"    assert result[\"label\"] == \"unclear\""` | — |
+| [SRC-44CDA52D01-L000142](../../tests/test_omarai.py#L142) | 142 | `"    assert {item[\"category\"] for item in result[\"matched_signals\"]} == {"` | — |
+| [SRC-44CDA52D01-L000143](../../tests/test_omarai.py#L143) | 143 | `"        \"product_context\","` | — |
+| [SRC-44CDA52D01-L000144](../../tests/test_omarai.py#L144) | 144 | `"        \"location_context\","` | — |
+| [SRC-44CDA52D01-L000145](../../tests/test_omarai.py#L145) | 145 | `"    }"` | — |
+| [SRC-44CDA52D01-L000146](../../tests/test_omarai.py#L146) | 146 | `""` | — |
+| [SRC-44CDA52D01-L000147](../../tests/test_omarai.py#L147) | 147 | `""` | — |
+| [SRC-44CDA52D01-L000148](../../tests/test_omarai.py#L148) | 148 | `""` | — |
+| [SRC-44CDA52D01-L000149](../../tests/test_omarai.py#L149) | 149 | `"def test_lead_store_uses_domain_signal_and_qualification_contracts(tmp_path):"` | — |
+| [SRC-44CDA52D01-L000150](../../tests/test_omarai.py#L150) | 150 | `"    store = LeadStore(tmp_path / \"domain-contracts.sqlite3\")"` | — |
+| [SRC-44CDA52D01-L000151](../../tests/test_omarai.py#L151) | 151 | `"    lead, created = store.add("` | — |
+| [SRC-44CDA52D01-L000152](../../tests/test_omarai.py#L152) | 152 | `"        \"نحتاج نظام إنذار حريق للمصنع\","` | — |
+| [SRC-44CDA52D01-L000153](../../tests/test_omarai.py#L153) | 153 | `"        \"https://example.com/demand/1\","` | — |
+| [SRC-44CDA52D01-L000154](../../tests/test_omarai.py#L154) | 154 | `"        platform=\"manual\","` | — |
+| [SRC-44CDA52D01-L000155](../../tests/test_omarai.py#L155) | 155 | `"    )"` | — |
+| [SRC-44CDA52D01-L000156](../../tests/test_omarai.py#L156) | 156 | `"    assert created is True"` | — |
+| [SRC-44CDA52D01-L000157](../../tests/test_omarai.py#L157) | 157 | `"    assessment = lead[\"assessment\"]"` | — |
+| [SRC-44CDA52D01-L000158](../../tests/test_omarai.py#L158) | 158 | `"    assert assessment[\"signal_type\"] == \"direct_purchase_request\""` | — |
+| [SRC-44CDA52D01-L000159](../../tests/test_omarai.py#L159) | 159 | `"    assert assessment[\"domain_signal\"][\"signal_type\"] == \"direct_purchase_request\""` | — |
+| [SRC-44CDA52D01-L000160](../../tests/test_omarai.py#L160) | 160 | `"    assert assessment[\"domain_signal\"][\"evidence\"][\"content_basis\"] == \"user_provided\""` | — |
+| [SRC-44CDA52D01-L000161](../../tests/test_omarai.py#L161) | 161 | `"    assert assessment[\"domain_signal\"][\"product_fit\"] == \"unassessed\""` | — |
+| [SRC-44CDA52D01-L000162](../../tests/test_omarai.py#L162) | 162 | `"    assert assessment[\"qualification\"][\"identity_status\"] == \"unknown\""` | — |
+| [SRC-44CDA52D01-L000163](../../tests/test_omarai.py#L163) | 163 | `"    assert \"freshness\" in assessment[\"qualification\"][\"missing_information\"]"` | — |
+| [SRC-44CDA52D01-L000164](../../tests/test_omarai.py#L164) | 164 | `""` | — |
+| [SRC-44CDA52D01-L000165](../../tests/test_omarai.py#L165) | 165 | `""` | — |
+| [SRC-44CDA52D01-L000166](../../tests/test_omarai.py#L166) | 166 | `"def test_explicit_demand_types_are_not_product_fit_or_purchase_probability():"` | — |
+| [SRC-44CDA52D01-L000167](../../tests/test_omarai.py#L167) | 167 | `"    direct = analyze(\"نبحث عن مورد لافتات للمشروع\")"` | — |
+| [SRC-44CDA52D01-L000168](../../tests/test_omarai.py#L168) | 168 | `"    quote = analyze(\"نحتاج عرض سعر لنظام إنذار حريق\")"` | — |
+| [SRC-44CDA52D01-L000169](../../tests/test_omarai.py#L169) | 169 | `"    product_only = analyze(\"نظام إنذار حريق\")"` | — |
+| [SRC-44CDA52D01-L000170](../../tests/test_omarai.py#L170) | 170 | `"    assert direct[\"signal_type\"] == \"direct_purchase_request\""` | — |
+| [SRC-44CDA52D01-L000171](../../tests/test_omarai.py#L171) | 171 | `"    assert quote[\"signal_type\"] == \"request_for_quotation\""` | — |
+| [SRC-44CDA52D01-L000172](../../tests/test_omarai.py#L172) | 172 | `"    assert product_only[\"signal_type\"] == \"unknown\""` | — |
 ## اختبارات
 
-### FILE-1C0D3D1206 — [tests/test_sqlite_backup_restore.py](../../tests/test_sqlite_backup_restore.py#L1)
+### FILE-851E7A87D6 — [tests/test_postgres_store.py](../../tests/test_postgres_store.py#L1)
 
 - النوع: **Python**
 - نطاق الفهرسة: جرد الملف + AST Python
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-1C0D3D1206-L000001](../../tests/test_sqlite_backup_restore.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-1C0D3D1206-L000002](../../tests/test_sqlite_backup_restore.py#L2) | 2 | `""` | — |
-| [SRC-1C0D3D1206-L000003](../../tests/test_sqlite_backup_restore.py#L3) | 3 | `"import sqlite3"` | — |
-| [SRC-1C0D3D1206-L000004](../../tests/test_sqlite_backup_restore.py#L4) | 4 | `""` | — |
-| [SRC-1C0D3D1206-L000005](../../tests/test_sqlite_backup_restore.py#L5) | 5 | `"import pytest"` | — |
-| [SRC-1C0D3D1206-L000006](../../tests/test_sqlite_backup_restore.py#L6) | 6 | `""` | — |
-| [SRC-1C0D3D1206-L000007](../../tests/test_sqlite_backup_restore.py#L7) | 7 | `"from agents.omarai import LeadStore"` | — |
-| [SRC-1C0D3D1206-L000008](../../tests/test_sqlite_backup_restore.py#L8) | 8 | `"from scripts.sqlite_backup_restore import BackupError, backup_database, restore_database"` | — |
-| [SRC-1C0D3D1206-L000009](../../tests/test_sqlite_backup_restore.py#L9) | 9 | `""` | — |
-| [SRC-1C0D3D1206-L000010](../../tests/test_sqlite_backup_restore.py#L10) | 10 | `""` | — |
-| [SRC-1C0D3D1206-L000011](../../tests/test_sqlite_backup_restore.py#L11) | 11 | `"def test_backup_and_restore_preserve_omarai_leads(tmp_path):"` | — |
-| [SRC-1C0D3D1206-L000012](../../tests/test_sqlite_backup_restore.py#L12) | 12 | `"    source_path = tmp_path / \"live.sqlite3\""` | — |
-| [SRC-1C0D3D1206-L000013](../../tests/test_sqlite_backup_restore.py#L13) | 13 | `"    source = LeadStore(source_path)"` | — |
-| [SRC-1C0D3D1206-L000014](../../tests/test_sqlite_backup_restore.py#L14) | 14 | `"    first, created_first = source.add("` | — |
-| [SRC-1C0D3D1206-L000015](../../tests/test_sqlite_backup_restore.py#L15) | 15 | `"        \"بدور على شقة في التجمع وممكن معاينة\","` | — |
-| [SRC-1C0D3D1206-L000016](../../tests/test_sqlite_backup_restore.py#L16) | 16 | `"        \"https://example.com/posts/1\","` | — |
-| [SRC-1C0D3D1206-L000017](../../tests/test_sqlite_backup_restore.py#L17) | 17 | `"        platform=\"manual\","` | — |
-| [SRC-1C0D3D1206-L000018](../../tests/test_sqlite_backup_restore.py#L18) | 18 | `"        note=\"سجل اختبار أول\","` | — |
-| [SRC-1C0D3D1206-L000019](../../tests/test_sqlite_backup_restore.py#L19) | 19 | `"    )"` | — |
-| [SRC-1C0D3D1206-L000020](../../tests/test_sqlite_backup_restore.py#L20) | 20 | `"    second, created_second = source.add("` | — |
-| [SRC-1C0D3D1206-L000021](../../tests/test_sqlite_backup_restore.py#L21) | 21 | `"        \"محتاج شقة للإيجار الشهر القادم\","` | — |
-| [SRC-1C0D3D1206-L000022](../../tests/test_sqlite_backup_restore.py#L22) | 22 | `"        \"https://example.com/posts/2\","` | — |
-| [SRC-1C0D3D1206-L000023](../../tests/test_sqlite_backup_restore.py#L23) | 23 | `"        platform=\"manual\","` | — |
-| [SRC-1C0D3D1206-L000024](../../tests/test_sqlite_backup_restore.py#L24) | 24 | `"        note=\"سجل اختبار ثان\","` | — |
-| [SRC-1C0D3D1206-L000025](../../tests/test_sqlite_backup_restore.py#L25) | 25 | `"    )"` | — |
-| [SRC-1C0D3D1206-L000026](../../tests/test_sqlite_backup_restore.py#L26) | 26 | `"    assert created_first and created_second"` | — |
-| [SRC-1C0D3D1206-L000027](../../tests/test_sqlite_backup_restore.py#L27) | 27 | `"    source.update_status(first[\"id\"], \"qualified\")"` | — |
-| [SRC-1C0D3D1206-L000028](../../tests/test_sqlite_backup_restore.py#L28) | 28 | `""` | — |
-| [SRC-1C0D3D1206-L000029](../../tests/test_sqlite_backup_restore.py#L29) | 29 | `"    snapshot_path = tmp_path / \"backups\" / \"snapshot.sqlite3\""` | — |
-| [SRC-1C0D3D1206-L000030](../../tests/test_sqlite_backup_restore.py#L30) | 30 | `"    backup_report = backup_database(source_path, snapshot_path)"` | — |
-| [SRC-1C0D3D1206-L000031](../../tests/test_sqlite_backup_restore.py#L31) | 31 | `"    assert backup_report[\"result\"] == \"passed\""` | — |
-| [SRC-1C0D3D1206-L000032](../../tests/test_sqlite_backup_restore.py#L32) | 32 | `"    assert backup_report[\"integrity_check\"] == \"ok\""` | — |
-| [SRC-1C0D3D1206-L000033](../../tests/test_sqlite_backup_restore.py#L33) | 33 | `"    assert backup_report[\"lead_count\"] == 2"` | — |
-| [SRC-1C0D3D1206-L000034](../../tests/test_sqlite_backup_restore.py#L34) | 34 | `"    assert backup_report[\"overwrite\"] is False"` | — |
-| [SRC-1C0D3D1206-L000035](../../tests/test_sqlite_backup_restore.py#L35) | 35 | `""` | — |
-| [SRC-1C0D3D1206-L000036](../../tests/test_sqlite_backup_restore.py#L36) | 36 | `"    restored_path = tmp_path / \"restored\" / \"restored.sqlite3\""` | — |
-| [SRC-1C0D3D1206-L000037](../../tests/test_sqlite_backup_restore.py#L37) | 37 | `"    restore_report = restore_database(snapshot_path, restored_path)"` | — |
-| [SRC-1C0D3D1206-L000038](../../tests/test_sqlite_backup_restore.py#L38) | 38 | `"    assert restore_report[\"result\"] == \"passed\""` | — |
-| [SRC-1C0D3D1206-L000039](../../tests/test_sqlite_backup_restore.py#L39) | 39 | `"    assert restore_report[\"integrity_check\"] == \"ok\""` | — |
-| [SRC-1C0D3D1206-L000040](../../tests/test_sqlite_backup_restore.py#L40) | 40 | `"    assert restore_report[\"lead_count\"] == 2"` | — |
-| [SRC-1C0D3D1206-L000041](../../tests/test_sqlite_backup_restore.py#L41) | 41 | `""` | — |
-| [SRC-1C0D3D1206-L000042](../../tests/test_sqlite_backup_restore.py#L42) | 42 | `"    restored = LeadStore(restored_path)"` | — |
-| [SRC-1C0D3D1206-L000043](../../tests/test_sqlite_backup_restore.py#L43) | 43 | `"    original_rows = {row[\"id\"]: row for row in source.list(limit=500)}"` | — |
-| [SRC-1C0D3D1206-L000044](../../tests/test_sqlite_backup_restore.py#L44) | 44 | `"    restored_rows = {row[\"id\"]: row for row in restored.list(limit=500)}"` | — |
-| [SRC-1C0D3D1206-L000045](../../tests/test_sqlite_backup_restore.py#L45) | 45 | `"    assert restored_rows == original_rows"` | — |
-| [SRC-1C0D3D1206-L000046](../../tests/test_sqlite_backup_restore.py#L46) | 46 | `"    assert restored_rows[first[\"id\"]][\"status\"] == \"qualified\""` | — |
-| [SRC-1C0D3D1206-L000047](../../tests/test_sqlite_backup_restore.py#L47) | 47 | `"    assert second[\"id\"] in restored_rows"` | — |
-| [SRC-1C0D3D1206-L000048](../../tests/test_sqlite_backup_restore.py#L48) | 48 | `""` | — |
-| [SRC-1C0D3D1206-L000049](../../tests/test_sqlite_backup_restore.py#L49) | 49 | `""` | — |
-| [SRC-1C0D3D1206-L000050](../../tests/test_sqlite_backup_restore.py#L50) | 50 | `"def test_backup_never_overwrites_an_existing_destination(tmp_path):"` | — |
-| [SRC-1C0D3D1206-L000051](../../tests/test_sqlite_backup_restore.py#L51) | 51 | `"    source_path = tmp_path / \"source.sqlite3\""` | — |
-| [SRC-1C0D3D1206-L000052](../../tests/test_sqlite_backup_restore.py#L52) | 52 | `"    LeadStore(source_path)"` | — |
-| [SRC-1C0D3D1206-L000053](../../tests/test_sqlite_backup_restore.py#L53) | 53 | `"    destination = tmp_path / \"keep-me.txt\""` | — |
-| [SRC-1C0D3D1206-L000054](../../tests/test_sqlite_backup_restore.py#L54) | 54 | `"    destination.write_text(\"do not overwrite\", encoding=\"utf-8\")"` | — |
-| [SRC-1C0D3D1206-L000055](../../tests/test_sqlite_backup_restore.py#L55) | 55 | `""` | — |
-| [SRC-1C0D3D1206-L000056](../../tests/test_sqlite_backup_restore.py#L56) | 56 | `"    with pytest.raises(FileExistsError):"` | — |
-| [SRC-1C0D3D1206-L000057](../../tests/test_sqlite_backup_restore.py#L57) | 57 | `"        backup_database(source_path, destination)"` | — |
-| [SRC-1C0D3D1206-L000058](../../tests/test_sqlite_backup_restore.py#L58) | 58 | `""` | — |
-| [SRC-1C0D3D1206-L000059](../../tests/test_sqlite_backup_restore.py#L59) | 59 | `"    assert destination.read_text(encoding=\"utf-8\") == \"do not overwrite\""` | — |
-| [SRC-1C0D3D1206-L000060](../../tests/test_sqlite_backup_restore.py#L60) | 60 | `""` | — |
-| [SRC-1C0D3D1206-L000061](../../tests/test_sqlite_backup_restore.py#L61) | 61 | `""` | — |
-| [SRC-1C0D3D1206-L000062](../../tests/test_sqlite_backup_restore.py#L62) | 62 | `"def test_backup_rejects_non_omarai_sqlite_database_without_leaving_destination(tmp_path):"` | — |
-| [SRC-1C0D3D1206-L000063](../../tests/test_sqlite_backup_restore.py#L63) | 63 | `"    source_path = tmp_path / \"unrelated.sqlite3\""` | — |
-| [SRC-1C0D3D1206-L000064](../../tests/test_sqlite_backup_restore.py#L64) | 64 | `"    with sqlite3.connect(source_path) as db:"` | — |
-| [SRC-1C0D3D1206-L000065](../../tests/test_sqlite_backup_restore.py#L65) | 65 | `"        db.execute(\"CREATE TABLE unrelated (value TEXT)\")"` | — |
-| [SRC-1C0D3D1206-L000066](../../tests/test_sqlite_backup_restore.py#L66) | 66 | `""` | — |
-| [SRC-1C0D3D1206-L000067](../../tests/test_sqlite_backup_restore.py#L67) | 67 | `"    destination = tmp_path / \"should-not-exist.sqlite3\""` | — |
-| [SRC-1C0D3D1206-L000068](../../tests/test_sqlite_backup_restore.py#L68) | 68 | `"    with pytest.raises(BackupError, match=\"not an Omarai leads database\"):"` | — |
-| [SRC-1C0D3D1206-L000069](../../tests/test_sqlite_backup_restore.py#L69) | 69 | `"        backup_database(source_path, destination)"` | — |
-| [SRC-1C0D3D1206-L000070](../../tests/test_sqlite_backup_restore.py#L70) | 70 | `""` | — |
-| [SRC-1C0D3D1206-L000071](../../tests/test_sqlite_backup_restore.py#L71) | 71 | `"    assert not destination.exists()"` | — |
-| [SRC-1C0D3D1206-L000072](../../tests/test_sqlite_backup_restore.py#L72) | 72 | `""` | — |
-| [SRC-1C0D3D1206-L000073](../../tests/test_sqlite_backup_restore.py#L73) | 73 | `""` | — |
-| [SRC-1C0D3D1206-L000074](../../tests/test_sqlite_backup_restore.py#L74) | 74 | `"def test_backup_rejects_same_source_and_destination(tmp_path):"` | — |
-| [SRC-1C0D3D1206-L000075](../../tests/test_sqlite_backup_restore.py#L75) | 75 | `"    source_path = tmp_path / \"source.sqlite3\""` | — |
-| [SRC-1C0D3D1206-L000076](../../tests/test_sqlite_backup_restore.py#L76) | 76 | `"    LeadStore(source_path)"` | — |
-| [SRC-1C0D3D1206-L000077](../../tests/test_sqlite_backup_restore.py#L77) | 77 | `""` | — |
-| [SRC-1C0D3D1206-L000078](../../tests/test_sqlite_backup_restore.py#L78) | 78 | `"    with pytest.raises(BackupError, match=\"different paths\"):"` | — |
-| [SRC-1C0D3D1206-L000079](../../tests/test_sqlite_backup_restore.py#L79) | 79 | `"        backup_database(source_path, source_path)"` | — |
-| [SRC-1C0D3D1206-L000080](../../tests/test_sqlite_backup_restore.py#L80) | 80 | `""` | — |
-| [SRC-1C0D3D1206-L000081](../../tests/test_sqlite_backup_restore.py#L81) | 81 | `""` | — |
-| [SRC-1C0D3D1206-L000082](../../tests/test_sqlite_backup_restore.py#L82) | 82 | `"def test_restore_rejects_corrupt_backup_without_overwriting_source(tmp_path):"` | — |
-| [SRC-1C0D3D1206-L000083](../../tests/test_sqlite_backup_restore.py#L83) | 83 | `"    backup_path = tmp_path / \"corrupt.sqlite3\""` | — |
-| [SRC-1C0D3D1206-L000084](../../tests/test_sqlite_backup_restore.py#L84) | 84 | `"    backup_path.write_bytes(b\"not a sqlite database\")"` | — |
-| [SRC-1C0D3D1206-L000085](../../tests/test_sqlite_backup_restore.py#L85) | 85 | `"    destination = tmp_path / \"restore.sqlite3\""` | — |
-| [SRC-1C0D3D1206-L000086](../../tests/test_sqlite_backup_restore.py#L86) | 86 | `""` | — |
-| [SRC-1C0D3D1206-L000087](../../tests/test_sqlite_backup_restore.py#L87) | 87 | `"    with pytest.raises(BackupError):"` | — |
-| [SRC-1C0D3D1206-L000088](../../tests/test_sqlite_backup_restore.py#L88) | 88 | `"        restore_database(backup_path, destination)"` | — |
-| [SRC-1C0D3D1206-L000089](../../tests/test_sqlite_backup_restore.py#L89) | 89 | `""` | — |
-| [SRC-1C0D3D1206-L000090](../../tests/test_sqlite_backup_restore.py#L90) | 90 | `"    assert backup_path.read_bytes() == b\"not a sqlite database\""` | — |
-| [SRC-1C0D3D1206-L000091](../../tests/test_sqlite_backup_restore.py#L91) | 91 | `"    assert not destination.exists()"` | — |
-| [SRC-1C0D3D1206-L000092](../../tests/test_sqlite_backup_restore.py#L92) | 92 | `""` | — |
-| [SRC-1C0D3D1206-L000093](../../tests/test_sqlite_backup_restore.py#L93) | 93 | `"def test_backup_rejects_dangling_symlink_destination(tmp_path):"` | — |
-| [SRC-1C0D3D1206-L000094](../../tests/test_sqlite_backup_restore.py#L94) | 94 | `"    source_path = tmp_path / \"source.sqlite3\""` | — |
-| [SRC-1C0D3D1206-L000095](../../tests/test_sqlite_backup_restore.py#L95) | 95 | `"    LeadStore(source_path)"` | — |
-| [SRC-1C0D3D1206-L000096](../../tests/test_sqlite_backup_restore.py#L96) | 96 | `"    target_path = tmp_path / \"target.sqlite3\""` | — |
-| [SRC-1C0D3D1206-L000097](../../tests/test_sqlite_backup_restore.py#L97) | 97 | `"    destination_link = tmp_path / \"backup-link.sqlite3\""` | — |
-| [SRC-1C0D3D1206-L000098](../../tests/test_sqlite_backup_restore.py#L98) | 98 | `"    destination_link.symlink_to(target_path)"` | — |
-| [SRC-1C0D3D1206-L000099](../../tests/test_sqlite_backup_restore.py#L99) | 99 | `""` | — |
-| [SRC-1C0D3D1206-L000100](../../tests/test_sqlite_backup_restore.py#L100) | 100 | `"    with pytest.raises(FileExistsError):"` | — |
-| [SRC-1C0D3D1206-L000101](../../tests/test_sqlite_backup_restore.py#L101) | 101 | `"        backup_database(source_path, destination_link)"` | — |
-| [SRC-1C0D3D1206-L000102](../../tests/test_sqlite_backup_restore.py#L102) | 102 | `""` | — |
-| [SRC-1C0D3D1206-L000103](../../tests/test_sqlite_backup_restore.py#L103) | 103 | `"    assert destination_link.is_symlink()"` | — |
-| [SRC-1C0D3D1206-L000104](../../tests/test_sqlite_backup_restore.py#L104) | 104 | `"    assert not target_path.exists()"` | — |
-| [SRC-1C0D3D1206-L000105](../../tests/test_sqlite_backup_restore.py#L105) | 105 | `""` | — |
+| [SRC-851E7A87D6-L000001](../../tests/test_postgres_store.py#L1) | 1 | `"\"\"\"PostgreSQL integration tests for the Neon-backed LeadStore."` | — |
+| [SRC-851E7A87D6-L000002](../../tests/test_postgres_store.py#L2) | 2 | `""` | — |
+| [SRC-851E7A87D6-L000003](../../tests/test_postgres_store.py#L3) | 3 | `"These tests run only when OMARAI_TEST_DATABASE_URL points at an isolated test database."` | — |
+| [SRC-851E7A87D6-L000004](../../tests/test_postgres_store.py#L4) | 4 | `"The CI workflow supplies an ephemeral PostgreSQL service; production credentials are never used."` | — |
+| [SRC-851E7A87D6-L000005](../../tests/test_postgres_store.py#L5) | 5 | `"\"\"\""` | — |
+| [SRC-851E7A87D6-L000006](../../tests/test_postgres_store.py#L6) | 6 | `"from __future__ import annotations"` | — |
+| [SRC-851E7A87D6-L000007](../../tests/test_postgres_store.py#L7) | 7 | `""` | — |
+| [SRC-851E7A87D6-L000008](../../tests/test_postgres_store.py#L8) | 8 | `"import os"` | — |
+| [SRC-851E7A87D6-L000009](../../tests/test_postgres_store.py#L9) | 9 | `"import uuid"` | — |
+| [SRC-851E7A87D6-L000010](../../tests/test_postgres_store.py#L10) | 10 | `""` | — |
+| [SRC-851E7A87D6-L000011](../../tests/test_postgres_store.py#L11) | 11 | `"import pytest"` | — |
+| [SRC-851E7A87D6-L000012](../../tests/test_postgres_store.py#L12) | 12 | `""` | — |
+| [SRC-851E7A87D6-L000013](../../tests/test_postgres_store.py#L13) | 13 | `"from agents.omarai import LeadStore, _PostgresConnection, _qmark_to_psycopg"` | — |
+| [SRC-851E7A87D6-L000014](../../tests/test_postgres_store.py#L14) | 14 | `""` | — |
+| [SRC-851E7A87D6-L000015](../../tests/test_postgres_store.py#L15) | 15 | `""` | — |
+| [SRC-851E7A87D6-L000016](../../tests/test_postgres_store.py#L16) | 16 | `"@pytest.fixture"` | — |
+| [SRC-851E7A87D6-L000017](../../tests/test_postgres_store.py#L17) | 17 | `"def postgres_store():"` | — |
+| [SRC-851E7A87D6-L000018](../../tests/test_postgres_store.py#L18) | 18 | `"    database_url = os.getenv(\"OMARAI_TEST_DATABASE_URL\", \"\").strip()"` | — |
+| [SRC-851E7A87D6-L000019](../../tests/test_postgres_store.py#L19) | 19 | `"    if not database_url:"` | — |
+| [SRC-851E7A87D6-L000020](../../tests/test_postgres_store.py#L20) | 20 | `"        pytest.skip(\"OMARAI_TEST_DATABASE_URL is not configured\")"` | — |
+| [SRC-851E7A87D6-L000021](../../tests/test_postgres_store.py#L21) | 21 | `"    return LeadStore(database_url=database_url)"` | — |
+| [SRC-851E7A87D6-L000022](../../tests/test_postgres_store.py#L22) | 22 | `""` | — |
+| [SRC-851E7A87D6-L000023](../../tests/test_postgres_store.py#L23) | 23 | `""` | — |
+| [SRC-851E7A87D6-L000024](../../tests/test_postgres_store.py#L24) | 24 | `"def _tenant_user(store: LeadStore, marker: str) -> tuple[str, str]:"` | — |
+| [SRC-851E7A87D6-L000025](../../tests/test_postgres_store.py#L25) | 25 | `"    tenant_id = store.create_tenant(f\"PostgreSQL test {marker}\", f\"pg-{marker}\")"` | — |
+| [SRC-851E7A87D6-L000026](../../tests/test_postgres_store.py#L26) | 26 | `"    user_id = store.create_user(f\"{marker}@example.invalid\", f\"PostgreSQL {marker}\")"` | — |
+| [SRC-851E7A87D6-L000027](../../tests/test_postgres_store.py#L27) | 27 | `"    store.add_membership(tenant_id, user_id, \"owner\")"` | — |
+| [SRC-851E7A87D6-L000028](../../tests/test_postgres_store.py#L28) | 28 | `"    return tenant_id, user_id"` | — |
+| [SRC-851E7A87D6-L000029](../../tests/test_postgres_store.py#L29) | 29 | `""` | — |
+| [SRC-851E7A87D6-L000030](../../tests/test_postgres_store.py#L30) | 30 | `""` | — |
+| [SRC-851E7A87D6-L000031](../../tests/test_postgres_store.py#L31) | 31 | `"def test_postgres_leads_preserve_tenant_scoping_and_duplicate_semantics(postgres_store):"` | — |
+| [SRC-851E7A87D6-L000032](../../tests/test_postgres_store.py#L32) | 32 | `"    marker = uuid.uuid4().hex"` | — |
+| [SRC-851E7A87D6-L000033](../../tests/test_postgres_store.py#L33) | 33 | `"    tenant_a, _ = _tenant_user(postgres_store, f\"a-{marker}\")"` | — |
+| [SRC-851E7A87D6-L000034](../../tests/test_postgres_store.py#L34) | 34 | `"    tenant_b, _ = _tenant_user(postgres_store, f\"b-{marker}\")"` | — |
+| [SRC-851E7A87D6-L000035](../../tests/test_postgres_store.py#L35) | 35 | `"    text = f\"نبحث عن مورد لتجهيزات اختبار PostgreSQL {marker}\""` | — |
+| [SRC-851E7A87D6-L000036](../../tests/test_postgres_store.py#L36) | 36 | `"    source_url = f\"https://example.com/postgres/{marker}\""` | — |
+| [SRC-851E7A87D6-L000037](../../tests/test_postgres_store.py#L37) | 37 | `""` | — |
+| [SRC-851E7A87D6-L000038](../../tests/test_postgres_store.py#L38) | 38 | `"    lead_a, created_a = postgres_store.add(text, source_url, tenant_id=tenant_a)"` | — |
+| [SRC-851E7A87D6-L000039](../../tests/test_postgres_store.py#L39) | 39 | `"    lead_b, created_b = postgres_store.add(text, source_url, tenant_id=tenant_b)"` | — |
+| [SRC-851E7A87D6-L000040](../../tests/test_postgres_store.py#L40) | 40 | `""` | — |
+| [SRC-851E7A87D6-L000041](../../tests/test_postgres_store.py#L41) | 41 | `"    assert created_a is True"` | — |
+| [SRC-851E7A87D6-L000042](../../tests/test_postgres_store.py#L42) | 42 | `"    assert created_b is True"` | — |
+| [SRC-851E7A87D6-L000043](../../tests/test_postgres_store.py#L43) | 43 | `"    assert lead_a[\"id\"] != lead_b[\"id\"]"` | — |
+| [SRC-851E7A87D6-L000044](../../tests/test_postgres_store.py#L44) | 44 | `"    assert [row[\"id\"] for row in postgres_store.list(tenant_id=tenant_a)] == [lead_a[\"id\"]]"` | — |
+| [SRC-851E7A87D6-L000045](../../tests/test_postgres_store.py#L45) | 45 | `"    assert [row[\"id\"] for row in postgres_store.list(tenant_id=tenant_b)] == [lead_b[\"id\"]]"` | — |
+| [SRC-851E7A87D6-L000046](../../tests/test_postgres_store.py#L46) | 46 | `""` | — |
+| [SRC-851E7A87D6-L000047](../../tests/test_postgres_store.py#L47) | 47 | `"    duplicate, created_again = postgres_store.add("` | — |
+| [SRC-851E7A87D6-L000048](../../tests/test_postgres_store.py#L48) | 48 | `"        text, source_url, tenant_id=tenant_a"` | — |
+| [SRC-851E7A87D6-L000049](../../tests/test_postgres_store.py#L49) | 49 | `"    )"` | — |
+| [SRC-851E7A87D6-L000050](../../tests/test_postgres_store.py#L50) | 50 | `"    assert created_again is False"` | — |
+| [SRC-851E7A87D6-L000051](../../tests/test_postgres_store.py#L51) | 51 | `"    assert duplicate[\"id\"] == lead_a[\"id\"]"` | — |
+| [SRC-851E7A87D6-L000052](../../tests/test_postgres_store.py#L52) | 52 | `""` | — |
+| [SRC-851E7A87D6-L000053](../../tests/test_postgres_store.py#L53) | 53 | `"    assert postgres_store.update_status("` | — |
+| [SRC-851E7A87D6-L000054](../../tests/test_postgres_store.py#L54) | 54 | `"        lead_a[\"id\"], \"qualified\", tenant_id=tenant_b"` | — |
+| [SRC-851E7A87D6-L000055](../../tests/test_postgres_store.py#L55) | 55 | `"    ) is None"` | — |
+| [SRC-851E7A87D6-L000056](../../tests/test_postgres_store.py#L56) | 56 | `"    updated = postgres_store.update_status("` | — |
+| [SRC-851E7A87D6-L000057](../../tests/test_postgres_store.py#L57) | 57 | `"        lead_a[\"id\"], \"qualified\", tenant_id=tenant_a"` | — |
+| [SRC-851E7A87D6-L000058](../../tests/test_postgres_store.py#L58) | 58 | `"    )"` | — |
+| [SRC-851E7A87D6-L000059](../../tests/test_postgres_store.py#L59) | 59 | `"    assert updated[\"status\"] == \"qualified\""` | — |
+| [SRC-851E7A87D6-L000060](../../tests/test_postgres_store.py#L60) | 60 | `"    assert postgres_store.list(\"qualified\", tenant_id=tenant_a)[0][\"id\"] == lead_a[\"id\"]"` | — |
+| [SRC-851E7A87D6-L000061](../../tests/test_postgres_store.py#L61) | 61 | `"    assert postgres_store.list(tenant_id=tenant_b)[0][\"status\"] == \"new\""` | — |
+| [SRC-851E7A87D6-L000062](../../tests/test_postgres_store.py#L62) | 62 | `""` | — |
+| [SRC-851E7A87D6-L000063](../../tests/test_postgres_store.py#L63) | 63 | `""` | — |
+| [SRC-851E7A87D6-L000064](../../tests/test_postgres_store.py#L64) | 64 | `"def test_postgres_tokens_sessions_and_reusable_workspace_records(postgres_store):"` | — |
+| [SRC-851E7A87D6-L000065](../../tests/test_postgres_store.py#L65) | 65 | `"    marker = uuid.uuid4().hex"` | — |
+| [SRC-851E7A87D6-L000066](../../tests/test_postgres_store.py#L66) | 66 | `"    tenant_id, user_id = _tenant_user(postgres_store, marker)"` | — |
+| [SRC-851E7A87D6-L000067](../../tests/test_postgres_store.py#L67) | 67 | `"    token = f\"postgres-test-{marker}-\" + (\"T\" * 40)"` | — |
+| [SRC-851E7A87D6-L000068](../../tests/test_postgres_store.py#L68) | 68 | `""` | — |
+| [SRC-851E7A87D6-L000069](../../tests/test_postgres_store.py#L69) | 69 | `"    postgres_store.create_api_token(token, tenant_id, user_id, label=\"integration\")"` | — |
+| [SRC-851E7A87D6-L000070](../../tests/test_postgres_store.py#L70) | 70 | `"    principal = postgres_store.resolve_api_token(token)"` | — |
+| [SRC-851E7A87D6-L000071](../../tests/test_postgres_store.py#L71) | 71 | `"    assert principal == {\"tenant_id\": tenant_id, \"user_id\": user_id, \"role\": \"owner\"}"` | — |
+| [SRC-851E7A87D6-L000072](../../tests/test_postgres_store.py#L72) | 72 | `""` | — |
+| [SRC-851E7A87D6-L000073](../../tests/test_postgres_store.py#L73) | 73 | `"    created_session = postgres_store.create_web_session(token)"` | — |
+| [SRC-851E7A87D6-L000074](../../tests/test_postgres_store.py#L74) | 74 | `"    assert created_session is not None"` | — |
+| [SRC-851E7A87D6-L000075](../../tests/test_postgres_store.py#L75) | 75 | `"    session_id, session_principal = created_session"` | — |
+| [SRC-851E7A87D6-L000076](../../tests/test_postgres_store.py#L76) | 76 | `"    assert session_principal == principal"` | — |
+| [SRC-851E7A87D6-L000077](../../tests/test_postgres_store.py#L77) | 77 | `"    assert postgres_store.resolve_web_session(session_id) == principal"` | — |
+| [SRC-851E7A87D6-L000078](../../tests/test_postgres_store.py#L78) | 78 | `"    assert postgres_store.revoke_web_session(session_id) is True"` | — |
+| [SRC-851E7A87D6-L000079](../../tests/test_postgres_store.py#L79) | 79 | `"    assert postgres_store.resolve_web_session(session_id) is None"` | — |
+| [SRC-851E7A87D6-L000080](../../tests/test_postgres_store.py#L80) | 80 | `""` | — |
+| [SRC-851E7A87D6-L000081](../../tests/test_postgres_store.py#L81) | 81 | `"    profile_input = {"` | — |
+| [SRC-851E7A87D6-L000082](../../tests/test_postgres_store.py#L82) | 82 | `"        \"product\": {\"name\": f\"PostgreSQL Widget {marker}\", \"aliases\": [\"Widget\"]},"` | — |
+| [SRC-851E7A87D6-L000083](../../tests/test_postgres_store.py#L83) | 83 | `"        \"market\": {\"locations\": [\"Cairo\"], \"industries\": [\"Testing\"]},"` | — |
+| [SRC-851E7A87D6-L000084](../../tests/test_postgres_store.py#L84) | 84 | `"    }"` | — |
+| [SRC-851E7A87D6-L000085](../../tests/test_postgres_store.py#L85) | 85 | `"    profile = postgres_store.save_product_profile(profile_input, tenant_id=tenant_id)"` | — |
+| [SRC-851E7A87D6-L000086](../../tests/test_postgres_store.py#L86) | 86 | `"    assert profile[\"name\"] == profile_input[\"product\"][\"name\"]"` | — |
+| [SRC-851E7A87D6-L000087](../../tests/test_postgres_store.py#L87) | 87 | `"    assert postgres_store.get_product_profile("` | — |
+| [SRC-851E7A87D6-L000088](../../tests/test_postgres_store.py#L88) | 88 | `"        profile[\"id\"], tenant_id=tenant_id"` | — |
+| [SRC-851E7A87D6-L000089](../../tests/test_postgres_store.py#L89) | 89 | `"    )[\"profile\"] == profile_input"` | — |
+| [SRC-851E7A87D6-L000090](../../tests/test_postgres_store.py#L90) | 90 | `"    assert postgres_store.list_product_profiles(tenant_id=tenant_id)[0][\"id\"] == profile[\"id\"]"` | — |
+| [SRC-851E7A87D6-L000091](../../tests/test_postgres_store.py#L91) | 91 | `""` | — |
+| [SRC-851E7A87D6-L000092](../../tests/test_postgres_store.py#L92) | 92 | `"    run = postgres_store.save_discovery_run("` | — |
+| [SRC-851E7A87D6-L000093](../../tests/test_postgres_store.py#L93) | 93 | `"        profile[\"id\"],"` | — |
+| [SRC-851E7A87D6-L000094](../../tests/test_postgres_store.py#L94) | 94 | `"        {"` | — |
+| [SRC-851E7A87D6-L000095](../../tests/test_postgres_store.py#L95) | 95 | `"            \"answer\": \"تم العثور على طلب توريد معلن.\","` | — |
+| [SRC-851E7A87D6-L000096](../../tests/test_postgres_store.py#L96) | 96 | `"            \"kind\": \"lead_discovery\","` | — |
+| [SRC-851E7A87D6-L000097](../../tests/test_postgres_store.py#L97) | 97 | `"            \"search_queries\": [\"نبحث عن مورد\"],"` | — |
+| [SRC-851E7A87D6-L000098](../../tests/test_postgres_store.py#L98) | 98 | `"            \"sources\": [{"` | — |
+| [SRC-851E7A87D6-L000099](../../tests/test_postgres_store.py#L99) | 99 | `"                \"title\": \"طلب مورد تجريبي\","` | — |
+| [SRC-851E7A87D6-L000100](../../tests/test_postgres_store.py#L100) | 100 | `"                \"url\": f\"https://example.com/demand/{marker}\","` | — |
+| [SRC-851E7A87D6-L000101](../../tests/test_postgres_store.py#L101) | 101 | `"                \"snippet\": \"نبحث عن مورد لتوريد المنتج\","` | — |
+| [SRC-851E7A87D6-L000102](../../tests/test_postgres_store.py#L102) | 102 | `"                \"platform\": \"web\","` | — |
+| [SRC-851E7A87D6-L000103](../../tests/test_postgres_store.py#L103) | 103 | `"                \"lead_qualification\": \"public_demand_signal\","` | — |
+| [SRC-851E7A87D6-L000104](../../tests/test_postgres_store.py#L104) | 104 | `"                \"lead_intent_evidence\": {"` | — |
+| [SRC-851E7A87D6-L000105](../../tests/test_postgres_store.py#L105) | 105 | `"                    \"phrase\": \"نبحث عن مورد\","` | — |
+| [SRC-851E7A87D6-L000106](../../tests/test_postgres_store.py#L106) | 106 | `"                    \"basis\": \"source_text\","` | — |
+| [SRC-851E7A87D6-L000107](../../tests/test_postgres_store.py#L107) | 107 | `"                    \"signal_type\": \"direct_purchase_request\","` | — |
+| [SRC-851E7A87D6-L000108](../../tests/test_postgres_store.py#L108) | 108 | `"                    \"product_fit\": \"unassessed\","` | — |
+| [SRC-851E7A87D6-L000109](../../tests/test_postgres_store.py#L109) | 109 | `"                },"` | — |
+| [SRC-851E7A87D6-L000110](../../tests/test_postgres_store.py#L110) | 110 | `"            }],"` | — |
+| [SRC-851E7A87D6-L000111](../../tests/test_postgres_store.py#L111) | 111 | `"            \"search_report\": {\"search_outcome\": \"results_found\"},"` | — |
+| [SRC-851E7A87D6-L000112](../../tests/test_postgres_store.py#L112) | 112 | `"        },"` | — |
+| [SRC-851E7A87D6-L000113](../../tests/test_postgres_store.py#L113) | 113 | `"        tenant_id=tenant_id,"` | — |
+| [SRC-851E7A87D6-L000114](../../tests/test_postgres_store.py#L114) | 114 | `"    )"` | — |
+| [SRC-851E7A87D6-L000115](../../tests/test_postgres_store.py#L115) | 115 | `"    assert run[\"tenant_id\"] == tenant_id"` | — |
+| [SRC-851E7A87D6-L000116](../../tests/test_postgres_store.py#L116) | 116 | `"    assert run[\"sources\"][0][\"lead_qualification\"] == \"public_demand_signal\""` | — |
+| [SRC-851E7A87D6-L000117](../../tests/test_postgres_store.py#L117) | 117 | `"    assert postgres_store.get_discovery_run("` | — |
+| [SRC-851E7A87D6-L000118](../../tests/test_postgres_store.py#L118) | 118 | `"        run[\"id\"], tenant_id=tenant_id"` | — |
+| [SRC-851E7A87D6-L000119](../../tests/test_postgres_store.py#L119) | 119 | `"    )[\"id\"] == run[\"id\"]"` | — |
+| [SRC-851E7A87D6-L000120](../../tests/test_postgres_store.py#L120) | 120 | `"    assert postgres_store.list_discovery_runs(tenant_id=tenant_id)[0][\"id\"] == run[\"id\"]"` | — |
+| [SRC-851E7A87D6-L000121](../../tests/test_postgres_store.py#L121) | 121 | `""` | — |
+| [SRC-851E7A87D6-L000122](../../tests/test_postgres_store.py#L122) | 122 | `"    saved_signal, created = postgres_store.save_discovery_signal("` | — |
+| [SRC-851E7A87D6-L000123](../../tests/test_postgres_store.py#L123) | 123 | `"        run[\"id\"], 0, tenant_id=tenant_id"` | — |
+| [SRC-851E7A87D6-L000124](../../tests/test_postgres_store.py#L124) | 124 | `"    )"` | — |
+| [SRC-851E7A87D6-L000125](../../tests/test_postgres_store.py#L125) | 125 | `"    assert created is True"` | — |
+| [SRC-851E7A87D6-L000126](../../tests/test_postgres_store.py#L126) | 126 | `"    assert saved_signal[\"tenant_id\"] == tenant_id"` | — |
+| [SRC-851E7A87D6-L000127](../../tests/test_postgres_store.py#L127) | 127 | `"    assert postgres_store.revoke_api_token("` | — |
+| [SRC-851E7A87D6-L000128](../../tests/test_postgres_store.py#L128) | 128 | `"        token, tenant_id=tenant_id, user_id=user_id"` | — |
+| [SRC-851E7A87D6-L000129](../../tests/test_postgres_store.py#L129) | 129 | `"    ) is True"` | — |
+| [SRC-851E7A87D6-L000130](../../tests/test_postgres_store.py#L130) | 130 | `"    assert postgres_store.resolve_api_token(token) is None"` | — |
+| [SRC-851E7A87D6-L000131](../../tests/test_postgres_store.py#L131) | 131 | `""` | — |
+| [SRC-851E7A87D6-L000132](../../tests/test_postgres_store.py#L132) | 132 | `""` | — |
+| [SRC-851E7A87D6-L000133](../../tests/test_postgres_store.py#L133) | 133 | `"def test_postgres_placeholder_translation_skips_quoted_question_marks():"` | — |
+| [SRC-851E7A87D6-L000134](../../tests/test_postgres_store.py#L134) | 134 | `"    sql = \"SELECT ?, '?' AS literal, \\\"?\\\" AS identifier, ? AS last_value\""` | — |
+| [SRC-851E7A87D6-L000135](../../tests/test_postgres_store.py#L135) | 135 | `"    assert _qmark_to_psycopg(sql) == ("` | — |
+| [SRC-851E7A87D6-L000136](../../tests/test_postgres_store.py#L136) | 136 | `"        \"SELECT %s, '?' AS literal, \\\"?\\\" AS identifier, %s AS last_value\""` | — |
+| [SRC-851E7A87D6-L000137](../../tests/test_postgres_store.py#L137) | 137 | `"    )"` | — |
+| [SRC-851E7A87D6-L000138](../../tests/test_postgres_store.py#L138) | 138 | `""` | — |
+| [SRC-851E7A87D6-L000139](../../tests/test_postgres_store.py#L139) | 139 | `""` | — |
+| [SRC-851E7A87D6-L000140](../../tests/test_postgres_store.py#L140) | 140 | `"def test_postgres_connection_adapter_converts_insert_or_ignore():"` | — |
+| [SRC-851E7A87D6-L000141](../../tests/test_postgres_store.py#L141) | 141 | `"    class FakeConnection:"` | — |
+| [SRC-851E7A87D6-L000142](../../tests/test_postgres_store.py#L142) | 142 | `"        statement = None"` | — |
+| [SRC-851E7A87D6-L000143](../../tests/test_postgres_store.py#L143) | 143 | `"        params = None"` | — |
+| [SRC-851E7A87D6-L000144](../../tests/test_postgres_store.py#L144) | 144 | `""` | — |
+| [SRC-851E7A87D6-L000145](../../tests/test_postgres_store.py#L145) | 145 | `"        def execute(self, statement, params):"` | — |
+| [SRC-851E7A87D6-L000146](../../tests/test_postgres_store.py#L146) | 146 | `"            self.statement = statement"` | — |
+| [SRC-851E7A87D6-L000147](../../tests/test_postgres_store.py#L147) | 147 | `"            self.params = params"` | — |
+| [SRC-851E7A87D6-L000148](../../tests/test_postgres_store.py#L148) | 148 | `"            return \"cursor\""` | — |
+| [SRC-851E7A87D6-L000149](../../tests/test_postgres_store.py#L149) | 149 | `""` | — |
+| [SRC-851E7A87D6-L000150](../../tests/test_postgres_store.py#L150) | 150 | `"    connection = FakeConnection()"` | — |
+| [SRC-851E7A87D6-L000151](../../tests/test_postgres_store.py#L151) | 151 | `"    adapter = _PostgresConnection(connection)"` | — |
+| [SRC-851E7A87D6-L000152](../../tests/test_postgres_store.py#L152) | 152 | `""` | — |
+| [SRC-851E7A87D6-L000153](../../tests/test_postgres_store.py#L153) | 153 | `"    result = adapter.execute("` | — |
+| [SRC-851E7A87D6-L000154](../../tests/test_postgres_store.py#L154) | 154 | `"        \"INSERT OR IGNORE INTO leads (id, note) VALUES (?, '?')\","` | — |
+| [SRC-851E7A87D6-L000155](../../tests/test_postgres_store.py#L155) | 155 | `"        (\"lead-1\",),"` | — |
+| [SRC-851E7A87D6-L000156](../../tests/test_postgres_store.py#L156) | 156 | `"    )"` | — |
+| [SRC-851E7A87D6-L000157](../../tests/test_postgres_store.py#L157) | 157 | `""` | — |
+| [SRC-851E7A87D6-L000158](../../tests/test_postgres_store.py#L158) | 158 | `"    assert result == \"cursor\""` | — |
+| [SRC-851E7A87D6-L000159](../../tests/test_postgres_store.py#L159) | 159 | `"    assert connection.statement == ("` | — |
+| [SRC-851E7A87D6-L000160](../../tests/test_postgres_store.py#L160) | 160 | `"        \"INSERT INTO leads (id, note) VALUES (%s, '?') ON CONFLICT DO NOTHING\""` | — |
+| [SRC-851E7A87D6-L000161](../../tests/test_postgres_store.py#L161) | 161 | `"    )"` | — |
+| [SRC-851E7A87D6-L000162](../../tests/test_postgres_store.py#L162) | 162 | `"    assert connection.params == (\"lead-1\",)"` | — |
+| [SRC-851E7A87D6-L000163](../../tests/test_postgres_store.py#L163) | 163 | `""` | — |
+| [SRC-851E7A87D6-L000164](../../tests/test_postgres_store.py#L164) | 164 | `""` | — |
+| [SRC-851E7A87D6-L000165](../../tests/test_postgres_store.py#L165) | 165 | `"def test_postgres_database_url_rejects_unsupported_scheme():"` | — |
+| [SRC-851E7A87D6-L000166](../../tests/test_postgres_store.py#L166) | 166 | `"    with pytest.raises(ValueError, match=\"PostgreSQL URL scheme\"):"` | — |
+| [SRC-851E7A87D6-L000167](../../tests/test_postgres_store.py#L167) | 167 | `"        LeadStore(database_url=\"mysql://user:pass@example.com/db\")"` | — |
+| [SRC-851E7A87D6-L000168](../../tests/test_postgres_store.py#L168) | 168 | `""` | — |
+| [SRC-851E7A87D6-L000169](../../tests/test_postgres_store.py#L169) | 169 | `""` | — |
+| [SRC-851E7A87D6-L000170](../../tests/test_postgres_store.py#L170) | 170 | `"def test_postgres_database_url_cannot_be_combined_with_sqlite_path(tmp_path):"` | — |
+| [SRC-851E7A87D6-L000171](../../tests/test_postgres_store.py#L171) | 171 | `"    with pytest.raises(ValueError, match=\"either database_url or a SQLite path\"):"` | — |
+| [SRC-851E7A87D6-L000172](../../tests/test_postgres_store.py#L172) | 172 | `"        LeadStore(tmp_path / \"local.sqlite3\", database_url=\"postgresql://user:pass@example.com/db\")"` | — |
 ## اختبارات
 
-### FILE-AFEDC2645A — [tests/test_task_understanding.py](../../tests/test_task_understanding.py#L1)
+### FILE-B106ADC5EF — [tests/test_proxy_origin.py](../../tests/test_proxy_origin.py#L1)
 
 - النوع: **Python**
 - نطاق الفهرسة: جرد الملف + AST Python
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-AFEDC2645A-L000001](../../tests/test_task_understanding.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-AFEDC2645A-L000002](../../tests/test_task_understanding.py#L2) | 2 | `""` | — |
-| [SRC-AFEDC2645A-L000003](../../tests/test_task_understanding.py#L3) | 3 | `"import pytest"` | — |
-| [SRC-AFEDC2645A-L000004](../../tests/test_task_understanding.py#L4) | 4 | `""` | — |
-| [SRC-AFEDC2645A-L000005](../../tests/test_task_understanding.py#L5) | 5 | `"from agents.task_understanding import build_query_strategy_matrix, build_task_spec"` | — |
-| [SRC-AFEDC2645A-L000006](../../tests/test_task_understanding.py#L6) | 6 | `""` | — |
-| [SRC-AFEDC2645A-L000007](../../tests/test_task_understanding.py#L7) | 7 | `""` | — |
-| [SRC-AFEDC2645A-L000008](../../tests/test_task_understanding.py#L8) | 8 | `"@pytest.mark.parametrize("` | — |
-| [SRC-AFEDC2645A-L000009](../../tests/test_task_understanding.py#L9) | 9 | `"    (\"question\", \"family\"),"` | — |
-| [SRC-AFEDC2645A-L000010](../../tests/test_task_understanding.py#L10) | 10 | `"    ["` | — |
-| [SRC-AFEDC2645A-L000011](../../tests/test_task_understanding.py#L11) | 11 | `"        (\"ابحث عن الموقع الرسمي لوزارة الاتصالات في مصر\", \"official_site_lookup\"),"` | — |
-| [SRC-AFEDC2645A-L000012](../../tests/test_task_understanding.py#L12) | 12 | `"        (\"مواعيد عمل مكتب الجوازات اليوم في العباسية\", \"current_information\"),"` | — |
-| [SRC-AFEDC2645A-L000013](../../tests/test_task_understanding.py#L13) | 13 | `"        (\"قارن نيسان صني 2022 وهيونداي أكسنت من حيث السعر والصيانة\", \"compare\"),"` | — |
-| [SRC-AFEDC2645A-L000014](../../tests/test_task_understanding.py#L14) | 14 | `"        (\"عايز تجارب ملاك BYD Dolphin في مصر\", \"social_opinions\"),"` | — |
-| [SRC-AFEDC2645A-L000015](../../tests/test_task_understanding.py#L15) | 15 | `"        (\"ازاي أصلح خطأ الشبكة في لوحة إنذار الحريق؟\", \"troubleshoot\"),"` | — |
-| [SRC-AFEDC2645A-L000016](../../tests/test_task_understanding.py#L16) | 16 | `"        (\"اشرح خطوات صيانة حساس الدخان\", \"how_to\"),"` | — |
-| [SRC-AFEDC2645A-L000017](../../tests/test_task_understanding.py#L17) | 17 | `"        (\"لخص الصفحة https://example.com/article\", \"summarize\"),"` | — |
-| [SRC-AFEDC2645A-L000018](../../tests/test_task_understanding.py#L18) | 18 | `"        (\"ابحث عن مشترين يريدون شراء شقة في القاهرة\", \"lead_generation\"),"` | — |
-| [SRC-AFEDC2645A-L000019](../../tests/test_task_understanding.py#L19) | 19 | `"        (\"رشح لي أفضل سيارة بميزانية أقل من 500000 جنيه\", \"recommendation\"),"` | — |
-| [SRC-AFEDC2645A-L000020](../../tests/test_task_understanding.py#L20) | 20 | `"        (\"ما معنى نظام الإنذار المعنون؟\", \"explain_or_define\"),"` | — |
-| [SRC-AFEDC2645A-L000021](../../tests/test_task_understanding.py#L21) | 21 | `"    ],"` | — |
-| [SRC-AFEDC2645A-L000022](../../tests/test_task_understanding.py#L22) | 22 | `")"` | — |
-| [SRC-AFEDC2645A-L000023](../../tests/test_task_understanding.py#L23) | 23 | `"def test_task_family_covers_diverse_natural_language_patterns(question, family):"` | — |
-| [SRC-AFEDC2645A-L000024](../../tests/test_task_understanding.py#L24) | 24 | `"    spec = build_task_spec(question, mode=\"auto\", intent_route=\"WEB_SIMPLE\")"` | — |
-| [SRC-AFEDC2645A-L000025](../../tests/test_task_understanding.py#L25) | 25 | `"    assert spec[\"task_family\"] == family"` | — |
-| [SRC-AFEDC2645A-L000026](../../tests/test_task_understanding.py#L26) | 26 | `"    assert spec[\"classification_is_probability\"] is False"` | — |
-| [SRC-AFEDC2645A-L000027](../../tests/test_task_understanding.py#L27) | 27 | `"    assert spec[\"decision_checks\"]"` | — |
-| [SRC-AFEDC2645A-L000028](../../tests/test_task_understanding.py#L28) | 28 | `""` | — |
-| [SRC-AFEDC2645A-L000029](../../tests/test_task_understanding.py#L29) | 29 | `""` | — |
-| [SRC-AFEDC2645A-L000030](../../tests/test_task_understanding.py#L30) | 30 | `"def test_lead_generation_task_separates_demand_signal_from_product_fit():"` | — |
-| [SRC-AFEDC2645A-L000031](../../tests/test_task_understanding.py#L31) | 31 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000032](../../tests/test_task_understanding.py#L32) | 32 | `"        \"ابحث عن مشترين يريدون شراء نظام إنذار حريق صناعي في مصر\","` | — |
-| [SRC-AFEDC2645A-L000033](../../tests/test_task_understanding.py#L33) | 33 | `"        mode=\"auto\","` | — |
-| [SRC-AFEDC2645A-L000034](../../tests/test_task_understanding.py#L34) | 34 | `"        intent_route=\"LEAD_GENERATION\","` | — |
-| [SRC-AFEDC2645A-L000035](../../tests/test_task_understanding.py#L35) | 35 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000036](../../tests/test_task_understanding.py#L36) | 36 | `"    requirements = set(spec[\"evidence_requirements\"])"` | — |
-| [SRC-AFEDC2645A-L000037](../../tests/test_task_understanding.py#L37) | 37 | `"    strategies = set(spec[\"query_strategies\"])"` | — |
-| [SRC-AFEDC2645A-L000038](../../tests/test_task_understanding.py#L38) | 38 | `"    assert \"classify_public_demand_signal_by_type\" in requirements"` | — |
-| [SRC-AFEDC2645A-L000039](../../tests/test_task_understanding.py#L39) | 39 | `"    assert \"distinguish_direct_purchase_from_rfq_and_stated_need\" in requirements"` | — |
-| [SRC-AFEDC2645A-L000040](../../tests/test_task_understanding.py#L40) | 40 | `"    assert \"keep_product_fit_unassessed_until_separately_supported\" in requirements"` | — |
-| [SRC-AFEDC2645A-L000041](../../tests/test_task_understanding.py#L41) | 41 | `"    assert \"do_not_treat_product_mention_or_icp_match_as_demand\" in requirements"` | — |
-| [SRC-AFEDC2645A-L000042](../../tests/test_task_understanding.py#L42) | 42 | `"    assert \"product_anchored_rfq\" in strategies"` | — |
-| [SRC-AFEDC2645A-L000043](../../tests/test_task_understanding.py#L43) | 43 | `"    assert \"product_anchored_stated_need\" in strategies"` | — |
-| [SRC-AFEDC2645A-L000044](../../tests/test_task_understanding.py#L44) | 44 | `""` | — |
-| [SRC-AFEDC2645A-L000045](../../tests/test_task_understanding.py#L45) | 45 | `""` | — |
-| [SRC-AFEDC2645A-L000046](../../tests/test_task_understanding.py#L46) | 46 | `"def test_task_spec_preserves_only_explicit_constraints():"` | — |
-| [SRC-AFEDC2645A-L000047](../../tests/test_task_understanding.py#L47) | 47 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000048](../../tests/test_task_understanding.py#L48) | 48 | `"        \"قارن نيسان صني 2022 مع BYD Dolphin في مصر، بميزانية أقل من 400 ألف جنيه\","` | — |
-| [SRC-AFEDC2645A-L000049](../../tests/test_task_understanding.py#L49) | 49 | `"        mode=\"deep\","` | — |
-| [SRC-AFEDC2645A-L000050](../../tests/test_task_understanding.py#L50) | 50 | `"        intent_route=\"WEB_DEEP\","` | — |
-| [SRC-AFEDC2645A-L000051](../../tests/test_task_understanding.py#L51) | 51 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000052](../../tests/test_task_understanding.py#L52) | 52 | `"    constraints = spec[\"constraints\"]"` | — |
-| [SRC-AFEDC2645A-L000053](../../tests/test_task_understanding.py#L53) | 53 | `"    assert \"2022\" in constraints[\"explicit_years\"]"` | — |
-| [SRC-AFEDC2645A-L000054](../../tests/test_task_understanding.py#L54) | 54 | `"    assert \"مصر\" in constraints[\"explicit_locations\"]"` | — |
-| [SRC-AFEDC2645A-L000055](../../tests/test_task_understanding.py#L55) | 55 | `"    assert constraints[\"explicit_budgets\"]"` | — |
-| [SRC-AFEDC2645A-L000056](../../tests/test_task_understanding.py#L56) | 56 | `"    assert constraints[\"language_profile\"] in {\"ar\", \"mixed\"}"` | — |
-| [SRC-AFEDC2645A-L000057](../../tests/test_task_understanding.py#L57) | 57 | `""` | — |
-| [SRC-AFEDC2645A-L000058](../../tests/test_task_understanding.py#L58) | 58 | `""` | — |
-| [SRC-AFEDC2645A-L000059](../../tests/test_task_understanding.py#L59) | 59 | `"def test_latest_mode_requires_current_evidence_for_stateful_facts():"` | — |
-| [SRC-AFEDC2645A-L000060](../../tests/test_task_understanding.py#L60) | 60 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000061](../../tests/test_task_understanding.py#L61) | 61 | `"        \"مواعيد عمل مكتب الجوازات اليوم\","` | — |
-| [SRC-AFEDC2645A-L000062](../../tests/test_task_understanding.py#L62) | 62 | `"        mode=\"latest\","` | — |
-| [SRC-AFEDC2645A-L000063](../../tests/test_task_understanding.py#L63) | 63 | `"        intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-AFEDC2645A-L000064](../../tests/test_task_understanding.py#L64) | 64 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000065](../../tests/test_task_understanding.py#L65) | 65 | `"    assert spec[\"constraints\"][\"time_sensitive_request\"] is True"` | — |
-| [SRC-AFEDC2645A-L000066](../../tests/test_task_understanding.py#L66) | 66 | `"    assert \"page_text_successfully_read\" in spec[\"evidence_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000067](../../tests/test_task_understanding.py#L67) | 67 | `"    assert \"date_check\" in spec[\"query_strategies\"]"` | — |
-| [SRC-AFEDC2645A-L000068](../../tests/test_task_understanding.py#L68) | 68 | `""` | — |
-| [SRC-AFEDC2645A-L000069](../../tests/test_task_understanding.py#L69) | 69 | `""` | — |
-| [SRC-AFEDC2645A-L000070](../../tests/test_task_understanding.py#L70) | 70 | `"def test_official_site_navigation_is_not_misclassified_as_current_news():"` | — |
-| [SRC-AFEDC2645A-L000071](../../tests/test_task_understanding.py#L71) | 71 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000072](../../tests/test_task_understanding.py#L72) | 72 | `"        \"ابحث عن الموقع الرسمي لوزارة الاتصالات في مصر\","` | — |
-| [SRC-AFEDC2645A-L000073](../../tests/test_task_understanding.py#L73) | 73 | `"        mode=\"latest\","` | — |
-| [SRC-AFEDC2645A-L000074](../../tests/test_task_understanding.py#L74) | 74 | `"        intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-AFEDC2645A-L000075](../../tests/test_task_understanding.py#L75) | 75 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000076](../../tests/test_task_understanding.py#L76) | 76 | `"    assert spec[\"task_family\"] == \"official_site_lookup\""` | — |
-| [SRC-AFEDC2645A-L000077](../../tests/test_task_understanding.py#L77) | 77 | `"    assert spec[\"constraints\"][\"official_site_required\"] is True"` | — |
-| [SRC-AFEDC2645A-L000078](../../tests/test_task_understanding.py#L78) | 78 | `"    assert spec[\"constraints\"][\"time_sensitive_request\"] is False"` | — |
-| [SRC-AFEDC2645A-L000079](../../tests/test_task_understanding.py#L79) | 79 | `""` | — |
-| [SRC-AFEDC2645A-L000080](../../tests/test_task_understanding.py#L80) | 80 | `""` | — |
-| [SRC-AFEDC2645A-L000081](../../tests/test_task_understanding.py#L81) | 81 | `"def test_social_request_separates_experience_from_truth_verification():"` | — |
-| [SRC-AFEDC2645A-L000082](../../tests/test_task_understanding.py#L82) | 82 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000083](../../tests/test_task_understanding.py#L83) | 83 | `"        \"أريد آراء وتجارب ملاك نيسان صني 2022 في مصر\","` | — |
-| [SRC-AFEDC2645A-L000084](../../tests/test_task_understanding.py#L84) | 84 | `"        mode=\"social\","` | — |
-| [SRC-AFEDC2645A-L000085](../../tests/test_task_understanding.py#L85) | 85 | `"        intent_route=\"WEB_DEEP\","` | — |
-| [SRC-AFEDC2645A-L000086](../../tests/test_task_understanding.py#L86) | 86 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000087](../../tests/test_task_understanding.py#L87) | 87 | `"    assert spec[\"constraints\"][\"social_evidence_requested\"] is True"` | — |
-| [SRC-AFEDC2645A-L000088](../../tests/test_task_understanding.py#L88) | 88 | `"    assert \"heuristic_classification_is_not_identity_or_truth_verification\" in spec[\"evidence_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000089](../../tests/test_task_understanding.py#L89) | 89 | `"    assert \"personal_experience\" in spec[\"query_strategies\"]"` | — |
-| [SRC-AFEDC2645A-L000090](../../tests/test_task_understanding.py#L90) | 90 | `""` | — |
-| [SRC-AFEDC2645A-L000091](../../tests/test_task_understanding.py#L91) | 91 | `""` | — |
-| [SRC-AFEDC2645A-L000092](../../tests/test_task_understanding.py#L92) | 92 | `"def test_ambiguous_followup_is_not_reported_as_a_confident_interpretation():"` | — |
-| [SRC-AFEDC2645A-L000093](../../tests/test_task_understanding.py#L93) | 93 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000094](../../tests/test_task_understanding.py#L94) | 94 | `"        \"كام سعرها؟\","` | — |
-| [SRC-AFEDC2645A-L000095](../../tests/test_task_understanding.py#L95) | 95 | `"        mode=\"auto\","` | — |
-| [SRC-AFEDC2645A-L000096](../../tests/test_task_understanding.py#L96) | 96 | `"        intent_route=\"CLARIFY\","` | — |
-| [SRC-AFEDC2645A-L000097](../../tests/test_task_understanding.py#L97) | 97 | `"        dialogue_context={\"needs_clarification\": True},"` | — |
-| [SRC-AFEDC2645A-L000098](../../tests/test_task_understanding.py#L98) | 98 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000099](../../tests/test_task_understanding.py#L99) | 99 | `"    assert spec[\"task_family\"] == \"ambiguous_or_incomplete\""` | — |
-| [SRC-AFEDC2645A-L000100](../../tests/test_task_understanding.py#L100) | 100 | `"    assert spec[\"ambiguity_status\"] == \"needs_clarification\""` | — |
-| [SRC-AFEDC2645A-L000101](../../tests/test_task_understanding.py#L101) | 101 | `""` | — |
-| [SRC-AFEDC2645A-L000102](../../tests/test_task_understanding.py#L102) | 102 | `""` | — |
-| [SRC-AFEDC2645A-L000103](../../tests/test_task_understanding.py#L103) | 103 | `"def test_query_strategy_matrix_is_bounded_deduplicated_and_topic_anchored():"` | — |
-| [SRC-AFEDC2645A-L000104](../../tests/test_task_understanding.py#L104) | 104 | `"    question = \"قارن السيارات الكهربائية في مصر من حيث السعر والضمان\""` | — |
-| [SRC-AFEDC2645A-L000105](../../tests/test_task_understanding.py#L105) | 105 | `"    spec = build_task_spec(question, mode=\"deep\", intent_route=\"WEB_DEEP\")"` | — |
-| [SRC-AFEDC2645A-L000106](../../tests/test_task_understanding.py#L106) | 106 | `"    existing = [\"السيارات الكهربائية في مصر\"] + ["` | — |
-| [SRC-AFEDC2645A-L000107](../../tests/test_task_understanding.py#L107) | 107 | `"        f\"السيارات الكهربائية في مصر بديل عام {i}\" for i in range(1, 9)"` | — |
-| [SRC-AFEDC2645A-L000108](../../tests/test_task_understanding.py#L108) | 108 | `"    ]"` | — |
-| [SRC-AFEDC2645A-L000109](../../tests/test_task_understanding.py#L109) | 109 | `"    rows = build_query_strategy_matrix(question, spec, existing, limit=6)"` | — |
-| [SRC-AFEDC2645A-L000110](../../tests/test_task_understanding.py#L110) | 110 | `"    queries = [row[\"query\"] for row in rows]"` | — |
-| [SRC-AFEDC2645A-L000111](../../tests/test_task_understanding.py#L111) | 111 | `"    assert 1 <= len(queries) <= 6"` | — |
-| [SRC-AFEDC2645A-L000112](../../tests/test_task_understanding.py#L112) | 112 | `"    assert len({query.casefold() for query in queries}) == len(queries)"` | — |
-| [SRC-AFEDC2645A-L000113](../../tests/test_task_understanding.py#L113) | 113 | `"    assert all(\"السيارات\" in query for query in queries)"` | — |
-| [SRC-AFEDC2645A-L000114](../../tests/test_task_understanding.py#L114) | 114 | `"    assert any(row[\"strategy\"] == \"explicit_criterion\" for row in rows)"` | — |
-| [SRC-AFEDC2645A-L000115](../../tests/test_task_understanding.py#L115) | 115 | `"    assert any(row[\"strategy\"] == \"primary_specification\" for row in rows)"` | — |
-| [SRC-AFEDC2645A-L000116](../../tests/test_task_understanding.py#L116) | 116 | `"    assert sum(row[\"strategy\"] == \"planner_alternative\" for row in rows) <= 1"` | — |
-| [SRC-AFEDC2645A-L000117](../../tests/test_task_understanding.py#L117) | 117 | `"    assert all(row[\"rationale\"] for row in rows)"` | — |
-| [SRC-AFEDC2645A-L000118](../../tests/test_task_understanding.py#L118) | 118 | `""` | — |
-| [SRC-AFEDC2645A-L000119](../../tests/test_task_understanding.py#L119) | 119 | `"def test_strategy_matrix_does_not_create_generic_queries_without_topic():"` | — |
-| [SRC-AFEDC2645A-L000120](../../tests/test_task_understanding.py#L120) | 120 | `"    spec = build_task_spec(\"قارنهم\", mode=\"deep\", intent_route=\"CLARIFY\")"` | — |
-| [SRC-AFEDC2645A-L000121](../../tests/test_task_understanding.py#L121) | 121 | `"    rows = build_query_strategy_matrix(\"قارنهم\", spec, [], limit=8)"` | — |
-| [SRC-AFEDC2645A-L000122](../../tests/test_task_understanding.py#L122) | 122 | `"    assert rows == []"` | — |
-| [SRC-AFEDC2645A-L000123](../../tests/test_task_understanding.py#L123) | 123 | `""` | — |
-| [SRC-AFEDC2645A-L000124](../../tests/test_task_understanding.py#L124) | 124 | `""` | — |
-| [SRC-AFEDC2645A-L000125](../../tests/test_task_understanding.py#L125) | 125 | `"def test_mixed_language_is_supported_and_urls_are_explicit_constraints():"` | — |
-| [SRC-AFEDC2645A-L000126](../../tests/test_task_understanding.py#L126) | 126 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000127](../../tests/test_task_understanding.py#L127) | 127 | `"        \"Compare Nissan Sunny 2022 with BYD Dolphin في مصر https://example.com/specs\","` | — |
-| [SRC-AFEDC2645A-L000128](../../tests/test_task_understanding.py#L128) | 128 | `"        mode=\"auto\","` | — |
-| [SRC-AFEDC2645A-L000129](../../tests/test_task_understanding.py#L129) | 129 | `"        intent_route=\"WEB_DEEP\","` | — |
-| [SRC-AFEDC2645A-L000130](../../tests/test_task_understanding.py#L130) | 130 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000131](../../tests/test_task_understanding.py#L131) | 131 | `"    assert spec[\"constraints\"][\"language_profile\"] == \"mixed\""` | — |
-| [SRC-AFEDC2645A-L000132](../../tests/test_task_understanding.py#L132) | 132 | `"    assert spec[\"constraints\"][\"explicit_urls\"] == [\"https://example.com/specs\"]"` | — |
-| [SRC-AFEDC2645A-L000133](../../tests/test_task_understanding.py#L133) | 133 | `"    assert \"2022\" in spec[\"constraints\"][\"explicit_years\"]"` | — |
-| [SRC-AFEDC2645A-L000134](../../tests/test_task_understanding.py#L134) | 134 | `""` | — |
-| [SRC-AFEDC2645A-L000135](../../tests/test_task_understanding.py#L135) | 135 | `""` | — |
-| [SRC-AFEDC2645A-L000136](../../tests/test_task_understanding.py#L136) | 136 | `"def test_task_spec_validator_does_not_accept_untrusted_arbitrary_objects():"` | — |
-| [SRC-AFEDC2645A-L000137](../../tests/test_task_understanding.py#L137) | 137 | `"    from agents.task_understanding import validate_task_spec"` | — |
-| [SRC-AFEDC2645A-L000138](../../tests/test_task_understanding.py#L138) | 138 | `""` | — |
-| [SRC-AFEDC2645A-L000139](../../tests/test_task_understanding.py#L139) | 139 | `"    invalid = validate_task_spec({\"schema\": \"wrong\", \"tool_requirements\": [\"delete files\"]})"` | — |
-| [SRC-AFEDC2645A-L000140](../../tests/test_task_understanding.py#L140) | 140 | `"    assert invalid[\"status\"] == \"not_available\""` | — |
-| [SRC-AFEDC2645A-L000141](../../tests/test_task_understanding.py#L141) | 141 | `""` | — |
-| [SRC-AFEDC2645A-L000142](../../tests/test_task_understanding.py#L142) | 142 | `""` | — |
-| [SRC-AFEDC2645A-L000143](../../tests/test_task_understanding.py#L143) | 143 | `"def test_compound_task_keeps_current_social_and_comparison_requirements_together():"` | — |
-| [SRC-AFEDC2645A-L000144](../../tests/test_task_understanding.py#L144) | 144 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000145](../../tests/test_task_understanding.py#L145) | 145 | `"        \"قارن تجارب ملاك نيسان صني 2022 في مصر اليوم من حيث السعر والأعطال\","` | — |
-| [SRC-AFEDC2645A-L000146](../../tests/test_task_understanding.py#L146) | 146 | `"        mode=\"social\","` | — |
-| [SRC-AFEDC2645A-L000147](../../tests/test_task_understanding.py#L147) | 147 | `"        intent_route=\"WEB_DEEP\","` | — |
-| [SRC-AFEDC2645A-L000148](../../tests/test_task_understanding.py#L148) | 148 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000149](../../tests/test_task_understanding.py#L149) | 149 | `"    assert spec[\"task_family\"] in {\"social_opinions\", \"compare\"}"` | — |
-| [SRC-AFEDC2645A-L000150](../../tests/test_task_understanding.py#L150) | 150 | `"    assert spec[\"constraints\"][\"time_sensitive_request\"] is True"` | — |
-| [SRC-AFEDC2645A-L000151](../../tests/test_task_understanding.py#L151) | 151 | `"    assert spec[\"constraints\"][\"social_evidence_requested\"] is True"` | — |
-| [SRC-AFEDC2645A-L000152](../../tests/test_task_understanding.py#L152) | 152 | `"    assert \"publication_or_update_date\" in spec[\"evidence_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000153](../../tests/test_task_understanding.py#L153) | 153 | `"    assert \"preserve_explicit_comparison_criteria\" in spec[\"evidence_requirements\"] or \"preserve_each_explicit_comparison_criterion\" in spec[\"evidence_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000154](../../tests/test_task_understanding.py#L154) | 154 | `"    assert \"personal_experience\" in spec[\"query_strategies\"]"` | — |
-| [SRC-AFEDC2645A-L000155](../../tests/test_task_understanding.py#L155) | 155 | `"    assert \"date_check\" in spec[\"query_strategies\"]"` | — |
-| [SRC-AFEDC2645A-L000156](../../tests/test_task_understanding.py#L156) | 156 | `""` | — |
-| [SRC-AFEDC2645A-L000157](../../tests/test_task_understanding.py#L157) | 157 | `""` | — |
-| [SRC-AFEDC2645A-L000158](../../tests/test_task_understanding.py#L158) | 158 | `"def test_alarm_word_does_not_trigger_current_information_pattern():"` | — |
-| [SRC-AFEDC2645A-L000159](../../tests/test_task_understanding.py#L159) | 159 | `"    spec = build_task_spec(\"ما معنى نظام الإنذار المعنون؟\", mode=\"auto\", intent_route=\"MODEL_ONLY\")"` | — |
-| [SRC-AFEDC2645A-L000160](../../tests/test_task_understanding.py#L160) | 160 | `"    assert spec[\"constraints\"][\"time_sensitive_request\"] is False"` | — |
-| [SRC-AFEDC2645A-L000161](../../tests/test_task_understanding.py#L161) | 161 | `"    assert spec[\"task_family\"] == \"explain_or_define\""` | — |
-| [SRC-AFEDC2645A-L000162](../../tests/test_task_understanding.py#L162) | 162 | `""` | — |
-| [SRC-AFEDC2645A-L000163](../../tests/test_task_understanding.py#L163) | 163 | `""` | — |
-| [SRC-AFEDC2645A-L000164](../../tests/test_task_understanding.py#L164) | 164 | `"def test_clarification_route_does_not_claim_search_or_generation_tools():"` | — |
-| [SRC-AFEDC2645A-L000165](../../tests/test_task_understanding.py#L165) | 165 | `"    spec = build_task_spec(\"كام سعرها؟\", mode=\"deep\", intent_route=\"CLARIFY\")"` | — |
-| [SRC-AFEDC2645A-L000166](../../tests/test_task_understanding.py#L166) | 166 | `"    assert spec[\"ambiguity_status\"] == \"needs_clarification\""` | — |
-| [SRC-AFEDC2645A-L000167](../../tests/test_task_understanding.py#L167) | 167 | `"    assert \"web_search\" not in spec[\"tool_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000168](../../tests/test_task_understanding.py#L168) | 168 | `"    assert \"page_fetch\" not in spec[\"tool_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000169](../../tests/test_task_understanding.py#L169) | 169 | `"    assert \"language_model_generation_if_configured\" not in spec[\"tool_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000170](../../tests/test_task_understanding.py#L170) | 170 | `""` | — |
-| [SRC-AFEDC2645A-L000171](../../tests/test_task_understanding.py#L171) | 171 | `""` | — |
-| [SRC-AFEDC2645A-L000172](../../tests/test_task_understanding.py#L172) | 172 | `"def test_summary_text_and_page_link_require_different_tools():"` | — |
-| [SRC-AFEDC2645A-L000173](../../tests/test_task_understanding.py#L173) | 173 | `"    pasted = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000174](../../tests/test_task_understanding.py#L174) | 174 | `"        \"لخص النص التالي: يتناول النص صيانة أجهزة الإنذار وإجراء الاختبار الدوري.\","` | — |
-| [SRC-AFEDC2645A-L000175](../../tests/test_task_understanding.py#L175) | 175 | `"        mode=\"auto\","` | — |
-| [SRC-AFEDC2645A-L000176](../../tests/test_task_understanding.py#L176) | 176 | `"        intent_route=\"MODEL_ONLY\","` | — |
-| [SRC-AFEDC2645A-L000177](../../tests/test_task_understanding.py#L177) | 177 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000178](../../tests/test_task_understanding.py#L178) | 178 | `"    assert pasted[\"constraints\"][\"inline_text_supplied_for_summary\"] is True"` | — |
-| [SRC-AFEDC2645A-L000179](../../tests/test_task_understanding.py#L179) | 179 | `"    assert \"page_fetch\" not in pasted[\"tool_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000180](../../tests/test_task_understanding.py#L180) | 180 | `"    assert \"web_search\" not in pasted[\"tool_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000181](../../tests/test_task_understanding.py#L181) | 181 | `"    linked = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000182](../../tests/test_task_understanding.py#L182) | 182 | `"        \"لخص الصفحة https://example.com/manual\","` | — |
-| [SRC-AFEDC2645A-L000183](../../tests/test_task_understanding.py#L183) | 183 | `"        mode=\"auto\","` | — |
-| [SRC-AFEDC2645A-L000184](../../tests/test_task_understanding.py#L184) | 184 | `"        intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-AFEDC2645A-L000185](../../tests/test_task_understanding.py#L185) | 185 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000186](../../tests/test_task_understanding.py#L186) | 186 | `"    assert \"page_fetch\" in linked[\"tool_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000187](../../tests/test_task_understanding.py#L187) | 187 | `"    assert \"web_search\" in linked[\"tool_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000188](../../tests/test_task_understanding.py#L188) | 188 | `""` | — |
-| [SRC-AFEDC2645A-L000189](../../tests/test_task_understanding.py#L189) | 189 | `""` | — |
-| [SRC-AFEDC2645A-L000190](../../tests/test_task_understanding.py#L190) | 190 | `"def test_output_format_preferences_are_preserved_separately_from_intent():"` | — |
-| [SRC-AFEDC2645A-L000191](../../tests/test_task_understanding.py#L191) | 191 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000192](../../tests/test_task_understanding.py#L192) | 192 | `"        \"قارن الخيارين في جدول مع أمثلة وبالتفصيل وعلى شكل نقاط\","` | — |
-| [SRC-AFEDC2645A-L000193](../../tests/test_task_understanding.py#L193) | 193 | `"        mode=\"deep\","` | — |
-| [SRC-AFEDC2645A-L000194](../../tests/test_task_understanding.py#L194) | 194 | `"        intent_route=\"WEB_DEEP\","` | — |
-| [SRC-AFEDC2645A-L000195](../../tests/test_task_understanding.py#L195) | 195 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000196](../../tests/test_task_understanding.py#L196) | 196 | `"    preferences = spec[\"output_preferences\"]"` | — |
-| [SRC-AFEDC2645A-L000197](../../tests/test_task_understanding.py#L197) | 197 | `"    assert preferences[\"table_requested\"] is True"` | — |
-| [SRC-AFEDC2645A-L000198](../../tests/test_task_understanding.py#L198) | 198 | `"    assert preferences[\"examples_requested\"] is True"` | — |
-| [SRC-AFEDC2645A-L000199](../../tests/test_task_understanding.py#L199) | 199 | `"    assert preferences[\"detailed\"] is True"` | — |
-| [SRC-AFEDC2645A-L000200](../../tests/test_task_understanding.py#L200) | 200 | `"    assert preferences[\"bullets_or_checklist_requested\"] is True"` | — |
-| [SRC-AFEDC2645A-L000201](../../tests/test_task_understanding.py#L201) | 201 | `""` | — |
-| [SRC-AFEDC2645A-L000202](../../tests/test_task_understanding.py#L202) | 202 | `""` | — |
-| [SRC-AFEDC2645A-L000203](../../tests/test_task_understanding.py#L203) | 203 | `"def test_location_matching_avoids_partial_english_word_collision():"` | — |
-| [SRC-AFEDC2645A-L000204](../../tests/test_task_understanding.py#L204) | 204 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000205](../../tests/test_task_understanding.py#L205) | 205 | `"        \"Explain Egyptology as an academic field\","` | — |
-| [SRC-AFEDC2645A-L000206](../../tests/test_task_understanding.py#L206) | 206 | `"        mode=\"auto\","` | — |
-| [SRC-AFEDC2645A-L000207](../../tests/test_task_understanding.py#L207) | 207 | `"        intent_route=\"MODEL_ONLY\","` | — |
-| [SRC-AFEDC2645A-L000208](../../tests/test_task_understanding.py#L208) | 208 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000209](../../tests/test_task_understanding.py#L209) | 209 | `"    assert \"مصر\" not in spec[\"constraints\"][\"explicit_locations\"]"` | — |
-| [SRC-AFEDC2645A-L000210](../../tests/test_task_understanding.py#L210) | 210 | `""` | — |
-| [SRC-AFEDC2645A-L000211](../../tests/test_task_understanding.py#L211) | 211 | `""` | — |
-| [SRC-AFEDC2645A-L000212](../../tests/test_task_understanding.py#L212) | 212 | `"def test_source_policies_keep_orthogonal_research_constraints():"` | — |
-| [SRC-AFEDC2645A-L000213](../../tests/test_task_understanding.py#L213) | 213 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000214](../../tests/test_task_understanding.py#L214) | 214 | `"        \"قارن تجارب ملاك السيارات الكهربائية في مصر اليوم من حيث السعر والاعتمادية\","` | — |
-| [SRC-AFEDC2645A-L000215](../../tests/test_task_understanding.py#L215) | 215 | `"        mode=\"social\","` | — |
-| [SRC-AFEDC2645A-L000216](../../tests/test_task_understanding.py#L216) | 216 | `"        intent_route=\"WEB_DEEP\","` | — |
-| [SRC-AFEDC2645A-L000217](../../tests/test_task_understanding.py#L217) | 217 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000218](../../tests/test_task_understanding.py#L218) | 218 | `"    policies = spec[\"constraints\"][\"source_policies\"]"` | — |
-| [SRC-AFEDC2645A-L000219](../../tests/test_task_understanding.py#L219) | 219 | `"    assert \"current_read_page\" in policies"` | — |
-| [SRC-AFEDC2645A-L000220](../../tests/test_task_understanding.py#L220) | 220 | `"    assert \"public_social_content\" in policies"` | — |
-| [SRC-AFEDC2645A-L000221](../../tests/test_task_understanding.py#L221) | 221 | `"    assert spec[\"constraints\"][\"time_sensitive_request\"] is True"` | — |
-| [SRC-AFEDC2645A-L000222](../../tests/test_task_understanding.py#L222) | 222 | `"    assert spec[\"constraints\"][\"social_evidence_requested\"] is True"` | — |
-| [SRC-AFEDC2645A-L000223](../../tests/test_task_understanding.py#L223) | 223 | `"    assert \"publication_or_update_date\" in spec[\"evidence_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000224](../../tests/test_task_understanding.py#L224) | 224 | `"    assert \"heuristic_classification_is_not_identity_or_truth_verification\" in spec[\"evidence_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000225](../../tests/test_task_understanding.py#L225) | 225 | `""` | — |
-| [SRC-AFEDC2645A-L000226](../../tests/test_task_understanding.py#L226) | 226 | `""` | — |
-| [SRC-AFEDC2645A-L000227](../../tests/test_task_understanding.py#L227) | 227 | `"def test_official_site_request_without_a_target_marks_required_input():"` | — |
-| [SRC-AFEDC2645A-L000228](../../tests/test_task_understanding.py#L228) | 228 | `"    spec = build_task_spec(\"هات الموقع الرسمي\", mode=\"auto\", intent_route=\"WEB_SIMPLE\")"` | — |
-| [SRC-AFEDC2645A-L000229](../../tests/test_task_understanding.py#L229) | 229 | `"    assert spec[\"task_family\"] == \"official_site_lookup\""` | — |
-| [SRC-AFEDC2645A-L000230](../../tests/test_task_understanding.py#L230) | 230 | `"    assert \"official_destination_target_entity\" in spec[\"missing_required_inputs\"]"` | — |
-| [SRC-AFEDC2645A-L000231](../../tests/test_task_understanding.py#L231) | 231 | `"    assert spec[\"requires_clarification\"] is True"` | — |
-| [SRC-AFEDC2645A-L000232](../../tests/test_task_understanding.py#L232) | 232 | `""` | — |
-| [SRC-AFEDC2645A-L000233](../../tests/test_task_understanding.py#L233) | 233 | `""` | — |
-| [SRC-AFEDC2645A-L000234](../../tests/test_task_understanding.py#L234) | 234 | `"def test_official_site_request_with_a_named_target_does_not_require_subject_clarification():"` | — |
-| [SRC-AFEDC2645A-L000235](../../tests/test_task_understanding.py#L235) | 235 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000236](../../tests/test_task_understanding.py#L236) | 236 | `"        \"هات الموقع الرسمي لوزارة الاتصالات في مصر\","` | — |
-| [SRC-AFEDC2645A-L000237](../../tests/test_task_understanding.py#L237) | 237 | `"        mode=\"auto\","` | — |
-| [SRC-AFEDC2645A-L000238](../../tests/test_task_understanding.py#L238) | 238 | `"        intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-AFEDC2645A-L000239](../../tests/test_task_understanding.py#L239) | 239 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000240](../../tests/test_task_understanding.py#L240) | 240 | `"    assert \"official_destination_target_entity\" not in spec[\"missing_required_inputs\"]"` | — |
-| [SRC-AFEDC2645A-L000241](../../tests/test_task_understanding.py#L241) | 241 | `"    assert spec[\"constraints\"][\"official_destination_required\"] is True"` | — |
-| [SRC-AFEDC2645A-L000242](../../tests/test_task_understanding.py#L242) | 242 | `""` | — |
-| [SRC-AFEDC2645A-L000243](../../tests/test_task_understanding.py#L243) | 243 | `""` | — |
-| [SRC-AFEDC2645A-L000244](../../tests/test_task_understanding.py#L244) | 244 | `"def test_summary_without_url_or_text_marks_required_input():"` | — |
-| [SRC-AFEDC2645A-L000245](../../tests/test_task_understanding.py#L245) | 245 | `"    spec = build_task_spec(\"لخص\", mode=\"auto\", intent_route=\"MODEL_ONLY\")"` | — |
-| [SRC-AFEDC2645A-L000246](../../tests/test_task_understanding.py#L246) | 246 | `"    assert \"summary_source_url_or_pasted_text\" in spec[\"missing_required_inputs\"]"` | — |
-| [SRC-AFEDC2645A-L000247](../../tests/test_task_understanding.py#L247) | 247 | `"    assert spec[\"requires_clarification\"] is True"` | — |
-| [SRC-AFEDC2645A-L000248](../../tests/test_task_understanding.py#L248) | 248 | `""` | — |
-| [SRC-AFEDC2645A-L000249](../../tests/test_task_understanding.py#L249) | 249 | `""` | — |
-| [SRC-AFEDC2645A-L000250](../../tests/test_task_understanding.py#L250) | 250 | `"def test_output_preferences_do_not_count_as_competing_intent_hypotheses():"` | — |
-| [SRC-AFEDC2645A-L000251](../../tests/test_task_understanding.py#L251) | 251 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000252](../../tests/test_task_understanding.py#L252) | 252 | `"        \"قارن الخيارين في جدول مع أمثلة وبالتفصيل\","` | — |
-| [SRC-AFEDC2645A-L000253](../../tests/test_task_understanding.py#L253) | 253 | `"        mode=\"deep\","` | — |
-| [SRC-AFEDC2645A-L000254](../../tests/test_task_understanding.py#L254) | 254 | `"        intent_route=\"WEB_DEEP\","` | — |
-| [SRC-AFEDC2645A-L000255](../../tests/test_task_understanding.py#L255) | 255 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000256](../../tests/test_task_understanding.py#L256) | 256 | `"    families = {row[\"family\"] for row in spec[\"hypothesis_interpretations\"]}"` | — |
-| [SRC-AFEDC2645A-L000257](../../tests/test_task_understanding.py#L257) | 257 | `"    assert \"compare\" in families"` | — |
-| [SRC-AFEDC2645A-L000258](../../tests/test_task_understanding.py#L258) | 258 | `"    assert not any(family.startswith(\"output_\") for family in families)"` | — |
-| [SRC-AFEDC2645A-L000259](../../tests/test_task_understanding.py#L259) | 259 | `"    assert spec[\"ambiguity_status\"] == \"no_strong_lexical_conflict_detected\""` | — |
-| [SRC-AFEDC2645A-L000260](../../tests/test_task_understanding.py#L260) | 260 | `""` | — |
-| [SRC-AFEDC2645A-L000261](../../tests/test_task_understanding.py#L261) | 261 | `""` | — |
-| [SRC-AFEDC2645A-L000262](../../tests/test_task_understanding.py#L262) | 262 | `"@pytest.mark.parametrize("` | — |
-| [SRC-AFEDC2645A-L000263](../../tests/test_task_understanding.py#L263) | 263 | `"    (\"question\", \"family\"),"` | — |
-| [SRC-AFEDC2645A-L000264](../../tests/test_task_understanding.py#L264) | 264 | `"    ["` | — |
-| [SRC-AFEDC2645A-L000265](../../tests/test_task_understanding.py#L265) | 265 | `"        (\"ترجم هذا النص إلى الإنجليزية: Hello world\", \"translation\"),"` | — |
-| [SRC-AFEDC2645A-L000266](../../tests/test_task_understanding.py#L266) | 266 | `"        (\"اكتب بريد إلكتروني للعميل بنبرة مهنية\", \"writing_or_editing\"),"` | — |
-| [SRC-AFEDC2645A-L000267](../../tests/test_task_understanding.py#L267) | 267 | `"        (\"احسب 17 بالمئة من 500\", \"calculation\"),"` | — |
-| [SRC-AFEDC2645A-L000268](../../tests/test_task_understanding.py#L268) | 268 | `"        (\"حلل البيانات في ملف CSV وحدد القيم الناقصة\", \"data_analysis\"),"` | — |
-| [SRC-AFEDC2645A-L000269](../../tests/test_task_understanding.py#L269) | 269 | `"        (\"راجع كود Python الذي يعرض stack trace\", \"coding_or_technical_design\"),"` | — |
-| [SRC-AFEDC2645A-L000270](../../tests/test_task_understanding.py#L270) | 270 | `"        (\"ضع خطة عمل لافتتاح متجر خلال شهر\", \"planning\"),"` | — |
-| [SRC-AFEDC2645A-L000271](../../tests/test_task_understanding.py#L271) | 271 | `"        (\"ما أعراض الإنفلونزا؟\", \"medical_information\"),"` | — |
-| [SRC-AFEDC2645A-L000272](../../tests/test_task_understanding.py#L272) | 272 | `"        (\"ما شروط العقد وفق القانون المصري؟\", \"legal_information\"),"` | — |
-| [SRC-AFEDC2645A-L000273](../../tests/test_task_understanding.py#L273) | 273 | `"        (\"اكتب قصة قصيرة عن رحلة خيالية\", \"creative_generation\"),"` | — |
-| [SRC-AFEDC2645A-L000274](../../tests/test_task_understanding.py#L274) | 274 | `"    ],"` | — |
-| [SRC-AFEDC2645A-L000275](../../tests/test_task_understanding.py#L275) | 275 | `")"` | — |
-| [SRC-AFEDC2645A-L000276](../../tests/test_task_understanding.py#L276) | 276 | `"def test_extended_task_families_cover_non_search_and_specialized_requests(question, family):"` | — |
-| [SRC-AFEDC2645A-L000277](../../tests/test_task_understanding.py#L277) | 277 | `"    spec = build_task_spec(question, mode=\"auto\", intent_route=\"MODEL_ONLY\")"` | — |
-| [SRC-AFEDC2645A-L000278](../../tests/test_task_understanding.py#L278) | 278 | `"    assert spec[\"task_family\"] == family"` | — |
-| [SRC-AFEDC2645A-L000279](../../tests/test_task_understanding.py#L279) | 279 | `"    assert spec[\"classification_is_probability\"] is False"` | — |
-| [SRC-AFEDC2645A-L000280](../../tests/test_task_understanding.py#L280) | 280 | `"    assert spec[\"evidence_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000281](../../tests/test_task_understanding.py#L281) | 281 | `"    assert spec[\"query_strategies\"]"` | — |
-| [SRC-AFEDC2645A-L000282](../../tests/test_task_understanding.py#L282) | 282 | `""` | — |
-| [SRC-AFEDC2645A-L000283](../../tests/test_task_understanding.py#L283) | 283 | `""` | — |
-| [SRC-AFEDC2645A-L000284](../../tests/test_task_understanding.py#L284) | 284 | `"def test_health_and_legal_tasks_attach_domain_specific_caution():"` | — |
-| [SRC-AFEDC2645A-L000285](../../tests/test_task_understanding.py#L285) | 285 | `"    health = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000286](../../tests/test_task_understanding.py#L286) | 286 | `"        \"ما أعراض الإنفلونزا اليوم؟\","` | — |
-| [SRC-AFEDC2645A-L000287](../../tests/test_task_understanding.py#L287) | 287 | `"        mode=\"latest\","` | — |
-| [SRC-AFEDC2645A-L000288](../../tests/test_task_understanding.py#L288) | 288 | `"        intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-AFEDC2645A-L000289](../../tests/test_task_understanding.py#L289) | 289 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000290](../../tests/test_task_understanding.py#L290) | 290 | `"    assert \"authoritative_health_content\" in health[\"constraints\"][\"source_policies\"]"` | — |
-| [SRC-AFEDC2645A-L000291](../../tests/test_task_understanding.py#L291) | 291 | `"    assert \"distinguish_general_health_information_from_personal_diagnosis\" in health[\"evidence_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000292](../../tests/test_task_understanding.py#L292) | 292 | `"    assert \"page_text_successfully_read\" in health[\"evidence_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000293](../../tests/test_task_understanding.py#L293) | 293 | `""` | — |
-| [SRC-AFEDC2645A-L000294](../../tests/test_task_understanding.py#L294) | 294 | `"    legal = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000295](../../tests/test_task_understanding.py#L295) | 295 | `"        \"ما نص القانون الحالي المنظم للإيجار في مصر؟\","` | — |
-| [SRC-AFEDC2645A-L000296](../../tests/test_task_understanding.py#L296) | 296 | `"        mode=\"latest\","` | — |
-| [SRC-AFEDC2645A-L000297](../../tests/test_task_understanding.py#L297) | 297 | `"        intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-AFEDC2645A-L000298](../../tests/test_task_understanding.py#L298) | 298 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000299](../../tests/test_task_understanding.py#L299) | 299 | `"    assert \"official_legal_text\" in legal[\"constraints\"][\"source_policies\"]"` | — |
-| [SRC-AFEDC2645A-L000300](../../tests/test_task_understanding.py#L300) | 300 | `"    assert \"identify_jurisdiction_and_effective_date_if_relevant\" in legal[\"evidence_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000301](../../tests/test_task_understanding.py#L301) | 301 | `""` | — |
-| [SRC-AFEDC2645A-L000302](../../tests/test_task_understanding.py#L302) | 302 | `""` | — |
-| [SRC-AFEDC2645A-L000303](../../tests/test_task_understanding.py#L303) | 303 | `"def test_output_audience_and_delivery_preferences_are_distinct_fields():"` | — |
-| [SRC-AFEDC2645A-L000304](../../tests/test_task_understanding.py#L304) | 304 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000305](../../tests/test_task_understanding.py#L305) | 305 | `"        \"اشرح الموضوع ببساطة مع مصادر وروابط مباشرة وبصيغة JSON\","` | — |
-| [SRC-AFEDC2645A-L000306](../../tests/test_task_understanding.py#L306) | 306 | `"        mode=\"auto\","` | — |
-| [SRC-AFEDC2645A-L000307](../../tests/test_task_understanding.py#L307) | 307 | `"        intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-AFEDC2645A-L000308](../../tests/test_task_understanding.py#L308) | 308 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000309](../../tests/test_task_understanding.py#L309) | 309 | `"    preferences = spec[\"output_preferences\"]"` | — |
-| [SRC-AFEDC2645A-L000310](../../tests/test_task_understanding.py#L310) | 310 | `"    assert preferences[\"beginner_friendly_requested\"] is True"` | — |
-| [SRC-AFEDC2645A-L000311](../../tests/test_task_understanding.py#L311) | 311 | `"    assert preferences[\"citations_requested\"] is True"` | — |
-| [SRC-AFEDC2645A-L000312](../../tests/test_task_understanding.py#L312) | 312 | `"    assert preferences[\"links_requested\"] is True"` | — |
-| [SRC-AFEDC2645A-L000313](../../tests/test_task_understanding.py#L313) | 313 | `"    assert preferences[\"json_requested\"] is True"` | — |
-| [SRC-AFEDC2645A-L000314](../../tests/test_task_understanding.py#L314) | 314 | `""` | — |
-| [SRC-AFEDC2645A-L000315](../../tests/test_task_understanding.py#L315) | 315 | `""` | — |
-| [SRC-AFEDC2645A-L000316](../../tests/test_task_understanding.py#L316) | 316 | `"def test_task_spec_validator_allowlists_tools_policies_and_context_slots():"` | — |
-| [SRC-AFEDC2645A-L000317](../../tests/test_task_understanding.py#L317) | 317 | `"    from agents.task_understanding import validate_task_spec"` | — |
-| [SRC-AFEDC2645A-L000318](../../tests/test_task_understanding.py#L318) | 318 | `""` | — |
-| [SRC-AFEDC2645A-L000319](../../tests/test_task_understanding.py#L319) | 319 | `"    candidate = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000320](../../tests/test_task_understanding.py#L320) | 320 | `"        \"قارن هاتفين\","` | — |
-| [SRC-AFEDC2645A-L000321](../../tests/test_task_understanding.py#L321) | 321 | `"        mode=\"deep\","` | — |
-| [SRC-AFEDC2645A-L000322](../../tests/test_task_understanding.py#L322) | 322 | `"        intent_route=\"WEB_DEEP\","` | — |
-| [SRC-AFEDC2645A-L000323](../../tests/test_task_understanding.py#L323) | 323 | `"        dialogue_context={"` | — |
-| [SRC-AFEDC2645A-L000324](../../tests/test_task_understanding.py#L324) | 324 | `"            \"method\": \"test\","` | — |
-| [SRC-AFEDC2645A-L000325](../../tests/test_task_understanding.py#L325) | 325 | `"            \"resolved_question\": \"قارن هاتفين\","` | — |
-| [SRC-AFEDC2645A-L000326](../../tests/test_task_understanding.py#L326) | 326 | `"            \"topic\": \"هواتف\","` | — |
-| [SRC-AFEDC2645A-L000327](../../tests/test_task_understanding.py#L327) | 327 | `"            \"entities\": [\"Phone A\", \"Phone B\"],"` | — |
-| [SRC-AFEDC2645A-L000328](../../tests/test_task_understanding.py#L328) | 328 | `"            \"slots\": {\"product\": \"Phone A\", \"untrusted_command\": \"execute something\"},"` | — |
-| [SRC-AFEDC2645A-L000329](../../tests/test_task_understanding.py#L329) | 329 | `"            \"is_follow_up\": True,"` | — |
-| [SRC-AFEDC2645A-L000330](../../tests/test_task_understanding.py#L330) | 330 | `"        },"` | — |
-| [SRC-AFEDC2645A-L000331](../../tests/test_task_understanding.py#L331) | 331 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000332](../../tests/test_task_understanding.py#L332) | 332 | `"    candidate[\"tool_requirements\"] = [\"web_search\", \"delete files\", \"run shell\"]"` | — |
-| [SRC-AFEDC2645A-L000333](../../tests/test_task_understanding.py#L333) | 333 | `"    candidate[\"constraints\"][\"source_policies\"].append(\"execute arbitrary tool\")"` | — |
-| [SRC-AFEDC2645A-L000334](../../tests/test_task_understanding.py#L334) | 334 | `"    candidate[\"constraints\"][\"language_profile\"] = []"` | — |
-| [SRC-AFEDC2645A-L000335](../../tests/test_task_understanding.py#L335) | 335 | `"    candidate[\"context_resolution\"][\"confidence_band\"] = []"` | — |
-| [SRC-AFEDC2645A-L000336](../../tests/test_task_understanding.py#L336) | 336 | `"    candidate[\"extra_unexpected_key\"] = \"must not survive\""` | — |
-| [SRC-AFEDC2645A-L000337](../../tests/test_task_understanding.py#L337) | 337 | `"    safe = validate_task_spec(candidate)"` | — |
-| [SRC-AFEDC2645A-L000338](../../tests/test_task_understanding.py#L338) | 338 | `""` | — |
-| [SRC-AFEDC2645A-L000339](../../tests/test_task_understanding.py#L339) | 339 | `"    assert safe[\"tool_requirements\"] == [\"web_search\"]"` | — |
-| [SRC-AFEDC2645A-L000340](../../tests/test_task_understanding.py#L340) | 340 | `"    assert safe[\"constraints\"][\"source_policies\"] == [\"task_relevant_sources\"]"` | — |
-| [SRC-AFEDC2645A-L000341](../../tests/test_task_understanding.py#L341) | 341 | `"    assert safe[\"constraints\"][\"language_profile\"] == \"und\""` | — |
-| [SRC-AFEDC2645A-L000342](../../tests/test_task_understanding.py#L342) | 342 | `"    assert \"untrusted_command\" not in safe[\"context_resolution\"][\"slots\"]"` | — |
-| [SRC-AFEDC2645A-L000343](../../tests/test_task_understanding.py#L343) | 343 | `"    assert safe[\"context_resolution\"][\"confidence_band\"] == \"unassessed\""` | — |
-| [SRC-AFEDC2645A-L000344](../../tests/test_task_understanding.py#L344) | 344 | `"    assert \"extra_unexpected_key\" not in safe"` | — |
-| [SRC-AFEDC2645A-L000345](../../tests/test_task_understanding.py#L345) | 345 | `""` | — |
-| [SRC-AFEDC2645A-L000346](../../tests/test_task_understanding.py#L346) | 346 | `""` | — |
-| [SRC-AFEDC2645A-L000347](../../tests/test_task_understanding.py#L347) | 347 | `"def test_reasoning_playbook_combines_primary_task_and_orthogonal_constraints():"` | — |
-| [SRC-AFEDC2645A-L000348](../../tests/test_task_understanding.py#L348) | 348 | `"    from agents.task_understanding import reasoning_guidance_for_task_spec"` | — |
-| [SRC-AFEDC2645A-L000349](../../tests/test_task_understanding.py#L349) | 349 | `""` | — |
-| [SRC-AFEDC2645A-L000350](../../tests/test_task_understanding.py#L350) | 350 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000351](../../tests/test_task_understanding.py#L351) | 351 | `"        \"قارن تجارب ملاك السيارات الكهربائية في مصر اليوم من حيث السعر والأمان والتوفر\","` | — |
-| [SRC-AFEDC2645A-L000352](../../tests/test_task_understanding.py#L352) | 352 | `"        mode=\"latest\","` | — |
-| [SRC-AFEDC2645A-L000353](../../tests/test_task_understanding.py#L353) | 353 | `"        intent_route=\"WEB_DEEP\","` | — |
-| [SRC-AFEDC2645A-L000354](../../tests/test_task_understanding.py#L354) | 354 | `"        dialogue_context={"` | — |
-| [SRC-AFEDC2645A-L000355](../../tests/test_task_understanding.py#L355) | 355 | `"            \"is_follow_up\": True,"` | — |
-| [SRC-AFEDC2645A-L000356](../../tests/test_task_understanding.py#L356) | 356 | `"            \"topic_shift\": False,"` | — |
-| [SRC-AFEDC2645A-L000357](../../tests/test_task_understanding.py#L357) | 357 | `"            \"resolved_question\": \"قارن تجارب ملاك السيارات الكهربائية في مصر اليوم من حيث السعر والأمان والتوفر\","` | — |
-| [SRC-AFEDC2645A-L000358](../../tests/test_task_understanding.py#L358) | 358 | `"            \"method\": \"test_context\","` | — |
-| [SRC-AFEDC2645A-L000359](../../tests/test_task_understanding.py#L359) | 359 | `"        },"` | — |
-| [SRC-AFEDC2645A-L000360](../../tests/test_task_understanding.py#L360) | 360 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000361](../../tests/test_task_understanding.py#L361) | 361 | `""` | — |
-| [SRC-AFEDC2645A-L000362](../../tests/test_task_understanding.py#L362) | 362 | `"    ids = set(spec[\"reasoning_strategy_ids\"])"` | — |
-| [SRC-AFEDC2645A-L000363](../../tests/test_task_understanding.py#L363) | 363 | `"    assert spec[\"task_family\"] in {\"social_opinions\", \"compare\"}"` | — |
-| [SRC-AFEDC2645A-L000364](../../tests/test_task_understanding.py#L364) | 364 | `"    assert \"separate_facts_inferences_hypotheses\" in ids"` | — |
-| [SRC-AFEDC2645A-L000365](../../tests/test_task_understanding.py#L365) | 365 | `"    assert \"bounded_stop_rule\" in ids"` | — |
-| [SRC-AFEDC2645A-L000366](../../tests/test_task_understanding.py#L366) | 366 | `"    assert \"separate_event_and_publication_dates\" in ids"` | — |
-| [SRC-AFEDC2645A-L000367](../../tests/test_task_understanding.py#L367) | 367 | `"    assert \"reject_stale_current_claims\" in ids"` | — |
-| [SRC-AFEDC2645A-L000368](../../tests/test_task_understanding.py#L368) | 368 | `"    assert \"balance_social_evidence\" in ids"` | — |
-| [SRC-AFEDC2645A-L000369](../../tests/test_task_understanding.py#L369) | 369 | `"    assert \"resolve_followup_slots\" in ids"` | — |
-| [SRC-AFEDC2645A-L000370](../../tests/test_task_understanding.py#L370) | 370 | `"    assert \"decompose_explicit_criteria\" in ids"` | — |
-| [SRC-AFEDC2645A-L000371](../../tests/test_task_understanding.py#L371) | 371 | `"    assert len(spec[\"decision_matrix\"]) == 6"` | — |
-| [SRC-AFEDC2645A-L000372](../../tests/test_task_understanding.py#L372) | 372 | `""` | — |
-| [SRC-AFEDC2645A-L000373](../../tests/test_task_understanding.py#L373) | 373 | `"    guidance = reasoning_guidance_for_task_spec(spec)"` | — |
-| [SRC-AFEDC2645A-L000374](../../tests/test_task_understanding.py#L374) | 374 | `"    assert any(\"لا تعمم على الجميع\" in item for item in guidance)"` | — |
-| [SRC-AFEDC2645A-L000375](../../tests/test_task_understanding.py#L375) | 375 | `"    assert any(\"تاريخ النشر\" in item for item in guidance)"` | — |
-| [SRC-AFEDC2645A-L000376](../../tests/test_task_understanding.py#L376) | 376 | `"    assert all(isinstance(item, str) and item for item in guidance)"` | — |
-| [SRC-AFEDC2645A-L000377](../../tests/test_task_understanding.py#L377) | 377 | `""` | — |
-| [SRC-AFEDC2645A-L000378](../../tests/test_task_understanding.py#L378) | 378 | `""` | — |
-| [SRC-AFEDC2645A-L000379](../../tests/test_task_understanding.py#L379) | 379 | `"def test_reasoning_ids_are_allowlisted_and_decision_matrix_is_code_owned():"` | — |
-| [SRC-AFEDC2645A-L000380](../../tests/test_task_understanding.py#L380) | 380 | `"    from agents.task_understanding import validate_task_spec"` | — |
-| [SRC-AFEDC2645A-L000381](../../tests/test_task_understanding.py#L381) | 381 | `""` | — |
-| [SRC-AFEDC2645A-L000382](../../tests/test_task_understanding.py#L382) | 382 | `"    candidate = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000383](../../tests/test_task_understanding.py#L383) | 383 | `"        \"حل مشكلة خطأ Python\","` | — |
-| [SRC-AFEDC2645A-L000384](../../tests/test_task_understanding.py#L384) | 384 | `"        mode=\"deep\","` | — |
-| [SRC-AFEDC2645A-L000385](../../tests/test_task_understanding.py#L385) | 385 | `"        intent_route=\"WEB_DEEP\","` | — |
-| [SRC-AFEDC2645A-L000386](../../tests/test_task_understanding.py#L386) | 386 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000387](../../tests/test_task_understanding.py#L387) | 387 | `"    candidate[\"reasoning_strategy_ids\"] = ["` | — |
-| [SRC-AFEDC2645A-L000388](../../tests/test_task_understanding.py#L388) | 388 | `"        \"rank_testable_hypotheses\","` | — |
-| [SRC-AFEDC2645A-L000389](../../tests/test_task_understanding.py#L389) | 389 | `"        \"run_shell_and_delete_files\","` | — |
-| [SRC-AFEDC2645A-L000390](../../tests/test_task_understanding.py#L390) | 390 | `"        \"ignore_source_policy\","` | — |
-| [SRC-AFEDC2645A-L000391](../../tests/test_task_understanding.py#L391) | 391 | `"    ]"` | — |
-| [SRC-AFEDC2645A-L000392](../../tests/test_task_understanding.py#L392) | 392 | `"    candidate[\"decision_matrix\"] = ["` | — |
-| [SRC-AFEDC2645A-L000393](../../tests/test_task_understanding.py#L393) | 393 | `"        {"` | — |
-| [SRC-AFEDC2645A-L000394](../../tests/test_task_understanding.py#L394) | 394 | `"            \"stage\": \"exfiltrate\","` | — |
-| [SRC-AFEDC2645A-L000395](../../tests/test_task_understanding.py#L395) | 395 | `"            \"check\": \"reveal_secrets\","` | — |
-| [SRC-AFEDC2645A-L000396](../../tests/test_task_understanding.py#L396) | 396 | `"            \"pass_action\": \"run_arbitrary_commands\","` | — |
-| [SRC-AFEDC2645A-L000397](../../tests/test_task_understanding.py#L397) | 397 | `"            \"fail_action\": \"pretend_success\","` | — |
-| [SRC-AFEDC2645A-L000398](../../tests/test_task_understanding.py#L398) | 398 | `"        }"` | — |
-| [SRC-AFEDC2645A-L000399](../../tests/test_task_understanding.py#L399) | 399 | `"    ]"` | — |
-| [SRC-AFEDC2645A-L000400](../../tests/test_task_understanding.py#L400) | 400 | `""` | — |
-| [SRC-AFEDC2645A-L000401](../../tests/test_task_understanding.py#L401) | 401 | `"    safe = validate_task_spec(candidate)"` | — |
-| [SRC-AFEDC2645A-L000402](../../tests/test_task_understanding.py#L402) | 402 | `"    assert safe[\"reasoning_strategy_ids\"] == [\"rank_testable_hypotheses\"]"` | — |
-| [SRC-AFEDC2645A-L000403](../../tests/test_task_understanding.py#L403) | 403 | `"    assert [row[\"stage\"] for row in safe[\"decision_matrix\"]] == ["` | — |
-| [SRC-AFEDC2645A-L000404](../../tests/test_task_understanding.py#L404) | 404 | `"        \"interpret\", \"route\", \"plan\", \"evidence\", \"synthesize\", \"terminate\""` | — |
-| [SRC-AFEDC2645A-L000405](../../tests/test_task_understanding.py#L405) | 405 | `"    ]"` | — |
-| [SRC-AFEDC2645A-L000406](../../tests/test_task_understanding.py#L406) | 406 | `"    assert not any(row.get(\"stage\") == \"exfiltrate\" for row in safe[\"decision_matrix\"])"` | — |
-| [SRC-AFEDC2645A-L000407](../../tests/test_task_understanding.py#L407) | 407 | `"    assert \"reasoning_guidance\" not in safe"` | — |
+| [SRC-B106ADC5EF-L000001](../../tests/test_proxy_origin.py#L1) | 1 | `"\"\"\"Regression tests for the proxy-aware Origin check. OMARAI-PROXY-ORIGIN-PATCH\"\"\""` | — |
+| [SRC-B106ADC5EF-L000002](../../tests/test_proxy_origin.py#L2) | 2 | `"from __future__ import annotations"` | — |
+| [SRC-B106ADC5EF-L000003](../../tests/test_proxy_origin.py#L3) | 3 | `"import http.client"` | — |
+| [SRC-B106ADC5EF-L000004](../../tests/test_proxy_origin.py#L4) | 4 | `"import threading"` | — |
+| [SRC-B106ADC5EF-L000005](../../tests/test_proxy_origin.py#L5) | 5 | `"from http.server import ThreadingHTTPServer"` | — |
+| [SRC-B106ADC5EF-L000006](../../tests/test_proxy_origin.py#L6) | 6 | `"import pytest"` | — |
+| [SRC-B106ADC5EF-L000007](../../tests/test_proxy_origin.py#L7) | 7 | `"from agents.omarai import LeadStore"` | — |
+| [SRC-B106ADC5EF-L000008](../../tests/test_proxy_origin.py#L8) | 8 | `"from api.omarai import Handler"` | — |
+| [SRC-B106ADC5EF-L000009](../../tests/test_proxy_origin.py#L9) | 9 | `""` | — |
+| [SRC-B106ADC5EF-L000010](../../tests/test_proxy_origin.py#L10) | 10 | `"TOKEN = \"t\" * 40"` | — |
+| [SRC-B106ADC5EF-L000011](../../tests/test_proxy_origin.py#L11) | 11 | `"PUBLIC_NAME = \"app-1234.hosting.example\""` | — |
+| [SRC-B106ADC5EF-L000012](../../tests/test_proxy_origin.py#L12) | 12 | `""` | — |
+| [SRC-B106ADC5EF-L000013](../../tests/test_proxy_origin.py#L13) | 13 | `"@pytest.fixture"` | — |
+| [SRC-B106ADC5EF-L000014](../../tests/test_proxy_origin.py#L14) | 14 | `"def port(tmp_path, monkeypatch):"` | — |
+| [SRC-B106ADC5EF-L000015](../../tests/test_proxy_origin.py#L15) | 15 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
+| [SRC-B106ADC5EF-L000016](../../tests/test_proxy_origin.py#L16) | 16 | `"    monkeypatch.setenv(\"OMARAI_ACCESS_TOKEN\", TOKEN)"` | — |
+| [SRC-B106ADC5EF-L000017](../../tests/test_proxy_origin.py#L17) | 17 | `"    # The public host is explicitly configured; do not infer it from a client header."` | — |
+| [SRC-B106ADC5EF-L000018](../../tests/test_proxy_origin.py#L18) | 18 | `"    monkeypatch.setenv(\"OMARAI_ALLOWED_ORIGINS\", \"https://\" + PUBLIC_NAME)"` | — |
+| [SRC-B106ADC5EF-L000019](../../tests/test_proxy_origin.py#L19) | 19 | `"    monkeypatch.setattr(Handler, \"store\", LeadStore(tmp_path / \"origin-test.sqlite3\"))"` | — |
+| [SRC-B106ADC5EF-L000020](../../tests/test_proxy_origin.py#L20) | 20 | `"    monkeypatch.setattr(Handler, \"RATE_LIMIT_REQUESTS\", 10_000)"` | — |
+| [SRC-B106ADC5EF-L000021](../../tests/test_proxy_origin.py#L21) | 21 | `"    server = ThreadingHTTPServer((\"127.0.0.1\", 0), Handler)"` | — |
+| [SRC-B106ADC5EF-L000022](../../tests/test_proxy_origin.py#L22) | 22 | `"    thread = threading.Thread(target=server.serve_forever, daemon=True)"` | — |
+| [SRC-B106ADC5EF-L000023](../../tests/test_proxy_origin.py#L23) | 23 | `"    thread.start()"` | — |
+| [SRC-B106ADC5EF-L000024](../../tests/test_proxy_origin.py#L24) | 24 | `"    try:"` | — |
+| [SRC-B106ADC5EF-L000025](../../tests/test_proxy_origin.py#L25) | 25 | `"        yield server.server_port"` | — |
+| [SRC-B106ADC5EF-L000026](../../tests/test_proxy_origin.py#L26) | 26 | `"    finally:"` | — |
+| [SRC-B106ADC5EF-L000027](../../tests/test_proxy_origin.py#L27) | 27 | `"        server.shutdown()"` | — |
+| [SRC-B106ADC5EF-L000028](../../tests/test_proxy_origin.py#L28) | 28 | `"        server.server_close()"` | — |
+| [SRC-B106ADC5EF-L000029](../../tests/test_proxy_origin.py#L29) | 29 | `"        thread.join(timeout=3)"` | — |
+| [SRC-B106ADC5EF-L000030](../../tests/test_proxy_origin.py#L30) | 30 | `""` | — |
+| [SRC-B106ADC5EF-L000031](../../tests/test_proxy_origin.py#L31) | 31 | `"def call(port, method, extra):"` | — |
+| [SRC-B106ADC5EF-L000032](../../tests/test_proxy_origin.py#L32) | 32 | `"    body = b'{\"question\": \"x\"}' if method == \"POST\" else b\"\""` | — |
+| [SRC-B106ADC5EF-L000033](../../tests/test_proxy_origin.py#L33) | 33 | `"    headers = {\"Content-Type\": \"application/json\", \"Authorization\": \"Bearer \" + TOKEN, **extra}"` | — |
+| [SRC-B106ADC5EF-L000034](../../tests/test_proxy_origin.py#L34) | 34 | `"    connection = http.client.HTTPConnection(\"127.0.0.1\", port, timeout=5)"` | — |
+| [SRC-B106ADC5EF-L000035](../../tests/test_proxy_origin.py#L35) | 35 | `"    connection.putrequest(method, \"/api/ask\", skip_host=True)"` | — |
+| [SRC-B106ADC5EF-L000036](../../tests/test_proxy_origin.py#L36) | 36 | `"    for name, value in headers.items():"` | — |
+| [SRC-B106ADC5EF-L000037](../../tests/test_proxy_origin.py#L37) | 37 | `"        connection.putheader(name, value)"` | — |
+| [SRC-B106ADC5EF-L000038](../../tests/test_proxy_origin.py#L38) | 38 | `"    connection.putheader(\"Content-Length\", str(len(body)))"` | — |
+| [SRC-B106ADC5EF-L000039](../../tests/test_proxy_origin.py#L39) | 39 | `"    connection.endheaders()"` | — |
+| [SRC-B106ADC5EF-L000040](../../tests/test_proxy_origin.py#L40) | 40 | `"    if body:"` | — |
+| [SRC-B106ADC5EF-L000041](../../tests/test_proxy_origin.py#L41) | 41 | `"        connection.send(body)"` | — |
+| [SRC-B106ADC5EF-L000042](../../tests/test_proxy_origin.py#L42) | 42 | `"    response = connection.getresponse()"` | — |
+| [SRC-B106ADC5EF-L000043](../../tests/test_proxy_origin.py#L43) | 43 | `"    response.read()"` | — |
+| [SRC-B106ADC5EF-L000044](../../tests/test_proxy_origin.py#L44) | 44 | `"    connection.close()"` | — |
+| [SRC-B106ADC5EF-L000045](../../tests/test_proxy_origin.py#L45) | 45 | `"    return response.status"` | — |
+| [SRC-B106ADC5EF-L000046](../../tests/test_proxy_origin.py#L46) | 46 | `""` | — |
+| [SRC-B106ADC5EF-L000047](../../tests/test_proxy_origin.py#L47) | 47 | `"ALLOWED_SHAPES = {"` | — |
+| [SRC-B106ADC5EF-L000048](../../tests/test_proxy_origin.py#L48) | 48 | `"    \"proxy keeps Host, forwards https\": {\"Host\": PUBLIC_NAME, \"X-Forwarded-Proto\": \"https\"},"` | — |
+| [SRC-B106ADC5EF-L000049](../../tests/test_proxy_origin.py#L49) | 49 | `"    \"proxy keeps Host, sends no proto header\": {\"Host\": PUBLIC_NAME},"` | — |
+| [SRC-B106ADC5EF-L000050](../../tests/test_proxy_origin.py#L50) | 50 | `"    \"proxy forwards plain http\": {\"Host\": PUBLIC_NAME, \"X-Forwarded-Proto\": \"http\"},"` | — |
+| [SRC-B106ADC5EF-L000051](../../tests/test_proxy_origin.py#L51) | 51 | `"    \"proxy rewrites Host, public name in X-Forwarded-Host\": {"` | — |
+| [SRC-B106ADC5EF-L000052](../../tests/test_proxy_origin.py#L52) | 52 | `"        \"Host\": \"127.0.0.1:8000\", \"X-Forwarded-Host\": PUBLIC_NAME, \"X-Forwarded-Proto\": \"http\"},"` | — |
+| [SRC-B106ADC5EF-L000053](../../tests/test_proxy_origin.py#L53) | 53 | `"}"` | — |
+| [SRC-B106ADC5EF-L000054](../../tests/test_proxy_origin.py#L54) | 54 | `""` | — |
+| [SRC-B106ADC5EF-L000055](../../tests/test_proxy_origin.py#L55) | 55 | `"@pytest.mark.parametrize(\"shape\", ALLOWED_SHAPES)"` | — |
+| [SRC-B106ADC5EF-L000056](../../tests/test_proxy_origin.py#L56) | 56 | `"def test_own_origin_is_accepted_behind_a_proxy(port, shape):"` | — |
+| [SRC-B106ADC5EF-L000057](../../tests/test_proxy_origin.py#L57) | 57 | `"    headers = {**ALLOWED_SHAPES[shape], \"Origin\": \"https://\" + PUBLIC_NAME}"` | — |
+| [SRC-B106ADC5EF-L000058](../../tests/test_proxy_origin.py#L58) | 58 | `"    assert call(port, \"POST\", headers) == 200"` | — |
+| [SRC-B106ADC5EF-L000059](../../tests/test_proxy_origin.py#L59) | 59 | `"    assert call(port, \"OPTIONS\", {k: v for k, v in headers.items() if k != \"Authorization\"}) == 204"` | — |
+| [SRC-B106ADC5EF-L000060](../../tests/test_proxy_origin.py#L60) | 60 | `""` | — |
+| [SRC-B106ADC5EF-L000061](../../tests/test_proxy_origin.py#L61) | 61 | `"@pytest.mark.parametrize(\"shape\", ALLOWED_SHAPES)"` | — |
+| [SRC-B106ADC5EF-L000062](../../tests/test_proxy_origin.py#L62) | 62 | `"def test_a_foreign_site_is_still_refused(port, shape):"` | — |
+| [SRC-B106ADC5EF-L000063](../../tests/test_proxy_origin.py#L63) | 63 | `"    headers = {**ALLOWED_SHAPES[shape], \"Origin\": \"https://evil.example\"}"` | — |
+| [SRC-B106ADC5EF-L000064](../../tests/test_proxy_origin.py#L64) | 64 | `"    assert call(port, \"POST\", headers) == 403"` | — |
+| [SRC-B106ADC5EF-L000065](../../tests/test_proxy_origin.py#L65) | 65 | `"    assert call(port, \"OPTIONS\", headers) == 403"` | — |
+| [SRC-B106ADC5EF-L000066](../../tests/test_proxy_origin.py#L66) | 66 | `""` | — |
+| [SRC-B106ADC5EF-L000067](../../tests/test_proxy_origin.py#L67) | 67 | `"def test_configured_origin_still_works_without_any_proxy_headers(port, monkeypatch):"` | — |
+| [SRC-B106ADC5EF-L000068](../../tests/test_proxy_origin.py#L68) | 68 | `"    monkeypatch.setenv(\"OMARAI_ALLOWED_ORIGINS\", \"https://frontend.example\")"` | — |
+| [SRC-B106ADC5EF-L000069](../../tests/test_proxy_origin.py#L69) | 69 | `"    headers = {\"Host\": \"127.0.0.1:8000\", \"Origin\": \"https://frontend.example\"}"` | — |
+| [SRC-B106ADC5EF-L000070](../../tests/test_proxy_origin.py#L70) | 70 | `"    assert call(port, \"POST\", headers) == 200"` | — |
+| [SRC-B106ADC5EF-L000071](../../tests/test_proxy_origin.py#L71) | 71 | `""` | — |
+| [SRC-B106ADC5EF-L000072](../../tests/test_proxy_origin.py#L72) | 72 | `"def test_spoofed_forwarded_host_cannot_add_an_unapproved_origin(port):"` | — |
+| [SRC-B106ADC5EF-L000073](../../tests/test_proxy_origin.py#L73) | 73 | `"    \"\"\"A client-supplied X-Forwarded-Host must not expand the CORS allowlist.\"\"\""` | — |
+| [SRC-B106ADC5EF-L000074](../../tests/test_proxy_origin.py#L74) | 74 | `"    headers = {"` | — |
+| [SRC-B106ADC5EF-L000075](../../tests/test_proxy_origin.py#L75) | 75 | `"        \"Host\": \"127.0.0.1:8000\","` | — |
+| [SRC-B106ADC5EF-L000076](../../tests/test_proxy_origin.py#L76) | 76 | `"        \"X-Forwarded-Host\": \"evil.example\","` | — |
+| [SRC-B106ADC5EF-L000077](../../tests/test_proxy_origin.py#L77) | 77 | `"        \"X-Forwarded-Proto\": \"https\","` | — |
+| [SRC-B106ADC5EF-L000078](../../tests/test_proxy_origin.py#L78) | 78 | `"        \"Origin\": \"https://evil.example\","` | — |
+| [SRC-B106ADC5EF-L000079](../../tests/test_proxy_origin.py#L79) | 79 | `"    }"` | — |
+| [SRC-B106ADC5EF-L000080](../../tests/test_proxy_origin.py#L80) | 80 | `"    assert call(port, \"POST\", headers) == 403"` | — |
+| [SRC-B106ADC5EF-L000081](../../tests/test_proxy_origin.py#L81) | 81 | `"    assert call("` | — |
+| [SRC-B106ADC5EF-L000082](../../tests/test_proxy_origin.py#L82) | 82 | `"        port,"` | — |
+| [SRC-B106ADC5EF-L000083](../../tests/test_proxy_origin.py#L83) | 83 | `"        \"OPTIONS\","` | — |
+| [SRC-B106ADC5EF-L000084](../../tests/test_proxy_origin.py#L84) | 84 | `"        {key: value for key, value in headers.items() if key != \"Authorization\"},"` | — |
+| [SRC-B106ADC5EF-L000085](../../tests/test_proxy_origin.py#L85) | 85 | `"    ) == 403"` | — |
+| [SRC-B106ADC5EF-L000086](../../tests/test_proxy_origin.py#L86) | 86 | `""` | — |
 ## اختبارات
 
-### FILE-FBDC61DA0B — [tests/test_tool_execution_status.py](../../tests/test_tool_execution_status.py#L1)
+### FILE-3D0DE98F65 — [tests/test_question_requirement_loop.py](../../tests/test_question_requirement_loop.py#L1)
 
 - النوع: **Python**
 - نطاق الفهرسة: جرد الملف + AST Python
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-FBDC61DA0B-L000001](../../tests/test_tool_execution_status.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-FBDC61DA0B-L000002](../../tests/test_tool_execution_status.py#L2) | 2 | `""` | — |
-| [SRC-FBDC61DA0B-L000003](../../tests/test_tool_execution_status.py#L3) | 3 | `"from agents.tool_execution_status import build_tool_execution_matrix"` | — |
-| [SRC-FBDC61DA0B-L000004](../../tests/test_tool_execution_status.py#L4) | 4 | `""` | — |
-| [SRC-FBDC61DA0B-L000005](../../tests/test_tool_execution_status.py#L5) | 5 | `""` | — |
-| [SRC-FBDC61DA0B-L000006](../../tests/test_tool_execution_status.py#L6) | 6 | `"TOOLS = {"` | — |
-| [SRC-FBDC61DA0B-L000007](../../tests/test_tool_execution_status.py#L7) | 7 | `"    \"web_search\","` | — |
-| [SRC-FBDC61DA0B-L000008](../../tests/test_tool_execution_status.py#L8) | 8 | `"    \"page_fetch\","` | — |
-| [SRC-FBDC61DA0B-L000009](../../tests/test_tool_execution_status.py#L9) | 9 | `"    \"public_social_search_if_configured\","` | — |
-| [SRC-FBDC61DA0B-L000010](../../tests/test_tool_execution_status.py#L10) | 10 | `"    \"language_model_generation_if_configured\","` | — |
-| [SRC-FBDC61DA0B-L000011](../../tests/test_tool_execution_status.py#L11) | 11 | `"    \"claim_review_if_configured\","` | — |
-| [SRC-FBDC61DA0B-L000012](../../tests/test_tool_execution_status.py#L12) | 12 | `"}"` | — |
-| [SRC-FBDC61DA0B-L000013](../../tests/test_tool_execution_status.py#L13) | 13 | `""` | — |
-| [SRC-FBDC61DA0B-L000014](../../tests/test_tool_execution_status.py#L14) | 14 | `""` | — |
-| [SRC-FBDC61DA0B-L000015](../../tests/test_tool_execution_status.py#L15) | 15 | `"def _statuses(rows):"` | — |
-| [SRC-FBDC61DA0B-L000016](../../tests/test_tool_execution_status.py#L16) | 16 | `"    return {row[\"tool\"]: row[\"status\"] for row in rows}"` | — |
-| [SRC-FBDC61DA0B-L000017](../../tests/test_tool_execution_status.py#L17) | 17 | `""` | — |
-| [SRC-FBDC61DA0B-L000018](../../tests/test_tool_execution_status.py#L18) | 18 | `""` | — |
-| [SRC-FBDC61DA0B-L000019](../../tests/test_tool_execution_status.py#L19) | 19 | `"def test_tool_matrix_distinguishes_no_usable_results_from_page_read_failure():"` | — |
-| [SRC-FBDC61DA0B-L000020](../../tests/test_tool_execution_status.py#L20) | 20 | `"    spec = {\"tool_requirements\": sorted(TOOLS)}"` | — |
-| [SRC-FBDC61DA0B-L000021](../../tests/test_tool_execution_status.py#L21) | 21 | `"    result = {"` | — |
-| [SRC-FBDC61DA0B-L000022](../../tests/test_tool_execution_status.py#L22) | 22 | `"        \"search_attempted\": True,"` | — |
-| [SRC-FBDC61DA0B-L000023](../../tests/test_tool_execution_status.py#L23) | 23 | `"        \"used_language_model\": False,"` | — |
-| [SRC-FBDC61DA0B-L000024](../../tests/test_tool_execution_status.py#L24) | 24 | `"        \"final_answer_status\": \"model_not_configured_fallback\","` | — |
-| [SRC-FBDC61DA0B-L000025](../../tests/test_tool_execution_status.py#L25) | 25 | `"        \"sources\": [],"` | — |
-| [SRC-FBDC61DA0B-L000026](../../tests/test_tool_execution_status.py#L26) | 26 | `"    }"` | — |
-| [SRC-FBDC61DA0B-L000027](../../tests/test_tool_execution_status.py#L27) | 27 | `"    report = {"` | — |
-| [SRC-FBDC61DA0B-L000028](../../tests/test_tool_execution_status.py#L28) | 28 | `"        \"search_outcome\": \"attempted_no_usable_sources\","` | — |
-| [SRC-FBDC61DA0B-L000029](../../tests/test_tool_execution_status.py#L29) | 29 | `"        \"usable_sources_after_filtering\": 0,"` | — |
-| [SRC-FBDC61DA0B-L000030](../../tests/test_tool_execution_status.py#L30) | 30 | `"        \"pages_fetch_attempted\": 3,"` | — |
-| [SRC-FBDC61DA0B-L000031](../../tests/test_tool_execution_status.py#L31) | 31 | `"        \"pages_fetched\": 0,"` | — |
-| [SRC-FBDC61DA0B-L000032](../../tests/test_tool_execution_status.py#L32) | 32 | `"        \"social_direct_results\": 0,"` | — |
-| [SRC-FBDC61DA0B-L000033](../../tests/test_tool_execution_status.py#L33) | 33 | `"        \"claim_audit\": \"not_run\","` | — |
-| [SRC-FBDC61DA0B-L000034](../../tests/test_tool_execution_status.py#L34) | 34 | `"    }"` | — |
-| [SRC-FBDC61DA0B-L000035](../../tests/test_tool_execution_status.py#L35) | 35 | `""` | — |
-| [SRC-FBDC61DA0B-L000036](../../tests/test_tool_execution_status.py#L36) | 36 | `"    rows = build_tool_execution_matrix(spec, result, report)"` | — |
-| [SRC-FBDC61DA0B-L000037](../../tests/test_tool_execution_status.py#L37) | 37 | `"    statuses = _statuses(rows)"` | — |
-| [SRC-FBDC61DA0B-L000038](../../tests/test_tool_execution_status.py#L38) | 38 | `""` | — |
-| [SRC-FBDC61DA0B-L000039](../../tests/test_tool_execution_status.py#L39) | 39 | `"    assert set(statuses) == TOOLS"` | — |
-| [SRC-FBDC61DA0B-L000040](../../tests/test_tool_execution_status.py#L40) | 40 | `"    assert statuses[\"web_search\"] == \"completed_no_usable_results\""` | — |
-| [SRC-FBDC61DA0B-L000041](../../tests/test_tool_execution_status.py#L41) | 41 | `"    assert statuses[\"page_fetch\"] == \"attempted_no_readable_pages\""` | — |
-| [SRC-FBDC61DA0B-L000042](../../tests/test_tool_execution_status.py#L42) | 42 | `"    assert statuses[\"public_social_search_if_configured\"] == \"unknown\""` | — |
-| [SRC-FBDC61DA0B-L000043](../../tests/test_tool_execution_status.py#L43) | 43 | `"    assert statuses[\"language_model_generation_if_configured\"] == \"not_configured\""` | — |
-| [SRC-FBDC61DA0B-L000044](../../tests/test_tool_execution_status.py#L44) | 44 | `"    assert statuses[\"claim_review_if_configured\"] == \"not_attempted_no_evidence\""` | — |
-| [SRC-FBDC61DA0B-L000045](../../tests/test_tool_execution_status.py#L45) | 45 | `"    assert all(\"لا تثبت صحة المحتوى\" in row[\"semantics\"] for row in rows)"` | — |
-| [SRC-FBDC61DA0B-L000046](../../tests/test_tool_execution_status.py#L46) | 46 | `""` | — |
-| [SRC-FBDC61DA0B-L000047](../../tests/test_tool_execution_status.py#L47) | 47 | `""` | — |
-| [SRC-FBDC61DA0B-L000048](../../tests/test_tool_execution_status.py#L48) | 48 | `"def test_tool_matrix_reports_observed_success_without_claiming_fact_verification():"` | — |
-| [SRC-FBDC61DA0B-L000049](../../tests/test_tool_execution_status.py#L49) | 49 | `"    spec = {\"tool_requirements\": sorted(TOOLS)}"` | — |
-| [SRC-FBDC61DA0B-L000050](../../tests/test_tool_execution_status.py#L50) | 50 | `"    result = {"` | — |
-| [SRC-FBDC61DA0B-L000051](../../tests/test_tool_execution_status.py#L51) | 51 | `"        \"search_attempted\": True,"` | — |
-| [SRC-FBDC61DA0B-L000052](../../tests/test_tool_execution_status.py#L52) | 52 | `"        \"used_language_model\": True,"` | — |
-| [SRC-FBDC61DA0B-L000053](../../tests/test_tool_execution_status.py#L53) | 53 | `"        \"final_answer_status\": \"model_answer_generated\","` | — |
-| [SRC-FBDC61DA0B-L000054](../../tests/test_tool_execution_status.py#L54) | 54 | `"        \"sources\": ["` | — |
-| [SRC-FBDC61DA0B-L000055](../../tests/test_tool_execution_status.py#L55) | 55 | `"            {"` | — |
-| [SRC-FBDC61DA0B-L000056](../../tests/test_tool_execution_status.py#L56) | 56 | `"                \"url\": \"https://www.reddit.com/r/example/comments/1\","` | — |
-| [SRC-FBDC61DA0B-L000057](../../tests/test_tool_execution_status.py#L57) | 57 | `"                \"platform\": \"reddit\","` | — |
-| [SRC-FBDC61DA0B-L000058](../../tests/test_tool_execution_status.py#L58) | 58 | `"                \"source_class\": \"social\","` | — |
-| [SRC-FBDC61DA0B-L000059](../../tests/test_tool_execution_status.py#L59) | 59 | `"                \"page_fetched\": True,"` | — |
-| [SRC-FBDC61DA0B-L000060](../../tests/test_tool_execution_status.py#L60) | 60 | `"            }"` | — |
-| [SRC-FBDC61DA0B-L000061](../../tests/test_tool_execution_status.py#L61) | 61 | `"        ],"` | — |
-| [SRC-FBDC61DA0B-L000062](../../tests/test_tool_execution_status.py#L62) | 62 | `"    }"` | — |
-| [SRC-FBDC61DA0B-L000063](../../tests/test_tool_execution_status.py#L63) | 63 | `"    report = {"` | — |
-| [SRC-FBDC61DA0B-L000064](../../tests/test_tool_execution_status.py#L64) | 64 | `"        \"search_outcome\": \"attempted_with_usable_sources\","` | — |
-| [SRC-FBDC61DA0B-L000065](../../tests/test_tool_execution_status.py#L65) | 65 | `"        \"usable_sources_after_filtering\": 1,"` | — |
-| [SRC-FBDC61DA0B-L000066](../../tests/test_tool_execution_status.py#L66) | 66 | `"        \"pages_fetch_attempted\": 1,"` | — |
-| [SRC-FBDC61DA0B-L000067](../../tests/test_tool_execution_status.py#L67) | 67 | `"        \"pages_fetched\": 1,"` | — |
-| [SRC-FBDC61DA0B-L000068](../../tests/test_tool_execution_status.py#L68) | 68 | `"        \"social_direct_results\": 2,"` | — |
-| [SRC-FBDC61DA0B-L000069](../../tests/test_tool_execution_status.py#L69) | 69 | `"        \"claim_audit\": \"model_claim_audit_completed\","` | — |
-| [SRC-FBDC61DA0B-L000070](../../tests/test_tool_execution_status.py#L70) | 70 | `"    }"` | — |
-| [SRC-FBDC61DA0B-L000071](../../tests/test_tool_execution_status.py#L71) | 71 | `""` | — |
-| [SRC-FBDC61DA0B-L000072](../../tests/test_tool_execution_status.py#L72) | 72 | `"    statuses = _statuses(build_tool_execution_matrix(spec, result, report))"` | — |
-| [SRC-FBDC61DA0B-L000073](../../tests/test_tool_execution_status.py#L73) | 73 | `""` | — |
-| [SRC-FBDC61DA0B-L000074](../../tests/test_tool_execution_status.py#L74) | 74 | `"    assert statuses[\"web_search\"] == \"completed_with_results\""` | — |
-| [SRC-FBDC61DA0B-L000075](../../tests/test_tool_execution_status.py#L75) | 75 | `"    assert statuses[\"page_fetch\"] == \"completed_with_read_pages\""` | — |
-| [SRC-FBDC61DA0B-L000076](../../tests/test_tool_execution_status.py#L76) | 76 | `"    assert statuses[\"public_social_search_if_configured\"] == \"completed_with_results\""` | — |
-| [SRC-FBDC61DA0B-L000077](../../tests/test_tool_execution_status.py#L77) | 77 | `"    assert statuses[\"language_model_generation_if_configured\"] == \"completed\""` | — |
-| [SRC-FBDC61DA0B-L000078](../../tests/test_tool_execution_status.py#L78) | 78 | `"    assert statuses[\"claim_review_if_configured\"] == \"completed_model_assisted_review\""` | — |
-| [SRC-FBDC61DA0B-L000079](../../tests/test_tool_execution_status.py#L79) | 79 | `""` | — |
-| [SRC-FBDC61DA0B-L000080](../../tests/test_tool_execution_status.py#L80) | 80 | `""` | — |
-| [SRC-FBDC61DA0B-L000081](../../tests/test_tool_execution_status.py#L81) | 81 | `"def test_tool_matrix_marks_unrequired_tools_not_required_and_unknowns_unknown():"` | — |
-| [SRC-FBDC61DA0B-L000082](../../tests/test_tool_execution_status.py#L82) | 82 | `"    rows = build_tool_execution_matrix("` | — |
-| [SRC-FBDC61DA0B-L000083](../../tests/test_tool_execution_status.py#L83) | 83 | `"        {\"tool_requirements\": []},"` | — |
-| [SRC-FBDC61DA0B-L000084](../../tests/test_tool_execution_status.py#L84) | 84 | `"        {\"sources\": []},"` | — |
-| [SRC-FBDC61DA0B-L000085](../../tests/test_tool_execution_status.py#L85) | 85 | `"        {},"` | — |
-| [SRC-FBDC61DA0B-L000086](../../tests/test_tool_execution_status.py#L86) | 86 | `"    )"` | — |
-| [SRC-FBDC61DA0B-L000087](../../tests/test_tool_execution_status.py#L87) | 87 | `""` | — |
-| [SRC-FBDC61DA0B-L000088](../../tests/test_tool_execution_status.py#L88) | 88 | `"    assert all(row[\"required_by_task_spec\"] is False for row in rows)"` | — |
-| [SRC-FBDC61DA0B-L000089](../../tests/test_tool_execution_status.py#L89) | 89 | `"    assert all(row[\"status\"] == \"not_required\" for row in rows)"` | — |
-| [SRC-FBDC61DA0B-L000090](../../tests/test_tool_execution_status.py#L90) | 90 | `""` | — |
-| [SRC-FBDC61DA0B-L000091](../../tests/test_tool_execution_status.py#L91) | 91 | `"    unknown = _statuses(build_tool_execution_matrix("` | — |
-| [SRC-FBDC61DA0B-L000092](../../tests/test_tool_execution_status.py#L92) | 92 | `"        {\"tool_requirements\": [\"web_search\", \"page_fetch\"]},"` | — |
-| [SRC-FBDC61DA0B-L000093](../../tests/test_tool_execution_status.py#L93) | 93 | `"        {},"` | — |
-| [SRC-FBDC61DA0B-L000094](../../tests/test_tool_execution_status.py#L94) | 94 | `"        {},"` | — |
-| [SRC-FBDC61DA0B-L000095](../../tests/test_tool_execution_status.py#L95) | 95 | `"    ))"` | — |
-| [SRC-FBDC61DA0B-L000096](../../tests/test_tool_execution_status.py#L96) | 96 | `"    assert unknown[\"web_search\"] == \"unknown\""` | — |
-| [SRC-FBDC61DA0B-L000097](../../tests/test_tool_execution_status.py#L97) | 97 | `"    assert unknown[\"page_fetch\"] == \"unknown\""` | — |
-| [SRC-FBDC61DA0B-L000098](../../tests/test_tool_execution_status.py#L98) | 98 | `""` | — |
-| [SRC-FBDC61DA0B-L000099](../../tests/test_tool_execution_status.py#L99) | 99 | `""` | — |
-| [SRC-FBDC61DA0B-L000100](../../tests/test_tool_execution_status.py#L100) | 100 | `"def test_tool_matrix_surfaces_mismatch_between_report_counters_and_final_sources():"` | — |
-| [SRC-FBDC61DA0B-L000101](../../tests/test_tool_execution_status.py#L101) | 101 | `"    rows = build_tool_execution_matrix("` | — |
-| [SRC-FBDC61DA0B-L000102](../../tests/test_tool_execution_status.py#L102) | 102 | `"        {\"tool_requirements\": [\"web_search\", \"page_fetch\"]},"` | — |
-| [SRC-FBDC61DA0B-L000103](../../tests/test_tool_execution_status.py#L103) | 103 | `"        {"` | — |
-| [SRC-FBDC61DA0B-L000104](../../tests/test_tool_execution_status.py#L104) | 104 | `"            \"search_attempted\": True,"` | — |
-| [SRC-FBDC61DA0B-L000105](../../tests/test_tool_execution_status.py#L105) | 105 | `"            \"sources\": ["` | — |
-| [SRC-FBDC61DA0B-L000106](../../tests/test_tool_execution_status.py#L106) | 106 | `"                {\"url\": \"https://example.org/read\", \"page_fetched\": True, \"page_text\": \"text\"}"` | — |
-| [SRC-FBDC61DA0B-L000107](../../tests/test_tool_execution_status.py#L107) | 107 | `"            ],"` | — |
-| [SRC-FBDC61DA0B-L000108](../../tests/test_tool_execution_status.py#L108) | 108 | `"        },"` | — |
-| [SRC-FBDC61DA0B-L000109](../../tests/test_tool_execution_status.py#L109) | 109 | `"        {"` | — |
-| [SRC-FBDC61DA0B-L000110](../../tests/test_tool_execution_status.py#L110) | 110 | `"            \"search_attempted\": True,"` | — |
-| [SRC-FBDC61DA0B-L000111](../../tests/test_tool_execution_status.py#L111) | 111 | `"            \"search_outcome\": \"attempted_no_usable_sources\","` | — |
-| [SRC-FBDC61DA0B-L000112](../../tests/test_tool_execution_status.py#L112) | 112 | `"            \"usable_sources_after_filtering\": 0,"` | — |
-| [SRC-FBDC61DA0B-L000113](../../tests/test_tool_execution_status.py#L113) | 113 | `"            \"pages_fetch_attempted\": 1,"` | — |
-| [SRC-FBDC61DA0B-L000114](../../tests/test_tool_execution_status.py#L114) | 114 | `"            \"pages_fetched\": 0,"` | — |
-| [SRC-FBDC61DA0B-L000115](../../tests/test_tool_execution_status.py#L115) | 115 | `"        },"` | — |
-| [SRC-FBDC61DA0B-L000116](../../tests/test_tool_execution_status.py#L116) | 116 | `"    )"` | — |
-| [SRC-FBDC61DA0B-L000117](../../tests/test_tool_execution_status.py#L117) | 117 | `"    by_tool = {row[\"tool\"]: row for row in rows}"` | — |
-| [SRC-FBDC61DA0B-L000118](../../tests/test_tool_execution_status.py#L118) | 118 | `""` | — |
-| [SRC-FBDC61DA0B-L000119](../../tests/test_tool_execution_status.py#L119) | 119 | `"    assert by_tool[\"web_search\"][\"status\"] == \"counter_mismatch\""` | — |
-| [SRC-FBDC61DA0B-L000120](../../tests/test_tool_execution_status.py#L120) | 120 | `"    assert by_tool[\"web_search\"][\"basis\"][\"counter_consistency\"] == \"mismatch\""` | — |
-| [SRC-FBDC61DA0B-L000121](../../tests/test_tool_execution_status.py#L121) | 121 | `"    assert by_tool[\"web_search\"][\"basis\"][\"reported_accepted_source_count\"] == 0"` | — |
-| [SRC-FBDC61DA0B-L000122](../../tests/test_tool_execution_status.py#L122) | 122 | `"    assert by_tool[\"web_search\"][\"basis\"][\"accepted_source_count\"] == 1"` | — |
-| [SRC-FBDC61DA0B-L000123](../../tests/test_tool_execution_status.py#L123) | 123 | `"    assert by_tool[\"page_fetch\"][\"status\"] == \"counter_mismatch\""` | — |
-| [SRC-FBDC61DA0B-L000124](../../tests/test_tool_execution_status.py#L124) | 124 | `"    assert by_tool[\"page_fetch\"][\"basis\"][\"counter_consistency\"] == \"mismatch\""` | — |
-| [SRC-FBDC61DA0B-L000125](../../tests/test_tool_execution_status.py#L125) | 125 | `"    assert by_tool[\"page_fetch\"][\"basis\"][\"pages_read_from_returned_sources\"] == 1"` | — |
-| [SRC-FBDC61DA0B-L000126](../../tests/test_tool_execution_status.py#L126) | 126 | `"    assert by_tool[\"page_fetch\"][\"basis\"][\"reported_pages_fetched\"] == 0"` | — |
-| [SRC-FBDC61DA0B-L000127](../../tests/test_tool_execution_status.py#L127) | 127 | `""` | — |
-| [SRC-FBDC61DA0B-L000128](../../tests/test_tool_execution_status.py#L128) | 128 | `""` | — |
-| [SRC-FBDC61DA0B-L000129](../../tests/test_tool_execution_status.py#L129) | 129 | `"def test_social_search_is_only_called_completed_when_connector_attempt_is_observed():"` | — |
-| [SRC-FBDC61DA0B-L000130](../../tests/test_tool_execution_status.py#L130) | 130 | `"    rows = build_tool_execution_matrix("` | — |
-| [SRC-FBDC61DA0B-L000131](../../tests/test_tool_execution_status.py#L131) | 131 | `"        {\"tool_requirements\": [\"public_social_search_if_configured\"]},"` | — |
-| [SRC-FBDC61DA0B-L000132](../../tests/test_tool_execution_status.py#L132) | 132 | `"        {\"search_attempted\": True, \"sources\": []},"` | — |
-| [SRC-FBDC61DA0B-L000133](../../tests/test_tool_execution_status.py#L133) | 133 | `"        {"` | — |
-| [SRC-FBDC61DA0B-L000134](../../tests/test_tool_execution_status.py#L134) | 134 | `"            \"search_outcome\": \"attempted_no_usable_sources\","` | — |
-| [SRC-FBDC61DA0B-L000135](../../tests/test_tool_execution_status.py#L135) | 135 | `"            \"social_direct_results\": 0,"` | — |
-| [SRC-FBDC61DA0B-L000136](../../tests/test_tool_execution_status.py#L136) | 136 | `"            \"connector_summary\": {"` | — |
-| [SRC-FBDC61DA0B-L000137](../../tests/test_tool_execution_status.py#L137) | 137 | `"                \"connectors\": ["` | — |
-| [SRC-FBDC61DA0B-L000138](../../tests/test_tool_execution_status.py#L138) | 138 | `"                    {"` | — |
-| [SRC-FBDC61DA0B-L000139](../../tests/test_tool_execution_status.py#L139) | 139 | `"                        \"name\": \"reddit_public_rss\","` | — |
-| [SRC-FBDC61DA0B-L000140](../../tests/test_tool_execution_status.py#L140) | 140 | `"                        \"configured\": True,"` | — |
-| [SRC-FBDC61DA0B-L000141](../../tests/test_tool_execution_status.py#L141) | 141 | `"                        \"attempted\": True,"` | — |
-| [SRC-FBDC61DA0B-L000142](../../tests/test_tool_execution_status.py#L142) | 142 | `"                        \"status\": \"no_results\","` | — |
-| [SRC-FBDC61DA0B-L000143](../../tests/test_tool_execution_status.py#L143) | 143 | `"                    }"` | — |
-| [SRC-FBDC61DA0B-L000144](../../tests/test_tool_execution_status.py#L144) | 144 | `"                ]"` | — |
-| [SRC-FBDC61DA0B-L000145](../../tests/test_tool_execution_status.py#L145) | 145 | `"            },"` | — |
-| [SRC-FBDC61DA0B-L000146](../../tests/test_tool_execution_status.py#L146) | 146 | `"        },"` | — |
-| [SRC-FBDC61DA0B-L000147](../../tests/test_tool_execution_status.py#L147) | 147 | `"    )"` | — |
-| [SRC-FBDC61DA0B-L000148](../../tests/test_tool_execution_status.py#L148) | 148 | `"    social = next(row for row in rows if row[\"tool\"] == \"public_social_search_if_configured\")"` | — |
-| [SRC-FBDC61DA0B-L000149](../../tests/test_tool_execution_status.py#L149) | 149 | `"    assert social[\"status\"] == \"completed_no_usable_results\""` | — |
+| [SRC-3D0DE98F65-L000001](../../tests/test_question_requirement_loop.py#L1) | 1 | `"from __future__ import annotations"` | — |
+| [SRC-3D0DE98F65-L000002](../../tests/test_question_requirement_loop.py#L2) | 2 | `""` | — |
+| [SRC-3D0DE98F65-L000003](../../tests/test_question_requirement_loop.py#L3) | 3 | `"import json"` | — |
+| [SRC-3D0DE98F65-L000004](../../tests/test_question_requirement_loop.py#L4) | 4 | `""` | — |
+| [SRC-3D0DE98F65-L000005](../../tests/test_question_requirement_loop.py#L5) | 5 | `"from agents.answer_validation import audit_answer_integrity, build_requirement_evidence_ledger"` | — |
+| [SRC-3D0DE98F65-L000006](../../tests/test_question_requirement_loop.py#L6) | 6 | `"from agents.research import ("` | — |
+| [SRC-3D0DE98F65-L000007](../../tests/test_question_requirement_loop.py#L7) | 7 | `"    MAX_PLAN_QUERIES,"` | — |
+| [SRC-3D0DE98F65-L000008](../../tests/test_question_requirement_loop.py#L8) | 8 | `"    extract_question_coverage_targets,"` | — |
+| [SRC-3D0DE98F65-L000009](../../tests/test_question_requirement_loop.py#L9) | 9 | `"    fallback_plan,"` | — |
+| [SRC-3D0DE98F65-L000010](../../tests/test_question_requirement_loop.py#L10) | 10 | `"    validate_plan,"` | — |
+| [SRC-3D0DE98F65-L000011](../../tests/test_question_requirement_loop.py#L11) | 11 | `")"` | — |
+| [SRC-3D0DE98F65-L000012](../../tests/test_question_requirement_loop.py#L12) | 12 | `"from agents.web_agent import WebAgent"` | — |
+| [SRC-3D0DE98F65-L000013](../../tests/test_question_requirement_loop.py#L13) | 13 | `""` | — |
+| [SRC-3D0DE98F65-L000014](../../tests/test_question_requirement_loop.py#L14) | 14 | `""` | — |
+| [SRC-3D0DE98F65-L000015](../../tests/test_question_requirement_loop.py#L15) | 15 | `"QUESTION = \"قارن بين iPhone 17 وSamsung S26 من حيث السعر والبطارية والكاميرا\""` | — |
+| [SRC-3D0DE98F65-L000016](../../tests/test_question_requirement_loop.py#L16) | 16 | `""` | — |
+| [SRC-3D0DE98F65-L000017](../../tests/test_question_requirement_loop.py#L17) | 17 | `""` | — |
+| [SRC-3D0DE98F65-L000018](../../tests/test_question_requirement_loop.py#L18) | 18 | `"def test_compound_question_extracts_each_explicit_criterion() -> None:"` | — |
+| [SRC-3D0DE98F65-L000019](../../tests/test_question_requirement_loop.py#L19) | 19 | `"    assert extract_question_coverage_targets(QUESTION) == [\"السعر\", \"البطارية\", \"الكاميرا\"]"` | — |
+| [SRC-3D0DE98F65-L000020](../../tests/test_question_requirement_loop.py#L20) | 20 | `""` | — |
+| [SRC-3D0DE98F65-L000021](../../tests/test_question_requirement_loop.py#L21) | 21 | `""` | — |
+| [SRC-3D0DE98F65-L000022](../../tests/test_question_requirement_loop.py#L22) | 22 | `"def test_fallback_plan_assigns_a_bounded_query_to_every_criterion() -> None:"` | — |
+| [SRC-3D0DE98F65-L000023](../../tests/test_question_requirement_loop.py#L23) | 23 | `"    plan = fallback_plan(QUESTION)"` | — |
+| [SRC-3D0DE98F65-L000024](../../tests/test_question_requirement_loop.py#L24) | 24 | `"    requirement_queries = plan[\"requirement_queries\"]"` | — |
+| [SRC-3D0DE98F65-L000025](../../tests/test_question_requirement_loop.py#L25) | 25 | `"    assert [item[\"target\"] for item in requirement_queries] == [\"السعر\", \"البطارية\", \"الكاميرا\"]"` | — |
+| [SRC-3D0DE98F65-L000026](../../tests/test_question_requirement_loop.py#L26) | 26 | `"    assert all(item[\"query\"] in plan[\"queries\"] for item in requirement_queries)"` | — |
+| [SRC-3D0DE98F65-L000027](../../tests/test_question_requirement_loop.py#L27) | 27 | `"    assert len(plan[\"queries\"]) <= MAX_PLAN_QUERIES"` | — |
+| [SRC-3D0DE98F65-L000028](../../tests/test_question_requirement_loop.py#L28) | 28 | `"    assert all(item[\"target\"] in item[\"query\"] for item in requirement_queries)"` | — |
+| [SRC-3D0DE98F65-L000029](../../tests/test_question_requirement_loop.py#L29) | 29 | `""` | — |
+| [SRC-3D0DE98F65-L000030](../../tests/test_question_requirement_loop.py#L30) | 30 | `""` | — |
+| [SRC-3D0DE98F65-L000031](../../tests/test_question_requirement_loop.py#L31) | 31 | `"def test_validated_model_plan_cannot_drop_mandatory_criterion_queries() -> None:"` | — |
+| [SRC-3D0DE98F65-L000032](../../tests/test_question_requirement_loop.py#L32) | 32 | `"    fallback = fallback_plan(QUESTION)"` | — |
+| [SRC-3D0DE98F65-L000033](../../tests/test_question_requirement_loop.py#L33) | 33 | `"    candidate = {"` | — |
+| [SRC-3D0DE98F65-L000034](../../tests/test_question_requirement_loop.py#L34) | 34 | `"        \"queries\": [\"iPhone 17 Samsung S26 reviews\"],"` | — |
+| [SRC-3D0DE98F65-L000035](../../tests/test_question_requirement_loop.py#L35) | 35 | `"        \"social_focus\": False,"` | — |
+| [SRC-3D0DE98F65-L000036](../../tests/test_question_requirement_loop.py#L36) | 36 | `"        \"freshness\": \"any\","` | — |
+| [SRC-3D0DE98F65-L000037](../../tests/test_question_requirement_loop.py#L37) | 37 | `"        \"depth\": \"deep\","` | — |
+| [SRC-3D0DE98F65-L000038](../../tests/test_question_requirement_loop.py#L38) | 38 | `"        \"platforms\": [],"` | — |
+| [SRC-3D0DE98F65-L000039](../../tests/test_question_requirement_loop.py#L39) | 39 | `"    }"` | — |
+| [SRC-3D0DE98F65-L000040](../../tests/test_question_requirement_loop.py#L40) | 40 | `""` | — |
+| [SRC-3D0DE98F65-L000041](../../tests/test_question_requirement_loop.py#L41) | 41 | `"    validated = validate_plan(candidate, QUESTION)"` | — |
+| [SRC-3D0DE98F65-L000042](../../tests/test_question_requirement_loop.py#L42) | 42 | `""` | — |
+| [SRC-3D0DE98F65-L000043](../../tests/test_question_requirement_loop.py#L43) | 43 | `"    assert validated[\"coverage_targets\"] == fallback[\"coverage_targets\"]"` | — |
+| [SRC-3D0DE98F65-L000044](../../tests/test_question_requirement_loop.py#L44) | 44 | `"    assert validated[\"requirement_queries\"] == fallback[\"requirement_queries\"]"` | — |
+| [SRC-3D0DE98F65-L000045](../../tests/test_question_requirement_loop.py#L45) | 45 | `"    assert all(item[\"query\"] in validated[\"queries\"] for item in fallback[\"requirement_queries\"])"` | — |
+| [SRC-3D0DE98F65-L000046](../../tests/test_question_requirement_loop.py#L46) | 46 | `"    assert len(validated[\"queries\"]) <= MAX_PLAN_QUERIES"` | — |
+| [SRC-3D0DE98F65-L000047](../../tests/test_question_requirement_loop.py#L47) | 47 | `""` | — |
+| [SRC-3D0DE98F65-L000048](../../tests/test_question_requirement_loop.py#L48) | 48 | `""` | — |
+| [SRC-3D0DE98F65-L000049](../../tests/test_question_requirement_loop.py#L49) | 49 | `"def test_model_planner_cannot_replace_every_criterion_with_one_generic_query(monkeypatch) -> None:"` | — |
+| [SRC-3D0DE98F65-L000050](../../tests/test_question_requirement_loop.py#L50) | 50 | `"    agent = WebAgent()"` | — |
+| [SRC-3D0DE98F65-L000051](../../tests/test_question_requirement_loop.py#L51) | 51 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-3D0DE98F65-L000052](../../tests/test_question_requirement_loop.py#L52) | 52 | `"    monkeypatch.setattr("` | — |
+| [SRC-3D0DE98F65-L000053](../../tests/test_question_requirement_loop.py#L53) | 53 | `"        agent,"` | — |
+| [SRC-3D0DE98F65-L000054](../../tests/test_question_requirement_loop.py#L54) | 54 | `"        \"_request_completion\","` | — |
+| [SRC-3D0DE98F65-L000055](../../tests/test_question_requirement_loop.py#L55) | 55 | `"        lambda *args, **kwargs: json.dumps("` | — |
+| [SRC-3D0DE98F65-L000056](../../tests/test_question_requirement_loop.py#L56) | 56 | `"            {"` | — |
+| [SRC-3D0DE98F65-L000057](../../tests/test_question_requirement_loop.py#L57) | 57 | `"                \"queries\": [\"iPhone Samsung review\"],"` | — |
+| [SRC-3D0DE98F65-L000058](../../tests/test_question_requirement_loop.py#L58) | 58 | `"                \"social_focus\": False,"` | — |
+| [SRC-3D0DE98F65-L000059](../../tests/test_question_requirement_loop.py#L59) | 59 | `"                \"freshness\": \"any\","` | — |
+| [SRC-3D0DE98F65-L000060](../../tests/test_question_requirement_loop.py#L60) | 60 | `"                \"depth\": \"deep\","` | — |
+| [SRC-3D0DE98F65-L000061](../../tests/test_question_requirement_loop.py#L61) | 61 | `"                \"platforms\": [],"` | — |
+| [SRC-3D0DE98F65-L000062](../../tests/test_question_requirement_loop.py#L62) | 62 | `"            }"` | — |
+| [SRC-3D0DE98F65-L000063](../../tests/test_question_requirement_loop.py#L63) | 63 | `"        ),"` | — |
+| [SRC-3D0DE98F65-L000064](../../tests/test_question_requirement_loop.py#L64) | 64 | `"    )"` | — |
+| [SRC-3D0DE98F65-L000065](../../tests/test_question_requirement_loop.py#L65) | 65 | `""` | — |
+| [SRC-3D0DE98F65-L000066](../../tests/test_question_requirement_loop.py#L66) | 66 | `"    plan = agent._plan_search(QUESTION, [])"` | — |
+| [SRC-3D0DE98F65-L000067](../../tests/test_question_requirement_loop.py#L67) | 67 | `""` | — |
+| [SRC-3D0DE98F65-L000068](../../tests/test_question_requirement_loop.py#L68) | 68 | `"    assert plan[\"coverage_targets\"] == [\"السعر\", \"البطارية\", \"الكاميرا\"]"` | — |
+| [SRC-3D0DE98F65-L000069](../../tests/test_question_requirement_loop.py#L69) | 69 | `"    assert all(item[\"query\"] in plan[\"queries\"] for item in plan[\"requirement_queries\"])"` | — |
+| [SRC-3D0DE98F65-L000070](../../tests/test_question_requirement_loop.py#L70) | 70 | `"    assert len(plan[\"queries\"]) <= MAX_PLAN_QUERIES"` | — |
+| [SRC-3D0DE98F65-L000071](../../tests/test_question_requirement_loop.py#L71) | 71 | `""` | — |
+| [SRC-3D0DE98F65-L000072](../../tests/test_question_requirement_loop.py#L72) | 72 | `""` | — |
+| [SRC-3D0DE98F65-L000073](../../tests/test_question_requirement_loop.py#L73) | 73 | `"def test_requirement_evidence_ledger_distinguishes_candidate_from_query_only_result() -> None:"` | — |
+| [SRC-3D0DE98F65-L000074](../../tests/test_question_requirement_loop.py#L74) | 74 | `"    plan = fallback_plan(QUESTION)"` | — |
+| [SRC-3D0DE98F65-L000075](../../tests/test_question_requirement_loop.py#L75) | 75 | `"    queries = plan[\"requirement_queries\"]"` | — |
+| [SRC-3D0DE98F65-L000076](../../tests/test_question_requirement_loop.py#L76) | 76 | `"    price_query = next(item[\"query\"] for item in queries if item[\"target\"] == \"السعر\")"` | — |
+| [SRC-3D0DE98F65-L000077](../../tests/test_question_requirement_loop.py#L77) | 77 | `"    battery_query = next(item[\"query\"] for item in queries if item[\"target\"] == \"البطارية\")"` | — |
+| [SRC-3D0DE98F65-L000078](../../tests/test_question_requirement_loop.py#L78) | 78 | `"    sources = ["` | — |
+| [SRC-3D0DE98F65-L000079](../../tests/test_question_requirement_loop.py#L79) | 79 | `"        {"` | — |
+| [SRC-3D0DE98F65-L000080](../../tests/test_question_requirement_loop.py#L80) | 80 | `"            \"url\": \"https://example.com/price\","` | — |
+| [SRC-3D0DE98F65-L000081](../../tests/test_question_requirement_loop.py#L81) | 81 | `"            \"title\": \"Phone pricing\","` | — |
+| [SRC-3D0DE98F65-L000082](../../tests/test_question_requirement_loop.py#L82) | 82 | `"            \"snippet\": \"The current price is listed for both phone models.\","` | — |
+| [SRC-3D0DE98F65-L000083](../../tests/test_question_requirement_loop.py#L83) | 83 | `"            \"page_text\": \"The current price is 100 EGP.\","` | — |
+| [SRC-3D0DE98F65-L000084](../../tests/test_question_requirement_loop.py#L84) | 84 | `"            \"page_fetched\": True,"` | — |
+| [SRC-3D0DE98F65-L000085](../../tests/test_question_requirement_loop.py#L85) | 85 | `"            \"queries\": [price_query],"` | — |
+| [SRC-3D0DE98F65-L000086](../../tests/test_question_requirement_loop.py#L86) | 86 | `"        },"` | — |
+| [SRC-3D0DE98F65-L000087](../../tests/test_question_requirement_loop.py#L87) | 87 | `"        {"` | — |
+| [SRC-3D0DE98F65-L000088](../../tests/test_question_requirement_loop.py#L88) | 88 | `"            \"url\": \"https://example.net/specs\","` | — |
+| [SRC-3D0DE98F65-L000089](../../tests/test_question_requirement_loop.py#L89) | 89 | `"            \"title\": \"General technical specifications\","` | — |
+| [SRC-3D0DE98F65-L000090](../../tests/test_question_requirement_loop.py#L90) | 90 | `"            \"snippet\": \"Technical specifications for the two products are listed here.\","` | — |
+| [SRC-3D0DE98F65-L000091](../../tests/test_question_requirement_loop.py#L91) | 91 | `"            \"page_fetched\": False,"` | — |
+| [SRC-3D0DE98F65-L000092](../../tests/test_question_requirement_loop.py#L92) | 92 | `"            \"queries\": [battery_query],"` | — |
+| [SRC-3D0DE98F65-L000093](../../tests/test_question_requirement_loop.py#L93) | 93 | `"        },"` | — |
+| [SRC-3D0DE98F65-L000094](../../tests/test_question_requirement_loop.py#L94) | 94 | `"    ]"` | — |
+| [SRC-3D0DE98F65-L000095](../../tests/test_question_requirement_loop.py#L95) | 95 | `""` | — |
+| [SRC-3D0DE98F65-L000096](../../tests/test_question_requirement_loop.py#L96) | 96 | `"    ledger = build_requirement_evidence_ledger(plan[\"coverage_targets\"], sources, queries)"` | — |
+| [SRC-3D0DE98F65-L000097](../../tests/test_question_requirement_loop.py#L97) | 97 | `"    by_target = {item[\"target\"]: item for item in ledger}"` | — |
+| [SRC-3D0DE98F65-L000098](../../tests/test_question_requirement_loop.py#L98) | 98 | `""` | — |
+| [SRC-3D0DE98F65-L000099](../../tests/test_question_requirement_loop.py#L99) | 99 | `"    assert by_target[\"السعر\"][\"status\"] == \"candidate_evidence_found_not_verified\""` | — |
+| [SRC-3D0DE98F65-L000100](../../tests/test_question_requirement_loop.py#L100) | 100 | `"    assert by_target[\"السعر\"][\"candidate_source_indexes\"] == [1]"` | — |
+| [SRC-3D0DE98F65-L000101](../../tests/test_question_requirement_loop.py#L101) | 101 | `"    assert by_target[\"البطارية\"][\"status\"] == \"query_returned_candidates_no_lexical_signal\""` | — |
+| [SRC-3D0DE98F65-L000102](../../tests/test_question_requirement_loop.py#L102) | 102 | `"    assert by_target[\"البطارية\"][\"query_result_source_indexes\"] == [2]"` | — |
+| [SRC-3D0DE98F65-L000103](../../tests/test_question_requirement_loop.py#L103) | 103 | `"    assert by_target[\"الكاميرا\"][\"status\"] == \"no_candidate_evidence_found\""` | — |
+| [SRC-3D0DE98F65-L000104](../../tests/test_question_requirement_loop.py#L104) | 104 | `"    assert all(item[\"semantic_verification\"] is False for item in ledger)"` | — |
+| [SRC-3D0DE98F65-L000105](../../tests/test_question_requirement_loop.py#L105) | 105 | `"    assert all(item[\"source_entailment_verified\"] is False for item in ledger)"` | — |
+| [SRC-3D0DE98F65-L000106](../../tests/test_question_requirement_loop.py#L106) | 106 | `""` | — |
+| [SRC-3D0DE98F65-L000107](../../tests/test_question_requirement_loop.py#L107) | 107 | `""` | — |
+| [SRC-3D0DE98F65-L000108](../../tests/test_question_requirement_loop.py#L108) | 108 | `""` | — |
+| [SRC-3D0DE98F65-L000109](../../tests/test_question_requirement_loop.py#L109) | 109 | `"def test_research_keeps_a_relevant_source_for_each_criterion_before_page_fetch(monkeypatch) -> None:"` | — |
+| [SRC-3D0DE98F65-L000110](../../tests/test_question_requirement_loop.py#L110) | 110 | `"    agent = WebAgent()"` | — |
+| [SRC-3D0DE98F65-L000111](../../tests/test_question_requirement_loop.py#L111) | 111 | `"    targets = [\"price\", \"battery\", \"camera\", \"warranty\"]"` | — |
+| [SRC-3D0DE98F65-L000112](../../tests/test_question_requirement_loop.py#L112) | 112 | `"    requirement_queries = ["` | — |
+| [SRC-3D0DE98F65-L000113](../../tests/test_question_requirement_loop.py#L113) | 113 | `"        {\"target\": target, \"query\": f\"sample product {target}\"}"` | — |
+| [SRC-3D0DE98F65-L000114](../../tests/test_question_requirement_loop.py#L114) | 114 | `"        for target in targets"` | — |
+| [SRC-3D0DE98F65-L000115](../../tests/test_question_requirement_loop.py#L115) | 115 | `"    ]"` | — |
+| [SRC-3D0DE98F65-L000116](../../tests/test_question_requirement_loop.py#L116) | 116 | `"    plan = {"` | — |
+| [SRC-3D0DE98F65-L000117](../../tests/test_question_requirement_loop.py#L117) | 117 | `"        \"queries\": [item[\"query\"] for item in requirement_queries],"` | — |
+| [SRC-3D0DE98F65-L000118](../../tests/test_question_requirement_loop.py#L118) | 118 | `"        \"coverage_targets\": targets,"` | — |
+| [SRC-3D0DE98F65-L000119](../../tests/test_question_requirement_loop.py#L119) | 119 | `"        \"requirement_queries\": requirement_queries,"` | — |
+| [SRC-3D0DE98F65-L000120](../../tests/test_question_requirement_loop.py#L120) | 120 | `"        \"direct_urls\": [],"` | — |
+| [SRC-3D0DE98F65-L000121](../../tests/test_question_requirement_loop.py#L121) | 121 | `"        \"social_focus\": False,"` | — |
+| [SRC-3D0DE98F65-L000122](../../tests/test_question_requirement_loop.py#L122) | 122 | `"        \"freshness\": \"any\","` | — |
+| [SRC-3D0DE98F65-L000123](../../tests/test_question_requirement_loop.py#L123) | 123 | `"        \"depth\": \"standard\","` | — |
+| [SRC-3D0DE98F65-L000124](../../tests/test_question_requirement_loop.py#L124) | 124 | `"        \"platforms\": [],"` | — |
+| [SRC-3D0DE98F65-L000125](../../tests/test_question_requirement_loop.py#L125) | 125 | `"        \"planning_method\": \"test\","` | — |
+| [SRC-3D0DE98F65-L000126](../../tests/test_question_requirement_loop.py#L126) | 126 | `"    }"` | — |
+| [SRC-3D0DE98F65-L000127](../../tests/test_question_requirement_loop.py#L127) | 127 | `"    query_index = {"` | — |
+| [SRC-3D0DE98F65-L000128](../../tests/test_question_requirement_loop.py#L128) | 128 | `"        item[\"query\"].casefold(): index"` | — |
+| [SRC-3D0DE98F65-L000129](../../tests/test_question_requirement_loop.py#L129) | 129 | `"        for index, item in enumerate(requirement_queries)"` | — |
+| [SRC-3D0DE98F65-L000130](../../tests/test_question_requirement_loop.py#L130) | 130 | `"    }"` | — |
+| [SRC-3D0DE98F65-L000131](../../tests/test_question_requirement_loop.py#L131) | 131 | `""` | — |
+| [SRC-3D0DE98F65-L000132](../../tests/test_question_requirement_loop.py#L132) | 132 | `"    def fake_search(query: str):"` | — |
+| [SRC-3D0DE98F65-L000133](../../tests/test_question_requirement_loop.py#L133) | 133 | `"        index = query_index[query.casefold()]"` | — |
+| [SRC-3D0DE98F65-L000134](../../tests/test_question_requirement_loop.py#L134) | 134 | `"        rows = []"` | — |
+| [SRC-3D0DE98F65-L000135](../../tests/test_question_requirement_loop.py#L135) | 135 | `"        for rank in range(1, 7):"` | — |
+| [SRC-3D0DE98F65-L000136](../../tests/test_question_requirement_loop.py#L136) | 136 | `"            title = ("` | — |
+| [SRC-3D0DE98F65-L000137](../../tests/test_question_requirement_loop.py#L137) | 137 | `"                f\"{targets[index]} detailed evidence\""` | — |
+| [SRC-3D0DE98F65-L000138](../../tests/test_question_requirement_loop.py#L138) | 138 | `"                if rank == 6"` | — |
+| [SRC-3D0DE98F65-L000139](../../tests/test_question_requirement_loop.py#L139) | 139 | `"                else f\"Generic product listing {index}-{rank}\""` | — |
+| [SRC-3D0DE98F65-L000140](../../tests/test_question_requirement_loop.py#L140) | 140 | `"            )"` | — |
+| [SRC-3D0DE98F65-L000141](../../tests/test_question_requirement_loop.py#L141) | 141 | `"            rows.append({"` | — |
+| [SRC-3D0DE98F65-L000142](../../tests/test_question_requirement_loop.py#L142) | 142 | `"                \"title\": title,"` | — |
+| [SRC-3D0DE98F65-L000143](../../tests/test_question_requirement_loop.py#L143) | 143 | `"                \"url\": f\"https://s{index}-r{rank}.example.com/item\","` | — |
+| [SRC-3D0DE98F65-L000144](../../tests/test_question_requirement_loop.py#L144) | 144 | `"                \"snippet\": title if rank == 6 else \"General product listing with no criterion detail.\","` | — |
+| [SRC-3D0DE98F65-L000145](../../tests/test_question_requirement_loop.py#L145) | 145 | `"                \"provider\": \"test_search\","` | — |
+| [SRC-3D0DE98F65-L000146](../../tests/test_question_requirement_loop.py#L146) | 146 | `"                \"provider_rank\": rank,"` | — |
+| [SRC-3D0DE98F65-L000147](../../tests/test_question_requirement_loop.py#L147) | 147 | `"                \"domain\": f\"s{index}-r{rank}.example.com\","` | — |
+| [SRC-3D0DE98F65-L000148](../../tests/test_question_requirement_loop.py#L148) | 148 | `"            })"` | — |
+| [SRC-3D0DE98F65-L000149](../../tests/test_question_requirement_loop.py#L149) | 149 | `"        return rows"` | — |
+| [SRC-3D0DE98F65-L000150](../../tests/test_question_requirement_loop.py#L150) | 150 | `""` | — |
+| [SRC-3D0DE98F65-L000151](../../tests/test_question_requirement_loop.py#L151) | 151 | `"    def fake_fetch(url: str):"` | — |
+| [SRC-3D0DE98F65-L000152](../../tests/test_question_requirement_loop.py#L152) | 152 | `"        hostname = url.split(\"://\", 1)[1].split(\"/\", 1)[0]"` | — |
+| [SRC-3D0DE98F65-L000153](../../tests/test_question_requirement_loop.py#L153) | 153 | `"        index = int(hostname.split(\"-r\", 1)[0][1:])"` | — |
+| [SRC-3D0DE98F65-L000154](../../tests/test_question_requirement_loop.py#L154) | 154 | `"        target = targets[index]"` | — |
+| [SRC-3D0DE98F65-L000155](../../tests/test_question_requirement_loop.py#L155) | 155 | `"        return f\"{target} page\", f\"{target} evidence and detailed specifications.\""` | — |
+| [SRC-3D0DE98F65-L000156](../../tests/test_question_requirement_loop.py#L156) | 156 | `""` | — |
+| [SRC-3D0DE98F65-L000157](../../tests/test_question_requirement_loop.py#L157) | 157 | `"    monkeypatch.setattr(agent, \"_search_web\", fake_search)"` | — |
+| [SRC-3D0DE98F65-L000158](../../tests/test_question_requirement_loop.py#L158) | 158 | `"    monkeypatch.setattr(agent, \"_fetch_page\", fake_fetch)"` | — |
+| [SRC-3D0DE98F65-L000159](../../tests/test_question_requirement_loop.py#L159) | 159 | `""` | — |
+| [SRC-3D0DE98F65-L000160](../../tests/test_question_requirement_loop.py#L160) | 160 | `"    sources, _warnings, report = agent._collect_research(plan)"` | — |
+| [SRC-3D0DE98F65-L000161](../../tests/test_question_requirement_loop.py#L161) | 161 | `""` | — |
+| [SRC-3D0DE98F65-L000162](../../tests/test_question_requirement_loop.py#L162) | 162 | `"    assert len(sources) <= 18"` | — |
+| [SRC-3D0DE98F65-L000163](../../tests/test_question_requirement_loop.py#L163) | 163 | `"    for item in requirement_queries:"` | — |
+| [SRC-3D0DE98F65-L000164](../../tests/test_question_requirement_loop.py#L164) | 164 | `"        matched = ["` | — |
+| [SRC-3D0DE98F65-L000165](../../tests/test_question_requirement_loop.py#L165) | 165 | `"            source for source in sources"` | — |
+| [SRC-3D0DE98F65-L000166](../../tests/test_question_requirement_loop.py#L166) | 166 | `"            if item[\"query\"] in source.get(\"queries\", [])"` | — |
+| [SRC-3D0DE98F65-L000167](../../tests/test_question_requirement_loop.py#L167) | 167 | `"        ]"` | — |
+| [SRC-3D0DE98F65-L000168](../../tests/test_question_requirement_loop.py#L168) | 168 | `"        assert matched, f\"criterion query lost from final source pool: {item['target']}\""` | — |
+| [SRC-3D0DE98F65-L000169](../../tests/test_question_requirement_loop.py#L169) | 169 | `"        assert any(item[\"target\"] in source[\"title\"] for source in matched[:2])"` | — |
+| [SRC-3D0DE98F65-L000170](../../tests/test_question_requirement_loop.py#L170) | 170 | `"    assert report[\"queries_planned\"] == 4"` | — |
+| [SRC-3D0DE98F65-L000171](../../tests/test_question_requirement_loop.py#L171) | 171 | `"    assert report[\"queries_attempted\"] == 4"` | — |
+| [SRC-3D0DE98F65-L000172](../../tests/test_question_requirement_loop.py#L172) | 172 | `""` | — |
+| [SRC-3D0DE98F65-L000173](../../tests/test_question_requirement_loop.py#L173) | 173 | `""` | — |
+| [SRC-3D0DE98F65-L000174](../../tests/test_question_requirement_loop.py#L174) | 174 | `"def test_answer_integrity_exposes_requirement_evidence_separately_from_word_overlap() -> None:"` | — |
+| [SRC-3D0DE98F65-L000175](../../tests/test_question_requirement_loop.py#L175) | 175 | `"    plan = fallback_plan(QUESTION)"` | — |
+| [SRC-3D0DE98F65-L000176](../../tests/test_question_requirement_loop.py#L176) | 176 | `"    price_query = next(item[\"query\"] for item in plan[\"requirement_queries\"] if item[\"target\"] == \"السعر\")"` | — |
+| [SRC-3D0DE98F65-L000177](../../tests/test_question_requirement_loop.py#L177) | 177 | `"    sources = ["` | — |
+| [SRC-3D0DE98F65-L000178](../../tests/test_question_requirement_loop.py#L178) | 178 | `"        {"` | — |
+| [SRC-3D0DE98F65-L000179](../../tests/test_question_requirement_loop.py#L179) | 179 | `"            \"url\": \"https://example.com/price\","` | — |
+| [SRC-3D0DE98F65-L000180](../../tests/test_question_requirement_loop.py#L180) | 180 | `"            \"title\": \"Phone pricing\","` | — |
+| [SRC-3D0DE98F65-L000181](../../tests/test_question_requirement_loop.py#L181) | 181 | `"            \"snippet\": \"The price is 100 EGP.\","` | — |
+| [SRC-3D0DE98F65-L000182](../../tests/test_question_requirement_loop.py#L182) | 182 | `"            \"page_fetched\": False,"` | — |
+| [SRC-3D0DE98F65-L000183](../../tests/test_question_requirement_loop.py#L183) | 183 | `"            \"queries\": [price_query],"` | — |
+| [SRC-3D0DE98F65-L000184](../../tests/test_question_requirement_loop.py#L184) | 184 | `"        }"` | — |
+| [SRC-3D0DE98F65-L000185](../../tests/test_question_requirement_loop.py#L185) | 185 | `"    ]"` | — |
+| [SRC-3D0DE98F65-L000186](../../tests/test_question_requirement_loop.py#L186) | 186 | `""` | — |
+| [SRC-3D0DE98F65-L000187](../../tests/test_question_requirement_loop.py#L187) | 187 | `"    result = audit_answer_integrity("` | — |
+| [SRC-3D0DE98F65-L000188](../../tests/test_question_requirement_loop.py#L188) | 188 | `"        QUESTION,"` | — |
+| [SRC-3D0DE98F65-L000189](../../tests/test_question_requirement_loop.py#L189) | 189 | `"        \"السعر غير محسوم والبطارية غير محسومة والكاميرا غير محسومة.\","` | — |
+| [SRC-3D0DE98F65-L000190](../../tests/test_question_requirement_loop.py#L190) | 190 | `"        sources,"` | — |
+| [SRC-3D0DE98F65-L000191](../../tests/test_question_requirement_loop.py#L191) | 191 | `"        plan[\"coverage_targets\"],"` | — |
+| [SRC-3D0DE98F65-L000192](../../tests/test_question_requirement_loop.py#L192) | 192 | `"        plan[\"requirement_queries\"],"` | — |
+| [SRC-3D0DE98F65-L000193](../../tests/test_question_requirement_loop.py#L193) | 193 | `"    )"` | — |
+| [SRC-3D0DE98F65-L000194](../../tests/test_question_requirement_loop.py#L194) | 194 | `""` | — |
+| [SRC-3D0DE98F65-L000195](../../tests/test_question_requirement_loop.py#L195) | 195 | `"    evidence = {item[\"target\"]: item for item in result[\"requirement_evidence\"]}"` | — |
+| [SRC-3D0DE98F65-L000196](../../tests/test_question_requirement_loop.py#L196) | 196 | `"    assert evidence[\"السعر\"][\"status\"] == \"candidate_evidence_found_not_verified\""` | — |
+| [SRC-3D0DE98F65-L000197](../../tests/test_question_requirement_loop.py#L197) | 197 | `"    assert evidence[\"البطارية\"][\"status\"] == \"no_candidate_evidence_found\""` | — |
+| [SRC-3D0DE98F65-L000198](../../tests/test_question_requirement_loop.py#L198) | 198 | `"    assert result[\"semantic_verification\"] is False"` | — |
+| [SRC-3D0DE98F65-L000199](../../tests/test_question_requirement_loop.py#L199) | 199 | `"    assert result[\"requirements_without_candidate_evidence_count\"] == 2"` | — |
+| [SRC-3D0DE98F65-L000200](../../tests/test_question_requirement_loop.py#L200) | 200 | `"    assert result[\"target_coverage\"][0][\"evidence\"][\"status\"] == \"candidate_evidence_found_not_verified\""` | — |
+| [SRC-3D0DE98F65-L000201](../../tests/test_question_requirement_loop.py#L201) | 201 | `""` | — |
+| [SRC-3D0DE98F65-L000202](../../tests/test_question_requirement_loop.py#L202) | 202 | `""` | — |
+| [SRC-3D0DE98F65-L000203](../../tests/test_question_requirement_loop.py#L203) | 203 | `"def test_general_compound_factual_question_creates_one_requirement_per_aspect() -> None:"` | — |
+| [SRC-3D0DE98F65-L000204](../../tests/test_question_requirement_loop.py#L204) | 204 | `"    question = \"اذكر عاصمة مصر وعدد سكان القاهرة، مع مصدر وتاريخ لكل معلومة\""` | — |
+| [SRC-3D0DE98F65-L000205](../../tests/test_question_requirement_loop.py#L205) | 205 | `"    targets = extract_question_coverage_targets(question)"` | — |
+| [SRC-3D0DE98F65-L000206](../../tests/test_question_requirement_loop.py#L206) | 206 | `"    assert targets == [\"العاصمة\", \"عدد السكان\"]"` | — |
+| [SRC-3D0DE98F65-L000207](../../tests/test_question_requirement_loop.py#L207) | 207 | `""` | — |
+| [SRC-3D0DE98F65-L000208](../../tests/test_question_requirement_loop.py#L208) | 208 | `""` | — |
+| [SRC-3D0DE98F65-L000209](../../tests/test_question_requirement_loop.py#L209) | 209 | `"def test_general_compound_factual_fallback_plan_keeps_separate_requirement_queries() -> None:"` | — |
+| [SRC-3D0DE98F65-L000210](../../tests/test_question_requirement_loop.py#L210) | 210 | `"    question = \"اذكر عاصمة مصر وعدد سكان القاهرة، مع مصدر وتاريخ لكل معلومة\""` | — |
+| [SRC-3D0DE98F65-L000211](../../tests/test_question_requirement_loop.py#L211) | 211 | `"    plan = fallback_plan(question)"` | — |
+| [SRC-3D0DE98F65-L000212](../../tests/test_question_requirement_loop.py#L212) | 212 | `"    targets = [item[\"target\"] for item in plan[\"requirement_queries\"]]"` | — |
+| [SRC-3D0DE98F65-L000213](../../tests/test_question_requirement_loop.py#L213) | 213 | `"    assert targets == [\"العاصمة\", \"عدد السكان\"]"` | — |
+| [SRC-3D0DE98F65-L000214](../../tests/test_question_requirement_loop.py#L214) | 214 | `"    assert all(item[\"query\"] in plan[\"queries\"] for item in plan[\"requirement_queries\"])"` | — |
+| [SRC-3D0DE98F65-L000215](../../tests/test_question_requirement_loop.py#L215) | 215 | `"    assert len(plan[\"queries\"]) <= MAX_PLAN_QUERIES"` | — |
 ## اختبارات
 
-### FILE-F725E90B2A — [tests/test_web_agent.py](../../tests/test_web_agent.py#L1)
+### FILE-C353AAAC10 — [tests/test_request_budget.py](../../tests/test_request_budget.py#L1)
 
 - النوع: **Python**
 - نطاق الفهرسة: جرد الملف + AST Python
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
-| [SRC-F725E90B2A-L000001](../../tests/test_web_agent.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-F725E90B2A-L000002](../../tests/test_web_agent.py#L2) | 2 | `""` | — |
-| [SRC-F725E90B2A-L000003](../../tests/test_web_agent.py#L3) | 3 | `"from pathlib import Path"` | — |
-| [SRC-F725E90B2A-L000004](../../tests/test_web_agent.py#L4) | 4 | `""` | — |
-| [SRC-F725E90B2A-L000005](../../tests/test_web_agent.py#L5) | 5 | `"import pytest"` | — |
-| [SRC-F725E90B2A-L000006](../../tests/test_web_agent.py#L6) | 6 | `""` | — |
-| [SRC-F725E90B2A-L000007](../../tests/test_web_agent.py#L7) | 7 | `"from agents.research import compact_search_query"` | — |
-| [SRC-F725E90B2A-L000008](../../tests/test_web_agent.py#L8) | 8 | `"from agents.request_budget import RequestBudgetExceeded"` | — |
-| [SRC-F725E90B2A-L000009](../../tests/test_web_agent.py#L9) | 9 | `"from agents.web_agent import ("` | — |
-| [SRC-F725E90B2A-L000010](../../tests/test_web_agent.py#L10) | 10 | `"    WebAgent,"` | — |
-| [SRC-F725E90B2A-L000011](../../tests/test_web_agent.py#L11) | 11 | `"    _fallback_lead_answer,"` | — |
-| [SRC-F725E90B2A-L000012](../../tests/test_web_agent.py#L12) | 12 | `"    _minimum_relevance_ratio,"` | — |
-| [SRC-F725E90B2A-L000013](../../tests/test_web_agent.py#L13) | 13 | `"    _normalize_search_query,"` | — |
-| [SRC-F725E90B2A-L000014](../../tests/test_web_agent.py#L14) | 14 | `"    _public_http_url,"` | — |
-| [SRC-F725E90B2A-L000015](../../tests/test_web_agent.py#L15) | 15 | `"    _relevance_query_tokens,"` | — |
-| [SRC-F725E90B2A-L000016](../../tests/test_web_agent.py#L16) | 16 | `"    _relevance_ratio,"` | — |
-| [SRC-F725E90B2A-L000017](../../tests/test_web_agent.py#L17) | 17 | `")"` | — |
-| [SRC-F725E90B2A-L000018](../../tests/test_web_agent.py#L18) | 18 | `""` | — |
-| [SRC-F725E90B2A-L000019](../../tests/test_web_agent.py#L19) | 19 | `""` | — |
-| [SRC-F725E90B2A-L000020](../../tests/test_web_agent.py#L20) | 20 | `"def sample_source(index=0):"` | — |
-| [SRC-F725E90B2A-L000021](../../tests/test_web_agent.py#L21) | 21 | `"    domain = \"example.com\" if index == 0 else \"example.net\""` | — |
-| [SRC-F725E90B2A-L000022](../../tests/test_web_agent.py#L22) | 22 | `"    return {"` | — |
-| [SRC-F725E90B2A-L000023](../../tests/test_web_agent.py#L23) | 23 | `"        \"title\": \"مقالة عن التقنية\","` | — |
-| [SRC-F725E90B2A-L000024](../../tests/test_web_agent.py#L24) | 24 | `"        \"url\": f\"https://{domain}/research\","` | — |
-| [SRC-F725E90B2A-L000025](../../tests/test_web_agent.py#L25) | 25 | `"        \"snippet\": \"يشرح هذا المصدر التقنية وسبب المقارنة.\","` | — |
-| [SRC-F725E90B2A-L000026](../../tests/test_web_agent.py#L26) | 26 | `"        \"page_text\": \"نص مستخرج من الصفحة يشرح التقنية وأسباب المقارنة.\","` | — |
-| [SRC-F725E90B2A-L000027](../../tests/test_web_agent.py#L27) | 27 | `"        \"page_fetched\": True,"` | — |
-| [SRC-F725E90B2A-L000028](../../tests/test_web_agent.py#L28) | 28 | `"        \"providers\": [\"test_provider\"],"` | — |
-| [SRC-F725E90B2A-L000029](../../tests/test_web_agent.py#L29) | 29 | `"        \"queries\": [\"قارن هذه التقنية\"],"` | — |
-| [SRC-F725E90B2A-L000030](../../tests/test_web_agent.py#L30) | 30 | `"        \"domain\": domain,"` | — |
-| [SRC-F725E90B2A-L000031](../../tests/test_web_agent.py#L31) | 31 | `"        \"source_class\": \"general\","` | — |
-| [SRC-F725E90B2A-L000032](../../tests/test_web_agent.py#L32) | 32 | `"        \"platform\": \"web\","` | — |
-| [SRC-F725E90B2A-L000033](../../tests/test_web_agent.py#L33) | 33 | `"    }"` | — |
-| [SRC-F725E90B2A-L000034](../../tests/test_web_agent.py#L34) | 34 | `""` | — |
+| [SRC-C353AAAC10-L000001](../../tests/test_request_budget.py#L1) | 1 | `"\"\"\"Unit tests for Omarai's per-request resource budget.\"\"\""` | — |
+| [SRC-C353AAAC10-L000002](../../tests/test_request_budget.py#L2) | 2 | `"from __future__ import annotations"` | — |
+| [SRC-C353AAAC10-L000003](../../tests/test_request_budget.py#L3) | 3 | `""` | — |
+| [SRC-C353AAAC10-L000004](../../tests/test_request_budget.py#L4) | 4 | `"import pytest"` | — |
+| [SRC-C353AAAC10-L000005](../../tests/test_request_budget.py#L5) | 5 | `""` | — |
+| [SRC-C353AAAC10-L000006](../../tests/test_request_budget.py#L6) | 6 | `"from agents.request_budget import RequestBudget, RequestBudgetExceeded"` | — |
+| [SRC-C353AAAC10-L000007](../../tests/test_request_budget.py#L7) | 7 | `""` | — |
+| [SRC-C353AAAC10-L000008](../../tests/test_request_budget.py#L8) | 8 | `""` | — |
+| [SRC-C353AAAC10-L000009](../../tests/test_request_budget.py#L9) | 9 | `"class FakeClock:"` | — |
+| [SRC-C353AAAC10-L000010](../../tests/test_request_budget.py#L10) | 10 | `"    def __init__(self, value: float = 100.0) -> None:"` | — |
+| [SRC-C353AAAC10-L000011](../../tests/test_request_budget.py#L11) | 11 | `"        self.value = value"` | — |
+| [SRC-C353AAAC10-L000012](../../tests/test_request_budget.py#L12) | 12 | `""` | — |
+| [SRC-C353AAAC10-L000013](../../tests/test_request_budget.py#L13) | 13 | `"    def __call__(self) -> float:"` | — |
+| [SRC-C353AAAC10-L000014](../../tests/test_request_budget.py#L14) | 14 | `"        return self.value"` | — |
+| [SRC-C353AAAC10-L000015](../../tests/test_request_budget.py#L15) | 15 | `""` | — |
+| [SRC-C353AAAC10-L000016](../../tests/test_request_budget.py#L16) | 16 | `""` | — |
+| [SRC-C353AAAC10-L000017](../../tests/test_request_budget.py#L17) | 17 | `"def test_resource_reservations_are_bounded_and_thread_safe_in_snapshot():"` | — |
+| [SRC-C353AAAC10-L000018](../../tests/test_request_budget.py#L18) | 18 | `"    clock = FakeClock()"` | — |
+| [SRC-C353AAAC10-L000019](../../tests/test_request_budget.py#L19) | 19 | `"    budget = RequestBudget("` | — |
+| [SRC-C353AAAC10-L000020](../../tests/test_request_budget.py#L20) | 20 | `"        timeout_seconds=10,"` | — |
+| [SRC-C353AAAC10-L000021](../../tests/test_request_budget.py#L21) | 21 | `"        limits={\"search_calls\": 1},"` | — |
+| [SRC-C353AAAC10-L000022](../../tests/test_request_budget.py#L22) | 22 | `"        clock=clock,"` | — |
+| [SRC-C353AAAC10-L000023](../../tests/test_request_budget.py#L23) | 23 | `"    )"` | — |
+| [SRC-C353AAAC10-L000024](../../tests/test_request_budget.py#L24) | 24 | `""` | — |
+| [SRC-C353AAAC10-L000025](../../tests/test_request_budget.py#L25) | 25 | `"    budget.reserve(\"search_calls\")"` | — |
+| [SRC-C353AAAC10-L000026](../../tests/test_request_budget.py#L26) | 26 | `"    with pytest.raises(RequestBudgetExceeded, match=\"search_calls\"):"` | — |
+| [SRC-C353AAAC10-L000027](../../tests/test_request_budget.py#L27) | 27 | `"        budget.reserve(\"search_calls\")"` | — |
+| [SRC-C353AAAC10-L000028](../../tests/test_request_budget.py#L28) | 28 | `""` | — |
+| [SRC-C353AAAC10-L000029](../../tests/test_request_budget.py#L29) | 29 | `"    snapshot = budget.snapshot()"` | — |
+| [SRC-C353AAAC10-L000030](../../tests/test_request_budget.py#L30) | 30 | `"    assert snapshot[\"counts\"][\"search_calls\"] == 1"` | — |
+| [SRC-C353AAAC10-L000031](../../tests/test_request_budget.py#L31) | 31 | `"    assert snapshot[\"limits\"][\"search_calls\"] == 1"` | — |
+| [SRC-C353AAAC10-L000032](../../tests/test_request_budget.py#L32) | 32 | `"    assert snapshot[\"deadline_exceeded\"] is False"` | — |
+| [SRC-C353AAAC10-L000033](../../tests/test_request_budget.py#L33) | 33 | `""` | — |
+| [SRC-C353AAAC10-L000034](../../tests/test_request_budget.py#L34) | 34 | `""` | — |
+| [SRC-C353AAAC10-L000035](../../tests/test_request_budget.py#L35) | 35 | `"def test_deadline_blocks_new_work_and_caps_outbound_timeout():"` | — |
+| [SRC-C353AAAC10-L000036](../../tests/test_request_budget.py#L36) | 36 | `"    clock = FakeClock()"` | — |
+| [SRC-C353AAAC10-L000037](../../tests/test_request_budget.py#L37) | 37 | `"    budget = RequestBudget(timeout_seconds=10, clock=clock)"` | — |
+| [SRC-C353AAAC10-L000038](../../tests/test_request_budget.py#L38) | 38 | `""` | — |
+| [SRC-C353AAAC10-L000039](../../tests/test_request_budget.py#L39) | 39 | `"    clock.value += 7"` | — |
+| [SRC-C353AAAC10-L000040](../../tests/test_request_budget.py#L40) | 40 | `"    assert budget.timeout_for(30) == pytest.approx(3)"` | — |
+| [SRC-C353AAAC10-L000041](../../tests/test_request_budget.py#L41) | 41 | `"    assert budget.timeout_for(1) == pytest.approx(1)"` | — |
+| [SRC-C353AAAC10-L000042](../../tests/test_request_budget.py#L42) | 42 | `""` | — |
+| [SRC-C353AAAC10-L000043](../../tests/test_request_budget.py#L43) | 43 | `"    clock.value += 4"` | — |
+| [SRC-C353AAAC10-L000044](../../tests/test_request_budget.py#L44) | 44 | `"    assert budget.remaining_seconds() == 0"` | — |
+| [SRC-C353AAAC10-L000045](../../tests/test_request_budget.py#L45) | 45 | `"    with pytest.raises(RequestBudgetExceeded, match=\"وقت الطلب\"):"` | — |
+| [SRC-C353AAAC10-L000046](../../tests/test_request_budget.py#L46) | 46 | `"        budget.reserve(\"model_calls\")"` | — |
+| [SRC-C353AAAC10-L000047](../../tests/test_request_budget.py#L47) | 47 | `"    with pytest.raises(RequestBudgetExceeded, match=\"وقت الطلب\"):"` | — |
+| [SRC-C353AAAC10-L000048](../../tests/test_request_budget.py#L48) | 48 | `"        budget.timeout_for(3)"` | — |
+| [SRC-C353AAAC10-L000049](../../tests/test_request_budget.py#L49) | 49 | `""` | — |
+| [SRC-C353AAAC10-L000050](../../tests/test_request_budget.py#L50) | 50 | `""` | — |
+| [SRC-C353AAAC10-L000051](../../tests/test_request_budget.py#L51) | 51 | `"def test_environment_overrides_are_clamped(monkeypatch):"` | — |
+| [SRC-C353AAAC10-L000052](../../tests/test_request_budget.py#L52) | 52 | `"    monkeypatch.setenv(\"OMARAI_REQUEST_BUDGET_SECONDS\", \"999\")"` | — |
+| [SRC-C353AAAC10-L000053](../../tests/test_request_budget.py#L53) | 53 | `"    monkeypatch.setenv(\"OMARAI_REQUEST_MAX_SEARCH_CALLS\", \"999\")"` | — |
+| [SRC-C353AAAC10-L000054](../../tests/test_request_budget.py#L54) | 54 | `"    monkeypatch.setenv(\"OMARAI_REQUEST_MAX_MODEL_CALLS\", \"-1\")"` | — |
+| [SRC-C353AAAC10-L000055](../../tests/test_request_budget.py#L55) | 55 | `"    monkeypatch.setenv(\"OMARAI_REQUEST_MAX_TOOL_CALLS\", \"-1\")"` | — |
+| [SRC-C353AAAC10-L000056](../../tests/test_request_budget.py#L56) | 56 | `""` | — |
+| [SRC-C353AAAC10-L000057](../../tests/test_request_budget.py#L57) | 57 | `"    snapshot = RequestBudget.from_environment().snapshot()"` | — |
+| [SRC-C353AAAC10-L000058](../../tests/test_request_budget.py#L58) | 58 | `""` | — |
+| [SRC-C353AAAC10-L000059](../../tests/test_request_budget.py#L59) | 59 | `"    assert snapshot[\"timeout_seconds\"] == 120"` | — |
+| [SRC-C353AAAC10-L000060](../../tests/test_request_budget.py#L60) | 60 | `"    assert snapshot[\"limits\"][\"search_calls\"] == 40"` | — |
+| [SRC-C353AAAC10-L000061](../../tests/test_request_budget.py#L61) | 61 | `"    assert snapshot[\"limits\"][\"model_calls\"] == 1"` | — |
+| [SRC-C353AAAC10-L000062](../../tests/test_request_budget.py#L62) | 62 | `"    assert snapshot[\"limits\"][\"tool_calls\"] == 0"` | — |
+| [SRC-C353AAAC10-L000063](../../tests/test_request_budget.py#L63) | 63 | `""` | — |
+| [SRC-C353AAAC10-L000064](../../tests/test_request_budget.py#L64) | 64 | `""` | — |
+| [SRC-C353AAAC10-L000065](../../tests/test_request_budget.py#L65) | 65 | `"def test_web_agent_reserves_search_model_and_page_work_before_io(monkeypatch):"` | — |
+| [SRC-C353AAAC10-L000066](../../tests/test_request_budget.py#L66) | 66 | `"    from agents.web_agent import WebAgent"` | — |
+| [SRC-C353AAAC10-L000067](../../tests/test_request_budget.py#L67) | 67 | `""` | — |
+| [SRC-C353AAAC10-L000068](../../tests/test_request_budget.py#L68) | 68 | `"    agent = WebAgent()"` | — |
+| [SRC-C353AAAC10-L000069](../../tests/test_request_budget.py#L69) | 69 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-C353AAAC10-L000070](../../tests/test_request_budget.py#L70) | 70 | `""` | — |
+| [SRC-C353AAAC10-L000071](../../tests/test_request_budget.py#L71) | 71 | `"    agent._request_budget = RequestBudget(limits={\"search_queries\": 0})"` | — |
+| [SRC-C353AAAC10-L000072](../../tests/test_request_budget.py#L72) | 72 | `"    with pytest.raises(RequestBudgetExceeded, match=\"search_queries\"):"` | — |
+| [SRC-C353AAAC10-L000073](../../tests/test_request_budget.py#L73) | 73 | `"        agent._search_web(\"budget test\")"` | — |
+| [SRC-C353AAAC10-L000074](../../tests/test_request_budget.py#L74) | 74 | `""` | — |
+| [SRC-C353AAAC10-L000075](../../tests/test_request_budget.py#L75) | 75 | `"    agent._request_budget = RequestBudget(limits={\"model_calls\": 0})"` | — |
+| [SRC-C353AAAC10-L000076](../../tests/test_request_budget.py#L76) | 76 | `"    monkeypatch.setattr("` | — |
+| [SRC-C353AAAC10-L000077](../../tests/test_request_budget.py#L77) | 77 | `"        \"agents.web_agent._open_model_request\","` | — |
+| [SRC-C353AAAC10-L000078](../../tests/test_request_budget.py#L78) | 78 | `"        lambda *args, **kwargs: pytest.fail(\"model HTTP request must not start\"),"` | — |
+| [SRC-C353AAAC10-L000079](../../tests/test_request_budget.py#L79) | 79 | `"    )"` | — |
+| [SRC-C353AAAC10-L000080](../../tests/test_request_budget.py#L80) | 80 | `"    with pytest.raises(RequestBudgetExceeded, match=\"model_calls\"):"` | — |
+| [SRC-C353AAAC10-L000081](../../tests/test_request_budget.py#L81) | 81 | `"        agent._request_completion([{\"role\": \"user\", \"content\": \"test\"}])"` | — |
+| [SRC-C353AAAC10-L000082](../../tests/test_request_budget.py#L82) | 82 | `""` | — |
+| [SRC-C353AAAC10-L000083](../../tests/test_request_budget.py#L83) | 83 | `"    agent._request_budget = RequestBudget(limits={\"page_fetches\": 0})"` | — |
+| [SRC-C353AAAC10-L000084](../../tests/test_request_budget.py#L84) | 84 | `"    with pytest.raises(RequestBudgetExceeded, match=\"page_fetches\"):"` | — |
+| [SRC-C353AAAC10-L000085](../../tests/test_request_budget.py#L85) | 85 | `"        agent._fetch_page(\"https://example.com/\")"` | — |
+| [SRC-C353AAAC10-L000086](../../tests/test_request_budget.py#L86) | 86 | `""` | — |
+| [SRC-C353AAAC10-L000087](../../tests/test_request_budget.py#L87) | 87 | `""` | — |
+| [SRC-C353AAAC10-L000088](../../tests/test_request_budget.py#L88) | 88 | `"def test_social_provider_reserves_budget_before_network_io(monkeypatch):"` | — |
+| [SRC-C353AAAC10-L000089](../../tests/test_request_budget.py#L89) | 89 | `"    from agents.web_agent import WebAgent"` | — |
+| [SRC-C353AAAC10-L000090](../../tests/test_request_budget.py#L90) | 90 | `""` | — |
+| [SRC-C353AAAC10-L000091](../../tests/test_request_budget.py#L91) | 91 | `"    monkeypatch.setenv(\"REDDIT_CLIENT_ID\", \"test-client\")"` | — |
+| [SRC-C353AAAC10-L000092](../../tests/test_request_budget.py#L92) | 92 | `"    monkeypatch.setenv(\"REDDIT_CLIENT_SECRET\", \"test-secret\")"` | — |
+| [SRC-C353AAAC10-L000093](../../tests/test_request_budget.py#L93) | 93 | `"    agent = WebAgent()"` | — |
+| [SRC-C353AAAC10-L000094](../../tests/test_request_budget.py#L94) | 94 | `"    agent._request_budget = RequestBudget(limits={\"search_calls\": 0})"` | — |
+| [SRC-C353AAAC10-L000095](../../tests/test_request_budget.py#L95) | 95 | `""` | — |
+| [SRC-C353AAAC10-L000096](../../tests/test_request_budget.py#L96) | 96 | `"    monkeypatch.setattr("` | — |
+| [SRC-C353AAAC10-L000097](../../tests/test_request_budget.py#L97) | 97 | `"        \"httpx.post\","` | — |
+| [SRC-C353AAAC10-L000098](../../tests/test_request_budget.py#L98) | 98 | `"        lambda *args, **kwargs: pytest.fail(\"social HTTP request must not start\"),"` | — |
+| [SRC-C353AAAC10-L000099](../../tests/test_request_budget.py#L99) | 99 | `"    )"` | — |
+| [SRC-C353AAAC10-L000100](../../tests/test_request_budget.py#L100) | 100 | `"    with pytest.raises(RequestBudgetExceeded, match=\"search_calls\"):"` | — |
+| [SRC-C353AAAC10-L000101](../../tests/test_request_budget.py#L101) | 101 | `"        agent._search_social(\"budget test\", [\"reddit\"])"` | — |
+| [SRC-C353AAAC10-L000102](../../tests/test_request_budget.py#L102) | 102 | `""` | — |
+| [SRC-C353AAAC10-L000103](../../tests/test_request_budget.py#L103) | 103 | `""` | — |
+| [SRC-C353AAAC10-L000104](../../tests/test_request_budget.py#L104) | 104 | `"@pytest.mark.parametrize("` | — |
+| [SRC-C353AAAC10-L000105](../../tests/test_request_budget.py#L105) | 105 | `"    (\"resource\", \"limit\"),"` | — |
+| [SRC-C353AAAC10-L000106](../../tests/test_request_budget.py#L106) | 106 | `"    ["` | — |
+| [SRC-C353AAAC10-L000107](../../tests/test_request_budget.py#L107) | 107 | `"        (\"search_queries\", 8),"` | — |
+| [SRC-C353AAAC10-L000108](../../tests/test_request_budget.py#L108) | 108 | `"        (\"search_calls\", 32),"` | — |
+| [SRC-C353AAAC10-L000109](../../tests/test_request_budget.py#L109) | 109 | `"        (\"model_calls\", 8),"` | — |
+| [SRC-C353AAAC10-L000110](../../tests/test_request_budget.py#L110) | 110 | `"        (\"page_fetches\", 8),"` | — |
+| [SRC-C353AAAC10-L000111](../../tests/test_request_budget.py#L111) | 111 | `"        (\"tool_calls\", 3),"` | — |
+| [SRC-C353AAAC10-L000112](../../tests/test_request_budget.py#L112) | 112 | `"    ],"` | — |
+| [SRC-C353AAAC10-L000113](../../tests/test_request_budget.py#L113) | 113 | `")"` | — |
+| [SRC-C353AAAC10-L000114](../../tests/test_request_budget.py#L114) | 114 | `"def test_each_resource_counter_stops_at_its_limit(resource, limit):"` | — |

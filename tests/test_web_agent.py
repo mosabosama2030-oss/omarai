@@ -1523,6 +1523,20 @@ def test_omarai_capability_question_is_answered_without_network(monkeypatch):
     assert "ليست إثباتًا" in result["answer"]
 
 
+def test_capability_phrased_question_with_a_search_target_is_not_self_question():
+    question = "هل تستطيع البحث عن أحدث أسعار الذهب في مصر؟"
+
+    assert WebAgent._is_self_question("كيف تبحث أنت في الإنترنت؟") is True
+    assert WebAgent._is_self_question(question) is False
+    assert WebAgent._requires_web_research(question, "auto") is True
+
+
+def test_geographical_location_is_not_treated_as_a_website_navigation_request():
+    assert WebAgent._is_navigation_request("ما موقع مصر جغرافيًا؟") is False
+    assert WebAgent._is_navigation_request("ابحث عن موقع مصر الرقمية") is True
+    assert WebAgent._is_navigation_request("ابحث عن الموقع الرسمي لوزارة الصحة") is True
+
+
 def test_link_lookup_can_return_one_clearly_labelled_candidate(monkeypatch):
     agent = WebAgent()
     agent.api_key = "test-key"
@@ -2478,7 +2492,8 @@ def test_lead_generation_does_not_present_sale_listings_as_buyers(monkeypatch):
     assert all(s["lead_qualification"] == "related_result_not_lead" for s in result["sources"])
 
 
-def test_lead_generation_search_plan_includes_high_intent_queries(monkeypatch):
+@pytest.mark.parametrize("mode", ["auto", "deep"])
+def test_lead_generation_search_plan_includes_high_intent_queries(monkeypatch, mode):
     agent = WebAgent()
     seen = {}
     plan = {
@@ -2519,12 +2534,21 @@ def test_lead_generation_search_plan_includes_high_intent_queries(monkeypatch):
     monkeypatch.setattr(agent, "_generate", lambda *args, **kwargs: "عُثر على إشارة علنية محتملة [المصدر 1].")
     monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
 
-    result = agent.answer("ابحث عن عميل يريد شراء شقة في العاصمة الإدارية بمصر")
+    result = agent.answer(
+        "ابحث عن عميل يريد شراء شقة في العاصمة الإدارية بمصر",
+        mode=mode,
+    )
 
     assert result["intent_route"] == "LEAD_GENERATION"
     assert seen["social_focus"] is True
+    assert seen["depth"] == ("deep" if mode == "deep" else "standard")
     assert len(seen["queries"]) >= 4
     assert any('"مطلوب شراء"' in q or '"مطلوب شقه تمليك"' in q for q in seen["queries"])
+    assert all(
+        marker not in query.casefold()
+        for query in seen["queries"]
+        for marker in ("risks", "risk", "reports", "إعلانات عقارية", "متوسط أسعار")
+    )
     assert result["search_report"]["lead_generation"]["candidate_signal_count"] == 1
     assert result["sources"][0]["lead_qualification"] == "public_demand_signal"
 
@@ -3009,8 +3033,8 @@ def test_explicit_modes_survive_deterministic_planning(monkeypatch, mode):
     if mode == "deep":
         assert plan["depth"] == "deep"
         assert len(plan["queries"]) >= 3
-        assert any("إعلانات عقارية" in query for query in plan["queries"])
-        assert any("متوسط أسعار السوق للمتر" in query for query in plan["queries"])
+        assert not any("إعلانات عقارية" in query for query in plan["queries"])
+        assert not any("متوسط أسعار السوق للمتر" in query for query in plan["queries"])
     elif mode == "latest":
         assert plan["freshness"] == "current"
         assert any(
@@ -3176,8 +3200,10 @@ def test_search_web_keeps_arabic_topic_matches_in_english_indexed_results(monkey
 
 def test_search_web_classifies_http_challenge_and_rate_limit_as_provider_degradation(monkeypatch):
     agent = WebAgent()
+    calls = {"http_202": 0}
 
     def http_202(_query):
+        calls["http_202"] += 1
         raise RuntimeError("HTTP 202")
 
     def http_429(_query):
@@ -3193,8 +3219,53 @@ def test_search_web_classifies_http_challenge_and_rate_limit_as_provider_degrada
         for item in agent._provider_diagnostics
         if item["provider"] in {"duckduckgo_html", "bing_rss"}
     }
-    assert statuses["duckduckgo_html"] == "http_error"
+    assert statuses["duckduckgo_html"] == "blocked"
     assert statuses["bing_rss"] == "rate_limited"
+    assert calls["http_202"] == 1
+
+
+def test_buyer_intent_queries_do_not_call_google_news(monkeypatch):
+    agent = WebAgent()
+    for env_name in ("DEEPSEEK_SEARCH_API_KEY", "BRAVE_SEARCH_API_KEY", "TAVILY_API_KEY"):
+        monkeypatch.delenv(env_name, raising=False)
+    monkeypatch.setattr(agent, "_search_duckduckgo_html", lambda _query: [])
+    monkeypatch.setattr(agent, "_search_bing_rss", lambda _query: [])
+    monkeypatch.setattr(
+        agent, "_search_news",
+        lambda _query: pytest.fail("buyer-intent search must not call Google News"),
+    )
+
+    with pytest.raises(RuntimeError, match="لم تُرجع موصلات البحث"):
+        agent._search_web('"مطلوب شراء" "نظام إنذار حريق" اليوم')
+
+    assert not any(
+        row.get("provider") == "google_news_rss"
+        for row in agent._provider_diagnostics
+    )
+
+
+def test_search_web_classifies_provider_content_decoding_errors(monkeypatch):
+    import httpx
+
+    agent = WebAgent()
+    for env_name in ("DEEPSEEK_SEARCH_API_KEY", "BRAVE_SEARCH_API_KEY", "TAVILY_API_KEY"):
+        monkeypatch.delenv(env_name, raising=False)
+
+    def invalid_compressed_response(_query):
+        raise httpx.DecodingError("malformed compressed body")
+
+    monkeypatch.setattr(agent, "_search_duckduckgo_html", invalid_compressed_response)
+    monkeypatch.setattr(agent, "_search_bing_rss", lambda _query: [])
+
+    with pytest.raises(RuntimeError, match="لم تُرجع موصلات البحث"):
+        agent._search_web("renewable energy storage")
+
+    diagnostic = next(
+        row for row in agent._provider_diagnostics
+        if row.get("provider") == "duckduckgo_html"
+    )
+    assert diagnostic["status"] == "invalid_response"
+    assert diagnostic["error"] == "provider response decoding failed"
 
 
 def test_search_web_records_distinct_candidate_rejection_reasons(monkeypatch):

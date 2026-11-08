@@ -150,7 +150,8 @@ def test_bounded_provider_transport_caps_streamed_bytes_even_when_length_lies(mo
     assert observed["client_options"]["trust_env"] is False
     assert observed["method"] == "GET"
     assert observed["url"] == "https://provider.example/search"
-    assert observed["request_options"] == {"params": {"q": "test"}}
+    assert observed["request_options"]["params"] == {"q": "test"}
+    assert observed["request_options"]["headers"]["Accept-Encoding"] == "identity"
     assert chunks_read == [MAX_PROVIDER_RESPONSE_BYTES, 1]
 
 
@@ -201,9 +202,56 @@ def test_bounded_provider_transport_returns_buffered_response(monkeypatch):
     assert response.status_code == 200
     assert response.json() == {"results": [{"title": "bounded"}]}
     assert observed["method"] == "POST"
-    assert observed["request_options"] == {"json": {"query": "test"}}
+    assert observed["request_options"]["json"] == {"query": "test"}
+    assert observed["request_options"]["headers"]["Accept-Encoding"] == "identity"
     assert observed["client_options"]["follow_redirects"] is False
     assert observed["client_options"]["trust_env"] is False
+
+
+def test_bounded_provider_transport_blocks_http_202_without_reading_or_retrying(monkeypatch):
+    observed = {}
+    body_reads = []
+
+    class FakeResponse:
+        status_code = 202
+
+        def __init__(self):
+            self.headers = {}
+            self.request = httpx.Request("GET", "https://provider.example/search")
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *_args):
+            return False
+
+        def iter_bytes(self):
+            body_reads.append(True)
+            yield b"challenge"
+
+    class FakeClient:
+        def __init__(self, **kwargs):
+            observed["client_options"] = kwargs
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *_args):
+            return False
+
+        def stream(self, method, url, **kwargs):
+            observed["method"] = method
+            observed["request_options"] = kwargs
+            observed["calls"] = observed.get("calls", 0) + 1
+            return FakeResponse()
+
+    monkeypatch.setattr(httpx, "Client", FakeClient)
+    with pytest.raises(RuntimeError, match="HTTP 202"):
+        _bounded_http_request("GET", "https://provider.example/search", params={"q": "buyer"})
+
+    assert observed["calls"] == 1
+    assert observed["request_options"]["headers"]["Accept-Encoding"] == "identity"
+    assert body_reads == []
 
 
 

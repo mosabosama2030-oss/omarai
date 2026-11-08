@@ -154,6 +154,17 @@ input,textarea,select{background:rgba(5,15,25,.88);border-color:rgba(57,207,255,
 .detail-panel{background:#081522;border-left-color:rgba(57,207,255,.2)}
 .auth-gate{background:rgba(2,8,15,.9)}
 .auth-card{background:linear-gradient(145deg,rgba(16,35,52,.98),rgba(8,20,32,.98));border-color:rgba(74,216,255,.22)}
+.profile-panel{margin-bottom:14px}
+.profile-note,.discovery-note{font-size:11px;line-height:1.9;color:var(--muted)}
+.discovery-history,.query-list,.discovery-source-meta{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0}
+.discovery-source{border:1px solid var(--line);border-radius:12px;background:rgba(5,16,27,.68);padding:14px;display:grid;gap:9px}
+.discovery-source.qualified{border-color:rgba(82,223,255,.35);box-shadow:inset 0 0 25px rgba(82,223,255,.035)}
+.discovery-source h3{font-size:14px;line-height:1.7;margin:0;color:var(--text)}
+.discovery-source p{font-size:12px;line-height:1.9;margin:0;color:#c5d5e7;white-space:pre-wrap;overflow-wrap:anywhere}
+.discovery-source a{font-size:11px;color:var(--cyan);overflow-wrap:anywhere}
+.query-list .tag{max-width:100%;white-space:normal;overflow-wrap:anywhere;line-height:1.7}
+.consent-row{display:flex;align-items:flex-start;gap:10px;padding:12px;border:1px solid var(--line);border-radius:10px;background:rgba(5,16,27,.5);font-size:11px;line-height:1.8}
+.consent-row input{width:18px;min-width:18px;height:18px;margin:2px 0 0;accent-color:#52dfff}
 @media(max-width:760px){
  .sidebar{background:rgba(5,13,22,.94);border-bottom-color:rgba(57,207,255,.18)}
  .nav{scrollbar-width:thin;scrollbar-color:rgba(82,223,255,.28) transparent}
@@ -179,6 +190,61 @@ input,textarea,select{background:rgba(5,15,25,.88);border-color:rgba(57,207,255,
  .nav button.active{outline:2px solid Highlight}
 }
 
+/* Responsive glass performance indicators */
+.side-links{display:flex;gap:8px;flex-wrap:wrap;padding:0 4px;align-items:center}
+.side-links a,.side-link-button{font-size:10px;color:#92a8c4}
+.side-link-button{border:0;background:transparent;padding:4px;cursor:pointer;font:inherit}
+.side-link-button:hover,.side-links a:hover{color:var(--teal);text-decoration:underline}
+.indicator-hero{display:flex;align-items:center;gap:24px;padding:22px;margin-bottom:14px;min-width:0}
+.indicator-ring{width:154px;height:154px;flex:0 0 154px;border-radius:50%;display:grid;place-items:center;padding:10px;box-shadow:0 0 32px rgba(82,223,255,.08)}
+.indicator-ring-inner{width:100%;height:100%;border:1px solid var(--line);border-radius:50%;background:linear-gradient(145deg,#102438,#091522);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+.indicator-ring-value{font-size:31px;font-weight:900;color:var(--green);font-variant-numeric:tabular-nums}
+.indicator-ring-caption{font-size:10px;color:var(--muted)}
+.indicator-hero-copy{min-width:0}
+.indicator-hero-copy h2{font-size:19px;margin:8px 0}
+.indicator-hero-copy p{font-size:11px;line-height:1.9;color:var(--muted);max-width:700px;margin:0}
+.indicator-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:14px}
+.indicator-layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr);gap:14px}
+.indicator-list{display:grid;gap:13px}
+.indicator-row{display:grid;grid-template-columns:112px minmax(0,1fr) 34px;gap:10px;align-items:center;font-size:11px;color:var(--muted)}
+.indicator-track{height:10px;border-radius:99px;background:rgba(132,156,190,.12);overflow:hidden}
+.indicator-fill{height:100%;min-width:0;border-radius:99px}
+.indicator-fill.cyan{background:linear-gradient(90deg,#45cfe9,#77dff0)}
+.indicator-fill.green{background:linear-gradient(90deg,#3bbd91,#80e3b5)}
+.indicator-fill.red{background:linear-gradient(90deg,#d95d77,#ff91a2)}
+.indicator-fill.muted{background:linear-gradient(90deg,#647b92,#9aabba)}
+.indicator-summary{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.indicator-note{padding:12px;border:1px solid var(--line);border-radius:12px;background:rgba(5,16,27,.5);font-size:10px;line-height:1.8;color:var(--muted)}
+.indicator-note-value{display:block;margin-top:5px;color:var(--text);font-size:21px;font-weight:850;font-variant-numeric:tabular-nums}
+@media(max-width:1100px){.indicator-layout{grid-template-columns:1fr}.indicator-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){
+ .side-bottom{display:block;margin-top:0}
+ .side-bottom .connection{display:none}
+ .side-links{display:flex}
+ .indicator-hero{gap:15px;padding:16px}
+ .indicator-ring{width:126px;height:126px;flex-basis:126px}
+ .indicator-ring-value{font-size:26px}
+ .indicator-hero-copy h2{font-size:16px}
+}
+@media(max-width:520px){
+ .indicator-hero{align-items:flex-start;flex-direction:column}
+ .indicator-ring{width:112px;height:112px;flex-basis:112px;align-self:center}
+ .indicator-ring-value{font-size:24px}
+ .indicator-grid{gap:8px}
+ .indicator-grid .stat{min-height:94px;padding:12px}
+ .indicator-row{grid-template-columns:86px minmax(0,1fr) 26px;gap:7px;font-size:10px}
+ .indicator-summary{grid-template-columns:1fr 1fr}
+}
+@media(max-width:360px){.indicator-summary{grid-template-columns:1fr}.indicator-row{grid-template-columns:76px minmax(0,1fr) 24px}}
+
+.chat-panel{display:flex;flex-direction:column;gap:12px}.chat-modes{display:flex;gap:8px;flex-wrap:wrap}.chat-mode-active{border-color:var(--teal);color:#fff}
+.chat-list{display:flex;flex-direction:column;gap:12px;min-height:320px;max-height:calc(100vh - 430px);overflow:auto;padding:4px}
+.chat-empty{color:var(--muted);font-size:12px;line-height:1.9;text-align:center;margin:auto;padding:24px;border:1px dashed rgba(145,174,211,.28);border-radius:14px}
+.chat-msg{max-width:88%;padding:12px 14px;border-radius:14px;border:1px solid rgba(145,174,211,.22);background:rgba(7,16,29,.62)}.chat-user{align-self:flex-start;border-color:rgba(57,207,255,.35)}.chat-assistant{align-self:flex-end}
+.chat-who{font-size:10px;color:var(--muted);margin-bottom:6px}.chat-text{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;line-height:1.9}
+.chat-sources{margin:6px 0 0;padding:0 18px;font-size:11px;line-height:1.9}.chat-sources a{color:var(--teal)}.chat-note{margin-top:8px;font-size:10px;color:var(--muted)}
+.chat-form{display:flex;gap:9px;align-items:flex-end}.chat-form textarea{flex:1;min-height:52px;max-height:160px}
+@media(max-width:740px){.chat-msg{max-width:100%}.chat-list{max-height:none}}
 </style>
 </head>
 <body>
@@ -190,7 +256,7 @@ input,textarea,select{background:rgba(5,15,25,.88);border-color:rgba(57,207,255,
   <div class="side-bottom">
     <div class="connection"><div class="connection-title"><span class="dot" id="apiDot"></span><span id="apiStatus">التحقق من الخادم</span></div><small id="apiStatusNote">حالة الخادم لا تعني أن موصلات البحث الخارجية تعمل.</small></div>
     <div class="connection"><div class="connection-title">الهوية والصلاحيات</div><small id="roleSummary">لم يتم التحقق من جلسة المستخدم بعد.</small></div>
-    <div class="side-links"><a href="/">وكيل البحث</a><a href="/leads">مساحة الإشارات القديمة</a></div>
+    <div class="side-links"><button class="side-link-button" id="chatNav" type="button">محادثة Omarai</button><button class="side-link-button" id="systemNav" type="button">حالة النظام</button><a href="/agent">وكيل البحث</a></div>
   </div>
 </aside>
 <main class="main">
@@ -225,7 +291,7 @@ input,textarea,select{background:rgba(5,15,25,.88);border-color:rgba(57,207,255,
 (function(){
 "use strict";
 const $=id=>document.getElementById(id);
-const state={role:null,leads:[],activeView:"overview",analysis:null,filtered:[],search:"",filter:"all"};
+const state={authSessionVersion:0,role:null,leads:[],profiles:[],discoveryRuns:[],loadWarnings:[],activeDiscovery:null,activeProfileId:null,activeView:"overview",chat:{messages:[],history:[],busy:false,mode:"deep",sessionVersion:0},analysis:null,filtered:[],search:"",filter:"all"};
 const statuses=[
  {id:"new",label:"جديد"},
  {id:"needs_review",label:"يحتاج مراجعة"},
@@ -236,22 +302,12 @@ const statuses=[
 ];
 const labels={high_intent:"إشارة قوية نسبيًا",medium_intent:"إشارة متوسطة",early_research:"استكشاف مبكر",unclear:"غير واضحة",not_buyer_signal:"ليست إشارة شراء مباشرة"};
 const menu=[
- {id:"overview",label:"نظرة عامة",icon:"◫",enabled:true},
- {id:"onboarding",label:"تهيئة مساحة العمل",icon:"✦",enabled:false},
- {id:"offer",label:"ملف المنتج والعرض",icon:"◇",enabled:false},
- {id:"campaign",label:"حملات الاكتشاف",icon:"⌕",enabled:false},
- {id:"run",label:"مراقبة التشغيل",icon:"◷",enabled:false},
- {id:"signals",label:"صندوق إشارات الطلب",icon:"▤",enabled:true},
- {id:"opportunities",label:"تفاصيل الفرص",icon:"◈",enabled:false},
- {id:"companies",label:"ملفات الشركات",icon:"▦",enabled:false},
+ {id:"overview",label:"نظرة عامة",icon:"⌂",enabled:true},
+ {id:"offer",label:"ملف المنتج",icon:"◇",enabled:true},
+ {id:"campaign",label:"حملات الاكتشاف",icon:"⌕",enabled:true},
+ {id:"signals",label:"إشارات الطلب",icon:"▤",enabled:true},
  {id:"pipeline",label:"مسار التأهيل",icon:"⇢",enabled:true},
- {id:"market",label:"استخبارات السوق",icon:"◉",enabled:false},
- {id:"sources",label:"المصادر والموصلات",icon:"⌘",enabled:false},
- {id:"evidence",label:"مركز الأدلة",icon:"▤",enabled:false},
- {id:"audit",label:"سجل التدقيق",icon:"⌗",enabled:false},
- {id:"tasks",label:"المهام والتنبيهات",icon:"◴",enabled:false},
- {id:"settings",label:"الإعدادات والأمان",icon:"⚙",enabled:false},
- {id:"system",label:"حالات النظام",icon:"◌",enabled:true}
+ {id:"indicators",label:"مؤشرات الأداء",icon:"▥",enabled:true}
 ];
 function make(tag,cls,text){
  const node=document.createElement(tag);
@@ -269,16 +325,39 @@ function safeHttp(value){
 function escapeMessage(message){return String(message||"حدث خطأ غير متوقع").slice(0,500)}
 async function api(path,options){
  const opts=options||{};
+ const requestSessionVersion=state.authSessionVersion;
  const headers={};
  if(opts.body!==undefined)headers["Content-Type"]="application/json";
  const response=await fetch(path,{method:opts.method||"GET",credentials:"same-origin",headers:headers,body:opts.body===undefined?undefined:JSON.stringify(opts.body)});
  let data={};
  try{data=await response.json()}catch(_e){data={error:"تعذر قراءة استجابة الخادم"}}
  if(response.status===401){showAuth("انتهت الجلسة أو لم يتم تسجيل الدخول. أدخل رمز الوصول للمتابعة.");throw new Error("يلزم تسجيل الدخول مجددًا.")}
+ if(state.authSessionVersion!==requestSessionVersion)throw new Error("انتهت الجلسة أثناء الطلب؛ أعد تسجيل الدخول.");
  if(!response.ok)throw new Error(data.error||("فشل الطلب ("+response.status+")"));
  return data;
 }
+function clearChatSession(){
+ const chat=state.chat;
+ chat.messages=[];chat.history=[];chat.busy=false;chat.mode="deep";
+ chat.sessionVersion=(chat.sessionVersion||0)+1;
+}
+function advanceWorkspaceSessionVersion(){
+ state.authSessionVersion=(state.authSessionVersion||0)+1;
+}
+function clearWorkspaceSession(){
+ advanceWorkspaceSessionVersion();
+ state.role=null;state.leads=[];state.profiles=[];state.discoveryRuns=[];state.loadWarnings=[];
+ state.activeDiscovery=null;state.activeProfileId=null;state.activeView="overview";
+ state.analysis=null;state.filtered=[];state.search="";state.filter="all";
+ clearChatSession();
+ closeDetails();$("detailBody").replaceChildren();
+ $("viewRoot").replaceChildren(emptyState("مساحة العمل مقفلة","سجّل الدخول لقراءة البيانات المرتبطة بمساحة العمل."));
+ $("rolePill").textContent="غير مسجل";
+ $("roleSummary").textContent="لم يتم التحقق من جلسة مستخدم.";
+ renderNav();
+}
 function showAuth(message){
+ clearWorkspaceSession();
  $("authGate").classList.add("open");
  $("authError").textContent=message||"";
  $("accessToken").value="";
@@ -314,29 +393,33 @@ function buildStat(label,value,note,glow){
  card.append(make("div","stat-label",label),make("div","stat-value",value),make("div","stat-note",note));return card;
 }
 function renderOverview(){
- setPage("نظرة عامة","ملخص مبني على سجل الإشارات المحفوظ في مساحة العمل الحالية. لا تُحسب نتائج البحث أو ملفات الشركات غير المتاحة ضمن الأرقام.","SALES INTELLIGENCE · OVERVIEW");
+ setPage("نظرة عامة","كل ما تحتاجه لمراجعة إشارات الطلب ومتابعتها من مكان واحد.","مساحة العمل");
  const root=$("viewRoot");root.replaceChildren();
  const qualified=state.leads.filter(x=>["qualified","contacted","converted"].includes(x.status)).length;
- const strong=state.leads.filter(x=>x.assessment&&x.assessment.label==="high_intent").length;
  const review=state.leads.filter(x=>["new","needs_review"].includes(x.status)).length;
  const stats=make("div","stats");
- stats.append(buildStat("الإشارات المحمّلة",state.leads.length,"حتى 500 سجل أعادها الخادم","glow-teal"),
- buildStat("مؤهلة أو قيد المتابعة",qualified,"مؤهل · تم التواصل · تحول لعميل","glow-blue"),
- buildStat("تحتاج إلى مراجعة",review,"جديد أو يحتاج مراجعة بشرية","glow-amber"),
- buildStat("قوية نسبيًا بالقواعد",strong,"تصنيف قواعدي وليس احتمال شراء","glow-violet"));
+ stats.append(
+  buildStat("إجمالي الإشارات",state.leads.length,"السجلات المحمّلة من الخادم","glow-teal"),
+  buildStat("تحتاج مراجعة",review,"تنتظر قرارك","glow-amber"),
+  buildStat("مؤهلة أو قيد المتابعة",qualified,"مؤهل · تم التواصل · تحوّل","glow-blue")
+ );
  root.append(stats);
  const grid=make("div","content-grid");
- const recent=make("section","glass panel");const h=make("div","panel-head");const head=make("div");head.append(make("h2","","أحدث الإشارات"),make("p","","آخر السجلات التي أعادها الخادم"));h.append(head,action("عرض الصندوق ←","ghost",()=>navigate("signals")));recent.append(h);
+ const recent=make("section","glass panel");const h=make("div","panel-head");const head=make("div");
+ head.append(make("h2","","أحدث إشارات الطلب"),make("p","","راجع المصدر وتاريخ الرصد قبل اتخاذ أي خطوة."));
+ h.append(head,action("عرض كل الإشارات ←","ghost",()=>navigate("signals")));recent.append(h);
  const list=make("div","signal-list");
- const rows=state.leads.slice().sort((a,b)=>String(b.updated_at||"").localeCompare(String(a.updated_at||""))).slice(0,5);
- if(!rows.length)list.append(emptyState("لا توجد إشارات محفوظة بعد","ابدأ بإضافة إشارة من مصدر عام ومسموح، ثم حلّلها واحفظ دليلها."));
- else rows.forEach(l=>list.append(signalCard(l)));
+ const rows=state.leads.slice().sort((a,b)=>String(b.updated_at||b.observed_at||"").localeCompare(String(a.updated_at||a.observed_at||""))).slice(0,4);
+ if(!rows.length)list.append(emptyState("لا توجد إشارات محفوظة بعد","ابدأ بتعريف منتجك ثم أنشئ حملة اكتشاف، أو أضف إشارة يدويًا."));
+ else rows.forEach(item=>list.append(signalCard(item)));
  recent.append(list);
- const distribution=make("section","glass panel");const dh=make("div","panel-head");const dtitle=make("div");dtitle.append(make("h2","","توزيع حالات المتابعة"),make("p","","حالات السجل الحالي فقط"));dh.append(dtitle);distribution.append(dh);
- const bars=make("div","mini-bars");const groups=[["جديد","new"],["مراجعة","needs_review"],["مؤهل","qualified"],["تواصل","contacted"],["تحول","converted"],["مرفوض","rejected"]];
- groups.forEach(([label,id])=>{const n=countByStatus(id);const row=make("div","bar-row");row.append(make("span","",label));const track=make("div","bar-track");const percent=state.leads.length?Math.max(0,Math.min(100,Math.round((n/state.leads.length*100)/5)*5)):0;const fill=make("div","bar-fill w-"+percent);track.append(fill);row.append(track,make("span","",n));bars.append(row)});
- distribution.append(bars,make("p","disclaimer","ملاحظة: هذا توزيع وصفي لسجلاتك، وليس مؤشرًا على حجم السوق أو اكتمال البحث."));
- grid.append(recent,distribution);root.append(grid);
+ const startPanel=make("section","glass panel");const sh=make("div","panel-head");const st=make("div");
+ st.append(make("h2","","ابدأ من هنا"),make("p","","خطوتان بسيطتان للانطلاق."));
+ sh.append(st);startPanel.append(sh);
+ startPanel.append(action("١. إعداد ملف المنتج","primary",()=>navigate("offer")));
+ startPanel.append(action("٢. إنشاء حملة اكتشاف","",()=>navigate("campaign")));
+ startPanel.append(make("p","disclaimer","تظهر الإشارة مع مصدرها وتاريخ رصدها. التصنيف القواعدي إرشادي، وليس احتمالًا للشراء."));
+ grid.append(recent,startPanel);root.append(grid);
 }
 function emptyState(title,description){
  const box=make("div","empty");box.append(make("strong","",title),make("span","",description));return box;
@@ -505,6 +588,80 @@ async function renderSystem(){
   grid.append(models,search);root.append(grid);
  }catch(e){root.replaceChildren(emptyState("تعذرت قراءة الإعدادات",escapeMessage(e.message)))}
 }
+function renderIndicators(){
+ setPage("مؤشرات الأداء","لوحة وصفية لحالة سجلات مساحة العمل الحالية، وليست توقعًا للمبيعات أو احتمالات الشراء.","WORKSPACE INDICATORS");
+ const root=$("viewRoot");root.replaceChildren();
+ const total=state.leads.length;
+ const review=state.leads.filter(x=>["new","needs_review"].includes(x.status)).length;
+ const qualified=state.leads.filter(x=>["qualified","contacted","converted"].includes(x.status)).length;
+ const converted=total?Math.round(qualified/total*100):0;
+ const withSource=state.leads.filter(x=>safeHttp(x.source_url)).length;
+ const hero=make("section","glass indicator-hero");
+ const ring=make("div","indicator-ring");
+ ring.style.background="conic-gradient(var(--green) 0 "+converted+"%, rgba(132,156,190,.16) "+converted+"% 100%)";
+ ring.setAttribute("role","img");
+ ring.setAttribute("aria-label","نسبة السجلات المؤهلة أو قيد المتابعة: "+converted+" بالمئة من السجلات المحمّلة");
+ const ringInner=make("div","indicator-ring-inner");
+ ringInner.append(make("strong","indicator-ring-value",converted+"%"),make("span","indicator-ring-caption","مؤهل أو متابعة"));
+ ring.append(ringInner);
+ const heroCopy=make("div","indicator-hero-copy");
+ heroCopy.append(make("span","eyebrow","WORKSPACE HEALTH"),make("h2","","مؤشر متابعة السجل"),make("p","","نسبة الإشارات المصنفة مؤهلة أو تم التواصل معها أو تحولت إلى عميل، من إجمالي السجلات المحمّلة حاليًا. هذه نسبة حالة داخلية وليست احتمال شراء."));
+ hero.append(ring,heroCopy);root.append(hero);
+ const cards=make("div","indicator-grid");
+ cards.append(
+  buildStat("إجمالي الإشارات",total,"السجلات التي أعادها الخادم","glow-teal"),
+  buildStat("مؤهلة أو قيد المتابعة",qualified,"مؤهل · تم التواصل · تحول","glow-blue"),
+  buildStat("تحتاج مراجعة",review,"جديد أو بانتظار مراجعة","glow-amber"),
+  buildStat("عمليات الاكتشاف",state.discoveryRuns.length,"عمليات محفوظة أعادها الخادم","glow-violet")
+ );
+ root.append(cards);
+ const layout=make("div","indicator-layout");
+ const statusPanel=make("section","glass panel");
+ const head=make("div","panel-head"),title=make("div");
+ title.append(make("h2","","توزيع حالات الإشارات"),make("p","","عدد السجلات الفعلي حسب حالة المتابعة الحالية."));
+ head.append(title,action("فتح إشارات الطلب ←","ghost",()=>navigate("signals")));
+ statusPanel.append(head);
+ const bars=make("div","indicator-list");
+ const groups=[
+  ["جديد","new","cyan"],["يحتاج مراجعة","needs_review","red"],["مؤهل","qualified","green"],
+  ["تم التواصل","contacted","green"],["تحول لعميل","converted","green"],["مرفوض","rejected","muted"]
+ ];
+ groups.forEach(([label,id,tone])=>{
+  const count=countByStatus(id),row=make("div","indicator-row");
+  row.append(make("span","",""+label));
+  const track=make("div","indicator-track"),fill=make("div","indicator-fill "+tone);
+  fill.style.width=(total?Math.round(count/total*100):0)+"%";
+  fill.setAttribute("aria-hidden","true");
+  track.append(fill);row.append(track,make("strong","",count));bars.append(row);
+ });
+ if(!total)bars.append(emptyState("لا توجد بيانات بعد","ستظهر المؤشرات تلقائيًا بعد حفظ إشارات فعلية."));
+ statusPanel.append(bars);
+ const quality=make("section","glass panel");
+ const qhead=make("div","panel-head"),qtitle=make("div");
+ qtitle.append(make("h2","","اكتمال السجل"),make("p","","معلومات وصفية عن السجلات المحمّلة فقط."));
+ qhead.append(qtitle);quality.append(qhead);
+ const summary=make("div","indicator-summary");
+ [
+  ["إشارات لها رابط مصدر",withSource],
+  ["ملفات المنتجات والأسواق",state.profiles.length],
+  ["عمليات الاكتشاف المحفوظة",state.discoveryRuns.length],
+  ["إشارات تحتاج مراجعة",review]
+ ].forEach(([label,value])=>{
+  const item=make("div","indicator-note");
+  item.append(make("div","",label),make("strong","indicator-note-value",value));summary.append(item);
+ });
+ quality.append(summary,make("p","disclaimer","وجود رابط مصدر لا يعني أن الصفحة قُرئت أو تم التحقق من محتواها. ولا تمثل هذه المؤشرات حجم السوق أو معدل التحويل الفعلي."));
+ layout.append(statusPanel,quality);root.append(layout);
+ const recent=make("section","glass panel");recent.style.marginTop="14px";
+ const rh=make("div","panel-head"),rt=make("div");
+ rt.append(make("h2","","أحدث الإشارات"),make("p","","آخر خمسة سجلات بحسب تاريخ التحديث الذي أعاده الخادم."));
+ rh.append(rt,action("عرض الكل ←","ghost",()=>navigate("signals")));recent.append(rh);
+ const list=make("div","signal-list");
+ const rows=state.leads.slice().sort((a,b)=>String(b.updated_at||b.observed_at||"").localeCompare(String(a.updated_at||a.observed_at||""))).slice(0,5);
+ if(rows.length)rows.forEach(item=>list.append(signalCard(item)));
+ else list.append(emptyState("لا توجد إشارات لعرضها","أضف إشارة طلب موثقة لتبدأ المؤشرات في الظهور."));
+ recent.append(list);root.append(recent);
+}
 function renderPlaceholder(id){
  const item=menu.find(x=>x.id===id);const title=item?item.label:"وحدة";
  setPage(title,"واجهة الوحدة جزء من تصور Omarai، لكن المستودع عند الرأس الحالي لا يوفّر بعد عقد API موثقًا لهذه الوظيفة. لا نعرض بيانات أو نتائج شكلية على أنها حقيقية.","MODULE NOT ENABLED");
@@ -515,44 +672,330 @@ function renderPlaceholder(id){
  const list=make("div","module-list");
  ["تعريف عقد البيانات والحقول ومصدر كل قيمة.","إنشاء API محمي ومربوط بالمستخدم ومساحة العمل المصادق عليها.","إضافة اختبارات نجاح وفشل وعزل بين المستأجرين.","ربط الواجهة بالبيانات الفعلية ثم اختبارها على بيئة معروفة."].forEach(x=>list.append(make("div","module-step",x)));
  card.append(list,make("div","form-actions"));
- const links=card.querySelector(".form-actions");links.append(action("العودة إلى النظرة العامة","primary",()=>navigate("overview")),action("فتح وكيل البحث الحالي","",()=>{window.location.href="/"}));
+ const links=card.querySelector(".form-actions");links.append(action("العودة إلى النظرة العامة","primary",()=>navigate("overview")),action("فتح وكيل البحث الحالي","",()=>{window.location.href="/agent"}));
  root.append(card);
+}
+function csvValues(value){return String(value||"").split(",").map(x=>x.trim()).filter(Boolean)}
+function textField(label,id,placeholder,value,multiline){
+ const field=make("div","field"),control=make(multiline?"textarea":"input","");
+ control.id=id;control.value=value||"";control.placeholder=placeholder||"";
+ const caption=make("label","",label);caption.htmlFor=id;field.append(caption,control);
+ return {field,control};
+}
+function renderProductProfile(){
+ setPage("ملف المنتج والعرض","عرّف المنتج والسوق قبل تشغيل اكتشاف الطلب. كل ملف محفوظ مرتبط بمساحة العمل المصادق عليها.","PRODUCT & MARKET PROFILE");
+ const root=$("viewRoot");root.replaceChildren();
+ const panel=make("section","glass panel profile-panel"),head=make("div","panel-head"),title=make("div");
+ title.append(make("h2","","بيانات المنتج والسوق"),make("p","","أدخل المعلومات المعروفة صراحةً؛ لا يخترع Omarai مواصفات أو عملاء مستهدفين من اسم المنتج وحده."));
+ head.append(title);panel.append(head);
+ const grid=make("div","form-grid"),controls={};
+ const fields=[
+  ["اسم المنتج أو الخدمة","name","مثال: لوحة إنذار حريق"],
+  ["الأسماء والمرادفات","aliases","FACP، لوحة إنذار، Fire Alarm Panel"],
+  ["الفئة أو التصنيف","category","السلامة، أنظمة إنذار"],
+  ["الاستخدامات","useCases","المصانع، المباني التجارية"],
+  ["المشكلات التي يحلها","problems","الكشف المبكر، تقليل المخاطر"],
+  ["المناطق المستهدفة","locations","القاهرة، الجيزة"],
+  ["القطاعات","industries","المقاولات، التصنيع"],
+  ["نوع العملاء","customers","مقاولون، ملاك مشروعات"],
+  ["أدوار الشراء","roles","مدير مشتريات، مدير مشروع"],
+  ["الاستثناءات","exclusions","القطاعات غير المناسبة"]
+ ];
+ fields.forEach(([label,key,placeholder])=>{
+  const item=textField(label,"profile_"+key,placeholder,"",false);
+  controls[key]=item.control;if(!canWrite())item.control.disabled=true;grid.append(item.field);
+ });
+ const localeField=make("div","field"),locale=make("select","");
+ [["auto","تلقائي"],["ar","العربية"],["en","الإنجليزية"],["mixed","العربية والإنجليزية"]].forEach(([v,l])=>{const o=make("option","",l);o.value=v;locale.append(o)});
+ localeField.append(make("label","","لغة البحث"),locale);controls.locale=locale;if(!canWrite())locale.disabled=true;grid.append(localeField);
+ panel.append(grid,make("p","profile-note","افصل القيم المتعددة بفاصلة. تُستخدم المرادفات والمناطق لصياغة استعلامات مرتبطة بالمنتج؛ تطابق ICP وحده لا يثبت وجود طلب."));
+ const actions=make("div","form-actions");
+ const save=action("حفظ ملف المنتج والسوق","primary",async()=>{
+  save.disabled=true;
+  try{
+   const payload={
+    product:{name:controls.name.value,aliases:csvValues(controls.aliases.value),category_path:csvValues(controls.category.value),use_cases:csvValues(controls.useCases.value),problems_solved:csvValues(controls.problems.value)},
+    market:{locations:csvValues(controls.locations.value),industries:csvValues(controls.industries.value),customer_types:csvValues(controls.customers.value),decision_roles:csvValues(controls.roles.value),exclusions:csvValues(controls.exclusions.value)},
+    locale:controls.locale.value
+   };
+   const result=await api("/api/product-profiles",{method:"POST",body:payload});
+   state.activeProfileId=result.id;await loadProductProfiles();renderProductProfile();
+  }catch(error){panel.append(make("p","auth-error",escapeMessage(error.message)))}
+  finally{save.disabled=false}
+ });
+ save.disabled=!canWrite();actions.append(save);panel.append(actions);root.append(panel);
+ const listPanel=make("section","glass panel profile-panel"),lh=make("div","panel-head"),lt=make("div");
+ lt.append(make("h2","","ملفات المنتجات المحفوظة"),make("p","","اختر ملفًا محفوظًا للانتقال إلى تشغيل الاكتشاف."));
+ lh.append(lt);listPanel.append(lh);
+ if(!state.profiles.length)listPanel.append(emptyState("لا توجد ملفات بعد","أنشئ ملف المنتج والسوق ثم احفظه."));
+ else{
+  const list=make("div","signal-list");
+  state.profiles.forEach(profile=>{
+   const card=make("article","signal-card"),p=profile.profile||{},m=p.market||{};
+   card.append(make("strong","",profile.name||"منتج"));
+   card.append(make("p","subtle","المناطق: "+((m.locations||[]).join("، ")||"غير محددة")));
+   const row=make("div","form-actions");row.append(action("استخدام في الاكتشاف","",()=>{state.activeProfileId=profile.id;navigate("campaign")}));
+   card.append(row);list.append(card);
+  });listPanel.append(list);
+ }
+ root.append(listPanel);
+}
+function renderDiscoveryRun(run){
+ const panel=make("section","glass panel profile-panel"),head=make("div","panel-head"),title=make("div");
+ const report=run.search_report||{},leadReport=report.lead_generation||{},sources=Array.isArray(run.sources)?run.sources:[];
+ title.append(make("h2","","نتيجة عملية الاكتشاف"),make("p","","ملف المنتج: "+String(run.profile_name||"غير محدد")+" · "+String(run.created_at||"")));
+ head.append(title);panel.append(head);
+ const stats=make("div","stats"),qualifiedCount=sources.filter(s=>s.lead_qualification==="public_demand_signal").length;
+ stats.append(
+  buildStat("إشارات طلب مؤهلة",leadReport.candidate_signal_count??qualifiedCount,"إشارات تحمل عبارة طلب معلنة","glow-teal"),
+  buildStat("المصادر التي راجعتها الجولة",leadReport.related_results_reviewed??sources.length,"لا يعني ذلك اكتمال السوق","glow-blue"),
+  buildStat("حالة تشغيل البحث",report.pipeline_completion_status||"غير معلومة","حالة المسار كما أعادها الوكيل","glow-amber")
+ );
+ panel.append(stats,make("p","profile-note",run.answer||"لا يوجد ملخص لهذه العملية."));
+ if(Array.isArray(run.search_queries)&&run.search_queries.length){const qs=make("div","query-list");run.search_queries.forEach(q=>qs.append(tag(q)));panel.append(qs)}
+ const list=make("div","signal-list");
+ if(!sources.length)list.append(emptyState("لم تُعد العملية مصادر قابلة للعرض","راجع حالة التشغيل والتحذيرات؛ هذا لا يثبت عدم وجود طلب."));
+ sources.forEach((source,index)=>{
+  const qualified=source.lead_qualification==="public_demand_signal";
+  const card=make("article","discovery-source"+(qualified?" qualified":"")),meta=make("div","discovery-source-meta");
+  meta.append(tag(qualified?"إشارة طلب معلنة":"نتيجة مرتبطة فقط",qualified?"teal":""));
+  if(source.platform)meta.append(tag(source.platform));
+  meta.append(tag(source.page_fetched?"تمت قراءة الصفحة":"مقتطف/عنوان فقط"));
+  card.append(meta,make("h3","",source.title||"نتيجة ويب"));
+  if(source.snippet)card.append(make("p","",source.snippet));
+  const evidence=source.lead_intent_evidence;
+  if(qualified&&evidence){
+   card.append(make("p","","عبارة الدليل: "+String(evidence.phrase||"غير محددة")));
+   card.append(make("p","","نوع الإشارة: "+String(evidence.signal_type||"غير محدد")+" · أساس النص: "+String(evidence.basis||"غير محدد")));
+   card.append(make("p","discovery-note","ملاءمة المنتج لم تُحسم من العبارة وحدها؛ راجع المصدر قبل اعتماد الفرصة."));
+  }else card.append(make("p","discovery-note","لم يعثر المحرك على عبارة كافية تثبت طلب شراء. لن تُحفظ هذه النتيجة كإشارة طلب من هذه الشاشة."));
+  card.append(make("p","discovery-note","تاريخ النشر: "+String(source.published_at||"غير متاح من المصدر")));
+  const url=safeHttp(source.url);if(url){const link=make("a","",url);link.href=url;link.target="_blank";link.rel="noopener noreferrer";card.append(link)}
+  if(qualified&&canWrite()){
+   const actions=make("div","form-actions");
+   const save=action("حفظ الإشارة في صندوق الطلب","primary",async()=>{
+    save.disabled=true;
+    try{
+     const response=await api("/api/discoveries/"+encodeURIComponent(run.id)+"/signals/"+index+"/save",{method:"POST",body:{}});
+     save.textContent=response.created?"تم الحفظ":"الإشارة موجودة بالفعل";
+     await loadLeads();
+    }catch(error){card.append(make("p","auth-error",escapeMessage(error.message)))}
+    finally{save.disabled=false}
+   });
+   actions.append(save);card.append(actions);
+  }
+  list.append(card);
+ });
+ panel.append(list);return panel;
+}
+function renderDiscovery(){
+ setPage("حملات الاكتشاف","ابحث عن إشارات طلب شراء أو توريد معلنة مرتبطة بملف المنتج والسوق. لا تُعرض النتائج العامة كعملاء محتملين.","BUYER INTENT DISCOVERY");
+ const root=$("viewRoot");root.replaceChildren();
+ const controls=make("section","glass panel profile-panel"),head=make("div","panel-head"),title=make("div");
+ title.append(make("h2","","تشغيل اكتشاف جديد"),make("p","","يستخدم محرك البحث الحالي ويولّد الاستعلامات من ملف المنتج المحفوظ."));
+ head.append(title);controls.append(head);
+ if(!state.profiles.length){
+  controls.append(emptyState("لا يوجد ملف منتج محفوظ","أنشئ ملف المنتج والسوق قبل تشغيل الاكتشاف."));
+  controls.append(action("إنشاء ملف المنتج ←","primary",()=>navigate("offer")));
+ }else{
+  const field=make("div","field"),profileSelect=make("select","");
+  state.profiles.forEach(profile=>{const option=make("option","",profile.name);option.value=profile.id;option.selected=profile.id===state.activeProfileId;profileSelect.append(option)});
+  field.append(make("label","","ملف المنتج والسوق"),profileSelect);controls.append(field);
+  const consent=make("label","consent-row"),optional=make("input","");optional.type="checkbox";optional.checked=false;optional.disabled=state.role!=="owner";
+  consent.append(optional,make("span","","السماح بالموصلات الاختيارية (DeepSeek Search وBrave وTavily وبعض واجهات المنصات الرسمية). قد تستهلك حصصًا أو تكلفة؛ تبقى معطلة افتراضيًا ولا يستطيع تفعيلها إلا مالك مساحة العمل."));
+  controls.append(consent);
+  const actions=make("div","form-actions");
+  const status=make("p","profile-note");status.setAttribute("role","status");status.setAttribute("aria-live","polite");
+  const run=action("بدء اكتشاف الطلب","primary",async()=>{
+   run.disabled=true;run.setAttribute("aria-busy","true");state.activeProfileId=profileSelect.value;
+   status.className="profile-note";status.textContent="جارٍ البحث عن إشارات الطلب؛ ستظل النتائج السابقة متاحة حتى تكتمل الجولة الجديدة.";
+   try{
+    const savedRun=await api("/api/discoveries",{method:"POST",body:{profile_id:profileSelect.value,allow_optional_providers:optional.checked}});
+    state.activeDiscovery=savedRun;
+    let refreshWarning="";
+    try{await loadDiscoveryRuns()}catch(refreshError){refreshWarning=" حُفظت نتيجة البحث، لكن تعذر تحديث سجل العمليات: "+escapeMessage(refreshError.message)}
+    renderDiscovery();
+    if(refreshWarning){const warning=make("p","auth-error",refreshWarning);warning.setAttribute("role","alert");$("viewRoot").append(warning)}
+   }catch(error){
+    status.className="auth-error";status.textContent="تعذر تشغيل الاكتشاف: "+escapeMessage(error.message)+" يمكنك المحاولة مجددًا. لم تُحذف النتائج السابقة.";
+   }finally{
+    run.disabled=false;run.removeAttribute("aria-busy");
+   }
+  });
+  run.disabled=!canWrite();actions.append(run);controls.append(actions,status);
+ }
+ controls.append(make("p","profile-note","تاريخ النشر قد يكون غير متاح. المقتطف لا يعني أن الصفحة قُرئت. فشل الموصل لا يثبت عدم وجود عملاء. لا يتم إرسال أي رسالة من هذه الشاشة."));
+ controls.append(make("p","profile-note","تشغيل الاكتشاف يستخدم النموذج اللغوي المهيأ حاليًا في Omarai؛ قد يستهلك حصة أو تكلفة بحسب إعدادات مزود النموذج. لا تدخل بيانات سرية. الموصلات الاختيارية منفصلة وتظل معطلة افتراضيًا حتى موافقة المالك."));
+ root.append(controls);
+ if(state.discoveryRuns.length){
+  const history=make("section","glass panel profile-panel"),hh=make("div","panel-head"),ht=make("div");
+  ht.append(make("h2","","سجل عمليات الاكتشاف"),make("p","","عمليات محفوظة ضمن مساحة العمل الحالية."));
+  hh.append(ht);history.append(hh);const list=make("div","discovery-history");
+  state.discoveryRuns.forEach(item=>list.append(action(
+   String(item.profile_name||"ملف منتج")+" · "+String(item.qualified_signal_count||0)+" إشارة · "+String(item.created_at||""),
+   "",
+   async()=>{try{state.activeDiscovery=await api("/api/discoveries/"+encodeURIComponent(item.id));renderDiscovery()}catch(error){const message=make("p","auth-error",escapeMessage(error.message));message.setAttribute("role","alert");history.append(message)}}
+  )));
+  history.append(list);root.append(history);
+ }
+ if(state.activeDiscovery)root.append(renderDiscoveryRun(state.activeDiscovery));
+}
+
+const chatModes=[
+ {id:"auto",label:"تلقائي"},
+ {id:"deep",label:"بحث معمّق"},
+ {id:"latest",label:"الأحدث الآن"},
+ {id:"social",label:"آراء الناس"}
+];
+function chatMessageNode(item){
+ const row=make("div","chat-msg chat-"+item.role);
+ row.append(make("div","chat-who",item.role==="user"?"أنت":"Omarai"));
+ row.append(make("div","chat-text",item.text));
+ if(item.role==="assistant"&&Array.isArray(item.sources)&&item.sources.length){
+  const list=make("ul","chat-sources");
+  item.sources.slice(0,8).forEach(src=>{
+   const href=src&&safeHttp(src.url);if(!href)return;
+   const li=make("li");const a=make("a","",String(src.title||href).slice(0,140));
+   a.href=href;a.target="_blank";a.rel="noopener noreferrer";li.append(a);list.append(li);
+  });
+  if(list.childNodes.length){row.append(make("div","chat-who","المصادر"),list)}
+ }
+ if(item.role==="assistant"&&item.note)row.append(make("div","chat-note",item.note));
+ return row;
+}
+function renderChat(){
+ setPage("محادثة Omarai","اسأل باللهجة المصرية أو الفصحى أو الإنجليزية. تُرسل الأسئلة إلى محركات البحث وقد تُرسل مقتطفات المصادر إلى مزود نموذج اللغة المضبوط.","CHAT");
+ const chat=state.chat;
+ const root=$("viewRoot");root.replaceChildren();
+ const panel=make("section","glass panel chat-panel");
+ const ph=make("div","panel-head");const pt=make("div");
+ pt.append(make("h2","","المحادثة والبحث"),make("p","","يتذكر آخر ٨ رسائل داخل هذه الجلسة. لا تضع كلمات مرور أو مفاتيح API أو بيانات شخصية سرية في السؤال."));
+ const clear=action("محادثة جديدة","ghost",()=>{if(chat.busy)return;chat.messages=[];chat.history=[];renderChat()});
+ ph.append(pt,clear);panel.append(ph);
+
+ const modeBar=make("div","chat-modes");
+ chatModes.forEach(m=>{
+  const b=make("button","button ghost"+(chat.mode===m.id?" chat-mode-active":""),m.label);
+  b.type="button";b.setAttribute("aria-pressed",chat.mode===m.id?"true":"false");b.disabled=chat.busy;
+  b.addEventListener("click",()=>{chat.mode=m.id;renderChat()});modeBar.append(b);
+ });
+ panel.append(modeBar);
+
+ const list=make("div","chat-list");list.id="chatList";list.setAttribute("aria-live","polite");
+ if(!chat.messages.length){
+  list.append(make("div","chat-empty","اكتب سؤالك لبدء المحادثة. مثال: «ايه أفضل طريقة أوصل بيها لشركات محتاجة نظام إنذار حريق؟»"));
+ }else chat.messages.forEach(item=>list.append(chatMessageNode(item)));
+ panel.append(list);
+
+ const form=make("div","chat-form");
+ const input=make("textarea");input.id="chatInput";input.rows=2;input.maxLength=4000;input.placeholder="اكتب سؤالك هنا… (Enter للإرسال · Shift+Enter لسطر جديد)";input.disabled=chat.busy;
+ const send=action(chat.busy?"يبحث…":"أرسل ←","primary",()=>sendChat());send.id="chatSend";send.disabled=chat.busy;
+ input.addEventListener("keydown",e=>{if(e.key==="Enter"&&!e.shiftKey&&!e.isComposing){e.preventDefault();sendChat()}});
+ form.append(input,send);panel.append(form);
+ root.append(panel);
+ list.scrollTop=list.scrollHeight;
+ if(!chat.busy)input.focus();
+}
+async function sendChat(){
+ const chat=state.chat;if(chat.busy)return;
+ const requestSessionVersion=chat.sessionVersion;
+ const input=$("chatInput");const question=input?input.value.trim():"";
+ if(!question)return;
+ chat.messages.push({role:"user",text:question});chat.busy=true;renderChat();
+ try{
+  const data=await api("/api/agent",{method:"POST",body:{question:question,history:chat.history.slice(-8),mode:chat.mode}});
+  if(state.chat.sessionVersion!==requestSessionVersion)return;
+  const answer=String(data.answer||"لم يرجع الخادم نص إجابة.");
+  const note=data.kind==="general_answer"?"إجابة معرفة عامة دون بحث ويب.":(data.used_web_search===true?"":"لم يُجرَ بحث ويب لهذه الإجابة.");
+  chat.messages.push({role:"assistant",text:answer,sources:Array.isArray(data.sources)?data.sources:[],note:note});
+  chat.history.push({role:"user",content:question},{role:"assistant",content:answer});
+  chat.history=chat.history.slice(-16);
+ }catch(error){
+  if(state.chat.sessionVersion===requestSessionVersion){
+   chat.messages.push({role:"assistant",text:"تعذر إكمال الطلب: "+escapeMessage(error&&error.message),sources:[],note:""});
+  }
+ }finally{
+  if(state.chat.sessionVersion===requestSessionVersion){
+   chat.busy=false;
+   if(state.activeView==="chat")renderChat();
+  }
+ }
 }
 function renderCurrent(){
  renderNav();
  if(state.activeView==="overview")renderOverview();
+ else if(state.activeView==="indicators")renderIndicators();
+ else if(state.activeView==="offer")renderProductProfile();
+ else if(state.activeView==="campaign")renderDiscovery();
  else if(state.activeView==="signals")renderSignals();
  else if(state.activeView==="pipeline")renderPipeline();
+ else if(state.activeView==="chat")renderChat();
  else if(state.activeView==="system")renderSystem();
  else renderPlaceholder(state.activeView);
+ if(state.loadWarnings.length){
+  $("viewRoot").prepend(make("p","auth-error","تم التحقق من الجلسة؛ تعذر تحميل بعض البيانات: "+state.loadWarnings.join("، ")+". قد تكون بعض القوائم والأرقام غير مكتملة."));
+ }
 }
 function navigate(view){
  state.activeView=view;renderCurrent();
+}
+async function loadProductProfiles(){
+ const data=await api("/api/product-profiles");
+ state.profiles=Array.isArray(data.profiles)?data.profiles:[];
+ if(!state.profiles.some(item=>item.id===state.activeProfileId))state.activeProfileId=state.profiles[0]?.id||null;
+}
+async function loadDiscoveryRuns(){
+ const data=await api("/api/discoveries");
+ state.discoveryRuns=Array.isArray(data.runs)?data.runs:[];
 }
 async function loadLeads(){
  const data=await api("/api/leads?limit=500");
  state.leads=Array.isArray(data.leads)?data.leads:[];
 }
 async function bootstrap(){
+ let session;
  try{
-  const session=await api("/api/session");
-  state.role=session.role||"unknown";
-  $("rolePill").textContent="صلاحية: "+state.role;
-  $("roleSummary").textContent="الدور: "+state.role+(canWrite()?" — إضافة وتحديث السجلات متاح.":" — قراءة فقط.");
-  hideAuth();
-  await loadLeads();
-  setConnection(true,"خادم Omarai متصل","تم تحميل سجل الإشارات. هذا لا يثبت اتصال موفرات البحث الخارجية.");
-  renderCurrent();
+  session=await api("/api/session");
  }catch(e){
-  setConnection(false,"يلزم تسجيل الدخول","لا يتم تحميل أي سجل قبل التحقق من الجلسة.");
+  setConnection(false,"يلزم تسجيل الدخول","تعذر التحقق من جلسة المستخدم.");
   showAuth(e.message);
   $("viewRoot").replaceChildren(emptyState("مساحة العمل مقفلة","سجّل الدخول لقراءة البيانات المرتبطة بمساحة العمل."));
+  return;
  }
+ state.role=session.role||"unknown";
+ $("rolePill").textContent="صلاحية: "+state.role;
+ $("roleSummary").textContent="الدور: "+state.role+(canWrite()?" — إضافة وتحديث السجلات متاح.":" — قراءة فقط.");
+ hideAuth();
+ const results=await Promise.allSettled([
+  loadLeads(),
+  loadProductProfiles(),
+  loadDiscoveryRuns()
+ ]);
+ if($("authGate").classList.contains("open")){
+  setConnection(false,"يلزم تسجيل الدخول","انتهت الجلسة أثناء تحميل البيانات.");
+  $("viewRoot").replaceChildren(emptyState("مساحة العمل مقفلة","سجّل الدخول لقراءة البيانات المرتبطة بمساحة العمل."));
+  return;
+ }
+ state.loadWarnings=[];
+ const labels=["سجل الإشارات","ملفات المنتجات","سجل الاكتشاف"];
+ results.forEach((result,index)=>{
+  if(result.status!=="rejected")return;
+  state.loadWarnings.push(labels[index]);
+  if(index===0)state.leads=[];
+  else if(index===1)state.profiles=[];
+  else state.discoveryRuns=[];
+ });
+ const note=state.loadWarnings.length
+  ?"الجلسة مصادق عليها؛ تعذر تحميل بعض البيانات: "+state.loadWarnings.join("، ")+". حاول تحديث الوحدة لاحقًا."
+  :"تم تحميل الإشارات وملفات المنتج وسجل الاكتشاف. هذا لا يثبت اتصال جميع الموصلات.";
+ setConnection(true,state.loadWarnings.length?"الجلسة مصادق عليها — بيانات جزئية":"الجلسة مصادق عليها",note);
+ renderCurrent();
 }
 $("loginForm").addEventListener("submit",async event=>{
  event.preventDefault();const token=$("accessToken").value.trim();const button=$("loginButton");button.disabled=true;$("authError").textContent="";
  try{
   await api("/api/session",{method:"POST",body:{access_token:token}});
+  advanceWorkspaceSessionVersion();clearChatSession();
   $("accessToken").value="";await bootstrap();
  }catch(e){$("authError").textContent=escapeMessage(e.message)}
  finally{button.disabled=false}
@@ -564,10 +1007,12 @@ $("logoutButton").addEventListener("click",async()=>{
   alert("تعذر تسجيل الخروج من الخادم؛ لم يتم تغيير حالة الجلسة في الواجهة. "+escapeMessage(e.message));
   return;
  }
- state.role=null;state.leads=[];state.activeView="overview";showAuth("تم تسجيل الخروج. أدخل رمز الوصول للمتابعة.");setConnection(false,"غير متصل","سجّل الدخول لعرض السجلات.");
+ state.role=null;state.leads=[];state.profiles=[];state.discoveryRuns=[];state.loadWarnings=[];state.activeDiscovery=null;state.activeProfileId=null;state.activeView="overview";showAuth("تم تسجيل الخروج. أدخل رمز الوصول للمتابعة.");setConnection(false,"غير متصل","سجّل الدخول لعرض السجلات.");
 });
 $("addSignalTop").addEventListener("click",()=>navigate("signals"));
 $("closeDetail").addEventListener("click",closeDetails);
+$("chatNav").addEventListener("click",()=>navigate("chat"));
+$("systemNav").addEventListener("click",()=>navigate("system"));
 $("detailDrawer").addEventListener("click",e=>{if(e.target===$("detailDrawer"))closeDetails()});
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeDetails()});
 renderNav();bootstrap();

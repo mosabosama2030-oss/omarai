@@ -82,3 +82,91 @@ def test_csv_export_neutralizes_spreadsheet_formula_injection(tmp_path):
     assert row2["text"].startswith("\t\ufeff=")
     assert row2["note"].startswith("\t\u00a0\ufeff=")
 
+
+
+def test_generic_fire_alarm_and_supplier_requests_are_sector_neutral():
+    fire_alarm = analyze("نحتاج نظام إنذار حريق للمصنع")
+    supplier = analyze("نبحث عن مورد لافتات لمشروع جديد")
+    assert fire_alarm["label"] == "high_intent"
+    assert supplier["label"] == "high_intent"
+    assert fire_alarm["score"] >= 55
+    assert supplier["score"] >= 55
+
+
+def test_product_mention_alone_does_not_create_a_demand_signal():
+    result = analyze("نظام إنذار حريق")
+    assert result["label"] == "unclear"
+    assert result["score"] == 0
+
+
+@pytest.mark.parametrize(
+    "text",
+    [
+        "مش بدور على شقة",
+        "مش محتاج نظام إنذار حريق",
+        "لا نحتاج مورد لافتات",
+        "not looking for a supplier",
+        "we do not need a fire alarm system",
+    ],
+)
+def test_explicit_negation_never_scores_as_buyer_intent(text):
+    result = analyze(text)
+    assert result["label"] == "not_buyer_signal"
+    assert result["score"] == 0
+
+
+@pytest.mark.parametrize(
+    "text",
+    [
+        "تم الشراء بالفعل",
+        "وجدنا مورد وتم التعاقد",
+        "already purchased the equipment",
+        "supplier selected",
+        "كنت بدور على شقة",
+    ],
+)
+def test_completed_or_past_need_is_not_active_demand(text):
+    result = analyze(text)
+    assert result["label"] == "closed_or_stale_signal"
+    assert result["score"] == 0
+
+
+def test_product_and_location_context_do_not_inflate_demand_score():
+    result = analyze(
+        "نظام إنذار حريق في القاهرة",
+        product_terms=["نظام إنذار حريق"],
+        location_terms=["القاهرة"],
+    )
+    assert result["score"] == 0
+    assert result["label"] == "unclear"
+    assert {item["category"] for item in result["matched_signals"]} == {
+        "product_context",
+        "location_context",
+    }
+
+
+
+def test_lead_store_uses_domain_signal_and_qualification_contracts(tmp_path):
+    store = LeadStore(tmp_path / "domain-contracts.sqlite3")
+    lead, created = store.add(
+        "نحتاج نظام إنذار حريق للمصنع",
+        "https://example.com/demand/1",
+        platform="manual",
+    )
+    assert created is True
+    assessment = lead["assessment"]
+    assert assessment["signal_type"] == "direct_purchase_request"
+    assert assessment["domain_signal"]["signal_type"] == "direct_purchase_request"
+    assert assessment["domain_signal"]["evidence"]["content_basis"] == "user_provided"
+    assert assessment["domain_signal"]["product_fit"] == "unassessed"
+    assert assessment["qualification"]["identity_status"] == "unknown"
+    assert "freshness" in assessment["qualification"]["missing_information"]
+
+
+def test_explicit_demand_types_are_not_product_fit_or_purchase_probability():
+    direct = analyze("نبحث عن مورد لافتات للمشروع")
+    quote = analyze("نحتاج عرض سعر لنظام إنذار حريق")
+    product_only = analyze("نظام إنذار حريق")
+    assert direct["signal_type"] == "direct_purchase_request"
+    assert quote["signal_type"] == "request_for_quotation"
+    assert product_only["signal_type"] == "unknown"

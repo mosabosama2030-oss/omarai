@@ -45,6 +45,16 @@ def test_lead_generation_and_summarization_routes(question: str, expected: str) 
     assert decision["reason"]
 
 
+@pytest.mark.parametrize("mode", ["deep", "latest", "social"])
+def test_explicit_buyer_discovery_intent_survives_selected_research_mode(mode: str) -> None:
+    question = "ابحث عن عميل يريد شراء نظام إنذار حريق صناعي في مصر"
+    decision = route_intent(question, mode=mode)
+
+    assert decision["route"] == "LEAD_GENERATION"
+    assert decision["needs_clarification"] is False
+    assert decision["reason"] == "explicit_buyer_discovery_with_selected_research_mode"
+
+
 def test_generic_explanation_of_lead_generation_is_not_a_lead_search() -> None:
     assert route_intent("What is lead generation?")["route"] == "MODEL_ONLY"
     assert route_intent("Create a prospect list for apartment buyers")["route"] == "LEAD_GENERATION"
@@ -59,6 +69,17 @@ def test_capability_question_is_local() -> None:
     )
     assert decision["route"] == "LOCAL"
     assert decision["reason"] == "capability_question"
+
+
+def test_concrete_research_request_takes_precedence_over_capability_marker() -> None:
+    decision = route_intent(
+        "هل تستطيع البحث عن أحدث أسعار الذهب في مصر؟",
+        capability_question=True,
+        requires_web=True,
+    )
+
+    assert decision["route"] == "WEB_SIMPLE"
+    assert decision["reason"] == "freshness_or_explicit_research_signal"
 
 
 def test_ambiguous_followup_uses_existing_conversation_context() -> None:
@@ -293,3 +314,67 @@ def test_no_duplicate_followup_leadin_symbols():
     assert module_source.count("_FOLLOWUP_ASPECT_FRAGMENTS = frozenset") == 1
     assert module_source.count("def _strip_followup_leadin") == 1
 
+
+
+@pytest.mark.parametrize(
+    "followup",
+    [
+        "وبالنسبة للضمان بتاعه؟",
+        "ممكن اعرف اسعارهم؟",
+        "ضمانه كام؟",
+        "والتقييمات؟",
+        "وبخصوص الاسعار",
+    ],
+)
+def test_arabic_referential_followups_are_joined_to_prior_topic(followup):
+    history = [
+        {"role": "user", "content": "ايه سعر ايفون 15 في مصر"},
+        {"role": "assistant", "content": "السعر حوالي 45 الف جنيه"},
+    ]
+    resolved = resolve_followup_query(followup, history)
+    assert resolved.startswith("ايه سعر ايفون 15 في مصر")
+    assert followup in resolved
+
+
+@pytest.mark.parametrize(
+    "standalone",
+    [
+        "اسعار الذهب اليوم",
+        "ممكن اعرف اسعار الذهب",
+        "مواصفات لاب توب ديل",
+        "سعر الدولار النهاردة",
+    ],
+)
+def test_standalone_aspect_questions_are_not_merged_with_history(standalone):
+    history = [
+        {"role": "user", "content": "ايه سعر ايفون 15 في مصر"},
+        {"role": "assistant", "content": "السعر حوالي 45 الف جنيه"},
+    ]
+    assert resolve_followup_query(standalone, history) == standalone
+
+
+@pytest.mark.parametrize(
+    "standalone",
+    [
+        "عايز اعرف عنوان الشركة بتاعها في القاهرة",
+        "فين فرع الشركة بتاعته في اسكندرية؟",
+    ],
+)
+def test_standalone_arabic_questions_with_beta3_possessives_do_not_reuse_old_topic(
+    standalone,
+):
+    history = [
+        {"role": "user", "content": "ايه سعر ايفون 15 في مصر"},
+        {"role": "assistant", "content": "السعر حوالي 45 الف جنيه"},
+    ]
+    assert resolve_followup_query(standalone, history) == standalone
+
+
+def test_aspect_plus_beta3_possessive_remains_a_contextual_followup():
+    history = [
+        {"role": "user", "content": "ايه سعر ايفون 15 في مصر"},
+        {"role": "assistant", "content": "السعر حوالي 45 الف جنيه"},
+    ]
+    resolved = resolve_followup_query("السعر بتاعه كام؟", history)
+    assert resolved.startswith("ايه سعر ايفون 15 في مصر")
+    assert "السعر بتاعه كام" in resolved

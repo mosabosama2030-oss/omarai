@@ -529,7 +529,11 @@ def build_task_spec(
     explicit_freshness = bool(_contains(normalized, _FRESHNESS_CUES))
     current_required = (clean_mode == "latest" or explicit_freshness) and not navigation
     social_required = clean_mode == "social" or bool(matches["social_opinions"])
-    family = _primary_family(matches, clean_mode, intent_route, normalized)
+    family = (
+        "lead_generation"
+        if intent_route == "LEAD_GENERATION"
+        else _primary_family(matches, clean_mode, intent_route, normalized)
+    )
 
     if family == "official_site_lookup":
         evidence_requirements = [
@@ -818,6 +822,28 @@ def build_task_spec(
         for item in raw_changed_slots[:8]
         if isinstance(item, str) and item.strip()
     ] if isinstance(raw_changed_slots, list) else []
+
+    # A resolved follow-up can carry constraints that are absent from the short
+    # current utterance (for example "الإسكندرية فقط"). Merge only validated
+    # follow-up slots; never import metadata from a topic shift or clarification.
+    inherit_context_slots = (
+        context.get("is_follow_up") is True
+        and context.get("topic_shift") is not True
+        and context.get("needs_clarification") is not True
+    )
+    if inherit_context_slots:
+        for slot_key, target in (("location", location), ("country", location)):
+            slot_value = context_slots.get(slot_key, "").strip()
+            normalized_slot = normalize_text(slot_value)
+            existing = {normalize_text(item) for item in target}
+            if slot_value and normalized_slot and normalized_slot not in existing:
+                target.append(slot_value[:120])
+        inherited_budget = context_slots.get("budget", "").strip()
+        normalized_budget = normalize_text(inherited_budget)
+        existing_budgets = {normalize_text(item) for item in budgets}
+        if inherited_budget and normalized_budget and normalized_budget not in existing_budgets:
+            budgets.append(inherited_budget[:100])
+
     context_resolution = {
         "method": str(context.get("method") or "not_provided")[:80],
         "resolved_question": (
@@ -1028,17 +1054,6 @@ def _generated_strategy_candidates(topic: str, spec: dict[str, Any]) -> list[tup
             (f"{topic} risks dependencies feasibility", "feasibility_and_dependencies", "test assumptions, dependencies, and likely blockers"),
             (f"{topic} alternative plan fallback", "alternatives_and_fallback", "seek alternatives and fallback approaches"),
         ])
-    normalized_topic = normalize_text(topic)
-    property_topic = any(
-        cue in normalized_topic
-        for cue in ("شقه", "شقق", "عقار", "عقارات", "عقاري", "real estate", "apartment", "property")
-    )
-    if family == "find_or_discover" and property_topic:
-        candidates.extend([
-            (f"{topic} إعلانات عقارية", "property_listings", "discover relevant listings without treating ads as independent price evidence"),
-            (f"{topic} متوسط أسعار السوق للمتر", "property_market_price_per_meter", "compare asking prices against market-level context"),
-            (f"{topic} أسعار البيع الفعلية والتقييم العقاري", "property_transaction_price_check", "distinguish asking prices from completed transaction prices"),
-        ])
     if (
         family in {"general_research", "web_research", "find_or_discover"}
         and (
@@ -1129,7 +1144,32 @@ def build_query_strategy_matrix(
                 candidate = compact_fn(candidate) or ""
             except (TypeError, ValueError):
                 candidate = ""
-        candidate = _SPACE.sub(" ", candidate).strip()[:240]
+        candidate = _SPACE.sub(" ", candidate).strip()
+        # Carry explicit/inherited geography into every search candidate. Budgets
+        # constrain commercial discovery/recommendation tasks, not unrelated topics.
+        scope_terms: list[str] = []
+        raw_locations = constraints.get("explicit_locations")
+        if isinstance(raw_locations, list):
+            scope_terms.extend(
+                item.strip() for item in raw_locations[:5]
+                if isinstance(item, str) and item.strip()
+            )
+        budget_scoped_families = {
+            "recommendation", "compare", "lead_generation", "find_or_discover"
+        }
+        raw_budgets = constraints.get("explicit_budgets")
+        if (
+            spec.get("task_family") in budget_scoped_families
+            and isinstance(raw_budgets, list)
+        ):
+            scope_terms.extend(
+                item.strip() for item in raw_budgets[:3]
+                if isinstance(item, str) and item.strip()
+            )
+        for scope_term in scope_terms:
+            if normalize_text(scope_term) not in normalize_text(candidate):
+                candidate = _SPACE.sub(" ", f"{candidate} {scope_term}").strip()
+        candidate = candidate[:240]
         key = _query_key(candidate)
         if not candidate or not key or key in seen:
             return
@@ -1180,7 +1220,11 @@ def build_query_strategy_matrix(
         spec.get("task_family") == "compare"
         and len(explicit_aspects) >= maximum
     )
-    if queries and not reserve_all_slots_for_criteria:
+    if (
+        queries
+        and spec.get("task_family") != "lead_generation"
+        and not reserve_all_slots_for_criteria
+    ):
         seed = queries[0]
         strategy, rationale = (
             _label_existing_query(seed, 0, spec)
@@ -1203,6 +1247,21 @@ def build_query_strategy_matrix(
         )
     base = _QUERY_STOP.sub("", base).strip(" \t\r\n-،,؛;")
     if not base:
+        return rows
+
+    # A lead-generation task must preserve the supplied product-anchored queries
+    # in purchaser language. General research angles (reports, risks, listings)
+    # are not substitutes for direct buyer-intent discovery.
+    if spec.get("task_family") == "lead_generation":
+        for query in queries:
+            add(
+                query,
+                "buyer_intent",
+                "product-anchored purchaser-language query",
+                enforce_topic=False,
+            )
+            if len(rows) >= maximum:
+                break
         return rows
 
     candidates = _generated_strategy_candidates(base, spec_for_candidates)
