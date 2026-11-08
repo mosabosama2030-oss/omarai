@@ -1008,6 +1008,7 @@ def _generated_strategy_candidates(topic: str, spec: dict[str, Any]) -> list[tup
         if isinstance(raw_inherited_aspects, list)
         else []
     )
+    explicit_criteria_requested = spec.get("explicit_criteria_requested") is True
     candidates: list[tuple[str, str, str]] = []
     if not topic.strip():
         return candidates
@@ -1042,14 +1043,16 @@ def _generated_strategy_candidates(topic: str, spec: dict[str, Any]) -> list[tup
             (f"{topic} official specifications", "primary_specification", "separate technical specifications from opinion"),
             (f"{topic} independent comparison pros cons", "independent_comparison", "seek comparative analysis and trade-offs"),
         ])
-    elif inherited_aspects:
-        # A resolved follow-up aspect is a genuine inherited criterion. Do not
-        # promote arbitrary question fragments or output instructions to criteria.
-        for aspect in inherited_aspects:
+    elif inherited_aspects or explicit_criteria_requested:
+        # A resolved follow-up aspect or a criterion explicitly introduced by the
+        # current user is a genuine search dimension. Do not promote arbitrary
+        # question fragments or answer-format wording to criteria.
+        criterion_aspects = inherited_aspects or aspects[:MAX_TASK_ASPECTS]
+        for aspect in criterion_aspects:
             candidates.append((
                 f"{topic} {aspect}",
                 "explicit_criterion",
-                f"preserve and retrieve evidence for inherited aspect: {aspect}",
+                f"preserve and retrieve evidence for requested aspect: {aspect}",
             ))
     if family == "troubleshoot" or "troubleshoot" in hypothesis_families:
         candidates.extend([
@@ -1405,6 +1408,13 @@ def build_query_strategy_matrix(
     spec_for_candidates = dict(spec)
     spec_for_candidates["constraints"] = candidate_constraints
     spec_for_candidates["inherited_context_aspects"] = inherited_context_aspects
+    spec_for_candidates["explicit_criteria_requested"] = bool(re.search(
+        r"(?:من\\s+حيث|من\\s+ناحيه|فيما\\s+يتعلق\\s+ب|فيما\\s+يخص|"
+        r"in\\s+terms\\s+of|with\\s+respect\\s+to|"
+        r"based\\s+on\\s+the\\s+following\\s+criteria)",
+        normalize_text(question),
+        flags=re.IGNORECASE,
+    ))
 
     # A lead-generation task must preserve the supplied product-anchored queries
     # in purchaser language. General research angles (reports, risks, listings)
