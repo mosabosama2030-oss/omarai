@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L000050 إلى SRC-686F71AA50-L000849
+- النطاق: SRC-686F71AA50-L000012 إلى SRC-686F71AA50-L000811
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,44 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L000012](../../agents/task_understanding.py#L12) | 12 | `"from typing import Any"` | — |
+| [SRC-686F71AA50-L000013](../../agents/task_understanding.py#L13) | 13 | `""` | — |
+| [SRC-686F71AA50-L000014](../../agents/task_understanding.py#L14) | 14 | `"MAX_TASK_CHARS = 4000"` | — |
+| [SRC-686F71AA50-L000015](../../agents/task_understanding.py#L15) | 15 | `"MAX_TASK_ASPECTS = 8"` | — |
+| [SRC-686F71AA50-L000016](../../agents/task_understanding.py#L16) | 16 | `"MAX_STRATEGY_QUERIES = 8"` | — |
+| [SRC-686F71AA50-L000017](../../agents/task_understanding.py#L17) | 17 | `"SUPPORTED_MODES = frozenset({\"auto\", \"deep\", \"latest\", \"social\"})"` | — |
+| [SRC-686F71AA50-L000018](../../agents/task_understanding.py#L18) | 18 | `""` | — |
+| [SRC-686F71AA50-L000019](../../agents/task_understanding.py#L19) | 19 | `"# Closed, code-owned playbooks. The model receives concise task guidance derived"` | — |
+| [SRC-686F71AA50-L000020](../../agents/task_understanding.py#L20) | 20 | `"# from these IDs; arbitrary planner/source text cannot add executable instructions."` | — |
+| [SRC-686F71AA50-L000021](../../agents/task_understanding.py#L21) | 21 | `"_REASONING_GUIDANCE = {"` | — |
+| [SRC-686F71AA50-L000022](../../agents/task_understanding.py#L22) | 22 | `"    \"preserve_goal_and_constraints\": \"حافظ على مقصد المستخدم والكيانات والبلد والسنة والميزانية والتواريخ والصيغة التي ذكرها صراحة؛ لا تخترع قيودًا مفقودة.\","` | — |
+| [SRC-686F71AA50-L000023](../../agents/task_understanding.py#L23) | 23 | `"    \"separate_facts_inferences_hypotheses\": \"افصل ما يقوله المصدر مباشرة عن الاستنتاج والفرضية والمعلومة المجهولة؛ لا ترفع الفرضية إلى حقيقة دون دليل.\","` | — |
+| [SRC-686F71AA50-L000024](../../agents/task_understanding.py#L24) | 24 | `"    \"ground_material_claims\": \"اربط كل ادعاء واقعي جوهري بدليل مناسب من المصدر؛ الاستشهاد أو تشابه الكلمات وحده لا يثبت صحة الادعاء.\","` | — |
+| [SRC-686F71AA50-L000025](../../agents/task_understanding.py#L25) | 25 | `"    \"bounded_stop_rule\": \"استخدم المحاولات والوقت المسموحين فقط؛ عند نقص الدليل، أجب جزئيًا أو امتنع بوضوح بدل التخمين.\","` | — |
+| [SRC-686F71AA50-L000026](../../agents/task_understanding.py#L26) | 26 | `"    \"clarify_required_input\": \"إذا غاب مدخل إلزامي يغيّر معنى المهمة، اطلبه قبل تشغيل أداة أو اختراع هدف.\","` | — |
+| [SRC-686F71AA50-L000027](../../agents/task_understanding.py#L27) | 27 | `"    \"resolve_followup_slots\": \"في المتابعة، احتفظ فقط بالسياق الذي له مرجع واضح، وطبّق التغييرات التي ذكرها المستخدم، ولا ترث موضوعًا قديمًا بعد تغيير الموضوع.\","` | — |
+| [SRC-686F71AA50-L000028](../../agents/task_understanding.py#L28) | 28 | `"    \"verify_official_destination\": \"طابق اسم الجهة والبلد أولًا؛ فضّل نطاق الجهة أو رابطًا صادرًا عن بوابة رسمية موثوقة، ولا تعتبر امتداد النطاق وحده إثباتًا للملكية.\","` | — |
+| [SRC-686F71AA50-L000029](../../agents/task_understanding.py#L29) | 29 | `"    \"separate_event_and_publication_dates\": \"ميّز تاريخ وقوع الحدث عن تاريخ النشر وآخر تحديث وتاريخ الوصول؛ لا تستخدم خبرًا قديمًا لإثبات حالة متغيرة الآن.\","` | — |
+| [SRC-686F71AA50-L000030](../../agents/task_understanding.py#L30) | 30 | `"    \"reject_stale_current_claims\": \"للمعلومة الحالية، افحص حداثة المصدر وقابلية قراءة الصفحة وارتباطها بالحالة الحالية؛ اعرض عدم التأكد إذا غاب دليل حديث مؤهل.\","` | — |
+| [SRC-686F71AA50-L000031](../../agents/task_understanding.py#L31) | 31 | `"    \"decompose_explicit_criteria\": \"قسّم المقارنة إلى كل معيار صريح، وابحث عن دليل لكل معيار، وسجّل المحاور التي لا تزال بلا دليل بدل إسقاطها.\","` | — |
+| [SRC-686F71AA50-L000032](../../agents/task_understanding.py#L32) | 32 | `"    \"normalize_comparison_conditions\": \"قبل المقارنة، وحّد العملة والوحدات والفترة وظروف الاستخدام؛ لا تقارن قيمًا غير قابلة للمقارنة دون شرح الفرق.\","` | — |
+| [SRC-686F71AA50-L000033](../../agents/task_understanding.py#L33) | 33 | `"    \"separate_specs_and_experiences\": \"افصل المواصفات الرسمية عن الاختبارات الصحفية وتجارب الأفراد والإعلانات؛ لكل نوع منها ما يستطيع إثباته وحدوده.\","` | — |
+| [SRC-686F71AA50-L000034](../../agents/task_understanding.py#L34) | 34 | `"    \"balance_social_evidence\": \"ميّز التجربة الشخصية المحتملة عن السؤال والترويج والمحتوى الصحفي؛ اعرض عينة المنشورات وتواريخها والاختلافات ولا تعمم على الجميع.\","` | — |
+| [SRC-686F71AA50-L000035](../../agents/task_understanding.py#L35) | 35 | `"    \"record_observed_symptoms\": \"احفظ رسالة الخطأ والبيئة والإصدار والخطوات التي يمكن تكرارها؛ ميّز الملاحظة المرصودة عن تفسير السبب.\","` | — |
+| [SRC-686F71AA50-L000036](../../agents/task_understanding.py#L36) | 36 | `"    \"rank_testable_hypotheses\": \"أنشئ عدة فرضيات للسبب، ورتّبها وفق الأدلة المتاحة وقابلية الاختبار، ولا تدّعِ إثبات السبب قبل تجربة تفصل بين الفرضيات.\","` | — |
+| [SRC-686F71AA50-L000037](../../agents/task_understanding.py#L37) | 37 | `"    \"verify_primary_technical_docs\": \"تحقق من دليل المنتج أو مرجع الواجهة أو سجل التغيير الأصلي، واستخدم اختبارًا يعيد إنتاج المشكلة للتحقق من الإصلاح.\","` | — |
+| [SRC-686F71AA50-L000038](../../agents/task_understanding.py#L38) | 38 | `"    \"prefer_low_risk_steps\": \"ابدأ بخطوات تشخيص قابلة للعكس ومنخفضة المخاطر، واذكر شروط التوقف؛ لا تقترح إجراءً خطيرًا لمجرد أنه احتمال.\","` | — |
+| [SRC-686F71AA50-L000039](../../agents/task_understanding.py#L39) | 39 | `"    \"ordered_safe_procedure\": \"اذكر المتطلبات المسبقة والتحذيرات ثم الخطوات بالترتيب، وأضف طريقة للتحقق من النتيجة ولا تساوِ بين إكمال الخطوات ونجاحها.\","` | — |
+| [SRC-686F71AA50-L000040](../../agents/task_understanding.py#L40) | 40 | `"    \"check_health_scope_and_urgency\": \"افصل التثقيف الصحي العام عن التشخيص الشخصي، وقدّم مصادر صحية موثوقة وحدود المعلومات، ووجّه الحالات الطارئة إلى الرعاية المناسبة.\","` | — |
+| [SRC-686F71AA50-L000041](../../agents/task_understanding.py#L41) | 41 | `"    \"check_legal_jurisdiction_and_effective_date\": \"حدّد الدولة أو الاختصاص القانوني وتاريخ النفاذ، وقدّم النص الأصلي الرسمي عند توفره، ولا تعرض المعلومات العامة بوصفها استشارة قانونية خاصة.\","` | — |
+| [SRC-686F71AA50-L000042](../../agents/task_understanding.py#L42) | 42 | `"    \"validate_data_before_interpreting\": \"تحقق من تعريف المقياس ووحدة التحليل والفترة والبيانات الناقصة والتكرارات والقيم الشاذة قبل تفسير النتائج؛ الارتباط لا يثبت السببية.\","` | — |
+| [SRC-686F71AA50-L000043](../../agents/task_understanding.py#L43) | 43 | `"    \"validate_units_and_arithmetic\": \"تحقق من الوحدات والمدخلات والافتراضات، واعرض المعادلة أو خطوات الحساب القابلة للفحص، وأجرِ تحققًا حسابيًا مستقلًا عندما يلزم.\","` | — |
+| [SRC-686F71AA50-L000044](../../agents/task_understanding.py#L44) | 44 | `"    \"preserve_translation_meaning\": \"حافظ على المعنى والنبرة والأسماء والمصطلحات وصيغة الهدف؛ أظهر الالتباس الحقيقي بدل اختراع معنى للنص.\","` | — |
+| [SRC-686F71AA50-L000045](../../agents/task_understanding.py#L45) | 45 | `"    \"preserve_user_facts_in_writing\": \"التزم بالجمهور والنبرة والشكل المطلوب، ولا تضف حقائق غير مقدمة أو موثقة، وافصل إعادة الصياغة عن التحقق الواقعي.\","` | — |
+| [SRC-686F71AA50-L000046](../../agents/task_understanding.py#L46) | 46 | `"    \"plan_dependencies_and_fallbacks\": \"رتّب العمل حسب التبعيات والموارد والموعد والمخاطر، وبيّن الافتراضات والبدائل، ولا تصف خطوة مقترحة بأنها نُفذت.\","` | — |
+| [SRC-686F71AA50-L000047](../../agents/task_understanding.py#L47) | 47 | `"    \"compare_recommendation_tradeoffs\": \"وازن البدائل وفق احتياج المستخدم وقيوده، وبيّن المفاضلات والمعلومات الناقصة، ولا تعلن فائزًا عامًا دون أساس مقارنة واضح.\","` | — |
+| [SRC-686F71AA50-L000048](../../agents/task_understanding.py#L48) | 48 | `"    \"summarize_only_available_content\": \"لخّص النص المقدم أو الصفحة التي قُرئت فعلًا فقط؛ لا تستنتج محتوى غير مقروء من عنوان أو رابط.\","` | — |
+| [SRC-686F71AA50-L000049](../../agents/task_understanding.py#L49) | 49 | `"    \"qualify_buyer_intent\": \"ميّز إشارة نية شراء صريحة عن إعلان بيع أو صفحة تجارية؛ لا تعتبر الإعلان عميلًا ولا تزعم التحقق من الهوية.\","` | — |
 | [SRC-686F71AA50-L000050](../../agents/task_understanding.py#L50) | 50 | `"    \"prefer_lowest_sufficient_tool\": \"اختر أقل مسار أدوات كافٍ للمهمة؛ لا تبحث في الويب عندما تكفي المادة المقدمة أو الحساب المحلي، ولا تشغّل أداة غير مهيأة أو غير مسموح بها.\","` | — |
 | [SRC-686F71AA50-L000051](../../agents/task_understanding.py#L51) | 51 | `"}"` | — |
 | [SRC-686F71AA50-L000052](../../agents/task_understanding.py#L52) | 52 | `"_REASONING_FAMILY_IDS = {"` | — |
@@ -778,41 +816,3 @@
 | [SRC-686F71AA50-L000809](../../agents/task_understanding.py#L809) | 809 | `"    raw_context_slots = context.get(\"slots\")"` | — |
 | [SRC-686F71AA50-L000810](../../agents/task_understanding.py#L810) | 810 | `"    context_slots: dict[str, str] = {}"` | — |
 | [SRC-686F71AA50-L000811](../../agents/task_understanding.py#L811) | 811 | `"    if isinstance(raw_context_slots, dict):"` | — |
-| [SRC-686F71AA50-L000812](../../agents/task_understanding.py#L812) | 812 | `"        for raw_key, raw_value in list(raw_context_slots.items())[:16]:"` | — |
-| [SRC-686F71AA50-L000813](../../agents/task_understanding.py#L813) | 813 | `"            if isinstance(raw_key, str) and isinstance(raw_value, str) and raw_key.strip() and raw_value.strip():"` | — |
-| [SRC-686F71AA50-L000814](../../agents/task_understanding.py#L814) | 814 | `"                context_slots[raw_key.strip()[:40]] = raw_value.strip()[:180]"` | — |
-| [SRC-686F71AA50-L000815](../../agents/task_understanding.py#L815) | 815 | `"    raw_changed_slots = context.get(\"changed_slots\")"` | — |
-| [SRC-686F71AA50-L000816](../../agents/task_understanding.py#L816) | 816 | `"    context_changed_slots = ["` | — |
-| [SRC-686F71AA50-L000817](../../agents/task_understanding.py#L817) | 817 | `"        str(item).strip()[:40]"` | — |
-| [SRC-686F71AA50-L000818](../../agents/task_understanding.py#L818) | 818 | `"        for item in raw_changed_slots[:8]"` | — |
-| [SRC-686F71AA50-L000819](../../agents/task_understanding.py#L819) | 819 | `"        if isinstance(item, str) and item.strip()"` | — |
-| [SRC-686F71AA50-L000820](../../agents/task_understanding.py#L820) | 820 | `"    ] if isinstance(raw_changed_slots, list) else []"` | — |
-| [SRC-686F71AA50-L000821](../../agents/task_understanding.py#L821) | 821 | `"    context_resolution = {"` | — |
-| [SRC-686F71AA50-L000822](../../agents/task_understanding.py#L822) | 822 | `"        \"method\": str(context.get(\"method\") or \"not_provided\")[:80],"` | — |
-| [SRC-686F71AA50-L000823](../../agents/task_understanding.py#L823) | 823 | `"        \"resolved_question\": ("` | — |
-| [SRC-686F71AA50-L000824](../../agents/task_understanding.py#L824) | 824 | `"            str(context.get(\"resolved_question\") or raw)[:MAX_TASK_CHARS]"` | — |
-| [SRC-686F71AA50-L000825](../../agents/task_understanding.py#L825) | 825 | `"            if not context.get(\"topic_shift\") else raw"` | — |
-| [SRC-686F71AA50-L000826](../../agents/task_understanding.py#L826) | 826 | `"        ),"` | — |
-| [SRC-686F71AA50-L000827](../../agents/task_understanding.py#L827) | 827 | `"        \"topic\": str(context.get(\"topic\") or \"\")[:180],"` | — |
-| [SRC-686F71AA50-L000828](../../agents/task_understanding.py#L828) | 828 | `"        \"entities\": context_entities,"` | — |
-| [SRC-686F71AA50-L000829](../../agents/task_understanding.py#L829) | 829 | `"        \"slots\": context_slots,"` | — |
-| [SRC-686F71AA50-L000830](../../agents/task_understanding.py#L830) | 830 | `"        \"changed_slots\": context_changed_slots,"` | — |
-| [SRC-686F71AA50-L000831](../../agents/task_understanding.py#L831) | 831 | `"        \"is_follow_up\": context.get(\"is_follow_up\") is True,"` | — |
-| [SRC-686F71AA50-L000832](../../agents/task_understanding.py#L832) | 832 | `"        \"topic_shift\": context.get(\"topic_shift\") is True,"` | — |
-| [SRC-686F71AA50-L000833](../../agents/task_understanding.py#L833) | 833 | `"        \"resolution_basis\": str(context.get(\"resolution_basis\") or \"unassessed\")[:80],"` | — |
-| [SRC-686F71AA50-L000834](../../agents/task_understanding.py#L834) | 834 | `"        \"confidence_band\": str(context.get(\"confidence_band\") or \"unassessed\")[:30],"` | — |
-| [SRC-686F71AA50-L000835](../../agents/task_understanding.py#L835) | 835 | `"        \"needs_clarification\": context.get(\"needs_clarification\") is True,"` | — |
-| [SRC-686F71AA50-L000836](../../agents/task_understanding.py#L836) | 836 | `"        \"unresolved_references\": ["` | — |
-| [SRC-686F71AA50-L000837](../../agents/task_understanding.py#L837) | 837 | `"            str(item).strip()[:100]"` | — |
-| [SRC-686F71AA50-L000838](../../agents/task_understanding.py#L838) | 838 | `"            for item in context.get(\"unresolved_references\", [])[:8]"` | — |
-| [SRC-686F71AA50-L000839](../../agents/task_understanding.py#L839) | 839 | `"            if isinstance(item, str) and item.strip()"` | — |
-| [SRC-686F71AA50-L000840](../../agents/task_understanding.py#L840) | 840 | `"        ] if isinstance(context.get(\"unresolved_references\"), list) else [],"` | — |
-| [SRC-686F71AA50-L000841](../../agents/task_understanding.py#L841) | 841 | `"    }"` | — |
-| [SRC-686F71AA50-L000842](../../agents/task_understanding.py#L842) | 842 | `""` | — |
-| [SRC-686F71AA50-L000843](../../agents/task_understanding.py#L843) | 843 | `"    constraints = {"` | — |
-| [SRC-686F71AA50-L000844](../../agents/task_understanding.py#L844) | 844 | `"        \"explicit_locations\": location,"` | — |
-| [SRC-686F71AA50-L000845](../../agents/task_understanding.py#L845) | 845 | `"        \"explicit_years\": years,"` | — |
-| [SRC-686F71AA50-L000846](../../agents/task_understanding.py#L846) | 846 | `"        \"explicit_dates\": dates,"` | — |
-| [SRC-686F71AA50-L000847](../../agents/task_understanding.py#L847) | 847 | `"        \"explicit_budgets\": budgets,"` | — |
-| [SRC-686F71AA50-L000848](../../agents/task_understanding.py#L848) | 848 | `"        \"explicit_urls\": urls,"` | — |
-| [SRC-686F71AA50-L000849](../../agents/task_understanding.py#L849) | 849 | `"        \"explicit_aspects\": explicit_aspects,"` | — |

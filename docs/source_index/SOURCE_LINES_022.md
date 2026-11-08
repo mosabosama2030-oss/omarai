@@ -4,7 +4,7 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000574 إلى SRC-792A9A235D-L000034
+- النطاق: SRC-EEF2E6447C-L000536 إلى SRC-DD2C0EB6EA-L000016
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,44 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000536](../../api/omarai.py#L536) | 536 | `"        try:"` | — |
+| [SRC-EEF2E6447C-L000537](../../api/omarai.py#L537) | 537 | `"            return str(ipaddress.ip_address(candidate))"` | — |
+| [SRC-EEF2E6447C-L000538](../../api/omarai.py#L538) | 538 | `"        except ValueError:"` | — |
+| [SRC-EEF2E6447C-L000539](../../api/omarai.py#L539) | 539 | `"            return direct_ip"` | — |
+| [SRC-EEF2E6447C-L000540](../../api/omarai.py#L540) | 540 | `""` | — |
+| [SRC-EEF2E6447C-L000541](../../api/omarai.py#L541) | 541 | `"    def _rate_limit_ok(self):"` | — |
+| [SRC-EEF2E6447C-L000542](../../api/omarai.py#L542) | 542 | `"        client_ip = self._rate_limit_client_key()"` | — |
+| [SRC-EEF2E6447C-L000543](../../api/omarai.py#L543) | 543 | `"        now = time.monotonic()"` | — |
+| [SRC-EEF2E6447C-L000544](../../api/omarai.py#L544) | 544 | `"        cls = type(self)"` | — |
+| [SRC-EEF2E6447C-L000545](../../api/omarai.py#L545) | 545 | `"        with self._rate_lock:"` | — |
+| [SRC-EEF2E6447C-L000546](../../api/omarai.py#L546) | 546 | `"            # Periodically remove IP buckets whose entire sliding window has expired."` | — |
+| [SRC-EEF2E6447C-L000547](../../api/omarai.py#L547) | 547 | `"            # Without this sweep, a public endpoint could retain one empty deque per"` | — |
+| [SRC-EEF2E6447C-L000548](../../api/omarai.py#L548) | 548 | `"            # distinct client IP forever, even though the rate-limit window is 60 sec."` | — |
+| [SRC-EEF2E6447C-L000549](../../api/omarai.py#L549) | 549 | `"            if now - cls._rate_last_cleanup >= cls.RATE_LIMIT_CLEANUP_INTERVAL_SECONDS:"` | — |
+| [SRC-EEF2E6447C-L000550](../../api/omarai.py#L550) | 550 | `"                cutoff = now - cls.RATE_LIMIT_WINDOW_SECONDS"` | — |
+| [SRC-EEF2E6447C-L000551](../../api/omarai.py#L551) | 551 | `"                for key, timestamps in list(cls._request_times.items()):"` | — |
+| [SRC-EEF2E6447C-L000552](../../api/omarai.py#L552) | 552 | `"                    while timestamps and timestamps[0] <= cutoff:"` | — |
+| [SRC-EEF2E6447C-L000553](../../api/omarai.py#L553) | 553 | `"                        timestamps.popleft()"` | — |
+| [SRC-EEF2E6447C-L000554](../../api/omarai.py#L554) | 554 | `"                    if not timestamps:"` | — |
+| [SRC-EEF2E6447C-L000555](../../api/omarai.py#L555) | 555 | `"                        cls._request_times.pop(key, None)"` | — |
+| [SRC-EEF2E6447C-L000556](../../api/omarai.py#L556) | 556 | `"                cls._rate_last_cleanup = now"` | — |
+| [SRC-EEF2E6447C-L000557](../../api/omarai.py#L557) | 557 | `""` | — |
+| [SRC-EEF2E6447C-L000558](../../api/omarai.py#L558) | 558 | `"            if ("` | — |
+| [SRC-EEF2E6447C-L000559](../../api/omarai.py#L559) | 559 | `"                client_ip not in cls._request_times"` | — |
+| [SRC-EEF2E6447C-L000560](../../api/omarai.py#L560) | 560 | `"                and len(cls._request_times) >= max(1, cls.MAX_RATE_LIMIT_CLIENT_BUCKETS) - 1"` | — |
+| [SRC-EEF2E6447C-L000561](../../api/omarai.py#L561) | 561 | `"            ):"` | — |
+| [SRC-EEF2E6447C-L000562](../../api/omarai.py#L562) | 562 | `"                # Bound attacker-controlled cardinality. Excess identities share a"` | — |
+| [SRC-EEF2E6447C-L000563](../../api/omarai.py#L563) | 563 | `"                # conservative overflow bucket instead of allocating one deque per IP."` | — |
+| [SRC-EEF2E6447C-L000564](../../api/omarai.py#L564) | 564 | `"                client_ip = cls.RATE_LIMIT_OVERFLOW_KEY"` | — |
+| [SRC-EEF2E6447C-L000565](../../api/omarai.py#L565) | 565 | `"            events = cls._request_times[client_ip]"` | — |
+| [SRC-EEF2E6447C-L000566](../../api/omarai.py#L566) | 566 | `"            while events and now - events[0] >= cls.RATE_LIMIT_WINDOW_SECONDS:"` | — |
+| [SRC-EEF2E6447C-L000567](../../api/omarai.py#L567) | 567 | `"                events.popleft()"` | — |
+| [SRC-EEF2E6447C-L000568](../../api/omarai.py#L568) | 568 | `"            if len(events) >= cls.RATE_LIMIT_REQUESTS:"` | — |
+| [SRC-EEF2E6447C-L000569](../../api/omarai.py#L569) | 569 | `"                return False"` | — |
+| [SRC-EEF2E6447C-L000570](../../api/omarai.py#L570) | 570 | `"            events.append(now)"` | — |
+| [SRC-EEF2E6447C-L000571](../../api/omarai.py#L571) | 571 | `"            return True"` | — |
+| [SRC-EEF2E6447C-L000572](../../api/omarai.py#L572) | 572 | `""` | — |
+| [SRC-EEF2E6447C-L000573](../../api/omarai.py#L573) | 573 | `"    def _read_request_body(self) -> bytes \| None:"` | — |
 | [SRC-EEF2E6447C-L000574](../../api/omarai.py#L574) | 574 | `"        \"\"\"Read a bounded body with both idle and absolute wall-clock deadlines.\"\"\""` | — |
 | [SRC-EEF2E6447C-L000575](../../api/omarai.py#L575) | 575 | `"        raw_size = self.headers.get(\"Content-Length\", \"\").strip()"` | — |
 | [SRC-EEF2E6447C-L000576](../../api/omarai.py#L576) | 576 | `"        if not raw_size or not raw_size.isascii() or not raw_size.isdecimal():"` | — |
@@ -814,50 +852,3 @@
 | [SRC-DD2C0EB6EA-L000014](../../Dockerfile#L14) | 14 | `"COPY web ./web"` | — |
 | [SRC-DD2C0EB6EA-L000015](../../Dockerfile#L15) | 15 | `""` | — |
 | [SRC-DD2C0EB6EA-L000016](../../Dockerfile#L16) | 16 | `"RUN python -m pip install --no-cache-dir ."` | — |
-| [SRC-DD2C0EB6EA-L000017](../../Dockerfile#L17) | 17 | `"RUN python -c \"import os; from pathlib import Path; import api.omarai; values=(os.getenv('OMARAI_BUILD_SHA',''), os.getenv('PUBLIC_OMARAI_BUILD_SHA','')); valid=lambda value: len(value.strip())==40 and all(char in '0123456789abcdef' for char in value.strip().lower()); sha=next((value.strip().lower() for value in values if valid(value)), 'unknown'); Path(api.omarai.__file__).resolve().parents[1].joinpath('BUILD_SHA').write_text(sha, encoding='ascii')\""` | — |
-| [SRC-DD2C0EB6EA-L000018](../../Dockerfile#L18) | 18 | `""` | — |
-| [SRC-DD2C0EB6EA-L000019](../../Dockerfile#L19) | 19 | `"EXPOSE 8000"` | — |
-| [SRC-DD2C0EB6EA-L000020](../../Dockerfile#L20) | 20 | `"CMD [\"sh\", \"-c\", \"python -m cli.omarai serve --host 0.0.0.0 --port ${PORT:-8000}\"]"` | — |
-## وثائق وفهرسة
-
-### FILE-792A9A235D — [docs/ANSWER_QUALITY_BENCHMARK_AR.md](../ANSWER_QUALITY_BENCHMARK_AR.md#L1)
-
-- النوع: **Markdown**
-- نطاق الفهرسة: جرد الملف + عناوين Markdown
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-792A9A235D-L000001](../ANSWER_QUALITY_BENCHMARK_AR.md#L1) | 1 | `"# معيار تقييم جودة الإجابة (عدائي / Red-Team)"` | — |
-| [SRC-792A9A235D-L000002](../ANSWER_QUALITY_BENCHMARK_AR.md#L2) | 2 | `""` | — |
-| [SRC-792A9A235D-L000003](../ANSWER_QUALITY_BENCHMARK_AR.md#L3) | 3 | `"**المعرّف:** OMARAI-REDTEAM-001  "` | — |
-| [SRC-792A9A235D-L000004](../ANSWER_QUALITY_BENCHMARK_AR.md#L4) | 4 | `"**الإصدار:** 1.1.0 (تصحيح أمثلة الحالة + بروتوكول المقارنة)  "` | — |
-| [SRC-792A9A235D-L000005](../ANSWER_QUALITY_BENCHMARK_AR.md#L5) | 5 | ``"**مرجع الكود عند التصميم:** `ac05f4777f140694b285c5364e6c3875fdecdae6` (main)"`` | — |
-| [SRC-792A9A235D-L000006](../ANSWER_QUALITY_BENCHMARK_AR.md#L6) | 6 | `""` | — |
-| [SRC-792A9A235D-L000007](../ANSWER_QUALITY_BENCHMARK_AR.md#L7) | 7 | `"هذا المجلد يوفّر **مجموعة تقييم قابلة لإعادة التشغيل** لفحص فهم عمرai، استراتيجية البحث، استخدام الأدلة، التعامل مع عدم اليقين، والأمان."` | — |
-| [SRC-792A9A235D-L000008](../ANSWER_QUALITY_BENCHMARK_AR.md#L8) | 8 | `""` | — |
-| [SRC-792A9A235D-L000009](../ANSWER_QUALITY_BENCHMARK_AR.md#L9) | 9 | ``"> **مهم:** اختبار `tests/test_answer_quality_corpus.py` يتحقق فقط من **سلامة بنية** ملف الحالات.  "`` | — |
-| [SRC-792A9A235D-L000010](../ANSWER_QUALITY_BENCHMARK_AR.md#L10) | 10 | `"> نجاح هذا الاختبار **لا يعني** أن عمرai أجاب بشكل صحيح على أي حالة استدلال."` | — |
-| [SRC-792A9A235D-L000011](../ANSWER_QUALITY_BENCHMARK_AR.md#L11) | 11 | `""` | — |
-| [SRC-792A9A235D-L000012](../ANSWER_QUALITY_BENCHMARK_AR.md#L12) | 12 | `"لا يغير corpus أو أدوات التقييم منطق الإجابة؛ فرع القياس يضيف إلى agents/web_agent.py ميتاداتا محدودة لاستخدام النموذج والتكلفة التي يصرّح بها المزود، دون تسجيل المطالبات أو الردود أو جسم استجابة الموفر."` | — |
-| [SRC-792A9A235D-L000013](../ANSWER_QUALITY_BENCHMARK_AR.md#L13) | 13 | `""` | — |
-| [SRC-792A9A235D-L000014](../ANSWER_QUALITY_BENCHMARK_AR.md#L14) | 14 | `"## الملفات"` | — |
-| [SRC-792A9A235D-L000015](../ANSWER_QUALITY_BENCHMARK_AR.md#L15) | 15 | `""` | — |
-| [SRC-792A9A235D-L000016](../ANSWER_QUALITY_BENCHMARK_AR.md#L16) | 16 | `"\| الملف \| الوظيفة \|"` | — |
-| [SRC-792A9A235D-L000017](../ANSWER_QUALITY_BENCHMARK_AR.md#L17) | 17 | `"\|--------\|---------\|"` | — |
-| [SRC-792A9A235D-L000018](../ANSWER_QUALITY_BENCHMARK_AR.md#L18) | 18 | ``"\| `tests/fixtures/answer_quality_cases.json` \| ذخيرة الحالات (45) مع تجهيزات أدلة عند الحاجة \|"`` | — |
-| [SRC-792A9A235D-L000019](../ANSWER_QUALITY_BENCHMARK_AR.md#L19) | 19 | ``"\| `tests/test_answer_quality_corpus.py` \| تحقق آلي حتمي من البنية (بدون شبكة) \|"`` | — |
-| [SRC-792A9A235D-L000020](../ANSWER_QUALITY_BENCHMARK_AR.md#L20) | 20 | ``"\| `scripts/run_answer_quality_benchmark.py` \| تحقق corpus أو جمع تشغيل حي اختياري؛ يضيف الزمن والنتائج المعلنة فقط \|"`` | — |
-| [SRC-792A9A235D-L000021](../ANSWER_QUALITY_BENCHMARK_AR.md#L21) | 21 | ``"\| `scripts/compare_answer_quality_runs.py` \| مقارنة تشغيلين متطابقين ومراجعات بشرية قبل/بعد \|"`` | — |
-| [SRC-792A9A235D-L000022](../ANSWER_QUALITY_BENCHMARK_AR.md#L22) | 22 | ``"\| `scripts/score_answer_quality_reviews.py` \| حساب مقاييس صريحة من المراجعات البشرية \|"`` | — |
-| [SRC-792A9A235D-L000023](../ANSWER_QUALITY_BENCHMARK_AR.md#L23) | 23 | ``"\| `tests/fixtures/answer_quality_reviews_template.json` \| قالب مراجعة غير مسجل، وكل حالة فيه NOT_TESTED \|"`` | — |
-| [SRC-792A9A235D-L000024](../ANSWER_QUALITY_BENCHMARK_AR.md#L24) | 24 | ``"\| `docs/ANSWER_QUALITY_BENCHMARK_AR.md` \| بروتوكول التقييم والتسجيل (هذا الملف) \|"`` | — |
-| [SRC-792A9A235D-L000025](../ANSWER_QUALITY_BENCHMARK_AR.md#L25) | 25 | `""` | — |
-| [SRC-792A9A235D-L000026](../ANSWER_QUALITY_BENCHMARK_AR.md#L26) | 26 | ``"## الاستراتيجيات المسموحة في الحقل `expected_strategy`"`` | — |
-| [SRC-792A9A235D-L000027](../ANSWER_QUALITY_BENCHMARK_AR.md#L27) | 27 | `""` | — |
-| [SRC-792A9A235D-L000028](../ANSWER_QUALITY_BENCHMARK_AR.md#L28) | 28 | `"مستمدة من سلوك المستودع الفعلي (موجّه القدرات المحلي، البحث، التوضيح):"` | — |
-| [SRC-792A9A235D-L000029](../ANSWER_QUALITY_BENCHMARK_AR.md#L29) | 29 | `""` | — |
-| [SRC-792A9A235D-L000030](../ANSWER_QUALITY_BENCHMARK_AR.md#L30) | 30 | `"\| القيمة \| المعنى العملي \|"` | — |
-| [SRC-792A9A235D-L000031](../ANSWER_QUALITY_BENCHMARK_AR.md#L31) | 31 | `"\|--------\|----------------\|"` | — |
-| [SRC-792A9A235D-L000032](../ANSWER_QUALITY_BENCHMARK_AR.md#L32) | 32 | ``"\| `local` \| إجابة محلية/قواعد (مثل قدرات عمرai أو تسجيل العملاء) دون بحث ويب \|"`` | — |
-| [SRC-792A9A235D-L000033](../ANSWER_QUALITY_BENCHMARK_AR.md#L33) | 33 | ``"\| `model_no_search` \| إجابة نموذج بلا بحث ويب (تحية، معرفة عامة مستقرة) \|"`` | — |
-| [SRC-792A9A235D-L000034](../ANSWER_QUALITY_BENCHMARK_AR.md#L34) | 34 | ``"\| `web_search` \| يتطلب بحثًا عامًا أو استرجاع صفحات \|"`` | — |

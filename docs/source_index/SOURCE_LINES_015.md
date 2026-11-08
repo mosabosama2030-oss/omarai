@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002272 إلى SRC-1AE03B9EC3-L003071
+- النطاق: SRC-1AE03B9EC3-L002234 إلى SRC-1AE03B9EC3-L003033
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,44 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002234](../../agents/web_agent.py#L2234) | 2234 | `"                                \"limit\": 10,"` | — |
+| [SRC-1AE03B9EC3-L002235](../../agents/web_agent.py#L2235) | 2235 | `"                                \"type\": \"link\","` | — |
+| [SRC-1AE03B9EC3-L002236](../../agents/web_agent.py#L2236) | 2236 | `"                            },"` | — |
+| [SRC-1AE03B9EC3-L002237](../../agents/web_agent.py#L2237) | 2237 | `"                            headers={"` | — |
+| [SRC-1AE03B9EC3-L002238](../../agents/web_agent.py#L2238) | 2238 | `"                                **headers,"` | — |
+| [SRC-1AE03B9EC3-L002239](../../agents/web_agent.py#L2239) | 2239 | `"                                \"User-Agent\": reddit_user_agent,"` | — |
+| [SRC-1AE03B9EC3-L002240](../../agents/web_agent.py#L2240) | 2240 | `"                                \"Authorization\": \"Bearer \" + access_token,"` | — |
+| [SRC-1AE03B9EC3-L002241](../../agents/web_agent.py#L2241) | 2241 | `"                            },"` | — |
+| [SRC-1AE03B9EC3-L002242](../../agents/web_agent.py#L2242) | 2242 | `"                            timeout=self._effective_timeout(9.0),"` | — |
+| [SRC-1AE03B9EC3-L002243](../../agents/web_agent.py#L2243) | 2243 | `"                            follow_redirects=False,"` | — |
+| [SRC-1AE03B9EC3-L002244](../../agents/web_agent.py#L2244) | 2244 | `"                        )"` | — |
+| [SRC-1AE03B9EC3-L002245](../../agents/web_agent.py#L2245) | 2245 | `"                        if search_response.status_code == 200:"` | — |
+| [SRC-1AE03B9EC3-L002246](../../agents/web_agent.py#L2246) | 2246 | `"                            children = search_response.json().get(\"data\", {}).get(\"children\", [])"` | — |
+| [SRC-1AE03B9EC3-L002247](../../agents/web_agent.py#L2247) | 2247 | `"                            rank = 0"` | — |
+| [SRC-1AE03B9EC3-L002248](../../agents/web_agent.py#L2248) | 2248 | `"                            for child in children:"` | — |
+| [SRC-1AE03B9EC3-L002249](../../agents/web_agent.py#L2249) | 2249 | `"                                post = child.get(\"data\", {}) if isinstance(child, dict) else {}"` | — |
+| [SRC-1AE03B9EC3-L002250](../../agents/web_agent.py#L2250) | 2250 | `"                                permalink = str(post.get(\"permalink\") or \"\")"` | — |
+| [SRC-1AE03B9EC3-L002251](../../agents/web_agent.py#L2251) | 2251 | `"                                url = _public_http_url("` | — |
+| [SRC-1AE03B9EC3-L002252](../../agents/web_agent.py#L2252) | 2252 | `"                                    permalink if permalink.startswith(\"http\")"` | — |
+| [SRC-1AE03B9EC3-L002253](../../agents/web_agent.py#L2253) | 2253 | `"                                    else \"https://www.reddit.com\" + permalink"` | — |
+| [SRC-1AE03B9EC3-L002254](../../agents/web_agent.py#L2254) | 2254 | `"                                )"` | — |
+| [SRC-1AE03B9EC3-L002255](../../agents/web_agent.py#L2255) | 2255 | `"                                if not url:"` | — |
+| [SRC-1AE03B9EC3-L002256](../../agents/web_agent.py#L2256) | 2256 | `"                                    continue"` | — |
+| [SRC-1AE03B9EC3-L002257](../../agents/web_agent.py#L2257) | 2257 | `"                                rank += 1"` | — |
+| [SRC-1AE03B9EC3-L002258](../../agents/web_agent.py#L2258) | 2258 | `"                                snippet = _clean_text(post.get(\"selftext\") or \"\", 1000)"` | — |
+| [SRC-1AE03B9EC3-L002259](../../agents/web_agent.py#L2259) | 2259 | `"                                metrics = []"` | — |
+| [SRC-1AE03B9EC3-L002260](../../agents/web_agent.py#L2260) | 2260 | `"                                if post.get(\"score\") is not None:"` | — |
+| [SRC-1AE03B9EC3-L002261](../../agents/web_agent.py#L2261) | 2261 | `"                                    metrics.append(\"score=\" + str(post[\"score\"]))"` | — |
+| [SRC-1AE03B9EC3-L002262](../../agents/web_agent.py#L2262) | 2262 | `"                                if post.get(\"num_comments\") is not None:"` | — |
+| [SRC-1AE03B9EC3-L002263](../../agents/web_agent.py#L2263) | 2263 | `"                                    metrics.append(\"comments=\" + str(post[\"num_comments\"]))"` | — |
+| [SRC-1AE03B9EC3-L002264](../../agents/web_agent.py#L2264) | 2264 | `"                                if metrics:"` | — |
+| [SRC-1AE03B9EC3-L002265](../../agents/web_agent.py#L2265) | 2265 | `"                                    snippet = (snippet + \" \| \" if snippet else \"\") + \", \".join(metrics)"` | — |
+| [SRC-1AE03B9EC3-L002266](../../agents/web_agent.py#L2266) | 2266 | `"                                results.append({"` | — |
+| [SRC-1AE03B9EC3-L002267](../../agents/web_agent.py#L2267) | 2267 | `"                                    \"title\": _clean_text(post.get(\"title\") or \"Reddit post\", 300),"` | — |
+| [SRC-1AE03B9EC3-L002268](../../agents/web_agent.py#L2268) | 2268 | `"                                    \"url\": url,"` | — |
+| [SRC-1AE03B9EC3-L002269](../../agents/web_agent.py#L2269) | 2269 | `"                                    \"snippet\": snippet,"` | — |
+| [SRC-1AE03B9EC3-L002270](../../agents/web_agent.py#L2270) | 2270 | `"                                    \"page_text\": \"\","` | — |
+| [SRC-1AE03B9EC3-L002271](../../agents/web_agent.py#L2271) | 2271 | `"                                    \"page_fetched\": False,"` | — |
 | [SRC-1AE03B9EC3-L002272](../../agents/web_agent.py#L2272) | 2272 | `"                                    \"provider\": \"reddit_oauth_api\","` | — |
 | [SRC-1AE03B9EC3-L002273](../../agents/web_agent.py#L2273) | 2273 | `"                                    \"provider_rank\": rank,"` | — |
 | [SRC-1AE03B9EC3-L002274](../../agents/web_agent.py#L2274) | 2274 | `"                                    \"search_query\": query,"` | — |
@@ -778,41 +816,3 @@
 | [SRC-1AE03B9EC3-L003031](../../agents/web_agent.py#L3031) | 3031 | `"        # Keep at least one returned source per explicit criterion query in the"` | — |
 | [SRC-1AE03B9EC3-L003032](../../agents/web_agent.py#L3032) | 3032 | `"        # bounded source set sent to synthesis. Global fusion can otherwise crowd"` | — |
 | [SRC-1AE03B9EC3-L003033](../../agents/web_agent.py#L3033) | 3033 | `"        # lower-ranked criterion results out before the model can inspect them."` | — |
-| [SRC-1AE03B9EC3-L003034](../../agents/web_agent.py#L3034) | 3034 | `"        requirement_queries = plan.get(\"requirement_queries\", [])"` | — |
-| [SRC-1AE03B9EC3-L003035](../../agents/web_agent.py#L3035) | 3035 | `"        if isinstance(requirement_queries, list) and requirement_queries:"` | — |
-| [SRC-1AE03B9EC3-L003036](../../agents/web_agent.py#L3036) | 3036 | `"            globally_fused = sources"` | — |
-| [SRC-1AE03B9EC3-L003037](../../agents/web_agent.py#L3037) | 3037 | `"            globally_fused_by_url = {"` | — |
-| [SRC-1AE03B9EC3-L003038](../../agents/web_agent.py#L3038) | 3038 | `"                self._normalized_source_url_key(item.get(\"url\", \"\")): item"` | — |
-| [SRC-1AE03B9EC3-L003039](../../agents/web_agent.py#L3039) | 3039 | `"                for item in globally_fused"` | — |
-| [SRC-1AE03B9EC3-L003040](../../agents/web_agent.py#L3040) | 3040 | `"                if self._normalized_source_url_key(item.get(\"url\", \"\"))"` | — |
-| [SRC-1AE03B9EC3-L003041](../../agents/web_agent.py#L3041) | 3041 | `"            }"` | — |
-| [SRC-1AE03B9EC3-L003042](../../agents/web_agent.py#L3042) | 3042 | `"            pinned_by_url: dict[str, dict[str, Any]] = {}"` | — |
-| [SRC-1AE03B9EC3-L003043](../../agents/web_agent.py#L3043) | 3043 | `"            pinned_sources: list[dict[str, Any]] = []"` | — |
-| [SRC-1AE03B9EC3-L003044](../../agents/web_agent.py#L3044) | 3044 | `"            for requirement in requirement_queries[:MAX_PLAN_QUERIES]:"` | — |
-| [SRC-1AE03B9EC3-L003045](../../agents/web_agent.py#L3045) | 3045 | `"                if not isinstance(requirement, dict):"` | — |
-| [SRC-1AE03B9EC3-L003046](../../agents/web_agent.py#L3046) | 3046 | `"                    continue"` | — |
-| [SRC-1AE03B9EC3-L003047](../../agents/web_agent.py#L3047) | 3047 | `"                target_query = compact_search_query(str(requirement.get(\"query\") or \"\"))"` | — |
-| [SRC-1AE03B9EC3-L003048](../../agents/web_agent.py#L3048) | 3048 | `"                if not target_query:"` | — |
-| [SRC-1AE03B9EC3-L003049](../../agents/web_agent.py#L3049) | 3049 | `"                    continue"` | — |
-| [SRC-1AE03B9EC3-L003050](../../agents/web_agent.py#L3050) | 3050 | `"                query_key = re.sub(r\"\\s+\", \" \", target_query).strip().casefold()"` | — |
-| [SRC-1AE03B9EC3-L003051](../../agents/web_agent.py#L3051) | 3051 | `"                criterion_batches = ["` | — |
-| [SRC-1AE03B9EC3-L003052](../../agents/web_agent.py#L3052) | 3052 | `"                    batch for batch in batches"` | — |
-| [SRC-1AE03B9EC3-L003053](../../agents/web_agent.py#L3053) | 3053 | `"                    if re.sub("` | — |
-| [SRC-1AE03B9EC3-L003054](../../agents/web_agent.py#L3054) | 3054 | `"                        r\"\\s+\", \" \", str(batch.get(\"query\") or \"\")"` | — |
-| [SRC-1AE03B9EC3-L003055](../../agents/web_agent.py#L3055) | 3055 | `"                    ).strip().casefold() == query_key"` | — |
-| [SRC-1AE03B9EC3-L003056](../../agents/web_agent.py#L3056) | 3056 | `"                ]"` | — |
-| [SRC-1AE03B9EC3-L003057](../../agents/web_agent.py#L3057) | 3057 | `"                criterion_candidates = fuse_ranked_results("` | — |
-| [SRC-1AE03B9EC3-L003058](../../agents/web_agent.py#L3058) | 3058 | `"                    criterion_batches, limit=MAX_SEARCH_RESULTS"` | — |
-| [SRC-1AE03B9EC3-L003059](../../agents/web_agent.py#L3059) | 3059 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L003060](../../agents/web_agent.py#L3060) | 3060 | `"                candidate = None"` | — |
-| [SRC-1AE03B9EC3-L003061](../../agents/web_agent.py#L3061) | 3061 | `"                if criterion_candidates:"` | — |
-| [SRC-1AE03B9EC3-L003062](../../agents/web_agent.py#L3062) | 3062 | `"                    criterion_ledger = build_requirement_evidence_ledger("` | — |
-| [SRC-1AE03B9EC3-L003063](../../agents/web_agent.py#L3063) | 3063 | `"                        [str(requirement.get(\"target\") or \"\")],"` | — |
-| [SRC-1AE03B9EC3-L003064](../../agents/web_agent.py#L3064) | 3064 | `"                        criterion_candidates,"` | — |
-| [SRC-1AE03B9EC3-L003065](../../agents/web_agent.py#L3065) | 3065 | `"                        [requirement],"` | — |
-| [SRC-1AE03B9EC3-L003066](../../agents/web_agent.py#L3066) | 3066 | `"                    )"` | — |
-| [SRC-1AE03B9EC3-L003067](../../agents/web_agent.py#L3067) | 3067 | `"                    candidate_indexes = ("` | — |
-| [SRC-1AE03B9EC3-L003068](../../agents/web_agent.py#L3068) | 3068 | `"                        criterion_ledger[0].get(\"candidate_source_indexes\", [])"` | — |
-| [SRC-1AE03B9EC3-L003069](../../agents/web_agent.py#L3069) | 3069 | `"                        if criterion_ledger else []"` | — |
-| [SRC-1AE03B9EC3-L003070](../../agents/web_agent.py#L3070) | 3070 | `"                    )"` | — |
-| [SRC-1AE03B9EC3-L003071](../../agents/web_agent.py#L3071) | 3071 | `"                    if candidate_indexes:"` | — |

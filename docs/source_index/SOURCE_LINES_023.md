@@ -4,9 +4,22 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-792A9A235D-L000035 إلى SRC-480FAB7816-L000057
+- النطاق: SRC-DD2C0EB6EA-L000017 إلى SRC-480FAB7816-L000019
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## إعدادات وتشغيل
+
+### FILE-DD2C0EB6EA — [Dockerfile](../../Dockerfile#L1)
+
+- النوع: **Dockerfile**
+- نطاق الفهرسة: جرد الملف + أسماء إعدادات عامة إن وجدت
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-DD2C0EB6EA-L000017](../../Dockerfile#L17) | 17 | `"RUN python -c \"import os; from pathlib import Path; import api.omarai; values=(os.getenv('OMARAI_BUILD_SHA',''), os.getenv('PUBLIC_OMARAI_BUILD_SHA','')); valid=lambda value: len(value.strip())==40 and all(char in '0123456789abcdef' for char in value.strip().lower()); sha=next((value.strip().lower() for value in values if valid(value)), 'unknown'); Path(api.omarai.__file__).resolve().parents[1].joinpath('BUILD_SHA').write_text(sha, encoding='ascii')\""` | — |
+| [SRC-DD2C0EB6EA-L000018](../../Dockerfile#L18) | 18 | `""` | — |
+| [SRC-DD2C0EB6EA-L000019](../../Dockerfile#L19) | 19 | `"EXPOSE 8000"` | — |
+| [SRC-DD2C0EB6EA-L000020](../../Dockerfile#L20) | 20 | `"CMD [\"sh\", \"-c\", \"python -m cli.omarai serve --host 0.0.0.0 --port ${PORT:-8000}\"]"` | — |
 ## وثائق وفهرسة
 
 ### FILE-792A9A235D — [docs/ANSWER_QUALITY_BENCHMARK_AR.md](../ANSWER_QUALITY_BENCHMARK_AR.md#L1)
@@ -16,6 +29,40 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-792A9A235D-L000001](../ANSWER_QUALITY_BENCHMARK_AR.md#L1) | 1 | `"# معيار تقييم جودة الإجابة (عدائي / Red-Team)"` | — |
+| [SRC-792A9A235D-L000002](../ANSWER_QUALITY_BENCHMARK_AR.md#L2) | 2 | `""` | — |
+| [SRC-792A9A235D-L000003](../ANSWER_QUALITY_BENCHMARK_AR.md#L3) | 3 | `"**المعرّف:** OMARAI-REDTEAM-001  "` | — |
+| [SRC-792A9A235D-L000004](../ANSWER_QUALITY_BENCHMARK_AR.md#L4) | 4 | `"**الإصدار:** 1.1.0 (تصحيح أمثلة الحالة + بروتوكول المقارنة)  "` | — |
+| [SRC-792A9A235D-L000005](../ANSWER_QUALITY_BENCHMARK_AR.md#L5) | 5 | ``"**مرجع الكود عند التصميم:** `ac05f4777f140694b285c5364e6c3875fdecdae6` (main)"`` | — |
+| [SRC-792A9A235D-L000006](../ANSWER_QUALITY_BENCHMARK_AR.md#L6) | 6 | `""` | — |
+| [SRC-792A9A235D-L000007](../ANSWER_QUALITY_BENCHMARK_AR.md#L7) | 7 | `"هذا المجلد يوفّر **مجموعة تقييم قابلة لإعادة التشغيل** لفحص فهم عمرai، استراتيجية البحث، استخدام الأدلة، التعامل مع عدم اليقين، والأمان."` | — |
+| [SRC-792A9A235D-L000008](../ANSWER_QUALITY_BENCHMARK_AR.md#L8) | 8 | `""` | — |
+| [SRC-792A9A235D-L000009](../ANSWER_QUALITY_BENCHMARK_AR.md#L9) | 9 | ``"> **مهم:** اختبار `tests/test_answer_quality_corpus.py` يتحقق فقط من **سلامة بنية** ملف الحالات.  "`` | — |
+| [SRC-792A9A235D-L000010](../ANSWER_QUALITY_BENCHMARK_AR.md#L10) | 10 | `"> نجاح هذا الاختبار **لا يعني** أن عمرai أجاب بشكل صحيح على أي حالة استدلال."` | — |
+| [SRC-792A9A235D-L000011](../ANSWER_QUALITY_BENCHMARK_AR.md#L11) | 11 | `""` | — |
+| [SRC-792A9A235D-L000012](../ANSWER_QUALITY_BENCHMARK_AR.md#L12) | 12 | `"لا يغير corpus أو أدوات التقييم منطق الإجابة؛ فرع القياس يضيف إلى agents/web_agent.py ميتاداتا محدودة لاستخدام النموذج والتكلفة التي يصرّح بها المزود، دون تسجيل المطالبات أو الردود أو جسم استجابة الموفر."` | — |
+| [SRC-792A9A235D-L000013](../ANSWER_QUALITY_BENCHMARK_AR.md#L13) | 13 | `""` | — |
+| [SRC-792A9A235D-L000014](../ANSWER_QUALITY_BENCHMARK_AR.md#L14) | 14 | `"## الملفات"` | — |
+| [SRC-792A9A235D-L000015](../ANSWER_QUALITY_BENCHMARK_AR.md#L15) | 15 | `""` | — |
+| [SRC-792A9A235D-L000016](../ANSWER_QUALITY_BENCHMARK_AR.md#L16) | 16 | `"\| الملف \| الوظيفة \|"` | — |
+| [SRC-792A9A235D-L000017](../ANSWER_QUALITY_BENCHMARK_AR.md#L17) | 17 | `"\|--------\|---------\|"` | — |
+| [SRC-792A9A235D-L000018](../ANSWER_QUALITY_BENCHMARK_AR.md#L18) | 18 | ``"\| `tests/fixtures/answer_quality_cases.json` \| ذخيرة الحالات (45) مع تجهيزات أدلة عند الحاجة \|"`` | — |
+| [SRC-792A9A235D-L000019](../ANSWER_QUALITY_BENCHMARK_AR.md#L19) | 19 | ``"\| `tests/test_answer_quality_corpus.py` \| تحقق آلي حتمي من البنية (بدون شبكة) \|"`` | — |
+| [SRC-792A9A235D-L000020](../ANSWER_QUALITY_BENCHMARK_AR.md#L20) | 20 | ``"\| `scripts/run_answer_quality_benchmark.py` \| تحقق corpus أو جمع تشغيل حي اختياري؛ يضيف الزمن والنتائج المعلنة فقط \|"`` | — |
+| [SRC-792A9A235D-L000021](../ANSWER_QUALITY_BENCHMARK_AR.md#L21) | 21 | ``"\| `scripts/compare_answer_quality_runs.py` \| مقارنة تشغيلين متطابقين ومراجعات بشرية قبل/بعد \|"`` | — |
+| [SRC-792A9A235D-L000022](../ANSWER_QUALITY_BENCHMARK_AR.md#L22) | 22 | ``"\| `scripts/score_answer_quality_reviews.py` \| حساب مقاييس صريحة من المراجعات البشرية \|"`` | — |
+| [SRC-792A9A235D-L000023](../ANSWER_QUALITY_BENCHMARK_AR.md#L23) | 23 | ``"\| `tests/fixtures/answer_quality_reviews_template.json` \| قالب مراجعة غير مسجل، وكل حالة فيه NOT_TESTED \|"`` | — |
+| [SRC-792A9A235D-L000024](../ANSWER_QUALITY_BENCHMARK_AR.md#L24) | 24 | ``"\| `docs/ANSWER_QUALITY_BENCHMARK_AR.md` \| بروتوكول التقييم والتسجيل (هذا الملف) \|"`` | — |
+| [SRC-792A9A235D-L000025](../ANSWER_QUALITY_BENCHMARK_AR.md#L25) | 25 | `""` | — |
+| [SRC-792A9A235D-L000026](../ANSWER_QUALITY_BENCHMARK_AR.md#L26) | 26 | ``"## الاستراتيجيات المسموحة في الحقل `expected_strategy`"`` | — |
+| [SRC-792A9A235D-L000027](../ANSWER_QUALITY_BENCHMARK_AR.md#L27) | 27 | `""` | — |
+| [SRC-792A9A235D-L000028](../ANSWER_QUALITY_BENCHMARK_AR.md#L28) | 28 | `"مستمدة من سلوك المستودع الفعلي (موجّه القدرات المحلي، البحث، التوضيح):"` | — |
+| [SRC-792A9A235D-L000029](../ANSWER_QUALITY_BENCHMARK_AR.md#L29) | 29 | `""` | — |
+| [SRC-792A9A235D-L000030](../ANSWER_QUALITY_BENCHMARK_AR.md#L30) | 30 | `"\| القيمة \| المعنى العملي \|"` | — |
+| [SRC-792A9A235D-L000031](../ANSWER_QUALITY_BENCHMARK_AR.md#L31) | 31 | `"\|--------\|----------------\|"` | — |
+| [SRC-792A9A235D-L000032](../ANSWER_QUALITY_BENCHMARK_AR.md#L32) | 32 | ``"\| `local` \| إجابة محلية/قواعد (مثل قدرات عمرai أو تسجيل العملاء) دون بحث ويب \|"`` | — |
+| [SRC-792A9A235D-L000033](../ANSWER_QUALITY_BENCHMARK_AR.md#L33) | 33 | ``"\| `model_no_search` \| إجابة نموذج بلا بحث ويب (تحية، معرفة عامة مستقرة) \|"`` | — |
+| [SRC-792A9A235D-L000034](../ANSWER_QUALITY_BENCHMARK_AR.md#L34) | 34 | ``"\| `web_search` \| يتطلب بحثًا عامًا أو استرجاع صفحات \|"`` | — |
 | [SRC-792A9A235D-L000035](../ANSWER_QUALITY_BENCHMARK_AR.md#L35) | 35 | ``"\| `clarify` \| الطلب غامض ويجب طلب توضيح قبل إجابة قطعية \|"`` | — |
 | [SRC-792A9A235D-L000036](../ANSWER_QUALITY_BENCHMARK_AR.md#L36) | 36 | `""` | — |
 | [SRC-792A9A235D-L000037](../ANSWER_QUALITY_BENCHMARK_AR.md#L37) | 37 | ``"## أوضاع التقييم `evaluation_mode`"`` | — |
@@ -823,41 +870,3 @@
 | [SRC-480FAB7816-L000017](../DATABASE_POSTGRESQL_AR.md#L17) | 17 | `""` | — |
 | [SRC-480FAB7816-L000018](../DATABASE_POSTGRESQL_AR.md#L18) | 18 | ``"يمكن تغيير المسار بمتغير `OMARAI_DB_PATH`:"`` | — |
 | [SRC-480FAB7816-L000019](../DATABASE_POSTGRESQL_AR.md#L19) | 19 | `""` | — |
-| [SRC-480FAB7816-L000020](../DATABASE_POSTGRESQL_AR.md#L20) | 20 | ````"```bash"```` | — |
-| [SRC-480FAB7816-L000021](../DATABASE_POSTGRESQL_AR.md#L21) | 21 | `"export OMARAI_DB_PATH=\"$HOME/.omarai/dev.sqlite3\""` | — |
-| [SRC-480FAB7816-L000022](../DATABASE_POSTGRESQL_AR.md#L22) | 22 | `"python -m cli.omarai serve"` | — |
-| [SRC-480FAB7816-L000023](../DATABASE_POSTGRESQL_AR.md#L23) | 23 | ````"```"```` | — |
-| [SRC-480FAB7816-L000024](../DATABASE_POSTGRESQL_AR.md#L24) | 24 | `""` | — |
-| [SRC-480FAB7816-L000025](../DATABASE_POSTGRESQL_AR.md#L25) | 25 | ``"لا تضبط `OMARAI_DB_PATH` بالتزامن مع عنوان PostgreSQL؛ يرفض التطبيق هذا التعارض بدل اختيار قاعدة بصمت."`` | — |
-| [SRC-480FAB7816-L000026](../DATABASE_POSTGRESQL_AR.md#L26) | 26 | `""` | — |
-| [SRC-480FAB7816-L000027](../DATABASE_POSTGRESQL_AR.md#L27) | 27 | `"## إعداد Neon للاستضافة"` | — |
-| [SRC-480FAB7816-L000028](../DATABASE_POSTGRESQL_AR.md#L28) | 28 | `""` | — |
-| [SRC-480FAB7816-L000029](../DATABASE_POSTGRESQL_AR.md#L29) | 29 | `"1. أنشئ مشروع PostgreSQL في Neon واختر المنطقة الأقرب إلى تطبيق الاستضافة قدر الإمكان."` | — |
-| [SRC-480FAB7816-L000030](../DATABASE_POSTGRESQL_AR.md#L30) | 30 | `"2. افتح قسم الاتصال في لوحة Neon واختر عنوان PostgreSQL عبر **pooled connection** لاستخدام عنوان pooler، خصوصًا أن التطبيق يفتح اتصالًا قصير العمر لكل عملية تخزين."` | — |
-| [SRC-480FAB7816-L000031](../DATABASE_POSTGRESQL_AR.md#L31) | 31 | ``"3. انسخ عنوان الاتصال كاملًا من Neon، وتحقق من وجود `sslmode=require` في العنوان."`` | — |
-| [SRC-480FAB7816-L000032](../DATABASE_POSTGRESQL_AR.md#L32) | 32 | ``"4. افتح إعدادات المتغيرات/الأسرار في خدمة الاستضافة، وأضف متغيرًا سريًا اسمه `OMARAI_DATABASE_URL` وقيمته عنوان الاتصال."`` | — |
-| [SRC-480FAB7816-L000033](../DATABASE_POSTGRESQL_AR.md#L33) | 33 | ``"5. اترك `OMARAI_DB_PATH` غير مضبوط حتى لا يحدث تعارض."`` | — |
-| [SRC-480FAB7816-L000034](../DATABASE_POSTGRESQL_AR.md#L34) | 34 | ``"6. أعد تشغيل/نشر الخدمة عبر مسار النشر الذي يوافق عليه مالك البيئة، ثم راجع `GET /api/health`: يجب أن يعرض `storage.backend=postgresql` و`storage.database_url_configured=true` من دون عرض العنوان أو كلمة المرور."`` | — |
-| [SRC-480FAB7816-L000035](../DATABASE_POSTGRESQL_AR.md#L35) | 35 | `"7. هذا الفحص يعرض اختيار المحرك وإعداد عنوان الاتصال فقط؛ لا يثبت خطة Neon أو سياسة النسخ الاحتياطي أو استمرار الاتصال بعد بدء التشغيل. نفّذ اختبار قبول محميًا بعد التهيئة مع بيانات اختبار غير حساسة."` | — |
-| [SRC-480FAB7816-L000036](../DATABASE_POSTGRESQL_AR.md#L36) | 36 | `""` | — |
-| [SRC-480FAB7816-L000037](../DATABASE_POSTGRESQL_AR.md#L37) | 37 | ``"لا تلصق عنوان الاتصال في محادثة، أو Issue، أو PR، أو سجل CI، أو ملف `.env.example`. لا تضعه في GitHub Actions Secrets إلا عندما تكون هناك حاجة واضحة لعملية CI تتصل بقاعدة محددة؛ اختبارات CI الاعتيادية تستخدم PostgreSQL مؤقتًا داخل runner ولا تحتاج سر Neon."`` | — |
-| [SRC-480FAB7816-L000038](../DATABASE_POSTGRESQL_AR.md#L38) | 38 | `""` | — |
-| [SRC-480FAB7816-L000039](../DATABASE_POSTGRESQL_AR.md#L39) | 39 | `"## اختيار المحرك"` | — |
-| [SRC-480FAB7816-L000040](../DATABASE_POSTGRESQL_AR.md#L40) | 40 | `""` | — |
-| [SRC-480FAB7816-L000041](../DATABASE_POSTGRESQL_AR.md#L41) | 41 | `"\| الإعداد \| المحرك \|"` | — |
-| [SRC-480FAB7816-L000042](../DATABASE_POSTGRESQL_AR.md#L42) | 42 | `"\|---\|---\|"` | — |
-| [SRC-480FAB7816-L000043](../DATABASE_POSTGRESQL_AR.md#L43) | 43 | ``"\| لا يوجد `OMARAI_DATABASE_URL` ولا `DATABASE_URL` \| SQLite افتراضي \|"`` | — |
-| [SRC-480FAB7816-L000044](../DATABASE_POSTGRESQL_AR.md#L44) | 44 | ``"\| `OMARAI_DATABASE_URL` مضبوط \| PostgreSQL \|"`` | — |
-| [SRC-480FAB7816-L000045](../DATABASE_POSTGRESQL_AR.md#L45) | 45 | ``"\| `DATABASE_URL` مضبوط دون المتغير المخصص \| PostgreSQL \|"`` | — |
-| [SRC-480FAB7816-L000046](../DATABASE_POSTGRESQL_AR.md#L46) | 46 | ``"\| عنوان PostgreSQL مع `OMARAI_DB_PATH` في الوقت نفسه \| خطأ إعداد واضح؛ يجب اختيار أحدهما \|"`` | — |
-| [SRC-480FAB7816-L000047](../DATABASE_POSTGRESQL_AR.md#L47) | 47 | `""` | — |
-| [SRC-480FAB7816-L000048](../DATABASE_POSTGRESQL_AR.md#L48) | 48 | `"## المخطط والاختبارات"` | — |
-| [SRC-480FAB7816-L000049](../DATABASE_POSTGRESQL_AR.md#L49) | 49 | `""` | — |
-| [SRC-480FAB7816-L000050](../DATABASE_POSTGRESQL_AR.md#L50) | 50 | ``"- عند بدء التطبيق، ينشئ `LeadStore` الجداول والفهارس المطلوبة إذا لم تكن موجودة."`` | — |
-| [SRC-480FAB7816-L000051](../DATABASE_POSTGRESQL_AR.md#L51) | 51 | `"- ترحيل SQLite القديم (مثل نقل جدول leads legacy إلى جدول tenant-scoped) خاص بمحرك SQLite؛ لا يُنفذ على PostgreSQL."` | — |
-| [SRC-480FAB7816-L000052](../DATABASE_POSTGRESQL_AR.md#L52) | 52 | `"- سير عمل GitHub Actions يشغل اختبار PostgreSQL ضد خدمة مؤقتة PostgreSQL 16؛ لا يتصل بحساب Neon ولا يحتاج أسراره."` | — |
-| [SRC-480FAB7816-L000053](../DATABASE_POSTGRESQL_AR.md#L53) | 53 | `"- اختبارات التكامل تغطي تمييز السجلات بين المستأجرين، منع التكرار، تحديث الحالة، الرموز، الجلسات، ملفات المنتج، وسجلات الاكتشاف."` | — |
-| [SRC-480FAB7816-L000054](../DATABASE_POSTGRESQL_AR.md#L54) | 54 | `""` | — |
-| [SRC-480FAB7816-L000055](../DATABASE_POSTGRESQL_AR.md#L55) | 55 | `"## البيانات المحلية الحالية ونقلها"` | — |
-| [SRC-480FAB7816-L000056](../DATABASE_POSTGRESQL_AR.md#L56) | 56 | `""` | — |
-| [SRC-480FAB7816-L000057](../DATABASE_POSTGRESQL_AR.md#L57) | 57 | ``"**لا يوجد نقل تلقائي للبيانات المحلية إلى Neon في هذا التغيير.** ملف `~/.omarai/omarai.sqlite3` يبقى كما هو على جهاز التطوير؛ قاعدة Neon تبدأ بقاعدة فارغة وجداولها الجديدة. لا تضع عنوان Neon في بيئة محلية تتضمن بيانات إنتاجية قبل وضع خطة نسخ احتياطي/ترحيل ومطابقة عدد السجلات، ولا تحذف ملف SQLite الأصلي بعد النسخ."`` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000672 إلى SRC-1AE03B9EC3-L001471
+- النطاق: SRC-1AE03B9EC3-L000634 إلى SRC-1AE03B9EC3-L001433
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,44 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000634](../../agents/web_agent.py#L634) | 634 | `"            \"لكل المحاور المطلوبة. المحاور التي تحتاج إلى دليل إضافي: \""` | — |
+| [SRC-1AE03B9EC3-L000635](../../agents/web_agent.py#L635) | 635 | `"            + \"، \".join(str(item) for item in missing)"` | — |
+| [SRC-1AE03B9EC3-L000636](../../agents/web_agent.py#L636) | 636 | `"            + \". لن أعرض مسودة جزئية على أنها إجابة مكتملة. وهذا النقص يصف النتائج التي جُمعت \""` | — |
+| [SRC-1AE03B9EC3-L000637](../../agents/web_agent.py#L637) | 637 | `"            \"فقط، ولا يثبت عدم وجود معلومات عنها خارجها.\""` | — |
+| [SRC-1AE03B9EC3-L000638](../../agents/web_agent.py#L638) | 638 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L000639](../../agents/web_agent.py#L639) | 639 | `"        result[\"answer_was_withheld\"] = True"` | — |
+| [SRC-1AE03B9EC3-L000640](../../agents/web_agent.py#L640) | 640 | `"        result[\"answer_completeness_status\"] = \"incomplete_evidence_withheld\""` | — |
+| [SRC-1AE03B9EC3-L000641](../../agents/web_agent.py#L641) | 641 | `"        result[\"final_answer_status\"] = \"incomplete_evidence_withheld\""` | — |
+| [SRC-1AE03B9EC3-L000642](../../agents/web_agent.py#L642) | 642 | `"        result[\"task_fulfillment_status\"] = \"possible_gap_detected\""` | — |
+| [SRC-1AE03B9EC3-L000643](../../agents/web_agent.py#L643) | 643 | `"        search_report[\"task_fulfillment_status\"] = \"possible_gap_detected\""` | — |
+| [SRC-1AE03B9EC3-L000644](../../agents/web_agent.py#L644) | 644 | `"        answer_coverage = result.get(\"answer_coverage\")"` | — |
+| [SRC-1AE03B9EC3-L000645](../../agents/web_agent.py#L645) | 645 | `"        if isinstance(answer_coverage, dict):"` | — |
+| [SRC-1AE03B9EC3-L000646](../../agents/web_agent.py#L646) | 646 | `"            answer_coverage[\"task_fulfillment_status\"] = \"possible_gap_detected\""` | — |
+| [SRC-1AE03B9EC3-L000647](../../agents/web_agent.py#L647) | 647 | `"        warning = \"حُجبت الإجابة النهائية لوجود محاور مطلوبة بلا مرشح نصي كافٍ.\""` | — |
+| [SRC-1AE03B9EC3-L000648](../../agents/web_agent.py#L648) | 648 | `"        warnings = result.setdefault(\"warnings\", [])"` | — |
+| [SRC-1AE03B9EC3-L000649](../../agents/web_agent.py#L649) | 649 | `"        if isinstance(warnings, list) and warning not in warnings:"` | — |
+| [SRC-1AE03B9EC3-L000650](../../agents/web_agent.py#L650) | 650 | `"            warnings.append(warning)"` | — |
+| [SRC-1AE03B9EC3-L000651](../../agents/web_agent.py#L651) | 651 | `"    else:"` | — |
+| [SRC-1AE03B9EC3-L000652](../../agents/web_agent.py#L652) | 652 | `"        result[\"answer_was_withheld\"] = False"` | — |
+| [SRC-1AE03B9EC3-L000653](../../agents/web_agent.py#L653) | 653 | `"        result[\"answer_completeness_status\"] = ("` | — |
+| [SRC-1AE03B9EC3-L000654](../../agents/web_agent.py#L654) | 654 | `"            \"no_lexical_gaps_detected_semantic_completeness_not_proven\""` | — |
+| [SRC-1AE03B9EC3-L000655](../../agents/web_agent.py#L655) | 655 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L000656](../../agents/web_agent.py#L656) | 656 | `"    return result"` | — |
+| [SRC-1AE03B9EC3-L000657](../../agents/web_agent.py#L657) | 657 | `""` | — |
+| [SRC-1AE03B9EC3-L000658](../../agents/web_agent.py#L658) | 658 | `"class WebAgent:"` | — |
+| [SRC-1AE03B9EC3-L000659](../../agents/web_agent.py#L659) | 659 | `"    \"\"\"Search, inspect, and synthesize web evidence for open-ended questions.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L000660](../../agents/web_agent.py#L660) | 660 | `""` | — |
+| [SRC-1AE03B9EC3-L000661](../../agents/web_agent.py#L661) | 661 | `"    def __init__(self) -> None:"` | — |
+| [SRC-1AE03B9EC3-L000662](../../agents/web_agent.py#L662) | 662 | `"        generic_api_key = ("` | — |
+| [SRC-1AE03B9EC3-L000663](../../agents/web_agent.py#L663) | 663 | `"            os.getenv(\"OMARAI_LLM_API_KEY\", \"\").strip()"` | — |
+| [SRC-1AE03B9EC3-L000664](../../agents/web_agent.py#L664) | 664 | `"            or os.getenv(\"OPENROUTER_API_KEY\", \"\").strip()"` | — |
+| [SRC-1AE03B9EC3-L000665](../../agents/web_agent.py#L665) | 665 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L000666](../../agents/web_agent.py#L666) | 666 | `"        gemini_api_key = os.getenv(\"GEMINI_API_KEY\", \"\").strip()"` | — |
+| [SRC-1AE03B9EC3-L000667](../../agents/web_agent.py#L667) | 667 | `"        mistral_api_key = os.getenv(\"MISTRAL_API_KEY\", \"\").strip()"` | — |
+| [SRC-1AE03B9EC3-L000668](../../agents/web_agent.py#L668) | 668 | `"        configured_base_url = os.getenv("` | — |
+| [SRC-1AE03B9EC3-L000669](../../agents/web_agent.py#L669) | 669 | `"            \"OMARAI_LLM_BASE_URL\", \"https://openrouter.ai/api/v1\""` | — |
+| [SRC-1AE03B9EC3-L000670](../../agents/web_agent.py#L670) | 670 | `"        ).strip().rstrip(\"/\")"` | — |
+| [SRC-1AE03B9EC3-L000671](../../agents/web_agent.py#L671) | 671 | `"        global_model = os.getenv(\"OMARAI_LLM_MODEL\", \"\").strip()"` | — |
 | [SRC-1AE03B9EC3-L000672](../../agents/web_agent.py#L672) | 672 | `""` | — |
 | [SRC-1AE03B9EC3-L000673](../../agents/web_agent.py#L673) | 673 | `"        if generic_api_key:"` | — |
 | [SRC-1AE03B9EC3-L000674](../../agents/web_agent.py#L674) | 674 | `"            host = (urllib.parse.urlsplit(configured_base_url).hostname or \"\").lower().rstrip(\".\")"` | — |
@@ -778,41 +816,3 @@
 | [SRC-1AE03B9EC3-L001431](../../agents/web_agent.py#L1431) | 1431 | `"        context[\"resolved_question\"] = question[:MAX_QUESTION_CHARS]"` | — |
 | [SRC-1AE03B9EC3-L001432](../../agents/web_agent.py#L1432) | 1432 | `"        context[\"resolution_basis\"] = \"insufficient_evidence\""` | — |
 | [SRC-1AE03B9EC3-L001433](../../agents/web_agent.py#L1433) | 1433 | `"        result = self._clarification_result("` | — |
-| [SRC-1AE03B9EC3-L001434](../../agents/web_agent.py#L1434) | 1434 | `"            question, mode, {"` | — |
-| [SRC-1AE03B9EC3-L001435](../../agents/web_agent.py#L1435) | 1435 | `"                \"reason\": reason,"` | — |
-| [SRC-1AE03B9EC3-L001436](../../agents/web_agent.py#L1436) | 1436 | `"                \"needs_clarification\": True,"` | — |
-| [SRC-1AE03B9EC3-L001437](../../agents/web_agent.py#L1437) | 1437 | `"                \"context_available\": bool(context.get(\"is_follow_up\")),"` | — |
-| [SRC-1AE03B9EC3-L001438](../../agents/web_agent.py#L1438) | 1438 | `"            }"` | — |
-| [SRC-1AE03B9EC3-L001439](../../agents/web_agent.py#L1439) | 1439 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L001440](../../agents/web_agent.py#L1440) | 1440 | `"        requested_clarification = context.get(\"clarification_question\")"` | — |
-| [SRC-1AE03B9EC3-L001441](../../agents/web_agent.py#L1441) | 1441 | `"        if isinstance(requested_clarification, str) and requested_clarification.strip():"` | — |
-| [SRC-1AE03B9EC3-L001442](../../agents/web_agent.py#L1442) | 1442 | `"            result[\"answer\"] = requested_clarification[:400]"` | — |
-| [SRC-1AE03B9EC3-L001443](../../agents/web_agent.py#L1443) | 1443 | `"        result[\"dialogue_context\"] = context"` | — |
-| [SRC-1AE03B9EC3-L001444](../../agents/web_agent.py#L1444) | 1444 | `"        if isinstance(result.get(\"research_plan\"), dict):"` | — |
-| [SRC-1AE03B9EC3-L001445](../../agents/web_agent.py#L1445) | 1445 | `"            result[\"research_plan\"][\"dialogue_context\"] = context"` | — |
-| [SRC-1AE03B9EC3-L001446](../../agents/web_agent.py#L1446) | 1446 | `"        return result"` | — |
-| [SRC-1AE03B9EC3-L001447](../../agents/web_agent.py#L1447) | 1447 | `""` | — |
-| [SRC-1AE03B9EC3-L001448](../../agents/web_agent.py#L1448) | 1448 | `"    def _capability_status_snapshot(self) -> dict[str, Any]:"` | — |
-| [SRC-1AE03B9EC3-L001449](../../agents/web_agent.py#L1449) | 1449 | `"        \"\"\"Describe configured capabilities without claiming a live health check.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L001450](../../agents/web_agent.py#L1450) | 1450 | `"        status = self.status()"` | — |
-| [SRC-1AE03B9EC3-L001451](../../agents/web_agent.py#L1451) | 1451 | `"        not_tested = \"not_tested_in_this_response\""` | — |
-| [SRC-1AE03B9EC3-L001452](../../agents/web_agent.py#L1452) | 1452 | `"        providers = ["` | — |
-| [SRC-1AE03B9EC3-L001453](../../agents/web_agent.py#L1453) | 1453 | `"            {"` | — |
-| [SRC-1AE03B9EC3-L001454](../../agents/web_agent.py#L1454) | 1454 | `"                \"name\": \"duckduckgo_html\","` | — |
-| [SRC-1AE03B9EC3-L001455](../../agents/web_agent.py#L1455) | 1455 | `"                \"implemented\": True,"` | — |
-| [SRC-1AE03B9EC3-L001456](../../agents/web_agent.py#L1456) | 1456 | `"                \"configuration_status\": \"built_in_no_api_key\","` | — |
-| [SRC-1AE03B9EC3-L001457](../../agents/web_agent.py#L1457) | 1457 | `"                \"runtime_status\": not_tested,"` | — |
-| [SRC-1AE03B9EC3-L001458](../../agents/web_agent.py#L1458) | 1458 | `"            },"` | — |
-| [SRC-1AE03B9EC3-L001459](../../agents/web_agent.py#L1459) | 1459 | `"            {"` | — |
-| [SRC-1AE03B9EC3-L001460](../../agents/web_agent.py#L1460) | 1460 | `"                \"name\": \"bing_rss\","` | — |
-| [SRC-1AE03B9EC3-L001461](../../agents/web_agent.py#L1461) | 1461 | `"                \"implemented\": True,"` | — |
-| [SRC-1AE03B9EC3-L001462](../../agents/web_agent.py#L1462) | 1462 | `"                \"configuration_status\": \"built_in_no_api_key\","` | — |
-| [SRC-1AE03B9EC3-L001463](../../agents/web_agent.py#L1463) | 1463 | `"                \"runtime_status\": not_tested,"` | — |
-| [SRC-1AE03B9EC3-L001464](../../agents/web_agent.py#L1464) | 1464 | `"            },"` | — |
-| [SRC-1AE03B9EC3-L001465](../../agents/web_agent.py#L1465) | 1465 | `"            {"` | — |
-| [SRC-1AE03B9EC3-L001466](../../agents/web_agent.py#L1466) | 1466 | `"                \"name\": \"google_news_rss\","` | — |
-| [SRC-1AE03B9EC3-L001467](../../agents/web_agent.py#L1467) | 1467 | `"                \"implemented\": True,"` | — |
-| [SRC-1AE03B9EC3-L001468](../../agents/web_agent.py#L1468) | 1468 | `"                \"configuration_status\": \"conditional_no_api_key\","` | — |
-| [SRC-1AE03B9EC3-L001469](../../agents/web_agent.py#L1469) | 1469 | `"                \"runtime_status\": not_tested,"` | — |
-| [SRC-1AE03B9EC3-L001470](../../agents/web_agent.py#L1470) | 1470 | `"            },"` | — |
-| [SRC-1AE03B9EC3-L001471](../../agents/web_agent.py#L1471) | 1471 | `"            {"` | — |

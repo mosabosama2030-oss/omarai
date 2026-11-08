@@ -4,7 +4,7 @@
 
 - الصفحة: **044**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000867 إلى SRC-6B37B7D6D3-L000009
+- النطاق: SRC-3451CC474D-L000728 إلى SRC-3451CC474D-L001527
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,145 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000728](../../tests/test_api.py#L728) | 728 | `"            if not chunk:"` | — |
+| [SRC-3451CC474D-L000729](../../tests/test_api.py#L729) | 729 | `"                break"` | — |
+| [SRC-3451CC474D-L000730](../../tests/test_api.py#L730) | 730 | `"            response += chunk"` | — |
+| [SRC-3451CC474D-L000731](../../tests/test_api.py#L731) | 731 | `""` | — |
+| [SRC-3451CC474D-L000732](../../tests/test_api.py#L732) | 732 | `"    assert response.startswith(b\"HTTP/1.0 408\")"` | — |
+| [SRC-3451CC474D-L000733](../../tests/test_api.py#L733) | 733 | `"    assert b\"request body read timed out\" in response"` | — |
+| [SRC-3451CC474D-L000734](../../tests/test_api.py#L734) | 734 | `""` | — |
+| [SRC-3451CC474D-L000735](../../tests/test_api.py#L735) | 735 | `""` | — |
+| [SRC-3451CC474D-L000736](../../tests/test_api.py#L736) | 736 | `"def test_api_absolute_body_deadline_stops_slow_trickle(local_api, monkeypatch):"` | — |
+| [SRC-3451CC474D-L000737](../../tests/test_api.py#L737) | 737 | `"    \"\"\"A client must not evade the total deadline by sending before each idle timeout.\"\"\""` | — |
+| [SRC-3451CC474D-L000738](../../tests/test_api.py#L738) | 738 | `"    import time"` | — |
+| [SRC-3451CC474D-L000739](../../tests/test_api.py#L739) | 739 | `""` | — |
+| [SRC-3451CC474D-L000740](../../tests/test_api.py#L740) | 740 | `"    monkeypatch.delenv(\"OMARAI_PUBLIC_DEPLOYMENT\", raising=False)"` | — |
+| [SRC-3451CC474D-L000741](../../tests/test_api.py#L741) | 741 | `"    monkeypatch.delenv(\"OMARAI_ACCESS_TOKEN\", raising=False)"` | — |
+| [SRC-3451CC474D-L000742](../../tests/test_api.py#L742) | 742 | `"    monkeypatch.setattr(\"api.omarai.REQUEST_BODY_READ_TIMEOUT_SECONDS\", 0.45)"` | — |
+| [SRC-3451CC474D-L000743](../../tests/test_api.py#L743) | 743 | `"    monkeypatch.setattr(\"api.omarai.REQUEST_BODY_IDLE_TIMEOUT_SECONDS\", 0.20)"` | — |
+| [SRC-3451CC474D-L000744](../../tests/test_api.py#L744) | 744 | `"    host, port = local_api.removeprefix(\"http://\").rsplit(\":\", 1)"` | — |
+| [SRC-3451CC474D-L000745](../../tests/test_api.py#L745) | 745 | `""` | — |
+| [SRC-3451CC474D-L000746](../../tests/test_api.py#L746) | 746 | `"    with socket.create_connection((host, int(port)), timeout=2) as client:"` | — |
+| [SRC-3451CC474D-L000747](../../tests/test_api.py#L747) | 747 | `"        client.settimeout(2)"` | — |
+| [SRC-3451CC474D-L000748](../../tests/test_api.py#L748) | 748 | `"        started = time.monotonic()"` | — |
+| [SRC-3451CC474D-L000749](../../tests/test_api.py#L749) | 749 | `"        client.sendall("` | — |
+| [SRC-3451CC474D-L000750](../../tests/test_api.py#L750) | 750 | `"            b\"POST /api/analyze HTTP/1.1\\r\\n\""` | — |
+| [SRC-3451CC474D-L000751](../../tests/test_api.py#L751) | 751 | `"            b\"Host: localhost\\r\\n\""` | — |
+| [SRC-3451CC474D-L000752](../../tests/test_api.py#L752) | 752 | `"            b\"Content-Type: application/json\\r\\n\""` | — |
+| [SRC-3451CC474D-L000753](../../tests/test_api.py#L753) | 753 | `"            b\"Content-Length: 100\\r\\n\""` | — |
+| [SRC-3451CC474D-L000754](../../tests/test_api.py#L754) | 754 | `"            b\"Connection: close\\r\\n\\r\\n\""` | — |
+| [SRC-3451CC474D-L000755](../../tests/test_api.py#L755) | 755 | `"            b\"{\""` | — |
+| [SRC-3451CC474D-L000756](../../tests/test_api.py#L756) | 756 | `"        )"` | — |
+| [SRC-3451CC474D-L000757](../../tests/test_api.py#L757) | 757 | `"        # Each fragment arrives before the 0.20s idle timeout, but the complete"` | — |
+| [SRC-3451CC474D-L000758](../../tests/test_api.py#L758) | 758 | `"        # request body never arrives before the 0.45s absolute deadline."` | — |
+| [SRC-3451CC474D-L000759](../../tests/test_api.py#L759) | 759 | `"        for fragment in (b'\"', b\"text\", b'\"', b\":\"):"` | — |
+| [SRC-3451CC474D-L000760](../../tests/test_api.py#L760) | 760 | `"            time.sleep(0.08)"` | — |
+| [SRC-3451CC474D-L000761](../../tests/test_api.py#L761) | 761 | `"            try:"` | — |
+| [SRC-3451CC474D-L000762](../../tests/test_api.py#L762) | 762 | `"                client.sendall(fragment)"` | — |
+| [SRC-3451CC474D-L000763](../../tests/test_api.py#L763) | 763 | `"            except OSError:"` | — |
+| [SRC-3451CC474D-L000764](../../tests/test_api.py#L764) | 764 | `"                break"` | — |
+| [SRC-3451CC474D-L000765](../../tests/test_api.py#L765) | 765 | `""` | — |
+| [SRC-3451CC474D-L000766](../../tests/test_api.py#L766) | 766 | `"        response = bytearray()"` | — |
+| [SRC-3451CC474D-L000767](../../tests/test_api.py#L767) | 767 | `"        while True:"` | — |
+| [SRC-3451CC474D-L000768](../../tests/test_api.py#L768) | 768 | `"            try:"` | — |
+| [SRC-3451CC474D-L000769](../../tests/test_api.py#L769) | 769 | `"                chunk = client.recv(4096)"` | — |
+| [SRC-3451CC474D-L000770](../../tests/test_api.py#L770) | 770 | `"            except TimeoutError:"` | — |
+| [SRC-3451CC474D-L000771](../../tests/test_api.py#L771) | 771 | `"                break"` | — |
+| [SRC-3451CC474D-L000772](../../tests/test_api.py#L772) | 772 | `"            if not chunk:"` | — |
+| [SRC-3451CC474D-L000773](../../tests/test_api.py#L773) | 773 | `"                break"` | — |
+| [SRC-3451CC474D-L000774](../../tests/test_api.py#L774) | 774 | `"            response.extend(chunk)"` | — |
+| [SRC-3451CC474D-L000775](../../tests/test_api.py#L775) | 775 | `""` | — |
+| [SRC-3451CC474D-L000776](../../tests/test_api.py#L776) | 776 | `"    elapsed = time.monotonic() - started"` | — |
+| [SRC-3451CC474D-L000777](../../tests/test_api.py#L777) | 777 | `"    assert response.startswith(b\"HTTP/1.0 408\")"` | — |
+| [SRC-3451CC474D-L000778](../../tests/test_api.py#L778) | 778 | `"    assert b\"request body read timed out\" in response"` | — |
+| [SRC-3451CC474D-L000779](../../tests/test_api.py#L779) | 779 | `"    assert elapsed < 1.5"` | — |
+| [SRC-3451CC474D-L000780](../../tests/test_api.py#L780) | 780 | `""` | — |
+| [SRC-3451CC474D-L000781](../../tests/test_api.py#L781) | 781 | `""` | — |
+| [SRC-3451CC474D-L000782](../../tests/test_api.py#L782) | 782 | `""` | — |
+| [SRC-3451CC474D-L000783](../../tests/test_api.py#L783) | 783 | `"def test_api_absolute_header_deadline_stops_slow_trickle(local_api, monkeypatch):"` | — |
+| [SRC-3451CC474D-L000784](../../tests/test_api.py#L784) | 784 | `"    \"\"\"Header bytes arriving before idle timeout must not extend the total deadline.\"\"\""` | — |
+| [SRC-3451CC474D-L000785](../../tests/test_api.py#L785) | 785 | `"    import time"` | — |
+| [SRC-3451CC474D-L000786](../../tests/test_api.py#L786) | 786 | `""` | — |
+| [SRC-3451CC474D-L000787](../../tests/test_api.py#L787) | 787 | `"    monkeypatch.delenv(\"OMARAI_PUBLIC_DEPLOYMENT\", raising=False)"` | — |
+| [SRC-3451CC474D-L000788](../../tests/test_api.py#L788) | 788 | `"    monkeypatch.delenv(\"OMARAI_ACCESS_TOKEN\", raising=False)"` | — |
+| [SRC-3451CC474D-L000789](../../tests/test_api.py#L789) | 789 | `"    monkeypatch.setattr(\"api.omarai.REQUEST_HEADER_READ_TIMEOUT_SECONDS\", 0.5)"` | — |
+| [SRC-3451CC474D-L000790](../../tests/test_api.py#L790) | 790 | `"    monkeypatch.setattr(\"api.omarai.REQUEST_HEADER_IDLE_TIMEOUT_SECONDS\", 0.35)"` | — |
+| [SRC-3451CC474D-L000791](../../tests/test_api.py#L791) | 791 | `"    host, port = local_api.removeprefix(\"http://\").rsplit(\":\", 1)"` | — |
+| [SRC-3451CC474D-L000792](../../tests/test_api.py#L792) | 792 | `""` | — |
+| [SRC-3451CC474D-L000793](../../tests/test_api.py#L793) | 793 | `"    with socket.create_connection((host, int(port)), timeout=2) as client:"` | — |
+| [SRC-3451CC474D-L000794](../../tests/test_api.py#L794) | 794 | `"        client.settimeout(1.2)"` | — |
+| [SRC-3451CC474D-L000795](../../tests/test_api.py#L795) | 795 | `"        started = time.monotonic()"` | — |
+| [SRC-3451CC474D-L000796](../../tests/test_api.py#L796) | 796 | `"        client.sendall("` | — |
+| [SRC-3451CC474D-L000797](../../tests/test_api.py#L797) | 797 | `"            b\"POST /api/analyze HTTP/1.1\\r\\n\""` | — |
+| [SRC-3451CC474D-L000798](../../tests/test_api.py#L798) | 798 | `"            b\"Host: localhost\\r\\n\""` | — |
+| [SRC-3451CC474D-L000799](../../tests/test_api.py#L799) | 799 | `"            b\"Content-Type: application/json\\r\\n\""` | — |
+| [SRC-3451CC474D-L000800](../../tests/test_api.py#L800) | 800 | `"            b\"Content-Length: 40\\r\\n\""` | — |
+| [SRC-3451CC474D-L000801](../../tests/test_api.py#L801) | 801 | `"            b\"X-Slow: \""` | — |
+| [SRC-3451CC474D-L000802](../../tests/test_api.py#L802) | 802 | `"        )"` | — |
+| [SRC-3451CC474D-L000803](../../tests/test_api.py#L803) | 803 | `"        # Each tiny fragment is sent well before the 0.35s idle timeout. No"` | — |
+| [SRC-3451CC474D-L000804](../../tests/test_api.py#L804) | 804 | `"        # newline completes X-Slow, so only an absolute header deadline can stop it."` | — |
+| [SRC-3451CC474D-L000805](../../tests/test_api.py#L805) | 805 | `"        for fragment in (b\"a\", b\"b\", b\"c\", b\"d\", b\"e\", b\"f\", b\"g\", b\"h\", b\"i\"):"` | — |
+| [SRC-3451CC474D-L000806](../../tests/test_api.py#L806) | 806 | `"            time.sleep(0.12)"` | — |
+| [SRC-3451CC474D-L000807](../../tests/test_api.py#L807) | 807 | `"            try:"` | — |
+| [SRC-3451CC474D-L000808](../../tests/test_api.py#L808) | 808 | `"                client.sendall(fragment)"` | — |
+| [SRC-3451CC474D-L000809](../../tests/test_api.py#L809) | 809 | `"            except OSError:"` | — |
+| [SRC-3451CC474D-L000810](../../tests/test_api.py#L810) | 810 | `"                break"` | — |
+| [SRC-3451CC474D-L000811](../../tests/test_api.py#L811) | 811 | `""` | — |
+| [SRC-3451CC474D-L000812](../../tests/test_api.py#L812) | 812 | `"        response = bytearray()"` | — |
+| [SRC-3451CC474D-L000813](../../tests/test_api.py#L813) | 813 | `"        while True:"` | — |
+| [SRC-3451CC474D-L000814](../../tests/test_api.py#L814) | 814 | `"            try:"` | — |
+| [SRC-3451CC474D-L000815](../../tests/test_api.py#L815) | 815 | `"                chunk = client.recv(4096)"` | — |
+| [SRC-3451CC474D-L000816](../../tests/test_api.py#L816) | 816 | `"            except TimeoutError:"` | — |
+| [SRC-3451CC474D-L000817](../../tests/test_api.py#L817) | 817 | `"                break"` | — |
+| [SRC-3451CC474D-L000818](../../tests/test_api.py#L818) | 818 | `"            except OSError:"` | — |
+| [SRC-3451CC474D-L000819](../../tests/test_api.py#L819) | 819 | `"                break"` | — |
+| [SRC-3451CC474D-L000820](../../tests/test_api.py#L820) | 820 | `"            if not chunk:"` | — |
+| [SRC-3451CC474D-L000821](../../tests/test_api.py#L821) | 821 | `"                break"` | — |
+| [SRC-3451CC474D-L000822](../../tests/test_api.py#L822) | 822 | `"            response.extend(chunk)"` | — |
+| [SRC-3451CC474D-L000823](../../tests/test_api.py#L823) | 823 | `"        elapsed = time.monotonic() - started"` | — |
+| [SRC-3451CC474D-L000824](../../tests/test_api.py#L824) | 824 | `""` | — |
+| [SRC-3451CC474D-L000825](../../tests/test_api.py#L825) | 825 | `"    assert elapsed < 0.8"` | — |
+| [SRC-3451CC474D-L000826](../../tests/test_api.py#L826) | 826 | `"    # The timed-out request never reached application dispatch; the handler closes silently."` | — |
+| [SRC-3451CC474D-L000827](../../tests/test_api.py#L827) | 827 | `"    assert response == b\"\""` | — |
+| [SRC-3451CC474D-L000828](../../tests/test_api.py#L828) | 828 | `""` | — |
+| [SRC-3451CC474D-L000829](../../tests/test_api.py#L829) | 829 | `"def test_public_preflight_does_not_trust_spoofed_forwarded_host(local_api, monkeypatch):"` | — |
+| [SRC-3451CC474D-L000830](../../tests/test_api.py#L830) | 830 | `"    \"\"\"A client-controlled X-Forwarded-Host must not grant an origin CORS access.\"\"\""` | — |
+| [SRC-3451CC474D-L000831](../../tests/test_api.py#L831) | 831 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
+| [SRC-3451CC474D-L000832](../../tests/test_api.py#L832) | 832 | `"    monkeypatch.delenv(\"OMARAI_ALLOWED_ORIGINS\", raising=False)"` | — |
+| [SRC-3451CC474D-L000833](../../tests/test_api.py#L833) | 833 | `""` | — |
+| [SRC-3451CC474D-L000834](../../tests/test_api.py#L834) | 834 | `"    request = Request("` | — |
+| [SRC-3451CC474D-L000835](../../tests/test_api.py#L835) | 835 | `"        local_api + \"/api/agent\","` | — |
+| [SRC-3451CC474D-L000836](../../tests/test_api.py#L836) | 836 | `"        method=\"OPTIONS\","` | — |
+| [SRC-3451CC474D-L000837](../../tests/test_api.py#L837) | 837 | `"        headers={"` | — |
+| [SRC-3451CC474D-L000838](../../tests/test_api.py#L838) | 838 | `"            \"Origin\": \"https://attacker.example\","` | — |
+| [SRC-3451CC474D-L000839](../../tests/test_api.py#L839) | 839 | `"            \"X-Forwarded-Host\": \"attacker.example\","` | — |
+| [SRC-3451CC474D-L000840](../../tests/test_api.py#L840) | 840 | `"            \"X-Forwarded-Proto\": \"https\","` | — |
+| [SRC-3451CC474D-L000841](../../tests/test_api.py#L841) | 841 | `"            \"Access-Control-Request-Method\": \"POST\","` | — |
+| [SRC-3451CC474D-L000842](../../tests/test_api.py#L842) | 842 | `"            \"Access-Control-Request-Headers\": \"authorization,content-type\","` | — |
+| [SRC-3451CC474D-L000843](../../tests/test_api.py#L843) | 843 | `"        },"` | — |
+| [SRC-3451CC474D-L000844](../../tests/test_api.py#L844) | 844 | `"    )"` | — |
+| [SRC-3451CC474D-L000845](../../tests/test_api.py#L845) | 845 | `"    with pytest.raises(HTTPError) as error:"` | — |
+| [SRC-3451CC474D-L000846](../../tests/test_api.py#L846) | 846 | `"        urlopen(request, timeout=3)"` | — |
+| [SRC-3451CC474D-L000847](../../tests/test_api.py#L847) | 847 | `"    assert error.value.code == 403"` | — |
+| [SRC-3451CC474D-L000848](../../tests/test_api.py#L848) | 848 | `""` | — |
+| [SRC-3451CC474D-L000849](../../tests/test_api.py#L849) | 849 | `""` | — |
+| [SRC-3451CC474D-L000850](../../tests/test_api.py#L850) | 850 | `"def test_public_origin_still_allows_the_requested_host(local_api, monkeypatch):"` | — |
+| [SRC-3451CC474D-L000851](../../tests/test_api.py#L851) | 851 | `"    \"\"\"Same-service public UI remains compatible when the request Host is trusted.\"\"\""` | — |
+| [SRC-3451CC474D-L000852](../../tests/test_api.py#L852) | 852 | `"    from types import SimpleNamespace"` | — |
+| [SRC-3451CC474D-L000853](../../tests/test_api.py#L853) | 853 | `""` | — |
+| [SRC-3451CC474D-L000854](../../tests/test_api.py#L854) | 854 | `"    from api.omarai import Handler"` | — |
+| [SRC-3451CC474D-L000855](../../tests/test_api.py#L855) | 855 | `""` | — |
+| [SRC-3451CC474D-L000856](../../tests/test_api.py#L856) | 856 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
+| [SRC-3451CC474D-L000857](../../tests/test_api.py#L857) | 857 | `"    monkeypatch.delenv(\"OMARAI_ALLOWED_ORIGINS\", raising=False)"` | — |
+| [SRC-3451CC474D-L000858](../../tests/test_api.py#L858) | 858 | `"    handler = SimpleNamespace("` | — |
+| [SRC-3451CC474D-L000859](../../tests/test_api.py#L859) | 859 | `"        headers={"` | — |
+| [SRC-3451CC474D-L000860](../../tests/test_api.py#L860) | 860 | `"            \"Host\": \"omarai.example\","` | — |
+| [SRC-3451CC474D-L000861](../../tests/test_api.py#L861) | 861 | `"            \"X-Forwarded-Proto\": \"https\","` | — |
+| [SRC-3451CC474D-L000862](../../tests/test_api.py#L862) | 862 | `"            \"X-Forwarded-Host\": \"attacker.example\","` | — |
+| [SRC-3451CC474D-L000863](../../tests/test_api.py#L863) | 863 | `"        }"` | — |
+| [SRC-3451CC474D-L000864](../../tests/test_api.py#L864) | 864 | `"    )"` | — |
+| [SRC-3451CC474D-L000865](../../tests/test_api.py#L865) | 865 | `"    allowed = Handler._allowed_origins(handler)"` | — |
+| [SRC-3451CC474D-L000866](../../tests/test_api.py#L866) | 866 | `"    assert \"https://omarai.example\" in allowed"` | — |
 | [SRC-3451CC474D-L000867](../../tests/test_api.py#L867) | 867 | `"    assert \"https://attacker.example\" not in allowed"` | — |
 | [SRC-3451CC474D-L000868](../../tests/test_api.py#L868) | 868 | `""` | — |
 | [SRC-3451CC474D-L000869](../../tests/test_api.py#L869) | 869 | `""` | — |
@@ -677,160 +816,3 @@
 | [SRC-3451CC474D-L001525](../../tests/test_api.py#L1525) | 1525 | `""` | — |
 | [SRC-3451CC474D-L001526](../../tests/test_api.py#L1526) | 1526 | `"    import api.omarai as api_module"` | — |
 | [SRC-3451CC474D-L001527](../../tests/test_api.py#L1527) | 1527 | `""` | — |
-| [SRC-3451CC474D-L001528](../../tests/test_api.py#L1528) | 1528 | `"    monkeypatch.setattr(api_module.Handler, \"store\", SimpleNamespace(backend=\"postgresql\"))"` | — |
-| [SRC-3451CC474D-L001529](../../tests/test_api.py#L1529) | 1529 | `"    monkeypatch.setenv("` | — |
-| [SRC-3451CC474D-L001530](../../tests/test_api.py#L1530) | 1530 | `"        \"OMARAI_DATABASE_URL\","` | — |
-| [SRC-3451CC474D-L001531](../../tests/test_api.py#L1531) | 1531 | `"        \"postgresql://health-user:health-password@example.neon.tech/omarai?sslmode=require\","` | — |
-| [SRC-3451CC474D-L001532](../../tests/test_api.py#L1532) | 1532 | `"    )"` | — |
-| [SRC-3451CC474D-L001533](../../tests/test_api.py#L1533) | 1533 | `""` | — |
-| [SRC-3451CC474D-L001534](../../tests/test_api.py#L1534) | 1534 | `"    with urlopen(f\"{local_api}/api/health\", timeout=3) as response:"` | — |
-| [SRC-3451CC474D-L001535](../../tests/test_api.py#L1535) | 1535 | `"        payload = json.loads(response.read().decode(\"utf-8\"))"` | — |
-| [SRC-3451CC474D-L001536](../../tests/test_api.py#L1536) | 1536 | `""` | — |
-| [SRC-3451CC474D-L001537](../../tests/test_api.py#L1537) | 1537 | `"    assert payload[\"storage\"][\"backend\"] == \"postgresql\""` | — |
-| [SRC-3451CC474D-L001538](../../tests/test_api.py#L1538) | 1538 | `"    assert payload[\"storage\"][\"database_url_configured\"] is True"` | — |
-| [SRC-3451CC474D-L001539](../../tests/test_api.py#L1539) | 1539 | `"    assert payload[\"storage\"][\"durability_status\"] == \"external_database_configured\""` | — |
-| [SRC-3451CC474D-L001540](../../tests/test_api.py#L1540) | 1540 | `"    assert \"health-password\" not in json.dumps(payload)"` | — |
-## اختبارات
-
-### FILE-6CBA87B20C — [tests/test_aspect_planning.py](../../tests/test_aspect_planning.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-6CBA87B20C-L000001](../../tests/test_aspect_planning.py#L1) | 1 | `"\"\"\"Unit tests for aspect extraction and evidence ledger (no network).\"\"\""` | — |
-| [SRC-6CBA87B20C-L000002](../../tests/test_aspect_planning.py#L2) | 2 | `"from __future__ import annotations"` | — |
-| [SRC-6CBA87B20C-L000003](../../tests/test_aspect_planning.py#L3) | 3 | `""` | — |
-| [SRC-6CBA87B20C-L000004](../../tests/test_aspect_planning.py#L4) | 4 | `"from agents.aspect_planning import ("` | — |
-| [SRC-6CBA87B20C-L000005](../../tests/test_aspect_planning.py#L5) | 5 | `"    arabic_aspect_diagnostics,"` | — |
-| [SRC-6CBA87B20C-L000006](../../tests/test_aspect_planning.py#L6) | 6 | `"    build_aspect_queries,"` | — |
-| [SRC-6CBA87B20C-L000007](../../tests/test_aspect_planning.py#L7) | 7 | `"    build_evidence_ledger,"` | — |
-| [SRC-6CBA87B20C-L000008](../../tests/test_aspect_planning.py#L8) | 8 | `"    extract_aspects,"` | — |
-| [SRC-6CBA87B20C-L000009](../../tests/test_aspect_planning.py#L9) | 9 | `"    repair_queries_for_missing_aspects,"` | — |
-| [SRC-6CBA87B20C-L000010](../../tests/test_aspect_planning.py#L10) | 10 | `")"` | — |
-| [SRC-6CBA87B20C-L000011](../../tests/test_aspect_planning.py#L11) | 11 | `""` | — |
-| [SRC-6CBA87B20C-L000012](../../tests/test_aspect_planning.py#L12) | 12 | `""` | — |
-| [SRC-6CBA87B20C-L000013](../../tests/test_aspect_planning.py#L13) | 13 | `"def test_extract_aspects_from_min_hayth():"` | — |
-| [SRC-6CBA87B20C-L000014](../../tests/test_aspect_planning.py#L14) | 14 | `"    q = ("` | — |
-| [SRC-6CBA87B20C-L000015](../../tests/test_aspect_planning.py#L15) | 15 | `"        \"حلل السيارات الكهربائية في مصر من حيث السعر، البطارية، والضمان. \""` | — |
-| [SRC-6CBA87B20C-L000016](../../tests/test_aspect_planning.py#L16) | 16 | `"        \"اذكر مصادر موثوقة.\""` | — |
-| [SRC-6CBA87B20C-L000017](../../tests/test_aspect_planning.py#L17) | 17 | `"    )"` | — |
-| [SRC-6CBA87B20C-L000018](../../tests/test_aspect_planning.py#L18) | 18 | `"    aspects = extract_aspects(q)"` | — |
-| [SRC-6CBA87B20C-L000019](../../tests/test_aspect_planning.py#L19) | 19 | `"    assert \"السعر\" in aspects or any(\"سعر\" in a for a in aspects)"` | — |
-| [SRC-6CBA87B20C-L000020](../../tests/test_aspect_planning.py#L20) | 20 | `"    assert any(\"بطار\" in a for a in aspects)"` | — |
-| [SRC-6CBA87B20C-L000021](../../tests/test_aspect_planning.py#L21) | 21 | `"    assert any(\"ضمان\" in a for a in aspects)"` | — |
-| [SRC-6CBA87B20C-L000022](../../tests/test_aspect_planning.py#L22) | 22 | `"    assert len(aspects) >= 3"` | — |
-| [SRC-6CBA87B20C-L000023](../../tests/test_aspect_planning.py#L23) | 23 | `""` | — |
-| [SRC-6CBA87B20C-L000024](../../tests/test_aspect_planning.py#L24) | 24 | `""` | — |
-| [SRC-6CBA87B20C-L000025](../../tests/test_aspect_planning.py#L25) | 25 | `"def test_extract_aspects_from_multi_question_marks():"` | — |
-| [SRC-6CBA87B20C-L000026](../../tests/test_aspect_planning.py#L26) | 26 | `"    q = \"ما سعر الآيفون في مصر؟ وما مدة الضمان؟ وهل تتوفر صيانة محلية؟\""` | — |
-| [SRC-6CBA87B20C-L000027](../../tests/test_aspect_planning.py#L27) | 27 | `"    aspects = extract_aspects(q)"` | — |
-| [SRC-6CBA87B20C-L000028](../../tests/test_aspect_planning.py#L28) | 28 | `"    assert len(aspects) >= 2"` | — |
-| [SRC-6CBA87B20C-L000029](../../tests/test_aspect_planning.py#L29) | 29 | `""` | — |
-| [SRC-6CBA87B20C-L000030](../../tests/test_aspect_planning.py#L30) | 30 | `""` | — |
-| [SRC-6CBA87B20C-L000031](../../tests/test_aspect_planning.py#L31) | 31 | `"def test_build_aspect_queries_prioritizes_topic():"` | — |
-| [SRC-6CBA87B20C-L000032](../../tests/test_aspect_planning.py#L32) | 32 | `"    queries = build_aspect_queries("` | — |
-| [SRC-6CBA87B20C-L000033](../../tests/test_aspect_planning.py#L33) | 33 | `"        \"السيارات الكهربائية في مصر\","` | — |
-| [SRC-6CBA87B20C-L000034](../../tests/test_aspect_planning.py#L34) | 34 | `"        [\"السعر\", \"الضمان\"],"` | — |
-| [SRC-6CBA87B20C-L000035](../../tests/test_aspect_planning.py#L35) | 35 | `"        limit=5,"` | — |
-| [SRC-6CBA87B20C-L000036](../../tests/test_aspect_planning.py#L36) | 36 | `"    )"` | — |
-| [SRC-6CBA87B20C-L000037](../../tests/test_aspect_planning.py#L37) | 37 | `"    assert queries[0] == \"السيارات الكهربائية في مصر\""` | — |
-| [SRC-6CBA87B20C-L000038](../../tests/test_aspect_planning.py#L38) | 38 | `"    assert any(\"السعر\" in q for q in queries)"` | — |
-| [SRC-6CBA87B20C-L000039](../../tests/test_aspect_planning.py#L39) | 39 | `"    assert any(\"الضمان\" in q for q in queries)"` | — |
-| [SRC-6CBA87B20C-L000040](../../tests/test_aspect_planning.py#L40) | 40 | `"    assert len(queries) <= 5"` | — |
-| [SRC-6CBA87B20C-L000041](../../tests/test_aspect_planning.py#L41) | 41 | `""` | — |
-| [SRC-6CBA87B20C-L000042](../../tests/test_aspect_planning.py#L42) | 42 | `""` | — |
-| [SRC-6CBA87B20C-L000043](../../tests/test_aspect_planning.py#L43) | 43 | `"def test_evidence_ledger_marks_missing_and_covered():"` | — |
-| [SRC-6CBA87B20C-L000044](../../tests/test_aspect_planning.py#L44) | 44 | `"    aspects = [\"السعر\", \"الضمان\"]"` | — |
-| [SRC-6CBA87B20C-L000045](../../tests/test_aspect_planning.py#L45) | 45 | `"    sources = ["` | — |
-| [SRC-6CBA87B20C-L000046](../../tests/test_aspect_planning.py#L46) | 46 | `"        {"` | — |
-| [SRC-6CBA87B20C-L000047](../../tests/test_aspect_planning.py#L47) | 47 | `"            \"title\": \"أسعار السيارات الكهربائية\","` | — |
-| [SRC-6CBA87B20C-L000048](../../tests/test_aspect_planning.py#L48) | 48 | `"            \"url\": \"https://example.com/prices\","` | — |
-| [SRC-6CBA87B20C-L000049](../../tests/test_aspect_planning.py#L49) | 49 | `"            \"snippet\": \"متوسط السعر في مصر لعام 2026\","` | — |
-| [SRC-6CBA87B20C-L000050](../../tests/test_aspect_planning.py#L50) | 50 | `"            \"page_text\": \"\","` | — |
-| [SRC-6CBA87B20C-L000051](../../tests/test_aspect_planning.py#L51) | 51 | `"            \"provider\": \"test\","` | — |
-| [SRC-6CBA87B20C-L000052](../../tests/test_aspect_planning.py#L52) | 52 | `"        }"` | — |
-| [SRC-6CBA87B20C-L000053](../../tests/test_aspect_planning.py#L53) | 53 | `"    ]"` | — |
-| [SRC-6CBA87B20C-L000054](../../tests/test_aspect_planning.py#L54) | 54 | `"    ledger = build_evidence_ledger(aspects, sources)"` | — |
-| [SRC-6CBA87B20C-L000055](../../tests/test_aspect_planning.py#L55) | 55 | `"    assert \"السعر\" in ledger[\"covered\"] or any("` | — |
-| [SRC-6CBA87B20C-L000056](../../tests/test_aspect_planning.py#L56) | 56 | `"        \"سعر\" in c for c in ledger[\"covered\"]"` | — |
-| [SRC-6CBA87B20C-L000057](../../tests/test_aspect_planning.py#L57) | 57 | `"    )"` | — |
-| [SRC-6CBA87B20C-L000058](../../tests/test_aspect_planning.py#L58) | 58 | `"    assert \"الضمان\" in ledger[\"missing\"]"` | — |
-| [SRC-6CBA87B20C-L000059](../../tests/test_aspect_planning.py#L59) | 59 | `"    assert 0 <= ledger[\"coverage_ratio\"] <= 1"` | — |
-| [SRC-6CBA87B20C-L000060](../../tests/test_aspect_planning.py#L60) | 60 | `""` | — |
-| [SRC-6CBA87B20C-L000061](../../tests/test_aspect_planning.py#L61) | 61 | `""` | — |
-| [SRC-6CBA87B20C-L000062](../../tests/test_aspect_planning.py#L62) | 62 | `"def test_repair_queries_for_missing():"` | — |
-| [SRC-6CBA87B20C-L000063](../../tests/test_aspect_planning.py#L63) | 63 | `"    qs = repair_queries_for_missing_aspects("` | — |
-| [SRC-6CBA87B20C-L000064](../../tests/test_aspect_planning.py#L64) | 64 | `"        \"السيارات الكهربائية مصر\","` | — |
-| [SRC-6CBA87B20C-L000065](../../tests/test_aspect_planning.py#L65) | 65 | `"        [\"الضمان\", \"الصيانة\"],"` | — |
-| [SRC-6CBA87B20C-L000066](../../tests/test_aspect_planning.py#L66) | 66 | `"        limit=2,"` | — |
-| [SRC-6CBA87B20C-L000067](../../tests/test_aspect_planning.py#L67) | 67 | `"    )"` | — |
-| [SRC-6CBA87B20C-L000068](../../tests/test_aspect_planning.py#L68) | 68 | `"    assert len(qs) == 2"` | — |
-| [SRC-6CBA87B20C-L000069](../../tests/test_aspect_planning.py#L69) | 69 | `"    assert all(\"السيارات\" in q for q in qs)"` | — |
-| [SRC-6CBA87B20C-L000070](../../tests/test_aspect_planning.py#L70) | 70 | `""` | — |
-| [SRC-6CBA87B20C-L000071](../../tests/test_aspect_planning.py#L71) | 71 | `""` | — |
-| [SRC-6CBA87B20C-L000072](../../tests/test_aspect_planning.py#L72) | 72 | `"def test_arabic_diagnostics_not_truth_claim():"` | — |
-| [SRC-6CBA87B20C-L000073](../../tests/test_aspect_planning.py#L73) | 73 | `"    ledger = {"` | — |
-| [SRC-6CBA87B20C-L000074](../../tests/test_aspect_planning.py#L74) | 74 | `"        \"covered\": [\"السعر\"],"` | — |
-| [SRC-6CBA87B20C-L000075](../../tests/test_aspect_planning.py#L75) | 75 | `"        \"missing\": [\"الضمان\"],"` | — |
-| [SRC-6CBA87B20C-L000076](../../tests/test_aspect_planning.py#L76) | 76 | `"        \"coverage_ratio\": 0.5,"` | — |
-| [SRC-6CBA87B20C-L000077](../../tests/test_aspect_planning.py#L77) | 77 | `"    }"` | — |
-| [SRC-6CBA87B20C-L000078](../../tests/test_aspect_planning.py#L78) | 78 | `"    lines = arabic_aspect_diagnostics(ledger)"` | — |
-| [SRC-6CBA87B20C-L000079](../../tests/test_aspect_planning.py#L79) | 79 | `"    assert any(\"ضمان\" in line for line in lines)"` | — |
-| [SRC-6CBA87B20C-L000080](../../tests/test_aspect_planning.py#L80) | 80 | `"    assert any(\"لا يثبت\" in line for line in lines)"` | — |
-| [SRC-6CBA87B20C-L000081](../../tests/test_aspect_planning.py#L81) | 81 | `""` | — |
-| [SRC-6CBA87B20C-L000082](../../tests/test_aspect_planning.py#L82) | 82 | `""` | — |
-| [SRC-6CBA87B20C-L000083](../../tests/test_aspect_planning.py#L83) | 83 | `"def test_extract_aspects_understands_compound_connectors_without_marker():"` | — |
-| [SRC-6CBA87B20C-L000084](../../tests/test_aspect_planning.py#L84) | 84 | `"    question = ("` | — |
-| [SRC-6CBA87B20C-L000085](../../tests/test_aspect_planning.py#L85) | 85 | `"        \"قارن بين الأنظمة: السعر والبطارية، بالإضافة إلى الضمان والصيانة \""` | — |
-| [SRC-6CBA87B20C-L000086](../../tests/test_aspect_planning.py#L86) | 86 | `"        \"والخصوصية والاعتمادية والدعم والجودة\""` | — |
-| [SRC-6CBA87B20C-L000087](../../tests/test_aspect_planning.py#L87) | 87 | `"    )"` | — |
-| [SRC-6CBA87B20C-L000088](../../tests/test_aspect_planning.py#L88) | 88 | `"    aspects = extract_aspects(question)"` | — |
-| [SRC-6CBA87B20C-L000089](../../tests/test_aspect_planning.py#L89) | 89 | `"    normalized = \" \".join(aspects)"` | — |
-| [SRC-6CBA87B20C-L000090](../../tests/test_aspect_planning.py#L90) | 90 | `"    for expected in (\"السعر\", \"البطارية\", \"الضمان\", \"الصيانة\", \"الخصوصية\", \"الاعتمادية\", \"الدعم\", \"الجودة\"):"` | — |
-| [SRC-6CBA87B20C-L000091](../../tests/test_aspect_planning.py#L91) | 91 | `"        assert expected in normalized"` | — |
-| [SRC-6CBA87B20C-L000092](../../tests/test_aspect_planning.py#L92) | 92 | `"    assert len(aspects) <= 8"` | — |
-| [SRC-6CBA87B20C-L000093](../../tests/test_aspect_planning.py#L93) | 93 | `""` | — |
-| [SRC-6CBA87B20C-L000094](../../tests/test_aspect_planning.py#L94) | 94 | `""` | — |
-| [SRC-6CBA87B20C-L000095](../../tests/test_aspect_planning.py#L95) | 95 | `"def test_extracts_joined_facets_without_formal_comparison_marker():"` | — |
-| [SRC-6CBA87B20C-L000096](../../tests/test_aspect_planning.py#L96) | 96 | `"    aspects = extract_aspects(\"ما سعر الهاتف ومدة الضمان والصيانة؟\")"` | — |
-| [SRC-6CBA87B20C-L000097](../../tests/test_aspect_planning.py#L97) | 97 | `"    joined = \" \".join(aspects)"` | — |
-| [SRC-6CBA87B20C-L000098](../../tests/test_aspect_planning.py#L98) | 98 | `"    assert \"السعر\" in joined"` | — |
-| [SRC-6CBA87B20C-L000099](../../tests/test_aspect_planning.py#L99) | 99 | `"    assert \"الضمان\" in joined"` | — |
-| [SRC-6CBA87B20C-L000100](../../tests/test_aspect_planning.py#L100) | 100 | `"    assert \"الصيانة\" in joined"` | — |
-| [SRC-6CBA87B20C-L000101](../../tests/test_aspect_planning.py#L101) | 101 | `""` | — |
-| [SRC-6CBA87B20C-L000102](../../tests/test_aspect_planning.py#L102) | 102 | `""` | — |
-| [SRC-6CBA87B20C-L000103](../../tests/test_aspect_planning.py#L103) | 103 | `"def test_extracts_general_factual_aspects_from_compound_arabic_question():"` | — |
-| [SRC-6CBA87B20C-L000104](../../tests/test_aspect_planning.py#L104) | 104 | `"    question = \"اذكر عاصمة مصر وعدد سكان القاهرة، مع مصدر وتاريخ لكل معلومة\""` | — |
-| [SRC-6CBA87B20C-L000105](../../tests/test_aspect_planning.py#L105) | 105 | `"    aspects = extract_aspects(question)"` | — |
-| [SRC-6CBA87B20C-L000106](../../tests/test_aspect_planning.py#L106) | 106 | `"    joined = \" \".join(aspects)"` | — |
-| [SRC-6CBA87B20C-L000107](../../tests/test_aspect_planning.py#L107) | 107 | `"    assert \"العاصمة\" in joined"` | — |
-| [SRC-6CBA87B20C-L000108](../../tests/test_aspect_planning.py#L108) | 108 | `"    assert \"عدد السكان\" in joined"` | — |
-| [SRC-6CBA87B20C-L000109](../../tests/test_aspect_planning.py#L109) | 109 | `"    assert len(aspects) <= 8"` | — |
-| [SRC-6CBA87B20C-L000110](../../tests/test_aspect_planning.py#L110) | 110 | `""` | — |
-| [SRC-6CBA87B20C-L000111](../../tests/test_aspect_planning.py#L111) | 111 | `""` | — |
-| [SRC-6CBA87B20C-L000112](../../tests/test_aspect_planning.py#L112) | 112 | `"def test_builds_separate_queries_for_capital_and_population_aspects():"` | — |
-| [SRC-6CBA87B20C-L000113](../../tests/test_aspect_planning.py#L113) | 113 | `"    question = \"اذكر عاصمة مصر وعدد سكان القاهرة\""` | — |
-| [SRC-6CBA87B20C-L000114](../../tests/test_aspect_planning.py#L114) | 114 | `"    aspects = extract_aspects(question)"` | — |
-| [SRC-6CBA87B20C-L000115](../../tests/test_aspect_planning.py#L115) | 115 | `"    queries = build_aspect_queries(\"مصر القاهرة\", aspects)"` | — |
-| [SRC-6CBA87B20C-L000116](../../tests/test_aspect_planning.py#L116) | 116 | `"    assert any(\"العاصمة\" in query for query in queries)"` | — |
-| [SRC-6CBA87B20C-L000117](../../tests/test_aspect_planning.py#L117) | 117 | `"    assert any(\"عدد السكان\" in query for query in queries)"` | — |
-## اختبارات
-
-### FILE-6B37B7D6D3 — [tests/test_claim_evidence_metadata.py](../../tests/test_claim_evidence_metadata.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-6B37B7D6D3-L000001](../../tests/test_claim_evidence_metadata.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-6B37B7D6D3-L000002](../../tests/test_claim_evidence_metadata.py#L2) | 2 | `""` | — |
-| [SRC-6B37B7D6D3-L000003](../../tests/test_claim_evidence_metadata.py#L3) | 3 | `"from agents.claim_evidence import audit_source_metadata, build_claim_evidence_ledger"` | — |
-| [SRC-6B37B7D6D3-L000004](../../tests/test_claim_evidence_metadata.py#L4) | 4 | `""` | — |
-| [SRC-6B37B7D6D3-L000005](../../tests/test_claim_evidence_metadata.py#L5) | 5 | `""` | — |
-| [SRC-6B37B7D6D3-L000006](../../tests/test_claim_evidence_metadata.py#L6) | 6 | `"def test_source_metadata_accepts_complete_population_metadata_without_asserting_truth():"` | — |
-| [SRC-6B37B7D6D3-L000007](../../tests/test_claim_evidence_metadata.py#L7) | 7 | `"    result = audit_source_metadata("` | — |
-| [SRC-6B37B7D6D3-L000008](../../tests/test_claim_evidence_metadata.py#L8) | 8 | `"        {"` | — |
-| [SRC-6B37B7D6D3-L000009](../../tests/test_claim_evidence_metadata.py#L9) | 9 | `"            \"url\": \"https://example.org/census\","` | — |

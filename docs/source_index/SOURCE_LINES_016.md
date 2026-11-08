@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003072 إلى SRC-1AE03B9EC3-L003871
+- النطاق: SRC-1AE03B9EC3-L003034 إلى SRC-1AE03B9EC3-L003833
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,44 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003034](../../agents/web_agent.py#L3034) | 3034 | `"        requirement_queries = plan.get(\"requirement_queries\", [])"` | — |
+| [SRC-1AE03B9EC3-L003035](../../agents/web_agent.py#L3035) | 3035 | `"        if isinstance(requirement_queries, list) and requirement_queries:"` | — |
+| [SRC-1AE03B9EC3-L003036](../../agents/web_agent.py#L3036) | 3036 | `"            globally_fused = sources"` | — |
+| [SRC-1AE03B9EC3-L003037](../../agents/web_agent.py#L3037) | 3037 | `"            globally_fused_by_url = {"` | — |
+| [SRC-1AE03B9EC3-L003038](../../agents/web_agent.py#L3038) | 3038 | `"                self._normalized_source_url_key(item.get(\"url\", \"\")): item"` | — |
+| [SRC-1AE03B9EC3-L003039](../../agents/web_agent.py#L3039) | 3039 | `"                for item in globally_fused"` | — |
+| [SRC-1AE03B9EC3-L003040](../../agents/web_agent.py#L3040) | 3040 | `"                if self._normalized_source_url_key(item.get(\"url\", \"\"))"` | — |
+| [SRC-1AE03B9EC3-L003041](../../agents/web_agent.py#L3041) | 3041 | `"            }"` | — |
+| [SRC-1AE03B9EC3-L003042](../../agents/web_agent.py#L3042) | 3042 | `"            pinned_by_url: dict[str, dict[str, Any]] = {}"` | — |
+| [SRC-1AE03B9EC3-L003043](../../agents/web_agent.py#L3043) | 3043 | `"            pinned_sources: list[dict[str, Any]] = []"` | — |
+| [SRC-1AE03B9EC3-L003044](../../agents/web_agent.py#L3044) | 3044 | `"            for requirement in requirement_queries[:MAX_PLAN_QUERIES]:"` | — |
+| [SRC-1AE03B9EC3-L003045](../../agents/web_agent.py#L3045) | 3045 | `"                if not isinstance(requirement, dict):"` | — |
+| [SRC-1AE03B9EC3-L003046](../../agents/web_agent.py#L3046) | 3046 | `"                    continue"` | — |
+| [SRC-1AE03B9EC3-L003047](../../agents/web_agent.py#L3047) | 3047 | `"                target_query = compact_search_query(str(requirement.get(\"query\") or \"\"))"` | — |
+| [SRC-1AE03B9EC3-L003048](../../agents/web_agent.py#L3048) | 3048 | `"                if not target_query:"` | — |
+| [SRC-1AE03B9EC3-L003049](../../agents/web_agent.py#L3049) | 3049 | `"                    continue"` | — |
+| [SRC-1AE03B9EC3-L003050](../../agents/web_agent.py#L3050) | 3050 | `"                query_key = re.sub(r\"\\s+\", \" \", target_query).strip().casefold()"` | — |
+| [SRC-1AE03B9EC3-L003051](../../agents/web_agent.py#L3051) | 3051 | `"                criterion_batches = ["` | — |
+| [SRC-1AE03B9EC3-L003052](../../agents/web_agent.py#L3052) | 3052 | `"                    batch for batch in batches"` | — |
+| [SRC-1AE03B9EC3-L003053](../../agents/web_agent.py#L3053) | 3053 | `"                    if re.sub("` | — |
+| [SRC-1AE03B9EC3-L003054](../../agents/web_agent.py#L3054) | 3054 | `"                        r\"\\s+\", \" \", str(batch.get(\"query\") or \"\")"` | — |
+| [SRC-1AE03B9EC3-L003055](../../agents/web_agent.py#L3055) | 3055 | `"                    ).strip().casefold() == query_key"` | — |
+| [SRC-1AE03B9EC3-L003056](../../agents/web_agent.py#L3056) | 3056 | `"                ]"` | — |
+| [SRC-1AE03B9EC3-L003057](../../agents/web_agent.py#L3057) | 3057 | `"                criterion_candidates = fuse_ranked_results("` | — |
+| [SRC-1AE03B9EC3-L003058](../../agents/web_agent.py#L3058) | 3058 | `"                    criterion_batches, limit=MAX_SEARCH_RESULTS"` | — |
+| [SRC-1AE03B9EC3-L003059](../../agents/web_agent.py#L3059) | 3059 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L003060](../../agents/web_agent.py#L3060) | 3060 | `"                candidate = None"` | — |
+| [SRC-1AE03B9EC3-L003061](../../agents/web_agent.py#L3061) | 3061 | `"                if criterion_candidates:"` | — |
+| [SRC-1AE03B9EC3-L003062](../../agents/web_agent.py#L3062) | 3062 | `"                    criterion_ledger = build_requirement_evidence_ledger("` | — |
+| [SRC-1AE03B9EC3-L003063](../../agents/web_agent.py#L3063) | 3063 | `"                        [str(requirement.get(\"target\") or \"\")],"` | — |
+| [SRC-1AE03B9EC3-L003064](../../agents/web_agent.py#L3064) | 3064 | `"                        criterion_candidates,"` | — |
+| [SRC-1AE03B9EC3-L003065](../../agents/web_agent.py#L3065) | 3065 | `"                        [requirement],"` | — |
+| [SRC-1AE03B9EC3-L003066](../../agents/web_agent.py#L3066) | 3066 | `"                    )"` | — |
+| [SRC-1AE03B9EC3-L003067](../../agents/web_agent.py#L3067) | 3067 | `"                    candidate_indexes = ("` | — |
+| [SRC-1AE03B9EC3-L003068](../../agents/web_agent.py#L3068) | 3068 | `"                        criterion_ledger[0].get(\"candidate_source_indexes\", [])"` | — |
+| [SRC-1AE03B9EC3-L003069](../../agents/web_agent.py#L3069) | 3069 | `"                        if criterion_ledger else []"` | — |
+| [SRC-1AE03B9EC3-L003070](../../agents/web_agent.py#L3070) | 3070 | `"                    )"` | — |
+| [SRC-1AE03B9EC3-L003071](../../agents/web_agent.py#L3071) | 3071 | `"                    if candidate_indexes:"` | — |
 | [SRC-1AE03B9EC3-L003072](../../agents/web_agent.py#L3072) | 3072 | `"                        candidate = criterion_candidates[int(candidate_indexes[0]) - 1]"` | — |
 | [SRC-1AE03B9EC3-L003073](../../agents/web_agent.py#L3073) | 3073 | `"                if candidate is None:"` | — |
 | [SRC-1AE03B9EC3-L003074](../../agents/web_agent.py#L3074) | 3074 | `"                    candidate = next("` | — |
@@ -778,41 +816,3 @@
 | [SRC-1AE03B9EC3-L003831](../../agents/web_agent.py#L3831) | 3831 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L003832](../../agents/web_agent.py#L3832) | 3832 | `"            start = raw.find(\"{\")"` | — |
 | [SRC-1AE03B9EC3-L003833](../../agents/web_agent.py#L3833) | 3833 | `"            end = raw.rfind(\"}\")"` | — |
-| [SRC-1AE03B9EC3-L003834](../../agents/web_agent.py#L3834) | 3834 | `"            candidate = json.loads(raw[start:end + 1]) if start >= 0 and end > start else None"` | — |
-| [SRC-1AE03B9EC3-L003835](../../agents/web_agent.py#L3835) | 3835 | `"            return validate_dialogue_context(candidate, question, history, fallback=fallback)"` | — |
-| [SRC-1AE03B9EC3-L003836](../../agents/web_agent.py#L3836) | 3836 | `"        except (RuntimeError, AgentDependencyError, RequestBudgetExceeded, ValueError, TypeError, json.JSONDecodeError):"` | — |
-| [SRC-1AE03B9EC3-L003837](../../agents/web_agent.py#L3837) | 3837 | `"            return fallback"` | — |
-| [SRC-1AE03B9EC3-L003838](../../agents/web_agent.py#L3838) | 3838 | `""` | — |
-| [SRC-1AE03B9EC3-L003839](../../agents/web_agent.py#L3839) | 3839 | `"    def _plan_search("` | — |
-| [SRC-1AE03B9EC3-L003840](../../agents/web_agent.py#L3840) | 3840 | `"        self, question: str, history: list[dict[str, str]],"` | — |
-| [SRC-1AE03B9EC3-L003841](../../agents/web_agent.py#L3841) | 3841 | `"        *, context_override: dict[str, Any] \| None = None,"` | — |
-| [SRC-1AE03B9EC3-L003842](../../agents/web_agent.py#L3842) | 3842 | `"    ) -> dict[str, Any]:"` | — |
-| [SRC-1AE03B9EC3-L003843](../../agents/web_agent.py#L3843) | 3843 | `"        \"\"\"Resolve dialogue semantics and plan searches, with deterministic fallbacks.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L003844](../../agents/web_agent.py#L3844) | 3844 | `"        context_fallback = fallback_dialogue_context(question, history)"` | — |
-| [SRC-1AE03B9EC3-L003845](../../agents/web_agent.py#L3845) | 3845 | `"        dialogue_context = validate_dialogue_context("` | — |
-| [SRC-1AE03B9EC3-L003846](../../agents/web_agent.py#L3846) | 3846 | `"            context_override, question, history, fallback=context_fallback"` | — |
-| [SRC-1AE03B9EC3-L003847](../../agents/web_agent.py#L3847) | 3847 | `"        ) if context_override is not None else context_fallback"` | — |
-| [SRC-1AE03B9EC3-L003848](../../agents/web_agent.py#L3848) | 3848 | `"        search_question = ("` | — |
-| [SRC-1AE03B9EC3-L003849](../../agents/web_agent.py#L3849) | 3849 | `"            question if dialogue_context.get(\"topic_shift\")"` | — |
-| [SRC-1AE03B9EC3-L003850](../../agents/web_agent.py#L3850) | 3850 | `"            else dialogue_context.get(\"resolved_question\") or question"` | — |
-| [SRC-1AE03B9EC3-L003851](../../agents/web_agent.py#L3851) | 3851 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L003852](../../agents/web_agent.py#L3852) | 3852 | `"        fallback = fallback_plan(search_question, history)"` | — |
-| [SRC-1AE03B9EC3-L003853](../../agents/web_agent.py#L3853) | 3853 | `"        fallback[\"dialogue_context\"] = dialogue_context"` | — |
-| [SRC-1AE03B9EC3-L003854](../../agents/web_agent.py#L3854) | 3854 | `"        # Do not invent generic searches when no usable topic exists."` | — |
-| [SRC-1AE03B9EC3-L003855](../../agents/web_agent.py#L3855) | 3855 | `"        if not fallback.get(\"queries\"):"` | — |
-| [SRC-1AE03B9EC3-L003856](../../agents/web_agent.py#L3856) | 3856 | `"            return fallback"` | — |
-| [SRC-1AE03B9EC3-L003857](../../agents/web_agent.py#L3857) | 3857 | `"        if not self.api_key:"` | — |
-| [SRC-1AE03B9EC3-L003858](../../agents/web_agent.py#L3858) | 3858 | `"            return fallback"` | — |
-| [SRC-1AE03B9EC3-L003859](../../agents/web_agent.py#L3859) | 3859 | `"        platform_names = \", \".join(SOCIAL_DOMAINS)"` | — |
-| [SRC-1AE03B9EC3-L003860](../../agents/web_agent.py#L3860) | 3860 | `"        messages = ["` | — |
-| [SRC-1AE03B9EC3-L003861](../../agents/web_agent.py#L3861) | 3861 | `"            {"` | — |
-| [SRC-1AE03B9EC3-L003862](../../agents/web_agent.py#L3862) | 3862 | `"                \"role\": \"system\","` | — |
-| [SRC-1AE03B9EC3-L003863](../../agents/web_agent.py#L3863) | 3863 | `"                \"content\": ("` | — |
-| [SRC-1AE03B9EC3-L003864](../../agents/web_agent.py#L3864) | 3864 | `"                    \"أنت مخطط بحث ومحلل دلالي حواري لـ Omarai، ولست مجيبًا عن السؤال. \""` | — |
-| [SRC-1AE03B9EC3-L003865](../../agents/web_agent.py#L3865) | 3865 | `"                    \"حلّل أولًا قصد الرسالة الحالية في ضوء سجل الحوار، ثم أخرج JSON صحيحًا فقط \""` | — |
-| [SRC-1AE03B9EC3-L003866](../../agents/web_agent.py#L3866) | 3866 | `"                    \"دون Markdown. الشكل المطلوب: \""` | — |
-| [SRC-1AE03B9EC3-L003867](../../agents/web_agent.py#L3867) | 3867 | `"                    '{\"queries\":[\"...\"],\"social_focus\":false,\"freshness\":\"any\",\"depth\":\"standard\",'"` | — |
-| [SRC-1AE03B9EC3-L003868](../../agents/web_agent.py#L3868) | 3868 | `"                    '\"platforms\":[],\"dialogue_context\":{\"resolved_question\":\"السؤال المكتمل المقصود\",'"` | — |
-| [SRC-1AE03B9EC3-L003869](../../agents/web_agent.py#L3869) | 3869 | `"                    '\"intent\":\"current_information\",\"topic\":\"...\",\"entities\":[\"...\"],\"slots\":{\"entity\":\"...\",\"aspect\":\"...\"},'"` | — |
-| [SRC-1AE03B9EC3-L003870](../../agents/web_agent.py#L3870) | 3870 | `"                    '\"changed_slots\":[\"aspect\"],\"is_follow_up\":true,\"topic_shift\":false,\"needs_web\":true,'"` | — |
-| [SRC-1AE03B9EC3-L003871](../../agents/web_agent.py#L3871) | 3871 | `"                    '\"research_depth\":\"standard\",\"needs_clarification\":false,\"clarification_question\":\"\",'"` | — |

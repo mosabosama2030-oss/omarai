@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-62CE5126F9-L000335 إلى SRC-65551FB29F-L000314
+- النطاق: SRC-62CE5126F9-L000297 إلى SRC-65551FB29F-L000191
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,44 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-62CE5126F9-L000297](../OMARAI_REMEDIATION_REGISTER_AR.md#L297) | 297 | `"\| OMR-S-002 \| Skills/Workflows الدائمة أو تعدد الوكلاء \| **PROPOSED / NOT REQUIRED FOR FOUNDATION** \| لا تُنفذ الآن دون حاجة مثبتة؛ حافظ على نواة موثوقة وعقود أدوات وWorkflows قابلة للاختبار قبل توسع الوكلاء \|"` | — |
+| [SRC-62CE5126F9-L000298](../OMARAI_REMEDIATION_REGISTER_AR.md#L298) | 298 | `"\| OMR-S-003 \| موصلات بحث اختيارية \| **REVIEW REQUIRED** \| لا تحذف موصلًا بناءً على عدم استعماله في اختبار واحد؛ احتفظ به إن كان خلف إعداد اختياري وله اختبارات وحدود تكلفة واضحة؛ احذف التكرار المثبت فقط \|"` | — |
+| [SRC-62CE5126F9-L000299](../OMARAI_REMEDIATION_REGISTER_AR.md#L299) | 299 | `""` | — |
+| [SRC-62CE5126F9-L000300](../OMARAI_REMEDIATION_REGISTER_AR.md#L300) | 300 | `"## E1. حالة واجهة الاستخدام المستقلة"` | — |
+| [SRC-62CE5126F9-L000301](../OMARAI_REMEDIATION_REGISTER_AR.md#L301) | 301 | `""` | — |
+| [SRC-62CE5126F9-L000302](../OMARAI_REMEDIATION_REGISTER_AR.md#L302) | 302 | `"\| المعرّف \| الأصل \| الخطورة \| الحالة الحالية \| معيار الإغلاق \|"` | — |
+| [SRC-62CE5126F9-L000303](../OMARAI_REMEDIATION_REGISTER_AR.md#L303) | 303 | `"\|---\|---\|---:\|---\|---\|"` | — |
+| [SRC-62CE5126F9-L000304](../OMARAI_REMEDIATION_REGISTER_AR.md#L304) | 304 | `"\| OMR-UI-001 \| Issue #11 — حالات واجهة البحث العربية \| P2 \| **PARTIAL** — #76 يحدّث واجهة الأدلة والحالات، لكن لا يوجد إثبات اختبار متصفح/Android يدوي على الرأس المقترح \| إبقاء #11 مفتوحًا حتى التحقق من حالات التحميل/النجاح/التدهور/الفشل، الروابط، عدم عرض إجابة قديمة، RTL/عرض ضيق، ولوحة المفاتيح/التباين؛ أرفق دليلًا ولا تدّع أتمتة غير موجودة \|"` | — |
+| [SRC-62CE5126F9-L000305](../OMARAI_REMEDIATION_REGISTER_AR.md#L305) | 305 | `""` | — |
+| [SRC-62CE5126F9-L000306](../OMARAI_REMEDIATION_REGISTER_AR.md#L306) | 306 | `"## F. ملخص بوابات الإغلاق"` | — |
+| [SRC-62CE5126F9-L000307](../OMARAI_REMEDIATION_REGISTER_AR.md#L307) | 307 | `""` | — |
+| [SRC-62CE5126F9-L000308](../OMARAI_REMEDIATION_REGISTER_AR.md#L308) | 308 | `"### مغلق ومختبر على main"` | — |
+| [SRC-62CE5126F9-L000309](../OMARAI_REMEDIATION_REGISTER_AR.md#L309) | 309 | `"- **E3** إزالة عرض تغطية الأدلة كنسبة ثقة."` | — |
+| [SRC-62CE5126F9-L000310](../OMARAI_REMEDIATION_REGISTER_AR.md#L310) | 310 | `"- **E4** إصلاح truthiness في مستوى البحث الاحتياطي."` | — |
+| [SRC-62CE5126F9-L000311](../OMARAI_REMEDIATION_REGISTER_AR.md#L311) | 311 | ``"كلاهما مرتبط بـ#75 المدمج في `main` عند `d46a546...`."`` | — |
+| [SRC-62CE5126F9-L000312](../OMARAI_REMEDIATION_REGISTER_AR.md#L312) | 312 | `""` | — |
+| [SRC-62CE5126F9-L000313](../OMARAI_REMEDIATION_REGISTER_AR.md#L313) | 313 | `"### مدمج ومختبر آليًا عبر PR #76"` | — |
+| [SRC-62CE5126F9-L000314](../OMARAI_REMEDIATION_REGISTER_AR.md#L314) | 314 | `"- توجيه الأسئلة الناقصة إلى CLARIFY وتوحيد متابعة السياق."` | — |
+| [SRC-62CE5126F9-L000315](../OMARAI_REMEDIATION_REGISTER_AR.md#L315) | 315 | `"- تشخيصات منظمة لحالات استخراج الصفحات والموصلات، مع حدود واضحة لما تثبته."` | — |
+| [SRC-62CE5126F9-L000316](../OMARAI_REMEDIATION_REGISTER_AR.md#L316) | 316 | `"- منع التحويل التلقائي لموفري البحث الذين تغطيهم الاختبارات."` | — |
+| [SRC-62CE5126F9-L000317](../OMARAI_REMEDIATION_REGISTER_AR.md#L317) | 317 | ``"- CSP hash ورؤوس الحماية دون `unsafe-inline`."`` | — |
+| [SRC-62CE5126F9-L000318](../OMARAI_REMEDIATION_REGISTER_AR.md#L318) | 318 | `"- هوية بناء SHA واختبار مقارنة SHA في hosted smoke (الكود موجود؛ hosted smoke حي NOT_RUN)."` | — |
+| [SRC-62CE5126F9-L000319](../OMARAI_REMEDIATION_REGISTER_AR.md#L319) | 319 | `"- مسار SQLite قابل للضبط، أداة البحث المحلي، وتوثيق نطاق التشغيل."` | — |
+| [SRC-62CE5126F9-L000320](../OMARAI_REMEDIATION_REGISTER_AR.md#L320) | 320 | ``"- إصلاح سباق الفهرسة في CI على المراجع غير `main` مع إبقاء تحقق `main` صارمًا."`` | — |
+| [SRC-62CE5126F9-L000321](../OMARAI_REMEDIATION_REGISTER_AR.md#L321) | 321 | `""` | — |
+| [SRC-62CE5126F9-L000322](../OMARAI_REMEDIATION_REGISTER_AR.md#L322) | 322 | ``"**أحدث دليل PR بعد تحديث الفهرس:** [run #39654908040](https://github.com/mosabosama2030-oss/omarai/actions/runs/39654908040) — 384 اختبارًا ناجحًا على كل من Python 3.11 و3.12، وRuff ومزامنة/فحص الفهرس وبناء الحاوية وAPI المحمي ناجحة على رأس PR `3fb028...` قبل الدمج. التزام الدمج هو `528a255...`; لا يوجد في هذه اللقطة إثبات مباشر لتشغيل push على SHA الدمج. انظر تقرير ما بعد الدمج."`` | — |
+| [SRC-62CE5126F9-L000323](../OMARAI_REMEDIATION_REGISTER_AR.md#L323) | 323 | `""` | — |
+| [SRC-62CE5126F9-L000324](../OMARAI_REMEDIATION_REGISTER_AR.md#L324) | 324 | `"### ما يتطلب بيئة فعلية ولا يمكن إغلاقه من الكود وحده"` | — |
+| [SRC-62CE5126F9-L000325](../OMARAI_REMEDIATION_REGISTER_AR.md#L325) | 325 | `"- Hosted smoke حقيقي وتوافر الموصلات/النموذج حيًا."` | — |
+| [SRC-62CE5126F9-L000326](../OMARAI_REMEDIATION_REGISTER_AR.md#L326) | 326 | `"- تقييم دلالي فعلي لجميع حالات AQ-001–045."` | — |
+| [SRC-62CE5126F9-L000327](../OMARAI_REMEDIATION_REGISTER_AR.md#L327) | 327 | `"- ثبات Volume فعلي ونسخ احتياطي/استعادة."` | — |
+| [SRC-62CE5126F9-L000328](../OMARAI_REMEDIATION_REGISTER_AR.md#L328) | 328 | `"- red-team حي وXSS/Prompt injection على بيئة حقيقية."` | — |
+| [SRC-62CE5126F9-L000329](../OMARAI_REMEDIATION_REGISTER_AR.md#L329) | 329 | `"- اختبار الحمل."` | — |
+| [SRC-62CE5126F9-L000330](../OMARAI_REMEDIATION_REGISTER_AR.md#L330) | 330 | `"- عزل المستأجرين؛ غير مدعوم في النطاق أحادي المشغل."` | — |
+| [SRC-62CE5126F9-L000331](../OMARAI_REMEDIATION_REGISTER_AR.md#L331) | 331 | `"- تقرير Grok المستقل الكامل القابل للتحقق."` | — |
+| [SRC-62CE5126F9-L000332](../OMARAI_REMEDIATION_REGISTER_AR.md#L332) | 332 | `""` | — |
+| [SRC-62CE5126F9-L000333](../OMARAI_REMEDIATION_REGISTER_AR.md#L333) | 333 | `"يلزم لكل بند بيئته ودليله الخاص؛ نجاح Pytest أو بناء Docker لا يغلق هذه البنود."` | — |
+| [SRC-62CE5126F9-L000334](../OMARAI_REMEDIATION_REGISTER_AR.md#L334) | 334 | `""` | — |
 | [SRC-62CE5126F9-L000335](../OMARAI_REMEDIATION_REGISTER_AR.md#L335) | 335 | `"## G. قاعدة عدم الإغلاق الشكلي"` | — |
 | [SRC-62CE5126F9-L000336](../OMARAI_REMEDIATION_REGISTER_AR.md#L336) | 336 | `""` | — |
 | [SRC-62CE5126F9-L000337](../OMARAI_REMEDIATION_REGISTER_AR.md#L337) | 337 | `"لا يغلق أي بند لمجرد أن ملفًا أو وظيفة أضيفت. يلزم اختبار النجاح والفشل وحدود الإدخال ذات الصلة، وسجل SHA، ورابط تشغيل CI عند انطباقه. لا دمج تلقائيًا، ويظل قرار الدمج والنشر للمدير البشري."` | — |
@@ -224,6 +262,91 @@
 | [SRC-62CE5126F9-L000540](../OMARAI_REMEDIATION_REGISTER_AR.md#L540) | 540 | `"- **PROPOSED / NOT_IMPLEMENTED IN MAIN:** Evidence Ledger مستقل مكتمل، company entity resolution، CRM الكامل، الجدولة والمراقبة المتقدمة ووحدات مساحة العمل التي لا تملك API."` | — |
 | [SRC-62CE5126F9-L000541](../OMARAI_REMEDIATION_REGISTER_AR.md#L541) | 541 | `""` | — |
 | [SRC-62CE5126F9-L000542](../OMARAI_REMEDIATION_REGISTER_AR.md#L542) | 542 | ``"**الحالة العامة:** الدمجات الموثقة تمثل تقدمًا حقيقيًا في P0 والواجهة، لكنها لا تعني إغلاق كل P0 التشغيلي أو جاهزية الاستضافة أو اكتمال منتج ذكاء المبيعات. استخدم حالات `UNKNOWN` و`NOT_RUN` حيث لا يوجد دليل حي."`` | — |
+| [SRC-62CE5126F9-L000543](../OMARAI_REMEDIATION_REGISTER_AR.md#L543) | 543 | `""` | — |
+| [SRC-62CE5126F9-L000544](../OMARAI_REMEDIATION_REGISTER_AR.md#L544) | 544 | `""` | — |
+| [SRC-62CE5126F9-L000545](../OMARAI_REMEDIATION_REGISTER_AR.md#L545) | 545 | `"---"` | — |
+| [SRC-62CE5126F9-L000546](../OMARAI_REMEDIATION_REGISTER_AR.md#L546) | 546 | `""` | — |
+| [SRC-62CE5126F9-L000547](../OMARAI_REMEDIATION_REGISTER_AR.md#L547) | 547 | `"## OMR-SEARCH-002 — هوية موفري البحث الأكاديمي ومصادقة OpenAlex — 8 نوفمبر 2026"` | — |
+| [SRC-62CE5126F9-L000548](../OMARAI_REMEDIATION_REGISTER_AR.md#L548) | 548 | `""` | — |
+| [SRC-62CE5126F9-L000549](../OMARAI_REMEDIATION_REGISTER_AR.md#L549) | 549 | `"**الأولوية:** P1 — صحة تكامل البحث وموثوقية التعامل مع حدود المزود.  "` | — |
+| [SRC-62CE5126F9-L000550](../OMARAI_REMEDIATION_REGISTER_AR.md#L550) | 550 | `"**الحالة:** FIXED_AND_TESTED على فرع PR #170؛ غير مدمج.  "` | — |
+| [SRC-62CE5126F9-L000551](../OMARAI_REMEDIATION_REGISTER_AR.md#L551) | 551 | ``"**خط الأساس:** `main` عند `6a2c3bdd45aa6b8a87bf941d38879ab89775568b`.  "`` | — |
+| [SRC-62CE5126F9-L000552](../OMARAI_REMEDIATION_REGISTER_AR.md#L552) | 552 | ``"**رأس الإصلاح:** `b11bd7ca0a740717244385577dc63e780800daab`."`` | — |
+| [SRC-62CE5126F9-L000553](../OMARAI_REMEDIATION_REGISTER_AR.md#L553) | 553 | `""` | — |
+| [SRC-62CE5126F9-L000554](../OMARAI_REMEDIATION_REGISTER_AR.md#L554) | 554 | `"### العيب المثبت"` | — |
+| [SRC-62CE5126F9-L000555](../OMARAI_REMEDIATION_REGISTER_AR.md#L555) | 555 | `""` | — |
+| [SRC-62CE5126F9-L000556](../OMARAI_REMEDIATION_REGISTER_AR.md#L556) | 556 | ``"1. كان `agents/search_connectors.py` يرسل `mailto=ops@example.com` افتراضيًا إلى OpenAlex وCrossref، رغم أن هذا ليس عنوان تواصل تشغيليًا حقيقيًا."`` | — |
+| [SRC-62CE5126F9-L000557](../OMARAI_REMEDIATION_REGISTER_AR.md#L557) | 557 | ``"2. وثائق OpenAlex الحالية توضح أن `mailto` لم يعد وسيلة الـpolite pool منذ فبراير 2026، وأن المصادقة بمفتاح API هي الأسلوب الحالي لزيادة ميزانية الاستخدام. كان الموصل لا يقرأ `OPENALEX_API_KEY`."`` | — |
+| [SRC-62CE5126F9-L000558](../OMARAI_REMEDIATION_REGISTER_AR.md#L558) | 558 | ``"3. كان Crossref يتلقى بريدًا افتراضيًا مصطنعًا بدل أن يستخدم `mailto` اختياريًا فقط عند توفير عنوان حقيقي."`` | — |
+| [SRC-62CE5126F9-L000559](../OMARAI_REMEDIATION_REGISTER_AR.md#L559) | 559 | `""` | — |
+| [SRC-62CE5126F9-L000560](../OMARAI_REMEDIATION_REGISTER_AR.md#L560) | 560 | `"### المعالجة"` | — |
+| [SRC-62CE5126F9-L000561](../OMARAI_REMEDIATION_REGISTER_AR.md#L561) | 561 | `""` | — |
+| [SRC-62CE5126F9-L000562](../OMARAI_REMEDIATION_REGISTER_AR.md#L562) | 562 | ``"- إزالة البريد الافتراضي من `User-Agent`."`` | — |
+| [SRC-62CE5126F9-L000563](../OMARAI_REMEDIATION_REGISTER_AR.md#L563) | 563 | ``"- إضافة دعم `OPENALEX_API_KEY` في ترويسة `Authorization: Bearer`، وعدم وضع المفتاح في URL."`` | — |
+| [SRC-62CE5126F9-L000564](../OMARAI_REMEDIATION_REGISTER_AR.md#L564) | 564 | ``"- عدم إرسال `OPENALEX_MAILTO` القديم حتى لو بقي مضبوطًا في البيئة."`` | — |
+| [SRC-62CE5126F9-L000565](../OMARAI_REMEDIATION_REGISTER_AR.md#L565) | 565 | `"- الإبقاء على استخدام OpenAlex العام دون مفتاح."` | — |
+| [SRC-62CE5126F9-L000566](../OMARAI_REMEDIATION_REGISTER_AR.md#L566) | 566 | ``"- جعل `CROSSREF_MAILTO` اختياريًا، ولا يرسل إلا إذا وفر المشغّل قيمة صريحة."`` | — |
+| [SRC-62CE5126F9-L000567](../OMARAI_REMEDIATION_REGISTER_AR.md#L567) | 567 | ``"- تحديث `docs/RESEARCH_CONNECTORS_AR.md` وإضافة اختبارات رجعية في `tests/test_connectors_mocked.py`."`` | — |
+| [SRC-62CE5126F9-L000568](../OMARAI_REMEDIATION_REGISTER_AR.md#L568) | 568 | `""` | — |
+| [SRC-62CE5126F9-L000569](../OMARAI_REMEDIATION_REGISTER_AR.md#L569) | 569 | `"### دليل الاختبار"` | — |
+| [SRC-62CE5126F9-L000570](../OMARAI_REMEDIATION_REGISTER_AR.md#L570) | 570 | `""` | — |
+| [SRC-62CE5126F9-L000571](../OMARAI_REMEDIATION_REGISTER_AR.md#L571) | 571 | ``"- **RED قبل إصلاح التنفيذ:** GitHub Actions [42462553909](https://github.com/mosabosama2030-oss/omarai/actions/runs/42462553909) على Python 3.11 و3.12 كشف في كل منهما **3 failed, 903 passed, 2 skipped**؛ وكانت الإخفاقات الثلاثة هي غياب مصادقة OpenAlex، واستمرار `mailto` القديم في OpenAlex، والبريد الافتراضي في Crossref."`` | — |
+| [SRC-62CE5126F9-L000572](../OMARAI_REMEDIATION_REGISTER_AR.md#L572) | 572 | ``"- **GREEN بعد الإصلاح:** GitHub Actions [42462697361](https://github.com/mosabosama2030-oss/omarai/actions/runs/42462697361) على SHA `b11bd7ca0a740717244385577dc63e780800daab` نجح:"`` | — |
+| [SRC-62CE5126F9-L000573](../OMARAI_REMEDIATION_REGISTER_AR.md#L573) | 573 | ``"  - Ruff: `All checks passed!`"`` | — |
+| [SRC-62CE5126F9-L000574](../OMARAI_REMEDIATION_REGISTER_AR.md#L574) | 574 | `"  - Python 3.11: **906 passed, 2 skipped**."` | — |
+| [SRC-62CE5126F9-L000575](../OMARAI_REMEDIATION_REGISTER_AR.md#L575) | 575 | `"  - Python 3.12: **906 passed, 2 skipped**."` | — |
+| [SRC-62CE5126F9-L000576](../OMARAI_REMEDIATION_REGISTER_AR.md#L576) | 576 | `"  - PostgreSQL integration: **6 passed**."` | — |
+| [SRC-62CE5126F9-L000577](../OMARAI_REMEDIATION_REGISTER_AR.md#L577) | 577 | `"  - Container build وprotected API smoke: success."` | — |
+| [SRC-62CE5126F9-L000578](../OMARAI_REMEDIATION_REGISTER_AR.md#L578) | 578 | `""` | — |
+| [SRC-62CE5126F9-L000579](../OMARAI_REMEDIATION_REGISTER_AR.md#L579) | 579 | `"### الحدود والمتبقي"` | — |
+| [SRC-62CE5126F9-L000580](../OMARAI_REMEDIATION_REGISTER_AR.md#L580) | 580 | `""` | — |
+| [SRC-62CE5126F9-L000581](../OMARAI_REMEDIATION_REGISTER_AR.md#L581) | 581 | `"- **NOT_RUN:** لم تُجرَ أي مكالمة حية إلى OpenAlex أو arXiv أو Crossref، ولم يُستخدم مفتاح API أو تُستهلك حصة مزود."` | — |
+| [SRC-62CE5126F9-L000582](../OMARAI_REMEDIATION_REGISTER_AR.md#L582) | 582 | ``"- **HOSTED_ACCEPTANCE=BLOCKED / NOT_RUN:** فحص القراءة فقط لواجهات `/agent` و`/workspace` و`/api/health` على SnapDeploy أعاد HTTP 503 لكل منها في 8 نوفمبر 2026؛ سبب الاستجابة من منصة الاستضافة أو الحاوية غير محسوم."`` | — |
+| [SRC-62CE5126F9-L000583](../OMARAI_REMEDIATION_REGISTER_AR.md#L583) | 583 | `"- نجاح CI يثبت اختبارات الكود والعقود المحاكية وبناء الحاوية، ولا يثبت صحة مفتاح OpenAlex أو توافر المزود أو جودة النتائج الحية."` | — |
+| [SRC-62CE5126F9-L000584](../OMARAI_REMEDIATION_REGISTER_AR.md#L584) | 584 | `"- PR #170 مفتوح وغير مدمج؛ لا نشر ولا تغيير أسرار أو إعدادات الاستضافة ضمن هذا الإصلاح."` | — |
+| [SRC-62CE5126F9-L000585](../OMARAI_REMEDIATION_REGISTER_AR.md#L585) | 585 | `""` | — |
+| [SRC-62CE5126F9-L000586](../OMARAI_REMEDIATION_REGISTER_AR.md#L586) | 586 | `"**معيار الإغلاق:** دمج بشري بعد مراجعة diff، ثم قبول حي مصرح به على مضيف متاح، مع تسجيل الموفر الذي أعاد نتائج فعلية وحالة فشله ووقت الطلب دون كشف أي مفاتيح."` | — |
+| [SRC-62CE5126F9-L000587](../OMARAI_REMEDIATION_REGISTER_AR.md#L587) | 587 | `""` | — |
+| [SRC-62CE5126F9-L000588](../OMARAI_REMEDIATION_REGISTER_AR.md#L588) | 588 | `""` | — |
+| [SRC-62CE5126F9-L000589](../OMARAI_REMEDIATION_REGISTER_AR.md#L589) | 589 | `"---"` | — |
+| [SRC-62CE5126F9-L000590](../OMARAI_REMEDIATION_REGISTER_AR.md#L590) | 590 | `""` | — |
+| [SRC-62CE5126F9-L000591](../OMARAI_REMEDIATION_REGISTER_AR.md#L591) | 591 | `"## OMR-SEARCH-003 — متانة تحليل موجز arXiv Atom — 8 نوفمبر 2026"` | — |
+| [SRC-62CE5126F9-L000592](../OMARAI_REMEDIATION_REGISTER_AR.md#L592) | 592 | `""` | — |
+| [SRC-62CE5126F9-L000593](../OMARAI_REMEDIATION_REGISTER_AR.md#L593) | 593 | `"**الأولوية:** P1 — صحة بيانات المصدر الأكاديمي وجودة المقتطفات.  "` | — |
+| [SRC-62CE5126F9-L000594](../OMARAI_REMEDIATION_REGISTER_AR.md#L594) | 594 | `"**الحالة:** FIXED_AND_TESTED على فرع PR #170؛ غير مدمج.  "` | — |
+| [SRC-62CE5126F9-L000595](../OMARAI_REMEDIATION_REGISTER_AR.md#L595) | 595 | ``"**خط الأساس:** `main` عند `6a2c3bdd45aa6b8a87bf941d38879ab89775568b`.  "`` | — |
+| [SRC-62CE5126F9-L000596](../OMARAI_REMEDIATION_REGISTER_AR.md#L596) | 596 | ``"**رأس الإصلاح:** `6f99111ba905bd674ff1ecd14b725ba982e173e7`."`` | — |
+| [SRC-62CE5126F9-L000597](../OMARAI_REMEDIATION_REGISTER_AR.md#L597) | 597 | `""` | — |
+| [SRC-62CE5126F9-L000598](../OMARAI_REMEDIATION_REGISTER_AR.md#L598) | 598 | `"### العيب المثبت"` | — |
+| [SRC-62CE5126F9-L000599](../OMARAI_REMEDIATION_REGISTER_AR.md#L599) | 599 | `""` | — |
+| [SRC-62CE5126F9-L000600](../OMARAI_REMEDIATION_REGISTER_AR.md#L600) | 600 | ``"- كان `search_arxiv()` يستخرج عناصر Atom عبر Regex يبحث عن `<entry>` غير المسبوقة باسم namespace؛ لذلك كانت خلاصة Atom بصيغة `<atom:entry>` تُرجع صفر نتائج."`` | — |
+| [SRC-62CE5126F9-L000601](../OMARAI_REMEDIATION_REGISTER_AR.md#L601) | 601 | ``"- كان استخراج النص لا يفك كيانات XML مثل `&amp;` و`&lt;...`، ما يؤدي إلى إظهار نص مشوّه في العنوان والمقتطف."`` | — |
+| [SRC-62CE5126F9-L000602](../OMARAI_REMEDIATION_REGISTER_AR.md#L602) | 602 | `""` | — |
+| [SRC-62CE5126F9-L000603](../OMARAI_REMEDIATION_REGISTER_AR.md#L603) | 603 | `"### المعالجة"` | — |
+| [SRC-62CE5126F9-L000604](../OMARAI_REMEDIATION_REGISTER_AR.md#L604) | 604 | `""` | — |
+| [SRC-62CE5126F9-L000605](../OMARAI_REMEDIATION_REGISTER_AR.md#L605) | 605 | ``"- استبدال Regex بـ `xml.etree.ElementTree`، مع مطابقة العناصر باسمها المحلي كي تعمل الصيغة ذات namespace الافتراضي أو البادئة."`` | — |
+| [SRC-62CE5126F9-L000606](../OMARAI_REMEDIATION_REGISTER_AR.md#L606) | 606 | `"- فك كيانات XML تلقائيًا عبر محلل XML القياسي."` | — |
+| [SRC-62CE5126F9-L000607](../OMARAI_REMEDIATION_REGISTER_AR.md#L607) | 607 | ``"- الإبقاء على حد النتائج الحالي، والتحقق من أن كل رابط مصدر يستخدم المضيف `arxiv.org` والمسار `/abs/`."`` | — |
+| [SRC-62CE5126F9-L000608](../OMARAI_REMEDIATION_REGISTER_AR.md#L608) | 608 | ``"- عزل XML المشوه كفشل موصل وإرجاع نتائج فارغة في طبقة `run_connector` بدل إسقاط عملية البحث المشتركة."`` | — |
+| [SRC-62CE5126F9-L000609](../OMARAI_REMEDIATION_REGISTER_AR.md#L609) | 609 | `"- إضافة اختبار رجعي لـ Atom namespaced والكيانات، واختبار لاحتواء فشل XML المشوه."` | — |
+| [SRC-62CE5126F9-L000610](../OMARAI_REMEDIATION_REGISTER_AR.md#L610) | 610 | `""` | — |
+| [SRC-62CE5126F9-L000611](../OMARAI_REMEDIATION_REGISTER_AR.md#L611) | 611 | `"### دليل الاختبار"` | — |
+| [SRC-62CE5126F9-L000612](../OMARAI_REMEDIATION_REGISTER_AR.md#L612) | 612 | `""` | — |
+| [SRC-62CE5126F9-L000613](../OMARAI_REMEDIATION_REGISTER_AR.md#L613) | 613 | ``"- **RED قبل الإصلاح:** GitHub Actions [42467246095](https://github.com/mosabosama2030-oss/omarai/actions/runs/42467246095) فشل في Python 3.11 و3.12 بسبب الاختبار الجديد تحديدًا؛ في كل بيئة: `1 failed, 906 passed, 2 skipped`. فشل الاختبار كان `len(rows) == 0` بدل سجل واحد عند Atom ذي بادئة namespace."`` | — |
+| [SRC-62CE5126F9-L000614](../OMARAI_REMEDIATION_REGISTER_AR.md#L614) | 614 | ``"- **GREEN بعد الإصلاح:** GitHub Actions [42467407375](https://github.com/mosabosama2030-oss/omarai/actions/runs/42467407375) على SHA `6f99111ba905bd674ff1ecd14b725ba982e173e7` نجح بالكامل:"`` | — |
+| [SRC-62CE5126F9-L000615](../OMARAI_REMEDIATION_REGISTER_AR.md#L615) | 615 | ``"  - Ruff: `All checks passed!`"`` | — |
+| [SRC-62CE5126F9-L000616](../OMARAI_REMEDIATION_REGISTER_AR.md#L616) | 616 | ``"  - Python 3.11: `908 passed, 2 skipped in 45.71s`."`` | — |
+| [SRC-62CE5126F9-L000617](../OMARAI_REMEDIATION_REGISTER_AR.md#L617) | 617 | ``"  - Python 3.12: `908 passed, 2 skipped in 49.57s`."`` | — |
+| [SRC-62CE5126F9-L000618](../OMARAI_REMEDIATION_REGISTER_AR.md#L618) | 618 | ``"  - PostgreSQL integration: `6 passed in 0.59s`."`` | — |
+| [SRC-62CE5126F9-L000619](../OMARAI_REMEDIATION_REGISTER_AR.md#L619) | 619 | `"  - Container build وprotected API smoke: success."` | — |
+| [SRC-62CE5126F9-L000620](../OMARAI_REMEDIATION_REGISTER_AR.md#L620) | 620 | `""` | — |
+| [SRC-62CE5126F9-L000621](../OMARAI_REMEDIATION_REGISTER_AR.md#L621) | 621 | `"### الحدود والمتبقي"` | — |
+| [SRC-62CE5126F9-L000622](../OMARAI_REMEDIATION_REGISTER_AR.md#L622) | 622 | `""` | — |
+| [SRC-62CE5126F9-L000623](../OMARAI_REMEDIATION_REGISTER_AR.md#L623) | 623 | `"- **NOT_RUN:** لا يوجد اتصال حي بـ arXiv أو تحقق من توافر الخدمة أو جودة النتائج الحية؛ الاختبارات تستخدم XML محاكى."` | — |
+| [SRC-62CE5126F9-L000624](../OMARAI_REMEDIATION_REGISTER_AR.md#L624) | 624 | `"- لا يثبت نجاح CI أن كل موجز Atom مستقبلي أو كل تغيير في مخطط arXiv مدعوم."` | — |
+| [SRC-62CE5126F9-L000625](../OMARAI_REMEDIATION_REGISTER_AR.md#L625) | 625 | `"- PR #170 ما زال مفتوحًا وغير مدمج؛ لم يحدث نشر إلى SnapDeploy أو تغيير أسرار/إعدادات الاستضافة."` | — |
+| [SRC-62CE5126F9-L000626](../OMARAI_REMEDIATION_REGISTER_AR.md#L626) | 626 | `""` | — |
+| [SRC-62CE5126F9-L000627](../OMARAI_REMEDIATION_REGISTER_AR.md#L627) | 627 | `"**معيار الإغلاق:** مراجعة بشرية ودمج PR، ثم قبول حي منفصل لموصل arXiv على مضيف متاح وبموافقة على طلب خارجي واحد غير مدفوع."` | — |
 ## وثائق وفهرسة
 
 ### FILE-B9C3015420 — [docs/OMARAI_REQUIREMENTS_REGISTER.md](../OMARAI_REQUIREMENTS_REGISTER.md#L1)
@@ -711,126 +834,3 @@
 | [SRC-65551FB29F-L000189](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L189) | 189 | `"\| API \| العقود وواجهات التكامل \|"` | — |
 | [SRC-65551FB29F-L000190](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L190) | 190 | `"\| IDN \| الهوية والصلاحيات والجلسات \|"` | — |
 | [SRC-65551FB29F-L000191](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L191) | 191 | `"\| SEC \| الأمن العام وأمن التطبيق والشبكات \|"` | — |
-| [SRC-65551FB29F-L000192](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L192) | 192 | `"\| DAT \| جودة البيانات والتخزين ودورة الحياة \|"` | — |
-| [SRC-65551FB29F-L000193](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L193) | 193 | `"\| PRI \| الخصوصية \|"` | — |
-| [SRC-65551FB29F-L000194](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L194) | 194 | `"\| REL \| الموثوقية والتعافي \|"` | — |
-| [SRC-65551FB29F-L000195](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L195) | 195 | `"\| PER \| الأداء والسعة \|"` | — |
-| [SRC-65551FB29F-L000196](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L196) | 196 | `"\| OBS \| المراقبة والتدقيق \|"` | — |
-| [SRC-65551FB29F-L000197](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L197) | 197 | `"\| SRH \| البحث والاسترجاع ومصادر المعرفة \|"` | — |
-| [SRC-65551FB29F-L000198](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L198) | 198 | `"\| EVD \| الأدلة والإسناد والصدق \|"` | — |
-| [SRC-65551FB29F-L000199](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L199) | 199 | `"\| AIG \| حوكمة الذكاء الاصطناعي والوكلاء \|"` | — |
-| [SRC-65551FB29F-L000200](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L200) | 200 | `"\| AIE \| تقييم النماذج والجودة \|"` | — |
-| [SRC-65551FB29F-L000201](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L201) | 201 | `"\| TST \| الاختبارات \|"` | — |
-| [SRC-65551FB29F-L000202](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L202) | 202 | `"\| DEV \| تجربة المطور والتطوير الآمن \|"` | — |
-| [SRC-65551FB29F-L000203](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L203) | 203 | `"\| SCM \| سلسلة توريد البرمجيات \|"` | — |
-| [SRC-65551FB29F-L000204](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L204) | 204 | `"\| DPL \| النشر والإصدارات \|"` | — |
-| [SRC-65551FB29F-L000205](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L205) | 205 | `"\| UX \| واجهة المستخدم والوصولية والتدويل \|"` | — |
-| [SRC-65551FB29F-L000206](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L206) | 206 | `"\| FIN \| التكلفة والحصص والاستدامة \|"` | — |
-| [SRC-65551FB29F-L000207](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L207) | 207 | `"\| LEG \| التراخيص والمتطلبات القانونية \|"` | — |
-| [SRC-65551FB29F-L000208](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L208) | 208 | `"\| EXT \| الإضافات والتوافق وقابلية النقل \|"` | — |
-| [SRC-65551FB29F-L000209](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L209) | 209 | `""` | — |
-| [SRC-65551FB29F-L000210](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L210) | 210 | ``"مثال: `SEC-004` يعني متطلبًا أمنيًا ثابت الهوية. يجب عدم إعادة استخدام المعرف لمتطلب مختلف بعد إغلاق المتطلب الأصلي."`` | — |
-| [SRC-65551FB29F-L000211](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L211) | 211 | `""` | — |
-| [SRC-65551FB29F-L000212](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L212) | 212 | `"## 9. سجل التتبع الإلزامي"` | — |
-| [SRC-65551FB29F-L000213](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L213) | 213 | `""` | — |
-| [SRC-65551FB29F-L000214](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L214) | 214 | `"لكل متطلب مهم، يحتفظ السجل بالحقول التالية:"` | — |
-| [SRC-65551FB29F-L000215](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L215) | 215 | `""` | — |
-| [SRC-65551FB29F-L000216](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L216) | 216 | `"\| الحقل \| المطلوب \|"` | — |
-| [SRC-65551FB29F-L000217](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L217) | 217 | `"\|---\|---\|"` | — |
-| [SRC-65551FB29F-L000218](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L218) | 218 | `"\| ID \| معرف ثابت \|"` | — |
-| [SRC-65551FB29F-L000219](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L219) | 219 | `"\| المتطلب \| جملة واحدة قابلة للفهم والتحقق \|"` | — |
-| [SRC-65551FB29F-L000220](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L220) | 220 | `"\| المصدر \| الوثيقة/المرجع/قرار المنتج \|"` | — |
-| [SRC-65551FB29F-L000221](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L221) | 221 | `"\| الإلزام \| MUST-BASE / MUST-TRIGGERED / SHOULD / MAY / HOLD \|"` | — |
-| [SRC-65551FB29F-L000222](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L222) | 222 | `"\| شرط التطبيق \| دائم أم مشروط، وما الشرط \|"` | — |
-| [SRC-65551FB29F-L000223](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L223) | 223 | `"\| الخطر \| ما الذي يمنعه أو يقلله \|"` | — |
-| [SRC-65551FB29F-L000224](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L224) | 224 | `"\| المكون \| ملف/وحدة/خدمة أو UNKNOWN \|"` | — |
-| [SRC-65551FB29F-L000225](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L225) | 225 | `"\| التنفيذ \| وصف مختصر مع رابط/commit عند التوفر \|"` | — |
-| [SRC-65551FB29F-L000226](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L226) | 226 | `"\| الاختبار \| اسم الاختبار أو أمر التشغيل الدقيق \|"` | — |
-| [SRC-65551FB29F-L000227](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L227) | 227 | `"\| نتيجة الاختبار \| نجاح/فشل/لم ينفذ/غير قابل للتشغيل \|"` | — |
-| [SRC-65551FB29F-L000228](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L228) | 228 | `"\| البيئة \| إصدار Python/الموفّر/الاستضافة/التكوين حسب الحاجة \|"` | — |
-| [SRC-65551FB29F-L000229](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L229) | 229 | `"\| الحالة \| VERIFIED/INFERRED/PROPOSED/UNKNOWN/N/A/WAIVED \|"` | — |
-| [SRC-65551FB29F-L000230](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L230) | 230 | `"\| الدليل \| نتيجة قابلة للفحص لا وصف ذاتي \|"` | — |
-| [SRC-65551FB29F-L000231](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L231) | 231 | `"\| القيد \| ما لم يشمله التحقق \|"` | — |
-| [SRC-65551FB29F-L000232](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L232) | 232 | `"\| المالك \| مسؤول المعالجة أو القبول \|"` | — |
-| [SRC-65551FB29F-L000233](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L233) | 233 | `"\| الخطر المتبقي \| واضح ومحدد \|"` | — |
-| [SRC-65551FB29F-L000234](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L234) | 234 | `"\| الاستحقاق \| الإصدار أو المرحلة التي يلزم فيها \|"` | — |
-| [SRC-65551FB29F-L000235](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L235) | 235 | `"\| آخر مراجعة \| التاريخ والسبب \|"` | — |
-| [SRC-65551FB29F-L000236](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L236) | 236 | `""` | — |
-| [SRC-65551FB29F-L000237](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L237) | 237 | `"يُحظر ملء حقل الدليل بنص مثل «راجعنا الكود» أو «الموديل أكد» فقط. يجب أن يستطيع مراجع آخر إعادة التحقق من الادعاء."` | — |
-| [SRC-65551FB29F-L000238](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L238) | 238 | `""` | — |
-| [SRC-65551FB29F-L000239](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L239) | 239 | `"---"` | — |
-| [SRC-65551FB29F-L000240](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L240) | 240 | `""` | — |
-| [SRC-65551FB29F-L000241](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L241) | 241 | `"# الجزء الرابع — تصنيف المخاطر والأولويات"` | — |
-| [SRC-65551FB29F-L000242](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L242) | 242 | `""` | — |
-| [SRC-65551FB29F-L000243](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L243) | 243 | `"## 10. نموذج أولوية داخلي"` | — |
-| [SRC-65551FB29F-L000244](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L244) | 244 | `""` | — |
-| [SRC-65551FB29F-L000245](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L245) | 245 | `"هذا نموذج مساعدة لاتخاذ القرار، وليس معيارًا رسميًا أو قياسًا علميًا لاحتمال الخطر. تستخدم قيم من 1 إلى 5 لكل من:"` | — |
-| [SRC-65551FB29F-L000246](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L246) | 246 | `"- **S — الشدة:** ما حجم الأثر لو وقع الفشل؟"` | — |
-| [SRC-65551FB29F-L000247](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L247) | 247 | `"- **L — الاحتمال:** ما مدى معقولية وقوعه؟"` | — |
-| [SRC-65551FB29F-L000248](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L248) | 248 | `"- **X — التعرض:** كم المسار مكشوف للمستخدم/الشبكة/بيانات مهمة؟"` | — |
-| [SRC-65551FB29F-L000249](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L249) | 249 | `"- **U — عدم اليقين:** إلى أي حد نفتقر إلى أدلة عن وجود الضابط؟"` | — |
-| [SRC-65551FB29F-L000250](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L250) | 250 | `""` | — |
-| [SRC-65551FB29F-L000251](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L251) | 251 | ``"يمكن حساب ترتيب أولي: `Risk Index = S × L × X × U`، حيث يُختار X بين 1 و3 وU بين 1 و2 حسب مقياس المشروع المعتمد؛ لا يقارن هذا الرقم مباشرة بمعايير أمن رسمية أخرى."`` | — |
-| [SRC-65551FB29F-L000252](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L252) | 252 | `""` | — |
-| [SRC-65551FB29F-L000253](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L253) | 253 | `"### قواعد الأولوية"` | — |
-| [SRC-65551FB29F-L000254](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L254) | 254 | `""` | — |
-| [SRC-65551FB29F-L000255](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L255) | 255 | `"1. تسريب سر أو تجاوز صلاحية أو اختلاط بيانات مستخدمين أو تنفيذ غير مصرح: أولوية قصوى حتى لو كان الاحتمال غير معروف."` | — |
-| [SRC-65551FB29F-L000256](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L256) | 256 | `"2. خطر يمكن أن يسبب تكلفة غير محدودة أو حلقة أداة متكررة: أولوية مبكرة."` | — |
-| [SRC-65551FB29F-L000257](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L257) | 257 | `"3. خطر يمنع معرفة ما إذا كان النظام يعمل أصلًا (غياب اختبارات أو رصد): يُعالج مبكرًا لأنه يزيد عدم اليقين."` | — |
-| [SRC-65551FB29F-L000258](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L258) | 258 | `"4. تحسين معماري لا يحل خطرًا أو حاجة قياسها واضح: لا يتقدم على سلامة السلوك الأساسي."` | — |
-| [SRC-65551FB29F-L000259](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L259) | 259 | `"5. تقنية كبيرة تزيد عدد نقاط الفشل دون تحسن مثبت: تؤجل."` | — |
-| [SRC-65551FB29F-L000260](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L260) | 260 | `""` | — |
-| [SRC-65551FB29F-L000261](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L261) | 261 | `"## 11. درجات الاستعجال"` | — |
-| [SRC-65551FB29F-L000262](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L262) | 262 | `""` | — |
-| [SRC-65551FB29F-L000263](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L263) | 263 | `"- **P0 — حاجز سلامة:** يجب إغلاق الخطر قبل إتاحة الوظيفة أو مواصلة تنفيذها في مسار خطر."` | — |
-| [SRC-65551FB29F-L000264](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L264) | 264 | `"- **P1 — أساس موثوق:** مطلوب لإصلاح العيوب الأساسية والاختبارات وحدود الموارد والتشخيص."` | — |
-| [SRC-65551FB29F-L000265](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L265) | 265 | `"- **P2 — استعداد للنمو:** مطلوب عند وجود مستخدمين أو حمل أو بيانات مستمرة أو استضافة أكثر جدية."` | — |
-| [SRC-65551FB29F-L000266](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L266) | 266 | `"- **P3 — نضج مؤسسي/مشروط:** multi-region، وSSO، وسياسات امتثال مؤسسي أو ممارسات متقدمة لا تفرض قبل أن يصبح لها سبب."` | — |
-| [SRC-65551FB29F-L000267](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L267) | 267 | `""` | — |
-| [SRC-65551FB29F-L000268](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L268) | 268 | `"هذه الدرجات لا تحدد حالة Omarai الحالية. الحالة لا تتحدد إلا بعد فحص التنفيذ."` | — |
-| [SRC-65551FB29F-L000269](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L269) | 269 | `""` | — |
-| [SRC-65551FB29F-L000270](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L270) | 270 | `"## 12. متطلبات أساسية لا يجوز تأجيلها في المسارات التي تستخدمها"` | — |
-| [SRC-65551FB29F-L000271](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L271) | 271 | `""` | — |
-| [SRC-65551FB29F-L000272](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L272) | 272 | `"1. لا تدّع أن البحث الحي حدث إذا لم يُنفذ أو لم يكن دليله متاحًا."` | — |
-| [SRC-65551FB29F-L000273](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L273) | 273 | `"2. لا تعرض استشهادًا على أنه يدعم ادعاءً دون فحص محتواه."` | — |
-| [SRC-65551FB29F-L000274](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L274) | 274 | `"3. لا تمرر محتوى صفحة أو أداة إلى صلاحيات تعليمات أعلى."` | — |
-| [SRC-65551FB29F-L000275](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L275) | 275 | `"4. لا تنفذ أداة أو أثرًا خارجيًا حساسًا بلا صلاحية."` | — |
-| [SRC-65551FB29F-L000276](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L276) | 276 | `"5. لا تسمح لطلب واحد بتجاوز الميزانيات أو الدخول في حلقة لا نهائية."` | — |
-| [SRC-65551FB29F-L000277](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L277) | 277 | `"6. لا تسمح بأن تتسرب حالة المستخدم إلى طلب آخر."` | — |
-| [SRC-65551FB29F-L000278](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L278) | 278 | `"7. لا تعرض أسرارًا أو بيانات خاصة في logs أو أخطاء عامة."` | — |
-| [SRC-65551FB29F-L000279](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L279) | 279 | `"8. لا تغيّر بيانات دائمة دون خطة ترحيل/استعادة عند انطباقها."` | — |
-| [SRC-65551FB29F-L000280](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L280) | 280 | `"9. لا تدع فشل مزود خارجي يتحول إلى نجاح زائف."` | — |
-| [SRC-65551FB29F-L000281](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L281) | 281 | `"10. لا تدّع أن اختبارًا أو ميزة أو حد سعة تم التحقق منه ما لم توجد نتيجة."` | — |
-| [SRC-65551FB29F-L000282](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L282) | 282 | `"11. لا تدمج أو تنشر أو تقبل خطرًا حرجًا نيابة عن صاحب المشروع دون تفويض."` | — |
-| [SRC-65551FB29F-L000283](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L283) | 283 | `"12. يجب أن تكون نتيجة كل فشل مفهومة للمنظومة: خطأ متوقع مصنف أو حالة مجهولة موثقة، لا استثناء صامتًا."` | — |
-| [SRC-65551FB29F-L000284](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L284) | 284 | `""` | — |
-| [SRC-65551FB29F-L000285](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L285) | 285 | `"---"` | — |
-| [SRC-65551FB29F-L000286](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L286) | 286 | `""` | — |
-| [SRC-65551FB29F-L000287](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L287) | 287 | `"# الجزء الخامس — مصفوفة ربط المجالات بالأدلة"` | — |
-| [SRC-65551FB29F-L000288](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L288) | 288 | `""` | — |
-| [SRC-65551FB29F-L000289](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L289) | 289 | `"## 13. مصفوفة الدليل المطلوبة"` | — |
-| [SRC-65551FB29F-L000290](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L290) | 290 | `""` | — |
-| [SRC-65551FB29F-L000291](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L291) | 291 | `"\| المجال \| أدلة مناسبة للقبول \| أدلة غير كافية وحدها \|"` | — |
-| [SRC-65551FB29F-L000292](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L292) | 292 | `"\|---\|---\|---\|"` | — |
-| [SRC-65551FB29F-L000293](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L293) | 293 | `"\| صحة الوظيفة \| unit/integration/e2e ونتيجة مرصودة \| تعليق أو تقرير ذاتي \|"` | — |
-| [SRC-65551FB29F-L000294](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L294) | 294 | `"\| البحث الحي \| اختبار اتصال فعلي من بيئة محددة وتحقق محتوى \| وجود API key أو إعداد connector \|"` | — |
-| [SRC-65551FB29F-L000295](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L295) | 295 | `"\| جودة الاستشهاد \| اختبار claim-to-source ومراجعة العينة \| رابط ظاهر دون فحص دعمه \|"` | — |
-| [SRC-65551FB29F-L000296](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L296) | 296 | `"\| الأمن \| نموذج تهديد وفحص مناسب واختبار سلبي \| إقرار النموذج بأنه آمن \|"` | — |
-| [SRC-65551FB29F-L000297](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L297) | 297 | `"\| التفويض \| اختبار API مباشر بهويات وصلاحيات مختلفة \| إخفاء الزر بالواجهة \|"` | — |
-| [SRC-65551FB29F-L000298](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L298) | 298 | `"\| عدم اختلاط المستخدمين \| اختبار تزامن وحدود جلسة/مستأجر \| مراجعة سطحية لمتغيرات عامة فقط \|"` | — |
-| [SRC-65551FB29F-L000299](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L299) | 299 | `"\| الأداء \| workload وقياسات p95/p99 وموارد وإعدادات \| اختبار يدوي سريع أو رقم تخميني \|"` | — |
-| [SRC-65551FB29F-L000300](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L300) | 300 | `"\| التوسع \| قياس عنق الزجاجة واختبار متعددة النسخ عند الادعاء \| قول «قابل للتوسع» \|"` | — |
-| [SRC-65551FB29F-L000301](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L301) | 301 | `"\| التعافي \| استعادة فعلية وقياس زمن وفقد البيانات \| ملف backup موجود \|"` | — |
-| [SRC-65551FB29F-L000302](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L302) | 302 | `"\| تكلفة المهمة \| قياس/تقدير موثق وحدود استدعاءات \| القول إن الخدمة مجانية \|"` | — |
-| [SRC-65551FB29F-L000303](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L303) | 303 | `"\| تغير النموذج \| مقارنة على eval set بنفس شروط القياس \| رد واحد يبدو أفضل \|"` | — |
-| [SRC-65551FB29F-L000304](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L304) | 304 | `"\| توافق API \| contract tests وإصدارات معروفة \| مثال JSON واحد \|"` | — |
-| [SRC-65551FB29F-L000305](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L305) | 305 | `"\| ترحيل البيانات \| ترحيل اختباري من إصدار سابق والتحقق من سلامة البيانات \| بدء التشغيل بنجاح على مخزن فارغ \|"` | — |
-| [SRC-65551FB29F-L000306](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L306) | 306 | `"\| سلاسل التوريد \| نتائج فحص الاعتماديات والأسرار وبناء معروف \| lockfile وحده \|"` | — |
-| [SRC-65551FB29F-L000307](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L307) | 307 | `"\| قابلية الوصول \| فحوص آلية ومراجعة لوحة مفاتيح/قارئ شاشة \| صفحة تظهر بشكل جميل \|"` | — |
-| [SRC-65551FB29F-L000308](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L308) | 308 | `"\| الاستضافة \| نسخة منشورة تطابق commit معروف وفحص smoke \| نجاح build على جهاز آخر \|"` | — |
-| [SRC-65551FB29F-L000309](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L309) | 309 | `"\| قابلية النقل \| export/restore أو تجربة نقل موثقة \| ادعاء أن الكود مفتوح المصدر \|"` | — |
-| [SRC-65551FB29F-L000310](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L310) | 310 | `"\| الامتثال \| تقييم نطاقي وأدلة ومتطلبات محددة \| إضافة اسم معيار إلى README \|"` | — |
-| [SRC-65551FB29F-L000311](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L311) | 311 | `""` | — |
-| [SRC-65551FB29F-L000312](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L312) | 312 | `"---"` | — |
-| [SRC-65551FB29F-L000313](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L313) | 313 | `""` | — |
-| [SRC-65551FB29F-L000314](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L314) | 314 | `"# الجزء السادس — بوابات التطوير والإطلاق"` | — |

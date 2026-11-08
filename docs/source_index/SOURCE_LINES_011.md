@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L000850 إلى SRC-0799EEEB02-L000182
+- النطاق: SRC-686F71AA50-L000812 إلى SRC-0799EEEB02-L000144
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,44 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L000812](../../agents/task_understanding.py#L812) | 812 | `"        for raw_key, raw_value in list(raw_context_slots.items())[:16]:"` | — |
+| [SRC-686F71AA50-L000813](../../agents/task_understanding.py#L813) | 813 | `"            if isinstance(raw_key, str) and isinstance(raw_value, str) and raw_key.strip() and raw_value.strip():"` | — |
+| [SRC-686F71AA50-L000814](../../agents/task_understanding.py#L814) | 814 | `"                context_slots[raw_key.strip()[:40]] = raw_value.strip()[:180]"` | — |
+| [SRC-686F71AA50-L000815](../../agents/task_understanding.py#L815) | 815 | `"    raw_changed_slots = context.get(\"changed_slots\")"` | — |
+| [SRC-686F71AA50-L000816](../../agents/task_understanding.py#L816) | 816 | `"    context_changed_slots = ["` | — |
+| [SRC-686F71AA50-L000817](../../agents/task_understanding.py#L817) | 817 | `"        str(item).strip()[:40]"` | — |
+| [SRC-686F71AA50-L000818](../../agents/task_understanding.py#L818) | 818 | `"        for item in raw_changed_slots[:8]"` | — |
+| [SRC-686F71AA50-L000819](../../agents/task_understanding.py#L819) | 819 | `"        if isinstance(item, str) and item.strip()"` | — |
+| [SRC-686F71AA50-L000820](../../agents/task_understanding.py#L820) | 820 | `"    ] if isinstance(raw_changed_slots, list) else []"` | — |
+| [SRC-686F71AA50-L000821](../../agents/task_understanding.py#L821) | 821 | `"    context_resolution = {"` | — |
+| [SRC-686F71AA50-L000822](../../agents/task_understanding.py#L822) | 822 | `"        \"method\": str(context.get(\"method\") or \"not_provided\")[:80],"` | — |
+| [SRC-686F71AA50-L000823](../../agents/task_understanding.py#L823) | 823 | `"        \"resolved_question\": ("` | — |
+| [SRC-686F71AA50-L000824](../../agents/task_understanding.py#L824) | 824 | `"            str(context.get(\"resolved_question\") or raw)[:MAX_TASK_CHARS]"` | — |
+| [SRC-686F71AA50-L000825](../../agents/task_understanding.py#L825) | 825 | `"            if not context.get(\"topic_shift\") else raw"` | — |
+| [SRC-686F71AA50-L000826](../../agents/task_understanding.py#L826) | 826 | `"        ),"` | — |
+| [SRC-686F71AA50-L000827](../../agents/task_understanding.py#L827) | 827 | `"        \"topic\": str(context.get(\"topic\") or \"\")[:180],"` | — |
+| [SRC-686F71AA50-L000828](../../agents/task_understanding.py#L828) | 828 | `"        \"entities\": context_entities,"` | — |
+| [SRC-686F71AA50-L000829](../../agents/task_understanding.py#L829) | 829 | `"        \"slots\": context_slots,"` | — |
+| [SRC-686F71AA50-L000830](../../agents/task_understanding.py#L830) | 830 | `"        \"changed_slots\": context_changed_slots,"` | — |
+| [SRC-686F71AA50-L000831](../../agents/task_understanding.py#L831) | 831 | `"        \"is_follow_up\": context.get(\"is_follow_up\") is True,"` | — |
+| [SRC-686F71AA50-L000832](../../agents/task_understanding.py#L832) | 832 | `"        \"topic_shift\": context.get(\"topic_shift\") is True,"` | — |
+| [SRC-686F71AA50-L000833](../../agents/task_understanding.py#L833) | 833 | `"        \"resolution_basis\": str(context.get(\"resolution_basis\") or \"unassessed\")[:80],"` | — |
+| [SRC-686F71AA50-L000834](../../agents/task_understanding.py#L834) | 834 | `"        \"confidence_band\": str(context.get(\"confidence_band\") or \"unassessed\")[:30],"` | — |
+| [SRC-686F71AA50-L000835](../../agents/task_understanding.py#L835) | 835 | `"        \"needs_clarification\": context.get(\"needs_clarification\") is True,"` | — |
+| [SRC-686F71AA50-L000836](../../agents/task_understanding.py#L836) | 836 | `"        \"unresolved_references\": ["` | — |
+| [SRC-686F71AA50-L000837](../../agents/task_understanding.py#L837) | 837 | `"            str(item).strip()[:100]"` | — |
+| [SRC-686F71AA50-L000838](../../agents/task_understanding.py#L838) | 838 | `"            for item in context.get(\"unresolved_references\", [])[:8]"` | — |
+| [SRC-686F71AA50-L000839](../../agents/task_understanding.py#L839) | 839 | `"            if isinstance(item, str) and item.strip()"` | — |
+| [SRC-686F71AA50-L000840](../../agents/task_understanding.py#L840) | 840 | `"        ] if isinstance(context.get(\"unresolved_references\"), list) else [],"` | — |
+| [SRC-686F71AA50-L000841](../../agents/task_understanding.py#L841) | 841 | `"    }"` | — |
+| [SRC-686F71AA50-L000842](../../agents/task_understanding.py#L842) | 842 | `""` | — |
+| [SRC-686F71AA50-L000843](../../agents/task_understanding.py#L843) | 843 | `"    constraints = {"` | — |
+| [SRC-686F71AA50-L000844](../../agents/task_understanding.py#L844) | 844 | `"        \"explicit_locations\": location,"` | — |
+| [SRC-686F71AA50-L000845](../../agents/task_understanding.py#L845) | 845 | `"        \"explicit_years\": years,"` | — |
+| [SRC-686F71AA50-L000846](../../agents/task_understanding.py#L846) | 846 | `"        \"explicit_dates\": dates,"` | — |
+| [SRC-686F71AA50-L000847](../../agents/task_understanding.py#L847) | 847 | `"        \"explicit_budgets\": budgets,"` | — |
+| [SRC-686F71AA50-L000848](../../agents/task_understanding.py#L848) | 848 | `"        \"explicit_urls\": urls,"` | — |
+| [SRC-686F71AA50-L000849](../../agents/task_understanding.py#L849) | 849 | `"        \"explicit_aspects\": explicit_aspects,"` | — |
 | [SRC-686F71AA50-L000850](../../agents/task_understanding.py#L850) | 850 | `"        \"inline_text_supplied_for_summary\": inline_summary_text,"` | — |
 | [SRC-686F71AA50-L000851](../../agents/task_understanding.py#L851) | 851 | `"        \"time_sensitive_request\": current_required,"` | — |
 | [SRC-686F71AA50-L000852](../../agents/task_understanding.py#L852) | 852 | `"        \"official_site_required\": government_official_site,"` | — |
@@ -796,41 +834,3 @@
 | [SRC-0799EEEB02-L000142](../../agents/tool_execution_status.py#L142) | 142 | `"    elif page_count_mismatch:"` | — |
 | [SRC-0799EEEB02-L000143](../../agents/tool_execution_status.py#L143) | 143 | `"        status = \"counter_mismatch\""` | — |
 | [SRC-0799EEEB02-L000144](../../agents/tool_execution_status.py#L144) | 144 | `"    elif pages_read > 0:"` | — |
-| [SRC-0799EEEB02-L000145](../../agents/tool_execution_status.py#L145) | 145 | `"        status = \"completed_with_read_pages\""` | — |
-| [SRC-0799EEEB02-L000146](../../agents/tool_execution_status.py#L146) | 146 | `"    elif pages_attempted is not None and pages_attempted > 0:"` | — |
-| [SRC-0799EEEB02-L000147](../../agents/tool_execution_status.py#L147) | 147 | `"        status = \"attempted_no_readable_pages\""` | — |
-| [SRC-0799EEEB02-L000148](../../agents/tool_execution_status.py#L148) | 148 | `"    elif pages_attempted is None:"` | — |
-| [SRC-0799EEEB02-L000149](../../agents/tool_execution_status.py#L149) | 149 | `"        status = \"unknown\""` | — |
-| [SRC-0799EEEB02-L000150](../../agents/tool_execution_status.py#L150) | 150 | `"    elif outcome in _ERROR_OUTCOMES:"` | — |
-| [SRC-0799EEEB02-L000151](../../agents/tool_execution_status.py#L151) | 151 | `"        status = \"not_attempted_after_search_error\""` | — |
-| [SRC-0799EEEB02-L000152](../../agents/tool_execution_status.py#L152) | 152 | `"    elif attempted is True:"` | — |
-| [SRC-0799EEEB02-L000153](../../agents/tool_execution_status.py#L153) | 153 | `"        status = \"not_attempted_no_fetchable_candidates\""` | — |
-| [SRC-0799EEEB02-L000154](../../agents/tool_execution_status.py#L154) | 154 | `"    elif attempted is False:"` | — |
-| [SRC-0799EEEB02-L000155](../../agents/tool_execution_status.py#L155) | 155 | `"        status = \"not_attempted\""` | — |
-| [SRC-0799EEEB02-L000156](../../agents/tool_execution_status.py#L156) | 156 | `"    else:"` | — |
-| [SRC-0799EEEB02-L000157](../../agents/tool_execution_status.py#L157) | 157 | `"        status = \"unknown\""` | — |
-| [SRC-0799EEEB02-L000158](../../agents/tool_execution_status.py#L158) | 158 | `"    rows.append(_status_row(tool, tool in required, status, {"` | — |
-| [SRC-0799EEEB02-L000159](../../agents/tool_execution_status.py#L159) | 159 | `"        \"pages_fetch_attempted\": pages_attempted,"` | — |
-| [SRC-0799EEEB02-L000160](../../agents/tool_execution_status.py#L160) | 160 | `"        \"pages_read\": pages_read,"` | — |
-| [SRC-0799EEEB02-L000161](../../agents/tool_execution_status.py#L161) | 161 | `"        \"reported_pages_fetched\": reported_pages_read,"` | — |
-| [SRC-0799EEEB02-L000162](../../agents/tool_execution_status.py#L162) | 162 | `"        \"pages_read_from_returned_sources\": readable_page_rows,"` | — |
-| [SRC-0799EEEB02-L000163](../../agents/tool_execution_status.py#L163) | 163 | `"        \"counter_consistency\": ("` | — |
-| [SRC-0799EEEB02-L000164](../../agents/tool_execution_status.py#L164) | 164 | `"            \"mismatch\" if page_count_mismatch else \"consistent\""` | — |
-| [SRC-0799EEEB02-L000165](../../agents/tool_execution_status.py#L165) | 165 | `"            if returned_sources_known and reported_pages_read is not None"` | — |
-| [SRC-0799EEEB02-L000166](../../agents/tool_execution_status.py#L166) | 166 | `"            else \"not_comparable\""` | — |
-| [SRC-0799EEEB02-L000167](../../agents/tool_execution_status.py#L167) | 167 | `"        ),"` | — |
-| [SRC-0799EEEB02-L000168](../../agents/tool_execution_status.py#L168) | 168 | `"    }))"` | — |
-| [SRC-0799EEEB02-L000169](../../agents/tool_execution_status.py#L169) | 169 | `""` | — |
-| [SRC-0799EEEB02-L000170](../../agents/tool_execution_status.py#L170) | 170 | `"    tool = \"public_social_search_if_configured\""` | — |
-| [SRC-0799EEEB02-L000171](../../agents/tool_execution_status.py#L171) | 171 | `"    raw_social_results = _nonnegative_int(search_report.get(\"social_direct_results\"))"` | — |
-| [SRC-0799EEEB02-L000172](../../agents/tool_execution_status.py#L172) | 172 | `"    social_results = raw_social_results or 0"` | — |
-| [SRC-0799EEEB02-L000173](../../agents/tool_execution_status.py#L173) | 173 | `"    social_sources = sum("` | — |
-| [SRC-0799EEEB02-L000174](../../agents/tool_execution_status.py#L174) | 174 | `"        1 for source in source_rows"` | — |
-| [SRC-0799EEEB02-L000175](../../agents/tool_execution_status.py#L175) | 175 | `"        if isinstance(source, dict)"` | — |
-| [SRC-0799EEEB02-L000176](../../agents/tool_execution_status.py#L176) | 176 | `"        and ("` | — |
-| [SRC-0799EEEB02-L000177](../../agents/tool_execution_status.py#L177) | 177 | `"            str(source.get(\"platform\") or \"\").lower() in _SOCIAL_PLATFORMS"` | — |
-| [SRC-0799EEEB02-L000178](../../agents/tool_execution_status.py#L178) | 178 | `"            or str(source.get(\"source_class\") or \"\").lower() == \"social\""` | — |
-| [SRC-0799EEEB02-L000179](../../agents/tool_execution_status.py#L179) | 179 | `"        )"` | — |
-| [SRC-0799EEEB02-L000180](../../agents/tool_execution_status.py#L180) | 180 | `"    )"` | — |
-| [SRC-0799EEEB02-L000181](../../agents/tool_execution_status.py#L181) | 181 | `"    connector_summary = search_report.get(\"connector_summary\")"` | — |
-| [SRC-0799EEEB02-L000182](../../agents/tool_execution_status.py#L182) | 182 | `"    connector_summary = connector_summary if isinstance(connector_summary, dict) else {}"` | — |

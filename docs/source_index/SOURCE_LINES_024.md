@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-480FAB7816-L000058 إلى SRC-E599346ABE-L000555
+- النطاق: SRC-480FAB7816-L000020 إلى SRC-E599346ABE-L000517
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,44 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-480FAB7816-L000020](../DATABASE_POSTGRESQL_AR.md#L20) | 20 | ````"```bash"```` | — |
+| [SRC-480FAB7816-L000021](../DATABASE_POSTGRESQL_AR.md#L21) | 21 | `"export OMARAI_DB_PATH=\"$HOME/.omarai/dev.sqlite3\""` | — |
+| [SRC-480FAB7816-L000022](../DATABASE_POSTGRESQL_AR.md#L22) | 22 | `"python -m cli.omarai serve"` | — |
+| [SRC-480FAB7816-L000023](../DATABASE_POSTGRESQL_AR.md#L23) | 23 | ````"```"```` | — |
+| [SRC-480FAB7816-L000024](../DATABASE_POSTGRESQL_AR.md#L24) | 24 | `""` | — |
+| [SRC-480FAB7816-L000025](../DATABASE_POSTGRESQL_AR.md#L25) | 25 | ``"لا تضبط `OMARAI_DB_PATH` بالتزامن مع عنوان PostgreSQL؛ يرفض التطبيق هذا التعارض بدل اختيار قاعدة بصمت."`` | — |
+| [SRC-480FAB7816-L000026](../DATABASE_POSTGRESQL_AR.md#L26) | 26 | `""` | — |
+| [SRC-480FAB7816-L000027](../DATABASE_POSTGRESQL_AR.md#L27) | 27 | `"## إعداد Neon للاستضافة"` | — |
+| [SRC-480FAB7816-L000028](../DATABASE_POSTGRESQL_AR.md#L28) | 28 | `""` | — |
+| [SRC-480FAB7816-L000029](../DATABASE_POSTGRESQL_AR.md#L29) | 29 | `"1. أنشئ مشروع PostgreSQL في Neon واختر المنطقة الأقرب إلى تطبيق الاستضافة قدر الإمكان."` | — |
+| [SRC-480FAB7816-L000030](../DATABASE_POSTGRESQL_AR.md#L30) | 30 | `"2. افتح قسم الاتصال في لوحة Neon واختر عنوان PostgreSQL عبر **pooled connection** لاستخدام عنوان pooler، خصوصًا أن التطبيق يفتح اتصالًا قصير العمر لكل عملية تخزين."` | — |
+| [SRC-480FAB7816-L000031](../DATABASE_POSTGRESQL_AR.md#L31) | 31 | ``"3. انسخ عنوان الاتصال كاملًا من Neon، وتحقق من وجود `sslmode=require` في العنوان."`` | — |
+| [SRC-480FAB7816-L000032](../DATABASE_POSTGRESQL_AR.md#L32) | 32 | ``"4. افتح إعدادات المتغيرات/الأسرار في خدمة الاستضافة، وأضف متغيرًا سريًا اسمه `OMARAI_DATABASE_URL` وقيمته عنوان الاتصال."`` | — |
+| [SRC-480FAB7816-L000033](../DATABASE_POSTGRESQL_AR.md#L33) | 33 | ``"5. اترك `OMARAI_DB_PATH` غير مضبوط حتى لا يحدث تعارض."`` | — |
+| [SRC-480FAB7816-L000034](../DATABASE_POSTGRESQL_AR.md#L34) | 34 | ``"6. أعد تشغيل/نشر الخدمة عبر مسار النشر الذي يوافق عليه مالك البيئة، ثم راجع `GET /api/health`: يجب أن يعرض `storage.backend=postgresql` و`storage.database_url_configured=true` من دون عرض العنوان أو كلمة المرور."`` | — |
+| [SRC-480FAB7816-L000035](../DATABASE_POSTGRESQL_AR.md#L35) | 35 | `"7. هذا الفحص يعرض اختيار المحرك وإعداد عنوان الاتصال فقط؛ لا يثبت خطة Neon أو سياسة النسخ الاحتياطي أو استمرار الاتصال بعد بدء التشغيل. نفّذ اختبار قبول محميًا بعد التهيئة مع بيانات اختبار غير حساسة."` | — |
+| [SRC-480FAB7816-L000036](../DATABASE_POSTGRESQL_AR.md#L36) | 36 | `""` | — |
+| [SRC-480FAB7816-L000037](../DATABASE_POSTGRESQL_AR.md#L37) | 37 | ``"لا تلصق عنوان الاتصال في محادثة، أو Issue، أو PR، أو سجل CI، أو ملف `.env.example`. لا تضعه في GitHub Actions Secrets إلا عندما تكون هناك حاجة واضحة لعملية CI تتصل بقاعدة محددة؛ اختبارات CI الاعتيادية تستخدم PostgreSQL مؤقتًا داخل runner ولا تحتاج سر Neon."`` | — |
+| [SRC-480FAB7816-L000038](../DATABASE_POSTGRESQL_AR.md#L38) | 38 | `""` | — |
+| [SRC-480FAB7816-L000039](../DATABASE_POSTGRESQL_AR.md#L39) | 39 | `"## اختيار المحرك"` | — |
+| [SRC-480FAB7816-L000040](../DATABASE_POSTGRESQL_AR.md#L40) | 40 | `""` | — |
+| [SRC-480FAB7816-L000041](../DATABASE_POSTGRESQL_AR.md#L41) | 41 | `"\| الإعداد \| المحرك \|"` | — |
+| [SRC-480FAB7816-L000042](../DATABASE_POSTGRESQL_AR.md#L42) | 42 | `"\|---\|---\|"` | — |
+| [SRC-480FAB7816-L000043](../DATABASE_POSTGRESQL_AR.md#L43) | 43 | ``"\| لا يوجد `OMARAI_DATABASE_URL` ولا `DATABASE_URL` \| SQLite افتراضي \|"`` | — |
+| [SRC-480FAB7816-L000044](../DATABASE_POSTGRESQL_AR.md#L44) | 44 | ``"\| `OMARAI_DATABASE_URL` مضبوط \| PostgreSQL \|"`` | — |
+| [SRC-480FAB7816-L000045](../DATABASE_POSTGRESQL_AR.md#L45) | 45 | ``"\| `DATABASE_URL` مضبوط دون المتغير المخصص \| PostgreSQL \|"`` | — |
+| [SRC-480FAB7816-L000046](../DATABASE_POSTGRESQL_AR.md#L46) | 46 | ``"\| عنوان PostgreSQL مع `OMARAI_DB_PATH` في الوقت نفسه \| خطأ إعداد واضح؛ يجب اختيار أحدهما \|"`` | — |
+| [SRC-480FAB7816-L000047](../DATABASE_POSTGRESQL_AR.md#L47) | 47 | `""` | — |
+| [SRC-480FAB7816-L000048](../DATABASE_POSTGRESQL_AR.md#L48) | 48 | `"## المخطط والاختبارات"` | — |
+| [SRC-480FAB7816-L000049](../DATABASE_POSTGRESQL_AR.md#L49) | 49 | `""` | — |
+| [SRC-480FAB7816-L000050](../DATABASE_POSTGRESQL_AR.md#L50) | 50 | ``"- عند بدء التطبيق، ينشئ `LeadStore` الجداول والفهارس المطلوبة إذا لم تكن موجودة."`` | — |
+| [SRC-480FAB7816-L000051](../DATABASE_POSTGRESQL_AR.md#L51) | 51 | `"- ترحيل SQLite القديم (مثل نقل جدول leads legacy إلى جدول tenant-scoped) خاص بمحرك SQLite؛ لا يُنفذ على PostgreSQL."` | — |
+| [SRC-480FAB7816-L000052](../DATABASE_POSTGRESQL_AR.md#L52) | 52 | `"- سير عمل GitHub Actions يشغل اختبار PostgreSQL ضد خدمة مؤقتة PostgreSQL 16؛ لا يتصل بحساب Neon ولا يحتاج أسراره."` | — |
+| [SRC-480FAB7816-L000053](../DATABASE_POSTGRESQL_AR.md#L53) | 53 | `"- اختبارات التكامل تغطي تمييز السجلات بين المستأجرين، منع التكرار، تحديث الحالة، الرموز، الجلسات، ملفات المنتج، وسجلات الاكتشاف."` | — |
+| [SRC-480FAB7816-L000054](../DATABASE_POSTGRESQL_AR.md#L54) | 54 | `""` | — |
+| [SRC-480FAB7816-L000055](../DATABASE_POSTGRESQL_AR.md#L55) | 55 | `"## البيانات المحلية الحالية ونقلها"` | — |
+| [SRC-480FAB7816-L000056](../DATABASE_POSTGRESQL_AR.md#L56) | 56 | `""` | — |
+| [SRC-480FAB7816-L000057](../DATABASE_POSTGRESQL_AR.md#L57) | 57 | ``"**لا يوجد نقل تلقائي للبيانات المحلية إلى Neon في هذا التغيير.** ملف `~/.omarai/omarai.sqlite3` يبقى كما هو على جهاز التطوير؛ قاعدة Neon تبدأ بقاعدة فارغة وجداولها الجديدة. لا تضع عنوان Neon في بيئة محلية تتضمن بيانات إنتاجية قبل وضع خطة نسخ احتياطي/ترحيل ومطابقة عدد السجلات، ولا تحذف ملف SQLite الأصلي بعد النسخ."`` | — |
 | [SRC-480FAB7816-L000058](../DATABASE_POSTGRESQL_AR.md#L58) | 58 | `""` | — |
 | [SRC-480FAB7816-L000059](../DATABASE_POSTGRESQL_AR.md#L59) | 59 | `"قبل نقل بيانات قائمة، يلزم إجراء منفصل يتضمن:"` | — |
 | [SRC-480FAB7816-L000060](../DATABASE_POSTGRESQL_AR.md#L60) | 60 | `"- نسخة احتياطية متحقق من سلامتها."` | — |
@@ -814,41 +852,3 @@
 | [SRC-E599346ABE-L000515](../generate_index.py#L515) | 515 | `"            check=True,"` | — |
 | [SRC-E599346ABE-L000516](../generate_index.py#L516) | 516 | `"            capture_output=True,"` | — |
 | [SRC-E599346ABE-L000517](../generate_index.py#L517) | 517 | `"        )"` | — |
-| [SRC-E599346ABE-L000518](../generate_index.py#L518) | 518 | `"    except (OSError, subprocess.SubprocessError):"` | — |
-| [SRC-E599346ABE-L000519](../generate_index.py#L519) | 519 | `"        return None"` | — |
-| [SRC-E599346ABE-L000520](../generate_index.py#L520) | 520 | `"    try:"` | — |
-| [SRC-E599346ABE-L000521](../generate_index.py#L521) | 521 | `"        return {"` | — |
-| [SRC-E599346ABE-L000522](../generate_index.py#L522) | 522 | `"            path"` | — |
-| [SRC-E599346ABE-L000523](../generate_index.py#L523) | 523 | `"            for path in result.stdout.decode(\"utf-8\").split(\"\\x00\")"` | — |
-| [SRC-E599346ABE-L000524](../generate_index.py#L524) | 524 | `"            if path"` | — |
-| [SRC-E599346ABE-L000525](../generate_index.py#L525) | 525 | `"        }"` | — |
-| [SRC-E599346ABE-L000526](../generate_index.py#L526) | 526 | `"    except UnicodeError:"` | — |
-| [SRC-E599346ABE-L000527](../generate_index.py#L527) | 527 | `"        return None"` | — |
-| [SRC-E599346ABE-L000528](../generate_index.py#L528) | 528 | `""` | — |
-| [SRC-E599346ABE-L000529](../generate_index.py#L529) | 529 | `""` | — |
-| [SRC-E599346ABE-L000530](../generate_index.py#L530) | 530 | `"def discover_excluded_paths(root: Path) -> list[tuple[str, str]]:"` | — |
-| [SRC-E599346ABE-L000531](../generate_index.py#L531) | 531 | `"    \"\"\"List excluded tracked path names and reasons without opening excluded contents.\"\"\""` | — |
-| [SRC-E599346ABE-L000532](../generate_index.py#L532) | 532 | `"    tracked_paths = _tracked_paths_or_none(root)"` | — |
-| [SRC-E599346ABE-L000533](../generate_index.py#L533) | 533 | `""` | — |
-| [SRC-E599346ABE-L000534](../generate_index.py#L534) | 534 | `"    def tracked_scope_contains(relative_path: str, is_directory: bool = False) -> bool:"` | — |
-| [SRC-E599346ABE-L000535](../generate_index.py#L535) | 535 | `"        if tracked_paths is None:"` | — |
-| [SRC-E599346ABE-L000536](../generate_index.py#L536) | 536 | `"            return True"` | — |
-| [SRC-E599346ABE-L000537](../generate_index.py#L537) | 537 | `"        normalized = relative_path.rstrip(\"/\")"` | — |
-| [SRC-E599346ABE-L000538](../generate_index.py#L538) | 538 | `"        if is_directory:"` | — |
-| [SRC-E599346ABE-L000539](../generate_index.py#L539) | 539 | `"            prefix = normalized + \"/\""` | — |
-| [SRC-E599346ABE-L000540](../generate_index.py#L540) | 540 | `"            return any(path.startswith(prefix) for path in tracked_paths)"` | — |
-| [SRC-E599346ABE-L000541](../generate_index.py#L541) | 541 | `"        return normalized in tracked_paths"` | — |
-| [SRC-E599346ABE-L000542](../generate_index.py#L542) | 542 | `""` | — |
-| [SRC-E599346ABE-L000543](../generate_index.py#L543) | 543 | `"    excluded: list[tuple[str, str]] = ["` | — |
-| [SRC-E599346ABE-L000544](../generate_index.py#L544) | 544 | `"        (path, \"مخرج فهرسة مولد مستبعد لمنع الحلقة الذاتية\")"` | — |
-| [SRC-E599346ABE-L000545](../generate_index.py#L545) | 545 | `"        for path in sorted(INDEX_OUTPUT_PATHS)"` | — |
-| [SRC-E599346ABE-L000546](../generate_index.py#L546) | 546 | `"    ]"` | — |
-| [SRC-E599346ABE-L000547](../generate_index.py#L547) | 547 | `"    excluded.append("` | — |
-| [SRC-E599346ABE-L000548](../generate_index.py#L548) | 548 | `"        ("` | — |
-| [SRC-E599346ABE-L000549](../generate_index.py#L549) | 549 | `"            SOURCE_LINES_PAGES_DIR + \"/\","` | — |
-| [SRC-E599346ABE-L000550](../generate_index.py#L550) | 550 | `"            \"مجلد صفحات فهرسة مولدة مستبعد لمنع الحلقة الذاتية\","` | — |
-| [SRC-E599346ABE-L000551](../generate_index.py#L551) | 551 | `"        )"` | — |
-| [SRC-E599346ABE-L000552](../generate_index.py#L552) | 552 | `"    )"` | — |
-| [SRC-E599346ABE-L000553](../generate_index.py#L553) | 553 | `"    for current_directory, directory_names, file_names in os.walk("` | — |
-| [SRC-E599346ABE-L000554](../generate_index.py#L554) | 554 | `"        root,"` | — |
-| [SRC-E599346ABE-L000555](../generate_index.py#L555) | 555 | `"        topdown=True,"` | — |

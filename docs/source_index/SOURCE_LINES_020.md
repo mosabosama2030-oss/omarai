@@ -4,7 +4,7 @@
 
 - الصفحة: **020**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L006272 إلى SRC-1AE03B9EC3-L007071
+- النطاق: SRC-1AE03B9EC3-L006234 إلى SRC-1AE03B9EC3-L007033
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,44 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L006234](../../agents/web_agent.py#L6234) | 6234 | `"                item for item in self._provider_diagnostics"` | — |
+| [SRC-1AE03B9EC3-L006235](../../agents/web_agent.py#L6235) | 6235 | `"                if id(item) not in baseline_diagnostic_ids"` | — |
+| [SRC-1AE03B9EC3-L006236](../../agents/web_agent.py#L6236) | 6236 | `"            ]"` | — |
+| [SRC-1AE03B9EC3-L006237](../../agents/web_agent.py#L6237) | 6237 | `"        report[\"provider_diagnostics\"] = current_research_diagnostics"` | — |
+| [SRC-1AE03B9EC3-L006238](../../agents/web_agent.py#L6238) | 6238 | `"        provider_attempt_observed = any("` | — |
+| [SRC-1AE03B9EC3-L006239](../../agents/web_agent.py#L6239) | 6239 | `"            item.get(\"status\") in _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES"` | — |
+| [SRC-1AE03B9EC3-L006240](../../agents/web_agent.py#L6240) | 6240 | `"            for item in current_research_diagnostics"` | — |
+| [SRC-1AE03B9EC3-L006241](../../agents/web_agent.py#L6241) | 6241 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L006242](../../agents/web_agent.py#L6242) | 6242 | `"        raw_attempt_count = report.get(\"queries_attempted\", 0)"` | — |
+| [SRC-1AE03B9EC3-L006243](../../agents/web_agent.py#L6243) | 6243 | `"        try:"` | — |
+| [SRC-1AE03B9EC3-L006244](../../agents/web_agent.py#L6244) | 6244 | `"            queries_attempted = ("` | — |
+| [SRC-1AE03B9EC3-L006245](../../agents/web_agent.py#L6245) | 6245 | `"                None if raw_attempt_count is None"` | — |
+| [SRC-1AE03B9EC3-L006246](../../agents/web_agent.py#L6246) | 6246 | `"                else max(0, int(raw_attempt_count or 0))"` | — |
+| [SRC-1AE03B9EC3-L006247](../../agents/web_agent.py#L6247) | 6247 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L006248](../../agents/web_agent.py#L6248) | 6248 | `"        except (TypeError, ValueError):"` | — |
+| [SRC-1AE03B9EC3-L006249](../../agents/web_agent.py#L6249) | 6249 | `"            queries_attempted = None"` | — |
+| [SRC-1AE03B9EC3-L006250](../../agents/web_agent.py#L6250) | 6250 | `"        if queries_attempted is not None:"` | — |
+| [SRC-1AE03B9EC3-L006251](../../agents/web_agent.py#L6251) | 6251 | `"            search_attempted = ("` | — |
+| [SRC-1AE03B9EC3-L006252](../../agents/web_agent.py#L6252) | 6252 | `"                queries_attempted > 0"` | — |
+| [SRC-1AE03B9EC3-L006253](../../agents/web_agent.py#L6253) | 6253 | `"                or provider_attempt_observed"` | — |
+| [SRC-1AE03B9EC3-L006254](../../agents/web_agent.py#L6254) | 6254 | `"                or report.get(\"search_attempted\") is True"` | — |
+| [SRC-1AE03B9EC3-L006255](../../agents/web_agent.py#L6255) | 6255 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L006256](../../agents/web_agent.py#L6256) | 6256 | `"        elif provider_attempt_observed or report.get(\"search_attempted\") is True:"` | — |
+| [SRC-1AE03B9EC3-L006257](../../agents/web_agent.py#L6257) | 6257 | `"            search_attempted = True"` | — |
+| [SRC-1AE03B9EC3-L006258](../../agents/web_agent.py#L6258) | 6258 | `"        elif isinstance(report.get(\"search_attempted\"), bool):"` | — |
+| [SRC-1AE03B9EC3-L006259](../../agents/web_agent.py#L6259) | 6259 | `"            search_attempted = report[\"search_attempted\"]"` | — |
+| [SRC-1AE03B9EC3-L006260](../../agents/web_agent.py#L6260) | 6260 | `"        else:"` | — |
+| [SRC-1AE03B9EC3-L006261](../../agents/web_agent.py#L6261) | 6261 | `"            search_attempted = None"` | — |
+| [SRC-1AE03B9EC3-L006262](../../agents/web_agent.py#L6262) | 6262 | `"        report[\"queries_attempted\"] = queries_attempted"` | — |
+| [SRC-1AE03B9EC3-L006263](../../agents/web_agent.py#L6263) | 6263 | `"        report[\"queries_attempted_known\"] = queries_attempted is not None"` | — |
+| [SRC-1AE03B9EC3-L006264](../../agents/web_agent.py#L6264) | 6264 | `"        report[\"search_attempted\"] = search_attempted"` | — |
+| [SRC-1AE03B9EC3-L006265](../../agents/web_agent.py#L6265) | 6265 | `"        previous_search_outcome = report.get(\"search_outcome\")"` | — |
+| [SRC-1AE03B9EC3-L006266](../../agents/web_agent.py#L6266) | 6266 | `"        if previous_search_outcome in _RESEARCH_ERROR_OUTCOMES and not sources:"` | — |
+| [SRC-1AE03B9EC3-L006267](../../agents/web_agent.py#L6267) | 6267 | `"            if provider_attempt_observed or search_attempted is True:"` | — |
+| [SRC-1AE03B9EC3-L006268](../../agents/web_agent.py#L6268) | 6268 | `"                search_outcome = \"attempted_research_error\""` | — |
+| [SRC-1AE03B9EC3-L006269](../../agents/web_agent.py#L6269) | 6269 | `"            elif search_attempted is False:"` | — |
+| [SRC-1AE03B9EC3-L006270](../../agents/web_agent.py#L6270) | 6270 | `"                search_outcome = \"not_attempted\""` | — |
+| [SRC-1AE03B9EC3-L006271](../../agents/web_agent.py#L6271) | 6271 | `"            else:"` | — |
 | [SRC-1AE03B9EC3-L006272](../../agents/web_agent.py#L6272) | 6272 | `"                search_outcome = \"unknown_after_research_error\""` | — |
 | [SRC-1AE03B9EC3-L006273](../../agents/web_agent.py#L6273) | 6273 | `"        else:"` | — |
 | [SRC-1AE03B9EC3-L006274](../../agents/web_agent.py#L6274) | 6274 | `"            search_outcome = ("` | — |
@@ -778,41 +816,3 @@
 | [SRC-1AE03B9EC3-L007031](../../agents/web_agent.py#L7031) | 7031 | `"            and (len(distinct_providers) >= 2 or fetched_pages >= 1)"` | — |
 | [SRC-1AE03B9EC3-L007032](../../agents/web_agent.py#L7032) | 7032 | `"            and review_status == \"model_claim_audit_completed\""` | — |
 | [SRC-1AE03B9EC3-L007033](../../agents/web_agent.py#L7033) | 7033 | `"        ):"` | — |
-| [SRC-1AE03B9EC3-L007034](../../agents/web_agent.py#L7034) | 7034 | `"            research_quality = \"good\""` | — |
-| [SRC-1AE03B9EC3-L007035](../../agents/web_agent.py#L7035) | 7035 | `"        else:"` | — |
-| [SRC-1AE03B9EC3-L007036](../../agents/web_agent.py#L7036) | 7036 | `"            research_quality = \"partial\""` | — |
-| [SRC-1AE03B9EC3-L007037](../../agents/web_agent.py#L7037) | 7037 | `""` | — |
-| [SRC-1AE03B9EC3-L007038](../../agents/web_agent.py#L7038) | 7038 | `"        # Source breadth and a completed model-assisted review do not justify a"` | — |
-| [SRC-1AE03B9EC3-L007039](../../agents/web_agent.py#L7039) | 7039 | `"        # positive research-quality label if the final answer has no valid source"` | — |
-| [SRC-1AE03B9EC3-L007040](../../agents/web_agent.py#L7040) | 7040 | `"        # citation markers. This is a deterministic presentation guard, not a"` | — |
-| [SRC-1AE03B9EC3-L007041](../../agents/web_agent.py#L7041) | 7041 | `"        # semantic entailment check."` | — |
-| [SRC-1AE03B9EC3-L007042](../../agents/web_agent.py#L7042) | 7042 | `"        uncited_reviewed_answer = ("` | — |
-| [SRC-1AE03B9EC3-L007043](../../agents/web_agent.py#L7043) | 7043 | `"            used_llm"` | — |
-| [SRC-1AE03B9EC3-L007044](../../agents/web_agent.py#L7044) | 7044 | `"            and bool(sources)"` | — |
-| [SRC-1AE03B9EC3-L007045](../../agents/web_agent.py#L7045) | 7045 | `"            and review_status == \"model_claim_audit_completed\""` | — |
-| [SRC-1AE03B9EC3-L007046](../../agents/web_agent.py#L7046) | 7046 | `"            and citation_validation[\"valid_citation_count\"] == 0"` | — |
-| [SRC-1AE03B9EC3-L007047](../../agents/web_agent.py#L7047) | 7047 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L007048](../../agents/web_agent.py#L7048) | 7048 | `"        if uncited_reviewed_answer:"` | — |
-| [SRC-1AE03B9EC3-L007049](../../agents/web_agent.py#L7049) | 7049 | `"            research_quality = \"partial\""` | — |
-| [SRC-1AE03B9EC3-L007050](../../agents/web_agent.py#L7050) | 7050 | `"            citation_validation[\"claim_support\"] = \"not_established_no_valid_source_citations\""` | — |
-| [SRC-1AE03B9EC3-L007051](../../agents/web_agent.py#L7051) | 7051 | `"            answer_evidence_status = \"reviewed_answer_has_no_valid_citations\""` | — |
-| [SRC-1AE03B9EC3-L007052](../../agents/web_agent.py#L7052) | 7052 | `"            uncited_answer_warning = ("` | — |
-| [SRC-1AE03B9EC3-L007053](../../agents/web_agent.py#L7053) | 7053 | `"                \"اكتملت مراجعة النموذج، لكن الإجابة النهائية لا تحتوي على إحالات صالحة \""` | — |
-| [SRC-1AE03B9EC3-L007054](../../agents/web_agent.py#L7054) | 7054 | `"                \"إلى قائمة المصادر؛ لذلك صُنّفت جودة البحث «جزئية». وجود المصادر أو \""` | — |
-| [SRC-1AE03B9EC3-L007055](../../agents/web_agent.py#L7055) | 7055 | `"                \"اكتمال مراجعة النموذج لا يثبت دعم كل ادعاء.\""` | — |
-| [SRC-1AE03B9EC3-L007056](../../agents/web_agent.py#L7056) | 7056 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L007057](../../agents/web_agent.py#L7057) | 7057 | `"        elif citation_validation[\"valid_citation_count\"] > 0:"` | — |
-| [SRC-1AE03B9EC3-L007058](../../agents/web_agent.py#L7058) | 7058 | `"            answer_evidence_status = ("` | — |
-| [SRC-1AE03B9EC3-L007059](../../agents/web_agent.py#L7059) | 7059 | `"                \"semantic_support_unverified_answer_withheld\""` | — |
-| [SRC-1AE03B9EC3-L007060](../../agents/web_agent.py#L7060) | 7060 | `"                if semantic_answer_withheld else \"citation_indices_validated_only\""` | — |
-| [SRC-1AE03B9EC3-L007061](../../agents/web_agent.py#L7061) | 7061 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L007062](../../agents/web_agent.py#L7062) | 7062 | `"            uncited_answer_warning = None"` | — |
-| [SRC-1AE03B9EC3-L007063](../../agents/web_agent.py#L7063) | 7063 | `"        else:"` | — |
-| [SRC-1AE03B9EC3-L007064](../../agents/web_agent.py#L7064) | 7064 | `"            answer_evidence_status = \"not_assessed\""` | — |
-| [SRC-1AE03B9EC3-L007065](../../agents/web_agent.py#L7065) | 7065 | `"            uncited_answer_warning = None"` | — |
-| [SRC-1AE03B9EC3-L007066](../../agents/web_agent.py#L7066) | 7066 | `""` | — |
-| [SRC-1AE03B9EC3-L007067](../../agents/web_agent.py#L7067) | 7067 | `"        search_attempted = search_attempted or bool(self.server_search_sources)"` | — |
-| [SRC-1AE03B9EC3-L007068](../../agents/web_agent.py#L7068) | 7068 | `"        report[\"search_attempted\"] = search_attempted"` | — |
-| [SRC-1AE03B9EC3-L007069](../../agents/web_agent.py#L7069) | 7069 | `"        prior_search_outcome = report.get(\"search_outcome\")"` | — |
-| [SRC-1AE03B9EC3-L007070](../../agents/web_agent.py#L7070) | 7070 | `"        if prior_search_outcome in _RESEARCH_ERROR_OUTCOMES and not sources:"` | — |
-| [SRC-1AE03B9EC3-L007071](../../agents/web_agent.py#L7071) | 7071 | `"            # Preserve a known pipeline failure instead of relabeling it as an ordinary"` | — |
