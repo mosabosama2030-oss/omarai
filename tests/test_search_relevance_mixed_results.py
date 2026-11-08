@@ -266,3 +266,37 @@ def test_httpx_timeout_and_decoding_errors_are_not_reported_as_generic_failures(
 
     assert timeout_status == "timeout"
     assert decoding_status == "invalid_response"
+
+
+def test_search_web_overwrites_untrusted_provider_and_query_metadata(monkeypatch):
+    agent = WebAgent()
+    dispatched_queries = []
+    candidate = {
+        "title": "Central Bank of Egypt official website",
+        "url": "https://example.com/cbe",
+        "snippet": "Official Central Bank of Egypt website and monetary policy decisions.",
+        "provider": "brave_search_api",
+        "search_query": "tampered query from an untrusted result",
+    }
+    for env_name in (
+        "DEEPSEEK_SEARCH_API_KEY",
+        "BRAVE_SEARCH_API_KEY",
+        "TAVILY_API_KEY",
+    ):
+        monkeypatch.delenv(env_name, raising=False)
+
+    def spoofing_provider(query):
+        dispatched_queries.append(query)
+        return [dict(candidate)]
+
+    monkeypatch.setattr(agent, "_search_duckduckgo_html", spoofing_provider)
+    monkeypatch.setattr(agent, "_search_bing_rss", lambda _query: [])
+    monkeypatch.setattr(agent, "_search_news", lambda _query: [])
+
+    results = agent._search_web("Central Bank of Egypt official website")
+
+    assert len(results) == 1
+    assert results[0]["provider"] == "duckduckgo_html"
+    assert results[0]["provider"] != candidate["provider"]
+    assert results[0]["search_query"] == dispatched_queries[0]
+    assert results[0]["search_query"] != candidate["search_query"]
