@@ -2478,7 +2478,8 @@ def test_lead_generation_does_not_present_sale_listings_as_buyers(monkeypatch):
     assert all(s["lead_qualification"] == "related_result_not_lead" for s in result["sources"])
 
 
-def test_lead_generation_search_plan_includes_high_intent_queries(monkeypatch):
+@pytest.mark.parametrize("mode", ["auto", "deep"])
+def test_lead_generation_search_plan_includes_high_intent_queries(monkeypatch, mode):
     agent = WebAgent()
     seen = {}
     plan = {
@@ -2519,10 +2520,14 @@ def test_lead_generation_search_plan_includes_high_intent_queries(monkeypatch):
     monkeypatch.setattr(agent, "_generate", lambda *args, **kwargs: "عُثر على إشارة علنية محتملة [المصدر 1].")
     monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
 
-    result = agent.answer("ابحث عن عميل يريد شراء شقة في العاصمة الإدارية بمصر")
+    result = agent.answer(
+        "ابحث عن عميل يريد شراء شقة في العاصمة الإدارية بمصر",
+        mode=mode,
+    )
 
     assert result["intent_route"] == "LEAD_GENERATION"
     assert seen["social_focus"] is True
+    assert seen["depth"] == ("deep" if mode == "deep" else "standard")
     assert len(seen["queries"]) >= 4
     assert any('"مطلوب شراء"' in q or '"مطلوب شقه تمليك"' in q for q in seen["queries"])
     assert all(
