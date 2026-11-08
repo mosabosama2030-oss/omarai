@@ -1557,7 +1557,7 @@ def build_query_strategy_matrix(
         and queries
         and isinstance(queries[0], str)
     ):
-        seed_language_is_arabic = bool(re.search(r"[\\u0600-\\u06FF]", queries[0]))
+        seed_language_is_arabic = bool(re.search(r"[\u0600-\u06FF]", queries[0]))
         source_phrase = "مصدر رسمي" if seed_language_is_arabic else "official source"
         add(
             f"{queries[0].strip()} {source_phrase}",
