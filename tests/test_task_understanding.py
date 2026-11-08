@@ -537,3 +537,42 @@ def test_query_strategy_matrix_applies_inherited_location_and_budget_to_all_cand
     assert len(rows) >= 2
     assert all("الإسكندرية" in row["query"] for row in rows)
     assert all("أقل من 20000 جنيه" in row["query"] for row in rows)
+
+
+@pytest.mark.parametrize(
+    ("location", "seed_query", "location_alias"),
+    [
+        ("مصر", "industrial fire alarm system buyers in Egypt", "egypt"),
+        ("الإسكندرية", "best work laptop options in Alexandria", "alexandria"),
+    ],
+)
+def test_query_strategy_matrix_does_not_duplicate_location_in_another_language(
+    location, seed_query, location_alias
+):
+    context = {
+        "resolved_question": f"رشح لي منتجًا مناسبًا في {location}",
+        "topic": "ترشيح منتج",
+        "entities": ["منتج"],
+        "slots": {"location": location},
+        "changed_slots": ["location"],
+        "is_follow_up": True,
+        "topic_shift": False,
+        "needs_clarification": False,
+    }
+    spec = build_task_spec(
+        "رشح لي أفضل لابتوب للعمل",
+        mode="deep",
+        intent_route="WEB_DEEP",
+        dialogue_context=context,
+    )
+
+    rows = build_query_strategy_matrix(
+        "رشح لي أفضل لابتوب للعمل",
+        spec,
+        [seed_query],
+        limit=8,
+    )
+
+    assert len(rows) >= 2
+    assert all(location_alias in row["query"].casefold() for row in rows)
+    assert all(location not in row["query"] for row in rows)
