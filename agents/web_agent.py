@@ -2246,21 +2246,20 @@ class WebAgent:
         return rows
 
     @staticmethod
-    def _firecrawl_search_country(query: str) -> str:
-        """Choose a coarse Firecrawl country only from explicit geographic wording."""
+    def _firecrawl_search_country(query: str) -> str | None:
+        """Return a country code only when the query explicitly names geography."""
         normalized = _normalize_search_query(query).casefold()
         rules = (
             ("SA", r"(?<!\w)(?:saudi arabia|ksa|riyadh|jeddah)(?!\w)|السعودي(?:ة|ه)"),
             ("AE", r"(?<!\w)(?:uae|united arab emirates|dubai|abu dhabi)(?!\w)|الامارات"),
             ("GB", r"(?<!\w)(?:united kingdom|great britain|uk|london)(?!\w)|المملكه المتحده|بريطانيا"),
             ("EG", r"(?<!\w)(?:egypt|egyptian|cairo|alexandria|giza)(?!\w)|مصر|القاهره|الاسكندريه|الجيزه"),
+            ("US", r"(?<!\w)(?:united states|usa|u\\.s\\.a\\.|america|new york|los angeles)(?!\w)|الولايات المتحده|امريكا"),
         )
         for country, pattern in rules:
             if re.search(pattern, normalized, flags=re.IGNORECASE):
                 return country
-        # Existing Arabic-language discovery defaults to Egypt; English defaults
-        # to US only when the request gives no stronger geographic evidence.
-        return "EG" if re.search(r"[\u0600-\u06FF]", query) else "US"
+        # Language is not geography. Leave country unset when the user did not name one.
 
     def _search_firecrawl(self, query: str) -> list[dict[str, Any]]:
         """Use Firecrawl v2 web search; caller enforces explicit enablement and budget."""
@@ -2270,15 +2269,18 @@ class WebAgent:
             or not api_key
         ):
             return []
+        request_payload: dict[str, Any] = {
+            "query": query[:500],
+            "sources": ["web"],
+            "limit": MAX_PROVIDER_RESULTS,
+        }
+        country = self._firecrawl_search_country(query)
+        if country is not None:
+            request_payload["country"] = country
         response = _bounded_http_request(
             "POST",
             "https://api.firecrawl.dev/v2/search",
-            json={
-                "query": query[:500],
-                "sources": ["web"],
-                "limit": MAX_PROVIDER_RESULTS,
-                "country": self._firecrawl_search_country(query),
-            },
+            json=request_payload,
             headers={
                 "Accept": "application/json",
                 "Content-Type": "application/json",
