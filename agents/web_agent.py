@@ -1996,7 +1996,7 @@ class WebAgent:
                 # invoke it for unspecified geography or silently bias results to US.
                 self._record_provider_diagnostic(
                     "firecrawl_search_api", search_query, "not_attempted",
-                    error="Firecrawl requires explicit country scope; API defaults to US",
+                    error="Firecrawl requires explicit geography/country scope; API defaults to US",
                 )
             elif self._reserve_firecrawl_search_request():
                 adapters.append(("firecrawl_search_api", self._search_firecrawl))
