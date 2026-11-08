@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-C9CF9B54F8-L000753 إلى SRC-3D565C3B85-L000018
+- النطاق: SRC-C9CF9B54F8-L000714 إلى SRC-FDEEAFDFCA-L000143
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,45 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-C9CF9B54F8-L000714](../../agents/omarai.py#L714) | 714 | `"                    user_id,"` | — |
+| [SRC-C9CF9B54F8-L000715](../../agents/omarai.py#L715) | 715 | `"                    str(label or \"api\")[:80],"` | — |
+| [SRC-C9CF9B54F8-L000716](../../agents/omarai.py#L716) | 716 | `"                    now_utc(),"` | — |
+| [SRC-C9CF9B54F8-L000717](../../agents/omarai.py#L717) | 717 | `"                    expires_at,"` | — |
+| [SRC-C9CF9B54F8-L000718](../../agents/omarai.py#L718) | 718 | `"                ),"` | — |
+| [SRC-C9CF9B54F8-L000719](../../agents/omarai.py#L719) | 719 | `"            )"` | — |
+| [SRC-C9CF9B54F8-L000720](../../agents/omarai.py#L720) | 720 | `""` | — |
+| [SRC-C9CF9B54F8-L000721](../../agents/omarai.py#L721) | 721 | `"    def resolve_api_token(self, token: str) -> dict \| None:"` | — |
+| [SRC-C9CF9B54F8-L000722](../../agents/omarai.py#L722) | 722 | `"        if not isinstance(token, str) or len(token.strip()) < 32:"` | — |
+| [SRC-C9CF9B54F8-L000723](../../agents/omarai.py#L723) | 723 | `"            return None"` | — |
+| [SRC-C9CF9B54F8-L000724](../../agents/omarai.py#L724) | 724 | `"        with self.connect() as db:"` | — |
+| [SRC-C9CF9B54F8-L000725](../../agents/omarai.py#L725) | 725 | `"            row = db.execute("` | — |
+| [SRC-C9CF9B54F8-L000726](../../agents/omarai.py#L726) | 726 | `"                \"\"\"SELECT m.tenant_id, m.user_id, m.role"` | — |
+| [SRC-C9CF9B54F8-L000727](../../agents/omarai.py#L727) | 727 | `"                   FROM api_tokens a"` | — |
+| [SRC-C9CF9B54F8-L000728](../../agents/omarai.py#L728) | 728 | `"                   JOIN tenant_memberships m"` | — |
+| [SRC-C9CF9B54F8-L000729](../../agents/omarai.py#L729) | 729 | `"                     ON m.tenant_id=a.tenant_id AND m.user_id=a.user_id"` | — |
+| [SRC-C9CF9B54F8-L000730](../../agents/omarai.py#L730) | 730 | `"                   JOIN tenants t ON t.id=m.tenant_id AND t.active=1"` | — |
+| [SRC-C9CF9B54F8-L000731](../../agents/omarai.py#L731) | 731 | `"                   JOIN users u ON u.id=m.user_id AND u.active=1"` | — |
+| [SRC-C9CF9B54F8-L000732](../../agents/omarai.py#L732) | 732 | `"                   WHERE a.token_hash=? AND a.active=1 AND m.active=1"` | — |
+| [SRC-C9CF9B54F8-L000733](../../agents/omarai.py#L733) | 733 | `"                     AND (a.expires_at IS NULL OR a.expires_at > ?)\"\"\","` | — |
+| [SRC-C9CF9B54F8-L000734](../../agents/omarai.py#L734) | 734 | `"                (self._token_hash(token.strip()), now_utc()),"` | — |
+| [SRC-C9CF9B54F8-L000735](../../agents/omarai.py#L735) | 735 | `"            ).fetchone()"` | — |
+| [SRC-C9CF9B54F8-L000736](../../agents/omarai.py#L736) | 736 | `"        return dict(row) if row else None"` | — |
+| [SRC-C9CF9B54F8-L000737](../../agents/omarai.py#L737) | 737 | `""` | — |
+| [SRC-C9CF9B54F8-L000738](../../agents/omarai.py#L738) | 738 | `"    def create_web_session("` | — |
+| [SRC-C9CF9B54F8-L000739](../../agents/omarai.py#L739) | 739 | `"        self,"` | — |
+| [SRC-C9CF9B54F8-L000740](../../agents/omarai.py#L740) | 740 | `"        access_token: str,"` | — |
+| [SRC-C9CF9B54F8-L000741](../../agents/omarai.py#L741) | 741 | `"        *,"` | — |
+| [SRC-C9CF9B54F8-L000742](../../agents/omarai.py#L742) | 742 | `"        shared_token: str = \"\","` | — |
+| [SRC-C9CF9B54F8-L000743](../../agents/omarai.py#L743) | 743 | `"        max_age_seconds: int = 8 * 60 * 60,"` | — |
+| [SRC-C9CF9B54F8-L000744](../../agents/omarai.py#L744) | 744 | `"    ) -> tuple[str, dict] \| None:"` | — |
+| [SRC-C9CF9B54F8-L000745](../../agents/omarai.py#L745) | 745 | `"        \"\"\"Exchange a valid API credential for a short-lived opaque browser session.\"\"\""` | — |
+| [SRC-C9CF9B54F8-L000746](../../agents/omarai.py#L746) | 746 | `"        if not isinstance(access_token, str) or len(access_token.strip()) < 32:"` | — |
+| [SRC-C9CF9B54F8-L000747](../../agents/omarai.py#L747) | 747 | `"            return None"` | — |
+| [SRC-C9CF9B54F8-L000748](../../agents/omarai.py#L748) | 748 | `"        token = access_token.strip()"` | — |
+| [SRC-C9CF9B54F8-L000749](../../agents/omarai.py#L749) | 749 | `"        is_shared = bool(shared_token and hmac.compare_digest(token, shared_token))"` | — |
+| [SRC-C9CF9B54F8-L000750](../../agents/omarai.py#L750) | 750 | `"        principal = self.default_principal() if is_shared else self.resolve_api_token(token)"` | — |
+| [SRC-C9CF9B54F8-L000751](../../agents/omarai.py#L751) | 751 | `"        if not principal:"` | — |
+| [SRC-C9CF9B54F8-L000752](../../agents/omarai.py#L752) | 752 | `"            return None"` | — |
 | [SRC-C9CF9B54F8-L000753](../../agents/omarai.py#L753) | 753 | `"        if ("` | — |
 | [SRC-C9CF9B54F8-L000754](../../agents/omarai.py#L754) | 754 | `"            not isinstance(max_age_seconds, int)"` | — |
 | [SRC-C9CF9B54F8-L000755](../../agents/omarai.py#L755) | 755 | `"            or isinstance(max_age_seconds, bool)"` | — |
@@ -786,51 +825,3 @@
 | [SRC-FDEEAFDFCA-L000141](../../agents/request_budget.py#L141) | 141 | `""` | — |
 | [SRC-FDEEAFDFCA-L000142](../../agents/request_budget.py#L142) | 142 | `"    def snapshot(self) -> dict[str, Any]:"` | — |
 | [SRC-FDEEAFDFCA-L000143](../../agents/request_budget.py#L143) | 143 | `"        with self._lock:"` | — |
-| [SRC-FDEEAFDFCA-L000144](../../agents/request_budget.py#L144) | 144 | `"            counts = dict(self._counts)"` | — |
-| [SRC-FDEEAFDFCA-L000145](../../agents/request_budget.py#L145) | 145 | `"            limits = dict(self._limits)"` | — |
-| [SRC-FDEEAFDFCA-L000146](../../agents/request_budget.py#L146) | 146 | `"            exhausted_reasons = sorted(self._exhausted_reasons)"` | — |
-| [SRC-FDEEAFDFCA-L000147](../../agents/request_budget.py#L147) | 147 | `"        remaining = self.remaining_seconds()"` | — |
-| [SRC-FDEEAFDFCA-L000148](../../agents/request_budget.py#L148) | 148 | `"        return {"` | — |
-| [SRC-FDEEAFDFCA-L000149](../../agents/request_budget.py#L149) | 149 | `"            \"policy\": \"cooperative_per_request_budget\","` | — |
-| [SRC-FDEEAFDFCA-L000150](../../agents/request_budget.py#L150) | 150 | `"            \"profile\": self.profile,"` | — |
-| [SRC-FDEEAFDFCA-L000151](../../agents/request_budget.py#L151) | 151 | `"            \"timeout_seconds\": round(self.deadline - self.started_at, 3),"` | — |
-| [SRC-FDEEAFDFCA-L000152](../../agents/request_budget.py#L152) | 152 | `"            \"elapsed_seconds\": round(max(0.0, self._clock() - self.started_at), 3),"` | — |
-| [SRC-FDEEAFDFCA-L000153](../../agents/request_budget.py#L153) | 153 | `"            \"remaining_seconds\": round(remaining, 3),"` | — |
-| [SRC-FDEEAFDFCA-L000154](../../agents/request_budget.py#L154) | 154 | `"            \"deadline_exceeded\": remaining <= 0,"` | — |
-| [SRC-FDEEAFDFCA-L000155](../../agents/request_budget.py#L155) | 155 | `"            \"budget_exhausted\": bool(exhausted_reasons) or remaining <= 0,"` | — |
-| [SRC-FDEEAFDFCA-L000156](../../agents/request_budget.py#L156) | 156 | `"            \"exhausted_reasons\": exhausted_reasons,"` | — |
-| [SRC-FDEEAFDFCA-L000157](../../agents/request_budget.py#L157) | 157 | `"            \"counts\": counts,"` | — |
-| [SRC-FDEEAFDFCA-L000158](../../agents/request_budget.py#L158) | 158 | `"            \"limits\": limits,"` | — |
-| [SRC-FDEEAFDFCA-L000159](../../agents/request_budget.py#L159) | 159 | `"            \"resources_at_limit\": ["` | — |
-| [SRC-FDEEAFDFCA-L000160](../../agents/request_budget.py#L160) | 160 | `"                key for key, limit in limits.items() if limit > 0 and counts[key] >= limit"` | — |
-| [SRC-FDEEAFDFCA-L000161](../../agents/request_budget.py#L161) | 161 | `"            ],"` | — |
-| [SRC-FDEEAFDFCA-L000162](../../agents/request_budget.py#L162) | 162 | `"            \"disabled_resources\": [key for key, limit in limits.items() if limit == 0],"` | — |
-| [SRC-FDEEAFDFCA-L000163](../../agents/request_budget.py#L163) | 163 | `"            \"hard_cancellation_guaranteed\": False,"` | — |
-| [SRC-FDEEAFDFCA-L000164](../../agents/request_budget.py#L164) | 164 | `"        }"` | — |
-## الوكيل والمنطق
-
-### FILE-3D565C3B85 — [agents/requirement_evidence.py](../../agents/requirement_evidence.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-3D565C3B85-L000001](../../agents/requirement_evidence.py#L1) | 1 | `"\"\"\"Build bounded evidence-candidate traces for planned research requirements."` | — |
-| [SRC-3D565C3B85-L000002](../../agents/requirement_evidence.py#L2) | 2 | `""` | — |
-| [SRC-3D565C3B85-L000003](../../agents/requirement_evidence.py#L3) | 3 | `"Responsibility: connect up to eight requested coverage targets to up to twelve returned"` | — |
-| [SRC-3D565C3B85-L000004](../../agents/requirement_evidence.py#L4) | 4 | `"sources and their query provenance. This is lexical candidate mapping only; it never"` | — |
-| [SRC-3D565C3B85-L000005](../../agents/requirement_evidence.py#L5) | 5 | `"claims source entailment, semantic support, or factual correctness."` | — |
-| [SRC-3D565C3B85-L000006](../../agents/requirement_evidence.py#L6) | 6 | `""` | — |
-| [SRC-3D565C3B85-L000007](../../agents/requirement_evidence.py#L7) | 7 | `"Public contract: build_requirement_evidence_ledger(targets, sources, requirement_queries)"` | — |
-| [SRC-3D565C3B85-L000008](../../agents/requirement_evidence.py#L8) | 8 | `"returns one bounded record per target, with source indexes, evidence basis, and a status."` | — |
-| [SRC-3D565C3B85-L000009](../../agents/requirement_evidence.py#L9) | 9 | `"Dependencies point only to shared text normalization; no network or model calls occur."` | — |
-| [SRC-3D565C3B85-L000010](../../agents/requirement_evidence.py#L10) | 10 | `"\"\"\""` | — |
-| [SRC-3D565C3B85-L000011](../../agents/requirement_evidence.py#L11) | 11 | `"from __future__ import annotations"` | — |
-| [SRC-3D565C3B85-L000012](../../agents/requirement_evidence.py#L12) | 12 | `""` | — |
-| [SRC-3D565C3B85-L000013](../../agents/requirement_evidence.py#L13) | 13 | `"import re"` | — |
-| [SRC-3D565C3B85-L000014](../../agents/requirement_evidence.py#L14) | 14 | `"from typing import Any"` | — |
-| [SRC-3D565C3B85-L000015](../../agents/requirement_evidence.py#L15) | 15 | `""` | — |
-| [SRC-3D565C3B85-L000016](../../agents/requirement_evidence.py#L16) | 16 | `"from agents.text_normalization import normalize_text, tokenize_text"` | — |
-| [SRC-3D565C3B85-L000017](../../agents/requirement_evidence.py#L17) | 17 | `""` | — |
-| [SRC-3D565C3B85-L000018](../../agents/requirement_evidence.py#L18) | 18 | `"_REQUIREMENT_ALIAS_GROUPS = ("` | — |

@@ -4,9 +4,38 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-480FAB7816-L000058 إلى SRC-E599346ABE-L000555
+- النطاق: SRC-914817100D-L000067 إلى SRC-E599346ABE-L000478
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## وثائق وفهرسة
+
+### FILE-914817100D — [docs/COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L1)
+
+- النوع: **Markdown**
+- نطاق الفهرسة: جرد الملف + عناوين Markdown
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-914817100D-L000067](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L67) | 67 | `"\| فجوات الأدلة \| تظهر المحاور التي لا توجد لها إشارات مصدر \|"` | — |
+| [SRC-914817100D-L000068](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L68) | 68 | `"\| الموارد \| حدود الاستعلامات والصفحات والميزانية تبقى نافذة \|"` | — |
+| [SRC-914817100D-L000069](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L69) | 69 | `"\| عدم التراجع \| الاختبارات الحالية واختبارات القبول الجديدة تنجح على CI \|"` | — |
+| [SRC-914817100D-L000070](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L70) | 70 | `"\| الاستضافة \| إعادة اختبار حي على عنوان الاستضافة الصحيح ونسخة البناء الفعلية بعد موافقة منفصلة \|"` | — |
+| [SRC-914817100D-L000071](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L71) | 71 | `""` | — |
+| [SRC-914817100D-L000072](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L72) | 72 | `"## الحالة الصادقة — آخر تحقق 27 أكتوبر 2026"` | — |
+| [SRC-914817100D-L000073](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L73) | 73 | `""` | — |
+| [SRC-914817100D-L000074](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L74) | 74 | `"- **FIXED_IN_BRANCH:** استعلامات مخصصة للمعايير الصريحة؛ حجز استعلام إضافي محدود في الأسئلة المركبة المعتادة؛ بحث فجوة الأدلة بعد مراجعة المسودة؛ إعادة توليد ومراجعة عند ورود دليل جديد؛ مؤشرات مصدر لكل محور؛ مطابقة لفظية عربية/إنجليزية محافظة؛ وعرض نتيجة بحث الفجوة في الواجهة."` | — |
+| [SRC-914817100D-L000075](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L75) | 75 | ``"- **CI — PASS على رأس الكود الذي تم التحقق منه:** تشغيل GitHub Actions [#40516576478](https://github.com/mosabosama2030-oss/omarai/actions/runs/40516576478) على commit `88226f8767664d9e4163aa11c49e4d424e5e25a6`: نجح Ruff، والتحقق من الفهارس المولدة، و**428 اختبارًا على Python 3.11 و428 اختبارًا على Python 3.12**، وبناء الحاوية واختبار API المحمي."`` | — |
+| [SRC-914817100D-L000076](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L76) | 76 | `"- **الفهرس:** سجل التدقيق المولّد على الفرع يعرض **82/82 ملفًا و28,244 سجل سطر وتغطية حسابية 100% PASS**. هذا تحقق من اكتمال الفهرسة الحسابية للملفات المؤهلة فقط، وليس تحققًا من جودة الكود أو خلوه من العيوب."` | — |
+| [SRC-914817100D-L000077](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L77) | 77 | `"- **HOSTED_ACCEPTANCE — PARTIAL / NOT RUN:** لم يُنشر هذا الفرع ولم يُختبر على الاستضافة الحية؛ لا يوجد هنا عنوان استضافة صحيح تم التحقق منه، ولا يجوز استنتاج نجاح حي من CI."` | — |
+| [SRC-914817100D-L000078](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L78) | 78 | `"- **SEMANTIC_COMPLETENESS — NOT VERIFIED:** فحص الكلمات ومطابقة المرادفات إشارات استدلالية فقط؛ لا يثبتان أن المصدر يسند الادعاء أو أن كل مطلب أُجيب عنه دلاليًا."` | — |
+| [SRC-914817100D-L000079](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L79) | 79 | `"- **MERGE/DEPLOY — NOT DONE:** PR #107 ما زال مفتوحًا وغير مدمج؛ حالته الحالية جاهزة للمراجعة. لم أدمج الفرع ولم أنشر أي إصدار. القرار النهائي لك."` | — |
+| [SRC-914817100D-L000080](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L80) | 80 | `""` | — |
+| [SRC-914817100D-L000081](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L81) | 81 | `"## المراجع"` | — |
+| [SRC-914817100D-L000082](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L82) | 82 | `""` | — |
+| [SRC-914817100D-L000083](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L83) | 83 | ``"- `agents/web_agent.py`"`` | — |
+| [SRC-914817100D-L000084](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L84) | 84 | ``"- `agents/answer_validation.py`"`` | — |
+| [SRC-914817100D-L000085](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L85) | 85 | ``"- `tests/test_intent_router_integration.py`"`` | — |
+| [SRC-914817100D-L000086](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L86) | 86 | ``"- `tests/test_answer_validation.py`"`` | — |
 ## وثائق وفهرسة
 
 ### FILE-480FAB7816 — [docs/DATABASE_POSTGRESQL_AR.md](../DATABASE_POSTGRESQL_AR.md#L1)
@@ -16,6 +45,63 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-480FAB7816-L000001](../DATABASE_POSTGRESQL_AR.md#L1) | 1 | `"# قاعدة بيانات Omarai — SQLite محليًا وPostgreSQL عبر Neon"` | — |
+| [SRC-480FAB7816-L000002](../DATABASE_POSTGRESQL_AR.md#L2) | 2 | `""` | — |
+| [SRC-480FAB7816-L000003](../DATABASE_POSTGRESQL_AR.md#L3) | 3 | `"## القرار المعماري"` | — |
+| [SRC-480FAB7816-L000004](../DATABASE_POSTGRESQL_AR.md#L4) | 4 | `""` | — |
+| [SRC-480FAB7816-L000005](../DATABASE_POSTGRESQL_AR.md#L5) | 5 | `"- **التطوير المحلي والاختبارات العادية:** SQLite افتراضيًا، دون الحاجة إلى خدمة خارجية."` | — |
+| [SRC-480FAB7816-L000006](../DATABASE_POSTGRESQL_AR.md#L6) | 6 | ``"- **الاستضافة:** PostgreSQL مُدار، ويمكن استخدام Neon. يختار التطبيق هذا المحرك عند ضبط `OMARAI_DATABASE_URL` أو `DATABASE_URL`."`` | — |
+| [SRC-480FAB7816-L000007](../DATABASE_POSTGRESQL_AR.md#L7) | 7 | `"- **GitHub:** يحفظ الكود والاختبارات والوثائق فقط؛ لا ترفع ملف SQLite، أو نسخة احتياطية، أو عنوان اتصال، أو بيانات عملاء."` | — |
+| [SRC-480FAB7816-L000008](../DATABASE_POSTGRESQL_AR.md#L8) | 8 | ``"- **عزل المستأجرين:** تبقى المفاتيح الفريدة والاستعلامات المقيدة بـ`tenant_id` جزءًا من التصميم في المحركين."`` | — |
+| [SRC-480FAB7816-L000009](../DATABASE_POSTGRESQL_AR.md#L9) | 9 | `""` | — |
+| [SRC-480FAB7816-L000010](../DATABASE_POSTGRESQL_AR.md#L10) | 10 | `"## الإعداد المحلي"` | — |
+| [SRC-480FAB7816-L000011](../DATABASE_POSTGRESQL_AR.md#L11) | 11 | `""` | — |
+| [SRC-480FAB7816-L000012](../DATABASE_POSTGRESQL_AR.md#L12) | 12 | `"عند عدم ضبط متغير قاعدة بيانات، يستخدم Omarai المسار الافتراضي:"` | — |
+| [SRC-480FAB7816-L000013](../DATABASE_POSTGRESQL_AR.md#L13) | 13 | `""` | — |
+| [SRC-480FAB7816-L000014](../DATABASE_POSTGRESQL_AR.md#L14) | 14 | ````"```text"```` | — |
+| [SRC-480FAB7816-L000015](../DATABASE_POSTGRESQL_AR.md#L15) | 15 | `"~/.omarai/omarai.sqlite3"` | — |
+| [SRC-480FAB7816-L000016](../DATABASE_POSTGRESQL_AR.md#L16) | 16 | ````"```"```` | — |
+| [SRC-480FAB7816-L000017](../DATABASE_POSTGRESQL_AR.md#L17) | 17 | `""` | — |
+| [SRC-480FAB7816-L000018](../DATABASE_POSTGRESQL_AR.md#L18) | 18 | ``"يمكن تغيير المسار بمتغير `OMARAI_DB_PATH`:"`` | — |
+| [SRC-480FAB7816-L000019](../DATABASE_POSTGRESQL_AR.md#L19) | 19 | `""` | — |
+| [SRC-480FAB7816-L000020](../DATABASE_POSTGRESQL_AR.md#L20) | 20 | ````"```bash"```` | — |
+| [SRC-480FAB7816-L000021](../DATABASE_POSTGRESQL_AR.md#L21) | 21 | `"export OMARAI_DB_PATH=\"$HOME/.omarai/dev.sqlite3\""` | — |
+| [SRC-480FAB7816-L000022](../DATABASE_POSTGRESQL_AR.md#L22) | 22 | `"python -m cli.omarai serve"` | — |
+| [SRC-480FAB7816-L000023](../DATABASE_POSTGRESQL_AR.md#L23) | 23 | ````"```"```` | — |
+| [SRC-480FAB7816-L000024](../DATABASE_POSTGRESQL_AR.md#L24) | 24 | `""` | — |
+| [SRC-480FAB7816-L000025](../DATABASE_POSTGRESQL_AR.md#L25) | 25 | ``"لا تضبط `OMARAI_DB_PATH` بالتزامن مع عنوان PostgreSQL؛ يرفض التطبيق هذا التعارض بدل اختيار قاعدة بصمت."`` | — |
+| [SRC-480FAB7816-L000026](../DATABASE_POSTGRESQL_AR.md#L26) | 26 | `""` | — |
+| [SRC-480FAB7816-L000027](../DATABASE_POSTGRESQL_AR.md#L27) | 27 | `"## إعداد Neon للاستضافة"` | — |
+| [SRC-480FAB7816-L000028](../DATABASE_POSTGRESQL_AR.md#L28) | 28 | `""` | — |
+| [SRC-480FAB7816-L000029](../DATABASE_POSTGRESQL_AR.md#L29) | 29 | `"1. أنشئ مشروع PostgreSQL في Neon واختر المنطقة الأقرب إلى تطبيق الاستضافة قدر الإمكان."` | — |
+| [SRC-480FAB7816-L000030](../DATABASE_POSTGRESQL_AR.md#L30) | 30 | `"2. افتح قسم الاتصال في لوحة Neon واختر عنوان PostgreSQL عبر **pooled connection** لاستخدام عنوان pooler، خصوصًا أن التطبيق يفتح اتصالًا قصير العمر لكل عملية تخزين."` | — |
+| [SRC-480FAB7816-L000031](../DATABASE_POSTGRESQL_AR.md#L31) | 31 | ``"3. انسخ عنوان الاتصال كاملًا من Neon، وتحقق من وجود `sslmode=require` في العنوان."`` | — |
+| [SRC-480FAB7816-L000032](../DATABASE_POSTGRESQL_AR.md#L32) | 32 | ``"4. افتح إعدادات المتغيرات/الأسرار في خدمة الاستضافة، وأضف متغيرًا سريًا اسمه `OMARAI_DATABASE_URL` وقيمته عنوان الاتصال."`` | — |
+| [SRC-480FAB7816-L000033](../DATABASE_POSTGRESQL_AR.md#L33) | 33 | ``"5. اترك `OMARAI_DB_PATH` غير مضبوط حتى لا يحدث تعارض."`` | — |
+| [SRC-480FAB7816-L000034](../DATABASE_POSTGRESQL_AR.md#L34) | 34 | ``"6. أعد تشغيل/نشر الخدمة عبر مسار النشر الذي يوافق عليه مالك البيئة، ثم راجع `GET /api/health`: يجب أن يعرض `storage.backend=postgresql` و`storage.database_url_configured=true` من دون عرض العنوان أو كلمة المرور."`` | — |
+| [SRC-480FAB7816-L000035](../DATABASE_POSTGRESQL_AR.md#L35) | 35 | `"7. هذا الفحص يعرض اختيار المحرك وإعداد عنوان الاتصال فقط؛ لا يثبت خطة Neon أو سياسة النسخ الاحتياطي أو استمرار الاتصال بعد بدء التشغيل. نفّذ اختبار قبول محميًا بعد التهيئة مع بيانات اختبار غير حساسة."` | — |
+| [SRC-480FAB7816-L000036](../DATABASE_POSTGRESQL_AR.md#L36) | 36 | `""` | — |
+| [SRC-480FAB7816-L000037](../DATABASE_POSTGRESQL_AR.md#L37) | 37 | ``"لا تلصق عنوان الاتصال في محادثة، أو Issue، أو PR، أو سجل CI، أو ملف `.env.example`. لا تضعه في GitHub Actions Secrets إلا عندما تكون هناك حاجة واضحة لعملية CI تتصل بقاعدة محددة؛ اختبارات CI الاعتيادية تستخدم PostgreSQL مؤقتًا داخل runner ولا تحتاج سر Neon."`` | — |
+| [SRC-480FAB7816-L000038](../DATABASE_POSTGRESQL_AR.md#L38) | 38 | `""` | — |
+| [SRC-480FAB7816-L000039](../DATABASE_POSTGRESQL_AR.md#L39) | 39 | `"## اختيار المحرك"` | — |
+| [SRC-480FAB7816-L000040](../DATABASE_POSTGRESQL_AR.md#L40) | 40 | `""` | — |
+| [SRC-480FAB7816-L000041](../DATABASE_POSTGRESQL_AR.md#L41) | 41 | `"\| الإعداد \| المحرك \|"` | — |
+| [SRC-480FAB7816-L000042](../DATABASE_POSTGRESQL_AR.md#L42) | 42 | `"\|---\|---\|"` | — |
+| [SRC-480FAB7816-L000043](../DATABASE_POSTGRESQL_AR.md#L43) | 43 | ``"\| لا يوجد `OMARAI_DATABASE_URL` ولا `DATABASE_URL` \| SQLite افتراضي \|"`` | — |
+| [SRC-480FAB7816-L000044](../DATABASE_POSTGRESQL_AR.md#L44) | 44 | ``"\| `OMARAI_DATABASE_URL` مضبوط \| PostgreSQL \|"`` | — |
+| [SRC-480FAB7816-L000045](../DATABASE_POSTGRESQL_AR.md#L45) | 45 | ``"\| `DATABASE_URL` مضبوط دون المتغير المخصص \| PostgreSQL \|"`` | — |
+| [SRC-480FAB7816-L000046](../DATABASE_POSTGRESQL_AR.md#L46) | 46 | ``"\| عنوان PostgreSQL مع `OMARAI_DB_PATH` في الوقت نفسه \| خطأ إعداد واضح؛ يجب اختيار أحدهما \|"`` | — |
+| [SRC-480FAB7816-L000047](../DATABASE_POSTGRESQL_AR.md#L47) | 47 | `""` | — |
+| [SRC-480FAB7816-L000048](../DATABASE_POSTGRESQL_AR.md#L48) | 48 | `"## المخطط والاختبارات"` | — |
+| [SRC-480FAB7816-L000049](../DATABASE_POSTGRESQL_AR.md#L49) | 49 | `""` | — |
+| [SRC-480FAB7816-L000050](../DATABASE_POSTGRESQL_AR.md#L50) | 50 | ``"- عند بدء التطبيق، ينشئ `LeadStore` الجداول والفهارس المطلوبة إذا لم تكن موجودة."`` | — |
+| [SRC-480FAB7816-L000051](../DATABASE_POSTGRESQL_AR.md#L51) | 51 | `"- ترحيل SQLite القديم (مثل نقل جدول leads legacy إلى جدول tenant-scoped) خاص بمحرك SQLite؛ لا يُنفذ على PostgreSQL."` | — |
+| [SRC-480FAB7816-L000052](../DATABASE_POSTGRESQL_AR.md#L52) | 52 | `"- سير عمل GitHub Actions يشغل اختبار PostgreSQL ضد خدمة مؤقتة PostgreSQL 16؛ لا يتصل بحساب Neon ولا يحتاج أسراره."` | — |
+| [SRC-480FAB7816-L000053](../DATABASE_POSTGRESQL_AR.md#L53) | 53 | `"- اختبارات التكامل تغطي تمييز السجلات بين المستأجرين، منع التكرار، تحديث الحالة، الرموز، الجلسات، ملفات المنتج، وسجلات الاكتشاف."` | — |
+| [SRC-480FAB7816-L000054](../DATABASE_POSTGRESQL_AR.md#L54) | 54 | `""` | — |
+| [SRC-480FAB7816-L000055](../DATABASE_POSTGRESQL_AR.md#L55) | 55 | `"## البيانات المحلية الحالية ونقلها"` | — |
+| [SRC-480FAB7816-L000056](../DATABASE_POSTGRESQL_AR.md#L56) | 56 | `""` | — |
+| [SRC-480FAB7816-L000057](../DATABASE_POSTGRESQL_AR.md#L57) | 57 | ``"**لا يوجد نقل تلقائي للبيانات المحلية إلى Neon في هذا التغيير.** ملف `~/.omarai/omarai.sqlite3` يبقى كما هو على جهاز التطوير؛ قاعدة Neon تبدأ بقاعدة فارغة وجداولها الجديدة. لا تضع عنوان Neon في بيئة محلية تتضمن بيانات إنتاجية قبل وضع خطة نسخ احتياطي/ترحيل ومطابقة عدد السجلات، ولا تحذف ملف SQLite الأصلي بعد النسخ."`` | — |
 | [SRC-480FAB7816-L000058](../DATABASE_POSTGRESQL_AR.md#L58) | 58 | `""` | — |
 | [SRC-480FAB7816-L000059](../DATABASE_POSTGRESQL_AR.md#L59) | 59 | `"قبل نقل بيانات قائمة، يلزم إجراء منفصل يتضمن:"` | — |
 | [SRC-480FAB7816-L000060](../DATABASE_POSTGRESQL_AR.md#L60) | 60 | `"- نسخة احتياطية متحقق من سلامتها."` | — |
@@ -775,80 +861,3 @@
 | [SRC-E599346ABE-L000476](../generate_index.py#L476) | 476 | `"    if suffix in {\".html\", \".htm\"}:"` | — |
 | [SRC-E599346ABE-L000477](../generate_index.py#L477) | 477 | `"        return \"جرد الملف + معرفات HTML والرموز داخل script/style\""` | — |
 | [SRC-E599346ABE-L000478](../generate_index.py#L478) | 478 | `"    if suffix == \".md\":"` | — |
-| [SRC-E599346ABE-L000479](../generate_index.py#L479) | 479 | `"        return \"جرد الملف + عناوين Markdown\""` | — |
-| [SRC-E599346ABE-L000480](../generate_index.py#L480) | 480 | `"    if suffix in CONFIG_EXTENSIONS:"` | — |
-| [SRC-E599346ABE-L000481](../generate_index.py#L481) | 481 | `"        return \"جرد الملف + مفاتيح إعداد ساكنة\""` | — |
-| [SRC-E599346ABE-L000482](../generate_index.py#L482) | 482 | `"    if suffix == \".sh\":"` | — |
-| [SRC-E599346ABE-L000483](../generate_index.py#L483) | 483 | `"        return \"جرد الملف + دوال Shell\""` | — |
-| [SRC-E599346ABE-L000484](../generate_index.py#L484) | 484 | `"    if path.name.lower() in {\"dockerfile\", \"makefile\", \"procfile\"}:"` | — |
-| [SRC-E599346ABE-L000485](../generate_index.py#L485) | 485 | `"        return \"جرد الملف + أسماء إعدادات عامة إن وجدت\""` | — |
-| [SRC-E599346ABE-L000486](../generate_index.py#L486) | 486 | `"    if path.name.lower() == \".env.example\" or suffix == \".example\":"` | — |
-| [SRC-E599346ABE-L000487](../generate_index.py#L487) | 487 | `"        return \"جرد الملف + أسماء إعدادات عامة إن وجدت\""` | — |
-| [SRC-E599346ABE-L000488](../generate_index.py#L488) | 488 | `"    return \"جرد ملف نصي فقط\""` | — |
-| [SRC-E599346ABE-L000489](../generate_index.py#L489) | 489 | `""` | — |
-| [SRC-E599346ABE-L000490](../generate_index.py#L490) | 490 | `""` | — |
-| [SRC-E599346ABE-L000491](../generate_index.py#L491) | 491 | `"def build_file_inventory(root: Path) -> list[IndexedFile]:"` | — |
-| [SRC-E599346ABE-L000492](../generate_index.py#L492) | 492 | `"    \"\"\"Inventory repository files and record whether static symbol scanning was possible.\"\"\""` | — |
-| [SRC-E599346ABE-L000493](../generate_index.py#L493) | 493 | `"    inventory: list[IndexedFile] = []"` | — |
-| [SRC-E599346ABE-L000494](../generate_index.py#L494) | 494 | `"    for path in discover_repository_files(root):"` | — |
-| [SRC-E599346ABE-L000495](../generate_index.py#L495) | 495 | `"        text = _read_text_bounded(path)"` | — |
-| [SRC-E599346ABE-L000496](../generate_index.py#L496) | 496 | `"        inventory.append("` | — |
-| [SRC-E599346ABE-L000497](../generate_index.py#L497) | 497 | `"            IndexedFile("` | — |
-| [SRC-E599346ABE-L000498](../generate_index.py#L498) | 498 | `"                file=path.relative_to(root).as_posix(),"` | — |
-| [SRC-E599346ABE-L000499](../generate_index.py#L499) | 499 | `"                file_type=_file_type(path),"` | — |
-| [SRC-E599346ABE-L000500](../generate_index.py#L500) | 500 | `"                size_bytes=path.stat().st_size,"` | — |
-| [SRC-E599346ABE-L000501](../generate_index.py#L501) | 501 | `"                line_count=_count_lines(text) if text is not None else None,"` | — |
-| [SRC-E599346ABE-L000502](../generate_index.py#L502) | 502 | `"                indexing_scope=_indexing_scope(path, text),"` | — |
-| [SRC-E599346ABE-L000503](../generate_index.py#L503) | 503 | `"                file_id=_stable_file_id(path.relative_to(root).as_posix()),"` | — |
-| [SRC-E599346ABE-L000504](../generate_index.py#L504) | 504 | `"                category=_category_for_path(path.relative_to(root).as_posix()),"` | — |
-| [SRC-E599346ABE-L000505](../generate_index.py#L505) | 505 | `"            )"` | — |
-| [SRC-E599346ABE-L000506](../generate_index.py#L506) | 506 | `"        )"` | — |
-| [SRC-E599346ABE-L000507](../generate_index.py#L507) | 507 | `"    return inventory"` | — |
-| [SRC-E599346ABE-L000508](../generate_index.py#L508) | 508 | `""` | — |
-| [SRC-E599346ABE-L000509](../generate_index.py#L509) | 509 | `""` | — |
-| [SRC-E599346ABE-L000510](../generate_index.py#L510) | 510 | `"def _tracked_paths_or_none(root: Path) -> set[str] \| None:"` | — |
-| [SRC-E599346ABE-L000511](../generate_index.py#L511) | 511 | `"    \"\"\"Return tracked repository paths, or None when the root is not a Git checkout.\"\"\""` | — |
-| [SRC-E599346ABE-L000512](../generate_index.py#L512) | 512 | `"    try:"` | — |
-| [SRC-E599346ABE-L000513](../generate_index.py#L513) | 513 | `"        result = subprocess.run("` | — |
-| [SRC-E599346ABE-L000514](../generate_index.py#L514) | 514 | `"            [\"git\", \"-C\", str(root), \"ls-files\", \"-z\"],"` | — |
-| [SRC-E599346ABE-L000515](../generate_index.py#L515) | 515 | `"            check=True,"` | — |
-| [SRC-E599346ABE-L000516](../generate_index.py#L516) | 516 | `"            capture_output=True,"` | — |
-| [SRC-E599346ABE-L000517](../generate_index.py#L517) | 517 | `"        )"` | — |
-| [SRC-E599346ABE-L000518](../generate_index.py#L518) | 518 | `"    except (OSError, subprocess.SubprocessError):"` | — |
-| [SRC-E599346ABE-L000519](../generate_index.py#L519) | 519 | `"        return None"` | — |
-| [SRC-E599346ABE-L000520](../generate_index.py#L520) | 520 | `"    try:"` | — |
-| [SRC-E599346ABE-L000521](../generate_index.py#L521) | 521 | `"        return {"` | — |
-| [SRC-E599346ABE-L000522](../generate_index.py#L522) | 522 | `"            path"` | — |
-| [SRC-E599346ABE-L000523](../generate_index.py#L523) | 523 | `"            for path in result.stdout.decode(\"utf-8\").split(\"\\x00\")"` | — |
-| [SRC-E599346ABE-L000524](../generate_index.py#L524) | 524 | `"            if path"` | — |
-| [SRC-E599346ABE-L000525](../generate_index.py#L525) | 525 | `"        }"` | — |
-| [SRC-E599346ABE-L000526](../generate_index.py#L526) | 526 | `"    except UnicodeError:"` | — |
-| [SRC-E599346ABE-L000527](../generate_index.py#L527) | 527 | `"        return None"` | — |
-| [SRC-E599346ABE-L000528](../generate_index.py#L528) | 528 | `""` | — |
-| [SRC-E599346ABE-L000529](../generate_index.py#L529) | 529 | `""` | — |
-| [SRC-E599346ABE-L000530](../generate_index.py#L530) | 530 | `"def discover_excluded_paths(root: Path) -> list[tuple[str, str]]:"` | — |
-| [SRC-E599346ABE-L000531](../generate_index.py#L531) | 531 | `"    \"\"\"List excluded tracked path names and reasons without opening excluded contents.\"\"\""` | — |
-| [SRC-E599346ABE-L000532](../generate_index.py#L532) | 532 | `"    tracked_paths = _tracked_paths_or_none(root)"` | — |
-| [SRC-E599346ABE-L000533](../generate_index.py#L533) | 533 | `""` | — |
-| [SRC-E599346ABE-L000534](../generate_index.py#L534) | 534 | `"    def tracked_scope_contains(relative_path: str, is_directory: bool = False) -> bool:"` | — |
-| [SRC-E599346ABE-L000535](../generate_index.py#L535) | 535 | `"        if tracked_paths is None:"` | — |
-| [SRC-E599346ABE-L000536](../generate_index.py#L536) | 536 | `"            return True"` | — |
-| [SRC-E599346ABE-L000537](../generate_index.py#L537) | 537 | `"        normalized = relative_path.rstrip(\"/\")"` | — |
-| [SRC-E599346ABE-L000538](../generate_index.py#L538) | 538 | `"        if is_directory:"` | — |
-| [SRC-E599346ABE-L000539](../generate_index.py#L539) | 539 | `"            prefix = normalized + \"/\""` | — |
-| [SRC-E599346ABE-L000540](../generate_index.py#L540) | 540 | `"            return any(path.startswith(prefix) for path in tracked_paths)"` | — |
-| [SRC-E599346ABE-L000541](../generate_index.py#L541) | 541 | `"        return normalized in tracked_paths"` | — |
-| [SRC-E599346ABE-L000542](../generate_index.py#L542) | 542 | `""` | — |
-| [SRC-E599346ABE-L000543](../generate_index.py#L543) | 543 | `"    excluded: list[tuple[str, str]] = ["` | — |
-| [SRC-E599346ABE-L000544](../generate_index.py#L544) | 544 | `"        (path, \"مخرج فهرسة مولد مستبعد لمنع الحلقة الذاتية\")"` | — |
-| [SRC-E599346ABE-L000545](../generate_index.py#L545) | 545 | `"        for path in sorted(INDEX_OUTPUT_PATHS)"` | — |
-| [SRC-E599346ABE-L000546](../generate_index.py#L546) | 546 | `"    ]"` | — |
-| [SRC-E599346ABE-L000547](../generate_index.py#L547) | 547 | `"    excluded.append("` | — |
-| [SRC-E599346ABE-L000548](../generate_index.py#L548) | 548 | `"        ("` | — |
-| [SRC-E599346ABE-L000549](../generate_index.py#L549) | 549 | `"            SOURCE_LINES_PAGES_DIR + \"/\","` | — |
-| [SRC-E599346ABE-L000550](../generate_index.py#L550) | 550 | `"            \"مجلد صفحات فهرسة مولدة مستبعد لمنع الحلقة الذاتية\","` | — |
-| [SRC-E599346ABE-L000551](../generate_index.py#L551) | 551 | `"        )"` | — |
-| [SRC-E599346ABE-L000552](../generate_index.py#L552) | 552 | `"    )"` | — |
-| [SRC-E599346ABE-L000553](../generate_index.py#L553) | 553 | `"    for current_directory, directory_names, file_names in os.walk("` | — |
-| [SRC-E599346ABE-L000554](../generate_index.py#L554) | 554 | `"        root,"` | — |
-| [SRC-E599346ABE-L000555](../generate_index.py#L555) | 555 | `"        topdown=True,"` | — |

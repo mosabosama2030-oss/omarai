@@ -7,13 +7,14 @@ import re
 import urllib.error
 import urllib.parse
 import urllib.request
+import xml.etree.ElementTree as ET
 from collections.abc import Callable
 from typing import Any
 
 MAX_CONNECTOR_RESULTS = 6
 MAX_CONNECTOR_RESPONSE_BYTES = 2_000_000
 DEFAULT_TIMEOUT_SECONDS = 5
-USER_AGENT = "OmaraiResearchBot/1.0 (mailto:ops@example.com)"
+USER_AGENT = "OmaraiResearchBot/1.0"
 ConnectorFn = Callable[[str, int], list[dict[str, Any]]]
 
 
@@ -76,8 +77,12 @@ def _result(*, title: str, url: str, snippet: str, provider: str, rank: int, que
 def search_openalex(query: str, limit: int = MAX_CONNECTOR_RESULTS) -> list[dict[str, Any]]:
     if not isinstance(query, str) or not query.strip():
         return []
-    params = urllib.parse.urlencode({"search": query.strip()[:240], "per_page": max(1, min(int(limit), MAX_CONNECTOR_RESULTS)), "mailto": os.getenv("OPENALEX_MAILTO", "ops@example.com")})
-    data = _http_get_json(f"https://api.openalex.org/works?{params}")
+    params = urllib.parse.urlencode({"search": query.strip()[:240], "per_page": max(1, min(int(limit), MAX_CONNECTOR_RESULTS))})
+    headers = {}
+    api_key = os.getenv("OPENALEX_API_KEY", "").strip()
+    if api_key:
+        headers["Authorization"] = f"Bearer {api_key}"
+    data = _http_get_json(f"https://api.openalex.org/works?{params}", headers=headers)
     rows: list[dict[str, Any]] = []
     for item in data.get("results", [])[:limit]:
         if not isinstance(item, dict):
@@ -99,29 +104,62 @@ def search_openalex(query: str, limit: int = MAX_CONNECTOR_RESULTS) -> list[dict
 def search_arxiv(query: str, limit: int = MAX_CONNECTOR_RESULTS) -> list[dict[str, Any]]:
     if not isinstance(query, str) or not query.strip():
         return []
-    params = urllib.parse.urlencode({"search_query": f"all:{query.strip()[:200]}", "start": 0, "max_results": max(1, min(int(limit), MAX_CONNECTOR_RESULTS))})
+    bounded_limit = max(1, min(int(limit), MAX_CONNECTOR_RESULTS))
+    params = urllib.parse.urlencode({
+        "search_query": f"all:{query.strip()[:200]}",
+        "start": 0,
+        "max_results": bounded_limit,
+    })
     xml_text = _http_get_text(f"https://export.arxiv.org/api/query?{params}")
-    entries = re.findall(r"<entry>(.*?)</entry>", xml_text, flags=re.DOTALL)
+    root = ET.fromstring(xml_text)
     rows: list[dict[str, Any]] = []
-    for entry in entries[:limit]:
-        title_m = re.search(r"<title>(.*?)</title>", entry, re.DOTALL)
-        link_m = re.search(r"<id>(https?://arxiv\.org/abs/[^<]+)</id>", entry)
-        summary_m = re.search(r"<summary>(.*?)</summary>", entry, re.DOTALL)
-        published_m = re.search(r"<published>([^<]+)</published>", entry)
-        title = _clean_text(title_m.group(1) if title_m else "")
-        link = link_m.group(1) if link_m else ""
-        summary = _clean_text(summary_m.group(1) if summary_m else "", 1600)
-        published = published_m.group(1) if published_m else ""
-        if title and link:
-            rows.append(_result(title=title, url=link, snippet=summary or title, provider="arxiv", rank=len(rows) + 1, query=query, published_at=published, source_class="academic"))
-    return rows
+    for entry in (node for node in root.iter() if node.tag.rsplit("}", 1)[-1] == "entry"):
+        if len(rows) >= bounded_limit:
+            break
 
+        # Match by local name so default and prefixed Atom namespaces both work.
+        fields = {
+            child.tag.rsplit("}", 1)[-1]: "".join(child.itertext())
+            for child in entry
+        }
+        title = _clean_text(fields.get("title", ""), 300)
+        link = _clean_text(fields.get("id", ""), 2048)
+        summary = _clean_text(fields.get("summary", ""), 1600)
+        published = _clean_text(fields.get("published", ""), 100)
+        try:
+            parsed_link = urllib.parse.urlsplit(link)
+        except ValueError:
+            continue
+        valid_arxiv_link = (
+            parsed_link.scheme in {"http", "https"}
+            and parsed_link.netloc.casefold() == "arxiv.org"
+            and parsed_link.path.startswith("/abs/")
+            and len(parsed_link.path) > len("/abs/")
+        )
+        if title and valid_arxiv_link:
+            rows.append(
+                _result(
+                    title=title,
+                    url=link,
+                    snippet=summary or title,
+                    provider="arxiv",
+                    rank=len(rows) + 1,
+                    query=query,
+                    published_at=published,
+                    source_class="academic",
+                )
+            )
+    return rows
 
 def search_crossref(query: str, limit: int = MAX_CONNECTOR_RESULTS) -> list[dict[str, Any]]:
     if not isinstance(query, str) or not query.strip():
         return []
-    params = urllib.parse.urlencode({"query": query.strip()[:240], "rows": max(1, min(int(limit), MAX_CONNECTOR_RESULTS)), "mailto": os.getenv("CROSSREF_MAILTO", "ops@example.com")})
-    data = _http_get_json(f"https://api.crossref.org/works?{params}", headers={"User-Agent": USER_AGENT})
+    params = {"query": query.strip()[:240], "rows": max(1, min(int(limit), MAX_CONNECTOR_RESULTS))}
+    contact_email = os.getenv("CROSSREF_MAILTO", "").strip()
+    if contact_email:
+        params["mailto"] = contact_email
+    query_string = urllib.parse.urlencode(params)
+    data = _http_get_json(f"https://api.crossref.org/works?{query_string}", headers={"User-Agent": USER_AGENT})
     items = ((data.get("message") or {}).get("items") or [])[:limit]
     rows: list[dict[str, Any]] = []
     for item in items:
@@ -188,7 +226,7 @@ def run_connector(name: str, query: str, limit: int = MAX_CONNECTOR_RESULTS) -> 
     try:
         rows = meta["fn"](query, limit=limit) or []
         return [row for row in rows if isinstance(row, dict) and row.get("url") and row.get("title")]
-    except (TimeoutError, urllib.error.URLError, urllib.error.HTTPError, ValueError, KeyError, TypeError, json.JSONDecodeError, OSError):
+    except (TimeoutError, urllib.error.URLError, urllib.error.HTTPError, ET.ParseError, ValueError, KeyError, TypeError, json.JSONDecodeError, OSError):
         return []
 
 

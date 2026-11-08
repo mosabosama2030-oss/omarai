@@ -4,9 +4,70 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-792A9A235D-L000035 إلى SRC-480FAB7816-L000057
+- النطاق: SRC-9C97DF51AC-L000019 إلى SRC-914817100D-L000066
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## واجهة سطر الأوامر
+
+### FILE-9C97DF51AC — [cli/omarai.py](../../cli/omarai.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-9C97DF51AC-L000019](../../cli/omarai.py#L19) | 19 | `"    p=sub.add_parser(\"import-csv\")"` | — |
+| [SRC-9C97DF51AC-L000020](../../cli/omarai.py#L20) | 20 | `"    p.add_argument(\"--file\",required=True)"` | — |
+| [SRC-9C97DF51AC-L000021](../../cli/omarai.py#L21) | 21 | `"    p=sub.add_parser(\"list\")"` | — |
+| [SRC-9C97DF51AC-L000022](../../cli/omarai.py#L22) | 22 | `"    p.add_argument(\"--limit\",type=int,default=100)"` | — |
+| [SRC-9C97DF51AC-L000023](../../cli/omarai.py#L23) | 23 | `"    p.add_argument(\"--status\")"` | — |
+| [SRC-9C97DF51AC-L000024](../../cli/omarai.py#L24) | 24 | `"    p=sub.add_parser(\"export-csv\")"` | — |
+| [SRC-9C97DF51AC-L000025](../../cli/omarai.py#L25) | 25 | `"    p.add_argument(\"--file\",required=True)"` | — |
+| [SRC-9C97DF51AC-L000026](../../cli/omarai.py#L26) | 26 | `"    args=parser.parse_args()"` | — |
+| [SRC-9C97DF51AC-L000027](../../cli/omarai.py#L27) | 27 | `"    if args.command==\"analyze\":"` | — |
+| [SRC-9C97DF51AC-L000028](../../cli/omarai.py#L28) | 28 | `"        result=analyze(args.text,[x.strip() for x in args.product.split(\",\") if x.strip()],[x.strip() for x in args.location.split(\",\") if x.strip()])"` | — |
+| [SRC-9C97DF51AC-L000029](../../cli/omarai.py#L29) | 29 | `"        print(json.dumps(result,ensure_ascii=False,indent=2))"` | — |
+| [SRC-9C97DF51AC-L000030](../../cli/omarai.py#L30) | 30 | `"        return"` | — |
+| [SRC-9C97DF51AC-L000031](../../cli/omarai.py#L31) | 31 | `"    store=LeadStore()"` | — |
+| [SRC-9C97DF51AC-L000032](../../cli/omarai.py#L32) | 32 | `"    if args.command==\"serve\":"` | — |
+| [SRC-9C97DF51AC-L000033](../../cli/omarai.py#L33) | 33 | `"        serve(args.host,args.port)"` | — |
+| [SRC-9C97DF51AC-L000034](../../cli/omarai.py#L34) | 34 | `"    elif args.command==\"import-csv\":"` | — |
+| [SRC-9C97DF51AC-L000035](../../cli/omarai.py#L35) | 35 | `"        print(json.dumps(store.import_csv(args.file),ensure_ascii=False,indent=2))"` | — |
+| [SRC-9C97DF51AC-L000036](../../cli/omarai.py#L36) | 36 | `"    elif args.command==\"list\":"` | — |
+| [SRC-9C97DF51AC-L000037](../../cli/omarai.py#L37) | 37 | `"        print(json.dumps(store.list(args.status,args.limit),ensure_ascii=False,indent=2))"` | — |
+| [SRC-9C97DF51AC-L000038](../../cli/omarai.py#L38) | 38 | `"    elif args.command==\"export-csv\":"` | — |
+| [SRC-9C97DF51AC-L000039](../../cli/omarai.py#L39) | 39 | `"        print(f\"Exported {store.export_csv(args.file)} leads to {args.file}\")"` | — |
+| [SRC-9C97DF51AC-L000040](../../cli/omarai.py#L40) | 40 | `"if __name__==\"__main__\":"` | — |
+| [SRC-9C97DF51AC-L000041](../../cli/omarai.py#L41) | 41 | `"    main()"` | — |
+## إعدادات وتشغيل
+
+### FILE-DD2C0EB6EA — [Dockerfile](../../Dockerfile#L1)
+
+- النوع: **Dockerfile**
+- نطاق الفهرسة: جرد الملف + أسماء إعدادات عامة إن وجدت
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-DD2C0EB6EA-L000001](../../Dockerfile#L1) | 1 | `"FROM python:3.12-slim"` | — |
+| [SRC-DD2C0EB6EA-L000002](../../Dockerfile#L2) | 2 | `""` | — |
+| [SRC-DD2C0EB6EA-L000003](../../Dockerfile#L3) | 3 | `"ARG OMARAI_BUILD_SHA=unknown"` | — |
+| [SRC-DD2C0EB6EA-L000004](../../Dockerfile#L4) | 4 | `"ARG PUBLIC_OMARAI_BUILD_SHA=unknown"` | — |
+| [SRC-DD2C0EB6EA-L000005](../../Dockerfile#L5) | 5 | `"ENV PYTHONDONTWRITEBYTECODE=1 \\"` | — |
+| [SRC-DD2C0EB6EA-L000006](../../Dockerfile#L6) | 6 | `"    PYTHONUNBUFFERED=1 \\"` | — |
+| [SRC-DD2C0EB6EA-L000007](../../Dockerfile#L7) | 7 | `"    PIP_DISABLE_PIP_VERSION_CHECK=1"` | — |
+| [SRC-DD2C0EB6EA-L000008](../../Dockerfile#L8) | 8 | `""` | — |
+| [SRC-DD2C0EB6EA-L000009](../../Dockerfile#L9) | 9 | `"WORKDIR /app"` | — |
+| [SRC-DD2C0EB6EA-L000010](../../Dockerfile#L10) | 10 | `"COPY pyproject.toml README.md ./"` | — |
+| [SRC-DD2C0EB6EA-L000011](../../Dockerfile#L11) | 11 | `"COPY agents ./agents"` | — |
+| [SRC-DD2C0EB6EA-L000012](../../Dockerfile#L12) | 12 | `"COPY api ./api"` | — |
+| [SRC-DD2C0EB6EA-L000013](../../Dockerfile#L13) | 13 | `"COPY cli ./cli"` | — |
+| [SRC-DD2C0EB6EA-L000014](../../Dockerfile#L14) | 14 | `"COPY web ./web"` | — |
+| [SRC-DD2C0EB6EA-L000015](../../Dockerfile#L15) | 15 | `""` | — |
+| [SRC-DD2C0EB6EA-L000016](../../Dockerfile#L16) | 16 | `"RUN python -m pip install --no-cache-dir ."` | — |
+| [SRC-DD2C0EB6EA-L000017](../../Dockerfile#L17) | 17 | `"RUN python -c \"import os; from pathlib import Path; import api.omarai; values=(os.getenv('OMARAI_BUILD_SHA',''), os.getenv('PUBLIC_OMARAI_BUILD_SHA','')); valid=lambda value: len(value.strip())==40 and all(char in '0123456789abcdef' for char in value.strip().lower()); sha=next((value.strip().lower() for value in values if valid(value)), 'unknown'); Path(api.omarai.__file__).resolve().parents[1].joinpath('BUILD_SHA').write_text(sha, encoding='ascii')\""` | — |
+| [SRC-DD2C0EB6EA-L000018](../../Dockerfile#L18) | 18 | `""` | — |
+| [SRC-DD2C0EB6EA-L000019](../../Dockerfile#L19) | 19 | `"EXPOSE 8000"` | — |
+| [SRC-DD2C0EB6EA-L000020](../../Dockerfile#L20) | 20 | `"CMD [\"sh\", \"-c\", \"python -m cli.omarai serve --host 0.0.0.0 --port ${PORT:-8000}\"]"` | — |
 ## وثائق وفهرسة
 
 ### FILE-792A9A235D — [docs/ANSWER_QUALITY_BENCHMARK_AR.md](../ANSWER_QUALITY_BENCHMARK_AR.md#L1)
@@ -16,6 +77,40 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-792A9A235D-L000001](../ANSWER_QUALITY_BENCHMARK_AR.md#L1) | 1 | `"# معيار تقييم جودة الإجابة (عدائي / Red-Team)"` | — |
+| [SRC-792A9A235D-L000002](../ANSWER_QUALITY_BENCHMARK_AR.md#L2) | 2 | `""` | — |
+| [SRC-792A9A235D-L000003](../ANSWER_QUALITY_BENCHMARK_AR.md#L3) | 3 | `"**المعرّف:** OMARAI-REDTEAM-001  "` | — |
+| [SRC-792A9A235D-L000004](../ANSWER_QUALITY_BENCHMARK_AR.md#L4) | 4 | `"**الإصدار:** 1.1.0 (تصحيح أمثلة الحالة + بروتوكول المقارنة)  "` | — |
+| [SRC-792A9A235D-L000005](../ANSWER_QUALITY_BENCHMARK_AR.md#L5) | 5 | ``"**مرجع الكود عند التصميم:** `ac05f4777f140694b285c5364e6c3875fdecdae6` (main)"`` | — |
+| [SRC-792A9A235D-L000006](../ANSWER_QUALITY_BENCHMARK_AR.md#L6) | 6 | `""` | — |
+| [SRC-792A9A235D-L000007](../ANSWER_QUALITY_BENCHMARK_AR.md#L7) | 7 | `"هذا المجلد يوفّر **مجموعة تقييم قابلة لإعادة التشغيل** لفحص فهم عمرai، استراتيجية البحث، استخدام الأدلة، التعامل مع عدم اليقين، والأمان."` | — |
+| [SRC-792A9A235D-L000008](../ANSWER_QUALITY_BENCHMARK_AR.md#L8) | 8 | `""` | — |
+| [SRC-792A9A235D-L000009](../ANSWER_QUALITY_BENCHMARK_AR.md#L9) | 9 | ``"> **مهم:** اختبار `tests/test_answer_quality_corpus.py` يتحقق فقط من **سلامة بنية** ملف الحالات.  "`` | — |
+| [SRC-792A9A235D-L000010](../ANSWER_QUALITY_BENCHMARK_AR.md#L10) | 10 | `"> نجاح هذا الاختبار **لا يعني** أن عمرai أجاب بشكل صحيح على أي حالة استدلال."` | — |
+| [SRC-792A9A235D-L000011](../ANSWER_QUALITY_BENCHMARK_AR.md#L11) | 11 | `""` | — |
+| [SRC-792A9A235D-L000012](../ANSWER_QUALITY_BENCHMARK_AR.md#L12) | 12 | `"لا يغير corpus أو أدوات التقييم منطق الإجابة؛ فرع القياس يضيف إلى agents/web_agent.py ميتاداتا محدودة لاستخدام النموذج والتكلفة التي يصرّح بها المزود، دون تسجيل المطالبات أو الردود أو جسم استجابة الموفر."` | — |
+| [SRC-792A9A235D-L000013](../ANSWER_QUALITY_BENCHMARK_AR.md#L13) | 13 | `""` | — |
+| [SRC-792A9A235D-L000014](../ANSWER_QUALITY_BENCHMARK_AR.md#L14) | 14 | `"## الملفات"` | — |
+| [SRC-792A9A235D-L000015](../ANSWER_QUALITY_BENCHMARK_AR.md#L15) | 15 | `""` | — |
+| [SRC-792A9A235D-L000016](../ANSWER_QUALITY_BENCHMARK_AR.md#L16) | 16 | `"\| الملف \| الوظيفة \|"` | — |
+| [SRC-792A9A235D-L000017](../ANSWER_QUALITY_BENCHMARK_AR.md#L17) | 17 | `"\|--------\|---------\|"` | — |
+| [SRC-792A9A235D-L000018](../ANSWER_QUALITY_BENCHMARK_AR.md#L18) | 18 | ``"\| `tests/fixtures/answer_quality_cases.json` \| ذخيرة الحالات (45) مع تجهيزات أدلة عند الحاجة \|"`` | — |
+| [SRC-792A9A235D-L000019](../ANSWER_QUALITY_BENCHMARK_AR.md#L19) | 19 | ``"\| `tests/test_answer_quality_corpus.py` \| تحقق آلي حتمي من البنية (بدون شبكة) \|"`` | — |
+| [SRC-792A9A235D-L000020](../ANSWER_QUALITY_BENCHMARK_AR.md#L20) | 20 | ``"\| `scripts/run_answer_quality_benchmark.py` \| تحقق corpus أو جمع تشغيل حي اختياري؛ يضيف الزمن والنتائج المعلنة فقط \|"`` | — |
+| [SRC-792A9A235D-L000021](../ANSWER_QUALITY_BENCHMARK_AR.md#L21) | 21 | ``"\| `scripts/compare_answer_quality_runs.py` \| مقارنة تشغيلين متطابقين ومراجعات بشرية قبل/بعد \|"`` | — |
+| [SRC-792A9A235D-L000022](../ANSWER_QUALITY_BENCHMARK_AR.md#L22) | 22 | ``"\| `scripts/score_answer_quality_reviews.py` \| حساب مقاييس صريحة من المراجعات البشرية \|"`` | — |
+| [SRC-792A9A235D-L000023](../ANSWER_QUALITY_BENCHMARK_AR.md#L23) | 23 | ``"\| `tests/fixtures/answer_quality_reviews_template.json` \| قالب مراجعة غير مسجل، وكل حالة فيه NOT_TESTED \|"`` | — |
+| [SRC-792A9A235D-L000024](../ANSWER_QUALITY_BENCHMARK_AR.md#L24) | 24 | ``"\| `docs/ANSWER_QUALITY_BENCHMARK_AR.md` \| بروتوكول التقييم والتسجيل (هذا الملف) \|"`` | — |
+| [SRC-792A9A235D-L000025](../ANSWER_QUALITY_BENCHMARK_AR.md#L25) | 25 | `""` | — |
+| [SRC-792A9A235D-L000026](../ANSWER_QUALITY_BENCHMARK_AR.md#L26) | 26 | ``"## الاستراتيجيات المسموحة في الحقل `expected_strategy`"`` | — |
+| [SRC-792A9A235D-L000027](../ANSWER_QUALITY_BENCHMARK_AR.md#L27) | 27 | `""` | — |
+| [SRC-792A9A235D-L000028](../ANSWER_QUALITY_BENCHMARK_AR.md#L28) | 28 | `"مستمدة من سلوك المستودع الفعلي (موجّه القدرات المحلي، البحث، التوضيح):"` | — |
+| [SRC-792A9A235D-L000029](../ANSWER_QUALITY_BENCHMARK_AR.md#L29) | 29 | `""` | — |
+| [SRC-792A9A235D-L000030](../ANSWER_QUALITY_BENCHMARK_AR.md#L30) | 30 | `"\| القيمة \| المعنى العملي \|"` | — |
+| [SRC-792A9A235D-L000031](../ANSWER_QUALITY_BENCHMARK_AR.md#L31) | 31 | `"\|--------\|----------------\|"` | — |
+| [SRC-792A9A235D-L000032](../ANSWER_QUALITY_BENCHMARK_AR.md#L32) | 32 | ``"\| `local` \| إجابة محلية/قواعد (مثل قدرات عمرai أو تسجيل العملاء) دون بحث ويب \|"`` | — |
+| [SRC-792A9A235D-L000033](../ANSWER_QUALITY_BENCHMARK_AR.md#L33) | 33 | ``"\| `model_no_search` \| إجابة نموذج بلا بحث ويب (تحية، معرفة عامة مستقرة) \|"`` | — |
+| [SRC-792A9A235D-L000034](../ANSWER_QUALITY_BENCHMARK_AR.md#L34) | 34 | ``"\| `web_search` \| يتطلب بحثًا عامًا أو استرجاع صفحات \|"`` | — |
 | [SRC-792A9A235D-L000035](../ANSWER_QUALITY_BENCHMARK_AR.md#L35) | 35 | ``"\| `clarify` \| الطلب غامض ويجب طلب توضيح قبل إجابة قطعية \|"`` | — |
 | [SRC-792A9A235D-L000036](../ANSWER_QUALITY_BENCHMARK_AR.md#L36) | 36 | `""` | — |
 | [SRC-792A9A235D-L000037](../ANSWER_QUALITY_BENCHMARK_AR.md#L37) | 37 | ``"## أوضاع التقييم `evaluation_mode`"`` | — |
@@ -775,89 +870,3 @@
 | [SRC-914817100D-L000064](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L64) | 64 | `"\| أدلة لكل معيار \| إشارة مصدر مستقلة عن وجود الكلمات في الإجابة \|"` | — |
 | [SRC-914817100D-L000065](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L65) | 65 | `"\| صدق الحالة \| لا تتحول الإشارة اللفظية إلى ادعاء تحقق دلالي \|"` | — |
 | [SRC-914817100D-L000066](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L66) | 66 | `"\| الاستشهادات \| لا تُقبل مؤشرات مصدر خارج نطاق المصادر المرسلة للنموذج \|"` | — |
-| [SRC-914817100D-L000067](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L67) | 67 | `"\| فجوات الأدلة \| تظهر المحاور التي لا توجد لها إشارات مصدر \|"` | — |
-| [SRC-914817100D-L000068](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L68) | 68 | `"\| الموارد \| حدود الاستعلامات والصفحات والميزانية تبقى نافذة \|"` | — |
-| [SRC-914817100D-L000069](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L69) | 69 | `"\| عدم التراجع \| الاختبارات الحالية واختبارات القبول الجديدة تنجح على CI \|"` | — |
-| [SRC-914817100D-L000070](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L70) | 70 | `"\| الاستضافة \| إعادة اختبار حي على عنوان الاستضافة الصحيح ونسخة البناء الفعلية بعد موافقة منفصلة \|"` | — |
-| [SRC-914817100D-L000071](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L71) | 71 | `""` | — |
-| [SRC-914817100D-L000072](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L72) | 72 | `"## الحالة الصادقة — آخر تحقق 27 أكتوبر 2026"` | — |
-| [SRC-914817100D-L000073](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L73) | 73 | `""` | — |
-| [SRC-914817100D-L000074](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L74) | 74 | `"- **FIXED_IN_BRANCH:** استعلامات مخصصة للمعايير الصريحة؛ حجز استعلام إضافي محدود في الأسئلة المركبة المعتادة؛ بحث فجوة الأدلة بعد مراجعة المسودة؛ إعادة توليد ومراجعة عند ورود دليل جديد؛ مؤشرات مصدر لكل محور؛ مطابقة لفظية عربية/إنجليزية محافظة؛ وعرض نتيجة بحث الفجوة في الواجهة."` | — |
-| [SRC-914817100D-L000075](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L75) | 75 | ``"- **CI — PASS على رأس الكود الذي تم التحقق منه:** تشغيل GitHub Actions [#40516576478](https://github.com/mosabosama2030-oss/omarai/actions/runs/40516576478) على commit `88226f8767664d9e4163aa11c49e4d424e5e25a6`: نجح Ruff، والتحقق من الفهارس المولدة، و**428 اختبارًا على Python 3.11 و428 اختبارًا على Python 3.12**، وبناء الحاوية واختبار API المحمي."`` | — |
-| [SRC-914817100D-L000076](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L76) | 76 | `"- **الفهرس:** سجل التدقيق المولّد على الفرع يعرض **82/82 ملفًا و28,244 سجل سطر وتغطية حسابية 100% PASS**. هذا تحقق من اكتمال الفهرسة الحسابية للملفات المؤهلة فقط، وليس تحققًا من جودة الكود أو خلوه من العيوب."` | — |
-| [SRC-914817100D-L000077](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L77) | 77 | `"- **HOSTED_ACCEPTANCE — PARTIAL / NOT RUN:** لم يُنشر هذا الفرع ولم يُختبر على الاستضافة الحية؛ لا يوجد هنا عنوان استضافة صحيح تم التحقق منه، ولا يجوز استنتاج نجاح حي من CI."` | — |
-| [SRC-914817100D-L000078](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L78) | 78 | `"- **SEMANTIC_COMPLETENESS — NOT VERIFIED:** فحص الكلمات ومطابقة المرادفات إشارات استدلالية فقط؛ لا يثبتان أن المصدر يسند الادعاء أو أن كل مطلب أُجيب عنه دلاليًا."` | — |
-| [SRC-914817100D-L000079](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L79) | 79 | `"- **MERGE/DEPLOY — NOT DONE:** PR #107 ما زال مفتوحًا وغير مدمج؛ حالته الحالية جاهزة للمراجعة. لم أدمج الفرع ولم أنشر أي إصدار. القرار النهائي لك."` | — |
-| [SRC-914817100D-L000080](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L80) | 80 | `""` | — |
-| [SRC-914817100D-L000081](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L81) | 81 | `"## المراجع"` | — |
-| [SRC-914817100D-L000082](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L82) | 82 | `""` | — |
-| [SRC-914817100D-L000083](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L83) | 83 | ``"- `agents/web_agent.py`"`` | — |
-| [SRC-914817100D-L000084](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L84) | 84 | ``"- `agents/answer_validation.py`"`` | — |
-| [SRC-914817100D-L000085](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L85) | 85 | ``"- `tests/test_intent_router_integration.py`"`` | — |
-| [SRC-914817100D-L000086](../COMPOUND_ANSWER_CLOSED_LOOP_2026-10-27_AR.md#L86) | 86 | ``"- `tests/test_answer_validation.py`"`` | — |
-## وثائق وفهرسة
-
-### FILE-480FAB7816 — [docs/DATABASE_POSTGRESQL_AR.md](../DATABASE_POSTGRESQL_AR.md#L1)
-
-- النوع: **Markdown**
-- نطاق الفهرسة: جرد الملف + عناوين Markdown
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-480FAB7816-L000001](../DATABASE_POSTGRESQL_AR.md#L1) | 1 | `"# قاعدة بيانات Omarai — SQLite محليًا وPostgreSQL عبر Neon"` | — |
-| [SRC-480FAB7816-L000002](../DATABASE_POSTGRESQL_AR.md#L2) | 2 | `""` | — |
-| [SRC-480FAB7816-L000003](../DATABASE_POSTGRESQL_AR.md#L3) | 3 | `"## القرار المعماري"` | — |
-| [SRC-480FAB7816-L000004](../DATABASE_POSTGRESQL_AR.md#L4) | 4 | `""` | — |
-| [SRC-480FAB7816-L000005](../DATABASE_POSTGRESQL_AR.md#L5) | 5 | `"- **التطوير المحلي والاختبارات العادية:** SQLite افتراضيًا، دون الحاجة إلى خدمة خارجية."` | — |
-| [SRC-480FAB7816-L000006](../DATABASE_POSTGRESQL_AR.md#L6) | 6 | ``"- **الاستضافة:** PostgreSQL مُدار، ويمكن استخدام Neon. يختار التطبيق هذا المحرك عند ضبط `OMARAI_DATABASE_URL` أو `DATABASE_URL`."`` | — |
-| [SRC-480FAB7816-L000007](../DATABASE_POSTGRESQL_AR.md#L7) | 7 | `"- **GitHub:** يحفظ الكود والاختبارات والوثائق فقط؛ لا ترفع ملف SQLite، أو نسخة احتياطية، أو عنوان اتصال، أو بيانات عملاء."` | — |
-| [SRC-480FAB7816-L000008](../DATABASE_POSTGRESQL_AR.md#L8) | 8 | ``"- **عزل المستأجرين:** تبقى المفاتيح الفريدة والاستعلامات المقيدة بـ`tenant_id` جزءًا من التصميم في المحركين."`` | — |
-| [SRC-480FAB7816-L000009](../DATABASE_POSTGRESQL_AR.md#L9) | 9 | `""` | — |
-| [SRC-480FAB7816-L000010](../DATABASE_POSTGRESQL_AR.md#L10) | 10 | `"## الإعداد المحلي"` | — |
-| [SRC-480FAB7816-L000011](../DATABASE_POSTGRESQL_AR.md#L11) | 11 | `""` | — |
-| [SRC-480FAB7816-L000012](../DATABASE_POSTGRESQL_AR.md#L12) | 12 | `"عند عدم ضبط متغير قاعدة بيانات، يستخدم Omarai المسار الافتراضي:"` | — |
-| [SRC-480FAB7816-L000013](../DATABASE_POSTGRESQL_AR.md#L13) | 13 | `""` | — |
-| [SRC-480FAB7816-L000014](../DATABASE_POSTGRESQL_AR.md#L14) | 14 | ````"```text"```` | — |
-| [SRC-480FAB7816-L000015](../DATABASE_POSTGRESQL_AR.md#L15) | 15 | `"~/.omarai/omarai.sqlite3"` | — |
-| [SRC-480FAB7816-L000016](../DATABASE_POSTGRESQL_AR.md#L16) | 16 | ````"```"```` | — |
-| [SRC-480FAB7816-L000017](../DATABASE_POSTGRESQL_AR.md#L17) | 17 | `""` | — |
-| [SRC-480FAB7816-L000018](../DATABASE_POSTGRESQL_AR.md#L18) | 18 | ``"يمكن تغيير المسار بمتغير `OMARAI_DB_PATH`:"`` | — |
-| [SRC-480FAB7816-L000019](../DATABASE_POSTGRESQL_AR.md#L19) | 19 | `""` | — |
-| [SRC-480FAB7816-L000020](../DATABASE_POSTGRESQL_AR.md#L20) | 20 | ````"```bash"```` | — |
-| [SRC-480FAB7816-L000021](../DATABASE_POSTGRESQL_AR.md#L21) | 21 | `"export OMARAI_DB_PATH=\"$HOME/.omarai/dev.sqlite3\""` | — |
-| [SRC-480FAB7816-L000022](../DATABASE_POSTGRESQL_AR.md#L22) | 22 | `"python -m cli.omarai serve"` | — |
-| [SRC-480FAB7816-L000023](../DATABASE_POSTGRESQL_AR.md#L23) | 23 | ````"```"```` | — |
-| [SRC-480FAB7816-L000024](../DATABASE_POSTGRESQL_AR.md#L24) | 24 | `""` | — |
-| [SRC-480FAB7816-L000025](../DATABASE_POSTGRESQL_AR.md#L25) | 25 | ``"لا تضبط `OMARAI_DB_PATH` بالتزامن مع عنوان PostgreSQL؛ يرفض التطبيق هذا التعارض بدل اختيار قاعدة بصمت."`` | — |
-| [SRC-480FAB7816-L000026](../DATABASE_POSTGRESQL_AR.md#L26) | 26 | `""` | — |
-| [SRC-480FAB7816-L000027](../DATABASE_POSTGRESQL_AR.md#L27) | 27 | `"## إعداد Neon للاستضافة"` | — |
-| [SRC-480FAB7816-L000028](../DATABASE_POSTGRESQL_AR.md#L28) | 28 | `""` | — |
-| [SRC-480FAB7816-L000029](../DATABASE_POSTGRESQL_AR.md#L29) | 29 | `"1. أنشئ مشروع PostgreSQL في Neon واختر المنطقة الأقرب إلى تطبيق الاستضافة قدر الإمكان."` | — |
-| [SRC-480FAB7816-L000030](../DATABASE_POSTGRESQL_AR.md#L30) | 30 | `"2. افتح قسم الاتصال في لوحة Neon واختر عنوان PostgreSQL عبر **pooled connection** لاستخدام عنوان pooler، خصوصًا أن التطبيق يفتح اتصالًا قصير العمر لكل عملية تخزين."` | — |
-| [SRC-480FAB7816-L000031](../DATABASE_POSTGRESQL_AR.md#L31) | 31 | ``"3. انسخ عنوان الاتصال كاملًا من Neon، وتحقق من وجود `sslmode=require` في العنوان."`` | — |
-| [SRC-480FAB7816-L000032](../DATABASE_POSTGRESQL_AR.md#L32) | 32 | ``"4. افتح إعدادات المتغيرات/الأسرار في خدمة الاستضافة، وأضف متغيرًا سريًا اسمه `OMARAI_DATABASE_URL` وقيمته عنوان الاتصال."`` | — |
-| [SRC-480FAB7816-L000033](../DATABASE_POSTGRESQL_AR.md#L33) | 33 | ``"5. اترك `OMARAI_DB_PATH` غير مضبوط حتى لا يحدث تعارض."`` | — |
-| [SRC-480FAB7816-L000034](../DATABASE_POSTGRESQL_AR.md#L34) | 34 | ``"6. أعد تشغيل/نشر الخدمة عبر مسار النشر الذي يوافق عليه مالك البيئة، ثم راجع `GET /api/health`: يجب أن يعرض `storage.backend=postgresql` و`storage.database_url_configured=true` من دون عرض العنوان أو كلمة المرور."`` | — |
-| [SRC-480FAB7816-L000035](../DATABASE_POSTGRESQL_AR.md#L35) | 35 | `"7. هذا الفحص يعرض اختيار المحرك وإعداد عنوان الاتصال فقط؛ لا يثبت خطة Neon أو سياسة النسخ الاحتياطي أو استمرار الاتصال بعد بدء التشغيل. نفّذ اختبار قبول محميًا بعد التهيئة مع بيانات اختبار غير حساسة."` | — |
-| [SRC-480FAB7816-L000036](../DATABASE_POSTGRESQL_AR.md#L36) | 36 | `""` | — |
-| [SRC-480FAB7816-L000037](../DATABASE_POSTGRESQL_AR.md#L37) | 37 | ``"لا تلصق عنوان الاتصال في محادثة، أو Issue، أو PR، أو سجل CI، أو ملف `.env.example`. لا تضعه في GitHub Actions Secrets إلا عندما تكون هناك حاجة واضحة لعملية CI تتصل بقاعدة محددة؛ اختبارات CI الاعتيادية تستخدم PostgreSQL مؤقتًا داخل runner ولا تحتاج سر Neon."`` | — |
-| [SRC-480FAB7816-L000038](../DATABASE_POSTGRESQL_AR.md#L38) | 38 | `""` | — |
-| [SRC-480FAB7816-L000039](../DATABASE_POSTGRESQL_AR.md#L39) | 39 | `"## اختيار المحرك"` | — |
-| [SRC-480FAB7816-L000040](../DATABASE_POSTGRESQL_AR.md#L40) | 40 | `""` | — |
-| [SRC-480FAB7816-L000041](../DATABASE_POSTGRESQL_AR.md#L41) | 41 | `"\| الإعداد \| المحرك \|"` | — |
-| [SRC-480FAB7816-L000042](../DATABASE_POSTGRESQL_AR.md#L42) | 42 | `"\|---\|---\|"` | — |
-| [SRC-480FAB7816-L000043](../DATABASE_POSTGRESQL_AR.md#L43) | 43 | ``"\| لا يوجد `OMARAI_DATABASE_URL` ولا `DATABASE_URL` \| SQLite افتراضي \|"`` | — |
-| [SRC-480FAB7816-L000044](../DATABASE_POSTGRESQL_AR.md#L44) | 44 | ``"\| `OMARAI_DATABASE_URL` مضبوط \| PostgreSQL \|"`` | — |
-| [SRC-480FAB7816-L000045](../DATABASE_POSTGRESQL_AR.md#L45) | 45 | ``"\| `DATABASE_URL` مضبوط دون المتغير المخصص \| PostgreSQL \|"`` | — |
-| [SRC-480FAB7816-L000046](../DATABASE_POSTGRESQL_AR.md#L46) | 46 | ``"\| عنوان PostgreSQL مع `OMARAI_DB_PATH` في الوقت نفسه \| خطأ إعداد واضح؛ يجب اختيار أحدهما \|"`` | — |
-| [SRC-480FAB7816-L000047](../DATABASE_POSTGRESQL_AR.md#L47) | 47 | `""` | — |
-| [SRC-480FAB7816-L000048](../DATABASE_POSTGRESQL_AR.md#L48) | 48 | `"## المخطط والاختبارات"` | — |
-| [SRC-480FAB7816-L000049](../DATABASE_POSTGRESQL_AR.md#L49) | 49 | `""` | — |
-| [SRC-480FAB7816-L000050](../DATABASE_POSTGRESQL_AR.md#L50) | 50 | ``"- عند بدء التطبيق، ينشئ `LeadStore` الجداول والفهارس المطلوبة إذا لم تكن موجودة."`` | — |
-| [SRC-480FAB7816-L000051](../DATABASE_POSTGRESQL_AR.md#L51) | 51 | `"- ترحيل SQLite القديم (مثل نقل جدول leads legacy إلى جدول tenant-scoped) خاص بمحرك SQLite؛ لا يُنفذ على PostgreSQL."` | — |
-| [SRC-480FAB7816-L000052](../DATABASE_POSTGRESQL_AR.md#L52) | 52 | `"- سير عمل GitHub Actions يشغل اختبار PostgreSQL ضد خدمة مؤقتة PostgreSQL 16؛ لا يتصل بحساب Neon ولا يحتاج أسراره."` | — |
-| [SRC-480FAB7816-L000053](../DATABASE_POSTGRESQL_AR.md#L53) | 53 | `"- اختبارات التكامل تغطي تمييز السجلات بين المستأجرين، منع التكرار، تحديث الحالة، الرموز، الجلسات، ملفات المنتج، وسجلات الاكتشاف."` | — |
-| [SRC-480FAB7816-L000054](../DATABASE_POSTGRESQL_AR.md#L54) | 54 | `""` | — |
-| [SRC-480FAB7816-L000055](../DATABASE_POSTGRESQL_AR.md#L55) | 55 | `"## البيانات المحلية الحالية ونقلها"` | — |
-| [SRC-480FAB7816-L000056](../DATABASE_POSTGRESQL_AR.md#L56) | 56 | `""` | — |
-| [SRC-480FAB7816-L000057](../DATABASE_POSTGRESQL_AR.md#L57) | 57 | ``"**لا يوجد نقل تلقائي للبيانات المحلية إلى Neon في هذا التغيير.** ملف `~/.omarai/omarai.sqlite3` يبقى كما هو على جهاز التطوير؛ قاعدة Neon تبدأ بقاعدة فارغة وجداولها الجديدة. لا تضع عنوان Neon في بيئة محلية تتضمن بيانات إنتاجية قبل وضع خطة نسخ احتياطي/ترحيل ومطابقة عدد السجلات، ولا تحذف ملف SQLite الأصلي بعد النسخ."`` | — |

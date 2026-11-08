@@ -166,7 +166,29 @@ _FOLLOWUP_ASPECT_FRAGMENTS = frozenset({
 
 _CONTEXTUAL_ASPECT_RE = re.compile(
     r"^(?:ال)?(?:سعر|ثمن|اسعار|تكلفه|ضمان|بطاريه|كاميرا|مميزات|عيوب|"
-    r"مكان|مصدر|رابط|تاريخ|مراجعات|اراء|توفر|سرعه|اداء|جوده|صيانه)"
+    r"مكان|مصدر|رابط|تاريخ|مراجعات|اراء|توفر|سرعه|اداء|جوده|صيانه|"
+    r"تقييم|مواصفات|خصائص|توصيل|عنوان|مواعيد|شروط)"
+)
+_REFERENTIAL_ASPECTS = (
+    r"(?:سعر|ثمن|اسعار|تكلفه|ضمان|بطاريه|كاميرا|مميزات|عيوب|مكان|عنوان|رقم|"
+    r"تقييم|تقييمات|مراجعات|مواصفات|خصائص|شروط|توصيل|مواعيد|فروع|مصدر|رابط)"
+)
+# An aspect noun carrying an attached pronoun ("اسعارهم", "ضمانه") or Egyptian "بتاعه"
+# refers to something already named, so it is a follow-up even without a lead-in word.
+_ATTACHED_ASPECT_PRONOUN_RE = re.compile(
+    r"^(?:(?:ممكن|عايز|عاوز|اريد|ابغي)\s+)?(?:(?:اعرف|اعرفه|اشوف)\s+)?"
+    r"(?:و)?(?:ال)?" + _REFERENTIAL_ASPECTS + r"(?:ه|ها|هم|هما|هن)(?:\s+\S+){0,2}$"
+)
+# "السعر بتاعه كام؟" is an aspect-led follow-up; do not treat every occurrence
+# of "بتاعه" in an otherwise self-contained new question as a reference.
+_ASPECT_BETA3_REFERENCE_RE = re.compile(
+    r"^(?:و)?(?:ال)?" + _REFERENTIAL_ASPECTS
+    + r"\s+بتاع(?:ه|ها|هم|هما|ته|تها|تهم)(?:\s+(?:كام|كم|ايه|ما))?$"
+)
+# "وبالنسبة للضمان؟" / "وبخصوص الأسعار" — aspect re-asked about the current topic.
+_ABOUT_ASPECT_RE = re.compile(
+    r"^و?(?:بالنسبه|بخصوص)\s*(?:ل(?:ل|ال)?)?(?:ال)?"
+    + _REFERENTIAL_ASPECTS + r"(?:\s+\S+){0,2}$"
 )
 _CONTEXTUAL_ENGLISH_ASPECT_RE = re.compile(
     r"^(?:what about(?: its)?|how about(?: its)?|and (?:the|its|their)|its) +"
@@ -298,6 +320,12 @@ def _is_contextual_followup(question: str) -> bool:
         return False
     normalized = _strip_followup_leadin(_normalize(question))
     if _needs_clarification(question) or _starts_with_contextual_aspect(question):
+        return True
+    if (
+        _ATTACHED_ASPECT_PRONOUN_RE.match(normalized)
+        or _ASPECT_BETA3_REFERENCE_RE.match(normalized)
+        or _ABOUT_ASPECT_RE.match(normalized)
+    ):
         return True
     # Pronouns and deictic references are strong signals only in a short turn.
     detached_reference = re.fullmatch(

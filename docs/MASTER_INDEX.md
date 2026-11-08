@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **143**
 - ملفات Python المحللة: **84**
-- تعريفات Python المفهرسة: **2030**
+- تعريفات Python المفهرسة: **2054**
 - تعريفات Python موثقة بوجود Docstring: **302**
-- تعريفات Python بلا Docstring: **1318**
-- تعريفات لا ينطبق عليها Docstring: **410**
-- الرموز الساكنة الإضافية: **2864**
-- الأسطر النصية المفهرسة حرفيًا: **51104**
+- تعريفات Python بلا Docstring: **1338**
+- تعريفات لا ينطبق عليها Docstring: **414**
+- الرموز الساكنة الإضافية: **2925**
+- الأسطر النصية المفهرسة حرفيًا: **51693**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -37,11 +37,11 @@
 | FILE-BC37D034BA | إعدادات وتشغيل | [.gitignore](../.gitignore#L1) | بدون امتداد | 158 | 16 | جرد ملف نصي فقط |
 | FILE-A54FF182C7 | وثائق ونصوص | [AGENTS.md](../AGENTS.md#L1) | Markdown | 12807 | 83 | جرد الملف + عناوين Markdown |
 | FILE-E120A62E2E | الوكيل والمنطق | [agents/__init__.py](../agents/__init__.py#L1) | Python | 40 | 1 | جرد الملف + AST Python |
-| FILE-138992B1FC | الوكيل والمنطق | [agents/answer_validation.py](../agents/answer_validation.py#L1) | Python | 25285 | 521 | جرد الملف + AST Python |
+| FILE-138992B1FC | الوكيل والمنطق | [agents/answer_validation.py](../agents/answer_validation.py#L1) | Python | 25716 | 532 | جرد الملف + AST Python |
 | FILE-01273BA196 | الوكيل والمنطق | [agents/aspect_planning.py](../agents/aspect_planning.py#L1) | Python | 11739 | 272 | جرد الملف + AST Python |
 | FILE-7D6FC391EC | الوكيل والمنطق | [agents/claim_evidence.py](../agents/claim_evidence.py#L1) | Python | 12762 | 296 | جرد الملف + AST Python |
 | FILE-2D53795445 | الوكيل والمنطق | [agents/dialogue_state.py](../agents/dialogue_state.py#L1) | Python | 10300 | 259 | جرد الملف + AST Python |
-| FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 24445 | 544 | جرد الملف + AST Python |
+| FILE-5587371288 | الوكيل والمنطق | [agents/intent_router.py](../agents/intent_router.py#L1) | Python | 26084 | 572 | جرد الملف + AST Python |
 | FILE-C9CF9B54F8 | الوكيل والمنطق | [agents/omarai.py](../agents/omarai.py#L1) | Python | 59349 | 1370 | جرد الملف + AST Python |
 | FILE-FDEEAFDFCA | الوكيل والمنطق | [agents/request_budget.py](../agents/request_budget.py#L1) | Python | 6503 | 164 | جرد الملف + AST Python |
 | FILE-3D565C3B85 | الوكيل والمنطق | [agents/requirement_evidence.py](../agents/requirement_evidence.py#L1) | Python | 6723 | 148 | جرد الملف + AST Python |
@@ -50,7 +50,7 @@
 | FILE-3AA6165B18 | الوكيل والمنطق | [agents/research_guardrails.py](../agents/research_guardrails.py#L1) | Python | 12330 | 301 | جرد الملف + AST Python |
 | FILE-60066C6786 | الوكيل والمنطق | [agents/research_pipeline.py](../agents/research_pipeline.py#L1) | Python | 8445 | 217 | جرد الملف + AST Python |
 | FILE-8D00DCEC0D | الوكيل والمنطق | [agents/sales_domain.py](../agents/sales_domain.py#L1) | Python | 22371 | 612 | جرد الملف + AST Python |
-| FILE-6E58A660BC | الوكيل والمنطق | [agents/search_connectors.py](../agents/search_connectors.py#L1) | Python | 9565 | 199 | جرد الملف + AST Python |
+| FILE-6E58A660BC | الوكيل والمنطق | [agents/search_connectors.py](../agents/search_connectors.py#L1) | Python | 10415 | 237 | جرد الملف + AST Python |
 | FILE-086D574B4E | الوكيل والمنطق | [agents/semantic_claim_verifier.py](../agents/semantic_claim_verifier.py#L1) | Python | 18785 | 390 | جرد الملف + AST Python |
 | FILE-686F71AA50 | الوكيل والمنطق | [agents/task_understanding.py](../agents/task_understanding.py#L1) | Python | 78578 | 1426 | جرد الملف + AST Python |
 | FILE-FC84E5B115 | الوكيل والمنطق | [agents/text_normalization.py](../agents/text_normalization.py#L1) | Python | 1779 | 41 | جرد الملف + AST Python |
@@ -84,7 +84,7 @@
 | FILE-9A0DFA994E | وثائق وفهرسة | [docs/OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md](OMARAI_NATURAL_LANGUAGE_UNDERSTANDING_AR.md#L1) | Markdown | 21086 | 146 | جرد الملف + عناوين Markdown |
 | FILE-B2C95EAEE1 | وثائق وفهرسة | [docs/OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L1) | Markdown | 15555 | 118 | جرد الملف + عناوين Markdown |
 | FILE-8872CF2B16 | وثائق وفهرسة | [docs/OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L1) | Markdown | 16979 | 137 | جرد الملف + عناوين Markdown |
-| FILE-62CE5126F9 | وثائق وفهرسة | [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L1) | Markdown | 118549 | 542 | جرد الملف + عناوين Markdown |
+| FILE-62CE5126F9 | وثائق وفهرسة | [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L1) | Markdown | 125639 | 627 | جرد الملف + عناوين Markdown |
 | FILE-B9C3015420 | وثائق وفهرسة | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L1) | Markdown | 79097 | 278 | جرد الملف + عناوين Markdown |
 | FILE-65551FB29F | وثائق وفهرسة | [docs/OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md](OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L1) | Markdown | 48903 | 575 | جرد الملف + عناوين Markdown |
 | FILE-41EDB66D3C | وثائق وفهرسة | [docs/OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md](OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L1) | Markdown | 51887 | 546 | جرد الملف + عناوين Markdown |
@@ -92,7 +92,7 @@
 | FILE-61B24BEFCC | وثائق وفهرسة | [docs/OMARAI_TEST_EVIDENCE_MATRIX_AR.md](OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L1) | Markdown | 22759 | 142 | جرد الملف + عناوين Markdown |
 | FILE-B6BD2CE1A8 | وثائق وفهرسة | [docs/OPERATIONS_AR.md](OPERATIONS_AR.md#L1) | Markdown | 1789 | 25 | جرد الملف + عناوين Markdown |
 | FILE-0B5CA119D2 | وثائق وفهرسة | [docs/README.md](README.md#L1) | Markdown | 6287 | 53 | جرد الملف + عناوين Markdown |
-| FILE-D911B73392 | وثائق وفهرسة | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L1) | Markdown | 15596 | 132 | جرد الملف + عناوين Markdown |
+| FILE-D911B73392 | وثائق وفهرسة | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L1) | Markdown | 17705 | 148 | جرد الملف + عناوين Markdown |
 | FILE-69F3587825 | وثائق وفهرسة | [docs/search_code.py](search_code.py#L1) | Python | 10378 | 327 | جرد الملف + AST Python |
 | FILE-BBB7222984 | وثائق وفهرسة | [docs/superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L1) | Markdown | 11339 | 130 | جرد الملف + عناوين Markdown |
 | FILE-002F33CFDC | وثائق وفهرسة | [docs/superpowers/plans/2026-11-05-default-workspace-home.md](superpowers/plans/2026-11-05-default-workspace-home.md#L1) | Markdown | 3207 | 66 | جرد الملف + عناوين Markdown |
@@ -124,13 +124,13 @@
 | FILE-D186ED3822 | اختبارات | [tests/test_answer_quality_review_scorecard.py](../tests/test_answer_quality_review_scorecard.py#L1) | Python | 4504 | 118 | جرد الملف + AST Python |
 | FILE-B3062EB677 | اختبارات | [tests/test_answer_quality_runner.py](../tests/test_answer_quality_runner.py#L1) | Python | 14731 | 418 | جرد الملف + AST Python |
 | FILE-B0DE4359ED | اختبارات | [tests/test_answer_quality_unknown_tool_status.py](../tests/test_answer_quality_unknown_tool_status.py#L1) | Python | 1252 | 34 | جرد الملف + AST Python |
-| FILE-1C77C97630 | اختبارات | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L1) | Python | 13815 | 331 | جرد الملف + AST Python |
+| FILE-1C77C97630 | اختبارات | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L1) | Python | 15306 | 367 | جرد الملف + AST Python |
 | FILE-3451CC474D | اختبارات | [tests/test_api.py](../tests/test_api.py#L1) | Python | 57111 | 1540 | جرد الملف + AST Python |
 | FILE-6CBA87B20C | اختبارات | [tests/test_aspect_planning.py](../tests/test_aspect_planning.py#L1) | Python | 4389 | 117 | جرد الملف + AST Python |
 | FILE-6B37B7D6D3 | اختبارات | [tests/test_claim_evidence_metadata.py](../tests/test_claim_evidence_metadata.py#L1) | Python | 3242 | 80 | جرد الملف + AST Python |
 | FILE-DA61479D59 | اختبارات | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L1) | Python | 11930 | 304 | جرد الملف + AST Python |
-| FILE-6BECF5AD00 | اختبارات | [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L1) | Python | 2518 | 79 | جرد الملف + AST Python |
-| FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | Python | 8621 | 186 | جرد الملف + AST Python |
+| FILE-6BECF5AD00 | اختبارات | [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L1) | Python | 6411 | 185 | جرد الملف + AST Python |
+| FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | Python | 12768 | 268 | جرد الملف + AST Python |
 | FILE-29A9CD43D1 | اختبارات | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L1) | Python | 12424 | 299 | جرد الملف + AST Python |
 | FILE-DA139AC9D0 | اختبارات | [tests/test_dialogue_state.py](../tests/test_dialogue_state.py#L1) | Python | 6420 | 152 | جرد الملف + AST Python |
 | FILE-6BCB799CEC | اختبارات | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L1) | Python | 10934 | 306 | جرد الملف + AST Python |
@@ -140,7 +140,7 @@
 | FILE-AAA21D04E8 | اختبارات | [tests/test_generation_capabilities.py](../tests/test_generation_capabilities.py#L1) | Python | 14298 | 377 | جرد الملف + AST Python |
 | FILE-1A176AD4F0 | اختبارات | [tests/test_hosted_smoke.py](../tests/test_hosted_smoke.py#L1) | Python | 29096 | 656 | جرد الملف + AST Python |
 | FILE-1BB2FDD5B7 | اختبارات | [tests/test_hosted_smoke_transcript.py](../tests/test_hosted_smoke_transcript.py#L1) | Python | 6200 | 122 | جرد الملف + AST Python |
-| FILE-EA6EC52573 | اختبارات | [tests/test_intent_router.py](../tests/test_intent_router.py#L1) | Python | 13102 | 295 | جرد الملف + AST Python |
+| FILE-EA6EC52573 | اختبارات | [tests/test_intent_router.py](../tests/test_intent_router.py#L1) | Python | 15431 | 359 | جرد الملف + AST Python |
 | FILE-4397BC2CD2 | اختبارات | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L1) | Python | 10680 | 249 | جرد الملف + AST Python |
 | FILE-62DC597310 | اختبارات | [tests/test_live_search_connectors.py](../tests/test_live_search_connectors.py#L1) | Python | 8442 | 270 | جرد الملف + AST Python |
 | FILE-D67DCEB693 | اختبارات | [tests/test_model_provider_failover.py](../tests/test_model_provider_failover.py#L1) | Python | 7676 | 203 | جرد الملف + AST Python |
@@ -170,7 +170,7 @@
 | FILE-E3EEC2014A | اختبارات | [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L1) | Python | 9761 | 238 | جرد الملف + AST Python |
 | FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 71437 | 521 | جرد الملف + معرفات HTML والرموز داخل script/style |
 | FILE-A16FA6D4B5 | واجهة الويب | [web/dashboard.html](../web/dashboard.html#L1) | HTML | 17812 | 74 | جرد الملف + معرفات HTML والرموز داخل script/style |
-| FILE-2C8F288796 | واجهة الويب | [web/workspace.html](../web/workspace.html#L1) | HTML | 74099 | 899 | جرد الملف + معرفات HTML والرموز داخل script/style |
+| FILE-2C8F288796 | واجهة الويب | [web/workspace.html](../web/workspace.html#L1) | HTML | 82376 | 1022 | جرد الملف + معرفات HTML والرموز داخل script/style |
 
 ## تعريفات Python من AST
 
@@ -247,21 +247,25 @@
 | [agents/intent_router.py](../agents/intent_router.py#L148) | متغير/ثابت Python | _FOLLOWUP_LEAD_IN_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 148 | [SRC-5587371288-L000148](../agents/intent_router.py#L148) |
 | [agents/intent_router.py](../agents/intent_router.py#L153) | متغير/ثابت Python | _FOLLOWUP_ASPECT_FRAGMENTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 153 | [SRC-5587371288-L000153](../agents/intent_router.py#L153) |
 | [agents/intent_router.py](../agents/intent_router.py#L167) | متغير/ثابت Python | _CONTEXTUAL_ASPECT_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 167 | [SRC-5587371288-L000167](../agents/intent_router.py#L167) |
-| [agents/intent_router.py](../agents/intent_router.py#L171) | متغير/ثابت Python | _CONTEXTUAL_ENGLISH_ASPECT_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 171 | [SRC-5587371288-L000171](../agents/intent_router.py#L171) |
-| [agents/intent_router.py](../agents/intent_router.py#L177) | دالة | _strip_followup_leadin | لا توجد Docstring. | ناقص | 177 | [SRC-5587371288-L000177](../agents/intent_router.py#L177) |
-| [agents/intent_router.py](../agents/intent_router.py#L181) | دالة | _starts_with_contextual_aspect | Recognize aspect-led follow-ups without merging standalone new topics. | موثق | 181 | [SRC-5587371288-L000181](../agents/intent_router.py#L181) |
-| [agents/intent_router.py](../agents/intent_router.py#L194) | دالة | _needs_clarification | لا توجد Docstring. | ناقص | 194 | [SRC-5587371288-L000194](../agents/intent_router.py#L194) |
-| [agents/intent_router.py](../agents/intent_router.py#L212) | دالة | _is_clarification_message | لا توجد Docstring. | ناقص | 212 | [SRC-5587371288-L000212](../agents/intent_router.py#L212) |
-| [agents/intent_router.py](../agents/intent_router.py#L223) | دالة | _latest_context_anchor | Find the latest substantive user topic, skipping ellipsis follow-ups only. | موثق | 223 | [SRC-5587371288-L000223](../agents/intent_router.py#L223) |
-| [agents/intent_router.py](../agents/intent_router.py#L255) | دالة | _pending_clarification_query | Return the unresolved elliptical question immediately awaiting a user slot-fill. | موثق | 255 | [SRC-5587371288-L000255](../agents/intent_router.py#L255) |
-| [agents/intent_router.py](../agents/intent_router.py#L282) | دالة | _is_clarification_answer | Recognize a concise answer to Omarai's immediately preceding clarification. | موثق | 282 | [SRC-5587371288-L000282](../agents/intent_router.py#L282) |
-| [agents/intent_router.py](../agents/intent_router.py#L293) | دالة | _is_contextual_followup | Detect short referent-dependent follow-ups without treating every 'okay' as one. | موثق | 293 | [SRC-5587371288-L000293](../agents/intent_router.py#L293) |
-| [agents/intent_router.py](../agents/intent_router.py#L318) | دالة | resolve_followup_query | Resolve a short contextual follow-up against the nearest substantive topic. | موثق | 318 | [SRC-5587371288-L000318](../agents/intent_router.py#L318) |
-| [agents/intent_router.py](../agents/intent_router.py#L343) | دالة | _has_explicit_source_request | Recognize explicit requests for evidence/citations that require web-backed retrieval. | موثق | 343 | [SRC-5587371288-L000343](../agents/intent_router.py#L343) |
-| [agents/intent_router.py](../agents/intent_router.py#L358) | دالة | _is_deep | لا توجد Docstring. | ناقص | 358 | [SRC-5587371288-L000358](../agents/intent_router.py#L358) |
-| [agents/intent_router.py](../agents/intent_router.py#L375) | دالة | _is_page_summarization_request | Recognize a request to summarize a specific web page or link. | موثق | 375 | [SRC-5587371288-L000375](../agents/intent_router.py#L375) |
-| [agents/intent_router.py](../agents/intent_router.py#L392) | دالة | _has_inline_summary_text | Detect text explicitly pasted after a summary instruction, not a web page URL. | موثق | 392 | [SRC-5587371288-L000392](../agents/intent_router.py#L392) |
-| [agents/intent_router.py](../agents/intent_router.py#L418) | دالة | route_intent | Return a deterministic route and auditable reason for a user question. | موثق | 418 | [SRC-5587371288-L000418](../agents/intent_router.py#L418) |
+| [agents/intent_router.py](../agents/intent_router.py#L172) | متغير/ثابت Python | _REFERENTIAL_ASPECTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 172 | [SRC-5587371288-L000172](../agents/intent_router.py#L172) |
+| [agents/intent_router.py](../agents/intent_router.py#L178) | متغير/ثابت Python | _ATTACHED_ASPECT_PRONOUN_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 178 | [SRC-5587371288-L000178](../agents/intent_router.py#L178) |
+| [agents/intent_router.py](../agents/intent_router.py#L184) | متغير/ثابت Python | _ASPECT_BETA3_REFERENCE_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 184 | [SRC-5587371288-L000184](../agents/intent_router.py#L184) |
+| [agents/intent_router.py](../agents/intent_router.py#L189) | متغير/ثابت Python | _ABOUT_ASPECT_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 189 | [SRC-5587371288-L000189](../agents/intent_router.py#L189) |
+| [agents/intent_router.py](../agents/intent_router.py#L193) | متغير/ثابت Python | _CONTEXTUAL_ENGLISH_ASPECT_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 193 | [SRC-5587371288-L000193](../agents/intent_router.py#L193) |
+| [agents/intent_router.py](../agents/intent_router.py#L199) | دالة | _strip_followup_leadin | لا توجد Docstring. | ناقص | 199 | [SRC-5587371288-L000199](../agents/intent_router.py#L199) |
+| [agents/intent_router.py](../agents/intent_router.py#L203) | دالة | _starts_with_contextual_aspect | Recognize aspect-led follow-ups without merging standalone new topics. | موثق | 203 | [SRC-5587371288-L000203](../agents/intent_router.py#L203) |
+| [agents/intent_router.py](../agents/intent_router.py#L216) | دالة | _needs_clarification | لا توجد Docstring. | ناقص | 216 | [SRC-5587371288-L000216](../agents/intent_router.py#L216) |
+| [agents/intent_router.py](../agents/intent_router.py#L234) | دالة | _is_clarification_message | لا توجد Docstring. | ناقص | 234 | [SRC-5587371288-L000234](../agents/intent_router.py#L234) |
+| [agents/intent_router.py](../agents/intent_router.py#L245) | دالة | _latest_context_anchor | Find the latest substantive user topic, skipping ellipsis follow-ups only. | موثق | 245 | [SRC-5587371288-L000245](../agents/intent_router.py#L245) |
+| [agents/intent_router.py](../agents/intent_router.py#L277) | دالة | _pending_clarification_query | Return the unresolved elliptical question immediately awaiting a user slot-fill. | موثق | 277 | [SRC-5587371288-L000277](../agents/intent_router.py#L277) |
+| [agents/intent_router.py](../agents/intent_router.py#L304) | دالة | _is_clarification_answer | Recognize a concise answer to Omarai's immediately preceding clarification. | موثق | 304 | [SRC-5587371288-L000304](../agents/intent_router.py#L304) |
+| [agents/intent_router.py](../agents/intent_router.py#L315) | دالة | _is_contextual_followup | Detect short referent-dependent follow-ups without treating every 'okay' as one. | موثق | 315 | [SRC-5587371288-L000315](../agents/intent_router.py#L315) |
+| [agents/intent_router.py](../agents/intent_router.py#L346) | دالة | resolve_followup_query | Resolve a short contextual follow-up against the nearest substantive topic. | موثق | 346 | [SRC-5587371288-L000346](../agents/intent_router.py#L346) |
+| [agents/intent_router.py](../agents/intent_router.py#L371) | دالة | _has_explicit_source_request | Recognize explicit requests for evidence/citations that require web-backed retrieval. | موثق | 371 | [SRC-5587371288-L000371](../agents/intent_router.py#L371) |
+| [agents/intent_router.py](../agents/intent_router.py#L386) | دالة | _is_deep | لا توجد Docstring. | ناقص | 386 | [SRC-5587371288-L000386](../agents/intent_router.py#L386) |
+| [agents/intent_router.py](../agents/intent_router.py#L403) | دالة | _is_page_summarization_request | Recognize a request to summarize a specific web page or link. | موثق | 403 | [SRC-5587371288-L000403](../agents/intent_router.py#L403) |
+| [agents/intent_router.py](../agents/intent_router.py#L420) | دالة | _has_inline_summary_text | Detect text explicitly pasted after a summary instruction, not a web page URL. | موثق | 420 | [SRC-5587371288-L000420](../agents/intent_router.py#L420) |
+| [agents/intent_router.py](../agents/intent_router.py#L446) | دالة | route_intent | Return a deterministic route and auditable reason for a user question. | موثق | 446 | [SRC-5587371288-L000446](../agents/intent_router.py#L446) |
 | [agents/omarai.py](../agents/omarai.py#L34) | متغير/ثابت Python | MAX_TEXT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 34 | [SRC-C9CF9B54F8-L000034](../agents/omarai.py#L34) |
 | [agents/omarai.py](../agents/omarai.py#L35) | متغير/ثابت Python | DEFAULT_TENANT_ID | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 35 | [SRC-C9CF9B54F8-L000035](../agents/omarai.py#L35) |
 | [agents/omarai.py](../agents/omarai.py#L36) | متغير/ثابت Python | DEFAULT_USER_ID | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 36 | [SRC-C9CF9B54F8-L000036](../agents/omarai.py#L36) |
@@ -546,26 +550,26 @@
 | [agents/sales_domain.py](../agents/sales_domain.py#L532) | متغير/ثابت Python | MAX_BUYER_QUERY_COUNT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 532 | [SRC-8D00DCEC0D-L000532](../agents/sales_domain.py#L532) |
 | [agents/sales_domain.py](../agents/sales_domain.py#L535) | دالة | build_buyer_queries | Build bounded, product-anchored buyer queries without sector-specific defaults. | موثق | 535 | [SRC-8D00DCEC0D-L000535](../agents/sales_domain.py#L535) |
 | [agents/sales_domain.py](../agents/sales_domain.py#L608) | دالة | to_json_dict | Serialize a supported domain object without silently dropping evidence fields. | موثق | 608 | [SRC-8D00DCEC0D-L000608](../agents/sales_domain.py#L608) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L13) | متغير/ثابت Python | MAX_CONNECTOR_RESULTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 13 | [SRC-6E58A660BC-L000013](../agents/search_connectors.py#L13) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L14) | متغير/ثابت Python | MAX_CONNECTOR_RESPONSE_BYTES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-6E58A660BC-L000014](../agents/search_connectors.py#L14) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L15) | متغير/ثابت Python | DEFAULT_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-6E58A660BC-L000015](../agents/search_connectors.py#L15) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L16) | متغير/ثابت Python | USER_AGENT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 16 | [SRC-6E58A660BC-L000016](../agents/search_connectors.py#L16) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L17) | متغير/ثابت Python | ConnectorFn | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 17 | [SRC-6E58A660BC-L000017](../agents/search_connectors.py#L17) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L20) | دالة | _clean_text | لا توجد Docstring. | ناقص | 20 | [SRC-6E58A660BC-L000020](../agents/search_connectors.py#L20) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L26) | كلاس | _NoRedirectHandler | Fail closed on redirects from fixed academic-provider endpoints. | موثق | 26 | [SRC-6E58A660BC-L000026](../agents/search_connectors.py#L26) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L29) | دالة | _NoRedirectHandler.redirect_request | لا توجد Docstring. | ناقص | 29 | [SRC-6E58A660BC-L000029](../agents/search_connectors.py#L29) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L33) | دالة | _open_provider_request | Open a provider request without following an unchecked redirect. | موثق | 33 | [SRC-6E58A660BC-L000033](../agents/search_connectors.py#L33) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L39) | دالة | _read_bounded | Read at most the configured response ceiling plus one sentinel byte. | موثق | 39 | [SRC-6E58A660BC-L000039](../agents/search_connectors.py#L39) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L47) | دالة | _http_get_json | لا توجد Docstring. | ناقص | 47 | [SRC-6E58A660BC-L000047](../agents/search_connectors.py#L47) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L56) | دالة | _http_get_text | لا توجد Docstring. | ناقص | 56 | [SRC-6E58A660BC-L000056](../agents/search_connectors.py#L56) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L62) | دالة | _result | لا توجد Docstring. | ناقص | 62 | [SRC-6E58A660BC-L000062](../agents/search_connectors.py#L62) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L76) | دالة | search_openalex | لا توجد Docstring. | ناقص | 76 | [SRC-6E58A660BC-L000076](../agents/search_connectors.py#L76) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L99) | دالة | search_arxiv | لا توجد Docstring. | ناقص | 99 | [SRC-6E58A660BC-L000099](../agents/search_connectors.py#L99) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L120) | دالة | search_crossref | لا توجد Docstring. | ناقص | 120 | [SRC-6E58A660BC-L000120](../agents/search_connectors.py#L120) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L148) | دالة | search_semantic_scholar | لا توجد Docstring. | ناقص | 148 | [SRC-6E58A660BC-L000148](../agents/search_connectors.py#L148) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L174) | متغير/ثابت Python | CONNECTOR_REGISTRY | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 174 | [SRC-6E58A660BC-L000174](../agents/search_connectors.py#L174) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L182) | دالة | run_connector | لا توجد Docstring. | ناقص | 182 | [SRC-6E58A660BC-L000182](../agents/search_connectors.py#L182) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L195) | دالة | run_free_academic_connectors | لا توجد Docstring. | ناقص | 195 | [SRC-6E58A660BC-L000195](../agents/search_connectors.py#L195) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L14) | متغير/ثابت Python | MAX_CONNECTOR_RESULTS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-6E58A660BC-L000014](../agents/search_connectors.py#L14) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L15) | متغير/ثابت Python | MAX_CONNECTOR_RESPONSE_BYTES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-6E58A660BC-L000015](../agents/search_connectors.py#L15) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L16) | متغير/ثابت Python | DEFAULT_TIMEOUT_SECONDS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 16 | [SRC-6E58A660BC-L000016](../agents/search_connectors.py#L16) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L17) | متغير/ثابت Python | USER_AGENT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 17 | [SRC-6E58A660BC-L000017](../agents/search_connectors.py#L17) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L18) | متغير/ثابت Python | ConnectorFn | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 18 | [SRC-6E58A660BC-L000018](../agents/search_connectors.py#L18) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L21) | دالة | _clean_text | لا توجد Docstring. | ناقص | 21 | [SRC-6E58A660BC-L000021](../agents/search_connectors.py#L21) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L27) | كلاس | _NoRedirectHandler | Fail closed on redirects from fixed academic-provider endpoints. | موثق | 27 | [SRC-6E58A660BC-L000027](../agents/search_connectors.py#L27) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L30) | دالة | _NoRedirectHandler.redirect_request | لا توجد Docstring. | ناقص | 30 | [SRC-6E58A660BC-L000030](../agents/search_connectors.py#L30) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L34) | دالة | _open_provider_request | Open a provider request without following an unchecked redirect. | موثق | 34 | [SRC-6E58A660BC-L000034](../agents/search_connectors.py#L34) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L40) | دالة | _read_bounded | Read at most the configured response ceiling plus one sentinel byte. | موثق | 40 | [SRC-6E58A660BC-L000040](../agents/search_connectors.py#L40) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L48) | دالة | _http_get_json | لا توجد Docstring. | ناقص | 48 | [SRC-6E58A660BC-L000048](../agents/search_connectors.py#L48) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L57) | دالة | _http_get_text | لا توجد Docstring. | ناقص | 57 | [SRC-6E58A660BC-L000057](../agents/search_connectors.py#L57) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L63) | دالة | _result | لا توجد Docstring. | ناقص | 63 | [SRC-6E58A660BC-L000063](../agents/search_connectors.py#L63) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L77) | دالة | search_openalex | لا توجد Docstring. | ناقص | 77 | [SRC-6E58A660BC-L000077](../agents/search_connectors.py#L77) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L104) | دالة | search_arxiv | لا توجد Docstring. | ناقص | 104 | [SRC-6E58A660BC-L000104](../agents/search_connectors.py#L104) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L154) | دالة | search_crossref | لا توجد Docstring. | ناقص | 154 | [SRC-6E58A660BC-L000154](../agents/search_connectors.py#L154) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L186) | دالة | search_semantic_scholar | لا توجد Docstring. | ناقص | 186 | [SRC-6E58A660BC-L000186](../agents/search_connectors.py#L186) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L212) | متغير/ثابت Python | CONNECTOR_REGISTRY | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 212 | [SRC-6E58A660BC-L000212](../agents/search_connectors.py#L212) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L220) | دالة | run_connector | لا توجد Docstring. | ناقص | 220 | [SRC-6E58A660BC-L000220](../agents/search_connectors.py#L220) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L233) | دالة | run_free_academic_connectors | لا توجد Docstring. | ناقص | 233 | [SRC-6E58A660BC-L000233](../agents/search_connectors.py#L233) |
 | [agents/semantic_claim_verifier.py](../agents/semantic_claim_verifier.py#L14) | متغير/ثابت Python | MAX_VERIFICATION_CLAIMS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-086D574B4E-L000014](../agents/semantic_claim_verifier.py#L14) |
 | [agents/semantic_claim_verifier.py](../agents/semantic_claim_verifier.py#L15) | متغير/ثابت Python | MAX_VERIFICATION_SOURCES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-086D574B4E-L000015](../agents/semantic_claim_verifier.py#L15) |
 | [agents/semantic_claim_verifier.py](../agents/semantic_claim_verifier.py#L16) | متغير/ثابت Python | MAX_EVIDENCE_CHARS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 16 | [SRC-086D574B4E-L000016](../agents/semantic_claim_verifier.py#L16) |
@@ -1170,6 +1174,8 @@
 | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L289) | دالة | test_date_in_answer_missing_from_its_cited_source_is_flagged | لا توجد Docstring. | ناقص | 289 | [SRC-1C77C97630-L000289](../tests/test_answer_validation.py#L289) |
 | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L306) | دالة | test_frontend_surfaces_source_specific_number_and_possible_value_discrepancies | لا توجد Docstring. | ناقص | 306 | [SRC-1C77C97630-L000306](../tests/test_answer_validation.py#L306) |
 | [tests/test_answer_validation.py](../tests/test_answer_validation.py#L318) | دالة | test_single_coincidental_token_does_not_count_as_citation_support | لا توجد Docstring. | ناقص | 318 | [SRC-1C77C97630-L000318](../tests/test_answer_validation.py#L318) |
+| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L334) | دالة | test_unfetched_page_text_cannot_support_answer_or_citation_numbers | لا توجد Docstring. | ناقص | 334 | [SRC-1C77C97630-L000334](../tests/test_answer_validation.py#L334) |
+| [tests/test_answer_validation.py](../tests/test_answer_validation.py#L353) | دالة | test_publication_date_metadata_cannot_support_unrelated_numeric_claims | لا توجد Docstring. | ناقص | 353 | [SRC-1C77C97630-L000353](../tests/test_answer_validation.py#L353) |
 | [tests/test_api.py](../tests/test_api.py#L22) | دالة | local_api | Run the real handler on loopback with explicit local-development auth opt-in. | موثق | 22 | [SRC-3451CC474D-L000022](../tests/test_api.py#L22) |
 | [tests/test_api.py](../tests/test_api.py#L50) | دالة | test_loopback_auth_requires_explicit_local_opt_in | لا توجد Docstring. | ناقص | 50 | [SRC-3451CC474D-L000050](../tests/test_api.py#L50) |
 | [tests/test_api.py](../tests/test_api.py#L57) | دالة | request_json | لا توجد Docstring. | ناقص | 57 | [SRC-3451CC474D-L000057](../tests/test_api.py#L57) |
@@ -1266,13 +1272,23 @@
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L216) | دالة | test_raw_provider_diagnostics_redact_credentials_from_queries_and_errors | لا توجد Docstring. | ناقص | 216 | [SRC-DA61479D59-L000216](../tests/test_connector_summary_counters.py#L216) |
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L234) | دالة | test_connector_summary_separates_raw_candidates_from_filtered_results | لا توجد Docstring. | ناقص | 234 | [SRC-DA61479D59-L000234](../tests/test_connector_summary_counters.py#L234) |
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L272) | دالة | test_connector_summary_does_not_present_partial_legacy_rejection_counts_as_complete | لا توجد Docstring. | ناقص | 272 | [SRC-DA61479D59-L000272](../tests/test_connector_summary_counters.py#L272) |
-| [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L8) | دالة | test_openalex_parses_mocked_payload | لا توجد Docstring. | ناقص | 8 | [SRC-6BECF5AD00-L000008](../tests/test_connectors_mocked.py#L8) |
-| [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L21) | دالة | test_openalex_parses_mocked_payload.fake_json | لا توجد Docstring. | ناقص | 21 | [SRC-6BECF5AD00-L000021](../tests/test_connectors_mocked.py#L21) |
-| [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L32) | دالة | test_arxiv_parses_atom | لا توجد Docstring. | ناقص | 32 | [SRC-6BECF5AD00-L000032](../tests/test_connectors_mocked.py#L32) |
-| [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L51) | دالة | test_connector_failure_returns_empty | لا توجد Docstring. | ناقص | 51 | [SRC-6BECF5AD00-L000051](../tests/test_connectors_mocked.py#L51) |
-| [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L52) | دالة | test_connector_failure_returns_empty.boom | لا توجد Docstring. | ناقص | 52 | [SRC-6BECF5AD00-L000052](../tests/test_connectors_mocked.py#L52) |
-| [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L59) | دالة | test_run_free_academic_dedupe_path | لا توجد Docstring. | ناقص | 59 | [SRC-6BECF5AD00-L000059](../tests/test_connectors_mocked.py#L59) |
-| [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L60) | دالة | test_run_free_academic_dedupe_path.fake_run | لا توجد Docstring. | ناقص | 60 | [SRC-6BECF5AD00-L000060](../tests/test_connectors_mocked.py#L60) |
+| [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L10) | دالة | test_openalex_parses_mocked_payload | لا توجد Docstring. | ناقص | 10 | [SRC-6BECF5AD00-L000010](../tests/test_connectors_mocked.py#L10) |
+| [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L23) | دالة | test_openalex_parses_mocked_payload.fake_json | لا توجد Docstring. | ناقص | 23 | [SRC-6BECF5AD00-L000023](../tests/test_connectors_mocked.py#L23) |
+| [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L34) | دالة | test_arxiv_parses_atom | لا توجد Docstring. | ناقص | 34 | [SRC-6BECF5AD00-L000034](../tests/test_connectors_mocked.py#L34) |
+| [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L53) | دالة | test_connector_failure_returns_empty | لا توجد Docstring. | ناقص | 53 | [SRC-6BECF5AD00-L000053](../tests/test_connectors_mocked.py#L53) |
+| [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L54) | دالة | test_connector_failure_returns_empty.boom | لا توجد Docstring. | ناقص | 54 | [SRC-6BECF5AD00-L000054](../tests/test_connectors_mocked.py#L54) |
+| [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L61) | دالة | test_run_free_academic_dedupe_path | لا توجد Docstring. | ناقص | 61 | [SRC-6BECF5AD00-L000061](../tests/test_connectors_mocked.py#L61) |
+| [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L62) | دالة | test_run_free_academic_dedupe_path.fake_run | لا توجد Docstring. | ناقص | 62 | [SRC-6BECF5AD00-L000062](../tests/test_connectors_mocked.py#L62) |
+| [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L84) | دالة | test_openalex_uses_api_key_and_ignores_retired_mailto | لا توجد Docstring. | ناقص | 84 | [SRC-6BECF5AD00-L000084](../tests/test_connectors_mocked.py#L84) |
+| [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L89) | دالة | test_openalex_uses_api_key_and_ignores_retired_mailto.fake_json | لا توجد Docstring. | ناقص | 89 | [SRC-6BECF5AD00-L000089](../tests/test_connectors_mocked.py#L89) |
+| [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L105) | دالة | test_openalex_remains_available_without_api_key_or_retired_mailto | لا توجد Docstring. | ناقص | 105 | [SRC-6BECF5AD00-L000105](../tests/test_connectors_mocked.py#L105) |
+| [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L110) | دالة | test_openalex_remains_available_without_api_key_or_retired_mailto.fake_json | لا توجد Docstring. | ناقص | 110 | [SRC-6BECF5AD00-L000110](../tests/test_connectors_mocked.py#L110) |
+| [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L123) | دالة | test_crossref_does_not_send_a_placeholder_contact_email | لا توجد Docstring. | ناقص | 123 | [SRC-6BECF5AD00-L000123](../tests/test_connectors_mocked.py#L123) |
+| [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L127) | دالة | test_crossref_does_not_send_a_placeholder_contact_email.fake_json | لا توجد Docstring. | ناقص | 127 | [SRC-6BECF5AD00-L000127](../tests/test_connectors_mocked.py#L127) |
+| [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L141) | دالة | test_crossref_uses_an_explicit_contact_email_for_polite_pool | لا توجد Docstring. | ناقص | 141 | [SRC-6BECF5AD00-L000141](../tests/test_connectors_mocked.py#L141) |
+| [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L145) | دالة | test_crossref_uses_an_explicit_contact_email_for_polite_pool.fake_json | لا توجد Docstring. | ناقص | 145 | [SRC-6BECF5AD00-L000145](../tests/test_connectors_mocked.py#L145) |
+| [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L156) | دالة | test_arxiv_parser_handles_namespaced_atom_and_decodes_xml_entities | لا توجد Docstring. | ناقص | 156 | [SRC-6BECF5AD00-L000156](../tests/test_connectors_mocked.py#L156) |
+| [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L178) | دالة | test_arxiv_connector_contains_malformed_xml_failure | لا توجد Docstring. | ناقص | 178 | [SRC-6BECF5AD00-L000178](../tests/test_connectors_mocked.py#L178) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L8) | متغير/ثابت Python | DASHBOARD | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 8 | [SRC-3D0A619359-L000008](../tests/test_dashboard_security.py#L8) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L11) | دالة | test_hosted_lead_dashboard_exchanges_access_token_for_http_only_session | لا توجد Docstring. | ناقص | 11 | [SRC-3D0A619359-L000011](../tests/test_dashboard_security.py#L11) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L21) | دالة | test_saved_lead_source_links_reject_non_http_schemes | لا توجد Docstring. | ناقص | 21 | [SRC-3D0A619359-L000021](../tests/test_dashboard_security.py#L21) |
@@ -1288,6 +1304,10 @@
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L138) | دالة | test_workspace_indicators_include_responsive_glass_layout_and_semantic_status_colors | لا توجد Docstring. | ناقص | 138 | [SRC-3D0A619359-L000138](../tests/test_dashboard_security.py#L138) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L152) | دالة | test_workspace_uses_safe_http_source_urls_and_text_only_dom_rendering | لا توجد Docstring. | ناقص | 152 | [SRC-3D0A619359-L000152](../tests/test_dashboard_security.py#L152) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L163) | دالة | test_workspace_product_profile_and_discovery_screens_are_connected_to_protected_apis | لا توجد Docstring. | ناقص | 163 | [SRC-3D0A619359-L000163](../tests/test_dashboard_security.py#L163) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L189) | دالة | test_workspace_discovery_failure_is_retryable_and_preserves_previous_results | لا توجد Docstring. | ناقص | 189 | [SRC-3D0A619359-L000189](../tests/test_dashboard_security.py#L189) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L204) | دالة | test_workspace_discovery_result_survives_history_refresh_failure | لا توجد Docstring. | ناقص | 204 | [SRC-3D0A619359-L000204](../tests/test_dashboard_security.py#L204) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L217) | دالة | test_workspace_exposes_ai_chat_as_secondary_entry_using_agent_api_safely | لا توجد Docstring. | ناقص | 217 | [SRC-3D0A619359-L000217](../tests/test_dashboard_security.py#L217) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L233) | دالة | test_workspace_clears_chat_at_auth_boundaries_and_ignores_stale_responses | لا توجد Docstring. | ناقص | 233 | [SRC-3D0A619359-L000233](../tests/test_dashboard_security.py#L233) |
 | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L13) | دالة | _source | لا توجد Docstring. | ناقص | 13 | [SRC-29A9CD43D1-L000013](../tests/test_dialogue_context_pipeline.py#L13) |
 | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L30) | دالة | _report | لا توجد Docstring. | ناقص | 30 | [SRC-29A9CD43D1-L000030](../tests/test_dialogue_context_pipeline.py#L30) |
 | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L50) | دالة | _semantic_context | لا توجد Docstring. | ناقص | 50 | [SRC-29A9CD43D1-L000050](../tests/test_dialogue_context_pipeline.py#L50) |
@@ -1503,6 +1523,10 @@
 | [tests/test_intent_router.py](../tests/test_intent_router.py#L271) | دالة | test_stable_question_without_source_request_remains_model_only | لا توجد Docstring. | ناقص | 271 | [SRC-EA6EC52573-L000271](../tests/test_intent_router.py#L271) |
 | [tests/test_intent_router.py](../tests/test_intent_router.py#L275) | دالة | test_attached_arabic_object_pronoun_resolves_against_previous_subject | لا توجد Docstring. | ناقص | 275 | [SRC-EA6EC52573-L000275](../tests/test_intent_router.py#L275) |
 | [tests/test_intent_router.py](../tests/test_intent_router.py#L286) | دالة | test_no_duplicate_followup_leadin_symbols | Follow-up normalization symbols must have one authoritative definition. | موثق | 286 | [SRC-EA6EC52573-L000286](../tests/test_intent_router.py#L286) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L308) | دالة | test_arabic_referential_followups_are_joined_to_prior_topic | لا توجد Docstring. | ناقص | 308 | [SRC-EA6EC52573-L000308](../tests/test_intent_router.py#L308) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L327) | دالة | test_standalone_aspect_questions_are_not_merged_with_history | لا توجد Docstring. | ناقص | 327 | [SRC-EA6EC52573-L000327](../tests/test_intent_router.py#L327) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L342) | دالة | test_standalone_arabic_questions_with_beta3_possessives_do_not_reuse_old_topic | لا توجد Docstring. | ناقص | 342 | [SRC-EA6EC52573-L000342](../tests/test_intent_router.py#L342) |
+| [tests/test_intent_router.py](../tests/test_intent_router.py#L352) | دالة | test_aspect_plus_beta3_possessive_remains_a_contextual_followup | لا توجد Docstring. | ناقص | 352 | [SRC-EA6EC52573-L000352](../tests/test_intent_router.py#L352) |
 | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L9) | دالة | _evidence | لا توجد Docstring. | ناقص | 9 | [SRC-4397BC2CD2-L000009](../tests/test_intent_router_integration.py#L9) |
 | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L26) | دالة | _report | لا توجد Docstring. | ناقص | 26 | [SRC-4397BC2CD2-L000026](../tests/test_intent_router_integration.py#L26) |
 | [tests/test_intent_router_integration.py](../tests/test_intent_router_integration.py#L43) | دالة | test_greeting_is_local_without_model_or_search | لا توجد Docstring. | ناقص | 43 | [SRC-4397BC2CD2-L000043](../tests/test_intent_router_integration.py#L43) |
@@ -2441,14 +2465,14 @@
 | [agents/sales_domain.py](../agents/sales_domain.py#L85) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_FOUND | 85 | [SRC-8D00DCEC0D-L000085](../agents/sales_domain.py#L85) |
 | [agents/sales_domain.py](../agents/sales_domain.py#L86) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_ASSESSED | 86 | [SRC-8D00DCEC0D-L000086](../agents/sales_domain.py#L86) |
 | [agents/sales_domain.py](../agents/sales_domain.py#L532) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_BUYER_QUERY_COUNT | 532 | [SRC-8D00DCEC0D-L000532](../agents/sales_domain.py#L532) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L13) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_CONNECTOR_RESULTS | 13 | [SRC-6E58A660BC-L000013](../agents/search_connectors.py#L13) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_CONNECTOR_RESPONSE_BYTES | 14 | [SRC-6E58A660BC-L000014](../agents/search_connectors.py#L14) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_TIMEOUT_SECONDS | 15 | [SRC-6E58A660BC-L000015](../agents/search_connectors.py#L15) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | USER_AGENT | 16 | [SRC-6E58A660BC-L000016](../agents/search_connectors.py#L16) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENALEX_MAILTO | 79 | [SRC-6E58A660BC-L000079](../agents/search_connectors.py#L79) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L123) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CROSSREF_MAILTO | 123 | [SRC-6E58A660BC-L000123](../agents/search_connectors.py#L123) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L151) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SEMANTIC_SCHOLAR_API_KEY | 151 | [SRC-6E58A660BC-L000151](../agents/search_connectors.py#L151) |
-| [agents/search_connectors.py](../agents/search_connectors.py#L174) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CONNECTOR_REGISTRY | 174 | [SRC-6E58A660BC-L000174](../agents/search_connectors.py#L174) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_CONNECTOR_RESULTS | 14 | [SRC-6E58A660BC-L000014](../agents/search_connectors.py#L14) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_CONNECTOR_RESPONSE_BYTES | 15 | [SRC-6E58A660BC-L000015](../agents/search_connectors.py#L15) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEFAULT_TIMEOUT_SECONDS | 16 | [SRC-6E58A660BC-L000016](../agents/search_connectors.py#L16) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L17) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | USER_AGENT | 17 | [SRC-6E58A660BC-L000017](../agents/search_connectors.py#L17) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L82) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENALEX_API_KEY | 82 | [SRC-6E58A660BC-L000082](../agents/search_connectors.py#L82) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L158) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CROSSREF_MAILTO | 158 | [SRC-6E58A660BC-L000158](../agents/search_connectors.py#L158) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L189) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SEMANTIC_SCHOLAR_API_KEY | 189 | [SRC-6E58A660BC-L000189](../agents/search_connectors.py#L189) |
+| [agents/search_connectors.py](../agents/search_connectors.py#L212) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CONNECTOR_REGISTRY | 212 | [SRC-6E58A660BC-L000212](../agents/search_connectors.py#L212) |
 | [agents/semantic_claim_verifier.py](../agents/semantic_claim_verifier.py#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_VERIFICATION_CLAIMS | 14 | [SRC-086D574B4E-L000014](../agents/semantic_claim_verifier.py#L14) |
 | [agents/semantic_claim_verifier.py](../agents/semantic_claim_verifier.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_VERIFICATION_SOURCES | 15 | [SRC-086D574B4E-L000015](../agents/semantic_claim_verifier.py#L15) |
 | [agents/semantic_claim_verifier.py](../agents/semantic_claim_verifier.py#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_EVIDENCE_CHARS | 16 | [SRC-086D574B4E-L000016](../agents/semantic_claim_verifier.py#L16) |
@@ -3272,6 +3296,16 @@
 | [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L527) | عنوان Markdown (H3) | التغييرات المفتوحة وغير المنسوبة إلى main | 527 | [SRC-62CE5126F9-L000527](OMARAI_REMEDIATION_REGISTER_AR.md#L527) |
 | [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L534) | عنوان Markdown (H3) | المخاطر والقبول المعلق | 534 | [SRC-62CE5126F9-L000534](OMARAI_REMEDIATION_REGISTER_AR.md#L534) |
 | [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L540) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_IMPLEMENTED | 540 | [SRC-62CE5126F9-L000540](OMARAI_REMEDIATION_REGISTER_AR.md#L540) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L546) | عنوان Markdown (H2) | OMR-SEARCH-002 — هوية موفري البحث الأكاديمي ومصادقة OpenAlex — 8 نوفمبر 2026 | 546 | [SRC-62CE5126F9-L000546](OMARAI_REMEDIATION_REGISTER_AR.md#L546) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L553) | عنوان Markdown (H3) | العيب المثبت | 553 | [SRC-62CE5126F9-L000553](OMARAI_REMEDIATION_REGISTER_AR.md#L553) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L557) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENALEX_API_KEY | 557 | [SRC-62CE5126F9-L000557](OMARAI_REMEDIATION_REGISTER_AR.md#L557) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L559) | عنوان Markdown (H3) | المعالجة | 559 | [SRC-62CE5126F9-L000559](OMARAI_REMEDIATION_REGISTER_AR.md#L559) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L564) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENALEX_MAILTO | 564 | [SRC-62CE5126F9-L000564](OMARAI_REMEDIATION_REGISTER_AR.md#L564) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L566) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CROSSREF_MAILTO | 566 | [SRC-62CE5126F9-L000566](OMARAI_REMEDIATION_REGISTER_AR.md#L566) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L567) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | RESEARCH_CONNECTORS_AR | 567 | [SRC-62CE5126F9-L000567](OMARAI_REMEDIATION_REGISTER_AR.md#L567) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L568) | عنوان Markdown (H3) | دليل الاختبار | 568 | [SRC-62CE5126F9-L000568](OMARAI_REMEDIATION_REGISTER_AR.md#L568) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L578) | عنوان Markdown (H3) | الحدود والمتبقي | 578 | [SRC-62CE5126F9-L000578](OMARAI_REMEDIATION_REGISTER_AR.md#L578) |
+| [docs/OMARAI_REMEDIATION_REGISTER_AR.md](OMARAI_REMEDIATION_REGISTER_AR.md#L590) | عنوان Markdown (H2) | OMR-SEARCH-003 — متانة تحليل موجز arXiv Atom — 8 نوفمبر 2026 | 590 | [SRC-62CE5126F9-L000590](OMARAI_REMEDIATION_REGISTER_AR.md#L590) |
 | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L1) | عنوان Markdown (H1) | Omarai — سجل المتطلبات الأساسية الأولي | 1 | [SRC-B9C3015420-L000001](OMARAI_REQUIREMENTS_REGISTER.md#L1) |
 | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L6) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR | 6 | [SRC-B9C3015420-L000006](OMARAI_REQUIREMENTS_REGISTER.md#L6) |
 | [docs/OMARAI_REQUIREMENTS_REGISTER.md](OMARAI_REQUIREMENTS_REGISTER.md#L7) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_POST_MERGE_VERIFICATION_2026 | 7 | [SRC-B9C3015420-L000007](OMARAI_REQUIREMENTS_REGISTER.md#L7) |
@@ -3538,33 +3572,37 @@
 | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L16) | عنوان Markdown (H2) | 2.1 واجهات بحث ويب اختيارية | 16 | [SRC-D911B73392-L000016](RESEARCH_CONNECTORS_AR.md#L16) |
 | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L22) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | BRAVE_SEARCH_API_KEY | 22 | [SRC-D911B73392-L000022](RESEARCH_CONNECTORS_AR.md#L22) |
 | [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L23) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 23 | [SRC-D911B73392-L000023](RESEARCH_CONNECTORS_AR.md#L23) |
-| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L27) | عنوان Markdown (H2) | 2. المصادر والحدود | 27 | [SRC-D911B73392-L000027](RESEARCH_CONNECTORS_AR.md#L27) |
-| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L41) | عنوان Markdown (H2) | 3. تشغيل الطبقة التوليدية | 41 | [SRC-D911B73392-L000041](RESEARCH_CONNECTORS_AR.md#L41) |
-| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L47) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 47 | [SRC-D911B73392-L000047](RESEARCH_CONNECTORS_AR.md#L47) |
-| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L52) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ANSWER_MODEL | 52 | [SRC-D911B73392-L000052](RESEARCH_CONNECTORS_AR.md#L52) |
-| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L52) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_BASE_URL | 52 | [SRC-D911B73392-L000052](RESEARCH_CONNECTORS_AR.md#L52) |
-| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L52) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_FALLBACK_MODEL | 52 | [SRC-D911B73392-L000052](RESEARCH_CONNECTORS_AR.md#L52) |
-| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L52) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_MODEL | 52 | [SRC-D911B73392-L000052](RESEARCH_CONNECTORS_AR.md#L52) |
-| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L52) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PLANNER_MODEL | 52 | [SRC-D911B73392-L000052](RESEARCH_CONNECTORS_AR.md#L52) |
-| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L52) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REVIEW_MODEL | 52 | [SRC-D911B73392-L000052](RESEARCH_CONNECTORS_AR.md#L52) |
-| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L53) | عنوان Markdown (H2) | 4. إعداد الموصلات الرسمية الاختيارية | 53 | [SRC-D911B73392-L000053](RESEARCH_CONNECTORS_AR.md#L53) |
-| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L57) | عنوان Markdown (H3) | Reddit OAuth | 57 | [SRC-D911B73392-L000057](RESEARCH_CONNECTORS_AR.md#L57) |
-| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L63) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_ID | 63 | [SRC-D911B73392-L000063](RESEARCH_CONNECTORS_AR.md#L63) |
-| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L64) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_SECRET | 64 | [SRC-D911B73392-L000064](RESEARCH_CONNECTORS_AR.md#L64) |
-| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L65) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_USER_AGENT | 65 | [SRC-D911B73392-L000065](RESEARCH_CONNECTORS_AR.md#L65) |
-| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L69) | عنوان Markdown (H3) | Instagram Graph API — وسوم عامة | 69 | [SRC-D911B73392-L000069](RESEARCH_CONNECTORS_AR.md#L69) |
-| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L75) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INSTAGRAM_USER_ID | 75 | [SRC-D911B73392-L000075](RESEARCH_CONNECTORS_AR.md#L75) |
-| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L76) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INSTAGRAM_ACCESS_TOKEN | 76 | [SRC-D911B73392-L000076](RESEARCH_CONNECTORS_AR.md#L76) |
-| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | META_GRAPH_VERSION | 79 | [SRC-D911B73392-L000079](RESEARCH_CONNECTORS_AR.md#L79) |
-| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L80) | عنوان Markdown (H3) | Facebook Pages — صفحات محددة فقط | 80 | [SRC-D911B73392-L000080](RESEARCH_CONNECTORS_AR.md#L80) |
-| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L86) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_ACCESS_TOKEN | 86 | [SRC-D911B73392-L000086](RESEARCH_CONNECTORS_AR.md#L86) |
-| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L87) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_IDS | 87 | [SRC-D911B73392-L000087](RESEARCH_CONNECTORS_AR.md#L87) |
-| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L91) | عنوان Markdown (H3) | X وYouTube | 91 | [SRC-D911B73392-L000091](RESEARCH_CONNECTORS_AR.md#L91) |
-| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L95) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | X_BEARER_TOKEN | 95 | [SRC-D911B73392-L000095](RESEARCH_CONNECTORS_AR.md#L95) |
-| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L96) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | YOUTUBE_API_KEY | 96 | [SRC-D911B73392-L000096](RESEARCH_CONNECTORS_AR.md#L96) |
-| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L100) | عنوان Markdown (H3) | البدء بعد الإعداد | 100 | [SRC-D911B73392-L000100](RESEARCH_CONNECTORS_AR.md#L100) |
-| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L110) | عنوان Markdown (H2) | 5. اختبار حي للاتصال | 110 | [SRC-D911B73392-L000110](RESEARCH_CONNECTORS_AR.md#L110) |
-| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L126) | عنوان Markdown (H2) | 6. قراءة الأدلة والتحقق منها | 126 | [SRC-D911B73392-L000126](RESEARCH_CONNECTORS_AR.md#L126) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L27) | عنوان Markdown (H2) | 2.2 موصلات البحث الأكاديمي | 27 | [SRC-D911B73392-L000027](RESEARCH_CONNECTORS_AR.md#L27) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L32) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENALEX_API_KEY | 32 | [SRC-D911B73392-L000032](RESEARCH_CONNECTORS_AR.md#L32) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L32) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENALEX_MAILTO | 32 | [SRC-D911B73392-L000032](RESEARCH_CONNECTORS_AR.md#L32) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L33) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CROSSREF_MAILTO | 33 | [SRC-D911B73392-L000033](RESEARCH_CONNECTORS_AR.md#L33) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L43) | عنوان Markdown (H2) | 2. المصادر والحدود | 43 | [SRC-D911B73392-L000043](RESEARCH_CONNECTORS_AR.md#L43) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L57) | عنوان Markdown (H2) | 3. تشغيل الطبقة التوليدية | 57 | [SRC-D911B73392-L000057](RESEARCH_CONNECTORS_AR.md#L57) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L63) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENROUTER_API_KEY | 63 | [SRC-D911B73392-L000063](RESEARCH_CONNECTORS_AR.md#L63) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L68) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_ANSWER_MODEL | 68 | [SRC-D911B73392-L000068](RESEARCH_CONNECTORS_AR.md#L68) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L68) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_BASE_URL | 68 | [SRC-D911B73392-L000068](RESEARCH_CONNECTORS_AR.md#L68) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L68) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_FALLBACK_MODEL | 68 | [SRC-D911B73392-L000068](RESEARCH_CONNECTORS_AR.md#L68) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L68) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_LLM_MODEL | 68 | [SRC-D911B73392-L000068](RESEARCH_CONNECTORS_AR.md#L68) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L68) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_PLANNER_MODEL | 68 | [SRC-D911B73392-L000068](RESEARCH_CONNECTORS_AR.md#L68) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L68) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OMARAI_REVIEW_MODEL | 68 | [SRC-D911B73392-L000068](RESEARCH_CONNECTORS_AR.md#L68) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L69) | عنوان Markdown (H2) | 4. إعداد الموصلات الرسمية الاختيارية | 69 | [SRC-D911B73392-L000069](RESEARCH_CONNECTORS_AR.md#L69) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L73) | عنوان Markdown (H3) | Reddit OAuth | 73 | [SRC-D911B73392-L000073](RESEARCH_CONNECTORS_AR.md#L73) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_ID | 79 | [SRC-D911B73392-L000079](RESEARCH_CONNECTORS_AR.md#L79) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L80) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_CLIENT_SECRET | 80 | [SRC-D911B73392-L000080](RESEARCH_CONNECTORS_AR.md#L80) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L81) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | REDDIT_USER_AGENT | 81 | [SRC-D911B73392-L000081](RESEARCH_CONNECTORS_AR.md#L81) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L85) | عنوان Markdown (H3) | Instagram Graph API — وسوم عامة | 85 | [SRC-D911B73392-L000085](RESEARCH_CONNECTORS_AR.md#L85) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L91) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INSTAGRAM_USER_ID | 91 | [SRC-D911B73392-L000091](RESEARCH_CONNECTORS_AR.md#L91) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L92) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | INSTAGRAM_ACCESS_TOKEN | 92 | [SRC-D911B73392-L000092](RESEARCH_CONNECTORS_AR.md#L92) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L95) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | META_GRAPH_VERSION | 95 | [SRC-D911B73392-L000095](RESEARCH_CONNECTORS_AR.md#L95) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L96) | عنوان Markdown (H3) | Facebook Pages — صفحات محددة فقط | 96 | [SRC-D911B73392-L000096](RESEARCH_CONNECTORS_AR.md#L96) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L102) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_ACCESS_TOKEN | 102 | [SRC-D911B73392-L000102](RESEARCH_CONNECTORS_AR.md#L102) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L103) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | FACEBOOK_PAGE_IDS | 103 | [SRC-D911B73392-L000103](RESEARCH_CONNECTORS_AR.md#L103) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L107) | عنوان Markdown (H3) | X وYouTube | 107 | [SRC-D911B73392-L000107](RESEARCH_CONNECTORS_AR.md#L107) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L111) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | X_BEARER_TOKEN | 111 | [SRC-D911B73392-L000111](RESEARCH_CONNECTORS_AR.md#L111) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L112) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | YOUTUBE_API_KEY | 112 | [SRC-D911B73392-L000112](RESEARCH_CONNECTORS_AR.md#L112) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L116) | عنوان Markdown (H3) | البدء بعد الإعداد | 116 | [SRC-D911B73392-L000116](RESEARCH_CONNECTORS_AR.md#L116) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L126) | عنوان Markdown (H2) | 5. اختبار حي للاتصال | 126 | [SRC-D911B73392-L000126](RESEARCH_CONNECTORS_AR.md#L126) |
+| [docs/RESEARCH_CONNECTORS_AR.md](RESEARCH_CONNECTORS_AR.md#L142) | عنوان Markdown (H2) | 6. قراءة الأدلة والتحقق منها | 142 | [SRC-D911B73392-L000142](RESEARCH_CONNECTORS_AR.md#L142) |
 | [docs/search_code.py](search_code.py#L23) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | EXCLUDED_DIRECTORIES | 23 | [SRC-69F3587825-L000023](search_code.py#L23) |
 | [docs/search_code.py](search_code.py#L52) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SECRET_BASENAMES | 52 | [SRC-69F3587825-L000052](search_code.py#L52) |
 | [docs/search_code.py](search_code.py#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SENSITIVE_NAME_RE | 79 | [SRC-69F3587825-L000079](search_code.py#L79) |
@@ -4226,6 +4264,9 @@
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L130) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | TAVILY_API_KEY | 130 | [SRC-DA61479D59-L000130](../tests/test_connector_summary_counters.py#L130) |
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L131) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | DEEPSEEK_SEARCH_API_KEY | 131 | [SRC-DA61479D59-L000131](../tests/test_connector_summary_counters.py#L131) |
 | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L220) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | API_KEY | 220 | [SRC-DA61479D59-L000220](../tests/test_connector_summary_counters.py#L220) |
+| [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L86) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENALEX_API_KEY | 86 | [SRC-6BECF5AD00-L000086](../tests/test_connectors_mocked.py#L86) |
+| [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L87) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | OPENALEX_MAILTO | 87 | [SRC-6BECF5AD00-L000087](../tests/test_connectors_mocked.py#L87) |
+| [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L125) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CROSSREF_MAILTO | 125 | [SRC-6BECF5AD00-L000125](../tests/test_connectors_mocked.py#L125) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L13) | مسار API/واجهة محتمل | /api/session | 13 | [SRC-3D0A619359-L000013](../tests/test_dashboard_security.py#L13) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L54) | مسار API/واجهة محتمل | /api/health | 54 | [SRC-3D0A619359-L000054](../tests/test_dashboard_security.py#L54) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L79) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WRITE_ROLES | 79 | [SRC-3D0A619359-L000079](../tests/test_dashboard_security.py#L79) |
@@ -4233,6 +4274,7 @@
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L175) | مسار API/واجهة محتمل | /api/product-profiles | 175 | [SRC-3D0A619359-L000175](../tests/test_dashboard_security.py#L175) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L177) | مسار API/واجهة محتمل | /api/discoveries | 177 | [SRC-3D0A619359-L000177](../tests/test_dashboard_security.py#L177) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L178) | مسار API/واجهة محتمل | /api/discoveries/ | 178 | [SRC-3D0A619359-L000178](../tests/test_dashboard_security.py#L178) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L225) | مسار API/واجهة محتمل | /api/agent | 225 | [SRC-3D0A619359-L000225](../tests/test_dashboard_security.py#L225) |
 | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L146) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 146 | [SRC-29A9CD43D1-L000146](../tests/test_dialogue_context_pipeline.py#L146) |
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET | 12 | [SRC-6BCB799CEC-L000012](../tests/test_evidence_provenance.py#L12) |
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET6 | 12 | [SRC-6BCB799CEC-L000012](../tests/test_evidence_provenance.py#L12) |
@@ -4888,197 +4930,240 @@
 | [web/workspace.html](../web/workspace.html#L216) | محدد class في CSS | indicator-summary | 216 | [SRC-2C8F288796-L000216](../web/workspace.html#L216) |
 | [web/workspace.html](../web/workspace.html#L217) | محدد class في CSS | indicator-note | 217 | [SRC-2C8F288796-L000217](../web/workspace.html#L217) |
 | [web/workspace.html](../web/workspace.html#L218) | محدد class في CSS | indicator-note-value | 218 | [SRC-2C8F288796-L000218](../web/workspace.html#L218) |
-| [web/workspace.html](../web/workspace.html#L247) | قيمة سمة HTML (id) | mainNav | 247 | [SRC-2C8F288796-L000247](../web/workspace.html#L247) |
-| [web/workspace.html](../web/workspace.html#L249) | قيمة سمة HTML (id) | apiDot | 249 | [SRC-2C8F288796-L000249](../web/workspace.html#L249) |
-| [web/workspace.html](../web/workspace.html#L249) | قيمة سمة HTML (id) | apiStatus | 249 | [SRC-2C8F288796-L000249](../web/workspace.html#L249) |
-| [web/workspace.html](../web/workspace.html#L249) | قيمة سمة HTML (id) | apiStatusNote | 249 | [SRC-2C8F288796-L000249](../web/workspace.html#L249) |
-| [web/workspace.html](../web/workspace.html#L250) | قيمة سمة HTML (id) | roleSummary | 250 | [SRC-2C8F288796-L000250](../web/workspace.html#L250) |
-| [web/workspace.html](../web/workspace.html#L251) | قيمة سمة HTML (id) | systemNav | 251 | [SRC-2C8F288796-L000251](../web/workspace.html#L251) |
-| [web/workspace.html](../web/workspace.html#L256) | قيمة سمة HTML (id) | crumb | 256 | [SRC-2C8F288796-L000256](../web/workspace.html#L256) |
-| [web/workspace.html](../web/workspace.html#L257) | قيمة سمة HTML (id) | addSignalTop | 257 | [SRC-2C8F288796-L000257](../web/workspace.html#L257) |
-| [web/workspace.html](../web/workspace.html#L257) | قيمة سمة HTML (id) | logoutButton | 257 | [SRC-2C8F288796-L000257](../web/workspace.html#L257) |
-| [web/workspace.html](../web/workspace.html#L257) | قيمة سمة HTML (id) | rolePill | 257 | [SRC-2C8F288796-L000257](../web/workspace.html#L257) |
-| [web/workspace.html](../web/workspace.html#L259) | قيمة سمة HTML (id) | pageDescription | 259 | [SRC-2C8F288796-L000259](../web/workspace.html#L259) |
-| [web/workspace.html](../web/workspace.html#L259) | قيمة سمة HTML (id) | pageEyebrow | 259 | [SRC-2C8F288796-L000259](../web/workspace.html#L259) |
-| [web/workspace.html](../web/workspace.html#L259) | قيمة سمة HTML (id) | pageTitle | 259 | [SRC-2C8F288796-L000259](../web/workspace.html#L259) |
-| [web/workspace.html](../web/workspace.html#L260) | قيمة سمة HTML (id) | viewRoot | 260 | [SRC-2C8F288796-L000260](../web/workspace.html#L260) |
-| [web/workspace.html](../web/workspace.html#L265) | قيمة سمة HTML (id) | detailDrawer | 265 | [SRC-2C8F288796-L000265](../web/workspace.html#L265) |
-| [web/workspace.html](../web/workspace.html#L266) | قيمة سمة HTML (id) | closeDetail | 266 | [SRC-2C8F288796-L000266](../web/workspace.html#L266) |
-| [web/workspace.html](../web/workspace.html#L266) | قيمة سمة HTML (id) | detailBody | 266 | [SRC-2C8F288796-L000266](../web/workspace.html#L266) |
-| [web/workspace.html](../web/workspace.html#L266) | قيمة سمة HTML (id) | detailTitle | 266 | [SRC-2C8F288796-L000266](../web/workspace.html#L266) |
-| [web/workspace.html](../web/workspace.html#L268) | قيمة سمة HTML (id) | authGate | 268 | [SRC-2C8F288796-L000268](../web/workspace.html#L268) |
-| [web/workspace.html](../web/workspace.html#L273) | قيمة سمة HTML (id) | loginForm | 273 | [SRC-2C8F288796-L000273](../web/workspace.html#L273) |
-| [web/workspace.html](../web/workspace.html#L274) | قيمة سمة HTML (id) | accessToken | 274 | [SRC-2C8F288796-L000274](../web/workspace.html#L274) |
-| [web/workspace.html](../web/workspace.html#L275) | قيمة سمة HTML (id) | loginButton | 275 | [SRC-2C8F288796-L000275](../web/workspace.html#L275) |
-| [web/workspace.html](../web/workspace.html#L276) | قيمة سمة HTML (id) | authError | 276 | [SRC-2C8F288796-L000276](../web/workspace.html#L276) |
-| [web/workspace.html](../web/workspace.html#L285) | دالة JavaScript/TypeScript | $ | 285 | [SRC-2C8F288796-L000285](../web/workspace.html#L285) |
-| [web/workspace.html](../web/workspace.html#L286) | متغير JavaScript/TypeScript | state | 286 | [SRC-2C8F288796-L000286](../web/workspace.html#L286) |
-| [web/workspace.html](../web/workspace.html#L287) | متغير JavaScript/TypeScript | statuses | 287 | [SRC-2C8F288796-L000287](../web/workspace.html#L287) |
-| [web/workspace.html](../web/workspace.html#L295) | متغير JavaScript/TypeScript | labels | 295 | [SRC-2C8F288796-L000295](../web/workspace.html#L295) |
-| [web/workspace.html](../web/workspace.html#L296) | متغير JavaScript/TypeScript | menu | 296 | [SRC-2C8F288796-L000296](../web/workspace.html#L296) |
-| [web/workspace.html](../web/workspace.html#L304) | دالة JavaScript/TypeScript | make | 304 | [SRC-2C8F288796-L000304](../web/workspace.html#L304) |
-| [web/workspace.html](../web/workspace.html#L305) | متغير JavaScript/TypeScript | node | 305 | [SRC-2C8F288796-L000305](../web/workspace.html#L305) |
-| [web/workspace.html](../web/workspace.html#L310) | دالة JavaScript/TypeScript | action | 310 | [SRC-2C8F288796-L000310](../web/workspace.html#L310) |
-| [web/workspace.html](../web/workspace.html#L311) | متغير JavaScript/TypeScript | b | 311 | [SRC-2C8F288796-L000311](../web/workspace.html#L311) |
-| [web/workspace.html](../web/workspace.html#L314) | دالة JavaScript/TypeScript | safeHttp | 314 | [SRC-2C8F288796-L000314](../web/workspace.html#L314) |
-| [web/workspace.html](../web/workspace.html#L315) | متغير JavaScript/TypeScript | u | 315 | [SRC-2C8F288796-L000315](../web/workspace.html#L315) |
-| [web/workspace.html](../web/workspace.html#L317) | دالة JavaScript/TypeScript | escapeMessage | 317 | [SRC-2C8F288796-L000317](../web/workspace.html#L317) |
-| [web/workspace.html](../web/workspace.html#L318) | دالة JavaScript/TypeScript | api | 318 | [SRC-2C8F288796-L000318](../web/workspace.html#L318) |
-| [web/workspace.html](../web/workspace.html#L319) | متغير JavaScript/TypeScript | opts | 319 | [SRC-2C8F288796-L000319](../web/workspace.html#L319) |
-| [web/workspace.html](../web/workspace.html#L320) | متغير JavaScript/TypeScript | headers | 320 | [SRC-2C8F288796-L000320](../web/workspace.html#L320) |
-| [web/workspace.html](../web/workspace.html#L322) | متغير JavaScript/TypeScript | response | 322 | [SRC-2C8F288796-L000322](../web/workspace.html#L322) |
-| [web/workspace.html](../web/workspace.html#L323) | متغير JavaScript/TypeScript | data | 323 | [SRC-2C8F288796-L000323](../web/workspace.html#L323) |
-| [web/workspace.html](../web/workspace.html#L329) | دالة JavaScript/TypeScript | showAuth | 329 | [SRC-2C8F288796-L000329](../web/workspace.html#L329) |
-| [web/workspace.html](../web/workspace.html#L334) | دالة JavaScript/TypeScript | hideAuth | 334 | [SRC-2C8F288796-L000334](../web/workspace.html#L334) |
-| [web/workspace.html](../web/workspace.html#L335) | دالة JavaScript/TypeScript | statusLabel | 335 | [SRC-2C8F288796-L000335](../web/workspace.html#L335) |
-| [web/workspace.html](../web/workspace.html#L335) | متغير JavaScript/TypeScript | item | 335 | [SRC-2C8F288796-L000335](../web/workspace.html#L335) |
-| [web/workspace.html](../web/workspace.html#L336) | دالة JavaScript/TypeScript | tag | 336 | [SRC-2C8F288796-L000336](../web/workspace.html#L336) |
-| [web/workspace.html](../web/workspace.html#L337) | دالة JavaScript/TypeScript | setPage | 337 | [SRC-2C8F288796-L000337](../web/workspace.html#L337) |
-| [web/workspace.html](../web/workspace.html#L341) | دالة JavaScript/TypeScript | renderNav | 341 | [SRC-2C8F288796-L000341](../web/workspace.html#L341) |
-| [web/workspace.html](../web/workspace.html#L342) | متغير JavaScript/TypeScript | nav | 342 | [SRC-2C8F288796-L000342](../web/workspace.html#L342) |
-| [web/workspace.html](../web/workspace.html#L346) | متغير JavaScript/TypeScript | icon | 346 | [SRC-2C8F288796-L000346](../web/workspace.html#L346) |
-| [web/workspace.html](../web/workspace.html#L346) | متغير JavaScript/TypeScript | name | 346 | [SRC-2C8F288796-L000346](../web/workspace.html#L346) |
-| [web/workspace.html](../web/workspace.html#L354) | دالة JavaScript/TypeScript | setConnection | 354 | [SRC-2C8F288796-L000354](../web/workspace.html#L354) |
-| [web/workspace.html](../web/workspace.html#L357) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WRITE_ROLES | 357 | [SRC-2C8F288796-L000357](../web/workspace.html#L357) |
-| [web/workspace.html](../web/workspace.html#L357) | متغير JavaScript/TypeScript | WRITE_ROLES | 357 | [SRC-2C8F288796-L000357](../web/workspace.html#L357) |
-| [web/workspace.html](../web/workspace.html#L358) | دالة JavaScript/TypeScript | canWrite | 358 | [SRC-2C8F288796-L000358](../web/workspace.html#L358) |
-| [web/workspace.html](../web/workspace.html#L359) | دالة JavaScript/TypeScript | countByStatus | 359 | [SRC-2C8F288796-L000359](../web/workspace.html#L359) |
-| [web/workspace.html](../web/workspace.html#L360) | دالة JavaScript/TypeScript | buildStat | 360 | [SRC-2C8F288796-L000360](../web/workspace.html#L360) |
-| [web/workspace.html](../web/workspace.html#L361) | متغير JavaScript/TypeScript | card | 361 | [SRC-2C8F288796-L000361](../web/workspace.html#L361) |
-| [web/workspace.html](../web/workspace.html#L364) | دالة JavaScript/TypeScript | renderOverview | 364 | [SRC-2C8F288796-L000364](../web/workspace.html#L364) |
-| [web/workspace.html](../web/workspace.html#L366) | متغير JavaScript/TypeScript | root | 366 | [SRC-2C8F288796-L000366](../web/workspace.html#L366) |
-| [web/workspace.html](../web/workspace.html#L367) | متغير JavaScript/TypeScript | qualified | 367 | [SRC-2C8F288796-L000367](../web/workspace.html#L367) |
-| [web/workspace.html](../web/workspace.html#L368) | متغير JavaScript/TypeScript | review | 368 | [SRC-2C8F288796-L000368](../web/workspace.html#L368) |
-| [web/workspace.html](../web/workspace.html#L369) | متغير JavaScript/TypeScript | stats | 369 | [SRC-2C8F288796-L000369](../web/workspace.html#L369) |
-| [web/workspace.html](../web/workspace.html#L376) | متغير JavaScript/TypeScript | grid | 376 | [SRC-2C8F288796-L000376](../web/workspace.html#L376) |
-| [web/workspace.html](../web/workspace.html#L377) | متغير JavaScript/TypeScript | h | 377 | [SRC-2C8F288796-L000377](../web/workspace.html#L377) |
-| [web/workspace.html](../web/workspace.html#L377) | متغير JavaScript/TypeScript | head | 377 | [SRC-2C8F288796-L000377](../web/workspace.html#L377) |
-| [web/workspace.html](../web/workspace.html#L377) | متغير JavaScript/TypeScript | recent | 377 | [SRC-2C8F288796-L000377](../web/workspace.html#L377) |
-| [web/workspace.html](../web/workspace.html#L380) | متغير JavaScript/TypeScript | list | 380 | [SRC-2C8F288796-L000380](../web/workspace.html#L380) |
-| [web/workspace.html](../web/workspace.html#L381) | متغير JavaScript/TypeScript | rows | 381 | [SRC-2C8F288796-L000381](../web/workspace.html#L381) |
-| [web/workspace.html](../web/workspace.html#L385) | متغير JavaScript/TypeScript | sh | 385 | [SRC-2C8F288796-L000385](../web/workspace.html#L385) |
-| [web/workspace.html](../web/workspace.html#L385) | متغير JavaScript/TypeScript | st | 385 | [SRC-2C8F288796-L000385](../web/workspace.html#L385) |
-| [web/workspace.html](../web/workspace.html#L385) | متغير JavaScript/TypeScript | startPanel | 385 | [SRC-2C8F288796-L000385](../web/workspace.html#L385) |
-| [web/workspace.html](../web/workspace.html#L393) | دالة JavaScript/TypeScript | emptyState | 393 | [SRC-2C8F288796-L000393](../web/workspace.html#L393) |
-| [web/workspace.html](../web/workspace.html#L394) | متغير JavaScript/TypeScript | box | 394 | [SRC-2C8F288796-L000394](../web/workspace.html#L394) |
-| [web/workspace.html](../web/workspace.html#L396) | دالة JavaScript/TypeScript | signalCard | 396 | [SRC-2C8F288796-L000396](../web/workspace.html#L396) |
-| [web/workspace.html](../web/workspace.html#L398) | متغير JavaScript/TypeScript | left | 398 | [SRC-2C8F288796-L000398](../web/workspace.html#L398) |
-| [web/workspace.html](../web/workspace.html#L398) | متغير JavaScript/TypeScript | top | 398 | [SRC-2C8F288796-L000398](../web/workspace.html#L398) |
-| [web/workspace.html](../web/workspace.html#L399) | متغير JavaScript/TypeScript | assessment | 399 | [SRC-2C8F288796-L000399](../web/workspace.html#L399) |
-| [web/workspace.html](../web/workspace.html#L402) | متغير JavaScript/TypeScript | text | 402 | [SRC-2C8F288796-L000402](../web/workspace.html#L402) |
-| [web/workspace.html](../web/workspace.html#L403) | متغير JavaScript/TypeScript | meta | 403 | [SRC-2C8F288796-L000403](../web/workspace.html#L403) |
-| [web/workspace.html](../web/workspace.html#L405) | متغير JavaScript/TypeScript | source | 405 | [SRC-2C8F288796-L000405](../web/workspace.html#L405) |
-| [web/workspace.html](../web/workspace.html#L407) | متغير JavaScript/TypeScript | actions | 407 | [SRC-2C8F288796-L000407](../web/workspace.html#L407) |
-| [web/workspace.html](../web/workspace.html#L412) | دالة JavaScript/TypeScript | openDetails | 412 | [SRC-2C8F288796-L000412](../web/workspace.html#L412) |
-| [web/workspace.html](../web/workspace.html#L413) | متغير JavaScript/TypeScript | body | 413 | [SRC-2C8F288796-L000413](../web/workspace.html#L413) |
-| [web/workspace.html](../web/workspace.html#L414) | متغير JavaScript/TypeScript | a | 414 | [SRC-2C8F288796-L000414](../web/workspace.html#L414) |
-| [web/workspace.html](../web/workspace.html#L417) | متغير JavaScript/TypeScript | url | 417 | [SRC-2C8F288796-L000417](../web/workspace.html#L417) |
-| [web/workspace.html](../web/workspace.html#L418) | متغير JavaScript/TypeScript | link | 418 | [SRC-2C8F288796-L000418](../web/workspace.html#L418) |
-| [web/workspace.html](../web/workspace.html#L424) | متغير JavaScript/TypeScript | ul | 424 | [SRC-2C8F288796-L000424](../web/workspace.html#L424) |
-| [web/workspace.html](../web/workspace.html#L429) | متغير JavaScript/TypeScript | select | 429 | [SRC-2C8F288796-L000429](../web/workspace.html#L429) |
-| [web/workspace.html](../web/workspace.html#L430) | متغير JavaScript/TypeScript | o | 430 | [SRC-2C8F288796-L000430](../web/workspace.html#L430) |
-| [web/workspace.html](../web/workspace.html#L431) | متغير JavaScript/TypeScript | save | 431 | [SRC-2C8F288796-L000431](../web/workspace.html#L431) |
-| [web/workspace.html](../web/workspace.html#L431) | مسار API/واجهة محتمل | /api/leads/ | 431 | [SRC-2C8F288796-L000431](../web/workspace.html#L431) |
-| [web/workspace.html](../web/workspace.html#L436) | دالة JavaScript/TypeScript | closeDetails | 436 | [SRC-2C8F288796-L000436](../web/workspace.html#L436) |
-| [web/workspace.html](../web/workspace.html#L437) | دالة JavaScript/TypeScript | renderSignals | 437 | [SRC-2C8F288796-L000437](../web/workspace.html#L437) |
-| [web/workspace.html](../web/workspace.html#L440) | متغير JavaScript/TypeScript | panel | 440 | [SRC-2C8F288796-L000440](../web/workspace.html#L440) |
-| [web/workspace.html](../web/workspace.html#L440) | متغير JavaScript/TypeScript | ph | 440 | [SRC-2C8F288796-L000440](../web/workspace.html#L440) |
-| [web/workspace.html](../web/workspace.html#L440) | متغير JavaScript/TypeScript | ptitle | 440 | [SRC-2C8F288796-L000440](../web/workspace.html#L440) |
-| [web/workspace.html](../web/workspace.html#L442) | متغير JavaScript/TypeScript | search | 442 | [SRC-2C8F288796-L000442](../web/workspace.html#L442) |
-| [web/workspace.html](../web/workspace.html#L442) | متغير JavaScript/TypeScript | toolbar | 442 | [SRC-2C8F288796-L000442](../web/workspace.html#L442) |
-| [web/workspace.html](../web/workspace.html#L444) | متغير JavaScript/TypeScript | all | 444 | [SRC-2C8F288796-L000444](../web/workspace.html#L444) |
-| [web/workspace.html](../web/workspace.html#L444) | متغير JavaScript/TypeScript | filter | 444 | [SRC-2C8F288796-L000444](../web/workspace.html#L444) |
-| [web/workspace.html](../web/workspace.html#L452) | دالة JavaScript/TypeScript | drawSignalRows | 452 | [SRC-2C8F288796-L000452](../web/workspace.html#L452) |
-| [web/workspace.html](../web/workspace.html#L454) | متغير JavaScript/TypeScript | query | 454 | [SRC-2C8F288796-L000454](../web/workspace.html#L454) |
-| [web/workspace.html](../web/workspace.html#L459) | دالة JavaScript/TypeScript | createSignalForm | 459 | [SRC-2C8F288796-L000459](../web/workspace.html#L459) |
-| [web/workspace.html](../web/workspace.html#L460) | متغير JavaScript/TypeScript | title | 460 | [SRC-2C8F288796-L000460](../web/workspace.html#L460) |
-| [web/workspace.html](../web/workspace.html#L460) | متغير JavaScript/TypeScript | wrapper | 460 | [SRC-2C8F288796-L000460](../web/workspace.html#L460) |
-| [web/workspace.html](../web/workspace.html#L461) | قيمة سمة HTML (id) | newSignalText | 461 | [SRC-2C8F288796-L000461](../web/workspace.html#L461) |
-| [web/workspace.html](../web/workspace.html#L462) | قيمة سمة HTML (id) | newSignalUrl | 462 | [SRC-2C8F288796-L000462](../web/workspace.html#L462) |
-| [web/workspace.html](../web/workspace.html#L464) | قيمة سمة HTML (id) | newSignalPlatform | 464 | [SRC-2C8F288796-L000464](../web/workspace.html#L464) |
-| [web/workspace.html](../web/workspace.html#L464) | متغير JavaScript/TypeScript | platform | 464 | [SRC-2C8F288796-L000464](../web/workspace.html#L464) |
-| [web/workspace.html](../web/workspace.html#L465) | قيمة سمة HTML (id) | newSignalProduct | 465 | [SRC-2C8F288796-L000465](../web/workspace.html#L465) |
-| [web/workspace.html](../web/workspace.html#L465) | متغير JavaScript/TypeScript | product | 465 | [SRC-2C8F288796-L000465](../web/workspace.html#L465) |
-| [web/workspace.html](../web/workspace.html#L466) | قيمة سمة HTML (id) | newSignalLocation | 466 | [SRC-2C8F288796-L000466](../web/workspace.html#L466) |
-| [web/workspace.html](../web/workspace.html#L466) | متغير JavaScript/TypeScript | location | 466 | [SRC-2C8F288796-L000466](../web/workspace.html#L466) |
-| [web/workspace.html](../web/workspace.html#L467) | قيمة سمة HTML (id) | newSignalNote | 467 | [SRC-2C8F288796-L000467](../web/workspace.html#L467) |
-| [web/workspace.html](../web/workspace.html#L467) | متغير JavaScript/TypeScript | note | 467 | [SRC-2C8F288796-L000467](../web/workspace.html#L467) |
-| [web/workspace.html](../web/workspace.html#L468) | متغير JavaScript/TypeScript | fields | 468 | [SRC-2C8F288796-L000468](../web/workspace.html#L468) |
-| [web/workspace.html](../web/workspace.html#L469) | متغير JavaScript/TypeScript | field | 469 | [SRC-2C8F288796-L000469](../web/workspace.html#L469) |
-| [web/workspace.html](../web/workspace.html#L471) | قيمة سمة HTML (id) | analysisResult | 471 | [SRC-2C8F288796-L000471](../web/workspace.html#L471) |
-| [web/workspace.html](../web/workspace.html#L471) | متغير JavaScript/TypeScript | result | 471 | [SRC-2C8F288796-L000471](../web/workspace.html#L471) |
-| [web/workspace.html](../web/workspace.html#L472) | متغير JavaScript/TypeScript | buttons | 472 | [SRC-2C8F288796-L000472](../web/workspace.html#L472) |
-| [web/workspace.html](../web/workspace.html#L473) | متغير JavaScript/TypeScript | analyze | 473 | [SRC-2C8F288796-L000473](../web/workspace.html#L473) |
-| [web/workspace.html](../web/workspace.html#L478) | متغير JavaScript/TypeScript | product_terms | 478 | [SRC-2C8F288796-L000478](../web/workspace.html#L478) |
-| [web/workspace.html](../web/workspace.html#L479) | متغير JavaScript/TypeScript | location_terms | 479 | [SRC-2C8F288796-L000479](../web/workspace.html#L479) |
-| [web/workspace.html](../web/workspace.html#L480) | مسار API/واجهة محتمل | /api/analyze | 480 | [SRC-2C8F288796-L000480](../web/workspace.html#L480) |
-| [web/workspace.html](../web/workspace.html#L498) | مسار API/واجهة محتمل | /api/leads | 498 | [SRC-2C8F288796-L000498](../web/workspace.html#L498) |
-| [web/workspace.html](../web/workspace.html#L506) | دالة JavaScript/TypeScript | renderPipeline | 506 | [SRC-2C8F288796-L000506](../web/workspace.html#L506) |
-| [web/workspace.html](../web/workspace.html#L510) | متغير JavaScript/TypeScript | board | 510 | [SRC-2C8F288796-L000510](../web/workspace.html#L510) |
-| [web/workspace.html](../web/workspace.html#L510) | متغير JavaScript/TypeScript | groups | 510 | [SRC-2C8F288796-L000510](../web/workspace.html#L510) |
-| [web/workspace.html](../web/workspace.html#L511) | متغير JavaScript/TypeScript | col | 511 | [SRC-2C8F288796-L000511](../web/workspace.html#L511) |
-| [web/workspace.html](../web/workspace.html#L514) | دالة JavaScript/TypeScript | renderSystem | 514 | [SRC-2C8F288796-L000514](../web/workspace.html#L514) |
-| [web/workspace.html](../web/workspace.html#L518) | مسار API/واجهة محتمل | /api/health | 518 | [SRC-2C8F288796-L000518](../web/workspace.html#L518) |
-| [web/workspace.html](../web/workspace.html#L519) | متغير JavaScript/TypeScript | agent | 519 | [SRC-2C8F288796-L000519](../web/workspace.html#L519) |
-| [web/workspace.html](../web/workspace.html#L519) | متغير JavaScript/TypeScript | build | 519 | [SRC-2C8F288796-L000519](../web/workspace.html#L519) |
-| [web/workspace.html](../web/workspace.html#L530) | متغير JavaScript/TypeScript | mh | 530 | [SRC-2C8F288796-L000530](../web/workspace.html#L530) |
-| [web/workspace.html](../web/workspace.html#L530) | متغير JavaScript/TypeScript | models | 530 | [SRC-2C8F288796-L000530](../web/workspace.html#L530) |
-| [web/workspace.html](../web/workspace.html#L530) | متغير JavaScript/TypeScript | mt | 530 | [SRC-2C8F288796-L000530](../web/workspace.html#L530) |
-| [web/workspace.html](../web/workspace.html#L534) | متغير JavaScript/TypeScript | providers | 534 | [SRC-2C8F288796-L000534](../web/workspace.html#L534) |
-| [web/workspace.html](../web/workspace.html#L538) | متغير JavaScript/TypeScript | row | 538 | [SRC-2C8F288796-L000538](../web/workspace.html#L538) |
-| [web/workspace.html](../web/workspace.html#L549) | متغير JavaScript/TypeScript | flags | 549 | [SRC-2C8F288796-L000549](../web/workspace.html#L549) |
-| [web/workspace.html](../web/workspace.html#L560) | دالة JavaScript/TypeScript | renderIndicators | 560 | [SRC-2C8F288796-L000560](../web/workspace.html#L560) |
-| [web/workspace.html](../web/workspace.html#L563) | متغير JavaScript/TypeScript | total | 563 | [SRC-2C8F288796-L000563](../web/workspace.html#L563) |
-| [web/workspace.html](../web/workspace.html#L566) | متغير JavaScript/TypeScript | converted | 566 | [SRC-2C8F288796-L000566](../web/workspace.html#L566) |
-| [web/workspace.html](../web/workspace.html#L567) | متغير JavaScript/TypeScript | withSource | 567 | [SRC-2C8F288796-L000567](../web/workspace.html#L567) |
-| [web/workspace.html](../web/workspace.html#L568) | متغير JavaScript/TypeScript | hero | 568 | [SRC-2C8F288796-L000568](../web/workspace.html#L568) |
-| [web/workspace.html](../web/workspace.html#L569) | متغير JavaScript/TypeScript | ring | 569 | [SRC-2C8F288796-L000569](../web/workspace.html#L569) |
-| [web/workspace.html](../web/workspace.html#L573) | متغير JavaScript/TypeScript | ringInner | 573 | [SRC-2C8F288796-L000573](../web/workspace.html#L573) |
-| [web/workspace.html](../web/workspace.html#L576) | متغير JavaScript/TypeScript | heroCopy | 576 | [SRC-2C8F288796-L000576](../web/workspace.html#L576) |
-| [web/workspace.html](../web/workspace.html#L579) | متغير JavaScript/TypeScript | cards | 579 | [SRC-2C8F288796-L000579](../web/workspace.html#L579) |
-| [web/workspace.html](../web/workspace.html#L587) | متغير JavaScript/TypeScript | layout | 587 | [SRC-2C8F288796-L000587](../web/workspace.html#L587) |
-| [web/workspace.html](../web/workspace.html#L588) | متغير JavaScript/TypeScript | statusPanel | 588 | [SRC-2C8F288796-L000588](../web/workspace.html#L588) |
-| [web/workspace.html](../web/workspace.html#L593) | متغير JavaScript/TypeScript | bars | 593 | [SRC-2C8F288796-L000593](../web/workspace.html#L593) |
-| [web/workspace.html](../web/workspace.html#L599) | متغير JavaScript/TypeScript | count | 599 | [SRC-2C8F288796-L000599](../web/workspace.html#L599) |
-| [web/workspace.html](../web/workspace.html#L601) | متغير JavaScript/TypeScript | track | 601 | [SRC-2C8F288796-L000601](../web/workspace.html#L601) |
-| [web/workspace.html](../web/workspace.html#L608) | متغير JavaScript/TypeScript | quality | 608 | [SRC-2C8F288796-L000608](../web/workspace.html#L608) |
-| [web/workspace.html](../web/workspace.html#L609) | متغير JavaScript/TypeScript | qhead | 609 | [SRC-2C8F288796-L000609](../web/workspace.html#L609) |
-| [web/workspace.html](../web/workspace.html#L612) | متغير JavaScript/TypeScript | summary | 612 | [SRC-2C8F288796-L000612](../web/workspace.html#L612) |
-| [web/workspace.html](../web/workspace.html#L625) | متغير JavaScript/TypeScript | rh | 625 | [SRC-2C8F288796-L000625](../web/workspace.html#L625) |
-| [web/workspace.html](../web/workspace.html#L634) | دالة JavaScript/TypeScript | renderPlaceholder | 634 | [SRC-2C8F288796-L000634](../web/workspace.html#L634) |
-| [web/workspace.html](../web/workspace.html#L644) | متغير JavaScript/TypeScript | links | 644 | [SRC-2C8F288796-L000644](../web/workspace.html#L644) |
-| [web/workspace.html](../web/workspace.html#L647) | دالة JavaScript/TypeScript | csvValues | 647 | [SRC-2C8F288796-L000647](../web/workspace.html#L647) |
-| [web/workspace.html](../web/workspace.html#L648) | دالة JavaScript/TypeScript | textField | 648 | [SRC-2C8F288796-L000648](../web/workspace.html#L648) |
-| [web/workspace.html](../web/workspace.html#L651) | متغير JavaScript/TypeScript | caption | 651 | [SRC-2C8F288796-L000651](../web/workspace.html#L651) |
-| [web/workspace.html](../web/workspace.html#L654) | دالة JavaScript/TypeScript | renderProductProfile | 654 | [SRC-2C8F288796-L000654](../web/workspace.html#L654) |
-| [web/workspace.html](../web/workspace.html#L677) | متغير JavaScript/TypeScript | localeField | 677 | [SRC-2C8F288796-L000677](../web/workspace.html#L677) |
-| [web/workspace.html](../web/workspace.html#L685) | متغير JavaScript/TypeScript | payload | 685 | [SRC-2C8F288796-L000685](../web/workspace.html#L685) |
-| [web/workspace.html](../web/workspace.html#L690) | مسار API/واجهة محتمل | /api/product-profiles | 690 | [SRC-2C8F288796-L000690](../web/workspace.html#L690) |
-| [web/workspace.html](../web/workspace.html#L696) | متغير JavaScript/TypeScript | listPanel | 696 | [SRC-2C8F288796-L000696](../web/workspace.html#L696) |
-| [web/workspace.html](../web/workspace.html#L712) | دالة JavaScript/TypeScript | renderDiscoveryRun | 712 | [SRC-2C8F288796-L000712](../web/workspace.html#L712) |
-| [web/workspace.html](../web/workspace.html#L714) | متغير JavaScript/TypeScript | report | 714 | [SRC-2C8F288796-L000714](../web/workspace.html#L714) |
-| [web/workspace.html](../web/workspace.html#L724) | متغير JavaScript/TypeScript | qs | 724 | [SRC-2C8F288796-L000724](../web/workspace.html#L724) |
-| [web/workspace.html](../web/workspace.html#L735) | متغير JavaScript/TypeScript | evidence | 735 | [SRC-2C8F288796-L000735](../web/workspace.html#L735) |
-| [web/workspace.html](../web/workspace.html#L748) | مسار API/واجهة محتمل | /api/discoveries/ | 748 | [SRC-2C8F288796-L000748](../web/workspace.html#L748) |
-| [web/workspace.html](../web/workspace.html#L760) | دالة JavaScript/TypeScript | renderDiscovery | 760 | [SRC-2C8F288796-L000760](../web/workspace.html#L760) |
-| [web/workspace.html](../web/workspace.html#L763) | متغير JavaScript/TypeScript | controls | 763 | [SRC-2C8F288796-L000763](../web/workspace.html#L763) |
-| [web/workspace.html](../web/workspace.html#L771) | متغير JavaScript/TypeScript | option | 771 | [SRC-2C8F288796-L000771](../web/workspace.html#L771) |
-| [web/workspace.html](../web/workspace.html#L773) | متغير JavaScript/TypeScript | consent | 773 | [SRC-2C8F288796-L000773](../web/workspace.html#L773) |
-| [web/workspace.html](../web/workspace.html#L777) | متغير JavaScript/TypeScript | run | 777 | [SRC-2C8F288796-L000777](../web/workspace.html#L777) |
-| [web/workspace.html](../web/workspace.html#L781) | مسار API/واجهة محتمل | /api/discoveries | 781 | [SRC-2C8F288796-L000781](../web/workspace.html#L781) |
-| [web/workspace.html](../web/workspace.html#L792) | متغير JavaScript/TypeScript | history | 792 | [SRC-2C8F288796-L000792](../web/workspace.html#L792) |
-| [web/workspace.html](../web/workspace.html#L804) | دالة JavaScript/TypeScript | renderCurrent | 804 | [SRC-2C8F288796-L000804](../web/workspace.html#L804) |
-| [web/workspace.html](../web/workspace.html#L818) | دالة JavaScript/TypeScript | navigate | 818 | [SRC-2C8F288796-L000818](../web/workspace.html#L818) |
-| [web/workspace.html](../web/workspace.html#L821) | دالة JavaScript/TypeScript | loadProductProfiles | 821 | [SRC-2C8F288796-L000821](../web/workspace.html#L821) |
-| [web/workspace.html](../web/workspace.html#L826) | دالة JavaScript/TypeScript | loadDiscoveryRuns | 826 | [SRC-2C8F288796-L000826](../web/workspace.html#L826) |
-| [web/workspace.html](../web/workspace.html#L830) | دالة JavaScript/TypeScript | loadLeads | 830 | [SRC-2C8F288796-L000830](../web/workspace.html#L830) |
-| [web/workspace.html](../web/workspace.html#L834) | دالة JavaScript/TypeScript | bootstrap | 834 | [SRC-2C8F288796-L000834](../web/workspace.html#L834) |
-| [web/workspace.html](../web/workspace.html#L835) | متغير JavaScript/TypeScript | session | 835 | [SRC-2C8F288796-L000835](../web/workspace.html#L835) |
-| [web/workspace.html](../web/workspace.html#L837) | مسار API/واجهة محتمل | /api/session | 837 | [SRC-2C8F288796-L000837](../web/workspace.html#L837) |
-| [web/workspace.html](../web/workspace.html#L848) | متغير JavaScript/TypeScript | results | 848 | [SRC-2C8F288796-L000848](../web/workspace.html#L848) |
-| [web/workspace.html](../web/workspace.html#L874) | متغير JavaScript/TypeScript | button | 874 | [SRC-2C8F288796-L000874](../web/workspace.html#L874) |
-| [web/workspace.html](../web/workspace.html#L874) | متغير JavaScript/TypeScript | token | 874 | [SRC-2C8F288796-L000874](../web/workspace.html#L874) |
-| [web/workspace.html](../web/workspace.html#L883) | مسار API/واجهة محتمل | /api/session/logout | 883 | [SRC-2C8F288796-L000883](../web/workspace.html#L883) |
+| [web/workspace.html](../web/workspace.html#L240) | محدد class في CSS | chat-mode-active | 240 | [SRC-2C8F288796-L000240](../web/workspace.html#L240) |
+| [web/workspace.html](../web/workspace.html#L240) | محدد class في CSS | chat-modes | 240 | [SRC-2C8F288796-L000240](../web/workspace.html#L240) |
+| [web/workspace.html](../web/workspace.html#L240) | محدد class في CSS | chat-panel | 240 | [SRC-2C8F288796-L000240](../web/workspace.html#L240) |
+| [web/workspace.html](../web/workspace.html#L240) | محدد id في CSS | fff | 240 | [SRC-2C8F288796-L000240](../web/workspace.html#L240) |
+| [web/workspace.html](../web/workspace.html#L241) | محدد class في CSS | chat-list | 241 | [SRC-2C8F288796-L000241](../web/workspace.html#L241) |
+| [web/workspace.html](../web/workspace.html#L242) | محدد class في CSS | chat-empty | 242 | [SRC-2C8F288796-L000242](../web/workspace.html#L242) |
+| [web/workspace.html](../web/workspace.html#L243) | محدد class في CSS | chat-assistant | 243 | [SRC-2C8F288796-L000243](../web/workspace.html#L243) |
+| [web/workspace.html](../web/workspace.html#L243) | محدد class في CSS | chat-msg | 243 | [SRC-2C8F288796-L000243](../web/workspace.html#L243) |
+| [web/workspace.html](../web/workspace.html#L243) | محدد class في CSS | chat-user | 243 | [SRC-2C8F288796-L000243](../web/workspace.html#L243) |
+| [web/workspace.html](../web/workspace.html#L244) | محدد class في CSS | chat-text | 244 | [SRC-2C8F288796-L000244](../web/workspace.html#L244) |
+| [web/workspace.html](../web/workspace.html#L244) | محدد class في CSS | chat-who | 244 | [SRC-2C8F288796-L000244](../web/workspace.html#L244) |
+| [web/workspace.html](../web/workspace.html#L245) | محدد class في CSS | chat-note | 245 | [SRC-2C8F288796-L000245](../web/workspace.html#L245) |
+| [web/workspace.html](../web/workspace.html#L245) | محدد class في CSS | chat-sources | 245 | [SRC-2C8F288796-L000245](../web/workspace.html#L245) |
+| [web/workspace.html](../web/workspace.html#L246) | محدد class في CSS | chat-form | 246 | [SRC-2C8F288796-L000246](../web/workspace.html#L246) |
+| [web/workspace.html](../web/workspace.html#L255) | قيمة سمة HTML (id) | mainNav | 255 | [SRC-2C8F288796-L000255](../web/workspace.html#L255) |
+| [web/workspace.html](../web/workspace.html#L257) | قيمة سمة HTML (id) | apiDot | 257 | [SRC-2C8F288796-L000257](../web/workspace.html#L257) |
+| [web/workspace.html](../web/workspace.html#L257) | قيمة سمة HTML (id) | apiStatus | 257 | [SRC-2C8F288796-L000257](../web/workspace.html#L257) |
+| [web/workspace.html](../web/workspace.html#L257) | قيمة سمة HTML (id) | apiStatusNote | 257 | [SRC-2C8F288796-L000257](../web/workspace.html#L257) |
+| [web/workspace.html](../web/workspace.html#L258) | قيمة سمة HTML (id) | roleSummary | 258 | [SRC-2C8F288796-L000258](../web/workspace.html#L258) |
+| [web/workspace.html](../web/workspace.html#L259) | قيمة سمة HTML (id) | chatNav | 259 | [SRC-2C8F288796-L000259](../web/workspace.html#L259) |
+| [web/workspace.html](../web/workspace.html#L259) | قيمة سمة HTML (id) | systemNav | 259 | [SRC-2C8F288796-L000259](../web/workspace.html#L259) |
+| [web/workspace.html](../web/workspace.html#L264) | قيمة سمة HTML (id) | crumb | 264 | [SRC-2C8F288796-L000264](../web/workspace.html#L264) |
+| [web/workspace.html](../web/workspace.html#L265) | قيمة سمة HTML (id) | addSignalTop | 265 | [SRC-2C8F288796-L000265](../web/workspace.html#L265) |
+| [web/workspace.html](../web/workspace.html#L265) | قيمة سمة HTML (id) | logoutButton | 265 | [SRC-2C8F288796-L000265](../web/workspace.html#L265) |
+| [web/workspace.html](../web/workspace.html#L265) | قيمة سمة HTML (id) | rolePill | 265 | [SRC-2C8F288796-L000265](../web/workspace.html#L265) |
+| [web/workspace.html](../web/workspace.html#L267) | قيمة سمة HTML (id) | pageDescription | 267 | [SRC-2C8F288796-L000267](../web/workspace.html#L267) |
+| [web/workspace.html](../web/workspace.html#L267) | قيمة سمة HTML (id) | pageEyebrow | 267 | [SRC-2C8F288796-L000267](../web/workspace.html#L267) |
+| [web/workspace.html](../web/workspace.html#L267) | قيمة سمة HTML (id) | pageTitle | 267 | [SRC-2C8F288796-L000267](../web/workspace.html#L267) |
+| [web/workspace.html](../web/workspace.html#L268) | قيمة سمة HTML (id) | viewRoot | 268 | [SRC-2C8F288796-L000268](../web/workspace.html#L268) |
+| [web/workspace.html](../web/workspace.html#L273) | قيمة سمة HTML (id) | detailDrawer | 273 | [SRC-2C8F288796-L000273](../web/workspace.html#L273) |
+| [web/workspace.html](../web/workspace.html#L274) | قيمة سمة HTML (id) | closeDetail | 274 | [SRC-2C8F288796-L000274](../web/workspace.html#L274) |
+| [web/workspace.html](../web/workspace.html#L274) | قيمة سمة HTML (id) | detailBody | 274 | [SRC-2C8F288796-L000274](../web/workspace.html#L274) |
+| [web/workspace.html](../web/workspace.html#L274) | قيمة سمة HTML (id) | detailTitle | 274 | [SRC-2C8F288796-L000274](../web/workspace.html#L274) |
+| [web/workspace.html](../web/workspace.html#L276) | قيمة سمة HTML (id) | authGate | 276 | [SRC-2C8F288796-L000276](../web/workspace.html#L276) |
+| [web/workspace.html](../web/workspace.html#L281) | قيمة سمة HTML (id) | loginForm | 281 | [SRC-2C8F288796-L000281](../web/workspace.html#L281) |
+| [web/workspace.html](../web/workspace.html#L282) | قيمة سمة HTML (id) | accessToken | 282 | [SRC-2C8F288796-L000282](../web/workspace.html#L282) |
+| [web/workspace.html](../web/workspace.html#L283) | قيمة سمة HTML (id) | loginButton | 283 | [SRC-2C8F288796-L000283](../web/workspace.html#L283) |
+| [web/workspace.html](../web/workspace.html#L284) | قيمة سمة HTML (id) | authError | 284 | [SRC-2C8F288796-L000284](../web/workspace.html#L284) |
+| [web/workspace.html](../web/workspace.html#L293) | دالة JavaScript/TypeScript | $ | 293 | [SRC-2C8F288796-L000293](../web/workspace.html#L293) |
+| [web/workspace.html](../web/workspace.html#L294) | متغير JavaScript/TypeScript | state | 294 | [SRC-2C8F288796-L000294](../web/workspace.html#L294) |
+| [web/workspace.html](../web/workspace.html#L295) | متغير JavaScript/TypeScript | statuses | 295 | [SRC-2C8F288796-L000295](../web/workspace.html#L295) |
+| [web/workspace.html](../web/workspace.html#L303) | متغير JavaScript/TypeScript | labels | 303 | [SRC-2C8F288796-L000303](../web/workspace.html#L303) |
+| [web/workspace.html](../web/workspace.html#L304) | متغير JavaScript/TypeScript | menu | 304 | [SRC-2C8F288796-L000304](../web/workspace.html#L304) |
+| [web/workspace.html](../web/workspace.html#L312) | دالة JavaScript/TypeScript | make | 312 | [SRC-2C8F288796-L000312](../web/workspace.html#L312) |
+| [web/workspace.html](../web/workspace.html#L313) | متغير JavaScript/TypeScript | node | 313 | [SRC-2C8F288796-L000313](../web/workspace.html#L313) |
+| [web/workspace.html](../web/workspace.html#L318) | دالة JavaScript/TypeScript | action | 318 | [SRC-2C8F288796-L000318](../web/workspace.html#L318) |
+| [web/workspace.html](../web/workspace.html#L319) | متغير JavaScript/TypeScript | b | 319 | [SRC-2C8F288796-L000319](../web/workspace.html#L319) |
+| [web/workspace.html](../web/workspace.html#L322) | دالة JavaScript/TypeScript | safeHttp | 322 | [SRC-2C8F288796-L000322](../web/workspace.html#L322) |
+| [web/workspace.html](../web/workspace.html#L323) | متغير JavaScript/TypeScript | u | 323 | [SRC-2C8F288796-L000323](../web/workspace.html#L323) |
+| [web/workspace.html](../web/workspace.html#L325) | دالة JavaScript/TypeScript | escapeMessage | 325 | [SRC-2C8F288796-L000325](../web/workspace.html#L325) |
+| [web/workspace.html](../web/workspace.html#L326) | دالة JavaScript/TypeScript | api | 326 | [SRC-2C8F288796-L000326](../web/workspace.html#L326) |
+| [web/workspace.html](../web/workspace.html#L327) | متغير JavaScript/TypeScript | opts | 327 | [SRC-2C8F288796-L000327](../web/workspace.html#L327) |
+| [web/workspace.html](../web/workspace.html#L328) | متغير JavaScript/TypeScript | requestSessionVersion | 328 | [SRC-2C8F288796-L000328](../web/workspace.html#L328) |
+| [web/workspace.html](../web/workspace.html#L329) | متغير JavaScript/TypeScript | headers | 329 | [SRC-2C8F288796-L000329](../web/workspace.html#L329) |
+| [web/workspace.html](../web/workspace.html#L331) | متغير JavaScript/TypeScript | response | 331 | [SRC-2C8F288796-L000331](../web/workspace.html#L331) |
+| [web/workspace.html](../web/workspace.html#L332) | متغير JavaScript/TypeScript | data | 332 | [SRC-2C8F288796-L000332](../web/workspace.html#L332) |
+| [web/workspace.html](../web/workspace.html#L339) | دالة JavaScript/TypeScript | clearChatSession | 339 | [SRC-2C8F288796-L000339](../web/workspace.html#L339) |
+| [web/workspace.html](../web/workspace.html#L340) | متغير JavaScript/TypeScript | chat | 340 | [SRC-2C8F288796-L000340](../web/workspace.html#L340) |
+| [web/workspace.html](../web/workspace.html#L344) | دالة JavaScript/TypeScript | advanceWorkspaceSessionVersion | 344 | [SRC-2C8F288796-L000344](../web/workspace.html#L344) |
+| [web/workspace.html](../web/workspace.html#L347) | دالة JavaScript/TypeScript | clearWorkspaceSession | 347 | [SRC-2C8F288796-L000347](../web/workspace.html#L347) |
+| [web/workspace.html](../web/workspace.html#L359) | دالة JavaScript/TypeScript | showAuth | 359 | [SRC-2C8F288796-L000359](../web/workspace.html#L359) |
+| [web/workspace.html](../web/workspace.html#L365) | دالة JavaScript/TypeScript | hideAuth | 365 | [SRC-2C8F288796-L000365](../web/workspace.html#L365) |
+| [web/workspace.html](../web/workspace.html#L366) | دالة JavaScript/TypeScript | statusLabel | 366 | [SRC-2C8F288796-L000366](../web/workspace.html#L366) |
+| [web/workspace.html](../web/workspace.html#L366) | متغير JavaScript/TypeScript | item | 366 | [SRC-2C8F288796-L000366](../web/workspace.html#L366) |
+| [web/workspace.html](../web/workspace.html#L367) | دالة JavaScript/TypeScript | tag | 367 | [SRC-2C8F288796-L000367](../web/workspace.html#L367) |
+| [web/workspace.html](../web/workspace.html#L368) | دالة JavaScript/TypeScript | setPage | 368 | [SRC-2C8F288796-L000368](../web/workspace.html#L368) |
+| [web/workspace.html](../web/workspace.html#L372) | دالة JavaScript/TypeScript | renderNav | 372 | [SRC-2C8F288796-L000372](../web/workspace.html#L372) |
+| [web/workspace.html](../web/workspace.html#L373) | متغير JavaScript/TypeScript | nav | 373 | [SRC-2C8F288796-L000373](../web/workspace.html#L373) |
+| [web/workspace.html](../web/workspace.html#L377) | متغير JavaScript/TypeScript | icon | 377 | [SRC-2C8F288796-L000377](../web/workspace.html#L377) |
+| [web/workspace.html](../web/workspace.html#L377) | متغير JavaScript/TypeScript | name | 377 | [SRC-2C8F288796-L000377](../web/workspace.html#L377) |
+| [web/workspace.html](../web/workspace.html#L385) | دالة JavaScript/TypeScript | setConnection | 385 | [SRC-2C8F288796-L000385](../web/workspace.html#L385) |
+| [web/workspace.html](../web/workspace.html#L388) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WRITE_ROLES | 388 | [SRC-2C8F288796-L000388](../web/workspace.html#L388) |
+| [web/workspace.html](../web/workspace.html#L388) | متغير JavaScript/TypeScript | WRITE_ROLES | 388 | [SRC-2C8F288796-L000388](../web/workspace.html#L388) |
+| [web/workspace.html](../web/workspace.html#L389) | دالة JavaScript/TypeScript | canWrite | 389 | [SRC-2C8F288796-L000389](../web/workspace.html#L389) |
+| [web/workspace.html](../web/workspace.html#L390) | دالة JavaScript/TypeScript | countByStatus | 390 | [SRC-2C8F288796-L000390](../web/workspace.html#L390) |
+| [web/workspace.html](../web/workspace.html#L391) | دالة JavaScript/TypeScript | buildStat | 391 | [SRC-2C8F288796-L000391](../web/workspace.html#L391) |
+| [web/workspace.html](../web/workspace.html#L392) | متغير JavaScript/TypeScript | card | 392 | [SRC-2C8F288796-L000392](../web/workspace.html#L392) |
+| [web/workspace.html](../web/workspace.html#L395) | دالة JavaScript/TypeScript | renderOverview | 395 | [SRC-2C8F288796-L000395](../web/workspace.html#L395) |
+| [web/workspace.html](../web/workspace.html#L397) | متغير JavaScript/TypeScript | root | 397 | [SRC-2C8F288796-L000397](../web/workspace.html#L397) |
+| [web/workspace.html](../web/workspace.html#L398) | متغير JavaScript/TypeScript | qualified | 398 | [SRC-2C8F288796-L000398](../web/workspace.html#L398) |
+| [web/workspace.html](../web/workspace.html#L399) | متغير JavaScript/TypeScript | review | 399 | [SRC-2C8F288796-L000399](../web/workspace.html#L399) |
+| [web/workspace.html](../web/workspace.html#L400) | متغير JavaScript/TypeScript | stats | 400 | [SRC-2C8F288796-L000400](../web/workspace.html#L400) |
+| [web/workspace.html](../web/workspace.html#L407) | متغير JavaScript/TypeScript | grid | 407 | [SRC-2C8F288796-L000407](../web/workspace.html#L407) |
+| [web/workspace.html](../web/workspace.html#L408) | متغير JavaScript/TypeScript | h | 408 | [SRC-2C8F288796-L000408](../web/workspace.html#L408) |
+| [web/workspace.html](../web/workspace.html#L408) | متغير JavaScript/TypeScript | head | 408 | [SRC-2C8F288796-L000408](../web/workspace.html#L408) |
+| [web/workspace.html](../web/workspace.html#L408) | متغير JavaScript/TypeScript | recent | 408 | [SRC-2C8F288796-L000408](../web/workspace.html#L408) |
+| [web/workspace.html](../web/workspace.html#L411) | متغير JavaScript/TypeScript | list | 411 | [SRC-2C8F288796-L000411](../web/workspace.html#L411) |
+| [web/workspace.html](../web/workspace.html#L412) | متغير JavaScript/TypeScript | rows | 412 | [SRC-2C8F288796-L000412](../web/workspace.html#L412) |
+| [web/workspace.html](../web/workspace.html#L416) | متغير JavaScript/TypeScript | sh | 416 | [SRC-2C8F288796-L000416](../web/workspace.html#L416) |
+| [web/workspace.html](../web/workspace.html#L416) | متغير JavaScript/TypeScript | st | 416 | [SRC-2C8F288796-L000416](../web/workspace.html#L416) |
+| [web/workspace.html](../web/workspace.html#L416) | متغير JavaScript/TypeScript | startPanel | 416 | [SRC-2C8F288796-L000416](../web/workspace.html#L416) |
+| [web/workspace.html](../web/workspace.html#L424) | دالة JavaScript/TypeScript | emptyState | 424 | [SRC-2C8F288796-L000424](../web/workspace.html#L424) |
+| [web/workspace.html](../web/workspace.html#L425) | متغير JavaScript/TypeScript | box | 425 | [SRC-2C8F288796-L000425](../web/workspace.html#L425) |
+| [web/workspace.html](../web/workspace.html#L427) | دالة JavaScript/TypeScript | signalCard | 427 | [SRC-2C8F288796-L000427](../web/workspace.html#L427) |
+| [web/workspace.html](../web/workspace.html#L429) | متغير JavaScript/TypeScript | left | 429 | [SRC-2C8F288796-L000429](../web/workspace.html#L429) |
+| [web/workspace.html](../web/workspace.html#L429) | متغير JavaScript/TypeScript | top | 429 | [SRC-2C8F288796-L000429](../web/workspace.html#L429) |
+| [web/workspace.html](../web/workspace.html#L430) | متغير JavaScript/TypeScript | assessment | 430 | [SRC-2C8F288796-L000430](../web/workspace.html#L430) |
+| [web/workspace.html](../web/workspace.html#L433) | متغير JavaScript/TypeScript | text | 433 | [SRC-2C8F288796-L000433](../web/workspace.html#L433) |
+| [web/workspace.html](../web/workspace.html#L434) | متغير JavaScript/TypeScript | meta | 434 | [SRC-2C8F288796-L000434](../web/workspace.html#L434) |
+| [web/workspace.html](../web/workspace.html#L436) | متغير JavaScript/TypeScript | source | 436 | [SRC-2C8F288796-L000436](../web/workspace.html#L436) |
+| [web/workspace.html](../web/workspace.html#L438) | متغير JavaScript/TypeScript | actions | 438 | [SRC-2C8F288796-L000438](../web/workspace.html#L438) |
+| [web/workspace.html](../web/workspace.html#L443) | دالة JavaScript/TypeScript | openDetails | 443 | [SRC-2C8F288796-L000443](../web/workspace.html#L443) |
+| [web/workspace.html](../web/workspace.html#L444) | متغير JavaScript/TypeScript | body | 444 | [SRC-2C8F288796-L000444](../web/workspace.html#L444) |
+| [web/workspace.html](../web/workspace.html#L445) | متغير JavaScript/TypeScript | a | 445 | [SRC-2C8F288796-L000445](../web/workspace.html#L445) |
+| [web/workspace.html](../web/workspace.html#L448) | متغير JavaScript/TypeScript | url | 448 | [SRC-2C8F288796-L000448](../web/workspace.html#L448) |
+| [web/workspace.html](../web/workspace.html#L449) | متغير JavaScript/TypeScript | link | 449 | [SRC-2C8F288796-L000449](../web/workspace.html#L449) |
+| [web/workspace.html](../web/workspace.html#L455) | متغير JavaScript/TypeScript | ul | 455 | [SRC-2C8F288796-L000455](../web/workspace.html#L455) |
+| [web/workspace.html](../web/workspace.html#L460) | متغير JavaScript/TypeScript | select | 460 | [SRC-2C8F288796-L000460](../web/workspace.html#L460) |
+| [web/workspace.html](../web/workspace.html#L461) | متغير JavaScript/TypeScript | o | 461 | [SRC-2C8F288796-L000461](../web/workspace.html#L461) |
+| [web/workspace.html](../web/workspace.html#L462) | متغير JavaScript/TypeScript | save | 462 | [SRC-2C8F288796-L000462](../web/workspace.html#L462) |
+| [web/workspace.html](../web/workspace.html#L462) | مسار API/واجهة محتمل | /api/leads/ | 462 | [SRC-2C8F288796-L000462](../web/workspace.html#L462) |
+| [web/workspace.html](../web/workspace.html#L467) | دالة JavaScript/TypeScript | closeDetails | 467 | [SRC-2C8F288796-L000467](../web/workspace.html#L467) |
+| [web/workspace.html](../web/workspace.html#L468) | دالة JavaScript/TypeScript | renderSignals | 468 | [SRC-2C8F288796-L000468](../web/workspace.html#L468) |
+| [web/workspace.html](../web/workspace.html#L471) | متغير JavaScript/TypeScript | panel | 471 | [SRC-2C8F288796-L000471](../web/workspace.html#L471) |
+| [web/workspace.html](../web/workspace.html#L471) | متغير JavaScript/TypeScript | ph | 471 | [SRC-2C8F288796-L000471](../web/workspace.html#L471) |
+| [web/workspace.html](../web/workspace.html#L471) | متغير JavaScript/TypeScript | ptitle | 471 | [SRC-2C8F288796-L000471](../web/workspace.html#L471) |
+| [web/workspace.html](../web/workspace.html#L473) | متغير JavaScript/TypeScript | search | 473 | [SRC-2C8F288796-L000473](../web/workspace.html#L473) |
+| [web/workspace.html](../web/workspace.html#L473) | متغير JavaScript/TypeScript | toolbar | 473 | [SRC-2C8F288796-L000473](../web/workspace.html#L473) |
+| [web/workspace.html](../web/workspace.html#L475) | متغير JavaScript/TypeScript | all | 475 | [SRC-2C8F288796-L000475](../web/workspace.html#L475) |
+| [web/workspace.html](../web/workspace.html#L475) | متغير JavaScript/TypeScript | filter | 475 | [SRC-2C8F288796-L000475](../web/workspace.html#L475) |
+| [web/workspace.html](../web/workspace.html#L483) | دالة JavaScript/TypeScript | drawSignalRows | 483 | [SRC-2C8F288796-L000483](../web/workspace.html#L483) |
+| [web/workspace.html](../web/workspace.html#L485) | متغير JavaScript/TypeScript | query | 485 | [SRC-2C8F288796-L000485](../web/workspace.html#L485) |
+| [web/workspace.html](../web/workspace.html#L490) | دالة JavaScript/TypeScript | createSignalForm | 490 | [SRC-2C8F288796-L000490](../web/workspace.html#L490) |
+| [web/workspace.html](../web/workspace.html#L491) | متغير JavaScript/TypeScript | title | 491 | [SRC-2C8F288796-L000491](../web/workspace.html#L491) |
+| [web/workspace.html](../web/workspace.html#L491) | متغير JavaScript/TypeScript | wrapper | 491 | [SRC-2C8F288796-L000491](../web/workspace.html#L491) |
+| [web/workspace.html](../web/workspace.html#L492) | قيمة سمة HTML (id) | newSignalText | 492 | [SRC-2C8F288796-L000492](../web/workspace.html#L492) |
+| [web/workspace.html](../web/workspace.html#L493) | قيمة سمة HTML (id) | newSignalUrl | 493 | [SRC-2C8F288796-L000493](../web/workspace.html#L493) |
+| [web/workspace.html](../web/workspace.html#L495) | قيمة سمة HTML (id) | newSignalPlatform | 495 | [SRC-2C8F288796-L000495](../web/workspace.html#L495) |
+| [web/workspace.html](../web/workspace.html#L495) | متغير JavaScript/TypeScript | platform | 495 | [SRC-2C8F288796-L000495](../web/workspace.html#L495) |
+| [web/workspace.html](../web/workspace.html#L496) | قيمة سمة HTML (id) | newSignalProduct | 496 | [SRC-2C8F288796-L000496](../web/workspace.html#L496) |
+| [web/workspace.html](../web/workspace.html#L496) | متغير JavaScript/TypeScript | product | 496 | [SRC-2C8F288796-L000496](../web/workspace.html#L496) |
+| [web/workspace.html](../web/workspace.html#L497) | قيمة سمة HTML (id) | newSignalLocation | 497 | [SRC-2C8F288796-L000497](../web/workspace.html#L497) |
+| [web/workspace.html](../web/workspace.html#L497) | متغير JavaScript/TypeScript | location | 497 | [SRC-2C8F288796-L000497](../web/workspace.html#L497) |
+| [web/workspace.html](../web/workspace.html#L498) | قيمة سمة HTML (id) | newSignalNote | 498 | [SRC-2C8F288796-L000498](../web/workspace.html#L498) |
+| [web/workspace.html](../web/workspace.html#L498) | متغير JavaScript/TypeScript | note | 498 | [SRC-2C8F288796-L000498](../web/workspace.html#L498) |
+| [web/workspace.html](../web/workspace.html#L499) | متغير JavaScript/TypeScript | fields | 499 | [SRC-2C8F288796-L000499](../web/workspace.html#L499) |
+| [web/workspace.html](../web/workspace.html#L500) | متغير JavaScript/TypeScript | field | 500 | [SRC-2C8F288796-L000500](../web/workspace.html#L500) |
+| [web/workspace.html](../web/workspace.html#L502) | قيمة سمة HTML (id) | analysisResult | 502 | [SRC-2C8F288796-L000502](../web/workspace.html#L502) |
+| [web/workspace.html](../web/workspace.html#L502) | متغير JavaScript/TypeScript | result | 502 | [SRC-2C8F288796-L000502](../web/workspace.html#L502) |
+| [web/workspace.html](../web/workspace.html#L503) | متغير JavaScript/TypeScript | buttons | 503 | [SRC-2C8F288796-L000503](../web/workspace.html#L503) |
+| [web/workspace.html](../web/workspace.html#L504) | متغير JavaScript/TypeScript | analyze | 504 | [SRC-2C8F288796-L000504](../web/workspace.html#L504) |
+| [web/workspace.html](../web/workspace.html#L509) | متغير JavaScript/TypeScript | product_terms | 509 | [SRC-2C8F288796-L000509](../web/workspace.html#L509) |
+| [web/workspace.html](../web/workspace.html#L510) | متغير JavaScript/TypeScript | location_terms | 510 | [SRC-2C8F288796-L000510](../web/workspace.html#L510) |
+| [web/workspace.html](../web/workspace.html#L511) | مسار API/واجهة محتمل | /api/analyze | 511 | [SRC-2C8F288796-L000511](../web/workspace.html#L511) |
+| [web/workspace.html](../web/workspace.html#L529) | مسار API/واجهة محتمل | /api/leads | 529 | [SRC-2C8F288796-L000529](../web/workspace.html#L529) |
+| [web/workspace.html](../web/workspace.html#L537) | دالة JavaScript/TypeScript | renderPipeline | 537 | [SRC-2C8F288796-L000537](../web/workspace.html#L537) |
+| [web/workspace.html](../web/workspace.html#L541) | متغير JavaScript/TypeScript | board | 541 | [SRC-2C8F288796-L000541](../web/workspace.html#L541) |
+| [web/workspace.html](../web/workspace.html#L541) | متغير JavaScript/TypeScript | groups | 541 | [SRC-2C8F288796-L000541](../web/workspace.html#L541) |
+| [web/workspace.html](../web/workspace.html#L542) | متغير JavaScript/TypeScript | col | 542 | [SRC-2C8F288796-L000542](../web/workspace.html#L542) |
+| [web/workspace.html](../web/workspace.html#L545) | دالة JavaScript/TypeScript | renderSystem | 545 | [SRC-2C8F288796-L000545](../web/workspace.html#L545) |
+| [web/workspace.html](../web/workspace.html#L549) | مسار API/واجهة محتمل | /api/health | 549 | [SRC-2C8F288796-L000549](../web/workspace.html#L549) |
+| [web/workspace.html](../web/workspace.html#L550) | متغير JavaScript/TypeScript | agent | 550 | [SRC-2C8F288796-L000550](../web/workspace.html#L550) |
+| [web/workspace.html](../web/workspace.html#L550) | متغير JavaScript/TypeScript | build | 550 | [SRC-2C8F288796-L000550](../web/workspace.html#L550) |
+| [web/workspace.html](../web/workspace.html#L561) | متغير JavaScript/TypeScript | mh | 561 | [SRC-2C8F288796-L000561](../web/workspace.html#L561) |
+| [web/workspace.html](../web/workspace.html#L561) | متغير JavaScript/TypeScript | models | 561 | [SRC-2C8F288796-L000561](../web/workspace.html#L561) |
+| [web/workspace.html](../web/workspace.html#L561) | متغير JavaScript/TypeScript | mt | 561 | [SRC-2C8F288796-L000561](../web/workspace.html#L561) |
+| [web/workspace.html](../web/workspace.html#L565) | متغير JavaScript/TypeScript | providers | 565 | [SRC-2C8F288796-L000565](../web/workspace.html#L565) |
+| [web/workspace.html](../web/workspace.html#L569) | متغير JavaScript/TypeScript | row | 569 | [SRC-2C8F288796-L000569](../web/workspace.html#L569) |
+| [web/workspace.html](../web/workspace.html#L580) | متغير JavaScript/TypeScript | flags | 580 | [SRC-2C8F288796-L000580](../web/workspace.html#L580) |
+| [web/workspace.html](../web/workspace.html#L591) | دالة JavaScript/TypeScript | renderIndicators | 591 | [SRC-2C8F288796-L000591](../web/workspace.html#L591) |
+| [web/workspace.html](../web/workspace.html#L594) | متغير JavaScript/TypeScript | total | 594 | [SRC-2C8F288796-L000594](../web/workspace.html#L594) |
+| [web/workspace.html](../web/workspace.html#L597) | متغير JavaScript/TypeScript | converted | 597 | [SRC-2C8F288796-L000597](../web/workspace.html#L597) |
+| [web/workspace.html](../web/workspace.html#L598) | متغير JavaScript/TypeScript | withSource | 598 | [SRC-2C8F288796-L000598](../web/workspace.html#L598) |
+| [web/workspace.html](../web/workspace.html#L599) | متغير JavaScript/TypeScript | hero | 599 | [SRC-2C8F288796-L000599](../web/workspace.html#L599) |
+| [web/workspace.html](../web/workspace.html#L600) | متغير JavaScript/TypeScript | ring | 600 | [SRC-2C8F288796-L000600](../web/workspace.html#L600) |
+| [web/workspace.html](../web/workspace.html#L604) | متغير JavaScript/TypeScript | ringInner | 604 | [SRC-2C8F288796-L000604](../web/workspace.html#L604) |
+| [web/workspace.html](../web/workspace.html#L607) | متغير JavaScript/TypeScript | heroCopy | 607 | [SRC-2C8F288796-L000607](../web/workspace.html#L607) |
+| [web/workspace.html](../web/workspace.html#L610) | متغير JavaScript/TypeScript | cards | 610 | [SRC-2C8F288796-L000610](../web/workspace.html#L610) |
+| [web/workspace.html](../web/workspace.html#L618) | متغير JavaScript/TypeScript | layout | 618 | [SRC-2C8F288796-L000618](../web/workspace.html#L618) |
+| [web/workspace.html](../web/workspace.html#L619) | متغير JavaScript/TypeScript | statusPanel | 619 | [SRC-2C8F288796-L000619](../web/workspace.html#L619) |
+| [web/workspace.html](../web/workspace.html#L624) | متغير JavaScript/TypeScript | bars | 624 | [SRC-2C8F288796-L000624](../web/workspace.html#L624) |
+| [web/workspace.html](../web/workspace.html#L630) | متغير JavaScript/TypeScript | count | 630 | [SRC-2C8F288796-L000630](../web/workspace.html#L630) |
+| [web/workspace.html](../web/workspace.html#L632) | متغير JavaScript/TypeScript | track | 632 | [SRC-2C8F288796-L000632](../web/workspace.html#L632) |
+| [web/workspace.html](../web/workspace.html#L639) | متغير JavaScript/TypeScript | quality | 639 | [SRC-2C8F288796-L000639](../web/workspace.html#L639) |
+| [web/workspace.html](../web/workspace.html#L640) | متغير JavaScript/TypeScript | qhead | 640 | [SRC-2C8F288796-L000640](../web/workspace.html#L640) |
+| [web/workspace.html](../web/workspace.html#L643) | متغير JavaScript/TypeScript | summary | 643 | [SRC-2C8F288796-L000643](../web/workspace.html#L643) |
+| [web/workspace.html](../web/workspace.html#L656) | متغير JavaScript/TypeScript | rh | 656 | [SRC-2C8F288796-L000656](../web/workspace.html#L656) |
+| [web/workspace.html](../web/workspace.html#L665) | دالة JavaScript/TypeScript | renderPlaceholder | 665 | [SRC-2C8F288796-L000665](../web/workspace.html#L665) |
+| [web/workspace.html](../web/workspace.html#L675) | متغير JavaScript/TypeScript | links | 675 | [SRC-2C8F288796-L000675](../web/workspace.html#L675) |
+| [web/workspace.html](../web/workspace.html#L678) | دالة JavaScript/TypeScript | csvValues | 678 | [SRC-2C8F288796-L000678](../web/workspace.html#L678) |
+| [web/workspace.html](../web/workspace.html#L679) | دالة JavaScript/TypeScript | textField | 679 | [SRC-2C8F288796-L000679](../web/workspace.html#L679) |
+| [web/workspace.html](../web/workspace.html#L682) | متغير JavaScript/TypeScript | caption | 682 | [SRC-2C8F288796-L000682](../web/workspace.html#L682) |
+| [web/workspace.html](../web/workspace.html#L685) | دالة JavaScript/TypeScript | renderProductProfile | 685 | [SRC-2C8F288796-L000685](../web/workspace.html#L685) |
+| [web/workspace.html](../web/workspace.html#L708) | متغير JavaScript/TypeScript | localeField | 708 | [SRC-2C8F288796-L000708](../web/workspace.html#L708) |
+| [web/workspace.html](../web/workspace.html#L716) | متغير JavaScript/TypeScript | payload | 716 | [SRC-2C8F288796-L000716](../web/workspace.html#L716) |
+| [web/workspace.html](../web/workspace.html#L721) | مسار API/واجهة محتمل | /api/product-profiles | 721 | [SRC-2C8F288796-L000721](../web/workspace.html#L721) |
+| [web/workspace.html](../web/workspace.html#L727) | متغير JavaScript/TypeScript | listPanel | 727 | [SRC-2C8F288796-L000727](../web/workspace.html#L727) |
+| [web/workspace.html](../web/workspace.html#L743) | دالة JavaScript/TypeScript | renderDiscoveryRun | 743 | [SRC-2C8F288796-L000743](../web/workspace.html#L743) |
+| [web/workspace.html](../web/workspace.html#L745) | متغير JavaScript/TypeScript | report | 745 | [SRC-2C8F288796-L000745](../web/workspace.html#L745) |
+| [web/workspace.html](../web/workspace.html#L755) | متغير JavaScript/TypeScript | qs | 755 | [SRC-2C8F288796-L000755](../web/workspace.html#L755) |
+| [web/workspace.html](../web/workspace.html#L766) | متغير JavaScript/TypeScript | evidence | 766 | [SRC-2C8F288796-L000766](../web/workspace.html#L766) |
+| [web/workspace.html](../web/workspace.html#L779) | مسار API/واجهة محتمل | /api/discoveries/ | 779 | [SRC-2C8F288796-L000779](../web/workspace.html#L779) |
+| [web/workspace.html](../web/workspace.html#L791) | دالة JavaScript/TypeScript | renderDiscovery | 791 | [SRC-2C8F288796-L000791](../web/workspace.html#L791) |
+| [web/workspace.html](../web/workspace.html#L794) | متغير JavaScript/TypeScript | controls | 794 | [SRC-2C8F288796-L000794](../web/workspace.html#L794) |
+| [web/workspace.html](../web/workspace.html#L802) | متغير JavaScript/TypeScript | option | 802 | [SRC-2C8F288796-L000802](../web/workspace.html#L802) |
+| [web/workspace.html](../web/workspace.html#L804) | متغير JavaScript/TypeScript | consent | 804 | [SRC-2C8F288796-L000804](../web/workspace.html#L804) |
+| [web/workspace.html](../web/workspace.html#L808) | متغير JavaScript/TypeScript | status | 808 | [SRC-2C8F288796-L000808](../web/workspace.html#L808) |
+| [web/workspace.html](../web/workspace.html#L809) | متغير JavaScript/TypeScript | run | 809 | [SRC-2C8F288796-L000809](../web/workspace.html#L809) |
+| [web/workspace.html](../web/workspace.html#L813) | متغير JavaScript/TypeScript | savedRun | 813 | [SRC-2C8F288796-L000813](../web/workspace.html#L813) |
+| [web/workspace.html](../web/workspace.html#L813) | مسار API/واجهة محتمل | /api/discoveries | 813 | [SRC-2C8F288796-L000813](../web/workspace.html#L813) |
+| [web/workspace.html](../web/workspace.html#L815) | متغير JavaScript/TypeScript | refreshWarning | 815 | [SRC-2C8F288796-L000815](../web/workspace.html#L815) |
+| [web/workspace.html](../web/workspace.html#L818) | متغير JavaScript/TypeScript | warning | 818 | [SRC-2C8F288796-L000818](../web/workspace.html#L818) |
+| [web/workspace.html](../web/workspace.html#L831) | متغير JavaScript/TypeScript | history | 831 | [SRC-2C8F288796-L000831](../web/workspace.html#L831) |
+| [web/workspace.html](../web/workspace.html#L837) | متغير JavaScript/TypeScript | message | 837 | [SRC-2C8F288796-L000837](../web/workspace.html#L837) |
+| [web/workspace.html](../web/workspace.html#L844) | متغير JavaScript/TypeScript | chatModes | 844 | [SRC-2C8F288796-L000844](../web/workspace.html#L844) |
+| [web/workspace.html](../web/workspace.html#L850) | دالة JavaScript/TypeScript | chatMessageNode | 850 | [SRC-2C8F288796-L000850](../web/workspace.html#L850) |
+| [web/workspace.html](../web/workspace.html#L857) | متغير JavaScript/TypeScript | href | 857 | [SRC-2C8F288796-L000857](../web/workspace.html#L857) |
+| [web/workspace.html](../web/workspace.html#L858) | متغير JavaScript/TypeScript | li | 858 | [SRC-2C8F288796-L000858](../web/workspace.html#L858) |
+| [web/workspace.html](../web/workspace.html#L866) | دالة JavaScript/TypeScript | renderChat | 866 | [SRC-2C8F288796-L000866](../web/workspace.html#L866) |
+| [web/workspace.html](../web/workspace.html#L871) | متغير JavaScript/TypeScript | pt | 871 | [SRC-2C8F288796-L000871](../web/workspace.html#L871) |
+| [web/workspace.html](../web/workspace.html#L873) | متغير JavaScript/TypeScript | clear | 873 | [SRC-2C8F288796-L000873](../web/workspace.html#L873) |
+| [web/workspace.html](../web/workspace.html#L876) | متغير JavaScript/TypeScript | modeBar | 876 | [SRC-2C8F288796-L000876](../web/workspace.html#L876) |
+| [web/workspace.html](../web/workspace.html#L884) | قيمة سمة HTML (id) | chatList | 884 | [SRC-2C8F288796-L000884](../web/workspace.html#L884) |
+| [web/workspace.html](../web/workspace.html#L890) | متغير JavaScript/TypeScript | form | 890 | [SRC-2C8F288796-L000890](../web/workspace.html#L890) |
+| [web/workspace.html](../web/workspace.html#L891) | قيمة سمة HTML (id) | chatInput | 891 | [SRC-2C8F288796-L000891](../web/workspace.html#L891) |
+| [web/workspace.html](../web/workspace.html#L891) | متغير JavaScript/TypeScript | input | 891 | [SRC-2C8F288796-L000891](../web/workspace.html#L891) |
+| [web/workspace.html](../web/workspace.html#L892) | قيمة سمة HTML (id) | chatSend | 892 | [SRC-2C8F288796-L000892](../web/workspace.html#L892) |
+| [web/workspace.html](../web/workspace.html#L892) | متغير JavaScript/TypeScript | send | 892 | [SRC-2C8F288796-L000892](../web/workspace.html#L892) |
+| [web/workspace.html](../web/workspace.html#L899) | دالة JavaScript/TypeScript | sendChat | 899 | [SRC-2C8F288796-L000899](../web/workspace.html#L899) |
+| [web/workspace.html](../web/workspace.html#L902) | متغير JavaScript/TypeScript | question | 902 | [SRC-2C8F288796-L000902](../web/workspace.html#L902) |
+| [web/workspace.html](../web/workspace.html#L906) | مسار API/واجهة محتمل | /api/agent | 906 | [SRC-2C8F288796-L000906](../web/workspace.html#L906) |
+| [web/workspace.html](../web/workspace.html#L908) | متغير JavaScript/TypeScript | answer | 908 | [SRC-2C8F288796-L000908](../web/workspace.html#L908) |
+| [web/workspace.html](../web/workspace.html#L924) | دالة JavaScript/TypeScript | renderCurrent | 924 | [SRC-2C8F288796-L000924](../web/workspace.html#L924) |
+| [web/workspace.html](../web/workspace.html#L939) | دالة JavaScript/TypeScript | navigate | 939 | [SRC-2C8F288796-L000939](../web/workspace.html#L939) |
+| [web/workspace.html](../web/workspace.html#L942) | دالة JavaScript/TypeScript | loadProductProfiles | 942 | [SRC-2C8F288796-L000942](../web/workspace.html#L942) |
+| [web/workspace.html](../web/workspace.html#L947) | دالة JavaScript/TypeScript | loadDiscoveryRuns | 947 | [SRC-2C8F288796-L000947](../web/workspace.html#L947) |
+| [web/workspace.html](../web/workspace.html#L951) | دالة JavaScript/TypeScript | loadLeads | 951 | [SRC-2C8F288796-L000951](../web/workspace.html#L951) |
+| [web/workspace.html](../web/workspace.html#L955) | دالة JavaScript/TypeScript | bootstrap | 955 | [SRC-2C8F288796-L000955](../web/workspace.html#L955) |
+| [web/workspace.html](../web/workspace.html#L956) | متغير JavaScript/TypeScript | session | 956 | [SRC-2C8F288796-L000956](../web/workspace.html#L956) |
+| [web/workspace.html](../web/workspace.html#L958) | مسار API/واجهة محتمل | /api/session | 958 | [SRC-2C8F288796-L000958](../web/workspace.html#L958) |
+| [web/workspace.html](../web/workspace.html#L969) | متغير JavaScript/TypeScript | results | 969 | [SRC-2C8F288796-L000969](../web/workspace.html#L969) |
+| [web/workspace.html](../web/workspace.html#L995) | متغير JavaScript/TypeScript | button | 995 | [SRC-2C8F288796-L000995](../web/workspace.html#L995) |
+| [web/workspace.html](../web/workspace.html#L995) | متغير JavaScript/TypeScript | token | 995 | [SRC-2C8F288796-L000995](../web/workspace.html#L995) |
+| [web/workspace.html](../web/workspace.html#L1005) | مسار API/واجهة محتمل | /api/session/logout | 1005 | [SRC-2C8F288796-L001005](../web/workspace.html#L1005) |
 
 ## سجل وسوم المراجعة والإصلاح
 

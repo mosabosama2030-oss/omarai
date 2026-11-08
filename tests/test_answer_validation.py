@@ -329,3 +329,39 @@ def test_single_coincidental_token_does_not_count_as_citation_support():
     assert result["citation_lexical_alignment"][0]["status"] == "weak_lexical_overlap"
     assert result["weak_citation_alignment_count"] == 1
     assert result["citation_entailment"] == "not_checked"
+
+
+def test_unfetched_page_text_cannot_support_answer_or_citation_numbers():
+    result = audit_answer_integrity(
+        "ما الرقم؟",
+        "الرقم 500 جنيه [المصدر 1].",
+        [{
+            "title": "تقرير السعر",
+            "snippet": "ملخص لا يتضمن قيمة رقمية.",
+            # A page_text field alone is not proof that the page was actually read.
+            "page_text": "السعر 500 جنيه.",
+            "page_fetched": False,
+        }],
+    )
+
+    assert result["potentially_unsupported_numeric_literals"] == ["500"]
+    cited_check = result["citation_numeric_support"][0]
+    assert cited_check["potentially_unsupported_numeric_literals"] == ["500"]
+    assert cited_check["status"] == "potentially_unsupported_numeric_literals_for_cited_sources"
+
+
+def test_publication_date_metadata_cannot_support_unrelated_numeric_claims():
+    result = audit_answer_integrity(
+        "ما قيمة الإيرادات؟",
+        "بلغت الإيرادات 2026 مليون جنيه [المصدر 1].",
+        [{
+            "title": "Annual report",
+            "snippet": "Revenue increased during the reporting period.",
+            "published_at": "2026-04-10",
+            "page_fetched": False,
+        }],
+    )
+
+    assert result["potentially_unsupported_numeric_literals"] == ["2026"]
+    cited_check = result["citation_numeric_support"][0]
+    assert cited_check["potentially_unsupported_numeric_literals"] == ["2026"]

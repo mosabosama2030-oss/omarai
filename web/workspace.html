@@ -237,6 +237,14 @@ input,textarea,select{background:rgba(5,15,25,.88);border-color:rgba(57,207,255,
 }
 @media(max-width:360px){.indicator-summary{grid-template-columns:1fr}.indicator-row{grid-template-columns:76px minmax(0,1fr) 24px}}
 
+.chat-panel{display:flex;flex-direction:column;gap:12px}.chat-modes{display:flex;gap:8px;flex-wrap:wrap}.chat-mode-active{border-color:var(--teal);color:#fff}
+.chat-list{display:flex;flex-direction:column;gap:12px;min-height:320px;max-height:calc(100vh - 430px);overflow:auto;padding:4px}
+.chat-empty{color:var(--muted);font-size:12px;line-height:1.9;text-align:center;margin:auto;padding:24px;border:1px dashed rgba(145,174,211,.28);border-radius:14px}
+.chat-msg{max-width:88%;padding:12px 14px;border-radius:14px;border:1px solid rgba(145,174,211,.22);background:rgba(7,16,29,.62)}.chat-user{align-self:flex-start;border-color:rgba(57,207,255,.35)}.chat-assistant{align-self:flex-end}
+.chat-who{font-size:10px;color:var(--muted);margin-bottom:6px}.chat-text{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;line-height:1.9}
+.chat-sources{margin:6px 0 0;padding:0 18px;font-size:11px;line-height:1.9}.chat-sources a{color:var(--teal)}.chat-note{margin-top:8px;font-size:10px;color:var(--muted)}
+.chat-form{display:flex;gap:9px;align-items:flex-end}.chat-form textarea{flex:1;min-height:52px;max-height:160px}
+@media(max-width:740px){.chat-msg{max-width:100%}.chat-list{max-height:none}}
 </style>
 </head>
 <body>
@@ -248,7 +256,7 @@ input,textarea,select{background:rgba(5,15,25,.88);border-color:rgba(57,207,255,
   <div class="side-bottom">
     <div class="connection"><div class="connection-title"><span class="dot" id="apiDot"></span><span id="apiStatus">التحقق من الخادم</span></div><small id="apiStatusNote">حالة الخادم لا تعني أن موصلات البحث الخارجية تعمل.</small></div>
     <div class="connection"><div class="connection-title">الهوية والصلاحيات</div><small id="roleSummary">لم يتم التحقق من جلسة المستخدم بعد.</small></div>
-    <div class="side-links"><button class="side-link-button" id="systemNav" type="button">حالة النظام</button><a href="/agent">وكيل البحث</a></div>
+    <div class="side-links"><button class="side-link-button" id="chatNav" type="button">محادثة Omarai</button><button class="side-link-button" id="systemNav" type="button">حالة النظام</button><a href="/agent">وكيل البحث</a></div>
   </div>
 </aside>
 <main class="main">
@@ -283,7 +291,7 @@ input,textarea,select{background:rgba(5,15,25,.88);border-color:rgba(57,207,255,
 (function(){
 "use strict";
 const $=id=>document.getElementById(id);
-const state={role:null,leads:[],profiles:[],discoveryRuns:[],loadWarnings:[],activeDiscovery:null,activeProfileId:null,activeView:"overview",analysis:null,filtered:[],search:"",filter:"all"};
+const state={authSessionVersion:0,role:null,leads:[],profiles:[],discoveryRuns:[],loadWarnings:[],activeDiscovery:null,activeProfileId:null,activeView:"overview",chat:{messages:[],history:[],busy:false,mode:"deep",sessionVersion:0},analysis:null,filtered:[],search:"",filter:"all"};
 const statuses=[
  {id:"new",label:"جديد"},
  {id:"needs_review",label:"يحتاج مراجعة"},
@@ -317,16 +325,39 @@ function safeHttp(value){
 function escapeMessage(message){return String(message||"حدث خطأ غير متوقع").slice(0,500)}
 async function api(path,options){
  const opts=options||{};
+ const requestSessionVersion=state.authSessionVersion;
  const headers={};
  if(opts.body!==undefined)headers["Content-Type"]="application/json";
  const response=await fetch(path,{method:opts.method||"GET",credentials:"same-origin",headers:headers,body:opts.body===undefined?undefined:JSON.stringify(opts.body)});
  let data={};
  try{data=await response.json()}catch(_e){data={error:"تعذر قراءة استجابة الخادم"}}
  if(response.status===401){showAuth("انتهت الجلسة أو لم يتم تسجيل الدخول. أدخل رمز الوصول للمتابعة.");throw new Error("يلزم تسجيل الدخول مجددًا.")}
+ if(state.authSessionVersion!==requestSessionVersion)throw new Error("انتهت الجلسة أثناء الطلب؛ أعد تسجيل الدخول.");
  if(!response.ok)throw new Error(data.error||("فشل الطلب ("+response.status+")"));
  return data;
 }
+function clearChatSession(){
+ const chat=state.chat;
+ chat.messages=[];chat.history=[];chat.busy=false;chat.mode="deep";
+ chat.sessionVersion=(chat.sessionVersion||0)+1;
+}
+function advanceWorkspaceSessionVersion(){
+ state.authSessionVersion=(state.authSessionVersion||0)+1;
+}
+function clearWorkspaceSession(){
+ advanceWorkspaceSessionVersion();
+ state.role=null;state.leads=[];state.profiles=[];state.discoveryRuns=[];state.loadWarnings=[];
+ state.activeDiscovery=null;state.activeProfileId=null;state.activeView="overview";
+ state.analysis=null;state.filtered=[];state.search="";state.filter="all";
+ clearChatSession();
+ closeDetails();$("detailBody").replaceChildren();
+ $("viewRoot").replaceChildren(emptyState("مساحة العمل مقفلة","سجّل الدخول لقراءة البيانات المرتبطة بمساحة العمل."));
+ $("rolePill").textContent="غير مسجل";
+ $("roleSummary").textContent="لم يتم التحقق من جلسة مستخدم.";
+ renderNav();
+}
 function showAuth(message){
+ clearWorkspaceSession();
  $("authGate").classList.add("open");
  $("authError").textContent=message||"";
  $("accessToken").value="";
@@ -774,16 +805,24 @@ function renderDiscovery(){
   consent.append(optional,make("span","","السماح بالموصلات الاختيارية (DeepSeek Search وBrave وTavily وبعض واجهات المنصات الرسمية). قد تستهلك حصصًا أو تكلفة؛ تبقى معطلة افتراضيًا ولا يستطيع تفعيلها إلا مالك مساحة العمل."));
   controls.append(consent);
   const actions=make("div","form-actions");
+  const status=make("p","profile-note");status.setAttribute("role","status");status.setAttribute("aria-live","polite");
   const run=action("بدء اكتشاف الطلب","primary",async()=>{
-   run.disabled=true;state.activeProfileId=profileSelect.value;
-   root.append(emptyState("جارٍ البحث عن إشارات الطلب","قد تستغرق الجولة وقتًا حسب استجابة الموصلات."));
+   run.disabled=true;run.setAttribute("aria-busy","true");state.activeProfileId=profileSelect.value;
+   status.className="profile-note";status.textContent="جارٍ البحث عن إشارات الطلب؛ ستظل النتائج السابقة متاحة حتى تكتمل الجولة الجديدة.";
    try{
-    state.activeDiscovery=await api("/api/discoveries",{method:"POST",body:{profile_id:profileSelect.value,allow_optional_providers:optional.checked}});
-    await loadDiscoveryRuns();renderDiscovery();
-   }catch(error){root.append(make("p","auth-error",escapeMessage(error.message)))}
-   finally{run.disabled=false}
+    const savedRun=await api("/api/discoveries",{method:"POST",body:{profile_id:profileSelect.value,allow_optional_providers:optional.checked}});
+    state.activeDiscovery=savedRun;
+    let refreshWarning="";
+    try{await loadDiscoveryRuns()}catch(refreshError){refreshWarning=" حُفظت نتيجة البحث، لكن تعذر تحديث سجل العمليات: "+escapeMessage(refreshError.message)}
+    renderDiscovery();
+    if(refreshWarning){const warning=make("p","auth-error",refreshWarning);warning.setAttribute("role","alert");$("viewRoot").append(warning)}
+   }catch(error){
+    status.className="auth-error";status.textContent="تعذر تشغيل الاكتشاف: "+escapeMessage(error.message)+" يمكنك المحاولة مجددًا. لم تُحذف النتائج السابقة.";
+   }finally{
+    run.disabled=false;run.removeAttribute("aria-busy");
+   }
   });
-  run.disabled=!canWrite();actions.append(run);controls.append(actions);
+  run.disabled=!canWrite();actions.append(run);controls.append(actions,status);
  }
  controls.append(make("p","profile-note","تاريخ النشر قد يكون غير متاح. المقتطف لا يعني أن الصفحة قُرئت. فشل الموصل لا يثبت عدم وجود عملاء. لا يتم إرسال أي رسالة من هذه الشاشة."));
  controls.append(make("p","profile-note","تشغيل الاكتشاف يستخدم النموذج اللغوي المهيأ حاليًا في Omarai؛ قد يستهلك حصة أو تكلفة بحسب إعدادات مزود النموذج. لا تدخل بيانات سرية. الموصلات الاختيارية منفصلة وتظل معطلة افتراضيًا حتى موافقة المالك."));
@@ -795,11 +834,92 @@ function renderDiscovery(){
   state.discoveryRuns.forEach(item=>list.append(action(
    String(item.profile_name||"ملف منتج")+" · "+String(item.qualified_signal_count||0)+" إشارة · "+String(item.created_at||""),
    "",
-   async()=>{try{state.activeDiscovery=await api("/api/discoveries/"+encodeURIComponent(item.id));renderDiscovery()}catch(error){history.append(make("p","auth-error",escapeMessage(error.message)))}}
+   async()=>{try{state.activeDiscovery=await api("/api/discoveries/"+encodeURIComponent(item.id));renderDiscovery()}catch(error){const message=make("p","auth-error",escapeMessage(error.message));message.setAttribute("role","alert");history.append(message)}}
   )));
   history.append(list);root.append(history);
  }
  if(state.activeDiscovery)root.append(renderDiscoveryRun(state.activeDiscovery));
+}
+
+const chatModes=[
+ {id:"auto",label:"تلقائي"},
+ {id:"deep",label:"بحث معمّق"},
+ {id:"latest",label:"الأحدث الآن"},
+ {id:"social",label:"آراء الناس"}
+];
+function chatMessageNode(item){
+ const row=make("div","chat-msg chat-"+item.role);
+ row.append(make("div","chat-who",item.role==="user"?"أنت":"Omarai"));
+ row.append(make("div","chat-text",item.text));
+ if(item.role==="assistant"&&Array.isArray(item.sources)&&item.sources.length){
+  const list=make("ul","chat-sources");
+  item.sources.slice(0,8).forEach(src=>{
+   const href=src&&safeHttp(src.url);if(!href)return;
+   const li=make("li");const a=make("a","",String(src.title||href).slice(0,140));
+   a.href=href;a.target="_blank";a.rel="noopener noreferrer";li.append(a);list.append(li);
+  });
+  if(list.childNodes.length){row.append(make("div","chat-who","المصادر"),list)}
+ }
+ if(item.role==="assistant"&&item.note)row.append(make("div","chat-note",item.note));
+ return row;
+}
+function renderChat(){
+ setPage("محادثة Omarai","اسأل باللهجة المصرية أو الفصحى أو الإنجليزية. تُرسل الأسئلة إلى محركات البحث وقد تُرسل مقتطفات المصادر إلى مزود نموذج اللغة المضبوط.","CHAT");
+ const chat=state.chat;
+ const root=$("viewRoot");root.replaceChildren();
+ const panel=make("section","glass panel chat-panel");
+ const ph=make("div","panel-head");const pt=make("div");
+ pt.append(make("h2","","المحادثة والبحث"),make("p","","يتذكر آخر ٨ رسائل داخل هذه الجلسة. لا تضع كلمات مرور أو مفاتيح API أو بيانات شخصية سرية في السؤال."));
+ const clear=action("محادثة جديدة","ghost",()=>{if(chat.busy)return;chat.messages=[];chat.history=[];renderChat()});
+ ph.append(pt,clear);panel.append(ph);
+
+ const modeBar=make("div","chat-modes");
+ chatModes.forEach(m=>{
+  const b=make("button","button ghost"+(chat.mode===m.id?" chat-mode-active":""),m.label);
+  b.type="button";b.setAttribute("aria-pressed",chat.mode===m.id?"true":"false");b.disabled=chat.busy;
+  b.addEventListener("click",()=>{chat.mode=m.id;renderChat()});modeBar.append(b);
+ });
+ panel.append(modeBar);
+
+ const list=make("div","chat-list");list.id="chatList";list.setAttribute("aria-live","polite");
+ if(!chat.messages.length){
+  list.append(make("div","chat-empty","اكتب سؤالك لبدء المحادثة. مثال: «ايه أفضل طريقة أوصل بيها لشركات محتاجة نظام إنذار حريق؟»"));
+ }else chat.messages.forEach(item=>list.append(chatMessageNode(item)));
+ panel.append(list);
+
+ const form=make("div","chat-form");
+ const input=make("textarea");input.id="chatInput";input.rows=2;input.maxLength=4000;input.placeholder="اكتب سؤالك هنا… (Enter للإرسال · Shift+Enter لسطر جديد)";input.disabled=chat.busy;
+ const send=action(chat.busy?"يبحث…":"أرسل ←","primary",()=>sendChat());send.id="chatSend";send.disabled=chat.busy;
+ input.addEventListener("keydown",e=>{if(e.key==="Enter"&&!e.shiftKey&&!e.isComposing){e.preventDefault();sendChat()}});
+ form.append(input,send);panel.append(form);
+ root.append(panel);
+ list.scrollTop=list.scrollHeight;
+ if(!chat.busy)input.focus();
+}
+async function sendChat(){
+ const chat=state.chat;if(chat.busy)return;
+ const requestSessionVersion=chat.sessionVersion;
+ const input=$("chatInput");const question=input?input.value.trim():"";
+ if(!question)return;
+ chat.messages.push({role:"user",text:question});chat.busy=true;renderChat();
+ try{
+  const data=await api("/api/agent",{method:"POST",body:{question:question,history:chat.history.slice(-8),mode:chat.mode}});
+  if(state.chat.sessionVersion!==requestSessionVersion)return;
+  const answer=String(data.answer||"لم يرجع الخادم نص إجابة.");
+  const note=data.kind==="general_answer"?"إجابة معرفة عامة دون بحث ويب.":(data.used_web_search===true?"":"لم يُجرَ بحث ويب لهذه الإجابة.");
+  chat.messages.push({role:"assistant",text:answer,sources:Array.isArray(data.sources)?data.sources:[],note:note});
+  chat.history.push({role:"user",content:question},{role:"assistant",content:answer});
+  chat.history=chat.history.slice(-16);
+ }catch(error){
+  if(state.chat.sessionVersion===requestSessionVersion){
+   chat.messages.push({role:"assistant",text:"تعذر إكمال الطلب: "+escapeMessage(error&&error.message),sources:[],note:""});
+  }
+ }finally{
+  if(state.chat.sessionVersion===requestSessionVersion){
+   chat.busy=false;
+   if(state.activeView==="chat")renderChat();
+  }
+ }
 }
 function renderCurrent(){
  renderNav();
@@ -809,6 +929,7 @@ function renderCurrent(){
  else if(state.activeView==="campaign")renderDiscovery();
  else if(state.activeView==="signals")renderSignals();
  else if(state.activeView==="pipeline")renderPipeline();
+ else if(state.activeView==="chat")renderChat();
  else if(state.activeView==="system")renderSystem();
  else renderPlaceholder(state.activeView);
  if(state.loadWarnings.length){
@@ -874,6 +995,7 @@ $("loginForm").addEventListener("submit",async event=>{
  event.preventDefault();const token=$("accessToken").value.trim();const button=$("loginButton");button.disabled=true;$("authError").textContent="";
  try{
   await api("/api/session",{method:"POST",body:{access_token:token}});
+  advanceWorkspaceSessionVersion();clearChatSession();
   $("accessToken").value="";await bootstrap();
  }catch(e){$("authError").textContent=escapeMessage(e.message)}
  finally{button.disabled=false}
@@ -889,6 +1011,7 @@ $("logoutButton").addEventListener("click",async()=>{
 });
 $("addSignalTop").addEventListener("click",()=>navigate("signals"));
 $("closeDetail").addEventListener("click",closeDetails);
+$("chatNav").addEventListener("click",()=>navigate("chat"));
 $("systemNav").addEventListener("click",()=>navigate("system"));
 $("detailDrawer").addEventListener("click",e=>{if(e.target===$("detailDrawer"))closeDetails()});
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeDetails()});
