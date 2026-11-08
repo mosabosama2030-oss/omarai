@@ -1185,7 +1185,7 @@ def build_query_strategy_matrix(
             aliases = location_aliases.get(normalized_scope, (scope_term,))
             location_already_present = any(
                 re.search(
-                    rf"(?<!\\w){re.escape(normalize_text(alias))}(?!\\w)",
+                    rf"(?<!\w){re.escape(normalize_text(alias))}(?!\w)",
                     normalized_candidate,
                 )
                 for alias in aliases
