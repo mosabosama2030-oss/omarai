@@ -2271,7 +2271,7 @@ class WebAgent:
             return []
         request_payload: dict[str, Any] = {
             "query": query[:500],
-            "sources": [{"type": "web"}],
+            "sources": ["web"],
             "limit": MAX_PROVIDER_RESULTS,
         }
         country = self._firecrawl_search_country(query)
