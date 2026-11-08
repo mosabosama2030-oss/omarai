@@ -87,6 +87,11 @@ def _bounded_http_request(method: str, url: str, **kwargs):
     if not math.isfinite(total_timeout) or total_timeout <= 0:
         raise ValueError("total_timeout must be a positive number")
     deadline = time.monotonic() + total_timeout
+    # Ask providers for an uncompressed body. HTTPX otherwise negotiates automatic
+    # decompression, which can raise DecodingError on malformed intermediary payloads.
+    request_headers = dict(kwargs.pop("headers", {}) or {})
+    request_headers.setdefault("Accept-Encoding", "identity")
+    kwargs["headers"] = request_headers
     # Redirects are never followed for search/social APIs, including credentialed calls.
     kwargs.pop("follow_redirects", None)
     with httpx.Client(
@@ -94,6 +99,10 @@ def _bounded_http_request(method: str, url: str, **kwargs):
         follow_redirects=False,
         trust_env=False,
     ) as client, client.stream(method, url, **kwargs) as response:
+        # A 202 challenge/acceptance page is not a completed search result. Do not
+        # poll or retry it: close this response and mark this provider blocked.
+        if response.status_code == 202:
+            raise RuntimeError("HTTP 202")
         declared_length = response.headers.get("content-length")
         if declared_length:
             try:
@@ -1253,6 +1262,23 @@ class WebAgent:
         return None
 
     @staticmethod
+    def _is_buyer_intent_search_query(query: str) -> bool:
+        """Identify purchaser-language queries that must not be sent to news search."""
+        normalized = _normalize_search_query(query).casefold()
+        buyer_phrases = (
+            "مطلوب شراء", "عايز اشتري", "عاوز اشتري", "اريد شراء",
+            "ارغب في شراء", "بدور على", "طلب عرض سعر", "نبحث عن مورد",
+            "نحتاج الى مورد", "محتاج مورد", "looking to buy",
+            "looking to purchase", "want to buy", "wants to buy",
+            "want to purchase", "request for quotation", "request for quote",
+            "looking for a supplier", "need a supplier", "seeking a supplier",
+        )
+        return any(
+            _normalize_search_query(phrase).casefold() in normalized
+            for phrase in buyer_phrases
+        )
+
+    @staticmethod
     def _lead_generation_queries(
         question: str, existing_queries: list[str] | None = None
     ) -> list[str]:
@@ -1867,7 +1893,10 @@ class WebAgent:
                     "tavily_search_api", search_query, "not_configured",
                     error="TAVILY_API_KEY is not set",
                 )
-        if detect_freshness(search_query):
+        if (
+            detect_freshness(search_query)
+            and not self._is_buyer_intent_search_query(search_query)
+        ):
             adapters.append(("google_news_rss", self._search_news))
 
         async def run_one(name: str, method: Any) -> list[dict[str, Any]]:
@@ -1933,18 +1962,24 @@ class WebAgent:
                     name, search_query, "timeout", error="provider exceeded its bounded request timeout"
                 )
             except Exception as exc:  # noqa: BLE001 - isolate a connector without leaking provider bodies/secrets
-                detail = f"{type(exc).__name__}: {exc}" if isinstance(exc, RuntimeError) else type(exc).__name__
-                status = "failed"
-                status_match = re.search(r"(?i)\bHTTP\s+(\d{3})\b", str(exc))
-                if status_match:
-                    status_code = int(status_match.group(1))
-                    if status_code == 429:
-                        status = "rate_limited"
-                    elif status_code in {401, 403}:
-                        status = "unauthorized"
-                    elif status_code == 202 or 300 <= status_code < 600:
-                        # Do not bypass anti-bot/challenge responses; mark the provider degraded.
-                        status = "http_error"
+                if type(exc).__name__ == "DecodingError":
+                    detail = "provider response decoding failed"
+                    status = "invalid_response"
+                else:
+                    detail = f"{type(exc).__name__}: {exc}" if isinstance(exc, RuntimeError) else type(exc).__name__
+                    status = "failed"
+                    status_match = re.search(r"(?i)\bHTTP\s+(\d{3})\b", str(exc))
+                    if status_match:
+                        status_code = int(status_match.group(1))
+                        if status_code == 202:
+                            status = "blocked"
+                        elif status_code == 429:
+                            status = "rate_limited"
+                        elif status_code in {401, 403}:
+                            status = "unauthorized"
+                        elif 300 <= status_code < 600:
+                            # Do not bypass redirects/challenges or retry a blocked response.
+                            status = "http_error"
                 self._record_provider_diagnostic(name, search_query, status, error=detail)
             return []
 
@@ -2690,6 +2725,7 @@ class WebAgent:
         headers = {
             "User-Agent": "OmaraiResearchBot/1.1 (public page research; no login)",
             "Accept": "text/html,application/xhtml+xml,text/plain;q=0.8",
+            "Accept-Encoding": "identity",
         }
         media_type = ""
         html = ""
@@ -2765,6 +2801,8 @@ class WebAgent:
                         break
                 else:
                     return result(status="redirect_limit", error_class="RedirectLimit")
+        except httpx.DecodingError:
+            return result(status="decoding_error", error_class="ContentDecodingError")
         except (OSError, ValueError, httpx.HTTPError) as exc:
             return result(status="network_error", error_class=type(exc).__name__)
 
@@ -2885,7 +2923,8 @@ class WebAgent:
             provider for item in preliminary for provider in item.get("providers", [])
         }
         needs_expansion = (
-            plan.get("depth") == "deep"
+            plan.get("intent_route") != "LEAD_GENERATION"
+            and plan.get("depth") == "deep"
             and (len(preliminary) < 8 or len(preliminary_domains) < 5 or len(preliminary_providers) < 2)
         )
         preliminary_ledger = build_evidence_ledger(target_aspects, preliminary)
@@ -2895,7 +2934,8 @@ class WebAgent:
         # Legacy plans without those query records still need the bounded missing-aspect fallback;
         # deep research may expand further even after targeted queries.
         if (
-            (missing_aspects or needs_expansion)
+            plan.get("intent_route") != "LEAD_GENERATION"
+            and (missing_aspects or needs_expansion)
             and len(queries) < query_limit
             and queries
             and (
@@ -3332,10 +3372,11 @@ class WebAgent:
                 useful[name] = useful.get(name, 0) + 1
         priority = {"ok": 0, "no_results": 1, "filtered_all": 2, "not_attempted": 3,
                     "disabled": 4, "not_configured": 5, "budget_exhausted": 6,
-                    "unknown": 6, "rate_limited": 7, "unauthorized": 8, "http_error": 9,
+                    "unknown": 6, "rate_limited": 7, "unauthorized": 8, "blocked": 9,
+                    "http_error": 9, "invalid_response": 10,
                     "timeout": 10, "failed": 11, "error": 11}
         confirmed_attempt_statuses = _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES | {
-            "http_error", "unauthorized", "rate_limited", "invalid_response"
+            "blocked", "http_error", "unauthorized", "rate_limited", "invalid_response"
         }
         uncertain_attempt_statuses = {"timeout", "failed", "error", "unknown", "inconclusive"}
 
@@ -3361,7 +3402,9 @@ class WebAgent:
             else:
                 attempted = False
             successful_statuses = set(statuses) & _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES
-            error_response_statuses = set(statuses) & {"http_error", "unauthorized", "rate_limited"}
+            error_response_statuses = set(statuses) & {
+                "blocked", "http_error", "unauthorized", "rate_limited", "invalid_response"
+            }
             uncertain_failure_statuses = set(statuses) & {"timeout", "failed", "error", "unknown", "inconclusive"}
             failure_observed = bool(error_response_statuses or uncertain_failure_statuses or "budget_exhausted" in statuses)
             available: bool | None = (
@@ -3429,7 +3472,10 @@ class WebAgent:
             "scope": "this_request_only",
             "semantics": "result_count is connector-reported rows; useful_result_count counts final fused source records attributed to a connector; neither proves factual accuracy or editorial independence.",
             "attempted_count": sum(bool(item["attempted"]) for item in connectors),
-            "failed_count": sum(item["status"] in {"failed", "error", "timeout", "http_error", "unauthorized", "rate_limited"} for item in connectors),
+            "failed_count": sum(item["status"] in {
+                "failed", "error", "timeout", "blocked", "http_error",
+                "unauthorized", "rate_limited", "invalid_response",
+            } for item in connectors),
             "connectors": connectors[:24],
         }
 
@@ -5481,19 +5527,6 @@ class WebAgent:
                     f"{base_query} risks limitations alternatives",
                     f"{base_query} recent data reviews comparison",
                 ]
-                normalized_question = _normalize_search_query(working_question).casefold()
-                property_terms = (
-                    "شقه", "شقق", "عقار", "عقارات", "فيلا", "فلل",
-                    "apartment", "apartments", "flat", "real estate", "property", "house", "villa",
-                )
-                if self._is_listing_discovery(working_question) and any(
-                    term in normalized_question for term in property_terms
-                ):
-                    deep_candidates.extend([
-                        f"{base_query} إعلانات عقارية ومواقع العقارات",
-                        f"{base_query} متوسط أسعار السوق للمتر",
-                        f"{base_query} مواصفات الوحدات والمساحات وطرق السداد",
-                    ])
                 # Close the planning loop: give every explicit user criterion its own
                 # query before generic "deep research" queries consume the fixed budget.
                 # This is a retrieval heuristic, not a guarantee that evidence exists.
@@ -5526,19 +5559,6 @@ class WebAgent:
                     f"{base_query} risks limitations alternatives",
                     f"{base_query} case studies recent analysis",
                 ]
-                normalized_question = _normalize_search_query(working_question).casefold()
-                property_terms = (
-                    "شقه", "شقق", "عقار", "عقارات", "فيلا", "فلل",
-                    "apartment", "apartments", "flat", "real estate", "property", "house", "villa",
-                )
-                if self._is_listing_discovery(working_question) and any(
-                    term in normalized_question for term in property_terms
-                ):
-                    candidates.extend([
-                        f"{base_query} إعلانات عقارية ومواقع العقارات",
-                        f"{base_query} متوسط أسعار السوق للمتر",
-                        f"{base_query} مواصفات الوحدات والمساحات وطرق السداد",
-                    ])
                 # Explicit deep mode follows the same criterion-first budget allocation
                 # as automatic deep mode, so generic modifiers cannot crowd out requested
                 # dimensions such as price, battery, camera, privacy, or reliability.
@@ -5595,15 +5615,15 @@ class WebAgent:
                 plan["queries"] = list(dict.fromkeys((plan.get("queries") or [])[:5] + candidates))[
                     :MAX_PLAN_QUERIES
                 ]
-            if intent_route == "LEAD_GENERATION" and clean_mode == "auto":
-                # Prospect discovery needs buyer-intent queries and public social signals,
-                # not just broad pages advertising the requested product.
+            if intent_route == "LEAD_GENERATION":
+                # Buyer discovery uses purchaser-language queries in every search mode.
+                # It must not inherit general research/report/risk query expansions.
                 plan["queries"] = (
                     list(buyer_queries)
                     if buyer_queries is not None
                     else self._lead_generation_queries(working_question, plan.get("queries", []))
                 )
-                plan["depth"] = "standard"
+                plan["depth"] = "deep" if clean_mode == "deep" else "standard"
                 plan["freshness"] = "current"
                 plan["social_focus"] = True
                 allowed_public_platforms = ["reddit", "bluesky"]
