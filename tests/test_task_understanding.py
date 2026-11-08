@@ -405,3 +405,94 @@ def test_reasoning_ids_are_allowlisted_and_decision_matrix_is_code_owned():
     ]
     assert not any(row.get("stage") == "exfiltrate" for row in safe["decision_matrix"])
     assert "reasoning_guidance" not in safe
+
+
+def test_task_spec_merges_inherited_location_and_budget_slots_into_constraints():
+    question = "مراكز صيانة لابتوب اليوم"
+    context = {
+        "resolved_question": "مراكز صيانة لابتوب اليوم في الإسكندرية بميزانية أقل من 20000 جنيه",
+        "topic": "مراكز صيانة لابتوب",
+        "entities": ["لابتوب"],
+        "slots": {
+            "location": "الإسكندرية",
+            "budget": "أقل من 20000 جنيه",
+        },
+        "changed_slots": ["location", "budget"],
+        "is_follow_up": True,
+        "topic_shift": False,
+        "needs_clarification": False,
+    }
+
+    spec = build_task_spec(
+        question,
+        mode="latest",
+        intent_route="WEB_SIMPLE",
+        dialogue_context=context,
+    )
+
+    assert "الإسكندرية" in spec["constraints"]["explicit_locations"]
+    assert "أقل من 20000 جنيه" in spec["constraints"]["explicit_budgets"]
+
+    rows = build_query_strategy_matrix(
+        question,
+        spec,
+        [spec["context_resolution"]["resolved_question"]],
+        limit=8,
+    )
+    assert any("الإسكندرية" in row["query"] for row in rows)
+
+
+def test_task_spec_does_not_inherit_location_or_budget_from_topic_shift():
+    question = "مواصفات لاب توب ديل"
+    context = {
+        "resolved_question": question,
+        "topic": "",
+        "entities": [],
+        "slots": {
+            "location": "الإسكندرية",
+            "budget": "أقل من 20000 جنيه",
+        },
+        "changed_slots": [],
+        "is_follow_up": False,
+        "topic_shift": True,
+        "needs_clarification": False,
+    }
+
+    spec = build_task_spec(
+        question,
+        mode="auto",
+        intent_route="WEB_SIMPLE",
+        dialogue_context=context,
+    )
+
+    assert "الإسكندرية" not in spec["constraints"]["explicit_locations"]
+    assert "أقل من 20000 جنيه" not in spec["constraints"]["explicit_budgets"]
+
+
+def test_query_strategy_matrix_applies_inherited_location_and_budget_to_all_candidates():
+    question = "رشح لي أفضل لابتوب للعمل"
+    context = {
+        "resolved_question": "رشح لي أفضل لابتوب للعمل في الإسكندرية بميزانية أقل من 20000 جنيه",
+        "topic": "لابتوب للعمل",
+        "entities": ["لابتوب"],
+        "slots": {
+            "location": "الإسكندرية",
+            "budget": "أقل من 20000 جنيه",
+        },
+        "changed_slots": [],
+        "is_follow_up": True,
+        "topic_shift": False,
+        "needs_clarification": False,
+    }
+    spec = build_task_spec(
+        question,
+        mode="deep",
+        intent_route="WEB_DEEP",
+        dialogue_context=context,
+    )
+
+    rows = build_query_strategy_matrix(question, spec, [question], limit=8)
+
+    assert len(rows) >= 2
+    assert all("الإسكندرية" in row["query"] for row in rows)
+    assert all("أقل من 20000 جنيه" in row["query"] for row in rows)

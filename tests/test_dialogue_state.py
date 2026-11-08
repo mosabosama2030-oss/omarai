@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import pytest
+
 from agents.dialogue_state import (
     fallback_dialogue_context,
     might_be_context_dependent,
@@ -150,3 +152,156 @@ def test_context_probe_gate_recognizes_natural_followups_not_every_short_questio
     assert not might_be_context_dependent("اشتريت شاشة جديدة اليوم؟")
     assert not might_be_context_dependent("اشرح الديناميكا الحرارية ببساطة")
     assert not might_be_context_dependent("Explain entropy in simple terms.")
+
+
+@pytest.mark.parametrize(
+    "question",
+    [
+        "لا، قصدي اليورو",
+        "مش الدولار، اليورو",
+        "أقصد اليورو بدل الدولار",
+        "في اسكندرية بس",
+        "في القاهرة فقط",
+        "بدل القاهرة، في الإسكندرية",
+    ],
+)
+def test_dialogue_probe_recognizes_entity_corrections_and_constraint_refinements(question):
+    assert might_be_context_dependent(question)
+
+
+def test_model_cannot_force_a_standalone_question_into_stale_history():
+    question = "مواصفات لاب توب ديل"
+    history = [
+        {"role": "user", "content": "ما سعر iPhone 17 في مصر؟"},
+        {"role": "assistant", "content": "سأبحث عن سعر iPhone 17."},
+    ]
+    proposed = {
+        "resolved_question": "ما سعر iPhone 17 في مصر — مواصفات لاب توب ديل",
+        "topic": "iPhone 17",
+        "entities": ["iPhone 17", "Dell laptop"],
+        "slots": {"product": "iPhone 17", "country": "مصر"},
+        "changed_slots": ["product"],
+        "is_follow_up": True,
+        "topic_shift": False,
+        "intent": "current_information",
+        "needs_clarification": False,
+    }
+
+    context = validate_dialogue_context(proposed, question, history)
+
+    assert context["resolved_question"] == question
+    assert context["is_follow_up"] is False
+    assert context["topic"] == ""
+    assert context["entities"] == []
+    assert context["slots"] == {}
+    assert context["changed_slots"] == []
+
+
+def test_entity_correction_preserves_the_updated_currency_slot():
+    question = "لا، قصدي اليورو"
+    history = [
+        {"role": "user", "content": "ما سعر الجهاز بالدولار؟"},
+        {"role": "assistant", "content": "هل تريد السعر بالدولار الأمريكي؟"},
+    ]
+    proposed = {
+        "resolved_question": "ما سعر الجهاز باليورو؟",
+        "topic": "سعر الجهاز",
+        "entities": ["الجهاز", "اليورو"],
+        "slots": {"product": "الجهاز", "currency": "اليورو"},
+        "changed_slots": ["currency"],
+        "is_follow_up": True,
+        "topic_shift": False,
+        "intent": "current_information",
+        "needs_web": True,
+        "needs_clarification": False,
+    }
+
+    context = validate_dialogue_context(proposed, question, history)
+
+    assert context["is_follow_up"] is True
+    assert context["resolved_question"] == "ما سعر الجهاز باليورو؟"
+    assert context["slots"]["currency"] == "اليورو"
+    assert context["changed_slots"] == ["currency"]
+
+
+def test_location_refinement_keeps_topic_and_updates_location_slot():
+    question = "في اسكندرية بس"
+    history = [
+        {"role": "user", "content": "دور على مراكز صيانة لابتوب في مصر"},
+        {"role": "assistant", "content": "وجدت لك بعض الخيارات."},
+    ]
+    proposed = {
+        "resolved_question": "مراكز صيانة لابتوب في الإسكندرية فقط",
+        "topic": "مراكز صيانة لابتوب",
+        "entities": ["لابتوب"],
+        "slots": {"location": "الإسكندرية"},
+        "changed_slots": ["location"],
+        "is_follow_up": True,
+        "topic_shift": False,
+        "intent": "current_information",
+        "needs_web": True,
+        "needs_clarification": False,
+    }
+
+    context = validate_dialogue_context(proposed, question, history)
+
+    assert context["is_follow_up"] is True
+    assert context["resolved_question"] == "مراكز صيانة لابتوب في الإسكندرية فقط"
+    assert context["slots"]["location"] == "الإسكندرية"
+    assert context["changed_slots"] == ["location"]
+
+
+def test_explicit_entity_correction_overrides_model_topic_shift_flag():
+    question = "لا، قصدي اليورو"
+    history = [
+        {"role": "user", "content": "ما سعر الجهاز بالدولار؟"},
+        {"role": "assistant", "content": "هل تريد السعر بالدولار الأمريكي؟"},
+    ]
+    proposed = {
+        "resolved_question": "ما سعر الجهاز باليورو؟",
+        "topic": "سعر الجهاز",
+        "entities": ["الجهاز", "اليورو"],
+        "slots": {"product": "الجهاز", "currency": "اليورو"},
+        "changed_slots": ["currency"],
+        "is_follow_up": False,
+        "topic_shift": True,
+        "intent": "current_information",
+        "needs_web": True,
+        "needs_clarification": False,
+    }
+
+    context = validate_dialogue_context(proposed, question, history)
+
+    assert context["topic_shift"] is False
+    assert context["is_follow_up"] is True
+    assert context["resolved_question"] == "ما سعر الجهاز باليورو؟"
+    assert context["slots"]["currency"] == "اليورو"
+    assert context["changed_slots"] == ["currency"]
+
+
+def test_location_refinement_overrides_model_topic_shift_flag():
+    question = "في اسكندرية بس"
+    history = [
+        {"role": "user", "content": "دور على مراكز صيانة لابتوب في مصر"},
+        {"role": "assistant", "content": "وجدت لك بعض الخيارات."},
+    ]
+    proposed = {
+        "resolved_question": "مراكز صيانة لابتوب في الإسكندرية فقط",
+        "topic": "مراكز صيانة لابتوب",
+        "entities": ["لابتوب"],
+        "slots": {"location": "الإسكندرية"},
+        "changed_slots": ["location"],
+        "is_follow_up": False,
+        "topic_shift": True,
+        "intent": "current_information",
+        "needs_web": True,
+        "needs_clarification": False,
+    }
+
+    context = validate_dialogue_context(proposed, question, history)
+
+    assert context["topic_shift"] is False
+    assert context["is_follow_up"] is True
+    assert context["resolved_question"] == "مراكز صيانة لابتوب في الإسكندرية فقط"
+    assert context["slots"]["location"] == "الإسكندرية"
+    assert context["changed_slots"] == ["location"]

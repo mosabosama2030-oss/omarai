@@ -818,6 +818,28 @@ def build_task_spec(
         for item in raw_changed_slots[:8]
         if isinstance(item, str) and item.strip()
     ] if isinstance(raw_changed_slots, list) else []
+
+    # A resolved follow-up can carry constraints that are absent from the short
+    # current utterance (for example "الإسكندرية فقط"). Merge only validated
+    # follow-up slots; never import metadata from a topic shift or clarification.
+    inherit_context_slots = (
+        context.get("is_follow_up") is True
+        and context.get("topic_shift") is not True
+        and context.get("needs_clarification") is not True
+    )
+    if inherit_context_slots:
+        for slot_key, target in (("location", location), ("country", location)):
+            slot_value = context_slots.get(slot_key, "").strip()
+            normalized_slot = normalize_text(slot_value)
+            existing = {normalize_text(item) for item in target}
+            if slot_value and normalized_slot and normalized_slot not in existing:
+                target.append(slot_value[:120])
+        inherited_budget = context_slots.get("budget", "").strip()
+        normalized_budget = normalize_text(inherited_budget)
+        existing_budgets = {normalize_text(item) for item in budgets}
+        if inherited_budget and normalized_budget and normalized_budget not in existing_budgets:
+            budgets.append(inherited_budget[:100])
+
     context_resolution = {
         "method": str(context.get("method") or "not_provided")[:80],
         "resolved_question": (
@@ -1129,7 +1151,32 @@ def build_query_strategy_matrix(
                 candidate = compact_fn(candidate) or ""
             except (TypeError, ValueError):
                 candidate = ""
-        candidate = _SPACE.sub(" ", candidate).strip()[:240]
+        candidate = _SPACE.sub(" ", candidate).strip()
+        # Carry explicit/inherited geography into every search candidate. Budgets
+        # constrain commercial discovery/recommendation tasks, not unrelated topics.
+        scope_terms: list[str] = []
+        raw_locations = constraints.get("explicit_locations")
+        if isinstance(raw_locations, list):
+            scope_terms.extend(
+                item.strip() for item in raw_locations[:5]
+                if isinstance(item, str) and item.strip()
+            )
+        budget_scoped_families = {
+            "recommendation", "compare", "lead_generation", "find_or_discover"
+        }
+        raw_budgets = constraints.get("explicit_budgets")
+        if (
+            spec.get("task_family") in budget_scoped_families
+            and isinstance(raw_budgets, list)
+        ):
+            scope_terms.extend(
+                item.strip() for item in raw_budgets[:3]
+                if isinstance(item, str) and item.strip()
+            )
+        for scope_term in scope_terms:
+            if normalize_text(scope_term) not in normalize_text(candidate):
+                candidate = _SPACE.sub(" ", f"{candidate} {scope_term}").strip()
+        candidate = candidate[:240]
         key = _query_key(candidate)
         if not candidate or not key or key in seen:
             return
