@@ -253,3 +253,44 @@ def test_firecrawl_search_is_not_attempted_or_budgeted_without_explicit_country(
     )
     assert diagnostic["status"] == "not_attempted"
     assert agent._firecrawl_search_requests_reserved == 0
+
+
+def test_firecrawl_search_skips_network_when_no_explicit_geography(monkeypatch):
+    monkeypatch.setenv("FIRECRAWL_API_KEY", "test-firecrawl-secret")
+    monkeypatch.setenv("FIRECRAWL_SEARCH_ENABLED", "1")
+    monkeypatch.setenv("OMARAI_FIRECRAWL_SEARCH_REQUEST_BUDGET", "1")
+
+    def unexpected_request(*args, **kwargs):
+        raise AssertionError(
+            "Firecrawl defaults to US when geography is omitted; do not make an inferred-country request"
+        )
+
+    monkeypatch.setattr("agents.web_agent._bounded_http_request", unexpected_request)
+    assert WebAgent()._search_firecrawl("Find buyers for industrial fire alarms") == []
+
+
+def test_search_web_marks_firecrawl_not_attempted_without_explicit_geography(monkeypatch):
+    agent = WebAgent()
+    agent.allow_optional_providers = True
+    monkeypatch.setenv("FIRECRAWL_API_KEY", "test-firecrawl-secret")
+    monkeypatch.setenv("FIRECRAWL_SEARCH_ENABLED", "1")
+    monkeypatch.setenv("OMARAI_FIRECRAWL_SEARCH_REQUEST_BUDGET", "1")
+    for env_name in ("DEEPSEEK_SEARCH_API_KEY", "BRAVE_SEARCH_API_KEY", "TAVILY_API_KEY"):
+        monkeypatch.delenv(env_name, raising=False)
+    monkeypatch.setattr(agent, "_search_duckduckgo_html", lambda _query: [])
+    monkeypatch.setattr(agent, "_search_bing_rss", lambda _query: [])
+    monkeypatch.setattr(agent, "_search_news", lambda _query: [])
+
+    def forbidden_firecrawl(_query):
+        pytest.fail("Firecrawl must be skipped if country would be inferred as US")
+
+    monkeypatch.setattr(agent, "_search_firecrawl", forbidden_firecrawl)
+    with pytest.raises(RuntimeError, match="لم تُرجع موصلات البحث"):
+        agent._search_web("Find buyers for industrial fire alarms")
+
+    diagnostic = next(
+        row for row in agent._provider_diagnostics
+        if row.get("provider") == "firecrawl_search_api"
+    )
+    assert diagnostic["status"] == "not_attempted"
+    assert "explicit geography" in diagnostic["error"]
