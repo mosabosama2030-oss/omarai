@@ -56,7 +56,7 @@ def test_firecrawl_search_normalizes_only_safe_described_web_results(monkeypatch
     assert result[0]["snippet"] == "نبحث عن مورد لتوريد المعدات المطلوبة"
     assert captured["method"] == "POST"
     assert captured["url"] == "https://api.firecrawl.dev/v2/search"
-    assert captured["kwargs"]["json"]["sources"] == [{"type": "web"}]
+    assert captured["kwargs"]["json"]["sources"] == ["web"]
     assert captured["kwargs"]["json"]["limit"] == 6
     assert captured["kwargs"]["json"]["country"] == "EG"
     assert captured["kwargs"]["headers"]["Authorization"] == "Bearer test-firecrawl-secret"
@@ -179,3 +179,26 @@ def test_firecrawl_capability_snapshot_reports_configuration_and_budget(
         assert firecrawl["runtime_status"] == "not_tested_in_this_response"
     else:
         assert firecrawl["runtime_status"] == expected_status
+
+
+def test_firecrawl_search_does_not_call_network_when_disabled_even_with_key(monkeypatch):
+    monkeypatch.setenv("FIRECRAWL_API_KEY", "test-firecrawl-secret")
+    monkeypatch.setenv("FIRECRAWL_SEARCH_ENABLED", "0")
+
+    def unexpected_request(*args, **kwargs):
+        raise AssertionError("disabled Firecrawl connector must not call the network")
+
+    monkeypatch.setattr("agents.web_agent._bounded_http_request", unexpected_request)
+    assert WebAgent()._search_firecrawl("query") == []
+
+
+def test_firecrawl_status_handles_invalid_budget_without_crashing(monkeypatch):
+    monkeypatch.setenv("FIRECRAWL_API_KEY", "test-firecrawl-secret")
+    monkeypatch.setenv("FIRECRAWL_SEARCH_ENABLED", "1")
+    monkeypatch.setenv("OMARAI_FIRECRAWL_SEARCH_REQUEST_BUDGET", "not-a-number")
+
+    status = WebAgent.status()
+
+    assert status["firecrawl_search_api_configured"] is True
+    assert status["firecrawl_search_enabled"] is True
+    assert status["firecrawl_search_request_budget"] == 0
