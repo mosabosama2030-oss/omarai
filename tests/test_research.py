@@ -87,6 +87,7 @@ def test_explicit_page_urls_are_extracted_and_not_left_in_search_terms():
     assert plan["direct_urls"] == ["https://example.com/a?utm_source=chat#section"]
     assert "https://" not in plan["queries"][0]
 
+
 def test_registrable_domain_groups_subdomains_and_respects_public_suffixes():
     assert registrable_domain("news.example.com") == "example.com"
     assert registrable_domain("offers.example.com") == "example.com"
@@ -111,7 +112,6 @@ def test_evidence_coverage_does_not_count_sibling_subdomains_as_independent():
     ])
     assert report["unique_domains"] == 1
     assert report["coverage_level"] == "محدود"
-
 
 
 def test_standard_fallback_plan_does_not_add_deep_research_query():
@@ -227,7 +227,6 @@ def test_compact_search_query_preserves_subject_when_prompt_starts_with_action_v
     assert "اذكر أبرز" not in query
 
 
-
 def test_compact_search_query_returns_empty_for_instruction_only_request():
     query = compact_search_query("اذكر مصادر موثوقة، روابط مباشرة، باختصار")
     assert query == ""
@@ -330,7 +329,6 @@ def test_fallback_plan_keeps_direct_url_without_generic_keyword_query():
     assert plan["queries"] == []
 
 
-
 def test_followup_plan_keeps_topic_across_chained_turns():
     history = [
         {"role": "user", "content": "ما سعر iPhone 16 في مصر؟"},
@@ -354,9 +352,27 @@ def test_followup_plan_does_not_inherit_unrelated_social_intent():
     assert plan["platforms"] == []
 
 
-
 def test_source_classification_does_not_trust_lookalike_news_domains():
     assert classify_source("https://www.reuters.com/world/article")["source_class"] == "news"
     lookalike = classify_source("https://reuters.com.attacker.example/article")
     assert lookalike["source_class"] == "general"
     assert lookalike["domain"] == "reuters.com.attacker.example"
+
+
+def test_compact_search_query_strips_citation_tail_without_punctuation():
+    """Format tails joined by واذكر without a comma must not pollute the topic."""
+    query = compact_search_query(
+        "السيارات الكهربائية في مصر واذكر مصادر وروابط موثوقة"
+    )
+    assert "السيارات الكهربائية" in query
+    assert "مصر" in query
+    assert "مصادر" not in query
+    assert "روابط" not in query
+    assert query
+
+    query_en = compact_search_query(
+        "electric vehicles in Egypt and please cite sources with links"
+    )
+    assert "egypt" in query_en.lower()
+    assert "please cite" not in query_en.lower()
+    assert not query_en.lower().endswith(" and")
