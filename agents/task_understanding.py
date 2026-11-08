@@ -1160,6 +1160,27 @@ def build_query_strategy_matrix(
     queries = existing_queries if isinstance(existing_queries, list) else []
     rows: list[dict[str, str]] = []
     seen: set[str] = set()
+    raw_context_resolution = spec.get("context_resolution")
+    raw_context_resolution = (
+        raw_context_resolution if isinstance(raw_context_resolution, dict) else {}
+    )
+    raw_context_slots = raw_context_resolution.get("slots")
+    context_slots = (
+        {
+            key: value
+            for key, value in raw_context_slots.items()
+            if key in TASK_CONTEXT_SLOT_KEYS
+            and isinstance(value, str)
+            and value.strip()
+        }
+        if isinstance(raw_context_slots, dict)
+        else {}
+    )
+    inherit_context_slots = (
+        raw_context_resolution.get("is_follow_up") is True
+        and raw_context_resolution.get("topic_shift") is not True
+        and raw_context_resolution.get("needs_clarification") is not True
+    )
 
     def add(query: Any, strategy: str, rationale: str, *, enforce_topic: bool = True) -> None:
         if not isinstance(query, str) or not query.strip() or len(rows) >= maximum:
@@ -1192,6 +1213,21 @@ def build_query_strategy_matrix(
                 item.strip()[:70] for item in raw_budgets[:1]
                 if isinstance(item, str) and item.strip()
             )
+        if inherit_context_slots:
+            # Preserve model/product qualifiers and commercial/time constraints
+            # from the resolved turn without importing them after a topic shift.
+            for slot_key in (
+                "product", "model", "version", "variant", "capacity",
+                "currency", "time_range",
+            ):
+                slot_value = context_slots.get(slot_key, "").strip()
+                if slot_value:
+                    scope_terms.append(slot_value[:55])
+            current_aspects = constraints.get("explicit_aspects")
+            if isinstance(current_aspects, list) and len(current_aspects) <= 1:
+                aspect_scope = context_slots.get("aspect", "").strip()
+                if aspect_scope:
+                    scope_terms.append(aspect_scope[:70])
         normalized_candidate = normalize_text(candidate)
         missing_scope_terms: list[str] = []
         seen_scope: set[str] = set()
