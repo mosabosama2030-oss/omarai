@@ -1696,12 +1696,16 @@ class WebAgent:
             return
         if result.get("knowledge_answer"):
             return
+        # Keep the evidence answer's generation diagnostics about that answer only.
+        diagnostics_before = len(self.generation_diagnostics)
         try:
             knowledge = self._answer_without_search(
                 question.strip(), self._sanitize_history(history)
             )
         except RequestBudgetExceeded:
             return
+        finally:
+            del self.generation_diagnostics[diagnostics_before:]
         text = str((knowledge or {}).get("answer") or "").strip()
         if not text:
             result["knowledge_check"] = {"status": "knowledge_answer_unavailable"}
