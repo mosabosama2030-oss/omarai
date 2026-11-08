@@ -187,7 +187,8 @@ _ASPECT_BETA3_REFERENCE_RE = re.compile(
 )
 # "وبالنسبة للضمان؟" / "وبخصوص الأسعار" — aspect re-asked about the current topic.
 _ABOUT_ASPECT_RE = re.compile(
-    r"^و?(?:بالنسبه|بخصوص)\s*(?:ل)?(?:ال)?" + _REFERENTIAL_ASPECTS + r"(?:\s+\S+){0,1}$"
+    r"^و?(?:بالنسبه|بخصوص)\s*(?:ل(?:ل|ال)?)?(?:ال)?"
+    + _REFERENTIAL_ASPECTS + r"(?:\s+\S+){0,2}$"
 )
 _CONTEXTUAL_ENGLISH_ASPECT_RE = re.compile(
     r"^(?:what about(?: its)?|how about(?: its)?|and (?:the|its|their)|its) +"
