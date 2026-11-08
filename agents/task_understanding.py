@@ -1232,7 +1232,7 @@ def build_query_strategy_matrix(
     if not context_anchor:
         topic_anchor_query = re.sub(
             r"^(?:من فضلك|لو سمحت|ابحث لي|ابحث|دورلي|دور|اعثر على|رشح لي|رشح|"
-            r"please|search for|find|look up|recommend)\\s*",
+            r"please|search for|find|look up|recommend)\s*",
             "",
             topic_anchor_query,
             flags=re.IGNORECASE,
