@@ -225,7 +225,7 @@ def test_rank_fusion_ignores_invalid_retrieval_relevance_scores():
 @pytest.mark.parametrize(
     ("status_code", "expected_status"),
     [
-        (202, "http_error"),
+        (202, "blocked"),
         (301, "http_error"),
         (403, "unauthorized"),
         (429, "rate_limited"),
