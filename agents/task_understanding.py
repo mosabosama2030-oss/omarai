@@ -1135,6 +1135,52 @@ def build_query_strategy_matrix(
     rows: list[dict[str, str]] = []
     seen: set[str] = set()
 
+    context_resolution = (
+        spec.get("context_resolution")
+        if isinstance(spec.get("context_resolution"), dict)
+        else {}
+    )
+    context_anchor_parts: list[str] = []
+    if (
+        context_resolution.get("is_follow_up") is True
+        and context_resolution.get("topic_shift") is not True
+        and context_resolution.get("needs_clarification") is not True
+    ):
+        context_topic = context_resolution.get("topic")
+        if isinstance(context_topic, str) and context_topic.strip():
+            context_anchor_parts.append(context_topic.strip())
+        context_entities = context_resolution.get("entities")
+        if isinstance(context_entities, list):
+            for entity in context_entities[:5]:
+                if (
+                    isinstance(entity, str)
+                    and entity.strip()
+                    and normalize_text(entity) not in normalize_text(" ".join(context_anchor_parts))
+                ):
+                    context_anchor_parts.append(entity.strip())
+    context_anchor = _SPACE.sub(" ", " ".join(context_anchor_parts)).strip()[:180]
+
+    constraints = spec.get("constraints") if isinstance(spec.get("constraints"), dict) else {}
+    budget_scoped_families = {
+        "recommendation", "compare", "lead_generation", "find_or_discover"
+    }
+    scope_terms: list[str] = []
+    raw_locations = constraints.get("explicit_locations")
+    if isinstance(raw_locations, list):
+        scope_terms.extend(
+            item.strip()[:55] for item in raw_locations[:2]
+            if isinstance(item, str) and item.strip()
+        )
+    raw_budgets = constraints.get("explicit_budgets")
+    if (
+        spec.get("task_family") in budget_scoped_families
+        and isinstance(raw_budgets, list)
+    ):
+        scope_terms.extend(
+            item.strip()[:70] for item in raw_budgets[:1]
+            if isinstance(item, str) and item.strip()
+        )
+
     def add(query: Any, strategy: str, rationale: str, *, enforce_topic: bool = True) -> None:
         if not isinstance(query, str) or not query.strip() or len(rows) >= maximum:
             return
@@ -1145,37 +1191,30 @@ def build_query_strategy_matrix(
             except (TypeError, ValueError):
                 candidate = ""
         candidate = _SPACE.sub(" ", candidate).strip()
-        # Carry explicit/inherited geography into every search candidate. Budgets
-        # constrain commercial discovery/recommendation tasks, not unrelated topics.
-        scope_terms: list[str] = []
-        raw_locations = constraints.get("explicit_locations")
-        if isinstance(raw_locations, list):
-            scope_terms.extend(
-                item.strip() for item in raw_locations[:5]
-                if isinstance(item, str) and item.strip()
-            )
-        budget_scoped_families = {
-            "recommendation", "compare", "lead_generation", "find_or_discover"
-        }
-        raw_budgets = constraints.get("explicit_budgets")
-        if (
-            spec.get("task_family") in budget_scoped_families
-            and isinstance(raw_budgets, list)
-        ):
-            scope_terms.extend(
-                item.strip() for item in raw_budgets[:3]
-                if isinstance(item, str) and item.strip()
-            )
+        # Put explicit/inherited scope at the end after reserving its character
+        # budget. Remove existing exact copies first so truncation cannot silently
+        # drop a location or budget that appeared late in a long planner seed.
         for scope_term in scope_terms:
-            if normalize_text(scope_term) not in normalize_text(candidate):
-                candidate = _SPACE.sub(" ", f"{candidate} {scope_term}").strip()
-        candidate = candidate[:240]
+            candidate = re.sub(
+                re.escape(scope_term), " ", candidate, flags=re.IGNORECASE
+            )
+        candidate = _SPACE.sub(" ", candidate).strip()
+        scope_suffix = _SPACE.sub(" ", " ".join(scope_terms)).strip()
+        if scope_suffix:
+            core_limit = max(32, 240 - len(scope_suffix) - 1)
+            candidate = f"{candidate[:core_limit].rstrip()} {scope_suffix}".strip()
+        else:
+            candidate = candidate[:240].rstrip()
         key = _query_key(candidate)
         if not candidate or not key or key in seen:
             return
         # Search modifications must preserve a subject anchor. Existing planner
         # queries are retained because they may already contain resolved context.
-        anchor_query = str(queries[0]).strip() if queries and isinstance(queries[0], str) else str(question or "")
+        anchor_query = context_anchor or (
+            str(queries[0]).strip()
+            if queries and isinstance(queries[0], str)
+            else str(question or "")
+        )
         topic_tokens = _TOKEN_RE.findall(_query_key(anchor_query))
         query_tokens = _TOKEN_RE.findall(key)
         if enforce_topic and len(topic_tokens) >= 2 and not any(
@@ -1185,7 +1224,6 @@ def build_query_strategy_matrix(
         seen.add(key)
         rows.append({"query": candidate, "strategy": strategy, "rationale": rationale})
 
-    constraints = spec.get("constraints") if isinstance(spec.get("constraints"), dict) else {}
     explicit_aspects = (
         constraints.get("explicit_aspects")
         if isinstance(constraints.get("explicit_aspects"), list)
@@ -1239,7 +1277,11 @@ def build_query_strategy_matrix(
     ):
         return rows
 
-    base = str(queries[0]).strip() if queries and isinstance(queries[0], str) else ""
+    base = context_anchor or (
+        str(queries[0]).strip()
+        if queries and isinstance(queries[0], str)
+        else ""
+    )
     if not base:
         base = re.sub(
             r"^(?:من فضلك|لو سمحت|ابحث لي|ابحث|دورلي|دور|اعثر على|please|search for|find|look up)\s*",
