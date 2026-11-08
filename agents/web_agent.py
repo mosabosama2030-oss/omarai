@@ -1674,6 +1674,58 @@ class WebAgent:
             "model_calls": list(self.model_usage),
         }
 
+    _KNOWLEDGE_FIRST_KINDS = frozenset({"web_research", "web_fallback", "insufficient_evidence"})
+
+    def _attach_knowledge_first(
+        self, question: Any, history: Any, result: dict[str, Any]
+    ) -> None:
+        """Add the model's own unverified answer beside the evidence-backed answer.
+
+        Flow: understand -> answer from model knowledge -> research for evidence.
+        The knowledge answer is never merged into ``answer`` and is labelled
+        unverified; ``knowledge_check`` states whether any evidence was gathered.
+        Failure or an exhausted budget leaves the evidence result untouched.
+        """
+        if os.getenv("OMARAI_KNOWLEDGE_FIRST", "1").strip().lower() in {"0", "false", "no", "off"}:
+            return
+        if not isinstance(result, dict) or not isinstance(question, str):
+            return
+        if result.get("kind") not in self._KNOWLEDGE_FIRST_KINDS:
+            return
+        if result.get("intent_route") not in {"WEB_SIMPLE", "WEB_DEEP"}:
+            return
+        if result.get("knowledge_answer"):
+            return
+        try:
+            knowledge = self._answer_without_search(
+                question.strip(), self._sanitize_history(history)
+            )
+        except RequestBudgetExceeded:
+            return
+        text = str((knowledge or {}).get("answer") or "").strip()
+        if not text:
+            result["knowledge_check"] = {"status": "knowledge_answer_unavailable"}
+            return
+        sources = result.get("sources")
+        has_sources = isinstance(sources, list) and bool(sources)
+        evidence_ok = (
+            has_sources
+            and result.get("kind") == "web_research"
+            and result.get("research_quality") != "failed"
+        )
+        result["knowledge_answer"] = text
+        result["knowledge_check"] = {
+            "status": "evidence_gathered" if evidence_ok else "no_sufficient_evidence",
+            "label": "model_knowledge_unverified",
+            "source_count": len(sources) if isinstance(sources, list) else 0,
+            "note": (
+                "إجابة المعرفة من النموذج وغير موثقة؛ الإجابة الرئيسية مبنية على المصادر المرفقة."
+                if evidence_ok
+                else "لم يتوفر دليل كافٍ؛ إجابة المعرفة غير مؤكدة بمصادر."
+            ),
+            "reconciliation": "not_machine_compared",
+        }
+
     def _search_duckduckgo_html(self, query: str) -> list[dict[str, Any]]:
 
         from bs4 import BeautifulSoup
@@ -4869,6 +4921,7 @@ class WebAgent:
                 result = self._answer_with_budget(
                     question, history, mode, buyer_queries=buyer_queries
                 )
+            self._attach_knowledge_first(question, history, result)
         except RequestBudgetExceeded as exc:
             safe_question = (
                 question.strip()[:MAX_QUESTION_CHARS]
