@@ -1266,6 +1266,18 @@ def build_query_strategy_matrix(
     entity_replacement = inherit_context and bool(
         changed_slot_names & {"entity", "product", "model", "variant"}
     )
+    # A changed commercial/geographic/aspect slot also invalidates an old planner
+    # seed: appending "Alexandria" to a Cairo query or EUR to a USD query is not a
+    # refinement. Rebuild from the resolved turn and regenerate task-aware angles.
+    scope_replacement = (
+        inherit_context
+        and spec.get("task_family") != "lead_generation"
+        and bool(
+            changed_slot_names
+            & {"location", "country", "budget", "currency", "time_range", "capacity", "aspect", "version"}
+        )
+    )
+    replace_stale_planner_queries = entity_replacement or scope_replacement
     entity_replacement_terms = [
         value.strip()
         for value in (
@@ -1281,7 +1293,7 @@ def build_query_strategy_matrix(
     resolved_context_seed = str(context_resolution.get("resolved_question") or "").strip()
     primary_seed = (
         resolved_context_seed or context_anchor
-        if entity_replacement
+        if replace_stale_planner_queries
         else (
             str(queries[0]).strip()
             if queries and isinstance(queries[0], str) else str(question or "")
@@ -1528,6 +1540,11 @@ def build_query_strategy_matrix(
             )
             if entity_replacement
             else (
+                "context_slot_replacement",
+                "replace stale planner constraints with the resolved location, budget, currency, or aspect",
+            )
+            if scope_replacement
+            else (
                 _label_existing_query(seed, 0, spec)
                 if isinstance(seed, str)
                 else ("malformed", "planner seed is not a string")
@@ -1643,6 +1660,10 @@ def build_query_strategy_matrix(
     for index, query in enumerate(queries[1:], start=1):
         if len(rows) >= maximum:
             break
+        # Once a contextual slot has been corrected, old alternatives are not
+        # safe to reuse: they may preserve the superseded city, currency, or budget.
+        if scope_replacement:
+            continue
         if (
             entity_replacement
             and entity_replacement_terms
