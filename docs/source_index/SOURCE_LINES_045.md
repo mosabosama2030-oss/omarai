@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L001481 إلى SRC-3D0A619359-L000054
+- النطاق: SRC-3451CC474D-L001453 إلى SRC-3D0A619359-L000026
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,34 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L001453](../../tests/test_api.py#L1453) | 1453 | `"            \"market\": {\"locations\": [\"Cairo\"], \"industries\": [], \"customer_types\": [], \"decision_roles\": [], \"exclusions\": []},"` | — |
+| [SRC-3451CC474D-L001454](../../tests/test_api.py#L1454) | 1454 | `"            \"locale\": \"en\","` | — |
+| [SRC-3451CC474D-L001455](../../tests/test_api.py#L1455) | 1455 | `"        },"` | — |
+| [SRC-3451CC474D-L001456](../../tests/test_api.py#L1456) | 1456 | `"        headers=headers,"` | — |
+| [SRC-3451CC474D-L001457](../../tests/test_api.py#L1457) | 1457 | `"    )"` | — |
+| [SRC-3451CC474D-L001458](../../tests/test_api.py#L1458) | 1458 | `"    assert profile_status == 201"` | — |
+| [SRC-3451CC474D-L001459](../../tests/test_api.py#L1459) | 1459 | `""` | — |
+| [SRC-3451CC474D-L001460](../../tests/test_api.py#L1460) | 1460 | `"    status, error = request_json("` | — |
+| [SRC-3451CC474D-L001461](../../tests/test_api.py#L1461) | 1461 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L001462](../../tests/test_api.py#L1462) | 1462 | `"        \"/api/discoveries\","` | — |
+| [SRC-3451CC474D-L001463](../../tests/test_api.py#L1463) | 1463 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L001464](../../tests/test_api.py#L1464) | 1464 | `"        payload={\"profile_id\": profile[\"id\"], \"allow_optional_providers\": True},"` | — |
+| [SRC-3451CC474D-L001465](../../tests/test_api.py#L1465) | 1465 | `"        headers=headers,"` | — |
+| [SRC-3451CC474D-L001466](../../tests/test_api.py#L1466) | 1466 | `"    )"` | — |
+| [SRC-3451CC474D-L001467](../../tests/test_api.py#L1467) | 1467 | `"    assert status == 403"` | — |
+| [SRC-3451CC474D-L001468](../../tests/test_api.py#L1468) | 1468 | `"    assert \"مالك مساحة العمل\" in error[\"error\"]"` | — |
+| [SRC-3451CC474D-L001469](../../tests/test_api.py#L1469) | 1469 | `""` | — |
+| [SRC-3451CC474D-L001470](../../tests/test_api.py#L1470) | 1470 | `""` | — |
+| [SRC-3451CC474D-L001471](../../tests/test_api.py#L1471) | 1471 | `"@pytest.mark.parametrize("` | — |
+| [SRC-3451CC474D-L001472](../../tests/test_api.py#L1472) | 1472 | `"    \"forwarding_header\","` | — |
+| [SRC-3451CC474D-L001473](../../tests/test_api.py#L1473) | 1473 | `"    ["` | — |
+| [SRC-3451CC474D-L001474](../../tests/test_api.py#L1474) | 1474 | `"        {\"X-Forwarded-For\": \"203.0.113.9\"},"` | — |
+| [SRC-3451CC474D-L001475](../../tests/test_api.py#L1475) | 1475 | `"        {\"CF-Connecting-IP\": \"203.0.113.9\"},"` | — |
+| [SRC-3451CC474D-L001476](../../tests/test_api.py#L1476) | 1476 | `"        {\"Forwarded\": \"for=203.0.113.9\"},"` | — |
+| [SRC-3451CC474D-L001477](../../tests/test_api.py#L1477) | 1477 | `"    ],"` | — |
+| [SRC-3451CC474D-L001478](../../tests/test_api.py#L1478) | 1478 | `")"` | — |
+| [SRC-3451CC474D-L001479](../../tests/test_api.py#L1479) | 1479 | `"def test_loopback_auth_is_refused_for_forwarded_requests_even_with_local_opt_in("` | — |
+| [SRC-3451CC474D-L001480](../../tests/test_api.py#L1480) | 1480 | `"    local_api, forwarding_header"` | — |
 | [SRC-3451CC474D-L001481](../../tests/test_api.py#L1481) | 1481 | `"):"` | — |
 | [SRC-3451CC474D-L001482](../../tests/test_api.py#L1482) | 1482 | `"    status, _ = request_json(local_api, \"/api/leads\", headers=forwarding_header)"` | — |
 | [SRC-3451CC474D-L001483](../../tests/test_api.py#L1483) | 1483 | `"    assert status == 401"` | — |
@@ -833,31 +861,3 @@
 | [SRC-3D0A619359-L000024](../../tests/test_dashboard_security.py#L24) | 24 | `"    assert '[\"http:\",\"https:\"]' in html"` | — |
 | [SRC-3D0A619359-L000025](../../tests/test_dashboard_security.py#L25) | 25 | `"    assert \"const sourceUrl=safeSourceUrl(l.source_url)\" in html"` | — |
 | [SRC-3D0A619359-L000026](../../tests/test_dashboard_security.py#L26) | 26 | `"    assert \"const sourceLink=sourceUrl?\" in html"` | — |
-| [SRC-3D0A619359-L000027](../../tests/test_dashboard_security.py#L27) | 27 | `""` | — |
-| [SRC-3D0A619359-L000028](../../tests/test_dashboard_security.py#L28) | 28 | `"def test_lead_status_handler_accepts_sha256_hex_lead_ids():"` | — |
-| [SRC-3D0A619359-L000029](../../tests/test_dashboard_security.py#L29) | 29 | `"    html = DASHBOARD.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-3D0A619359-L000030](../../tests/test_dashboard_security.py#L30) | 30 | `"    assert 'if(!/^[a-f0-9]{24}$/.test(id\|\|\"\"))return;' in html"` | — |
-| [SRC-3D0A619359-L000031](../../tests/test_dashboard_security.py#L31) | 31 | `"    assert 'data-lead-id=\"' in html"` | — |
-| [SRC-3D0A619359-L000032](../../tests/test_dashboard_security.py#L32) | 32 | `""` | — |
-| [SRC-3D0A619359-L000033](../../tests/test_dashboard_security.py#L33) | 33 | `"def test_browser_pages_never_store_access_tokens_in_web_storage():"` | — |
-| [SRC-3D0A619359-L000034](../../tests/test_dashboard_security.py#L34) | 34 | `"    root = Path(__file__).resolve().parents[1] / \"web\""` | — |
-| [SRC-3D0A619359-L000035](../../tests/test_dashboard_security.py#L35) | 35 | `"    for name in (\"agent.html\", \"dashboard.html\"):"` | — |
-| [SRC-3D0A619359-L000036](../../tests/test_dashboard_security.py#L36) | 36 | `"        html = (root / name).read_text(encoding=\"utf-8\")"` | — |
-| [SRC-3D0A619359-L000037](../../tests/test_dashboard_security.py#L37) | 37 | `"        assert \"localStorage\" not in html"` | — |
-| [SRC-3D0A619359-L000038](../../tests/test_dashboard_security.py#L38) | 38 | `"        assert \"sessionStorage\" not in html"` | — |
-| [SRC-3D0A619359-L000039](../../tests/test_dashboard_security.py#L39) | 39 | `"        assert \"/api/session\" in html"` | — |
-| [SRC-3D0A619359-L000040](../../tests/test_dashboard_security.py#L40) | 40 | `"        assert \"credentials:\\\"same-origin\\\"\" in html"` | — |
-| [SRC-3D0A619359-L000041](../../tests/test_dashboard_security.py#L41) | 41 | `""` | — |
-| [SRC-3D0A619359-L000042](../../tests/test_dashboard_security.py#L42) | 42 | `""` | — |
-| [SRC-3D0A619359-L000043](../../tests/test_dashboard_security.py#L43) | 43 | `""` | — |
-| [SRC-3D0A619359-L000044](../../tests/test_dashboard_security.py#L44) | 44 | `"def test_sales_workspace_uses_http_only_session_and_never_persists_access_token():"` | — |
-| [SRC-3D0A619359-L000045](../../tests/test_dashboard_security.py#L45) | 45 | `"    workspace = Path(__file__).resolve().parents[1] / \"web\" / \"workspace.html\""` | — |
-| [SRC-3D0A619359-L000046](../../tests/test_dashboard_security.py#L46) | 46 | `"    html = workspace.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-3D0A619359-L000047](../../tests/test_dashboard_security.py#L47) | 47 | `""` | — |
-| [SRC-3D0A619359-L000048](../../tests/test_dashboard_security.py#L48) | 48 | `"    assert 'api(\"/api/session\")' in html"` | — |
-| [SRC-3D0A619359-L000049](../../tests/test_dashboard_security.py#L49) | 49 | `"    assert 'credentials:\"same-origin\"' in html"` | — |
-| [SRC-3D0A619359-L000050](../../tests/test_dashboard_security.py#L50) | 50 | `"    assert 'JSON.stringify({access_token:token})' not in html"` | — |
-| [SRC-3D0A619359-L000051](../../tests/test_dashboard_security.py#L51) | 51 | `"    assert \"localStorage\" not in html"` | — |
-| [SRC-3D0A619359-L000052](../../tests/test_dashboard_security.py#L52) | 52 | `"    assert \"sessionStorage\" not in html"` | — |
-| [SRC-3D0A619359-L000053](../../tests/test_dashboard_security.py#L53) | 53 | `"    assert 'api(\"/api/leads?limit=500\")' in html"` | — |
-| [SRC-3D0A619359-L000054](../../tests/test_dashboard_security.py#L54) | 54 | `"    assert 'api(\"/api/health\")' in html"` | — |

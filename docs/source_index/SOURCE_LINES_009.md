@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-8D00DCEC0D-L000440 إلى SRC-086D574B4E-L000390
+- النطاق: SRC-8D00DCEC0D-L000412 إلى SRC-086D574B4E-L000362
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,34 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-8D00DCEC0D-L000412](../../agents/sales_domain.py#L412) | 412 | `"    def to_dict(self) -> dict[str, object]:"` | — |
+| [SRC-8D00DCEC0D-L000413](../../agents/sales_domain.py#L413) | 413 | `"        return {"` | — |
+| [SRC-8D00DCEC0D-L000414](../../agents/sales_domain.py#L414) | 414 | `"            \"source_id\": self.source_id,"` | — |
+| [SRC-8D00DCEC0D-L000415](../../agents/sales_domain.py#L415) | 415 | `"            \"source_url\": self.source_url,"` | — |
+| [SRC-8D00DCEC0D-L000416](../../agents/sales_domain.py#L416) | 416 | `"            \"excerpt\": self.excerpt,"` | — |
+| [SRC-8D00DCEC0D-L000417](../../agents/sales_domain.py#L417) | 417 | `"            \"content_basis\": self.content_basis.value,"` | — |
+| [SRC-8D00DCEC0D-L000418](../../agents/sales_domain.py#L418) | 418 | `"            \"publication_date\": self.publication_date,"` | — |
+| [SRC-8D00DCEC0D-L000419](../../agents/sales_domain.py#L419) | 419 | `"            \"event_date\": self.event_date,"` | — |
+| [SRC-8D00DCEC0D-L000420](../../agents/sales_domain.py#L420) | 420 | `"            \"observed_at\": self.observed_at,"` | — |
+| [SRC-8D00DCEC0D-L000421](../../agents/sales_domain.py#L421) | 421 | `"            \"page_read\": self.page_read,"` | — |
+| [SRC-8D00DCEC0D-L000422](../../agents/sales_domain.py#L422) | 422 | `"        }"` | — |
+| [SRC-8D00DCEC0D-L000423](../../agents/sales_domain.py#L423) | 423 | `""` | — |
+| [SRC-8D00DCEC0D-L000424](../../agents/sales_domain.py#L424) | 424 | `""` | — |
+| [SRC-8D00DCEC0D-L000425](../../agents/sales_domain.py#L425) | 425 | `"@dataclass(frozen=True, slots=True)"` | — |
+| [SRC-8D00DCEC0D-L000426](../../agents/sales_domain.py#L426) | 426 | `"class DemandSignal:"` | — |
+| [SRC-8D00DCEC0D-L000427](../../agents/sales_domain.py#L427) | 427 | `"    \"\"\"A classified demand signal, kept independent from product-fit assessment.\"\"\""` | — |
+| [SRC-8D00DCEC0D-L000428](../../agents/sales_domain.py#L428) | 428 | `""` | — |
+| [SRC-8D00DCEC0D-L000429](../../agents/sales_domain.py#L429) | 429 | `"    signal_id: str"` | — |
+| [SRC-8D00DCEC0D-L000430](../../agents/sales_domain.py#L430) | 430 | `"    signal_type: DemandSignalType"` | — |
+| [SRC-8D00DCEC0D-L000431](../../agents/sales_domain.py#L431) | 431 | `"    evidence: DemandEvidence"` | — |
+| [SRC-8D00DCEC0D-L000432](../../agents/sales_domain.py#L432) | 432 | `"    product_fit: ProductFit = ProductFit.UNASSESSED"` | — |
+| [SRC-8D00DCEC0D-L000433](../../agents/sales_domain.py#L433) | 433 | `"    identity_status: IdentityStatus = IdentityStatus.UNKNOWN"` | — |
+| [SRC-8D00DCEC0D-L000434](../../agents/sales_domain.py#L434) | 434 | `"    classification_reason: str = \"\""` | — |
+| [SRC-8D00DCEC0D-L000435](../../agents/sales_domain.py#L435) | 435 | `"    product_fit_reason: str = \"\""` | — |
+| [SRC-8D00DCEC0D-L000436](../../agents/sales_domain.py#L436) | 436 | `""` | — |
+| [SRC-8D00DCEC0D-L000437](../../agents/sales_domain.py#L437) | 437 | `"    def __post_init__(self) -> None:"` | — |
+| [SRC-8D00DCEC0D-L000438](../../agents/sales_domain.py#L438) | 438 | `"        object.__setattr__("` | — |
+| [SRC-8D00DCEC0D-L000439](../../agents/sales_domain.py#L439) | 439 | `"            self,"` | — |
 | [SRC-8D00DCEC0D-L000440](../../agents/sales_domain.py#L440) | 440 | `"            \"signal_id\","` | — |
 | [SRC-8D00DCEC0D-L000441](../../agents/sales_domain.py#L441) | 441 | `"            _clean_text(self.signal_id, field_name=\"signal_id\", maximum=160),"` | — |
 | [SRC-8D00DCEC0D-L000442](../../agents/sales_domain.py#L442) | 442 | `"        )"` | — |
@@ -806,31 +834,3 @@
 | [SRC-086D574B4E-L000360](../../agents/semantic_claim_verifier.py#L360) | 360 | `"            \"supporting_source_indexes\": supporting,"` | — |
 | [SRC-086D574B4E-L000361](../../agents/semantic_claim_verifier.py#L361) | 361 | `"            \"contradicting_source_indexes\": contradicting,"` | — |
 | [SRC-086D574B4E-L000362](../../agents/semantic_claim_verifier.py#L362) | 362 | `"        })"` | — |
-| [SRC-086D574B4E-L000363](../../agents/semantic_claim_verifier.py#L363) | 363 | `""` | — |
-| [SRC-086D574B4E-L000364](../../agents/semantic_claim_verifier.py#L364) | 364 | `"    if seen != set(expected_by_id):"` | — |
-| [SRC-086D574B4E-L000365](../../agents/semantic_claim_verifier.py#L365) | 365 | `"        return _not_verifiable(\"claim_rows_incomplete\", ledger)"` | — |
-| [SRC-086D574B4E-L000366](../../agents/semantic_claim_verifier.py#L366) | 366 | `"    passed = not unsupported_ids"` | — |
-| [SRC-086D574B4E-L000367](../../agents/semantic_claim_verifier.py#L367) | 367 | `"    status = ("` | — |
-| [SRC-086D574B4E-L000368](../../agents/semantic_claim_verifier.py#L368) | 368 | `"        \"completed_all_claims_supported\" if passed and factual_supported_count"` | — |
-| [SRC-086D574B4E-L000369](../../agents/semantic_claim_verifier.py#L369) | 369 | `"        else \"completed_no_factual_claims\" if passed"` | — |
-| [SRC-086D574B4E-L000370](../../agents/semantic_claim_verifier.py#L370) | 370 | `"        else \"unsupported_claims_detected\""` | — |
-| [SRC-086D574B4E-L000371](../../agents/semantic_claim_verifier.py#L371) | 371 | `"    )"` | — |
-| [SRC-086D574B4E-L000372](../../agents/semantic_claim_verifier.py#L372) | 372 | `"    return {"` | — |
-| [SRC-086D574B4E-L000373](../../agents/semantic_claim_verifier.py#L373) | 373 | `"        \"status\": status,"` | — |
-| [SRC-086D574B4E-L000374](../../agents/semantic_claim_verifier.py#L374) | 374 | `"        \"withhold_answer\": not passed,"` | — |
-| [SRC-086D574B4E-L000375](../../agents/semantic_claim_verifier.py#L375) | 375 | `"        \"reason\": None if passed else \"one_or_more_claims_lack_unconflicted_cited_support\","` | — |
-| [SRC-086D574B4E-L000376](../../agents/semantic_claim_verifier.py#L376) | 376 | `"        \"semantic_verification\": \"model_assessed_source_support\","` | — |
-| [SRC-086D574B4E-L000377](../../agents/semantic_claim_verifier.py#L377) | 377 | `"        \"fact_correctness\": \"not_verified\","` | — |
-| [SRC-086D574B4E-L000378](../../agents/semantic_claim_verifier.py#L378) | 378 | `"        \"claim_count\": len(assessed),"` | — |
-| [SRC-086D574B4E-L000379](../../agents/semantic_claim_verifier.py#L379) | 379 | `"        \"factual_supported_count\": factual_supported_count,"` | — |
-| [SRC-086D574B4E-L000380](../../agents/semantic_claim_verifier.py#L380) | 380 | `"        \"non_factual_count\": non_factual_count,"` | — |
-| [SRC-086D574B4E-L000381](../../agents/semantic_claim_verifier.py#L381) | 381 | `"        \"unsupported_claim_count\": len(unsupported_ids),"` | — |
-| [SRC-086D574B4E-L000382](../../agents/semantic_claim_verifier.py#L382) | 382 | `"        \"unsupported_segment_ids\": unsupported_ids,"` | — |
-| [SRC-086D574B4E-L000383](../../agents/semantic_claim_verifier.py#L383) | 383 | `"        \"conflicted_segment_ids\": conflicted_ids,"` | — |
-| [SRC-086D574B4E-L000384](../../agents/semantic_claim_verifier.py#L384) | 384 | `"        \"claims\": assessed,"` | — |
-| [SRC-086D574B4E-L000385](../../agents/semantic_claim_verifier.py#L385) | 385 | `"        \"limitations\": ["` | — |
-| [SRC-086D574B4E-L000386](../../agents/semantic_claim_verifier.py#L386) | 386 | `"            \"This is a model assessment of source support, not proof of real-world truth.\","` | — |
-| [SRC-086D574B4E-L000387](../../agents/semantic_claim_verifier.py#L387) | 387 | `"            \"The verifier uses a distinct model identifier but the same configured provider endpoint and credentials.\","` | — |
-| [SRC-086D574B4E-L000388](../../agents/semantic_claim_verifier.py#L388) | 388 | `"            \"Model misclassification remains possible; critical claims may require a primary source or human review.\","` | — |
-| [SRC-086D574B4E-L000389](../../agents/semantic_claim_verifier.py#L389) | 389 | `"        ],"` | — |
-| [SRC-086D574B4E-L000390](../../agents/semantic_claim_verifier.py#L390) | 390 | `"    }"` | — |

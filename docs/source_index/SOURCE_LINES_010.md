@@ -4,9 +4,46 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L000001 إلى SRC-686F71AA50-L000800
+- النطاق: SRC-086D574B4E-L000363 إلى SRC-686F71AA50-L000772
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## الوكيل والمنطق
+
+### FILE-086D574B4E — [agents/semantic_claim_verifier.py](../../agents/semantic_claim_verifier.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-086D574B4E-L000363](../../agents/semantic_claim_verifier.py#L363) | 363 | `""` | — |
+| [SRC-086D574B4E-L000364](../../agents/semantic_claim_verifier.py#L364) | 364 | `"    if seen != set(expected_by_id):"` | — |
+| [SRC-086D574B4E-L000365](../../agents/semantic_claim_verifier.py#L365) | 365 | `"        return _not_verifiable(\"claim_rows_incomplete\", ledger)"` | — |
+| [SRC-086D574B4E-L000366](../../agents/semantic_claim_verifier.py#L366) | 366 | `"    passed = not unsupported_ids"` | — |
+| [SRC-086D574B4E-L000367](../../agents/semantic_claim_verifier.py#L367) | 367 | `"    status = ("` | — |
+| [SRC-086D574B4E-L000368](../../agents/semantic_claim_verifier.py#L368) | 368 | `"        \"completed_all_claims_supported\" if passed and factual_supported_count"` | — |
+| [SRC-086D574B4E-L000369](../../agents/semantic_claim_verifier.py#L369) | 369 | `"        else \"completed_no_factual_claims\" if passed"` | — |
+| [SRC-086D574B4E-L000370](../../agents/semantic_claim_verifier.py#L370) | 370 | `"        else \"unsupported_claims_detected\""` | — |
+| [SRC-086D574B4E-L000371](../../agents/semantic_claim_verifier.py#L371) | 371 | `"    )"` | — |
+| [SRC-086D574B4E-L000372](../../agents/semantic_claim_verifier.py#L372) | 372 | `"    return {"` | — |
+| [SRC-086D574B4E-L000373](../../agents/semantic_claim_verifier.py#L373) | 373 | `"        \"status\": status,"` | — |
+| [SRC-086D574B4E-L000374](../../agents/semantic_claim_verifier.py#L374) | 374 | `"        \"withhold_answer\": not passed,"` | — |
+| [SRC-086D574B4E-L000375](../../agents/semantic_claim_verifier.py#L375) | 375 | `"        \"reason\": None if passed else \"one_or_more_claims_lack_unconflicted_cited_support\","` | — |
+| [SRC-086D574B4E-L000376](../../agents/semantic_claim_verifier.py#L376) | 376 | `"        \"semantic_verification\": \"model_assessed_source_support\","` | — |
+| [SRC-086D574B4E-L000377](../../agents/semantic_claim_verifier.py#L377) | 377 | `"        \"fact_correctness\": \"not_verified\","` | — |
+| [SRC-086D574B4E-L000378](../../agents/semantic_claim_verifier.py#L378) | 378 | `"        \"claim_count\": len(assessed),"` | — |
+| [SRC-086D574B4E-L000379](../../agents/semantic_claim_verifier.py#L379) | 379 | `"        \"factual_supported_count\": factual_supported_count,"` | — |
+| [SRC-086D574B4E-L000380](../../agents/semantic_claim_verifier.py#L380) | 380 | `"        \"non_factual_count\": non_factual_count,"` | — |
+| [SRC-086D574B4E-L000381](../../agents/semantic_claim_verifier.py#L381) | 381 | `"        \"unsupported_claim_count\": len(unsupported_ids),"` | — |
+| [SRC-086D574B4E-L000382](../../agents/semantic_claim_verifier.py#L382) | 382 | `"        \"unsupported_segment_ids\": unsupported_ids,"` | — |
+| [SRC-086D574B4E-L000383](../../agents/semantic_claim_verifier.py#L383) | 383 | `"        \"conflicted_segment_ids\": conflicted_ids,"` | — |
+| [SRC-086D574B4E-L000384](../../agents/semantic_claim_verifier.py#L384) | 384 | `"        \"claims\": assessed,"` | — |
+| [SRC-086D574B4E-L000385](../../agents/semantic_claim_verifier.py#L385) | 385 | `"        \"limitations\": ["` | — |
+| [SRC-086D574B4E-L000386](../../agents/semantic_claim_verifier.py#L386) | 386 | `"            \"This is a model assessment of source support, not proof of real-world truth.\","` | — |
+| [SRC-086D574B4E-L000387](../../agents/semantic_claim_verifier.py#L387) | 387 | `"            \"The verifier uses a distinct model identifier but the same configured provider endpoint and credentials.\","` | — |
+| [SRC-086D574B4E-L000388](../../agents/semantic_claim_verifier.py#L388) | 388 | `"            \"Model misclassification remains possible; critical claims may require a primary source or human review.\","` | — |
+| [SRC-086D574B4E-L000389](../../agents/semantic_claim_verifier.py#L389) | 389 | `"        ],"` | — |
+| [SRC-086D574B4E-L000390](../../agents/semantic_claim_verifier.py#L390) | 390 | `"    }"` | — |
 ## الوكيل والمنطق
 
 ### FILE-686F71AA50 — [agents/task_understanding.py](../../agents/task_understanding.py#L1)
@@ -788,31 +825,3 @@
 | [SRC-686F71AA50-L000770](../../agents/task_understanding.py#L770) | 770 | `"            intent_route not in {\"LOCAL\", \"CLARIFY\", \"BUDGET_EXHAUSTED\"}"` | — |
 | [SRC-686F71AA50-L000771](../../agents/task_understanding.py#L771) | 771 | `"            and ("` | — |
 | [SRC-686F71AA50-L000772](../../agents/task_understanding.py#L772) | 772 | `"                social_required"` | — |
-| [SRC-686F71AA50-L000773](../../agents/task_understanding.py#L773) | 773 | `"                or official_destination"` | — |
-| [SRC-686F71AA50-L000774](../../agents/task_understanding.py#L774) | 774 | `"                or current_required"` | — |
-| [SRC-686F71AA50-L000775](../../agents/task_understanding.py#L775) | 775 | `"                or family in {\"find_or_discover\", \"lead_generation\", \"general_research\"}"` | — |
-| [SRC-686F71AA50-L000776](../../agents/task_understanding.py#L776) | 776 | `"            )"` | — |
-| [SRC-686F71AA50-L000777](../../agents/task_understanding.py#L777) | 777 | `"        )"` | — |
-| [SRC-686F71AA50-L000778](../../agents/task_understanding.py#L778) | 778 | `"        or ("` | — |
-| [SRC-686F71AA50-L000779](../../agents/task_understanding.py#L779) | 779 | `"            clean_mode != \"auto\""` | — |
-| [SRC-686F71AA50-L000780](../../agents/task_understanding.py#L780) | 780 | `"            and not route_is_clarification"` | — |
-| [SRC-686F71AA50-L000781](../../agents/task_understanding.py#L781) | 781 | `"            and not route_is_local"` | — |
-| [SRC-686F71AA50-L000782](../../agents/task_understanding.py#L782) | 782 | `"        )"` | — |
-| [SRC-686F71AA50-L000783](../../agents/task_understanding.py#L783) | 783 | `"    )"` | — |
-| [SRC-686F71AA50-L000784](../../agents/task_understanding.py#L784) | 784 | `"    page_fetch_requested = bool(urls) or ("` | — |
-| [SRC-686F71AA50-L000785](../../agents/task_understanding.py#L785) | 785 | `"        family == \"summarize\""` | — |
-| [SRC-686F71AA50-L000786](../../agents/task_understanding.py#L786) | 786 | `"        and not inline_summary_text"` | — |
-| [SRC-686F71AA50-L000787](../../agents/task_understanding.py#L787) | 787 | `"        and not route_is_clarification"` | — |
-| [SRC-686F71AA50-L000788](../../agents/task_understanding.py#L788) | 788 | `"    )"` | — |
-| [SRC-686F71AA50-L000789](../../agents/task_understanding.py#L789) | 789 | `"    tools: list[str] = []"` | — |
-| [SRC-686F71AA50-L000790](../../agents/task_understanding.py#L790) | 790 | `"    if search_requested and not route_is_clarification:"` | — |
-| [SRC-686F71AA50-L000791](../../agents/task_understanding.py#L791) | 791 | `"        tools.append(\"web_search\")"` | — |
-| [SRC-686F71AA50-L000792](../../agents/task_understanding.py#L792) | 792 | `"    if page_fetch_requested and not route_is_clarification:"` | — |
-| [SRC-686F71AA50-L000793](../../agents/task_understanding.py#L793) | 793 | `"        tools.append(\"page_fetch\")"` | — |
-| [SRC-686F71AA50-L000794](../../agents/task_understanding.py#L794) | 794 | `"    if social_required and not route_is_clarification:"` | — |
-| [SRC-686F71AA50-L000795](../../agents/task_understanding.py#L795) | 795 | `"        tools.append(\"public_social_search_if_configured\")"` | — |
-| [SRC-686F71AA50-L000796](../../agents/task_understanding.py#L796) | 796 | `"    if ("` | — |
-| [SRC-686F71AA50-L000797](../../agents/task_understanding.py#L797) | 797 | `"        intent_route in {\"MODEL_ONLY\", \"WEB_SIMPLE\", \"WEB_DEEP\", \"LEAD_GENERATION\", \"deterministic_fallback\"}"` | — |
-| [SRC-686F71AA50-L000798](../../agents/task_understanding.py#L798) | 798 | `"        or (clean_mode != \"auto\" and not route_is_clarification and not route_is_local)"` | — |
-| [SRC-686F71AA50-L000799](../../agents/task_understanding.py#L799) | 799 | `"    ):"` | — |
-| [SRC-686F71AA50-L000800](../../agents/task_understanding.py#L800) | 800 | `"        tools.append(\"language_model_generation_if_configured\")"` | — |

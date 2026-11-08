@@ -4,7 +4,7 @@
 
 - الصفحة: **043**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1C77C97630-L000248 إلى SRC-3451CC474D-L000680
+- النطاق: SRC-1C77C97630-L000220 إلى SRC-3451CC474D-L000652
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,34 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1C77C97630-L000220](../../tests/test_answer_validation.py#L220) | 220 | `"        \"_request_completion\","` | — |
+| [SRC-1C77C97630-L000221](../../tests/test_answer_validation.py#L221) | 221 | `"        lambda *args, **kwargs: ("` | — |
+| [SRC-1C77C97630-L000222](../../tests/test_answer_validation.py#L222) | 222 | `"            \"<<<OMARAI_COVERAGE_REPAIR>>>إجابة<<<END_OMARAI_COVERAGE_REPAIR>>>\""` | — |
+| [SRC-1C77C97630-L000223](../../tests/test_answer_validation.py#L223) | 223 | `"            \"<<<END_OMARAI_COVERAGE_REPAIR>>>\""` | — |
+| [SRC-1C77C97630-L000224](../../tests/test_answer_validation.py#L224) | 224 | `"        ),"` | — |
+| [SRC-1C77C97630-L000225](../../tests/test_answer_validation.py#L225) | 225 | `"    )"` | — |
+| [SRC-1C77C97630-L000226](../../tests/test_answer_validation.py#L226) | 226 | `"    with pytest.raises(RuntimeError, match=\"إصلاح تغطية آمن\"):"` | — |
+| [SRC-1C77C97630-L000227](../../tests/test_answer_validation.py#L227) | 227 | `"        agent._repair_answer_coverage("` | — |
+| [SRC-1C77C97630-L000228](../../tests/test_answer_validation.py#L228) | 228 | `"            \"قارن السعر\","` | — |
+| [SRC-1C77C97630-L000229](../../tests/test_answer_validation.py#L229) | 229 | `"            \"مسودة\","` | — |
+| [SRC-1C77C97630-L000230](../../tests/test_answer_validation.py#L230) | 230 | `"            [{\"title\": \"مصدر\", \"url\": \"https://example.com\", \"snippet\": \"السعر 100 جنيه\"}],"` | — |
+| [SRC-1C77C97630-L000231](../../tests/test_answer_validation.py#L231) | 231 | `"            [\"السعر\"],"` | — |
+| [SRC-1C77C97630-L000232](../../tests/test_answer_validation.py#L232) | 232 | `"        )"` | — |
+| [SRC-1C77C97630-L000233](../../tests/test_answer_validation.py#L233) | 233 | `""` | — |
+| [SRC-1C77C97630-L000234](../../tests/test_answer_validation.py#L234) | 234 | `""` | — |
+| [SRC-1C77C97630-L000235](../../tests/test_answer_validation.py#L235) | 235 | `"def test_cited_number_must_appear_in_the_exact_cited_source_not_merely_some_source():"` | — |
+| [SRC-1C77C97630-L000236](../../tests/test_answer_validation.py#L236) | 236 | `"    result = audit_answer_integrity("` | — |
+| [SRC-1C77C97630-L000237](../../tests/test_answer_validation.py#L237) | 237 | `"        \"قارن أسعار المنتجين\","` | — |
+| [SRC-1C77C97630-L000238](../../tests/test_answer_validation.py#L238) | 238 | `"        \"سعر المنتج الأول 500 جنيه [المصدر 1].\","` | — |
+| [SRC-1C77C97630-L000239](../../tests/test_answer_validation.py#L239) | 239 | `"        ["` | — |
+| [SRC-1C77C97630-L000240](../../tests/test_answer_validation.py#L240) | 240 | `"            {"` | — |
+| [SRC-1C77C97630-L000241](../../tests/test_answer_validation.py#L241) | 241 | `"                \"title\": \"سعر المنتج الأول\","` | — |
+| [SRC-1C77C97630-L000242](../../tests/test_answer_validation.py#L242) | 242 | `"                \"snippet\": \"سعر المنتج الأول 300 جنيه\","` | — |
+| [SRC-1C77C97630-L000243](../../tests/test_answer_validation.py#L243) | 243 | `"                \"page_fetched\": False,"` | — |
+| [SRC-1C77C97630-L000244](../../tests/test_answer_validation.py#L244) | 244 | `"            },"` | — |
+| [SRC-1C77C97630-L000245](../../tests/test_answer_validation.py#L245) | 245 | `"            {"` | — |
+| [SRC-1C77C97630-L000246](../../tests/test_answer_validation.py#L246) | 246 | `"                \"title\": \"سعر المنتج الثاني\","` | — |
+| [SRC-1C77C97630-L000247](../../tests/test_answer_validation.py#L247) | 247 | `"                \"snippet\": \"سعر المنتج الثاني 500 جنيه\","` | — |
 | [SRC-1C77C97630-L000248](../../tests/test_answer_validation.py#L248) | 248 | `"                \"page_fetched\": False,"` | — |
 | [SRC-1C77C97630-L000249](../../tests/test_answer_validation.py#L249) | 249 | `"            },"` | — |
 | [SRC-1C77C97630-L000250](../../tests/test_answer_validation.py#L250) | 250 | `"        ],"` | — |
@@ -797,31 +825,3 @@
 | [SRC-3451CC474D-L000650](../../tests/test_api.py#L650) | 650 | `"    try:"` | — |
 | [SRC-3451CC474D-L000651](../../tests/test_api.py#L651) | 651 | `"        assert entered.wait(timeout=1), \"first request did not acquire the research slot\""` | — |
 | [SRC-3451CC474D-L000652](../../tests/test_api.py#L652) | 652 | `"        status, payload = request_json("` | — |
-| [SRC-3451CC474D-L000653](../../tests/test_api.py#L653) | 653 | `"            local_api, \"/api/agent\", method=\"POST\", payload={\"question\": \"السؤال الثاني\"}"` | — |
-| [SRC-3451CC474D-L000654](../../tests/test_api.py#L654) | 654 | `"        )"` | — |
-| [SRC-3451CC474D-L000655](../../tests/test_api.py#L655) | 655 | `"        assert status == 503"` | — |
-| [SRC-3451CC474D-L000656](../../tests/test_api.py#L656) | 656 | `"        assert payload[\"retry_after_seconds\"] == 5"` | — |
-| [SRC-3451CC474D-L000657](../../tests/test_api.py#L657) | 657 | `"        assert \"مشغولة\" in payload[\"error\"]"` | — |
-| [SRC-3451CC474D-L000658](../../tests/test_api.py#L658) | 658 | `"    finally:"` | — |
-| [SRC-3451CC474D-L000659](../../tests/test_api.py#L659) | 659 | `"        release.set()"` | — |
-| [SRC-3451CC474D-L000660](../../tests/test_api.py#L660) | 660 | `"        worker.join(timeout=3)"` | — |
-| [SRC-3451CC474D-L000661](../../tests/test_api.py#L661) | 661 | `""` | — |
-| [SRC-3451CC474D-L000662](../../tests/test_api.py#L662) | 662 | `"    assert not worker.is_alive()"` | — |
-| [SRC-3451CC474D-L000663](../../tests/test_api.py#L663) | 663 | `"    assert first_result[\"response\"][0] == 200"` | — |
-| [SRC-3451CC474D-L000664](../../tests/test_api.py#L664) | 664 | `""` | — |
-| [SRC-3451CC474D-L000665](../../tests/test_api.py#L665) | 665 | `""` | — |
-| [SRC-3451CC474D-L000666](../../tests/test_api.py#L666) | 666 | `"def test_agent_concurrency_limit_has_hard_bounds(monkeypatch):"` | — |
-| [SRC-3451CC474D-L000667](../../tests/test_api.py#L667) | 667 | `"    from api.omarai import _configured_agent_concurrency_limit"` | — |
-| [SRC-3451CC474D-L000668](../../tests/test_api.py#L668) | 668 | `""` | — |
-| [SRC-3451CC474D-L000669](../../tests/test_api.py#L669) | 669 | `"    monkeypatch.setenv(\"OMARAI_MAX_CONCURRENT_AGENT_REQUESTS\", \"99\")"` | — |
-| [SRC-3451CC474D-L000670](../../tests/test_api.py#L670) | 670 | `"    assert _configured_agent_concurrency_limit() == 8"` | — |
-| [SRC-3451CC474D-L000671](../../tests/test_api.py#L671) | 671 | `"    monkeypatch.setenv(\"OMARAI_MAX_CONCURRENT_AGENT_REQUESTS\", \"invalid\")"` | — |
-| [SRC-3451CC474D-L000672](../../tests/test_api.py#L672) | 672 | `"    assert _configured_agent_concurrency_limit() == 4"` | — |
-| [SRC-3451CC474D-L000673](../../tests/test_api.py#L673) | 673 | `""` | — |
-| [SRC-3451CC474D-L000674](../../tests/test_api.py#L674) | 674 | `""` | — |
-| [SRC-3451CC474D-L000675](../../tests/test_api.py#L675) | 675 | `"def test_api_rejects_oversized_request_body(local_api):"` | — |
-| [SRC-3451CC474D-L000676](../../tests/test_api.py#L676) | 676 | `"    status, payload = request_json("` | — |
-| [SRC-3451CC474D-L000677](../../tests/test_api.py#L677) | 677 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L000678](../../tests/test_api.py#L678) | 678 | `"        \"/api/analyze\","` | — |
-| [SRC-3451CC474D-L000679](../../tests/test_api.py#L679) | 679 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L000680](../../tests/test_api.py#L680) | 680 | `"        payload={\"text\": \"x\" * 200_001},"` | — |

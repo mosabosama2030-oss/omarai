@@ -4,7 +4,7 @@
 
 - الصفحة: **044**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000681 إلى SRC-3451CC474D-L001480
+- النطاق: SRC-3451CC474D-L000653 إلى SRC-3451CC474D-L001452
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,34 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000653](../../tests/test_api.py#L653) | 653 | `"            local_api, \"/api/agent\", method=\"POST\", payload={\"question\": \"السؤال الثاني\"}"` | — |
+| [SRC-3451CC474D-L000654](../../tests/test_api.py#L654) | 654 | `"        )"` | — |
+| [SRC-3451CC474D-L000655](../../tests/test_api.py#L655) | 655 | `"        assert status == 503"` | — |
+| [SRC-3451CC474D-L000656](../../tests/test_api.py#L656) | 656 | `"        assert payload[\"retry_after_seconds\"] == 5"` | — |
+| [SRC-3451CC474D-L000657](../../tests/test_api.py#L657) | 657 | `"        assert \"مشغولة\" in payload[\"error\"]"` | — |
+| [SRC-3451CC474D-L000658](../../tests/test_api.py#L658) | 658 | `"    finally:"` | — |
+| [SRC-3451CC474D-L000659](../../tests/test_api.py#L659) | 659 | `"        release.set()"` | — |
+| [SRC-3451CC474D-L000660](../../tests/test_api.py#L660) | 660 | `"        worker.join(timeout=3)"` | — |
+| [SRC-3451CC474D-L000661](../../tests/test_api.py#L661) | 661 | `""` | — |
+| [SRC-3451CC474D-L000662](../../tests/test_api.py#L662) | 662 | `"    assert not worker.is_alive()"` | — |
+| [SRC-3451CC474D-L000663](../../tests/test_api.py#L663) | 663 | `"    assert first_result[\"response\"][0] == 200"` | — |
+| [SRC-3451CC474D-L000664](../../tests/test_api.py#L664) | 664 | `""` | — |
+| [SRC-3451CC474D-L000665](../../tests/test_api.py#L665) | 665 | `""` | — |
+| [SRC-3451CC474D-L000666](../../tests/test_api.py#L666) | 666 | `"def test_agent_concurrency_limit_has_hard_bounds(monkeypatch):"` | — |
+| [SRC-3451CC474D-L000667](../../tests/test_api.py#L667) | 667 | `"    from api.omarai import _configured_agent_concurrency_limit"` | — |
+| [SRC-3451CC474D-L000668](../../tests/test_api.py#L668) | 668 | `""` | — |
+| [SRC-3451CC474D-L000669](../../tests/test_api.py#L669) | 669 | `"    monkeypatch.setenv(\"OMARAI_MAX_CONCURRENT_AGENT_REQUESTS\", \"99\")"` | — |
+| [SRC-3451CC474D-L000670](../../tests/test_api.py#L670) | 670 | `"    assert _configured_agent_concurrency_limit() == 8"` | — |
+| [SRC-3451CC474D-L000671](../../tests/test_api.py#L671) | 671 | `"    monkeypatch.setenv(\"OMARAI_MAX_CONCURRENT_AGENT_REQUESTS\", \"invalid\")"` | — |
+| [SRC-3451CC474D-L000672](../../tests/test_api.py#L672) | 672 | `"    assert _configured_agent_concurrency_limit() == 4"` | — |
+| [SRC-3451CC474D-L000673](../../tests/test_api.py#L673) | 673 | `""` | — |
+| [SRC-3451CC474D-L000674](../../tests/test_api.py#L674) | 674 | `""` | — |
+| [SRC-3451CC474D-L000675](../../tests/test_api.py#L675) | 675 | `"def test_api_rejects_oversized_request_body(local_api):"` | — |
+| [SRC-3451CC474D-L000676](../../tests/test_api.py#L676) | 676 | `"    status, payload = request_json("` | — |
+| [SRC-3451CC474D-L000677](../../tests/test_api.py#L677) | 677 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L000678](../../tests/test_api.py#L678) | 678 | `"        \"/api/analyze\","` | — |
+| [SRC-3451CC474D-L000679](../../tests/test_api.py#L679) | 679 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L000680](../../tests/test_api.py#L680) | 680 | `"        payload={\"text\": \"x\" * 200_001},"` | — |
 | [SRC-3451CC474D-L000681](../../tests/test_api.py#L681) | 681 | `"    )"` | — |
 | [SRC-3451CC474D-L000682](../../tests/test_api.py#L682) | 682 | `""` | — |
 | [SRC-3451CC474D-L000683](../../tests/test_api.py#L683) | 683 | `"    assert status == 413"` | — |
@@ -788,31 +816,3 @@
 | [SRC-3451CC474D-L001450](../../tests/test_api.py#L1450) | 1450 | `"        method=\"POST\","` | — |
 | [SRC-3451CC474D-L001451](../../tests/test_api.py#L1451) | 1451 | `"        payload={"` | — |
 | [SRC-3451CC474D-L001452](../../tests/test_api.py#L1452) | 1452 | `"            \"product\": {\"name\": \"FACP\", \"aliases\": [\"لوحة إنذار\"], \"use_cases\": [], \"problems_solved\": []},"` | — |
-| [SRC-3451CC474D-L001453](../../tests/test_api.py#L1453) | 1453 | `"            \"market\": {\"locations\": [\"Cairo\"], \"industries\": [], \"customer_types\": [], \"decision_roles\": [], \"exclusions\": []},"` | — |
-| [SRC-3451CC474D-L001454](../../tests/test_api.py#L1454) | 1454 | `"            \"locale\": \"en\","` | — |
-| [SRC-3451CC474D-L001455](../../tests/test_api.py#L1455) | 1455 | `"        },"` | — |
-| [SRC-3451CC474D-L001456](../../tests/test_api.py#L1456) | 1456 | `"        headers=headers,"` | — |
-| [SRC-3451CC474D-L001457](../../tests/test_api.py#L1457) | 1457 | `"    )"` | — |
-| [SRC-3451CC474D-L001458](../../tests/test_api.py#L1458) | 1458 | `"    assert profile_status == 201"` | — |
-| [SRC-3451CC474D-L001459](../../tests/test_api.py#L1459) | 1459 | `""` | — |
-| [SRC-3451CC474D-L001460](../../tests/test_api.py#L1460) | 1460 | `"    status, error = request_json("` | — |
-| [SRC-3451CC474D-L001461](../../tests/test_api.py#L1461) | 1461 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L001462](../../tests/test_api.py#L1462) | 1462 | `"        \"/api/discoveries\","` | — |
-| [SRC-3451CC474D-L001463](../../tests/test_api.py#L1463) | 1463 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L001464](../../tests/test_api.py#L1464) | 1464 | `"        payload={\"profile_id\": profile[\"id\"], \"allow_optional_providers\": True},"` | — |
-| [SRC-3451CC474D-L001465](../../tests/test_api.py#L1465) | 1465 | `"        headers=headers,"` | — |
-| [SRC-3451CC474D-L001466](../../tests/test_api.py#L1466) | 1466 | `"    )"` | — |
-| [SRC-3451CC474D-L001467](../../tests/test_api.py#L1467) | 1467 | `"    assert status == 403"` | — |
-| [SRC-3451CC474D-L001468](../../tests/test_api.py#L1468) | 1468 | `"    assert \"مالك مساحة العمل\" in error[\"error\"]"` | — |
-| [SRC-3451CC474D-L001469](../../tests/test_api.py#L1469) | 1469 | `""` | — |
-| [SRC-3451CC474D-L001470](../../tests/test_api.py#L1470) | 1470 | `""` | — |
-| [SRC-3451CC474D-L001471](../../tests/test_api.py#L1471) | 1471 | `"@pytest.mark.parametrize("` | — |
-| [SRC-3451CC474D-L001472](../../tests/test_api.py#L1472) | 1472 | `"    \"forwarding_header\","` | — |
-| [SRC-3451CC474D-L001473](../../tests/test_api.py#L1473) | 1473 | `"    ["` | — |
-| [SRC-3451CC474D-L001474](../../tests/test_api.py#L1474) | 1474 | `"        {\"X-Forwarded-For\": \"203.0.113.9\"},"` | — |
-| [SRC-3451CC474D-L001475](../../tests/test_api.py#L1475) | 1475 | `"        {\"CF-Connecting-IP\": \"203.0.113.9\"},"` | — |
-| [SRC-3451CC474D-L001476](../../tests/test_api.py#L1476) | 1476 | `"        {\"Forwarded\": \"for=203.0.113.9\"},"` | — |
-| [SRC-3451CC474D-L001477](../../tests/test_api.py#L1477) | 1477 | `"    ],"` | — |
-| [SRC-3451CC474D-L001478](../../tests/test_api.py#L1478) | 1478 | `")"` | — |
-| [SRC-3451CC474D-L001479](../../tests/test_api.py#L1479) | 1479 | `"def test_loopback_auth_is_refused_for_forwarded_requests_even_with_local_opt_in("` | — |
-| [SRC-3451CC474D-L001480](../../tests/test_api.py#L1480) | 1480 | `"    local_api, forwarding_header"` | — |

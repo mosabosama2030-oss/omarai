@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3AA6165B18-L000158 إلى SRC-8D00DCEC0D-L000439
+- النطاق: SRC-3AA6165B18-L000130 إلى SRC-8D00DCEC0D-L000411
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,34 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3AA6165B18-L000130](../../agents/research_guardrails.py#L130) | 130 | `"    current = now or datetime.now(UTC)"` | — |
+| [SRC-3AA6165B18-L000131](../../agents/research_guardrails.py#L131) | 131 | `"    if current.tzinfo is None:"` | — |
+| [SRC-3AA6165B18-L000132](../../agents/research_guardrails.py#L132) | 132 | `"        current = current.replace(tzinfo=UTC)"` | — |
+| [SRC-3AA6165B18-L000133](../../agents/research_guardrails.py#L133) | 133 | `"    published = _parse_publication_date(source.get(\"published_at\"), current)"` | — |
+| [SRC-3AA6165B18-L000134](../../agents/research_guardrails.py#L134) | 134 | `"    if published is None:"` | — |
+| [SRC-3AA6165B18-L000135](../../agents/research_guardrails.py#L135) | 135 | `"        return {\"eligible\": False, \"status\": \"date_unavailable\", \"age_days\": None}"` | — |
+| [SRC-3AA6165B18-L000136](../../agents/research_guardrails.py#L136) | 136 | `"    if published > current + timedelta(days=1):"` | — |
+| [SRC-3AA6165B18-L000137](../../agents/research_guardrails.py#L137) | 137 | `"        return {\"eligible\": False, \"status\": \"future_date\", \"age_days\": None}"` | — |
+| [SRC-3AA6165B18-L000138](../../agents/research_guardrails.py#L138) | 138 | `"    age_days = max(0, (current - published).total_seconds() / 86400)"` | — |
+| [SRC-3AA6165B18-L000139](../../agents/research_guardrails.py#L139) | 139 | `"    if age_days > max_age_days:"` | — |
+| [SRC-3AA6165B18-L000140](../../agents/research_guardrails.py#L140) | 140 | `"        return {"` | — |
+| [SRC-3AA6165B18-L000141](../../agents/research_guardrails.py#L141) | 141 | `"            \"eligible\": False,"` | — |
+| [SRC-3AA6165B18-L000142](../../agents/research_guardrails.py#L142) | 142 | `"            \"status\": \"stale\","` | — |
+| [SRC-3AA6165B18-L000143](../../agents/research_guardrails.py#L143) | 143 | `"            \"age_days\": round(age_days, 2),"` | — |
+| [SRC-3AA6165B18-L000144](../../agents/research_guardrails.py#L144) | 144 | `"            \"max_age_days\": max_age_days,"` | — |
+| [SRC-3AA6165B18-L000145](../../agents/research_guardrails.py#L145) | 145 | `"        }"` | — |
+| [SRC-3AA6165B18-L000146](../../agents/research_guardrails.py#L146) | 146 | `"    if not bool(source.get(\"page_fetched\")) or not str(source.get(\"page_text\") or \"\").strip():"` | — |
+| [SRC-3AA6165B18-L000147](../../agents/research_guardrails.py#L147) | 147 | `"        return {"` | — |
+| [SRC-3AA6165B18-L000148](../../agents/research_guardrails.py#L148) | 148 | `"            \"eligible\": False,"` | — |
+| [SRC-3AA6165B18-L000149](../../agents/research_guardrails.py#L149) | 149 | `"            \"status\": \"page_not_read\","` | — |
+| [SRC-3AA6165B18-L000150](../../agents/research_guardrails.py#L150) | 150 | `"            \"age_days\": round(age_days, 2),"` | — |
+| [SRC-3AA6165B18-L000151](../../agents/research_guardrails.py#L151) | 151 | `"            \"max_age_days\": max_age_days,"` | — |
+| [SRC-3AA6165B18-L000152](../../agents/research_guardrails.py#L152) | 152 | `"        }"` | — |
+| [SRC-3AA6165B18-L000153](../../agents/research_guardrails.py#L153) | 153 | `"    return {"` | — |
+| [SRC-3AA6165B18-L000154](../../agents/research_guardrails.py#L154) | 154 | `"        \"eligible\": True,"` | — |
+| [SRC-3AA6165B18-L000155](../../agents/research_guardrails.py#L155) | 155 | `"        \"status\": \"recent_page_read\","` | — |
+| [SRC-3AA6165B18-L000156](../../agents/research_guardrails.py#L156) | 156 | `"        \"age_days\": round(age_days, 2),"` | — |
+| [SRC-3AA6165B18-L000157](../../agents/research_guardrails.py#L157) | 157 | `"        \"max_age_days\": max_age_days,"` | — |
 | [SRC-3AA6165B18-L000158](../../agents/research_guardrails.py#L158) | 158 | `"    }"` | — |
 | [SRC-3AA6165B18-L000159](../../agents/research_guardrails.py#L159) | 159 | `""` | — |
 | [SRC-3AA6165B18-L000160](../../agents/research_guardrails.py#L160) | 160 | `""` | — |
@@ -806,31 +834,3 @@
 | [SRC-8D00DCEC0D-L000409](../../agents/sales_domain.py#L409) | 409 | `"        if self.content_basis == EvidenceBasis.PAGE_TEXT and not self.page_read:"` | — |
 | [SRC-8D00DCEC0D-L000410](../../agents/sales_domain.py#L410) | 410 | `"            raise ValueError(\"page_text evidence requires page_read=True\")"` | — |
 | [SRC-8D00DCEC0D-L000411](../../agents/sales_domain.py#L411) | 411 | `""` | — |
-| [SRC-8D00DCEC0D-L000412](../../agents/sales_domain.py#L412) | 412 | `"    def to_dict(self) -> dict[str, object]:"` | — |
-| [SRC-8D00DCEC0D-L000413](../../agents/sales_domain.py#L413) | 413 | `"        return {"` | — |
-| [SRC-8D00DCEC0D-L000414](../../agents/sales_domain.py#L414) | 414 | `"            \"source_id\": self.source_id,"` | — |
-| [SRC-8D00DCEC0D-L000415](../../agents/sales_domain.py#L415) | 415 | `"            \"source_url\": self.source_url,"` | — |
-| [SRC-8D00DCEC0D-L000416](../../agents/sales_domain.py#L416) | 416 | `"            \"excerpt\": self.excerpt,"` | — |
-| [SRC-8D00DCEC0D-L000417](../../agents/sales_domain.py#L417) | 417 | `"            \"content_basis\": self.content_basis.value,"` | — |
-| [SRC-8D00DCEC0D-L000418](../../agents/sales_domain.py#L418) | 418 | `"            \"publication_date\": self.publication_date,"` | — |
-| [SRC-8D00DCEC0D-L000419](../../agents/sales_domain.py#L419) | 419 | `"            \"event_date\": self.event_date,"` | — |
-| [SRC-8D00DCEC0D-L000420](../../agents/sales_domain.py#L420) | 420 | `"            \"observed_at\": self.observed_at,"` | — |
-| [SRC-8D00DCEC0D-L000421](../../agents/sales_domain.py#L421) | 421 | `"            \"page_read\": self.page_read,"` | — |
-| [SRC-8D00DCEC0D-L000422](../../agents/sales_domain.py#L422) | 422 | `"        }"` | — |
-| [SRC-8D00DCEC0D-L000423](../../agents/sales_domain.py#L423) | 423 | `""` | — |
-| [SRC-8D00DCEC0D-L000424](../../agents/sales_domain.py#L424) | 424 | `""` | — |
-| [SRC-8D00DCEC0D-L000425](../../agents/sales_domain.py#L425) | 425 | `"@dataclass(frozen=True, slots=True)"` | — |
-| [SRC-8D00DCEC0D-L000426](../../agents/sales_domain.py#L426) | 426 | `"class DemandSignal:"` | — |
-| [SRC-8D00DCEC0D-L000427](../../agents/sales_domain.py#L427) | 427 | `"    \"\"\"A classified demand signal, kept independent from product-fit assessment.\"\"\""` | — |
-| [SRC-8D00DCEC0D-L000428](../../agents/sales_domain.py#L428) | 428 | `""` | — |
-| [SRC-8D00DCEC0D-L000429](../../agents/sales_domain.py#L429) | 429 | `"    signal_id: str"` | — |
-| [SRC-8D00DCEC0D-L000430](../../agents/sales_domain.py#L430) | 430 | `"    signal_type: DemandSignalType"` | — |
-| [SRC-8D00DCEC0D-L000431](../../agents/sales_domain.py#L431) | 431 | `"    evidence: DemandEvidence"` | — |
-| [SRC-8D00DCEC0D-L000432](../../agents/sales_domain.py#L432) | 432 | `"    product_fit: ProductFit = ProductFit.UNASSESSED"` | — |
-| [SRC-8D00DCEC0D-L000433](../../agents/sales_domain.py#L433) | 433 | `"    identity_status: IdentityStatus = IdentityStatus.UNKNOWN"` | — |
-| [SRC-8D00DCEC0D-L000434](../../agents/sales_domain.py#L434) | 434 | `"    classification_reason: str = \"\""` | — |
-| [SRC-8D00DCEC0D-L000435](../../agents/sales_domain.py#L435) | 435 | `"    product_fit_reason: str = \"\""` | — |
-| [SRC-8D00DCEC0D-L000436](../../agents/sales_domain.py#L436) | 436 | `""` | — |
-| [SRC-8D00DCEC0D-L000437](../../agents/sales_domain.py#L437) | 437 | `"    def __post_init__(self) -> None:"` | — |
-| [SRC-8D00DCEC0D-L000438](../../agents/sales_domain.py#L438) | 438 | `"        object.__setattr__("` | — |
-| [SRC-8D00DCEC0D-L000439](../../agents/sales_domain.py#L439) | 439 | `"            self,"` | — |
