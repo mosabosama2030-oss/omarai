@@ -2252,7 +2252,7 @@ class WebAgent:
         rules = (
             ("SA", r"(?<!\w)(?:saudi arabia|ksa|riyadh|jeddah)(?!\w)|السعودي(?:ة|ه)"),
             ("AE", r"(?<!\w)(?:uae|united arab emirates|dubai|abu dhabi)(?!\w)|الامارات"),
-            ("GB", r"(?<!\w)(?:united kingdom|great britain|uk|london)(?!\w)|المملكه المتحده|بريطانيا"),
+            ("UK", r"(?<!\w)(?:united kingdom|great britain|uk|london)(?!\w)|المملكه المتحده|بريطانيا"),
             ("EG", r"(?<!\w)(?:egypt|egyptian|cairo|alexandria|giza)(?!\w)|مصر|القاهره|الاسكندريه|الجيزه"),
             ("US", r"(?<!\w)(?:united states|usa|u\\.s\\.a\\.|america|new york|los angeles)(?!\w)|الولايات المتحده|امريكا"),
         )
@@ -2271,7 +2271,7 @@ class WebAgent:
             return []
         request_payload: dict[str, Any] = {
             "query": query[:500],
-            "sources": ["web"],
+            "sources": [{"type": "web"}],
             "limit": MAX_PROVIDER_RESULTS,
         }
         country = self._firecrawl_search_country(query)
