@@ -174,7 +174,7 @@ def test_firecrawl_capability_snapshot_reports_configuration_and_budget(
 
     snapshot = WebAgent()._capability_status_snapshot()
     firecrawl = next(
-        item for item in snapshot["providers"]
+        item for item in snapshot["web_search"]["providers"]
         if item["name"] == "firecrawl_search_api"
     )
 
