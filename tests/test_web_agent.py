@@ -3193,7 +3193,7 @@ def test_search_web_classifies_http_challenge_and_rate_limit_as_provider_degrada
         for item in agent._provider_diagnostics
         if item["provider"] in {"duckduckgo_html", "bing_rss"}
     }
-    assert statuses["duckduckgo_html"] == "http_error"
+    assert statuses["duckduckgo_html"] == "blocked"
     assert statuses["bing_rss"] == "rate_limited"
 
 
