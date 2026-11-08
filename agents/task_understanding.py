@@ -1192,6 +1192,34 @@ def build_query_strategy_matrix(
         and raw_context_resolution.get("topic_shift") is not True
         and raw_context_resolution.get("needs_clarification") is not True
     )
+    context_anchor_parts: list[str] = []
+    if inherit_context_slots:
+        context_topic = raw_context_resolution.get("topic")
+        if isinstance(context_topic, str) and context_topic.strip():
+            context_anchor_parts.append(context_topic.strip())
+        context_entities = raw_context_resolution.get("entities")
+        if isinstance(context_entities, list):
+            for entity in context_entities[:5]:
+                if (
+                    isinstance(entity, str)
+                    and entity.strip()
+                    and normalize_text(entity) not in normalize_text(" ".join(context_anchor_parts))
+                ):
+                    context_anchor_parts.append(entity.strip())
+    context_anchor = _SPACE.sub(" ", " ".join(context_anchor_parts)).strip()
+    topic_anchor_query = context_anchor or (
+        str(queries[0]).strip()
+        if queries and isinstance(queries[0], str)
+        else str(question or "")
+    )
+    if not context_anchor:
+        topic_anchor_query = re.sub(
+            r"^(?:من فضلك|لو سمحت|ابحث لي|ابحث|دورلي|دور|اعثر على|رشح لي|رشح|"
+            r"please|search for|find|look up|recommend)\\s*",
+            "",
+            topic_anchor_query,
+            flags=re.IGNORECASE,
+        )
 
     def add(query: Any, strategy: str, rationale: str, *, enforce_topic: bool = True) -> None:
         if not isinstance(query, str) or not query.strip() or len(rows) >= maximum:
