@@ -1002,6 +1002,12 @@ def _generated_strategy_candidates(topic: str, spec: dict[str, Any]) -> list[tup
     family = str(spec.get("task_family") or "")
     constraints = spec.get("constraints") if isinstance(spec.get("constraints"), dict) else {}
     aspects = constraints.get("explicit_aspects") if isinstance(constraints.get("explicit_aspects"), list) else []
+    raw_inherited_aspects = spec.get("inherited_context_aspects")
+    inherited_aspects = (
+        [item for item in raw_inherited_aspects if isinstance(item, str) and item.strip()][:MAX_TASK_ASPECTS]
+        if isinstance(raw_inherited_aspects, list)
+        else []
+    )
     candidates: list[tuple[str, str, str]] = []
     if not topic.strip():
         return candidates
@@ -1036,14 +1042,14 @@ def _generated_strategy_candidates(topic: str, spec: dict[str, Any]) -> list[tup
             (f"{topic} official specifications", "primary_specification", "separate technical specifications from opinion"),
             (f"{topic} independent comparison pros cons", "independent_comparison", "seek comparative analysis and trade-offs"),
         ])
-    elif aspects:
-        # Explicit criteria also matter in recommendations and current-information
-        # follow-ups; do not silently discard a requested dimension outside compare.
-        for aspect in aspects[:MAX_TASK_ASPECTS]:
+    elif inherited_aspects:
+        # A resolved follow-up aspect is a genuine inherited criterion. Do not
+        # promote arbitrary question fragments or output instructions to criteria.
+        for aspect in inherited_aspects:
             candidates.append((
                 f"{topic} {aspect}",
                 "explicit_criterion",
-                f"preserve and retrieve evidence for requested aspect: {aspect}",
+                f"preserve and retrieve evidence for inherited aspect: {aspect}",
             ))
     if family == "troubleshoot" or "troubleshoot" in hypothesis_families:
         candidates.extend([
@@ -1386,17 +1392,19 @@ def build_query_strategy_matrix(
         # repeated resolved sentence that truncates the actual evidence criterion.
         base = context_anchor[:180]
 
-    # Avoid adding a strategy query when a short utterance itself is the complete
-    # detected aspect (for example "كام سعرها؟"). The seed already covers it.
+    # Only a validated context slot is inherited as a new criterion outside a
+    # compare task. Do not promote arbitrary fragments or answer-format wording.
     base_key = _query_key(base)
-    explicit_aspects = [
-        aspect for aspect in explicit_aspects
-        if _query_key(aspect) and _query_key(aspect) != base_key
-    ]
+    inherited_context_aspects: list[str] = []
+    inherited_aspect = context_slots.get("aspect", "").strip() if inherit_context_slots else ""
+    if inherited_aspect and _query_key(inherited_aspect) != base_key:
+        inherited_context_aspects.append(inherited_aspect[:120])
+
     candidate_constraints = dict(constraints)
     candidate_constraints["explicit_aspects"] = explicit_aspects
     spec_for_candidates = dict(spec)
     spec_for_candidates["constraints"] = candidate_constraints
+    spec_for_candidates["inherited_context_aspects"] = inherited_context_aspects
 
     # A lead-generation task must preserve the supplied product-anchored queries
     # in purchaser language. General research angles (reports, risks, listings)
