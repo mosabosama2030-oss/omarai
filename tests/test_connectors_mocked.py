@@ -88,6 +88,7 @@ def test_openalex_uses_api_key_and_ignores_retired_mailto(monkeypatch):
 
     def fake_json(url, headers=None, timeout=12):
         captured["url"] = url
+        captured["headers"] = headers or {}
         return {"results": []}
 
     monkeypatch.setattr(sc, "_http_get_json", fake_json)
@@ -96,7 +97,8 @@ def test_openalex_uses_api_key_and_ignores_retired_mailto(monkeypatch):
     params = urllib.parse.parse_qs(urllib.parse.urlsplit(captured["url"]).query)
     assert params["search"] == ["solar cells"]
     assert params["per_page"] == ["3"]
-    assert params["api_key"] == ["test-openalex-key"]
+    assert captured["headers"]["Authorization"] == "Bearer test-openalex-key"
+    assert "test-openalex-key" not in captured["url"]
     assert "mailto" not in params
 
 
@@ -107,14 +109,15 @@ def test_openalex_remains_available_without_api_key_or_retired_mailto(monkeypatc
 
     def fake_json(url, headers=None, timeout=12):
         captured["url"] = url
+        captured["headers"] = headers or {}
         return {"results": []}
 
     monkeypatch.setattr(sc, "_http_get_json", fake_json)
     assert sc.search_openalex("solar cells") == []
 
     params = urllib.parse.parse_qs(urllib.parse.urlsplit(captured["url"]).query)
-    assert "api_key" not in params
     assert "mailto" not in params
+    assert "Authorization" not in captured["headers"]
 
 
 def test_crossref_does_not_send_a_placeholder_contact_email(monkeypatch):

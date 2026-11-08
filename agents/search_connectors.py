@@ -13,7 +13,7 @@ from typing import Any
 MAX_CONNECTOR_RESULTS = 6
 MAX_CONNECTOR_RESPONSE_BYTES = 2_000_000
 DEFAULT_TIMEOUT_SECONDS = 5
-USER_AGENT = "OmaraiResearchBot/1.0 (mailto:ops@example.com)"
+USER_AGENT = "OmaraiResearchBot/1.0"
 ConnectorFn = Callable[[str, int], list[dict[str, Any]]]
 
 
@@ -76,8 +76,12 @@ def _result(*, title: str, url: str, snippet: str, provider: str, rank: int, que
 def search_openalex(query: str, limit: int = MAX_CONNECTOR_RESULTS) -> list[dict[str, Any]]:
     if not isinstance(query, str) or not query.strip():
         return []
-    params = urllib.parse.urlencode({"search": query.strip()[:240], "per_page": max(1, min(int(limit), MAX_CONNECTOR_RESULTS)), "mailto": os.getenv("OPENALEX_MAILTO", "ops@example.com")})
-    data = _http_get_json(f"https://api.openalex.org/works?{params}")
+    params = urllib.parse.urlencode({"search": query.strip()[:240], "per_page": max(1, min(int(limit), MAX_CONNECTOR_RESULTS))})
+    headers = {}
+    api_key = os.getenv("OPENALEX_API_KEY", "").strip()
+    if api_key:
+        headers["Authorization"] = f"Bearer {api_key}"
+    data = _http_get_json(f"https://api.openalex.org/works?{params}", headers=headers)
     rows: list[dict[str, Any]] = []
     for item in data.get("results", [])[:limit]:
         if not isinstance(item, dict):
@@ -120,8 +124,12 @@ def search_arxiv(query: str, limit: int = MAX_CONNECTOR_RESULTS) -> list[dict[st
 def search_crossref(query: str, limit: int = MAX_CONNECTOR_RESULTS) -> list[dict[str, Any]]:
     if not isinstance(query, str) or not query.strip():
         return []
-    params = urllib.parse.urlencode({"query": query.strip()[:240], "rows": max(1, min(int(limit), MAX_CONNECTOR_RESULTS)), "mailto": os.getenv("CROSSREF_MAILTO", "ops@example.com")})
-    data = _http_get_json(f"https://api.crossref.org/works?{params}", headers={"User-Agent": USER_AGENT})
+    params = {"query": query.strip()[:240], "rows": max(1, min(int(limit), MAX_CONNECTOR_RESULTS))}
+    contact_email = os.getenv("CROSSREF_MAILTO", "").strip()
+    if contact_email:
+        params["mailto"] = contact_email
+    query_string = urllib.parse.urlencode(params)
+    data = _http_get_json(f"https://api.crossref.org/works?{query_string}", headers={"User-Agent": USER_AGENT})
     items = ((data.get("message") or {}).get("items") or [])[:limit]
     rows: list[dict[str, Any]] = []
     for item in items:
