@@ -173,3 +173,13 @@ def test_arxiv_parser_handles_namespaced_atom_and_decodes_xml_entities(monkeypat
     assert rows[0]["snippet"] == "Safe <design> & robust."
     assert rows[0]["published_at"] == "2026-11-08T00:00:00Z"
     assert rows[0]["url"] == "https://arxiv.org/abs/2611.00001"
+
+
+def test_arxiv_connector_contains_malformed_xml_failure(monkeypatch):
+    monkeypatch.setattr(
+        sc,
+        "_http_get_text",
+        lambda _url, timeout=12: "<atom:feed><atom:entry>",
+    )
+
+    assert sc.run_connector("arxiv", "research query") == []
