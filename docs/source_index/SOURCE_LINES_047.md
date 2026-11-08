@@ -4,7 +4,7 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-DA139AC9D0-L000064 إلى SRC-FA4E1423C3-L000192
+- النطاق: SRC-DA139AC9D0-L000023 إلى SRC-FA4E1423C3-L000151
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,47 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-DA139AC9D0-L000023](../../tests/test_dialogue_state.py#L23) | 23 | `"    assert \"كام سعرها\" in context[\"resolved_question\"]"` | — |
+| [SRC-DA139AC9D0-L000024](../../tests/test_dialogue_state.py#L24) | 24 | `"    assert context[\"confidence_band\"] == \"unassessed\""` | — |
+| [SRC-DA139AC9D0-L000025](../../tests/test_dialogue_state.py#L25) | 25 | `""` | — |
+| [SRC-DA139AC9D0-L000026](../../tests/test_dialogue_state.py#L26) | 26 | `""` | — |
+| [SRC-DA139AC9D0-L000027](../../tests/test_dialogue_state.py#L27) | 27 | `"def test_topic_shift_is_a_hard_boundary_against_stale_context() -> None:"` | — |
+| [SRC-DA139AC9D0-L000028](../../tests/test_dialogue_state.py#L28) | 28 | `"    question = \"ازاي أنظف شاشة اللابتوب بأمان؟\""` | — |
+| [SRC-DA139AC9D0-L000029](../../tests/test_dialogue_state.py#L29) | 29 | `"    history = ["` | — |
+| [SRC-DA139AC9D0-L000030](../../tests/test_dialogue_state.py#L30) | 30 | `"        {\"role\": \"user\", \"content\": \"قارن iPhone 17 وSamsung S26\"},"` | — |
+| [SRC-DA139AC9D0-L000031](../../tests/test_dialogue_state.py#L31) | 31 | `"        {\"role\": \"assistant\", \"content\": \"هذه مقارنة بين هاتفين.\"},"` | — |
+| [SRC-DA139AC9D0-L000032](../../tests/test_dialogue_state.py#L32) | 32 | `"    ]"` | — |
+| [SRC-DA139AC9D0-L000033](../../tests/test_dialogue_state.py#L33) | 33 | `"    proposed = {"` | — |
+| [SRC-DA139AC9D0-L000034](../../tests/test_dialogue_state.py#L34) | 34 | `"        \"resolved_question\": \"قارن iPhone 17 ثم ازاي أنظف شاشة اللابتوب بأمان\","` | — |
+| [SRC-DA139AC9D0-L000035](../../tests/test_dialogue_state.py#L35) | 35 | `"        \"topic_shift\": True,"` | — |
+| [SRC-DA139AC9D0-L000036](../../tests/test_dialogue_state.py#L36) | 36 | `"        \"is_follow_up\": True,"` | — |
+| [SRC-DA139AC9D0-L000037](../../tests/test_dialogue_state.py#L37) | 37 | `"        \"intent\": \"how_to\","` | — |
+| [SRC-DA139AC9D0-L000038](../../tests/test_dialogue_state.py#L38) | 38 | `"        \"needs_clarification\": False,"` | — |
+| [SRC-DA139AC9D0-L000039](../../tests/test_dialogue_state.py#L39) | 39 | `"    }"` | — |
+| [SRC-DA139AC9D0-L000040](../../tests/test_dialogue_state.py#L40) | 40 | `""` | — |
+| [SRC-DA139AC9D0-L000041](../../tests/test_dialogue_state.py#L41) | 41 | `"    context = validate_dialogue_context(proposed, question, history)"` | — |
+| [SRC-DA139AC9D0-L000042](../../tests/test_dialogue_state.py#L42) | 42 | `""` | — |
+| [SRC-DA139AC9D0-L000043](../../tests/test_dialogue_state.py#L43) | 43 | `"    assert context[\"topic_shift\"] is True"` | — |
+| [SRC-DA139AC9D0-L000044](../../tests/test_dialogue_state.py#L44) | 44 | `"    assert context[\"is_follow_up\"] is False"` | — |
+| [SRC-DA139AC9D0-L000045](../../tests/test_dialogue_state.py#L45) | 45 | `"    assert context[\"resolved_question\"] == question"` | — |
+| [SRC-DA139AC9D0-L000046](../../tests/test_dialogue_state.py#L46) | 46 | `"    assert context[\"resolution_basis\"] == \"current_message\""` | — |
+| [SRC-DA139AC9D0-L000047](../../tests/test_dialogue_state.py#L47) | 47 | `"    assert context[\"topic\"] == \"\""` | — |
+| [SRC-DA139AC9D0-L000048](../../tests/test_dialogue_state.py#L48) | 48 | `"    assert context[\"entities\"] == []"` | — |
+| [SRC-DA139AC9D0-L000049](../../tests/test_dialogue_state.py#L49) | 49 | `"    assert context[\"slots\"] == {}"` | — |
+| [SRC-DA139AC9D0-L000050](../../tests/test_dialogue_state.py#L50) | 50 | `"    assert context[\"changed_slots\"] == []"` | — |
+| [SRC-DA139AC9D0-L000051](../../tests/test_dialogue_state.py#L51) | 51 | `""` | — |
+| [SRC-DA139AC9D0-L000052](../../tests/test_dialogue_state.py#L52) | 52 | `""` | — |
+| [SRC-DA139AC9D0-L000053](../../tests/test_dialogue_state.py#L53) | 53 | `"def test_standalone_question_cannot_inherit_old_topic_without_followup_signal() -> None:"` | — |
+| [SRC-DA139AC9D0-L000054](../../tests/test_dialogue_state.py#L54) | 54 | `"    question = \"ازاي أنظف شاشة اللابتوب بأمان؟\""` | — |
+| [SRC-DA139AC9D0-L000055](../../tests/test_dialogue_state.py#L55) | 55 | `"    history = ["` | — |
+| [SRC-DA139AC9D0-L000056](../../tests/test_dialogue_state.py#L56) | 56 | `"        {\"role\": \"user\", \"content\": \"قارن iPhone 17 وSamsung S26 من حيث السعر\"},"` | — |
+| [SRC-DA139AC9D0-L000057](../../tests/test_dialogue_state.py#L57) | 57 | `"        {\"role\": \"assistant\", \"content\": \"هذه مقارنة بين هاتفين.\"},"` | — |
+| [SRC-DA139AC9D0-L000058](../../tests/test_dialogue_state.py#L58) | 58 | `"    ]"` | — |
+| [SRC-DA139AC9D0-L000059](../../tests/test_dialogue_state.py#L59) | 59 | `"    proposed = {"` | — |
+| [SRC-DA139AC9D0-L000060](../../tests/test_dialogue_state.py#L60) | 60 | `"        \"resolved_question\": \"قارن iPhone 17 ثم ازاي أنظف شاشة اللابتوب بأمان\","` | — |
+| [SRC-DA139AC9D0-L000061](../../tests/test_dialogue_state.py#L61) | 61 | `"        \"topic\": \"مقارنة الهواتف\","` | — |
+| [SRC-DA139AC9D0-L000062](../../tests/test_dialogue_state.py#L62) | 62 | `"        \"entities\": [\"iPhone 17\", \"Samsung S26\"],"` | — |
+| [SRC-DA139AC9D0-L000063](../../tests/test_dialogue_state.py#L63) | 63 | `"        \"slots\": {\"product\": \"iPhone 17\", \"country\": \"مصر\"},"` | — |
 | [SRC-DA139AC9D0-L000064](../../tests/test_dialogue_state.py#L64) | 64 | `"        \"changed_slots\": [\"aspect\"],"` | — |
 | [SRC-DA139AC9D0-L000065](../../tests/test_dialogue_state.py#L65) | 65 | `"        \"is_follow_up\": False,"` | — |
 | [SRC-DA139AC9D0-L000066](../../tests/test_dialogue_state.py#L66) | 66 | `"        \"topic_shift\": False,"` | — |
@@ -802,44 +843,3 @@
 | [SRC-FA4E1423C3-L000149](../../tests/test_generate_index.py#L149) | 149 | `"    (tmp_path / \"logo.bin\").write_bytes(b\"\\x00\\x01\\x02\")"` | — |
 | [SRC-FA4E1423C3-L000150](../../tests/test_generate_index.py#L150) | 150 | `""` | — |
 | [SRC-FA4E1423C3-L000151](../../tests/test_generate_index.py#L151) | 151 | `"    inventory = INDEXER.build_file_inventory(tmp_path)"` | — |
-| [SRC-FA4E1423C3-L000152](../../tests/test_generate_index.py#L152) | 152 | `"    paths = {item.file for item in inventory}"` | — |
-| [SRC-FA4E1423C3-L000153](../../tests/test_generate_index.py#L153) | 153 | `"    by_path = {item.file: item for item in inventory}"` | — |
-| [SRC-FA4E1423C3-L000154](../../tests/test_generate_index.py#L154) | 154 | `""` | — |
-| [SRC-FA4E1423C3-L000155](../../tests/test_generate_index.py#L155) | 155 | `"    assert \"app.py\" in paths"` | — |
-| [SRC-FA4E1423C3-L000156](../../tests/test_generate_index.py#L156) | 156 | `"    assert \"docs/guide.md\" in paths"` | — |
-| [SRC-FA4E1423C3-L000157](../../tests/test_generate_index.py#L157) | 157 | `"    assert \".env.example\" in paths"` | — |
-| [SRC-FA4E1423C3-L000158](../../tests/test_generate_index.py#L158) | 158 | `"    assert \".env\" not in paths"` | — |
-| [SRC-FA4E1423C3-L000159](../../tests/test_generate_index.py#L159) | 159 | `"    assert \"local.sqlite3\" not in paths"` | — |
-| [SRC-FA4E1423C3-L000160](../../tests/test_generate_index.py#L160) | 160 | `"    assert \"logo.bin\" in paths"` | — |
-| [SRC-FA4E1423C3-L000161](../../tests/test_generate_index.py#L161) | 161 | `"    assert by_path[\"logo.bin\"].line_count is None"` | — |
-| [SRC-FA4E1423C3-L000162](../../tests/test_generate_index.py#L162) | 162 | `""` | — |
-| [SRC-FA4E1423C3-L000163](../../tests/test_generate_index.py#L163) | 163 | `""` | — |
-| [SRC-FA4E1423C3-L000164](../../tests/test_generate_index.py#L164) | 164 | `"def test_skips_virtual_environments_and_generated_dependency_directories("` | — |
-| [SRC-FA4E1423C3-L000165](../../tests/test_generate_index.py#L165) | 165 | `"    tmp_path: Path,"` | — |
-| [SRC-FA4E1423C3-L000166](../../tests/test_generate_index.py#L166) | 166 | `") -> None:"` | — |
-| [SRC-FA4E1423C3-L000167](../../tests/test_generate_index.py#L167) | 167 | `"    \"\"\"The scan avoids vendored dependencies, build outputs, and virtual environments.\"\"\""` | — |
-| [SRC-FA4E1423C3-L000168](../../tests/test_generate_index.py#L168) | 168 | `"    (tmp_path / \"app.py\").write_text("` | — |
-| [SRC-FA4E1423C3-L000169](../../tests/test_generate_index.py#L169) | 169 | `"        'def application_entry():\\n    \"\"\"Main entry point.\"\"\"\\n',"` | — |
-| [SRC-FA4E1423C3-L000170](../../tests/test_generate_index.py#L170) | 170 | `"        encoding=\"utf-8\","` | — |
-| [SRC-FA4E1423C3-L000171](../../tests/test_generate_index.py#L171) | 171 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000172](../../tests/test_generate_index.py#L172) | 172 | `"    excluded_files = ("` | — |
-| [SRC-FA4E1423C3-L000173](../../tests/test_generate_index.py#L173) | 173 | `"        tmp_path / \".venv\" / \"lib\" / \"hidden.py\","` | — |
-| [SRC-FA4E1423C3-L000174](../../tests/test_generate_index.py#L174) | 174 | `"        tmp_path / \"node_modules\" / \"package\" / \"hidden.py\","` | — |
-| [SRC-FA4E1423C3-L000175](../../tests/test_generate_index.py#L175) | 175 | `"        tmp_path / \"build\" / \"generated.py\","` | — |
-| [SRC-FA4E1423C3-L000176](../../tests/test_generate_index.py#L176) | 176 | `"        tmp_path / \"omarai_agent.egg-info\" / \"PKG-INFO\","` | — |
-| [SRC-FA4E1423C3-L000177](../../tests/test_generate_index.py#L177) | 177 | `"        tmp_path / \"package.dist-info\" / \"METADATA\","` | — |
-| [SRC-FA4E1423C3-L000178](../../tests/test_generate_index.py#L178) | 178 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000179](../../tests/test_generate_index.py#L179) | 179 | `"    for path in excluded_files:"` | — |
-| [SRC-FA4E1423C3-L000180](../../tests/test_generate_index.py#L180) | 180 | `"        path.parent.mkdir(parents=True, exist_ok=True)"` | — |
-| [SRC-FA4E1423C3-L000181](../../tests/test_generate_index.py#L181) | 181 | `"        path.write_text(\"def should_not_be_indexed():\\n    pass\\n\", encoding=\"utf-8\")"` | — |
-| [SRC-FA4E1423C3-L000182](../../tests/test_generate_index.py#L182) | 182 | `""` | — |
-| [SRC-FA4E1423C3-L000183](../../tests/test_generate_index.py#L183) | 183 | `"    symbols, files_scanned = INDEXER.scan_repository(tmp_path)"` | — |
-| [SRC-FA4E1423C3-L000184](../../tests/test_generate_index.py#L184) | 184 | `""` | — |
-| [SRC-FA4E1423C3-L000185](../../tests/test_generate_index.py#L185) | 185 | `"    assert files_scanned == 1"` | — |
-| [SRC-FA4E1423C3-L000186](../../tests/test_generate_index.py#L186) | 186 | `"    assert [symbol.name for symbol in symbols] == [\"application_entry\"]"` | — |
-| [SRC-FA4E1423C3-L000187](../../tests/test_generate_index.py#L187) | 187 | `"    inventory_paths = {item.file for item in INDEXER.build_file_inventory(tmp_path)}"` | — |
-| [SRC-FA4E1423C3-L000188](../../tests/test_generate_index.py#L188) | 188 | `"    assert not any(\".egg-info/\" in path for path in inventory_paths)"` | — |
-| [SRC-FA4E1423C3-L000189](../../tests/test_generate_index.py#L189) | 189 | `"    assert not any(\".dist-info/\" in path for path in inventory_paths)"` | — |
-| [SRC-FA4E1423C3-L000190](../../tests/test_generate_index.py#L190) | 190 | `""` | — |
-| [SRC-FA4E1423C3-L000191](../../tests/test_generate_index.py#L191) | 191 | `""` | — |
-| [SRC-FA4E1423C3-L000192](../../tests/test_generate_index.py#L192) | 192 | `"def test_syntax_error_does_not_overwrite_the_previous_index("` | — |

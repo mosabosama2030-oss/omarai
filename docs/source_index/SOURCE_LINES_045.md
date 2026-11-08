@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L001259 إلى SRC-6BECF5AD00-L000017
+- النطاق: SRC-3451CC474D-L001218 إلى SRC-DA61479D59-L000280
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,47 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L001218](../../tests/test_api.py#L1218) | 1218 | `"            \"GET /api/health HTTP/1.1\","` | — |
+| [SRC-3451CC474D-L001219](../../tests/test_api.py#L1219) | 1219 | `"            b\"Content-Length: 4\\r\\n\","` | — |
+| [SRC-3451CC474D-L001220](../../tests/test_api.py#L1220) | 1220 | `"            b\"test\","` | — |
+| [SRC-3451CC474D-L001221](../../tests/test_api.py#L1221) | 1221 | `"            b\"Content-Length\","` | — |
+| [SRC-3451CC474D-L001222](../../tests/test_api.py#L1222) | 1222 | `"        ),"` | — |
+| [SRC-3451CC474D-L001223](../../tests/test_api.py#L1223) | 1223 | `"    ],"` | — |
+| [SRC-3451CC474D-L001224](../../tests/test_api.py#L1224) | 1224 | `")"` | — |
+| [SRC-3451CC474D-L001225](../../tests/test_api.py#L1225) | 1225 | `"def test_api_rejects_ambiguous_or_unsupported_http_request_framing("` | — |
+| [SRC-3451CC474D-L001226](../../tests/test_api.py#L1226) | 1226 | `"    local_api, request_line, framing_headers, body, error_marker"` | — |
+| [SRC-3451CC474D-L001227](../../tests/test_api.py#L1227) | 1227 | `"):"` | — |
+| [SRC-3451CC474D-L001228](../../tests/test_api.py#L1228) | 1228 | `"    host_port = local_api.rsplit(\":\", 1)"` | — |
+| [SRC-3451CC474D-L001229](../../tests/test_api.py#L1229) | 1229 | `"    with socket.create_connection("` | — |
+| [SRC-3451CC474D-L001230](../../tests/test_api.py#L1230) | 1230 | `"        (host_port[0].removeprefix(\"http://\"), int(host_port[1])), timeout=2"` | — |
+| [SRC-3451CC474D-L001231](../../tests/test_api.py#L1231) | 1231 | `"    ) as client:"` | — |
+| [SRC-3451CC474D-L001232](../../tests/test_api.py#L1232) | 1232 | `"        client.settimeout(2)"` | — |
+| [SRC-3451CC474D-L001233](../../tests/test_api.py#L1233) | 1233 | `"        request = ("` | — |
+| [SRC-3451CC474D-L001234](../../tests/test_api.py#L1234) | 1234 | `"            request_line.encode(\"ascii\")"` | — |
+| [SRC-3451CC474D-L001235](../../tests/test_api.py#L1235) | 1235 | `"            + b\"\\r\\nHost: localhost\\r\\n\""` | — |
+| [SRC-3451CC474D-L001236](../../tests/test_api.py#L1236) | 1236 | `"            + b\"Content-Type: application/json\\r\\n\""` | — |
+| [SRC-3451CC474D-L001237](../../tests/test_api.py#L1237) | 1237 | `"            + framing_headers"` | — |
+| [SRC-3451CC474D-L001238](../../tests/test_api.py#L1238) | 1238 | `"            + b\"Connection: close\\r\\n\\r\\n\""` | — |
+| [SRC-3451CC474D-L001239](../../tests/test_api.py#L1239) | 1239 | `"            + body"` | — |
+| [SRC-3451CC474D-L001240](../../tests/test_api.py#L1240) | 1240 | `"        )"` | — |
+| [SRC-3451CC474D-L001241](../../tests/test_api.py#L1241) | 1241 | `"        client.sendall(request)"` | — |
+| [SRC-3451CC474D-L001242](../../tests/test_api.py#L1242) | 1242 | `"        response = b\"\""` | — |
+| [SRC-3451CC474D-L001243](../../tests/test_api.py#L1243) | 1243 | `"        while True:"` | — |
+| [SRC-3451CC474D-L001244](../../tests/test_api.py#L1244) | 1244 | `"            chunk = client.recv(4096)"` | — |
+| [SRC-3451CC474D-L001245](../../tests/test_api.py#L1245) | 1245 | `"            if not chunk:"` | — |
+| [SRC-3451CC474D-L001246](../../tests/test_api.py#L1246) | 1246 | `"                break"` | — |
+| [SRC-3451CC474D-L001247](../../tests/test_api.py#L1247) | 1247 | `"            response += chunk"` | — |
+| [SRC-3451CC474D-L001248](../../tests/test_api.py#L1248) | 1248 | `""` | — |
+| [SRC-3451CC474D-L001249](../../tests/test_api.py#L1249) | 1249 | `"    assert response.startswith(b\"HTTP/1.0 400\")"` | — |
+| [SRC-3451CC474D-L001250](../../tests/test_api.py#L1250) | 1250 | `"    assert error_marker in response"` | — |
+| [SRC-3451CC474D-L001251](../../tests/test_api.py#L1251) | 1251 | `"    assert b\"200 OK\" not in response"` | — |
+| [SRC-3451CC474D-L001252](../../tests/test_api.py#L1252) | 1252 | `""` | — |
+| [SRC-3451CC474D-L001253](../../tests/test_api.py#L1253) | 1253 | `"def test_api_closes_connection_when_declared_body_exceeds_limit(local_api):"` | — |
+| [SRC-3451CC474D-L001254](../../tests/test_api.py#L1254) | 1254 | `"    host_port = local_api.rsplit(\":\", 1)"` | — |
+| [SRC-3451CC474D-L001255](../../tests/test_api.py#L1255) | 1255 | `"    with socket.create_connection("` | — |
+| [SRC-3451CC474D-L001256](../../tests/test_api.py#L1256) | 1256 | `"        (host_port[0].removeprefix(\"http://\"), int(host_port[1])), timeout=2"` | — |
+| [SRC-3451CC474D-L001257](../../tests/test_api.py#L1257) | 1257 | `"    ) as client:"` | — |
+| [SRC-3451CC474D-L001258](../../tests/test_api.py#L1258) | 1258 | `"        client.settimeout(2)"` | — |
 | [SRC-3451CC474D-L001259](../../tests/test_api.py#L1259) | 1259 | `"        client.sendall("` | — |
 | [SRC-3451CC474D-L001260](../../tests/test_api.py#L1260) | 1260 | `"            b\"POST /api/analyze HTTP/1.1\\r\\n\""` | — |
 | [SRC-3451CC474D-L001261](../../tests/test_api.py#L1261) | 1261 | `"            b\"Host: localhost\\r\\n\""` | — |
@@ -802,53 +843,3 @@
 | [SRC-DA61479D59-L000278](../../tests/test_connector_summary_counters.py#L278) | 278 | `"                \"query\": \"first query\","` | — |
 | [SRC-DA61479D59-L000279](../../tests/test_connector_summary_counters.py#L279) | 279 | `"                \"status\": \"filtered_all\","` | — |
 | [SRC-DA61479D59-L000280](../../tests/test_connector_summary_counters.py#L280) | 280 | `"                \"result_count\": 3,"` | — |
-| [SRC-DA61479D59-L000281](../../tests/test_connector_summary_counters.py#L281) | 281 | `"                \"accepted_count\": 0,"` | — |
-| [SRC-DA61479D59-L000282](../../tests/test_connector_summary_counters.py#L282) | 282 | `"                \"rejected_count\": 3,"` | — |
-| [SRC-DA61479D59-L000283](../../tests/test_connector_summary_counters.py#L283) | 283 | `"            },"` | — |
-| [SRC-DA61479D59-L000284](../../tests/test_connector_summary_counters.py#L284) | 284 | `"            {"` | — |
-| [SRC-DA61479D59-L000285](../../tests/test_connector_summary_counters.py#L285) | 285 | `"                \"provider\": \"bing_rss\","` | — |
-| [SRC-DA61479D59-L000286](../../tests/test_connector_summary_counters.py#L286) | 286 | `"                \"query\": \"second query\","` | — |
-| [SRC-DA61479D59-L000287](../../tests/test_connector_summary_counters.py#L287) | 287 | `"                \"status\": \"filtered_all\","` | — |
-| [SRC-DA61479D59-L000288](../../tests/test_connector_summary_counters.py#L288) | 288 | `"                \"result_count\": 2,"` | — |
-| [SRC-DA61479D59-L000289](../../tests/test_connector_summary_counters.py#L289) | 289 | `"                \"accepted_count\": 0,"` | — |
-| [SRC-DA61479D59-L000290](../../tests/test_connector_summary_counters.py#L290) | 290 | `"                \"rejected_count\": 2,"` | — |
-| [SRC-DA61479D59-L000291](../../tests/test_connector_summary_counters.py#L291) | 291 | `"                \"rejection_counts\": {"` | — |
-| [SRC-DA61479D59-L000292](../../tests/test_connector_summary_counters.py#L292) | 292 | `"                    \"malformed_candidate\": 0,"` | — |
-| [SRC-DA61479D59-L000293](../../tests/test_connector_summary_counters.py#L293) | 293 | `"                    \"invalid_url_or_unsafe_target\": 0,"` | — |
-| [SRC-DA61479D59-L000294](../../tests/test_connector_summary_counters.py#L294) | 294 | `"                    \"blocked_domain\": 0,"` | — |
-| [SRC-DA61479D59-L000295](../../tests/test_connector_summary_counters.py#L295) | 295 | `"                    \"relevance_below_threshold\": 2,"` | — |
-| [SRC-DA61479D59-L000296](../../tests/test_connector_summary_counters.py#L296) | 296 | `"                },"` | — |
-| [SRC-DA61479D59-L000297](../../tests/test_connector_summary_counters.py#L297) | 297 | `"            },"` | — |
-| [SRC-DA61479D59-L000298](../../tests/test_connector_summary_counters.py#L298) | 298 | `"        ],"` | — |
-| [SRC-DA61479D59-L000299](../../tests/test_connector_summary_counters.py#L299) | 299 | `"        [],"` | — |
-| [SRC-DA61479D59-L000300](../../tests/test_connector_summary_counters.py#L300) | 300 | `"    )"` | — |
-| [SRC-DA61479D59-L000301](../../tests/test_connector_summary_counters.py#L301) | 301 | `"    bing = next(item for item in summary[\"connectors\"] if item[\"name\"] == \"bing_rss\")"` | — |
-| [SRC-DA61479D59-L000302](../../tests/test_connector_summary_counters.py#L302) | 302 | `"    assert bing[\"rejected_count\"] == 5"` | — |
-| [SRC-DA61479D59-L000303](../../tests/test_connector_summary_counters.py#L303) | 303 | `"    assert bing[\"rejection_counts_observed\"] is False"` | — |
-| [SRC-DA61479D59-L000304](../../tests/test_connector_summary_counters.py#L304) | 304 | `"    assert bing[\"rejection_counts\"] is None"` | — |
-## اختبارات
-
-### FILE-6BECF5AD00 — [tests/test_connectors_mocked.py](../../tests/test_connectors_mocked.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-6BECF5AD00-L000001](../../tests/test_connectors_mocked.py#L1) | 1 | `"\"\"\"Connector unit tests with mocked HTTP (no live network required).\"\"\""` | — |
-| [SRC-6BECF5AD00-L000002](../../tests/test_connectors_mocked.py#L2) | 2 | `"from __future__ import annotations"` | — |
-| [SRC-6BECF5AD00-L000003](../../tests/test_connectors_mocked.py#L3) | 3 | `""` | — |
-| [SRC-6BECF5AD00-L000004](../../tests/test_connectors_mocked.py#L4) | 4 | `""` | — |
-| [SRC-6BECF5AD00-L000005](../../tests/test_connectors_mocked.py#L5) | 5 | `"import urllib.parse"` | — |
-| [SRC-6BECF5AD00-L000006](../../tests/test_connectors_mocked.py#L6) | 6 | `""` | — |
-| [SRC-6BECF5AD00-L000007](../../tests/test_connectors_mocked.py#L7) | 7 | `"import agents.search_connectors as sc"` | — |
-| [SRC-6BECF5AD00-L000008](../../tests/test_connectors_mocked.py#L8) | 8 | `""` | — |
-| [SRC-6BECF5AD00-L000009](../../tests/test_connectors_mocked.py#L9) | 9 | `""` | — |
-| [SRC-6BECF5AD00-L000010](../../tests/test_connectors_mocked.py#L10) | 10 | `"def test_openalex_parses_mocked_payload(monkeypatch):"` | — |
-| [SRC-6BECF5AD00-L000011](../../tests/test_connectors_mocked.py#L11) | 11 | `"    payload = {"` | — |
-| [SRC-6BECF5AD00-L000012](../../tests/test_connectors_mocked.py#L12) | 12 | `"        \"results\": ["` | — |
-| [SRC-6BECF5AD00-L000013](../../tests/test_connectors_mocked.py#L13) | 13 | `"            {"` | — |
-| [SRC-6BECF5AD00-L000014](../../tests/test_connectors_mocked.py#L14) | 14 | `"                \"display_name\": \"Electric Vehicles in Egypt\","` | — |
-| [SRC-6BECF5AD00-L000015](../../tests/test_connectors_mocked.py#L15) | 15 | `"                \"id\": \"https://openalex.org/W123\","` | — |
-| [SRC-6BECF5AD00-L000016](../../tests/test_connectors_mocked.py#L16) | 16 | `"                \"primary_location\": {\"landing_page_url\": \"https://example.org/paper\"},"` | — |
-| [SRC-6BECF5AD00-L000017](../../tests/test_connectors_mocked.py#L17) | 17 | `"                \"concepts\": [{\"display_name\": \"Battery\"}],"` | — |

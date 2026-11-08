@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B9C3015420-L000251 إلى SRC-41EDB66D3C-L000183
+- النطاق: SRC-B9C3015420-L000210 إلى SRC-41EDB66D3C-L000142
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,47 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B9C3015420-L000210](../OMARAI_REQUIREMENTS_REGISTER.md#L210) | 210 | `"- **AIE-001 — مجموعة التقييم:** 45 حالة ثابتة عربية/إنجليزية، موزعة على ar-EG (14)، ar-MSA (9)، en (13)، mixed (9). VERIFIED لوجود corpus واختبارات بنيوية على فرع التقييم؛ هذا لا يثبت دقة الإجابات."` | — |
+| [SRC-B9C3015420-L000211](../OMARAI_REQUIREMENTS_REGISTER.md#L211) | 211 | ``"- **AIE-002 — مقاييس الجودة والمراجعة:** FIXED_AND_TESTED على SHA `449912938fc0067301e0541552199a8e67ecc46b`، مع 607 اختبارًا ناجحًا على Python 3.11 و607 على 3.12. المقاييس factual accuracy وretrieval precision/recall وfaithfulness وcitation support وجودة الكتابة لا تُحتسب إلا من مراجعات بشرية صريحة."`` | — |
+| [SRC-B9C3015420-L000212](../OMARAI_REQUIREMENTS_REGISTER.md#L212) | 212 | `"- **AIE-004 — قياس الأداة:** أضيف توافق بين نتيجة البحث وقائمة المصادر الراجعة، وتحقق اكتمال مصفوفة كل أداة مطلوبة؛ المصفوفة الناقصة أو المتناقضة تمنع القبول الكامل. الاختبارات الآلية ناجحة، لكن تشغيلات الجودة الحية قبل/بعد NOT_RUN."` | — |
+| [SRC-B9C3015420-L000213](../OMARAI_REQUIREMENTS_REGISTER.md#L213) | 213 | `"- **FIN-002 — قياس التكلفة:** VERIFIED في اختبارات سلامة التعامل مع التكلفة المعلنة ومع ملف المصالحة؛ التكلفة الكاملة لكل طلب ما زالت UNKNOWN/NOT_MEASURED حتى تتوفر بيانات موثوقة لكل حالة في التشغيلين."` | — |
+| [SRC-B9C3015420-L000214](../OMARAI_REQUIREMENTS_REGISTER.md#L214) | 214 | ``"- **خط الأساس التجريبي:** SHA `ef69ca5f8dbcdf01d798e254f737aa51776b4bb1` مرجع شفرة سابق لا نتيجة benchmark. لا يوجد فرق جودة تجريبي مُثبت؛ baseline/candidate live runs والمراجعات البشرية NOT_RUN."`` | — |
+| [SRC-B9C3015420-L000215](../OMARAI_REQUIREMENTS_REGISTER.md#L215) | 215 | ``"- **دليل CI:** [#40901777951](https://github.com/mosabosama2030-oss/omarai/actions/runs/40901777951). أحدث SHA بعد تحديث الفهارس عند كتابة هذا الملحق هو `52673e6354d7b4d5dd008c3d02efda06c94335bc`، وتغييره عن SHA المختبر مقتصر على الفهارس المولّدة."`` | — |
+| [SRC-B9C3015420-L000216](../OMARAI_REQUIREMENTS_REGISTER.md#L216) | 216 | `""` | — |
+| [SRC-B9C3015420-L000217](../OMARAI_REQUIREMENTS_REGISTER.md#L217) | 217 | `"### دليل تحقق تقييم الجودة على PR #125 — 29 أكتوبر 2026"` | — |
+| [SRC-B9C3015420-L000218](../OMARAI_REQUIREMENTS_REGISTER.md#L218) | 218 | `""` | — |
+| [SRC-B9C3015420-L000219](../OMARAI_REQUIREMENTS_REGISTER.md#L219) | 219 | ``"- AIE-001/AIE-002/AIE-004: FIXED_AND_TESTED ضمن CI على SHA `611e5e97397b5d82c6c4009aa84f57943320737b`، تشغيل [#40905555660](https://github.com/mosabosama2030-oss/omarai/actions/runs/40905555660): Ruff وفحوص الفهرسة، 608 اختبارًا على Python 3.11 و608 على Python 3.12، وبناء الحاوية وprotected API smoke."`` | — |
+| [SRC-B9C3015420-L000220](../OMARAI_REQUIREMENTS_REGISTER.md#L220) | 220 | `"- هذا دليل اختبارات آلية فقط. baseline/candidate الحي والمراجعات البشرية الكاملة NOT_RUN؛ تحسن الدقة والاستدعاء ودعم الاستشهاد UNKNOWN."` | — |
+| [SRC-B9C3015420-L000221](../OMARAI_REQUIREMENTS_REGISTER.md#L221) | 221 | `"- FIN-002: التكلفة الكاملة للطلب UNKNOWN حتى تتوفر مصالحة موثوقة لكل حالة في التشغيلين. PR #125 Draft/Open وغير مدمج؛ الاعتماد النهائي للمدير البشري."` | — |
+| [SRC-B9C3015420-L000222](../OMARAI_REQUIREMENTS_REGISTER.md#L222) | 222 | `""` | — |
+| [SRC-B9C3015420-L000223](../OMARAI_REQUIREMENTS_REGISTER.md#L223) | 223 | `""` | — |
+| [SRC-B9C3015420-L000224](../OMARAI_REQUIREMENTS_REGISTER.md#L224) | 224 | `"---"` | — |
+| [SRC-B9C3015420-L000225](../OMARAI_REQUIREMENTS_REGISTER.md#L225) | 225 | `""` | — |
+| [SRC-B9C3015420-L000226](../OMARAI_REQUIREMENTS_REGISTER.md#L226) | 226 | `"## ملحق تتبع بعد دمج منظومة التقييم — 29 أكتوبر 2026"` | — |
+| [SRC-B9C3015420-L000227](../OMARAI_REQUIREMENTS_REGISTER.md#L227) | 227 | `""` | — |
+| [SRC-B9C3015420-L000228](../OMARAI_REQUIREMENTS_REGISTER.md#L228) | 228 | `"هذا الملحق أحدث من لقطة التدقيق التاريخية في الجدول أعلاه، ولا يمحوها:"` | — |
+| [SRC-B9C3015420-L000229](../OMARAI_REQUIREMENTS_REGISTER.md#L229) | 229 | `""` | — |
+| [SRC-B9C3015420-L000230](../OMARAI_REQUIREMENTS_REGISTER.md#L230) | 230 | `"\| ID \| الحالة الحالية \| الدليل \| الحد الذي لم يثبت \|"` | — |
+| [SRC-B9C3015420-L000231](../OMARAI_REQUIREMENTS_REGISTER.md#L231) | 231 | `"\|---\|---\|---\|---\|"` | — |
+| [SRC-B9C3015420-L000232](../OMARAI_REQUIREMENTS_REGISTER.md#L232) | 232 | ``"\| AIE-001 — مجموعة تقييم عربية/إنجليزية ثابتة \| FIXED_AND_TESTED ضمن CI \| `tests/fixtures/answer_quality_cases.json`: 45 حالة، 4 تصنيفات لغوية، 20 فئة؛ اختبار بنية corpus ضمن CI على SHA `6d5e9071e77645889de4596664c407801f6bc6ad` \| لم يُثبت أن الإجابات الفعلية اجتازت الحالات؛ التشغيل الحي NOT_RUN \|"`` | — |
+| [SRC-B9C3015420-L000233](../OMARAI_REQUIREMENTS_REGISTER.md#L233) | 233 | ``"\| AIE-002 — قياس دقة المحتوى ودعم الاستشهادات منفصلًا عن الأسلوب \| IMPLEMENTED / AUTOMATED TESTS PASS; HUMAN EVALUATION NOT_RUN \| `scripts/compare_answer_quality_runs.py` يشترط ملفات مراجعة بشرية للمقاييس الدلالية ولا يملأ المجهول بصفر \| نتائج accuracy/precision/recall/faithfulness/citation support غير متاحة حتى اكتمال المراجعات \|"`` | — |
+| [SRC-B9C3015420-L000234](../OMARAI_REQUIREMENTS_REGISTER.md#L234) | 234 | `"\| AIE-004 — قياس حالة الأدوات ونتائجها \| FIXED_AND_TESTED ضمن CI \| مصفوفة الأدوات المطلوبة واتساق نتيجة البحث مع المصادر؛ CI #40906010312 \| لا يثبت CI أن الموصلات تعمل على الاستضافة أو أن كل أداة نجحت في طلب حي \|"` | — |
+| [SRC-B9C3015420-L000235](../OMARAI_REQUIREMENTS_REGISTER.md#L235) | 235 | `"\| AIE-005 — مقارنة قبل/بعد مرتبطة بإصدار \| IMPLEMENTED / NOT_RUN \| المقارن يرفض عدم تطابق benchmark/version والحالات والأسئلة والاستراتيجية، ويسجل المقاييس التشغيلية \| لا يوجد baseline/candidate فعليان قابلان للمقارنة؛ لا يوجد ادعاء تحسن \|"` | — |
+| [SRC-B9C3015420-L000236](../OMARAI_REQUIREMENTS_REGISTER.md#L236) | 236 | ``"\| AIE-006 — تحقق دعم كل ادعاء بمصدره \| PARTIAL / CI PASSED \| فحوص حتمية لمراجع الاقتباس والأرقام والبيانات الوصفية، ثم مراجع دلالي بمعرف نموذج مختلف عن مولد الإجابة؛ يرفض المصدر غير المستشهد به ويحجب الإجابة عند التعارض أو عدم كفاية الدليل. PR CI `41279003071`: 765 اختبارًا ناجحًا على Python 3.11 و765 على Python 3.12، وRuff والفهارس والحاوية وAPI smoke test ناجحة \| لا يثبت الفصل بمعرف نموذج استقلال المزود أو الحقيقة الخارجية. ما زال يلزم corpus دلالي موسوم بشريًا وقياس الجودة وقبول حي مصرح به قبل الإغلاق. لا توجد مكالمات نموذج حية أو مدفوعة \|"`` | — |
+| [SRC-B9C3015420-L000237](../OMARAI_REQUIREMENTS_REGISTER.md#L237) | 237 | `"\| FIN-002 — تكلفة الطلب \| MODEL COST PARTIAL; FULL REQUEST COST UNKNOWN \| تسجيل تكلفة النموذج المعلنة عند توفرها وملف مصالحة خارجي للتكلفة الكاملة \| لا تُعامل التكلفة المفقودة كصفر؛ لا قبول كامل دون مصالحة موثوقة عند انطباقها \|"` | — |
+| [SRC-B9C3015420-L000238](../OMARAI_REQUIREMENTS_REGISTER.md#L238) | 238 | `""` | — |
+| [SRC-B9C3015420-L000239](../OMARAI_REQUIREMENTS_REGISTER.md#L239) | 239 | ``"- **رأس الدمج:** `8c332c78c07d20efe89f88043d3df8540110c03a`، PR [#125](https://github.com/mosabosama2030-oss/omarai/pull/125)."`` | — |
+| [SRC-B9C3015420-L000240](../OMARAI_REQUIREMENTS_REGISTER.md#L240) | 240 | ``"- **CI المؤكد:** SHA الاختبارات `6d5e9071e77645889de4596664c407801f6bc6ad`، [التشغيل #40906010312](https://github.com/mosabosama2030-oss/omarai/actions/runs/40906010312). لم أتحقق من تشغيل CI مستقل على commit الدمج نفسه؛ لذلك لا أسجل هذا الجزء كنجاح CI على رأس main."`` | — |
+| [SRC-B9C3015420-L000241](../OMARAI_REQUIREMENTS_REGISTER.md#L241) | 241 | `"- **الحكم النهائي:** تنفيذ إطار التقييم واختباراته مثبتان ضمن نطاق CI؛ جودة إجابات Omarai قبل/بعد، والقبول المستضاف، والتكلفة الكاملة ما زالت NOT_RUN/UNKNOWN. هذه حالات منفصلة ولا يجوز دمجها في حكم واحد."` | — |
+| [SRC-B9C3015420-L000242](../OMARAI_REQUIREMENTS_REGISTER.md#L242) | 242 | `""` | — |
+| [SRC-B9C3015420-L000243](../OMARAI_REQUIREMENTS_REGISTER.md#L243) | 243 | `"## تحديث حاكم — تحقق حي بعد دمج مجموعة التقييم — 29 أكتوبر 2026"` | — |
+| [SRC-B9C3015420-L000244](../OMARAI_REQUIREMENTS_REGISTER.md#L244) | 244 | `""` | — |
+| [SRC-B9C3015420-L000245](../OMARAI_REQUIREMENTS_REGISTER.md#L245) | 245 | `"هذا التحديث يستبدل أي حالة أقدم تصف PR #125 بأنه مفتوح أو مسودة، ويحدث آخر دليل قراءة فقط للاستضافة."` | — |
+| [SRC-B9C3015420-L000246](../OMARAI_REQUIREMENTS_REGISTER.md#L246) | 246 | `""` | — |
+| [SRC-B9C3015420-L000247](../OMARAI_REQUIREMENTS_REGISTER.md#L247) | 247 | ``"- **حالة الدمج:** PR #125 مدمج في `main` عبر commit `8c332c78c07d20efe89f88043d3df8540110c03a`. رأس PR المختبَر `3aff15df4fc03bc7325adc6e3481ea6f31de8871` وشجرة commit الدمج متطابقتان: `c10c69c6b0f7d2d33a98dfacef119944d9817518`."`` | — |
+| [SRC-B9C3015420-L000248](../OMARAI_REQUIREMENTS_REGISTER.md#L248) | 248 | `"- **CI:** تشغيل [#40906037659](https://github.com/mosabosama2030-oss/omarai/actions/runs/40906037659) ناجح: Ruff، وفحوص الفهرسة، و608 اختبارًا على Python 3.11 و608 على Python 3.12، وبناء الحاوية واختبار API المحمي. هذا دليل آلي ولا يقيس جودة الإجابات الحية."` | — |
+| [SRC-B9C3015420-L000249](../OMARAI_REQUIREMENTS_REGISTER.md#L249) | 249 | ``"- **فحص الاستضافة للقراءة فقط:** `GET /api/health` عاد بـ`ok=true`، لكن `build.sha=unknown` و`sha_status=unknown` و`sha_source=unknown`. ثبتت استجابة الخدمة فقط، ولم تثبت هوية النسخة المنشورة."`` | — |
+| [SRC-B9C3015420-L000250](../OMARAI_REQUIREMENTS_REGISTER.md#L250) | 250 | ``"- **حماية التشغيل:** لم يُرسل أي سؤال إلى `/api/agent`؛ مشغّل التقييم يرفض إرسال حالات benchmark قبل إثبات SHA كامل. لم تُنفذ مكالمات بحث أو نموذج حية أو مدفوعة، ولم تتغير إعدادات الاستضافة أو الأسرار."`` | — |
 | [SRC-B9C3015420-L000251](../OMARAI_REQUIREMENTS_REGISTER.md#L251) | 251 | ``"- **الإجراء المحجوب:** يتطلب إثبات النسخة المنشورة ضبط `PUBLIC_OMARAI_BUILD_SHA` على SHA الكامل الصحيح ثم إعادة البناء/النشر والتحقق من تطابق `/api/health`. هذا تغيير استضافة منفصل يحتاج موافقة المدير البشري."`` | — |
 | [SRC-B9C3015420-L000252](../OMARAI_REQUIREMENTS_REGISTER.md#L252) | 252 | ``"- **الحالة التجريبية:** baseline/candidate على الحالات نفسها والمراجعات البشرية الكاملة = `NOT_RUN`. مقاييس الدقة والاستدعاء والإخلاص ودعم الاستشهادات = `NOT_RUN/UNKNOWN`. التكلفة الكاملة = `UNKNOWN` حتى وجود مصالحة موثوقة لكل حالة."`` | — |
 | [SRC-B9C3015420-L000253](../OMARAI_REQUIREMENTS_REGISTER.md#L253) | 253 | `""` | — |
@@ -793,44 +834,3 @@
 | [SRC-41EDB66D3C-L000140](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L140) | 140 | `"9. **تصنيف الإشارة:** كشف الطلب المباشر والاحتياج والإشارة غير المباشرة والتطابق فقط والنفي والإلغاء والانتهاء والتعارض."` | — |
 | [SRC-41EDB66D3C-L000141](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L141) | 141 | `"10. **حل الكيان وإزالة التكرار:** ربط الإشارة بشخص أو شركة عند وجود دليل، وإبقاء الهوية مجهولة عندما لا يمكن إثباتها، وعدم دمج كيانات لمجرد تشابه الأسماء."` | — |
 | [SRC-41EDB66D3C-L000142](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L142) | 142 | `"11. **تأهيل الفرصة:** تقييم أبعاد منفصلة وشرح الأسباب والأدلة والفجوات."` | — |
-| [SRC-41EDB66D3C-L000143](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L143) | 143 | `"12. **عرض النتيجة:** عرض فرصة أو مرشح أو نتيجة غير مؤهلة مع أدلتها وحدودها، وعدم إخفاء نتائج البحث السلبية أو فشل الموصلات."` | — |
-| [SRC-41EDB66D3C-L000144](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L144) | 144 | `"13. **توصية المبيعات:** اقتراح خطوة تالية أو مسودة تواصل يراجعها المستخدم. لا يُرسل شيء تلقائيًا."` | — |
-| [SRC-41EDB66D3C-L000145](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L145) | 145 | `"14. **التعلم من النتيجة:** يمكن استخدام قبول المستخدم أو رفضه أو نتيجة البيع لتحسين القواعد بعد ضبط جودة البيانات والصلاحيات؛ لا تتعلم المنظومة من إشارات غير متحققة باعتبارها حقيقة."` | — |
-| [SRC-41EDB66D3C-L000146](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L146) | 146 | `""` | — |
-| [SRC-41EDB66D3C-L000147](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L147) | 147 | `"---"` | — |
-| [SRC-41EDB66D3C-L000148](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L148) | 148 | `""` | — |
-| [SRC-41EDB66D3C-L000149](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L149) | 149 | `"## 5. تصنيف إشارات الطلب"` | — |
-| [SRC-41EDB66D3C-L000150](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L150) | 150 | `""` | — |
-| [SRC-41EDB66D3C-L000151](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L151) | 151 | `"هذه نقطة مركزية ويجب أن تكون مستقلة عن درجة ملاءمة الشركة."` | — |
-| [SRC-41EDB66D3C-L000152](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L152) | 152 | `""` | — |
-| [SRC-41EDB66D3C-L000153](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L153) | 153 | `"\| التصنيف \| التعريف \| ما يجوز استنتاجه \|"` | — |
-| [SRC-41EDB66D3C-L000154](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L154) | 154 | `"\|---\|---\|---\|"` | — |
-| [SRC-41EDB66D3C-L000155](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L155) | 155 | `"\| طلب شراء مباشر \| إعلان صريح عن الرغبة في شراء المنتج أو طلب مورد/عرض سعر \| توجد إشارة شراء معلنة في المصدر؛ لا تثبت وحدها استمرار الطلب أو هوية الكاتب \|"` | — |
-| [SRC-41EDB66D3C-L000156](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L156) | 156 | `"\| مناقصة / طلب عرض سعر / مشروع شراء \| طلب رسمي أو شبه رسمي يتضمن توريدًا أو مواصفات أو موعدًا \| فرصة توريد قابلة للفحص وفق شروط الجهة والمصدر \|"` | — |
-| [SRC-41EDB66D3C-L000157](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L157) | 157 | `"\| احتياج معلن \| وصف مشكلة أو متطلب أو نقص يمكن للمنتج حله \| توجد حاجة معلنة؛ لا يعني ذلك أن قرار الشراء اتخذ \|"` | — |
-| [SRC-41EDB66D3C-L000158](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L158) | 158 | `"\| مؤشر غير مباشر \| توسع أو مشروع جديد أو تغيير أو استبدال أو حدث قد ينشئ طلبًا \| فرصة تستحق التحقيق، وليست نية شراء مثبتة \|"` | — |
-| [SRC-41EDB66D3C-L000159](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L159) | 159 | `"\| تطابق ICP فقط \| شركة أو شخص يطابق السوق المستهدف بلا إشارة حاجة أو شراء \| حساب/كيان مستهدف للبحث؛ ليس Lead مؤهلًا بسبب التطابق وحده \|"` | — |
-| [SRC-41EDB66D3C-L000160](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L160) | 160 | `"\| إعلان بيع من الطرف المقابل \| شخص يعرض منتجًا للبيع بينما Omarai يبحث عن مشترٍ \| لا يصنف كمشترٍ لمجرد ظهور مفردات البيع \|"` | — |
-| [SRC-41EDB66D3C-L000161](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L161) | 161 | `"\| منفي / ملغى / منتهي / متعارض \| المصدر ينفي الرغبة أو يلغي الطلب أو يثبت انتهاءه أو توجد أدلة متعارضة \| يُستبعد أو يخفض ويعرض سبب الاستبعاد \|"` | — |
-| [SRC-41EDB66D3C-L000162](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L162) | 162 | `""` | — |
-| [SRC-41EDB66D3C-L000163](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L163) | 163 | ``"يجب حفظ التصنيف الأصلي والدليل الذي أدى إليه. لا تُدمج الأنواع في label واحد مثل `potential_customer` بما يخفي الفروق."`` | — |
-| [SRC-41EDB66D3C-L000164](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L164) | 164 | `""` | — |
-| [SRC-41EDB66D3C-L000165](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L165) | 165 | `"### حالات التأهيل المقترحة"` | — |
-| [SRC-41EDB66D3C-L000166](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L166) | 166 | `""` | — |
-| [SRC-41EDB66D3C-L000167](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L167) | 167 | ``"- `direct_demand`: طلب مباشر مدعوم بمصدر."`` | — |
-| [SRC-41EDB66D3C-L000168](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L168) | 168 | ``"- `stated_need`: احتياج معلن دون إثبات قرار شراء."`` | — |
-| [SRC-41EDB66D3C-L000169](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L169) | 169 | ``"- `indirect_opportunity`: مؤشر غير مباشر يستلزم تحققًا إضافيًا."`` | — |
-| [SRC-41EDB66D3C-L000170](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L170) | 170 | ``"- `icp_match_only`: تطابق سوقي دون دليل طلب."`` | — |
-| [SRC-41EDB66D3C-L000171](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L171) | 171 | ``"- `disqualified`: غير ذي صلة أو إعلان بيع أو نفي أو مصدر غير صالح."`` | — |
-| [SRC-41EDB66D3C-L000172](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L172) | 172 | ``"- `stale_or_closed`: قديم أو منتهٍ أو ملغى."`` | — |
-| [SRC-41EDB66D3C-L000173](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L173) | 173 | ``"- `research_incomplete`: تعذر البحث أو التحقق؛ لا يجوز تفسيره على أنه صفر فرص."`` | — |
-| [SRC-41EDB66D3C-L000174](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L174) | 174 | `""` | — |
-| [SRC-41EDB66D3C-L000175](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L175) | 175 | `"---"` | — |
-| [SRC-41EDB66D3C-L000176](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L176) | 176 | `""` | — |
-| [SRC-41EDB66D3C-L000177](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L177) | 177 | `"## 6. ملف المنتج والسوق"` | — |
-| [SRC-41EDB66D3C-L000178](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L178) | 178 | `""` | — |
-| [SRC-41EDB66D3C-L000179](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L179) | 179 | `"### 6.1 ProductProfile — ملف المنتج"` | — |
-| [SRC-41EDB66D3C-L000180](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L180) | 180 | `""` | — |
-| [SRC-41EDB66D3C-L000181](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L181) | 181 | `"يُبنى من معلومات قدمها المستخدم أو وثائق مصرح بها، ويحتوي عند توفرها على:"` | — |
-| [SRC-41EDB66D3C-L000182](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L182) | 182 | `""` | — |
-| [SRC-41EDB66D3C-L000183](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L183) | 183 | `"- اسم المنتج أو الخدمة والعلامة التجارية."` | — |

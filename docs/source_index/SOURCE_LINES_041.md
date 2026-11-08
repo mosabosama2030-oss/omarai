@@ -4,9 +4,30 @@
 
 - الصفحة: **041**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D4963BDA6A-L000030 إلى SRC-4CCB1F172B-L000145
+- النطاق: SRC-90FAA34ADE-L001341 إلى SRC-4CCB1F172B-L000104
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-90FAA34ADE — [tests/fixtures/answer_quality_cases.json](../../tests/fixtures/answer_quality_cases.json#L1)
+
+- النوع: **JSON**
+- نطاق الفهرسة: جرد الملف + مفاتيح إعداد ساكنة
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-90FAA34ADE-L001341](../../tests/fixtures/answer_quality_cases.json#L1341) | 1341 | `"      \"evidence_fixture\": {"` | — |
+| [SRC-90FAA34ADE-L001342](../../tests/fixtures/answer_quality_cases.json#L1342) | 1342 | `"        \"type\": \"none\","` | — |
+| [SRC-90FAA34ADE-L001343](../../tests/fixtures/answer_quality_cases.json#L1343) | 1343 | `"        \"notes\": \"المتاح فقط نموذج تواصل عام؛ لا يوجد تفاعل أو تصريح باحتياج شراء\""` | — |
+| [SRC-90FAA34ADE-L001344](../../tests/fixtures/answer_quality_cases.json#L1344) | 1344 | `"      },"` | — |
+| [SRC-90FAA34ADE-L001345](../../tests/fixtures/answer_quality_cases.json#L1345) | 1345 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L001346](../../tests/fixtures/answer_quality_cases.json#L1346) | 1346 | `"        \"تسجيل نية شراء مؤكدة بلا دليل\","` | — |
+| [SRC-90FAA34ADE-L001347](../../tests/fixtures/answer_quality_cases.json#L1347) | 1347 | `"        \"ادعاء إجراء تواصل لم يحدث\""` | — |
+| [SRC-90FAA34ADE-L001348](../../tests/fixtures/answer_quality_cases.json#L1348) | 1348 | `"      ],"` | — |
+| [SRC-90FAA34ADE-L001349](../../tests/fixtures/answer_quality_cases.json#L1349) | 1349 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
+| [SRC-90FAA34ADE-L001350](../../tests/fixtures/answer_quality_cases.json#L1350) | 1350 | `"    }"` | — |
+| [SRC-90FAA34ADE-L001351](../../tests/fixtures/answer_quality_cases.json#L1351) | 1351 | `"  ]"` | — |
+| [SRC-90FAA34ADE-L001352](../../tests/fixtures/answer_quality_cases.json#L1352) | 1352 | `"}"` | — |
 ## اختبارات
 
 ### FILE-D4963BDA6A — [tests/fixtures/answer_quality_reviews_template.json](../../tests/fixtures/answer_quality_reviews_template.json#L1)
@@ -16,6 +37,35 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D4963BDA6A-L000001](../../tests/fixtures/answer_quality_reviews_template.json#L1) | 1 | `"{"` | — |
+| [SRC-D4963BDA6A-L000002](../../tests/fixtures/answer_quality_reviews_template.json#L2) | 2 | `"  \"schema_version\": \"1.0\","` | — |
+| [SRC-D4963BDA6A-L000003](../../tests/fixtures/answer_quality_reviews_template.json#L3) | 3 | `"  \"benchmark_id\": \"OMARAI-REDTEAM-001\","` | — |
+| [SRC-D4963BDA6A-L000004](../../tests/fixtures/answer_quality_reviews_template.json#L4) | 4 | `"  \"benchmark_version\": \"1.0.0\","` | — |
+| [SRC-D4963BDA6A-L000005](../../tests/fixtures/answer_quality_reviews_template.json#L5) | 5 | `"  \"template_only\": true,"` | — |
+| [SRC-D4963BDA6A-L000006](../../tests/fixtures/answer_quality_reviews_template.json#L6) | 6 | `"  \"warning\": \"Template only. No case has been run or reviewed; replace NOT_TESTED with REVIEWED only after applying the same explicit rubric to observed answers from the named build. Do not add metric scores to unreviewed entries.\","` | — |
+| [SRC-D4963BDA6A-L000007](../../tests/fixtures/answer_quality_reviews_template.json#L7) | 7 | `"  \"reviews\": ["` | — |
+| [SRC-D4963BDA6A-L000008](../../tests/fixtures/answer_quality_reviews_template.json#L8) | 8 | `"    {"` | — |
+| [SRC-D4963BDA6A-L000009](../../tests/fixtures/answer_quality_reviews_template.json#L9) | 9 | `"      \"case_id\": \"AQ-001\","` | — |
+| [SRC-D4963BDA6A-L000010](../../tests/fixtures/answer_quality_reviews_template.json#L10) | 10 | `"      \"status\": \"NOT_TESTED\","` | — |
+| [SRC-D4963BDA6A-L000011](../../tests/fixtures/answer_quality_reviews_template.json#L11) | 11 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
+| [SRC-D4963BDA6A-L000012](../../tests/fixtures/answer_quality_reviews_template.json#L12) | 12 | `"    },"` | — |
+| [SRC-D4963BDA6A-L000013](../../tests/fixtures/answer_quality_reviews_template.json#L13) | 13 | `"    {"` | — |
+| [SRC-D4963BDA6A-L000014](../../tests/fixtures/answer_quality_reviews_template.json#L14) | 14 | `"      \"case_id\": \"AQ-002\","` | — |
+| [SRC-D4963BDA6A-L000015](../../tests/fixtures/answer_quality_reviews_template.json#L15) | 15 | `"      \"status\": \"NOT_TESTED\","` | — |
+| [SRC-D4963BDA6A-L000016](../../tests/fixtures/answer_quality_reviews_template.json#L16) | 16 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
+| [SRC-D4963BDA6A-L000017](../../tests/fixtures/answer_quality_reviews_template.json#L17) | 17 | `"    },"` | — |
+| [SRC-D4963BDA6A-L000018](../../tests/fixtures/answer_quality_reviews_template.json#L18) | 18 | `"    {"` | — |
+| [SRC-D4963BDA6A-L000019](../../tests/fixtures/answer_quality_reviews_template.json#L19) | 19 | `"      \"case_id\": \"AQ-003\","` | — |
+| [SRC-D4963BDA6A-L000020](../../tests/fixtures/answer_quality_reviews_template.json#L20) | 20 | `"      \"status\": \"NOT_TESTED\","` | — |
+| [SRC-D4963BDA6A-L000021](../../tests/fixtures/answer_quality_reviews_template.json#L21) | 21 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
+| [SRC-D4963BDA6A-L000022](../../tests/fixtures/answer_quality_reviews_template.json#L22) | 22 | `"    },"` | — |
+| [SRC-D4963BDA6A-L000023](../../tests/fixtures/answer_quality_reviews_template.json#L23) | 23 | `"    {"` | — |
+| [SRC-D4963BDA6A-L000024](../../tests/fixtures/answer_quality_reviews_template.json#L24) | 24 | `"      \"case_id\": \"AQ-004\","` | — |
+| [SRC-D4963BDA6A-L000025](../../tests/fixtures/answer_quality_reviews_template.json#L25) | 25 | `"      \"status\": \"NOT_TESTED\","` | — |
+| [SRC-D4963BDA6A-L000026](../../tests/fixtures/answer_quality_reviews_template.json#L26) | 26 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
+| [SRC-D4963BDA6A-L000027](../../tests/fixtures/answer_quality_reviews_template.json#L27) | 27 | `"    },"` | — |
+| [SRC-D4963BDA6A-L000028](../../tests/fixtures/answer_quality_reviews_template.json#L28) | 28 | `"    {"` | — |
+| [SRC-D4963BDA6A-L000029](../../tests/fixtures/answer_quality_reviews_template.json#L29) | 29 | `"      \"case_id\": \"AQ-005\","` | — |
 | [SRC-D4963BDA6A-L000030](../../tests/fixtures/answer_quality_reviews_template.json#L30) | 30 | `"      \"status\": \"NOT_TESTED\","` | — |
 | [SRC-D4963BDA6A-L000031](../../tests/fixtures/answer_quality_reviews_template.json#L31) | 31 | `"      \"notes\": \"Not reviewed yet. Do not treat this as a score.\""` | — |
 | [SRC-D4963BDA6A-L000032](../../tests/fixtures/answer_quality_reviews_template.json#L32) | 32 | `"    },"` | — |
@@ -811,44 +861,3 @@
 | [SRC-4CCB1F172B-L000102](../../tests/test_answer_quality_corpus.py#L102) | 102 | `"    data = _load_corpus()"` | — |
 | [SRC-4CCB1F172B-L000103](../../tests/test_answer_quality_corpus.py#L103) | 103 | `"    ids = [c[\"case_id\"] for c in data[\"cases\"]]"` | — |
 | [SRC-4CCB1F172B-L000104](../../tests/test_answer_quality_corpus.py#L104) | 104 | `"    assert len(ids) == len(set(ids)), \"Duplicate case_id values found\""` | — |
-| [SRC-4CCB1F172B-L000105](../../tests/test_answer_quality_corpus.py#L105) | 105 | `"    for case_id in ids:"` | — |
-| [SRC-4CCB1F172B-L000106](../../tests/test_answer_quality_corpus.py#L106) | 106 | `"        assert CASE_ID_RE.match(case_id), f\"Bad case_id shape: {case_id}\""` | — |
-| [SRC-4CCB1F172B-L000107](../../tests/test_answer_quality_corpus.py#L107) | 107 | `"    assert set(ids) == {f\"AQ-{i:03d}\" for i in range(1, 46)}"` | — |
-| [SRC-4CCB1F172B-L000108](../../tests/test_answer_quality_corpus.py#L108) | 108 | `""` | — |
-| [SRC-4CCB1F172B-L000109](../../tests/test_answer_quality_corpus.py#L109) | 109 | `""` | — |
-| [SRC-4CCB1F172B-L000110](../../tests/test_answer_quality_corpus.py#L110) | 110 | `"def test_required_fields_and_types():"` | — |
-| [SRC-4CCB1F172B-L000111](../../tests/test_answer_quality_corpus.py#L111) | 111 | `"    data = _load_corpus()"` | — |
-| [SRC-4CCB1F172B-L000112](../../tests/test_answer_quality_corpus.py#L112) | 112 | `"    for case in data[\"cases\"]:"` | — |
-| [SRC-4CCB1F172B-L000113](../../tests/test_answer_quality_corpus.py#L113) | 113 | `"        missing = REQUIRED_CASE_FIELDS - set(case)"` | — |
-| [SRC-4CCB1F172B-L000114](../../tests/test_answer_quality_corpus.py#L114) | 114 | `"        assert not missing, f\"{case.get('case_id')}: missing {missing}\""` | — |
-| [SRC-4CCB1F172B-L000115](../../tests/test_answer_quality_corpus.py#L115) | 115 | `"        assert isinstance(case[\"case_id\"], str) and case[\"case_id\"].strip()"` | — |
-| [SRC-4CCB1F172B-L000116](../../tests/test_answer_quality_corpus.py#L116) | 116 | `"        assert isinstance(case[\"category\"], str) and case[\"category\"].strip()"` | — |
-| [SRC-4CCB1F172B-L000117](../../tests/test_answer_quality_corpus.py#L117) | 117 | `"        assert isinstance(case[\"language\"], str) and case[\"language\"].strip()"` | — |
-| [SRC-4CCB1F172B-L000118](../../tests/test_answer_quality_corpus.py#L118) | 118 | `"        assert isinstance(case[\"question\"], str) and len(case[\"question\"].strip()) >= 2"` | — |
-| [SRC-4CCB1F172B-L000119](../../tests/test_answer_quality_corpus.py#L119) | 119 | `"        assert case[\"expected_strategy\"] in ALLOWED_STRATEGIES"` | — |
-| [SRC-4CCB1F172B-L000120](../../tests/test_answer_quality_corpus.py#L120) | 120 | `"        assert case[\"evaluation_mode\"] in ALLOWED_EVAL_MODES"` | — |
-| [SRC-4CCB1F172B-L000121](../../tests/test_answer_quality_corpus.py#L121) | 121 | `"        assert isinstance(case[\"required_behaviors\"], list) and case[\"required_behaviors\"]"` | — |
-| [SRC-4CCB1F172B-L000122](../../tests/test_answer_quality_corpus.py#L122) | 122 | `"        assert isinstance(case[\"forbidden_behaviors\"], list) and case[\"forbidden_behaviors\"]"` | — |
-| [SRC-4CCB1F172B-L000123](../../tests/test_answer_quality_corpus.py#L123) | 123 | `"        assert isinstance(case[\"failure_conditions\"], list) and case[\"failure_conditions\"]"` | — |
-| [SRC-4CCB1F172B-L000124](../../tests/test_answer_quality_corpus.py#L124) | 124 | `"        assert isinstance(case[\"evidence_fixture\"], dict)"` | — |
-| [SRC-4CCB1F172B-L000125](../../tests/test_answer_quality_corpus.py#L125) | 125 | `"        for item in ("` | — |
-| [SRC-4CCB1F172B-L000126](../../tests/test_answer_quality_corpus.py#L126) | 126 | `"            case[\"required_behaviors\"]"` | — |
-| [SRC-4CCB1F172B-L000127](../../tests/test_answer_quality_corpus.py#L127) | 127 | `"            + case[\"forbidden_behaviors\"]"` | — |
-| [SRC-4CCB1F172B-L000128](../../tests/test_answer_quality_corpus.py#L128) | 128 | `"            + case[\"failure_conditions\"]"` | — |
-| [SRC-4CCB1F172B-L000129](../../tests/test_answer_quality_corpus.py#L129) | 129 | `"        ):"` | — |
-| [SRC-4CCB1F172B-L000130](../../tests/test_answer_quality_corpus.py#L130) | 130 | `"            assert isinstance(item, str) and item.strip(), ("` | — |
-| [SRC-4CCB1F172B-L000131](../../tests/test_answer_quality_corpus.py#L131) | 131 | `"                f\"{case['case_id']}: empty behavior/condition\""` | — |
-| [SRC-4CCB1F172B-L000132](../../tests/test_answer_quality_corpus.py#L132) | 132 | `"            )"` | — |
-| [SRC-4CCB1F172B-L000133](../../tests/test_answer_quality_corpus.py#L133) | 133 | `""` | — |
-| [SRC-4CCB1F172B-L000134](../../tests/test_answer_quality_corpus.py#L134) | 134 | `""` | — |
-| [SRC-4CCB1F172B-L000135](../../tests/test_answer_quality_corpus.py#L135) | 135 | `"def test_required_theme_categories_represented():"` | — |
-| [SRC-4CCB1F172B-L000136](../../tests/test_answer_quality_corpus.py#L136) | 136 | `"    data = _load_corpus()"` | — |
-| [SRC-4CCB1F172B-L000137](../../tests/test_answer_quality_corpus.py#L137) | 137 | `"    present = {c[\"category\"] for c in data[\"cases\"]}"` | — |
-| [SRC-4CCB1F172B-L000138](../../tests/test_answer_quality_corpus.py#L138) | 138 | `"    missing = REQUIRED_THEME_CATEGORIES - present"` | — |
-| [SRC-4CCB1F172B-L000139](../../tests/test_answer_quality_corpus.py#L139) | 139 | `"    assert not missing, f\"Missing required categories: {sorted(missing)}\""` | — |
-| [SRC-4CCB1F172B-L000140](../../tests/test_answer_quality_corpus.py#L140) | 140 | `""` | — |
-| [SRC-4CCB1F172B-L000141](../../tests/test_answer_quality_corpus.py#L141) | 141 | `""` | — |
-| [SRC-4CCB1F172B-L000142](../../tests/test_answer_quality_corpus.py#L142) | 142 | `"def test_no_empty_or_exact_duplicate_questions():"` | — |
-| [SRC-4CCB1F172B-L000143](../../tests/test_answer_quality_corpus.py#L143) | 143 | `"    data = _load_corpus()"` | — |
-| [SRC-4CCB1F172B-L000144](../../tests/test_answer_quality_corpus.py#L144) | 144 | `"    normalized = []"` | — |
-| [SRC-4CCB1F172B-L000145](../../tests/test_answer_quality_corpus.py#L145) | 145 | `"    for case in data[\"cases\"]:"` | — |

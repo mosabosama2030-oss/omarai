@@ -4,9 +4,34 @@
 
 - الصفحة: **043**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1C77C97630-L000026 إلى SRC-3451CC474D-L000458
+- النطاق: SRC-B0DE4359ED-L000019 إلى SRC-3451CC474D-L000417
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-B0DE4359ED — [tests/test_answer_quality_unknown_tool_status.py](../../tests/test_answer_quality_unknown_tool_status.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-B0DE4359ED-L000019](../../tests/test_answer_quality_unknown_tool_status.py#L19) | 19 | `"                    \"required_tools\": [\"web_search\"],"` | — |
+| [SRC-B0DE4359ED-L000020](../../tests/test_answer_quality_unknown_tool_status.py#L20) | 20 | `"                    \"tool_status_matrix\": [{"` | — |
+| [SRC-B0DE4359ED-L000021](../../tests/test_answer_quality_unknown_tool_status.py#L21) | 21 | `"                        \"tool\": \"web_search\","` | — |
+| [SRC-B0DE4359ED-L000022](../../tests/test_answer_quality_unknown_tool_status.py#L22) | 22 | `"                        \"required_by_task_spec\": True,"` | — |
+| [SRC-B0DE4359ED-L000023](../../tests/test_answer_quality_unknown_tool_status.py#L23) | 23 | `"                        \"status\": \"completed_maybe\","` | — |
+| [SRC-B0DE4359ED-L000024](../../tests/test_answer_quality_unknown_tool_status.py#L24) | 24 | `"                    }],"` | — |
+| [SRC-B0DE4359ED-L000025](../../tests/test_answer_quality_unknown_tool_status.py#L25) | 25 | `"                },"` | — |
+| [SRC-B0DE4359ED-L000026](../../tests/test_answer_quality_unknown_tool_status.py#L26) | 26 | `"            },"` | — |
+| [SRC-B0DE4359ED-L000027](../../tests/test_answer_quality_unknown_tool_status.py#L27) | 27 | `"            \"search_report\": {\"search_outcome\": \"attempted_with_usable_sources\"},"` | — |
+| [SRC-B0DE4359ED-L000028](../../tests/test_answer_quality_unknown_tool_status.py#L28) | 28 | `"            \"sources\": [{\"url\": \"https://example.org\"}],"` | — |
+| [SRC-B0DE4359ED-L000029](../../tests/test_answer_quality_unknown_tool_status.py#L29) | 29 | `"        },"` | — |
+| [SRC-B0DE4359ED-L000030](../../tests/test_answer_quality_unknown_tool_status.py#L30) | 30 | `"        expected_strategy=\"web_search\","` | — |
+| [SRC-B0DE4359ED-L000031](../../tests/test_answer_quality_unknown_tool_status.py#L31) | 31 | `"        transport_ok=True,"` | — |
+| [SRC-B0DE4359ED-L000032](../../tests/test_answer_quality_unknown_tool_status.py#L32) | 32 | `"    )"` | — |
+| [SRC-B0DE4359ED-L000033](../../tests/test_answer_quality_unknown_tool_status.py#L33) | 33 | `"    assert metrics[\"required_tool_statuses\"][0][\"status_valid\"] is False"` | — |
+| [SRC-B0DE4359ED-L000034](../../tests/test_answer_quality_unknown_tool_status.py#L34) | 34 | `"    assert metrics[\"required_tool_matrix_complete\"] is False"` | — |
 ## اختبارات
 
 ### FILE-1C77C97630 — [tests/test_answer_validation.py](../../tests/test_answer_validation.py#L1)
@@ -16,6 +41,31 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1C77C97630-L000001](../../tests/test_answer_validation.py#L1) | 1 | `"from __future__ import annotations"` | — |
+| [SRC-1C77C97630-L000002](../../tests/test_answer_validation.py#L2) | 2 | `""` | — |
+| [SRC-1C77C97630-L000003](../../tests/test_answer_validation.py#L3) | 3 | `"from pathlib import Path"` | — |
+| [SRC-1C77C97630-L000004](../../tests/test_answer_validation.py#L4) | 4 | `""` | — |
+| [SRC-1C77C97630-L000005](../../tests/test_answer_validation.py#L5) | 5 | `"import pytest"` | — |
+| [SRC-1C77C97630-L000006](../../tests/test_answer_validation.py#L6) | 6 | `""` | — |
+| [SRC-1C77C97630-L000007](../../tests/test_answer_validation.py#L7) | 7 | `"from agents.answer_validation import audit_answer_integrity"` | — |
+| [SRC-1C77C97630-L000008](../../tests/test_answer_validation.py#L8) | 8 | `"from agents.web_agent import WebAgent"` | — |
+| [SRC-1C77C97630-L000009](../../tests/test_answer_validation.py#L9) | 9 | `""` | — |
+| [SRC-1C77C97630-L000010](../../tests/test_answer_validation.py#L10) | 10 | `""` | — |
+| [SRC-1C77C97630-L000011](../../tests/test_answer_validation.py#L11) | 11 | `"def test_numeric_screen_accepts_arabic_digits_and_thousands_formatting():"` | — |
+| [SRC-1C77C97630-L000012](../../tests/test_answer_validation.py#L12) | 12 | `"    result = audit_answer_integrity("` | — |
+| [SRC-1C77C97630-L000013](../../tests/test_answer_validation.py#L13) | 13 | `"        \"ما السعر المذكور في 2025؟\","` | — |
+| [SRC-1C77C97630-L000014](../../tests/test_answer_validation.py#L14) | 14 | `"        \"السعر ١٠٠٬٠٠٠ جنيه في 2025 [المصدر 1].\","` | — |
+| [SRC-1C77C97630-L000015](../../tests/test_answer_validation.py#L15) | 15 | `"        [{"` | — |
+| [SRC-1C77C97630-L000016](../../tests/test_answer_validation.py#L16) | 16 | `"            \"title\": \"تفاصيل السعر\","` | — |
+| [SRC-1C77C97630-L000017](../../tests/test_answer_validation.py#L17) | 17 | `"            \"snippet\": \"السعر 100,000 جنيه\","` | — |
+| [SRC-1C77C97630-L000018](../../tests/test_answer_validation.py#L18) | 18 | `"            \"page_text\": \"السعر 100,000 جنيه\","` | — |
+| [SRC-1C77C97630-L000019](../../tests/test_answer_validation.py#L19) | 19 | `"            \"page_fetched\": True,"` | — |
+| [SRC-1C77C97630-L000020](../../tests/test_answer_validation.py#L20) | 20 | `"            \"published_at\": \"\","` | — |
+| [SRC-1C77C97630-L000021](../../tests/test_answer_validation.py#L21) | 21 | `"        }],"` | — |
+| [SRC-1C77C97630-L000022](../../tests/test_answer_validation.py#L22) | 22 | `"        [\"السعر\"],"` | — |
+| [SRC-1C77C97630-L000023](../../tests/test_answer_validation.py#L23) | 23 | `"    )"` | — |
+| [SRC-1C77C97630-L000024](../../tests/test_answer_validation.py#L24) | 24 | `"    assert result[\"numeric_check_status\"] == \"all_checked_numeric_literals_appear_in_source_text\""` | — |
+| [SRC-1C77C97630-L000025](../../tests/test_answer_validation.py#L25) | 25 | `"    assert result[\"potentially_unsupported_numeric_literals\"] == []"` | — |
 | [SRC-1C77C97630-L000026](../../tests/test_answer_validation.py#L26) | 26 | `"    assert result[\"source_evidence_scope\"] == \"contains_extracted_page_text_and_or_snippets\""` | — |
 | [SRC-1C77C97630-L000027](../../tests/test_answer_validation.py#L27) | 27 | `"    assert result[\"citation_marker_count\"] == 1"` | — |
 | [SRC-1C77C97630-L000028](../../tests/test_answer_validation.py#L28) | 28 | `"    assert result[\"semantic_verification\"] is False"` | — |
@@ -784,44 +834,3 @@
 | [SRC-3451CC474D-L000415](../../tests/test_api.py#L415) | 415 | `"    assert _configured_http_connection_limit() == expected"` | — |
 | [SRC-3451CC474D-L000416](../../tests/test_api.py#L416) | 416 | `""` | — |
 | [SRC-3451CC474D-L000417](../../tests/test_api.py#L417) | 417 | `""` | — |
-| [SRC-3451CC474D-L000418](../../tests/test_api.py#L418) | 418 | `"def test_http_ingress_rejects_excess_connections_and_releases_capacity():"` | — |
-| [SRC-3451CC474D-L000419](../../tests/test_api.py#L419) | 419 | `"    from api.omarai import BoundedThreadingHTTPServer"` | — |
-| [SRC-3451CC474D-L000420](../../tests/test_api.py#L420) | 420 | `""` | — |
-| [SRC-3451CC474D-L000421](../../tests/test_api.py#L421) | 421 | `"    server = BoundedThreadingHTTPServer("` | — |
-| [SRC-3451CC474D-L000422](../../tests/test_api.py#L422) | 422 | `"        (\"127.0.0.1\", 0),"` | — |
-| [SRC-3451CC474D-L000423](../../tests/test_api.py#L423) | 423 | `"        Handler,"` | — |
-| [SRC-3451CC474D-L000424](../../tests/test_api.py#L424) | 424 | `"        max_concurrent_connections=1,"` | — |
-| [SRC-3451CC474D-L000425](../../tests/test_api.py#L425) | 425 | `"    )"` | — |
-| [SRC-3451CC474D-L000426](../../tests/test_api.py#L426) | 426 | `"    first_client, first_request = socket.socketpair()"` | — |
-| [SRC-3451CC474D-L000427](../../tests/test_api.py#L427) | 427 | `"    second_client, second_request = socket.socketpair()"` | — |
-| [SRC-3451CC474D-L000428](../../tests/test_api.py#L428) | 428 | `"    worker_started = threading.Event()"` | — |
-| [SRC-3451CC474D-L000429](../../tests/test_api.py#L429) | 429 | `"    release_worker = threading.Event()"` | — |
-| [SRC-3451CC474D-L000430](../../tests/test_api.py#L430) | 430 | `"    worker_finished = threading.Event()"` | — |
-| [SRC-3451CC474D-L000431](../../tests/test_api.py#L431) | 431 | `""` | — |
-| [SRC-3451CC474D-L000432](../../tests/test_api.py#L432) | 432 | `"    def hold_handler(_request, _client_address):"` | — |
-| [SRC-3451CC474D-L000433](../../tests/test_api.py#L433) | 433 | `"        worker_started.set()"` | — |
-| [SRC-3451CC474D-L000434](../../tests/test_api.py#L434) | 434 | `"        release_worker.wait(timeout=2)"` | — |
-| [SRC-3451CC474D-L000435](../../tests/test_api.py#L435) | 435 | `""` | — |
-| [SRC-3451CC474D-L000436](../../tests/test_api.py#L436) | 436 | `"    server.finish_request = hold_handler"` | — |
-| [SRC-3451CC474D-L000437](../../tests/test_api.py#L437) | 437 | `"    original_worker = server.process_request_thread"` | — |
-| [SRC-3451CC474D-L000438](../../tests/test_api.py#L438) | 438 | `""` | — |
-| [SRC-3451CC474D-L000439](../../tests/test_api.py#L439) | 439 | `"    def track_worker(request, client_address):"` | — |
-| [SRC-3451CC474D-L000440](../../tests/test_api.py#L440) | 440 | `"        try:"` | — |
-| [SRC-3451CC474D-L000441](../../tests/test_api.py#L441) | 441 | `"            original_worker(request, client_address)"` | — |
-| [SRC-3451CC474D-L000442](../../tests/test_api.py#L442) | 442 | `"        finally:"` | — |
-| [SRC-3451CC474D-L000443](../../tests/test_api.py#L443) | 443 | `"            worker_finished.set()"` | — |
-| [SRC-3451CC474D-L000444](../../tests/test_api.py#L444) | 444 | `""` | — |
-| [SRC-3451CC474D-L000445](../../tests/test_api.py#L445) | 445 | `"    server.process_request_thread = track_worker"` | — |
-| [SRC-3451CC474D-L000446](../../tests/test_api.py#L446) | 446 | `"    try:"` | — |
-| [SRC-3451CC474D-L000447](../../tests/test_api.py#L447) | 447 | `"        server.process_request(first_request, (\"127.0.0.1\", 10001))"` | — |
-| [SRC-3451CC474D-L000448](../../tests/test_api.py#L448) | 448 | `"        assert worker_started.wait(timeout=1)"` | — |
-| [SRC-3451CC474D-L000449](../../tests/test_api.py#L449) | 449 | `""` | — |
-| [SRC-3451CC474D-L000450](../../tests/test_api.py#L450) | 450 | `"        # The saturated listener rejects before creating a second handler thread."` | — |
-| [SRC-3451CC474D-L000451](../../tests/test_api.py#L451) | 451 | `"        server.process_request(second_request, (\"127.0.0.1\", 10002))"` | — |
-| [SRC-3451CC474D-L000452](../../tests/test_api.py#L452) | 452 | `"        response = second_client.recv(512)"` | — |
-| [SRC-3451CC474D-L000453](../../tests/test_api.py#L453) | 453 | `"        assert response.startswith(b\"HTTP/1.1 503 Service Unavailable\\r\\n\")"` | — |
-| [SRC-3451CC474D-L000454](../../tests/test_api.py#L454) | 454 | `"        assert b\"Retry-After: 5\\r\\n\" in response"` | — |
-| [SRC-3451CC474D-L000455](../../tests/test_api.py#L455) | 455 | `"        assert not server._connection_slots.acquire(blocking=False)"` | — |
-| [SRC-3451CC474D-L000456](../../tests/test_api.py#L456) | 456 | `""` | — |
-| [SRC-3451CC474D-L000457](../../tests/test_api.py#L457) | 457 | `"        release_worker.set()"` | — |
-| [SRC-3451CC474D-L000458](../../tests/test_api.py#L458) | 458 | `"        assert worker_finished.wait(timeout=1)"` | — |

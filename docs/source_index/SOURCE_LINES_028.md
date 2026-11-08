@@ -4,7 +4,7 @@
 
 - الصفحة: **028**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E73001D9AC-L000213 إلى SRC-D17CE3D12F-L000090
+- النطاق: SRC-E73001D9AC-L000172 إلى SRC-D17CE3D12F-L000049
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,47 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E73001D9AC-L000172](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L172) | 172 | `"### الطبقة 5 — منسق الطلبات (Request Orchestrator)"` | — |
+| [SRC-E73001D9AC-L000173](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L173) | 173 | `"- إنشاء سياق مستقل لكل طلب يتضمن deadline وميزانيات محددة وإشارة إلغاء."` | — |
+| [SRC-E73001D9AC-L000174](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L174) | 174 | `"- الحفاظ على حدود واضحة لعدد خطوات التخطيط واستدعاءات الأدوات واستدعاءات النماذج والصفحات."` | — |
+| [SRC-E73001D9AC-L000175](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L175) | 175 | `"- إنهاء الطلب عند بلوغ الميزانية بدل الاستمرار غير المحدود."` | — |
+| [SRC-E73001D9AC-L000176](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L176) | 176 | `"- تمييز الإلغاء بسبب المستخدم من انتهاء الوقت ومن رفض السياسة ومن تعطل المزود."` | — |
+| [SRC-E73001D9AC-L000177](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L177) | 177 | `"- تمكين إلغاء المهام التابعة عند إلغاء الطلب الأصلي."` | — |
+| [SRC-E73001D9AC-L000178](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L178) | 178 | `"- الحفاظ على معرف تتبع واحد عبر مراحل الطلب، دون وضع أسرار أو بيانات حساسة في المعرف."` | — |
+| [SRC-E73001D9AC-L000179](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L179) | 179 | `""` | — |
+| [SRC-E73001D9AC-L000180](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L180) | 180 | `"ملاحظة تنفيذية حاكمة: يُنشأ سياق وميزانية منفصلان لكل طلب، ويستخدم المنسق أبسط مسار كافٍ للمهمة. تكون مطابقة المهارات وسير العمل المسجلين هي الخيار الأول قبل إنشاء تعريف وكيل جديد. لا يلزم أن يكون التخطيط مكوّنًا مستقلًا أو خدمة خارجية؛ تحفظ الواجهة والعقد وحدود الصلاحيات حتى لو نُفذت داخل وحدة واحدة."` | — |
+| [SRC-E73001D9AC-L000181](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L181) | 181 | `""` | — |
+| [SRC-E73001D9AC-L000182](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L182) | 182 | `"### الطبقة 6 — فهم النية والتخطيط"` | — |
+| [SRC-E73001D9AC-L000183](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L183) | 183 | `"- مسار مباشر للأسئلة البسيطة التي لا تحتاج إلى بحث."` | — |
+| [SRC-E73001D9AC-L000184](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L184) | 184 | `"- مسار بحث للأسئلة التي تتطلب معلومات حديثة أو مصادر."` | — |
+| [SRC-E73001D9AC-L000185](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L185) | 185 | `"- مسار متعدد الخطوات للمهام المعقدة فقط."` | — |
+| [SRC-E73001D9AC-L000186](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L186) | 186 | `"- مخطط بيانات صارم لخطة النموذج، مع التحقق من كل حقل قبل التنفيذ."` | — |
+| [SRC-E73001D9AC-L000187](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L187) | 187 | `"- الخطة التي يصدرها النموذج اقتراح غير موثوق، وليست إذنًا لتنفيذ عملية."` | — |
+| [SRC-E73001D9AC-L000188](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L188) | 188 | `"- لا يُسمح للخطة بزيادة الميزانية أو تجاوز الصلاحيات أو تعديل سياسات الأمان."` | — |
+| [SRC-E73001D9AC-L000189](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L189) | 189 | `"- الحد من إعادة التخطيط وعدد الخطوات وتكرار الأدوات."` | — |
+| [SRC-E73001D9AC-L000190](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L190) | 190 | `"- عند عدم الحاجة إلى بحث جديد، يُعاد استخدام سياق صالح ومحدد العمر بدل إعادة كل العمليات."` | — |
+| [SRC-E73001D9AC-L000191](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L191) | 191 | `""` | — |
+| [SRC-E73001D9AC-L000192](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L192) | 192 | `"تظل مخرجات التخطيط التي ينتجها النموذج **اقتراحات غير موثوقة**. عند الحاجة إلى تمثيل منظم للمهمة، تستخدم TaskSpec بمدخلات ومخرجات وقيود ومعايير قبول وقدرات مطلوبة؛ لا تمنح المواصفة صلاحيات. تُتحقق الخطة حتميًا قبل التنفيذ، وتُرفض الخطوات غير المعروفة أو المتجاوزة للحدود. الخطط المتكررة والحساسة تُفضّل لها مسارات Workflow محددة يمكن اختبارها، مع إبقاء المسار المباشر للأسئلة البسيطة."` | — |
+| [SRC-E73001D9AC-L000193](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L193) | 193 | `""` | — |
+| [SRC-E73001D9AC-L000194](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L194) | 194 | `"### الطبقة 7 — طبقة البحث وجلب الصفحات"` | — |
+| [SRC-E73001D9AC-L000195](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L195) | 195 | `"- فصل موصلات البحث عن محرك التخطيط وعن منطق الإجابة."` | — |
+| [SRC-E73001D9AC-L000196](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L196) | 196 | `"- تحديد timeout وconcurrency وresponse-size وresult-count لكل موصل."` | — |
+| [SRC-E73001D9AC-L000197](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L197) | 197 | `"- عزل فشل موصل واحد؛ لا يمنع بقية المصادر من العمل إذا كان المسار يسمح بذلك."` | — |
+| [SRC-E73001D9AC-L000198](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L198) | 198 | `"- تحديد تاريخ النتائج ومصدرها ووقت الاسترجاع والطلب الذي جلبها."` | — |
+| [SRC-E73001D9AC-L000199](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L199) | 199 | `"- جلب المحتوى العام المسموح فقط؛ لا تجاوز لتسجيل الدخول أو paywall أو ضوابط الوصول."` | — |
+| [SRC-E73001D9AC-L000200](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L200) | 200 | `"- احترام شروط استخدام المصادر وحدود الطلبات المسموحة."` | — |
+| [SRC-E73001D9AC-L000201](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L201) | 201 | `"- تخزين النتائج مؤقتًا فقط مع سياسة صلاحية وتحديث وحذف مناسبة."` | — |
+| [SRC-E73001D9AC-L000202](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L202) | 202 | `"- عدم افتراض استقلال المصادر لمجرد أن النتائج ظهرت في أكثر من محرك."` | — |
+| [SRC-E73001D9AC-L000203](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L203) | 203 | `""` | — |
+| [SRC-E73001D9AC-L000204](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L204) | 204 | `"### الطبقة 8 — بوابة الأدوات وسجل قدراتها"` | — |
+| [SRC-E73001D9AC-L000205](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L205) | 205 | `"كل أداة مسجلة بوصف قابل للتحقق يشمل:"` | — |
+| [SRC-E73001D9AC-L000206](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L206) | 206 | `"- الاسم والإصدار والجهة المالكة."` | — |
+| [SRC-E73001D9AC-L000207](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L207) | 207 | `"- المدخلات والمخرجات والمخطط المتوقع."` | — |
+| [SRC-E73001D9AC-L000208](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L208) | 208 | `"- الصلاحيات التي تحتاجها."` | — |
+| [SRC-E73001D9AC-L000209](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L209) | 209 | `"- مهلة التنفيذ والميزانية والحدود القصوى."` | — |
+| [SRC-E73001D9AC-L000210](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L210) | 210 | `"- ما إذا كانت للقراءة فقط أم ذات أثر خارجي."` | — |
+| [SRC-E73001D9AC-L000211](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L211) | 211 | `"- طريقة فحص صحتها، وحدود الفحص، ووقت آخر تحقق."` | — |
+| [SRC-E73001D9AC-L000212](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L212) | 212 | `"- مخاطرها وطريقة تعطيلها."` | — |
 | [SRC-E73001D9AC-L000213](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L213) | 213 | `"- اختبارات النجاح والفشل والسلوك عند انقطاع الاتصال."` | — |
 | [SRC-E73001D9AC-L000214](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L214) | 214 | `""` | — |
 | [SRC-E73001D9AC-L000215](../OMARAI_FOUNDATIONAL_ENGINEERING_CHARTER_AR.md#L215) | 215 | `"لا تُظهر المنظومة الأداة على أنها جاهزة لمجرد وجود مفتاح إعداد لها. إعداد المفتاح يثبت وجود إعداد فقط، ولا يثبت الوصول أو الصلاحيات أو النجاح الفعلي."` | — |
@@ -784,44 +825,3 @@
 | [SRC-D17CE3D12F-L000047](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L47) | 47 | `"5. SHOULD تحديد فئات الأسئلة التي يستطيع المنتج الإجابة عنها بكفاءة، والفئات التي تتطلب مصادر حديثة، والفئات التي ينبغي فيها الامتناع أو طلب توضيح."` | — |
 | [SRC-D17CE3D12F-L000048](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L48) | 48 | `"6. MUST توثيق التغييرات التي تكسر سلوكًا متوقعًا للمستخدم، وإتاحتها عبر سجل تغييرات عند التأثير الملحوظ."` | — |
 | [SRC-D17CE3D12F-L000049](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L49) | 49 | `"7. SHOULD الاحتفاظ بمجموعة حالات استخدام واقعية بالعربية لاختبار المسارات المهمة بعد كل تغيير."` | — |
-| [SRC-D17CE3D12F-L000050](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L50) | 50 | `""` | — |
-| [SRC-D17CE3D12F-L000051](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L51) | 51 | `"## 2. نموذج الخدمة والملكية والمسؤولية"` | — |
-| [SRC-D17CE3D12F-L000052](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L52) | 52 | `""` | — |
-| [SRC-D17CE3D12F-L000053](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L53) | 53 | `"1. لكل مكوّن حرج مالك منطقي مسؤول عن صحة سلوكه واختباراته ومراقبته ووثائقه؛ في مشروع يقوده شخص واحد، يمكن أن تكون هذه أدوارًا يجمعها شخص واحد، ولا نفترض وجود فريق غير موجود."` | — |
-| [SRC-D17CE3D12F-L000054](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L54) | 54 | `"2. SHOULD وجود سجل خدمات ومكونات يتضمن: الغرض، الاعتماديات، حساسية البيانات، متطلبات الأسرار، طريقة الاختبار، طريقة التشغيل، حدود الموارد، وآلية الإيقاف."` | — |
-| [SRC-D17CE3D12F-L000055](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L55) | 55 | `"3. MUST تحديد حدود الثقة بين الواجهة وAPI والوكيل ومزوّدي النماذج وأدوات البحث والتخزين."` | — |
-| [SRC-D17CE3D12F-L000056](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L56) | 56 | `"4. MUST أن تكون إعدادات الإنتاج منفصلة عن الاختبارات والتطوير، مع قيم آمنة افتراضيًا وعدم تضمين مفاتيح حقيقية في الأمثلة."` | — |
-| [SRC-D17CE3D12F-L000057](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L57) | 57 | `"5. SHOULD تعريف مستويات حرجة للخدمات والبيانات حتى تتناسب الضوابط مع الأثر الفعلي للفشل."` | — |
-| [SRC-D17CE3D12F-L000058](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L58) | 58 | `"6. MUST ألا تكون تعليمات التشغيل أو الاستعادة معتمدة على معرفة شفوية غير موثقة وحدها."` | — |
-| [SRC-D17CE3D12F-L000059](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L59) | 59 | `""` | — |
-| [SRC-D17CE3D12F-L000060](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L60) | 60 | `"## 3. مبادئ القرار المعماري"` | — |
-| [SRC-D17CE3D12F-L000061](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L61) | 61 | `""` | — |
-| [SRC-D17CE3D12F-L000062](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L62) | 62 | `"1. MUST تقييم البساطة، والتكلفة، والأمن، والموثوقية، والأداء، وقابلية الصيانة معًا؛ لا يحل أي منها تلقائيًا محل الأخرى."` | — |
-| [SRC-D17CE3D12F-L000063](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L63) | 63 | `"2. MUST توثيق القرار المؤثر في ADR أو سجل مكافئ، مع المشكلة والبدائل والاختيار والأسباب والمخاطر والاختبارات والتراجع."` | — |
-| [SRC-D17CE3D12F-L000064](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L64) | 64 | `"3. SHOULD فصل التغييرات الكبيرة إلى تغييرات صغيرة قابلة للمراجعة، ما لم يوجد سبب تشغيل موثق لغير ذلك."` | — |
-| [SRC-D17CE3D12F-L000065](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L65) | 65 | `"4. MUST تجنّب الاعتماديات الدائرية والواجهات الداخلية غير المستقرة بين الوحدات."` | — |
-| [SRC-D17CE3D12F-L000066](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L66) | 66 | `"5. MUST وضع خطة لإزالة التجريدات المؤقتة والأعلام والواجهات القديمة بعد انتهاء الحاجة إليها."` | — |
-| [SRC-D17CE3D12F-L000067](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L67) | 67 | `"6. MUST عدم تحويل «المستقبل قد يحتاج ذلك» وحده إلى سبب كافٍ لإضافة نظام موزع معقد."` | — |
-| [SRC-D17CE3D12F-L000068](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L68) | 68 | `""` | — |
-| [SRC-D17CE3D12F-L000069](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L69) | 69 | `"---"` | — |
-| [SRC-D17CE3D12F-L000070](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L70) | 70 | `""` | — |
-| [SRC-D17CE3D12F-L000071](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L71) | 71 | `"# القسم الثاني — هندسة الخدمة الموثوقة (SRE) والاستعداد التشغيلي"` | — |
-| [SRC-D17CE3D12F-L000072](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L72) | 72 | `""` | — |
-| [SRC-D17CE3D12F-L000073](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L73) | 73 | `"## 4. مؤشرات مستوى الخدمة SLI والأهداف SLO واتفاقيات SLA"` | — |
-| [SRC-D17CE3D12F-L000074](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L74) | 74 | `""` | — |
-| [SRC-D17CE3D12F-L000075](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L75) | 75 | `"1. SHOULD تعريف SLI لكل مسار مهم، مثل نجاح الطلب، وزمن الاستجابة، ونسبة إتمام البحث، وصحة عرض المصادر، ومعدل الأخطاء."` | — |
-| [SRC-D17CE3D12F-L000076](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L76) | 76 | `"2. SHOULD وضع أهداف SLO مبدئية قابلة للقياس بناءً على البيئة المتاحة ثم تعديلها بالقياس؛ لا تُخترع نسبة توافر أو زمن استجابة بلا خط أساس."` | — |
-| [SRC-D17CE3D12F-L000077](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L77) | 77 | `"3. إذا تعهّد Omarai لاحقًا بمستوى خدمة لعملاء، MUST التمييز بين SLO داخلي وSLA تعاقدي، وتعريف نافذة القياس والاستثناءات وطريقة الحساب."` | — |
-| [SRC-D17CE3D12F-L000078](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L78) | 78 | `"4. SHOULD استخدام ميزانية أخطاء (Error Budget) عندما يصبح الاعتماد التشغيلي عليها مفيدًا: إذا استهلكت الأعطال الميزانية، تُعطى الأولوية للإصلاح والموثوقية بدل تسريع إطلاق الميزات."` | — |
-| [SRC-D17CE3D12F-L000079](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L79) | 79 | `"5. MUST قياس الفشل من منظور المستخدم لا من صحة العملية وحدها؛ قد تكون العملية «حية» لكن الخدمة عاجزة عن إكمال الطلب."` | — |
-| [SRC-D17CE3D12F-L000080](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L80) | 80 | `"6. MUST عدم إعلان هدف توافر عالٍ لا تسمح به استضافة مجانية أو موفر خارجي أو تصميم أحادي النقطة."` | — |
-| [SRC-D17CE3D12F-L000081](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L81) | 81 | `"7. SHOULD تحديد حدود تدهور مقبولة لكل رحلة حرجة، بما فيها وضع محدود عند تعطل البحث أو مزود النموذج."` | — |
-| [SRC-D17CE3D12F-L000082](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L82) | 82 | `""` | — |
-| [SRC-D17CE3D12F-L000083](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L83) | 83 | `"## 5. مراجعة الاستعداد للإنتاج (Production Readiness Review)"` | — |
-| [SRC-D17CE3D12F-L000084](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L84) | 84 | `""` | — |
-| [SRC-D17CE3D12F-L000085](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L85) | 85 | `"قبل إطلاق قدرة ذات أثر ملحوظ أو تعريض بيانات حقيقية لها، تتم مراجعة تناسبية تشمل:"` | — |
-| [SRC-D17CE3D12F-L000086](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L86) | 86 | `"- قائمة اعتماديات خارجية وحدود حصصها وطرق تعطلها."` | — |
-| [SRC-D17CE3D12F-L000087](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L87) | 87 | `"- إعدادات البيئة والأسرار والمنافذ ونقاط الإدارة."` | — |
-| [SRC-D17CE3D12F-L000088](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L88) | 88 | `"- الصحة والجاهزية والإغلاق الآمن."` | — |
-| [SRC-D17CE3D12F-L000089](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L89) | 89 | `"- سجلات ومقاييس وتنبيهات ذات معنى."` | — |
-| [SRC-D17CE3D12F-L000090](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L90) | 90 | `"- سياسة الوقت والموارد وإعادة المحاولة والإلغاء."` | — |
