@@ -1168,17 +1168,21 @@ def build_query_strategy_matrix(
             )
         normalized_candidate = normalize_text(candidate)
         location_aliases = {
-            "مصر": ("مصر", "egypt", "egyptian"),
-            "القاهرة": ("القاهرة", "القاهره", "cairo"),
-            "الإسكندرية": ("الإسكندرية", "الاسكندرية", "الاسكندريه", "alexandria"),
-            "السعودية": ("السعودية", "السعوديه", "saudi arabia"),
-            "الإمارات": ("الإمارات", "الامارات", "uae", "united arab emirates"),
-            "المملكة المتحدة": ("المملكة المتحدة", "united kingdom", "the uk"),
-            "الولايات المتحدة": ("الولايات المتحدة", "united states", "the us"),
+            normalize_text("مصر"): ("مصر", "egypt", "egyptian"),
+            normalize_text("القاهرة"): ("القاهرة", "القاهره", "cairo"),
+            normalize_text("الإسكندرية"): ("الإسكندرية", "الاسكندرية", "الاسكندريه", "alexandria"),
+            normalize_text("الجيزة"): ("الجيزة", "الجيزه", "giza"),
+            normalize_text("العاصمة الإدارية"): ("العاصمة الإدارية", "العاصمه الاداريه", "new administrative capital"),
+            normalize_text("القاهرة الجديدة"): ("القاهرة الجديدة", "القاهره الجديده", "new cairo"),
+            normalize_text("السعودية"): ("السعودية", "السعوديه", "saudi arabia", "ksa"),
+            normalize_text("الإمارات"): ("الإمارات", "الامارات", "uae", "united arab emirates"),
+            normalize_text("المملكة المتحدة"): ("المملكة المتحدة", "united kingdom", "the uk"),
+            normalize_text("الولايات المتحدة"): ("الولايات المتحدة", "united states", "the us"),
         }
+        missing_scope_terms: list[str] = []
         for scope_term in scope_terms:
             normalized_scope = normalize_text(scope_term)
-            aliases = location_aliases.get(scope_term, (scope_term,))
+            aliases = location_aliases.get(normalized_scope, (scope_term,))
             location_already_present = any(
                 re.search(
                     rf"(?<!\\w){re.escape(normalize_text(alias))}(?!\\w)",
@@ -1188,8 +1192,21 @@ def build_query_strategy_matrix(
                 if normalize_text(alias)
             )
             if normalized_scope and normalized_scope not in normalized_candidate and not location_already_present:
-                candidate = _SPACE.sub(" ", f"{candidate} {scope_term}").strip()
-                normalized_candidate = normalize_text(candidate)
+                missing_scope_terms.append(scope_term)
+
+        if missing_scope_terms:
+            # Never append scope and then slice it away. Reserve query length for
+            # the location/budget suffix first, trimming only redundant topic tail.
+            selected_scope_terms: list[str] = []
+            for term in missing_scope_terms:
+                candidate_terms = [*selected_scope_terms, term]
+                if len(" ".join(candidate_terms)) <= 150:
+                    selected_scope_terms.append(term)
+            scope_suffix = " ".join(selected_scope_terms)
+            max_topic_chars = max(60, 239 - len(scope_suffix))
+            if len(candidate) > max_topic_chars:
+                candidate = candidate[:max_topic_chars].rsplit(" ", 1)[0].strip()
+            candidate = _SPACE.sub(" ", f"{candidate} {scope_suffix}").strip()
         candidate = candidate[:240]
         key = _query_key(candidate)
         if not candidate or not key or key in seen:
