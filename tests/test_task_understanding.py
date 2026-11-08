@@ -693,3 +693,13 @@ def test_query_matrix_never_exceeds_provider_limit_with_many_inherited_slots():
     assert all(len(row["query"]) <= 240 for row in rows)
     assert all("القاهرة الكبرى" in row["query"] for row in rows)
     assert all("20000 جنيه" in row["query"] for row in rows)
+
+
+def test_scope_value_matching_handles_bilingual_places_without_partial_word_matches():
+    from agents.task_understanding import _scope_value_present
+
+    assert _scope_value_present("looking to buy in Egypt this month", "مصر")
+    assert _scope_value_present("ابحث عن المشترين في مصر", "Egypt")
+    assert _scope_value_present("مراكز صيانة في Alexandria", "الإسكندرية")
+    assert not _scope_value_present("research about Egyptology", "مصر")
+    assert not _scope_value_present("CairoTech business directory", "القاهرة")
