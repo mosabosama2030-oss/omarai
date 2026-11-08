@@ -1411,17 +1411,21 @@ def build_query_strategy_matrix(
                 return False
         return True
 
+    planner_seed_is_current = planner_seed_has_current_changed_slots(planner_seed)
     primary_seed = (
         planner_seed
-        if planner_seed_has_current_changed_slots(planner_seed)
+        if planner_seed_is_current
         else (resolved_context_seed or context_anchor)
         if replace_stale_planner_queries
         else (planner_seed or str(question or ""))
     )
-    topic_anchor_query = context_anchor or (
-        str(queries[0]).strip()
-        if queries and isinstance(queries[0], str)
-        else str(question or "")
+    # When the planner seed already contains the updated slots, use that seed
+    # as the subject anchor too. A different-language context label must not
+    # reject relevant strategy variants written in the seed's language.
+    topic_anchor_query = (
+        planner_seed
+        if planner_seed_is_current
+        else (context_anchor or planner_seed or str(question or ""))
     )
     if not context_anchor:
         topic_anchor_query = re.sub(
