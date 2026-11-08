@@ -521,6 +521,28 @@ def build_task_spec(
         aspect_values = extract_aspects(raw)[:MAX_TASK_ASPECTS]
     except (ImportError, TypeError, ValueError):
         aspect_values = []
+    context = dialogue_context if isinstance(dialogue_context, dict) else {}
+    confirmed_context = (
+        context.get("is_follow_up") is True
+        and context.get("topic_shift") is not True
+        and context.get("needs_clarification") is not True
+    )
+    if confirmed_context:
+        resolved_context_text = context.get("resolved_question")
+        if isinstance(resolved_context_text, str) and resolved_context_text.strip():
+            try:
+                inherited_aspects = extract_aspects(resolved_context_text)
+            except (ImportError, TypeError, ValueError):
+                inherited_aspects = []
+            for aspect in inherited_aspects:
+                key = normalize_text(aspect)
+                if (
+                    aspect.strip()
+                    and key
+                    and key not in {normalize_text(item) for item in aspect_values}
+                    and len(aspect_values) < MAX_TASK_ASPECTS
+                ):
+                    aspect_values.append(aspect.strip())
 
     official_destination = bool(matches["official_site_lookup"])
     government_official_site = bool(
@@ -726,7 +748,6 @@ def build_task_spec(
         missing_required_inputs.append("official_destination_target_entity")
     if family == "summarize" and not urls and not inline_summary_text:
         missing_required_inputs.append("summary_source_url_or_pasted_text")
-    context = dialogue_context if isinstance(dialogue_context, dict) else {}
     explicit_aspects = list(dict.fromkeys(aspect_values))[:MAX_TASK_ASPECTS]
 
     # Hypotheses are alternatives considered by the deterministic classifier. Counts
@@ -1229,6 +1250,16 @@ def build_query_strategy_matrix(
     queries = existing_queries if isinstance(existing_queries, list) else []
     rows: list[dict[str, str]] = []
     seen: set[str] = set()
+    initial_context = (
+        spec.get("context_resolution")
+        if isinstance(spec.get("context_resolution"), dict) else {}
+    )
+    if (
+        spec.get("intent_route") == "CLARIFY"
+        or spec.get("ambiguity_status") == "needs_clarification"
+        or initial_context.get("needs_clarification") is True
+    ):
+        return rows
     context_resolution = (
         spec.get("context_resolution")
         if isinstance(spec.get("context_resolution"), dict) else {}
@@ -1287,13 +1318,105 @@ def build_query_strategy_matrix(
         if isinstance(value, str) and value.strip()
     ]
     resolved_context_seed = str(context_resolution.get("resolved_question") or "").strip()
-    primary_seed = (
-        resolved_context_seed or context_anchor
-        if replace_stale_planner_queries
-        else (
-            str(queries[0]).strip()
-            if queries and isinstance(queries[0], str) else str(question or "")
+    planner_seed = (
+        str(queries[0]).strip()
+        if queries and isinstance(queries[0], str) else ""
+    )
+
+    def planner_seed_has_current_changed_slots(seed: str) -> bool:
+        if not replace_stale_planner_queries or not seed:
+            return False
+        normalized_seed = normalize_text(seed)
+        aliases = {
+            "location": {
+                normalize_text("مصر"): ("مصر", "egypt", "egyptian"),
+                normalize_text("القاهرة"): ("القاهرة", "القاهره", "cairo"),
+                normalize_text("الإسكندرية"): ("الإسكندرية", "الاسكندرية", "الاسكندريه", "alexandria"),
+                normalize_text("الجيزة"): ("الجيزة", "الجيزه", "giza"),
+                normalize_text("السعودية"): ("السعودية", "السعوديه", "saudi arabia", "ksa"),
+                normalize_text("الإمارات"): ("الإمارات", "الامارات", "uae", "united arab emirates"),
+            },
+            "country": {
+                normalize_text("مصر"): ("مصر", "egypt"),
+                normalize_text("السعودية"): ("السعودية", "السعوديه", "saudi arabia", "ksa"),
+                normalize_text("الإمارات"): ("الإمارات", "الامارات", "uae", "united arab emirates"),
+            },
+            "currency": {
+                normalize_text("اليورو"): ("اليورو", "يورو", "eur", "euro", "euros"),
+                normalize_text("الدولار"): ("الدولار", "دولار", "usd", "us dollar", "dollar", "dollars"),
+                normalize_text("الجنيه المصري"): ("الجنيه المصري", "جنيه مصري", "egp", "egyptian pound", "egyptian pounds"),
+                normalize_text("الريال السعودي"): ("الريال السعودي", "ريال سعودي", "sar", "saudi riyal"),
+                normalize_text("الدرهم الإماراتي"): ("الدرهم الإماراتي", "درهم إماراتي", "aed", "uae dirham"),
+            },
+            "aspect": {
+                normalize_text("الضمان"): ("الضمان", "ضمان", "warranty", "guarantee"),
+                normalize_text("التقييمات"): ("التقييمات", "التقييم", "reviews", "ratings", "review"),
+                normalize_text("المراجعات"): ("المراجعات", "مراجعات", "reviews", "ratings"),
+                normalize_text("الصيانة"): ("الصيانة", "الصيانه", "maintenance", "repair", "service"),
+                normalize_text("السعر"): ("السعر", "سعر", "price", "pricing", "cost"),
+            },
+            "capacity": {
+                normalize_text("256 جيجابايت"): ("256 جيجابايت", "256gb", "256 gb"),
+                normalize_text("512 جيجابايت"): ("512 جيجابايت", "512gb", "512 gb"),
+                normalize_text("1 تيرابايت"): ("1 تيرابايت", "1tb", "1 tb", "1024gb"),
+            },
+        }
+        changed = (
+            context_resolution.get("changed_slots")
+            if isinstance(context_resolution.get("changed_slots"), list) else []
         )
+        slots = (
+            context_resolution.get("slots")
+            if isinstance(context_resolution.get("slots"), dict) else {}
+        )
+        relevant = [
+            slot for slot in changed
+            if slot in {
+                "location", "country", "budget", "currency", "time_range",
+                "capacity", "aspect", "version", "entity", "product", "model", "variant",
+            }
+        ]
+        if not relevant:
+            return False
+        for slot in relevant:
+            value = slots.get(slot)
+            if not isinstance(value, str) or not value.strip():
+                return False
+            normalized_value = normalize_text(value)
+            candidates = aliases.get(slot, {}).get(normalized_value, (value,))
+            if slot == "budget":
+                numbers = {
+                    item.replace(",", "").replace(".", "")
+                    for item in re.findall(r"\d+(?:[,.]\d+)*", normalized_value)
+                }
+                seed_numbers = {
+                    item.replace(",", "").replace(".", "")
+                    for item in re.findall(r"\d+(?:[,.]\d+)*", normalized_seed)
+                }
+                if not numbers or not numbers.issubset(seed_numbers):
+                    return False
+                continue
+            if slot == "capacity":
+                numbers = {
+                    item.replace(",", "").replace(".", "")
+                    for item in re.findall(r"\d+(?:[,.]\d+)*", normalized_value)
+                }
+                seed_numbers = {
+                    item.replace(",", "").replace(".", "")
+                    for item in re.findall(r"\d+(?:[,.]\d+)*", normalized_seed)
+                }
+                if numbers and numbers.issubset(seed_numbers):
+                    continue
+            if not any(normalize_text(alias) in normalized_seed for alias in candidates):
+                return False
+        return True
+
+    primary_seed = (
+        planner_seed
+        if planner_seed_has_current_changed_slots(planner_seed)
+        else (resolved_context_seed or context_anchor)
+        if replace_stale_planner_queries
+        else (planner_seed or str(question or ""))
     )
     topic_anchor_query = context_anchor or (
         str(queries[0]).strip()
