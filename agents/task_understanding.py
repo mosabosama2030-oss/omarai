@@ -1166,9 +1166,30 @@ def build_query_strategy_matrix(
                 item.strip() for item in raw_budgets[:3]
                 if isinstance(item, str) and item.strip()
             )
+        normalized_candidate = normalize_text(candidate)
+        location_aliases = {
+            "مصر": ("مصر", "egypt", "egyptian"),
+            "القاهرة": ("القاهرة", "القاهره", "cairo"),
+            "الإسكندرية": ("الإسكندرية", "الاسكندرية", "الاسكندريه", "alexandria"),
+            "السعودية": ("السعودية", "السعوديه", "saudi arabia"),
+            "الإمارات": ("الإمارات", "الامارات", "uae", "united arab emirates"),
+            "المملكة المتحدة": ("المملكة المتحدة", "united kingdom", "the uk"),
+            "الولايات المتحدة": ("الولايات المتحدة", "united states", "the us"),
+        }
         for scope_term in scope_terms:
-            if normalize_text(scope_term) not in normalize_text(candidate):
+            normalized_scope = normalize_text(scope_term)
+            aliases = location_aliases.get(scope_term, (scope_term,))
+            location_already_present = any(
+                re.search(
+                    rf"(?<!\\w){re.escape(normalize_text(alias))}(?!\\w)",
+                    normalized_candidate,
+                )
+                for alias in aliases
+                if normalize_text(alias)
+            )
+            if normalized_scope and normalized_scope not in normalized_candidate and not location_already_present:
                 candidate = _SPACE.sub(" ", f"{candidate} {scope_term}").strip()
+                normalized_candidate = normalize_text(candidate)
         candidate = candidate[:240]
         key = _query_key(candidate)
         if not candidate or not key or key in seen:
