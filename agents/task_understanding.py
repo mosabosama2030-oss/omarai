@@ -1742,7 +1742,15 @@ def build_query_strategy_matrix(
             r"^(?:من فضلك|لو سمحت|ابحث لي|ابحث|دورلي|دور|اعثر على|please|search for|find|look up)\s*",
             "", str(question or "").strip(), flags=re.IGNORECASE,
         )
-    if not primary_seed and context_anchor:
+    if (
+        context_anchor
+        and re.search(r"[\u0600-\u06FF]", primary_seed)
+    ):
+        # For Arabic planner seeds, prefer the resolved topic/entities to remove
+        # imperative prefixes. For English seeds, keep the seed language so
+        # location/currency aliases are not re-appended in Arabic.
+        base = context_anchor[:180]
+    elif not base and context_anchor:
         base = context_anchor[:180]
     base = _QUERY_STOP.sub("", base).strip(" \t\r\n-،,؛;")
     if not base:
