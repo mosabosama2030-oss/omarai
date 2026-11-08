@@ -1022,6 +1022,54 @@ class WebAgent:
             self._provider_diagnostics = self._provider_diagnostics[-160:]
 
     @staticmethod
+    def _classify_provider_exception(exc: Exception) -> tuple[str, str]:
+        """Classify connector errors without logging provider URLs or response bodies."""
+        if isinstance(exc, TimeoutError):
+            return "timeout", "provider request timed out"
+
+        try:
+            import httpx
+        except ImportError:  # pragma: no cover - HTTPX backs configured HTTP connectors
+            httpx = None
+
+        if httpx is not None:
+            if isinstance(exc, httpx.TimeoutException):
+                return "timeout", "provider request timed out"
+            if isinstance(exc, httpx.DecodingError):
+                return "invalid_response", "provider response decoding failed"
+            if isinstance(exc, httpx.HTTPStatusError):
+                response = getattr(exc, "response", None)
+                status_code = getattr(response, "status_code", None)
+            else:
+                status_code = None
+        else:
+            status_code = None
+
+        if status_code is None:
+            status_match = re.search(r"(?i)\\bHTTP\\s+(\\d{3})\\b", str(exc))
+            if status_match:
+                status_code = int(status_match.group(1))
+
+        if status_code is not None:
+            try:
+                code = int(status_code)
+            except (TypeError, ValueError, OverflowError):
+                code = 0
+            detail = f"HTTP {code}" if 100 <= code <= 599 else type(exc).__name__
+            if code == 202 or 300 <= code < 400:
+                return "blocked", detail
+            if code == 429:
+                return "rate_limited", detail
+            if code in {401, 403}:
+                return "unauthorized", detail
+            if 400 <= code < 600:
+                return "http_error", detail
+
+        if isinstance(exc, (json.JSONDecodeError, UnicodeError)):
+            return "invalid_response", "provider returned an unreadable response"
+        return "failed", type(exc).__name__
+
+    @staticmethod
     def _source_matches_query(query: str, source: dict[str, Any]) -> bool:
         if "user_supplied_url" in source.get("providers", []):
             return True
@@ -1935,19 +1983,8 @@ class WebAgent:
                 self._record_provider_diagnostic(
                     name, search_query, "timeout", error="provider exceeded its bounded request timeout"
                 )
-            except Exception as exc:  # noqa: BLE001 - isolate a connector without leaking provider bodies/secrets
-                detail = f"{type(exc).__name__}: {exc}" if isinstance(exc, RuntimeError) else type(exc).__name__
-                status = "failed"
-                status_match = re.search(r"(?i)\bHTTP\s+(\d{3})\b", str(exc))
-                if status_match:
-                    status_code = int(status_match.group(1))
-                    if status_code == 429:
-                        status = "rate_limited"
-                    elif status_code in {401, 403}:
-                        status = "unauthorized"
-                    elif status_code == 202 or 300 <= status_code < 600:
-                        # Do not bypass anti-bot/challenge responses; mark the provider degraded.
-                        status = "http_error"
+            except Exception as exc:  # noqa: BLE001 - isolate each connector without leaking payloads
+                status, detail = self._classify_provider_exception(exc)
                 self._record_provider_diagnostic(name, search_query, status, error=detail)
             return []
 
