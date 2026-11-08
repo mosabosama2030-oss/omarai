@@ -623,3 +623,40 @@ def test_topic_shift_does_not_leak_context_currency_or_time_range_into_queries()
         for row in rows
         for marker in ("ZX-500", "الجنيه المصري", "آخر 30 يوم", "الضمان")
     )
+
+
+def test_recommendation_explicit_criteria_are_decomposed_into_targeted_queries():
+    question = "رشح جهاز إنذار حريق مناسب للمباني من حيث السعر والضمان"
+    spec = build_task_spec(
+        question,
+        mode="deep",
+        intent_route="WEB_DEEP",
+    )
+
+    rows = build_query_strategy_matrix(question, spec, [question], limit=8)
+    criterion_queries = [
+        row["query"] for row in rows
+        if row["strategy"] == "explicit_criterion"
+    ]
+
+    assert len(criterion_queries) >= 2
+    assert any("السعر" in query for query in criterion_queries)
+    assert any("الضمان" in query for query in criterion_queries)
+
+
+def test_short_price_followup_and_answer_format_instructions_do_not_create_extra_aspects():
+    question = "كام سعرها؟ اذكر مصادر موثوقة وروابط مباشرة وأجب بإيجاز."
+    spec = build_task_spec(
+        question,
+        mode="auto",
+        intent_route="WEB_SIMPLE",
+    )
+
+    rows = build_query_strategy_matrix(
+        question,
+        spec,
+        ["كام سعرها"],
+        limit=8,
+    )
+
+    assert not any(row["strategy"] == "explicit_criterion" for row in rows)
