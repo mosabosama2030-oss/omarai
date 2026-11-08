@@ -1200,6 +1200,43 @@ def build_query_strategy_matrix(
     queries = existing_queries if isinstance(existing_queries, list) else []
     rows: list[dict[str, str]] = []
     seen: set[str] = set()
+    context_resolution = (
+        spec.get("context_resolution")
+        if isinstance(spec.get("context_resolution"), dict) else {}
+    )
+    inherit_context = (
+        context_resolution.get("is_follow_up") is True
+        and context_resolution.get("topic_shift") is not True
+        and context_resolution.get("needs_clarification") is not True
+    )
+    context_anchor_parts: list[str] = []
+    if inherit_context:
+        topic = context_resolution.get("topic")
+        if isinstance(topic, str) and topic.strip():
+            context_anchor_parts.append(topic.strip())
+        entities = context_resolution.get("entities")
+        if isinstance(entities, list):
+            for entity in entities[:5]:
+                if (
+                    isinstance(entity, str)
+                    and entity.strip()
+                    and normalize_text(entity) not in normalize_text(" ".join(context_anchor_parts))
+                ):
+                    context_anchor_parts.append(entity.strip())
+    context_anchor = _SPACE.sub(" ", " ".join(context_anchor_parts)).strip()
+    topic_anchor_query = context_anchor or (
+        str(queries[0]).strip()
+        if queries and isinstance(queries[0], str)
+        else str(question or "")
+    )
+    if not context_anchor:
+        topic_anchor_query = re.sub(
+            r"^(?:من فضلك|لو سمحت|ابحث لي|ابحث|دورلي|دور|اعثر على|رشح لي|رشح|"
+            r"please|search for|find|look up|recommend)\\s*",
+            "",
+            topic_anchor_query,
+            flags=re.IGNORECASE,
+        )
 
     def add(query: Any, strategy: str, rationale: str, *, enforce_topic: bool = True) -> None:
         if not isinstance(query, str) or not query.strip() or len(rows) >= maximum:
@@ -1371,8 +1408,7 @@ def build_query_strategy_matrix(
             return
         # Search modifications must preserve a subject anchor. Existing planner
         # queries are retained because they may already contain resolved context.
-        anchor_query = str(queries[0]).strip() if queries and isinstance(queries[0], str) else str(question or "")
-        topic_tokens = _TOKEN_RE.findall(_query_key(anchor_query))
+        topic_tokens = _TOKEN_RE.findall(_query_key(topic_anchor_query))
         query_tokens = _TOKEN_RE.findall(key)
         if enforce_topic and len(topic_tokens) >= 2 and not any(
             token in query_tokens for token in topic_tokens[:3]
@@ -1444,6 +1480,8 @@ def build_query_strategy_matrix(
             r"^(?:من فضلك|لو سمحت|ابحث لي|ابحث|دورلي|دور|اعثر على|please|search for|find|look up)\s*",
             "", str(question or "").strip(), flags=re.IGNORECASE,
         )
+    if context_anchor:
+        base = context_anchor[:180]
     base = _QUERY_STOP.sub("", base).strip(" \t\r\n-،,؛;")
     if not base:
         return rows
