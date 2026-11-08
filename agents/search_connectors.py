@@ -126,7 +126,17 @@ def search_arxiv(query: str, limit: int = MAX_CONNECTOR_RESULTS) -> list[dict[st
         link = _clean_text(fields.get("id", ""), 2048)
         summary = _clean_text(fields.get("summary", ""), 1600)
         published = _clean_text(fields.get("published", ""), 100)
-        if title and re.fullmatch(r"https?://arxiv\\.org/abs/[^\\s<>]+", link):
+        try:
+            parsed_link = urllib.parse.urlsplit(link)
+        except ValueError:
+            continue
+        valid_arxiv_link = (
+            parsed_link.scheme in {"http", "https"}
+            and parsed_link.netloc.casefold() == "arxiv.org"
+            and parsed_link.path.startswith("/abs/")
+            and len(parsed_link.path) > len("/abs/")
+        )
+        if title and valid_arxiv_link:
             rows.append(
                 _result(
                     title=title,
