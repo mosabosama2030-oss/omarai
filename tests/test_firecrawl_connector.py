@@ -57,7 +57,7 @@ def test_firecrawl_search_normalizes_only_safe_described_web_results(monkeypatch
     assert result[0]["snippet"] == "نبحث عن مورد لتوريد المعدات المطلوبة"
     assert captured["method"] == "POST"
     assert captured["url"] == "https://api.firecrawl.dev/v2/search"
-    assert captured["kwargs"]["json"]["sources"] == [{"type": "web"}]
+    assert captured["kwargs"]["json"]["sources"] == ["web"]
     assert captured["kwargs"]["json"]["limit"] == 6
     assert captured["kwargs"]["json"]["country"] == "EG"
     assert captured["kwargs"]["headers"]["Authorization"] == "Bearer test-firecrawl-secret"
