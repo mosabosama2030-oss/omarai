@@ -1291,7 +1291,24 @@ def build_query_strategy_matrix(
     if not base:
         return rows
 
-    candidates = _generated_strategy_candidates(base, spec_for_candidates)
+    # A long natural-language request is a poor anchor for alternative queries:
+    # appending strategy wording and inherited scope can make every candidate
+    # truncate to the same prefix. Prefer the validated dialogue topic only when
+    # it is clearly anchored in the user's long question.
+    candidate_topic = base
+    context_resolution = (
+        spec.get("context_resolution")
+        if isinstance(spec.get("context_resolution"), dict)
+        else {}
+    )
+    context_topic = context_resolution.get("topic")
+    if len(base) > 160 and isinstance(context_topic, str) and context_topic.strip():
+        topic_tokens = set(_TOKEN_RE.findall(_query_key(context_topic)))
+        question_tokens = set(_TOKEN_RE.findall(_query_key(base)))
+        if topic_tokens and len(topic_tokens & question_tokens) >= min(1, len(topic_tokens)):
+            candidate_topic = context_topic.strip()
+
+    candidates = _generated_strategy_candidates(candidate_topic, spec_for_candidates)
     for query, strategy, rationale in candidates:
         add(
             query, strategy, rationale,
