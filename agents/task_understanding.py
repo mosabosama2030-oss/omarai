@@ -1151,7 +1151,32 @@ def build_query_strategy_matrix(
                 candidate = compact_fn(candidate) or ""
             except (TypeError, ValueError):
                 candidate = ""
-        candidate = _SPACE.sub(" ", candidate).strip()[:240]
+        candidate = _SPACE.sub(" ", candidate).strip()
+        # Carry explicit/inherited geography into every search candidate. Budgets
+        # constrain commercial discovery/recommendation tasks, not unrelated topics.
+        scope_terms: list[str] = []
+        raw_locations = constraints.get("explicit_locations")
+        if isinstance(raw_locations, list):
+            scope_terms.extend(
+                item.strip() for item in raw_locations[:5]
+                if isinstance(item, str) and item.strip()
+            )
+        budget_scoped_families = {
+            "recommendation", "compare", "lead_generation", "find_or_discover"
+        }
+        raw_budgets = constraints.get("explicit_budgets")
+        if (
+            spec.get("task_family") in budget_scoped_families
+            and isinstance(raw_budgets, list)
+        ):
+            scope_terms.extend(
+                item.strip() for item in raw_budgets[:3]
+                if isinstance(item, str) and item.strip()
+            )
+        for scope_term in scope_terms:
+            if normalize_text(scope_term) not in normalize_text(candidate):
+                candidate = _SPACE.sub(" ", f"{candidate} {scope_term}").strip()
+        candidate = candidate[:240]
         key = _query_key(candidate)
         if not candidate or not key or key in seen:
             return
