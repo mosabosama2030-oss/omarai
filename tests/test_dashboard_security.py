@@ -228,3 +228,20 @@ def test_workspace_exposes_ai_chat_as_secondary_entry_using_agent_api_safely():
     assert "innerHTML" not in chat
     assert "safeHttp(src.url)" in chat
     assert "a.rel=\"noopener noreferrer\"" in chat
+
+
+def test_workspace_clears_chat_at_auth_boundaries_and_ignores_stale_responses():
+    workspace = Path(__file__).resolve().parents[1] / "web" / "workspace.html"
+    script = workspace.read_text(encoding="utf-8").split("<script>", 1)[1].split("</script>", 1)[0]
+    auth = script.split("function showAuth(", 1)[1].split("function hideAuth(", 1)[0]
+    chat = script.split("async function sendChat(", 1)[1].split("function renderCurrent(", 1)[0]
+
+    assert "function clearChatSession()" in script
+    assert "clearChatSession()" in auth
+    assert "chat.messages=[]" in script
+    assert "chat.history=[]" in script
+    assert 'chat.mode="deep"' in script
+    assert "chat.sessionVersion=(chat.sessionVersion||0)+1" in script
+    assert "const requestSessionVersion=chat.sessionVersion" in chat
+    assert "if(state.chat.sessionVersion!==requestSessionVersion)return;" in chat
+    assert "if(state.chat.sessionVersion===requestSessionVersion)" in chat
