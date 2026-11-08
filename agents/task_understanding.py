@@ -1529,7 +1529,7 @@ def build_query_strategy_matrix(
         context_seed = primary_seed or topic_anchor_query
         source_angle = (
             "مستندات الشركة المصنعة ومصدر السعر"
-            if re.search(r"[\\u0600-\\u06FF]", context_seed)
+            if re.search(r"[\u0600-\u06FF]", context_seed)
             else "manufacturer documentation and pricing source"
         )
         add(
