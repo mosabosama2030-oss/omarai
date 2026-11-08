@@ -493,7 +493,14 @@ def test_query_strategy_matrix_applies_inherited_location_and_budget_to_all_cand
 
     rows = build_query_strategy_matrix(question, spec, [question], limit=8)
 
-    assert len(rows) >= 2
+    assert len(rows) >= 2, {
+        "task_family": spec["task_family"],
+        "ambiguity_status": spec["ambiguity_status"],
+        "hypotheses": spec["hypothesis_interpretations"],
+        "context_resolution": spec["context_resolution"],
+        "constraints": spec["constraints"],
+        "rows": rows,
+    }
     assert all("الإسكندرية" in row["query"] for row in rows)
     assert all("أقل من 20000 جنيه" in row["query"] for row in rows)
 
