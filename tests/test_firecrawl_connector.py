@@ -146,6 +146,7 @@ def test_firecrawl_is_blocked_when_optional_providers_are_disabled(monkeypatch):
         ("ابحث عن موردين لأنظمة الإنذار", None),
         ("Find suppliers for fire alarms", None),
         ("Find suppliers in the United States", "US"),
+        ("Find suppliers in the U.S.A.", "US"),
     ],
 )
 def test_firecrawl_search_uses_explicit_query_geography(query, expected):
