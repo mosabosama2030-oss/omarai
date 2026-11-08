@@ -209,31 +209,47 @@ def test_firecrawl_status_handles_invalid_budget_without_crashing(monkeypatch):
     assert status["firecrawl_search_request_budget"] == 0
 
 
-def test_firecrawl_search_omits_country_for_arabic_query_without_explicit_location(monkeypatch):
+@pytest.mark.parametrize(
+    "query",
+    [
+        "ابحث عن موردين لأنظمة إنذار الحريق",
+        "Find suppliers for industrial fire alarm systems",
+    ],
+)
+def test_firecrawl_search_skips_network_without_explicit_country(monkeypatch, query):
     monkeypatch.setenv("FIRECRAWL_API_KEY", "test-firecrawl-secret")
     monkeypatch.setenv("FIRECRAWL_SEARCH_ENABLED", "1")
-    captured = {}
 
-    def fake_request(method, url, **kwargs):
-        captured.update(method=method, url=url, kwargs=kwargs)
-        return FakeResponse({"success": True, "data": {"web": []}})
+    def unexpected_request(*args, **kwargs):
+        pytest.fail("Firecrawl must not be called when its default country would bias results to US")
 
-    monkeypatch.setattr("agents.web_agent._bounded_http_request", fake_request)
+    monkeypatch.setattr("agents.web_agent._bounded_http_request", unexpected_request)
 
-    assert WebAgent()._search_firecrawl("ابحث عن موردين لأنظمة إنذار الحريق") == []
-    assert "country" not in captured["kwargs"]["json"]
+    assert WebAgent()._search_firecrawl(query) == []
 
 
-def test_firecrawl_search_omits_country_for_english_query_without_explicit_location(monkeypatch):
+def test_firecrawl_search_is_not_attempted_or_budgeted_without_explicit_country(monkeypatch):
+    agent = WebAgent()
+    agent.allow_optional_providers = True
     monkeypatch.setenv("FIRECRAWL_API_KEY", "test-firecrawl-secret")
     monkeypatch.setenv("FIRECRAWL_SEARCH_ENABLED", "1")
-    captured = {}
+    monkeypatch.setenv("OMARAI_FIRECRAWL_SEARCH_REQUEST_BUDGET", "1")
+    monkeypatch.delenv("DEEPSEEK_SEARCH_API_KEY", raising=False)
+    monkeypatch.delenv("BRAVE_SEARCH_API_KEY", raising=False)
+    monkeypatch.delenv("TAVILY_API_KEY", raising=False)
+    monkeypatch.setattr(agent, "_search_duckduckgo_html", lambda _query: [])
+    monkeypatch.setattr(agent, "_search_bing_rss", lambda _query: [])
+    monkeypatch.setattr(
+        "agents.web_agent._bounded_http_request",
+        lambda *args, **kwargs: pytest.fail("no provider request is expected for this unlocated query"),
+    )
 
-    def fake_request(method, url, **kwargs):
-        captured.update(method=method, url=url, kwargs=kwargs)
-        return FakeResponse({"success": True, "data": {"web": []}})
+    with pytest.raises(RuntimeError, match="لم تُرجع موصلات البحث"):
+        agent._search_web("Find suppliers for industrial fire alarm systems")
 
-    monkeypatch.setattr("agents.web_agent._bounded_http_request", fake_request)
-
-    assert WebAgent()._search_firecrawl("Find suppliers for industrial fire alarm systems") == []
-    assert "country" not in captured["kwargs"]["json"]
+    diagnostic = next(
+        item for item in agent._provider_diagnostics
+        if item["provider"] == "firecrawl_search_api"
+    )
+    assert diagnostic["status"] == "not_attempted"
+    assert agent._firecrawl_search_requests_reserved == 0
