@@ -15,6 +15,11 @@ MAX_TASK_CHARS = 4000
 MAX_TASK_ASPECTS = 8
 MAX_STRATEGY_QUERIES = 8
 SUPPORTED_MODES = frozenset({"auto", "deep", "latest", "social"})
+TASK_CONTEXT_SLOT_KEYS = frozenset({
+    "aspect", "audience", "budget", "capacity", "country", "currency",
+    "entity", "goal", "language", "location", "model", "platform", "product",
+    "time_range", "variant", "version",
+})
 
 # Closed, code-owned playbooks. The model receives concise task guidance derived
 # from these IDs; arbitrary planner/source text cannot add executable instructions.
@@ -814,8 +819,12 @@ def build_task_spec(
     context_slots: dict[str, str] = {}
     if isinstance(raw_context_slots, dict):
         for raw_key, raw_value in list(raw_context_slots.items())[:16]:
-            if isinstance(raw_key, str) and isinstance(raw_value, str) and raw_key.strip() and raw_value.strip():
-                context_slots[raw_key.strip()[:40]] = raw_value.strip()[:180]
+            if not isinstance(raw_key, str) or not isinstance(raw_value, str):
+                continue
+            key = raw_key.strip()
+            value = raw_value.strip()
+            if key in TASK_CONTEXT_SLOT_KEYS and value:
+                context_slots[key] = value[:180]
     raw_changed_slots = context.get("changed_slots")
     context_changed_slots = [
         str(item).strip()[:40]
@@ -843,6 +852,16 @@ def build_task_spec(
         existing_budgets = {normalize_text(item) for item in budgets}
         if inherited_budget and normalized_budget and normalized_budget not in existing_budgets:
             budgets.append(inherited_budget[:100])
+        inherited_aspect = context_slots.get("aspect", "").strip()
+        normalized_aspect = normalize_text(inherited_aspect)
+        existing_aspects = {normalize_text(item) for item in explicit_aspects}
+        if inherited_aspect and normalized_aspect and normalized_aspect not in existing_aspects:
+            explicit_aspects = [*explicit_aspects, inherited_aspect[:120]][:MAX_TASK_ASPECTS]
+        if len(explicit_aspects) > 1:
+            if "track_evidence_coverage_per_explicit_aspect" not in evidence_requirements:
+                evidence_requirements.append("track_evidence_coverage_per_explicit_aspect")
+            if "one_query_per_criterion" not in query_strategies:
+                query_strategies.append("one_query_per_criterion")
 
     context_resolution = {
         "method": str(context.get("method") or "not_provided")[:80],
@@ -1134,6 +1153,55 @@ def build_query_strategy_matrix(
     queries = existing_queries if isinstance(existing_queries, list) else []
     rows: list[dict[str, str]] = []
     seen: set[str] = set()
+    raw_context_resolution = spec.get("context_resolution")
+    raw_context_resolution = (
+        raw_context_resolution if isinstance(raw_context_resolution, dict) else {}
+    )
+    raw_context_slots = raw_context_resolution.get("slots")
+    context_slots = (
+        {
+            key: value
+            for key, value in raw_context_slots.items()
+            if key in TASK_CONTEXT_SLOT_KEYS
+            and isinstance(value, str)
+            and value.strip()
+        }
+        if isinstance(raw_context_slots, dict)
+        else {}
+    )
+    inherit_context_slots = (
+        raw_context_resolution.get("is_follow_up") is True
+        and raw_context_resolution.get("topic_shift") is not True
+        and raw_context_resolution.get("needs_clarification") is not True
+    )
+    context_anchor_parts: list[str] = []
+    if inherit_context_slots:
+        context_topic = raw_context_resolution.get("topic")
+        if isinstance(context_topic, str) and context_topic.strip():
+            context_anchor_parts.append(context_topic.strip())
+        context_entities = raw_context_resolution.get("entities")
+        if isinstance(context_entities, list):
+            for entity in context_entities[:5]:
+                if (
+                    isinstance(entity, str)
+                    and entity.strip()
+                    and normalize_text(entity) not in normalize_text(" ".join(context_anchor_parts))
+                ):
+                    context_anchor_parts.append(entity.strip())
+    context_anchor = _SPACE.sub(" ", " ".join(context_anchor_parts)).strip()
+    topic_anchor_query = context_anchor or (
+        str(queries[0]).strip()
+        if queries and isinstance(queries[0], str)
+        else str(question or "")
+    )
+    if not context_anchor:
+        topic_anchor_query = re.sub(
+            r"^(?:من فضلك|لو سمحت|ابحث لي|ابحث|دورلي|دور|اعثر على|رشح لي|رشح|"
+            r"please|search for|find|look up|recommend)\\s*",
+            "",
+            topic_anchor_query,
+            flags=re.IGNORECASE,
+        )
 
     def add(query: Any, strategy: str, rationale: str, *, enforce_topic: bool = True) -> None:
         if not isinstance(query, str) or not query.strip() or len(rows) >= maximum:
@@ -1163,20 +1231,43 @@ def build_query_strategy_matrix(
             and isinstance(raw_budgets, list)
         ):
             scope_terms.extend(
-                item.strip() for item in raw_budgets[:3]
+                item.strip()[:70] for item in raw_budgets[:1]
                 if isinstance(item, str) and item.strip()
             )
+        if inherit_context_slots:
+            for slot_key in (
+                "product", "model", "version", "variant", "capacity",
+                "currency", "time_range",
+            ):
+                slot_value = context_slots.get(slot_key, "").strip()
+                if slot_value:
+                    scope_terms.append(slot_value[:55])
+            current_aspects = constraints.get("explicit_aspects")
+            if isinstance(current_aspects, list) and len(current_aspects) <= 1:
+                aspect_scope = context_slots.get("aspect", "").strip()
+                if aspect_scope:
+                    scope_terms.append(aspect_scope[:70])
+        normalized_candidate = normalize_text(candidate)
+        missing_scope_terms: list[str] = []
+        seen_scope: set[str] = set()
         for scope_term in scope_terms:
-            if normalize_text(scope_term) not in normalize_text(candidate):
-                candidate = _SPACE.sub(" ", f"{candidate} {scope_term}").strip()
-        candidate = candidate[:240]
+            normalized_scope = normalize_text(scope_term)
+            if normalized_scope and normalized_scope not in normalized_candidate and normalized_scope not in seen_scope:
+                missing_scope_terms.append(scope_term)
+                seen_scope.add(normalized_scope)
+        scope_suffix = _SPACE.sub(" ", " ".join(missing_scope_terms)).strip()
+        if scope_suffix:
+            core_limit = max(32, 240 - len(scope_suffix) - 1)
+            candidate = candidate[:core_limit].rstrip()
+            candidate = f"{candidate} {scope_suffix}".strip()
+        else:
+            candidate = candidate[:240].rstrip()
         key = _query_key(candidate)
         if not candidate or not key or key in seen:
             return
-        # Search modifications must preserve a subject anchor. Existing planner
-        # queries are retained because they may already contain resolved context.
-        anchor_query = str(queries[0]).strip() if queries and isinstance(queries[0], str) else str(question or "")
-        topic_tokens = _TOKEN_RE.findall(_query_key(anchor_query))
+        # Search modifications must preserve the resolved topic, not imperative
+        # wording such as "رشح لي" or stale entities from another topic.
+        topic_tokens = _TOKEN_RE.findall(_query_key(topic_anchor_query))
         query_tokens = _TOKEN_RE.findall(key)
         if enforce_topic and len(topic_tokens) >= 2 and not any(
             token in query_tokens for token in topic_tokens[:3]
@@ -1245,6 +1336,8 @@ def build_query_strategy_matrix(
             r"^(?:من فضلك|لو سمحت|ابحث لي|ابحث|دورلي|دور|اعثر على|please|search for|find|look up)\s*",
             "", str(question or "").strip(), flags=re.IGNORECASE,
         )
+    if context_anchor:
+        base = context_anchor[:180]
     base = _QUERY_STOP.sub("", base).strip(" \t\r\n-،,؛;")
     if not base:
         return rows
@@ -1264,7 +1357,8 @@ def build_query_strategy_matrix(
                 break
         return rows
 
-    candidates = _generated_strategy_candidates(base, spec_for_candidates)
+    candidate_topic = context_anchor[:180] if context_anchor else base[:180]
+    candidates = _generated_strategy_candidates(candidate_topic, spec_for_candidates)
     for query, strategy, rationale in candidates:
         add(
             query, strategy, rationale,
@@ -1419,11 +1513,7 @@ def validate_task_spec(value: Any) -> dict[str, Any]:
         "web_search", "page_fetch", "public_social_search_if_configured",
         "language_model_generation_if_configured", "claim_review_if_configured",
     }
-    allowed_slots = {
-        "aspect", "audience", "budget", "capacity", "country", "currency",
-        "entity", "goal", "language", "location", "model", "platform",
-        "product", "time_range", "variant", "version",
-    }
+    allowed_slots = TASK_CONTEXT_SLOT_KEYS
     context_resolution["slots"] = {
         key: item for key, item in context_resolution["slots"].items()
         if key in allowed_slots
