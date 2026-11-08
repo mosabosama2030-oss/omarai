@@ -15,6 +15,11 @@ MAX_TASK_CHARS = 4000
 MAX_TASK_ASPECTS = 8
 MAX_STRATEGY_QUERIES = 8
 SUPPORTED_MODES = frozenset({"auto", "deep", "latest", "social"})
+TASK_CONTEXT_SLOT_KEYS = frozenset({
+    "aspect", "audience", "budget", "capacity", "country", "currency",
+    "entity", "goal", "language", "location", "model", "platform",
+    "product", "time_range", "variant", "version",
+})
 
 # Closed, code-owned playbooks. The model receives concise task guidance derived
 # from these IDs; arbitrary planner/source text cannot add executable instructions.
@@ -814,8 +819,13 @@ def build_task_spec(
     context_slots: dict[str, str] = {}
     if isinstance(raw_context_slots, dict):
         for raw_key, raw_value in list(raw_context_slots.items())[:16]:
-            if isinstance(raw_key, str) and isinstance(raw_value, str) and raw_key.strip() and raw_value.strip():
-                context_slots[raw_key.strip()[:40]] = raw_value.strip()[:180]
+            if (
+                isinstance(raw_key, str)
+                and isinstance(raw_value, str)
+                and raw_key.strip() in TASK_CONTEXT_SLOT_KEYS
+                and raw_value.strip()
+            ):
+                context_slots[raw_key.strip()] = raw_value.strip()[:180]
     raw_changed_slots = context.get("changed_slots")
     context_changed_slots = [
         str(item).strip()[:40]
@@ -843,6 +853,25 @@ def build_task_spec(
         existing_budgets = {normalize_text(item) for item in budgets}
         if inherited_budget and normalized_budget and normalized_budget not in existing_budgets:
             budgets.append(inherited_budget[:100])
+
+        # A confirmed aspect in a short follow-up is still a required task
+        # criterion. Add it to the same evidence-coverage contract as explicit
+        # criteria in the current utterance.
+        inherited_aspect = context_slots.get("aspect", "").strip()
+        normalized_aspect = normalize_text(inherited_aspect)
+        existing_aspects = {normalize_text(item) for item in explicit_aspects}
+        if (
+            inherited_aspect
+            and normalized_aspect
+            and normalized_aspect not in existing_aspects
+            and len(explicit_aspects) < MAX_TASK_ASPECTS
+        ):
+            explicit_aspects.append(inherited_aspect[:120])
+        if len(explicit_aspects) > 1:
+            if "track_evidence_coverage_per_explicit_aspect" not in evidence_requirements:
+                evidence_requirements.append("track_evidence_coverage_per_explicit_aspect")
+            if "one_query_per_criterion" not in query_strategies:
+                query_strategies.append("one_query_per_criterion")
 
     context_resolution = {
         "method": str(context.get("method") or "not_provided")[:80],
@@ -1765,11 +1794,7 @@ def validate_task_spec(value: Any) -> dict[str, Any]:
         "web_search", "page_fetch", "public_social_search_if_configured",
         "language_model_generation_if_configured", "claim_review_if_configured",
     }
-    allowed_slots = {
-        "aspect", "audience", "budget", "capacity", "country", "currency",
-        "entity", "goal", "language", "location", "model", "platform",
-        "product", "time_range", "variant", "version",
-    }
+    allowed_slots = TASK_CONTEXT_SLOT_KEYS
     context_resolution["slots"] = {
         key: item for key, item in context_resolution["slots"].items()
         if key in allowed_slots
