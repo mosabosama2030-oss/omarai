@@ -129,7 +129,10 @@ def validate_dialogue_context(
     # The model flag is insufficient on its own. The current message must contain
     # a recognizable reference, correction, or constraint refinement before prior
     # entities and slots are inherited.
-    current_has_context_signal = might_be_context_dependent(current)
+    current_has_context_signal = (
+        might_be_context_dependent(current)
+        or _has_implicit_context_reference(current)
+    )
     is_follow_up = (
         model_marked_follow_up
         and has_history
@@ -166,7 +169,7 @@ def validate_dialogue_context(
     slots: dict[str, str] = {}
     # Do not carry extracted entities/slots from a rejected or explicitly shifted
     # topic into downstream planning. The current message will be parsed on its own.
-    clear_inherited_metadata = topic_shift or rejected_stale_context or not has_history
+    clear_inherited_metadata = reset_context
     if isinstance(raw_slots, dict) and not clear_inherited_metadata:
         for raw_key, raw_value in list(raw_slots.items())[:MAX_SLOT_VALUES]:
             key = _clean_text(raw_key, 40)
@@ -183,7 +186,7 @@ def validate_dialogue_context(
     resolution_basis = candidate.get("resolution_basis")
     if not isinstance(resolution_basis, str) or resolution_basis not in _ALLOWED_RESOLUTION_BASES:
         resolution_basis = "history_inferred" if is_follow_up else "current_message"
-    if topic_shift:
+    if reset_context:
         resolution_basis = "current_message"
 
     depth = candidate.get("research_depth")
@@ -231,6 +234,26 @@ def validate_dialogue_context(
         "resolution_basis": resolution_basis,
         "confidence_band": confidence_band,
     }
+
+
+def _has_implicit_context_reference(question: str) -> bool:
+    """Recognize situation-dependent phrasing reserved for semantic context review."""
+    current = _clean_text(question, MAX_RESOLVED_QUESTION_CHARS).casefold()
+    if not current or len(current) > 220:
+        return False
+    return bool(
+        re.search(r"^(?:في|على)\s+(?:وضعي|حالتي|ظروفي|ظروفى)\b", current)
+        or re.search(
+            r"^(?:بناء على|بناءً على|حسب)\s+(?:ما|اللي|كلام)\s+"
+            r"(?:قلت|ذكرته|وضحته|شرحته)",
+            current,
+        )
+        or re.search(
+            r"^(?:in my case|given my situation|based on my situation|"
+            r"with my constraints|based on what i (?:said|shared))\b",
+            current,
+        )
+    )
 
 
 def might_be_context_dependent(question: str) -> bool:
