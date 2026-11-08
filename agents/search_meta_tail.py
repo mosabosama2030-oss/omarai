@@ -25,3 +25,17 @@ def strip_trailing_conjunctions(text: str) -> str:
     if not text:
         return ""
     return re.sub(r"(?:\s+(?:و|and))+\s*$", "", text, flags=re.IGNORECASE).strip()
+
+
+def rebind_research_meta_tail() -> None:
+    """Point agents.research._SEARCH_META_TAIL_RE at the expanded pattern."""
+    try:
+        from agents import research as _research
+
+        _research._SEARCH_META_TAIL_RE = SEARCH_META_TAIL_RE
+    except Exception:
+        # Partial test environments may import this module without research.
+        pass
+
+
+rebind_research_meta_tail()
