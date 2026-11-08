@@ -1013,7 +1013,7 @@ def _scope_value_present(candidate_normalized: str, scope_value: str) -> bool:
     return any(
         variant
         and re.search(
-            rf"(?<!\\w){re.escape(variant)}(?!\\w)",
+            rf"(?<!\w){re.escape(variant)}(?!\w)",
             candidate_normalized,
         )
         for variant in variants
