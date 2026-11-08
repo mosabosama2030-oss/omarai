@@ -2010,8 +2010,10 @@ class WebAgent:
                         continue
                     normalized_item = dict(item)
                     normalized_item["url"] = safe_url
-                    normalized_item.setdefault("provider", name)
-                    normalized_item.setdefault("search_query", search_query)
+                    # Provenance belongs to the adapter invocation, never to fields
+                    # supplied inside an untrusted provider result.
+                    normalized_item["provider"] = name
+                    normalized_item["search_query"] = search_query
                     evidence = " ".join(str(normalized_item.get(k) or "") for k in ("title", "snippet"))
                     retrieval_relevance = _relevance_ratio(search_query, evidence)
                     if retrieval_relevance < _minimum_relevance_ratio(search_query):
