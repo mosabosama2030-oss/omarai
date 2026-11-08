@@ -1,0 +1,30 @@
+--- a/agents/research.py
++++ b/agents/research.py
+@@ -151,11 +151,16 @@
+     r"^و?(?:ميّز|ميز)\s+بين\s+الحقائق\s+والاستنتاجات\s*[.!؟؛،,]*$",
+     re.IGNORECASE,
+ )
++# Citation/format tails may appear after punctuation OR after a plain conjunction
++# space (e.g. "السيارات ... واذكر مصادر") without a preceding comma.
+ _SEARCH_META_TAIL_RE = re.compile(
+-    r"\s*[,،؛;]\s*(?:و\s*)?(?:استخدم|استعمل|ميّز|ميز|اجب|أجب|لا تعرض|لا تقدم|"
+-    r"please cite|cite|provide links|mention sources|use multiple sources|"
++    r"(?:\s*[,،؛;]\s*|\s+)(?:(?:و\s*)|(?:and\s+))?(?:"
++    r"استخدم\s+مصادر|استعمل\s+مصادر|ميّز\s+بين\s+الحقائق|ميز\s+بين\s+الحقائق|"
++    r"اجب\b|أجب\b|لا تعرض|لا تقدم|"
++    r"please cite|cite\b|provide links|mention sources|use multiple sources|"
+     r"don't present|do not present|"
+-    r"اذكر(?:ي|وا)?\s+(?:مصادر?|المصادر|مصدر|روابط?|رابط|تواريخ?|تاريخ|الاخبار|الأخبار))\b.*$",
++    r"اذكر(?:ي|وا)?\s+(?:مصادر?|المصادر|مصدر|روابط?|رابط|تواريخ?|تاريخ|الاخبار|الأخبار)"
++    r")\b.*$",
+     re.IGNORECASE,
+ )
+ _SEARCH_LEADING_ACTION_RE = re.compile(
+@@ -203,6 +208,7 @@
+         if segment:
+             useful.append(segment)
+     result = re.sub(r"\s+", " ", " ".join(useful)).strip(" \t\r\n,،;؛")
++    result = re.sub(r"(?:\s+(?:و|and))+\s*$", "", result, flags=re.IGNORECASE).strip()
+     if not result:
+         return ""
+     try:
