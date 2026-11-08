@@ -1009,6 +1009,46 @@ def _generated_strategy_candidates(topic: str, spec: dict[str, Any]) -> list[tup
         for item in hypotheses
         if isinstance(item, dict) and item.get("family")
     } if isinstance(hypotheses, list) else set()
+
+    context_resolution = (
+        spec.get("context_resolution")
+        if isinstance(spec.get("context_resolution"), dict) else {}
+    )
+    context_slots = (
+        context_resolution.get("slots")
+        if isinstance(context_resolution.get("slots"), dict) else {}
+    )
+    if (
+        context_resolution.get("is_follow_up") is True
+        and context_resolution.get("topic_shift") is not True
+        and context_resolution.get("needs_clarification") is not True
+    ):
+        aspect = context_slots.get("aspect")
+        if isinstance(aspect, str) and aspect.strip():
+            normalized_topic = normalize_text(topic)
+            aspect_aliases = {
+                normalize_text("الضمان"): ("الضمان", "ضمان", "warranty", "guarantee"),
+                normalize_text("التقييمات"): ("التقييمات", "التقييم", "reviews", "ratings", "review"),
+                normalize_text("المراجعات"): ("المراجعات", "مراجعات", "reviews", "ratings"),
+                normalize_text("الصيانة"): ("الصيانة", "الصيانه", "maintenance", "repair", "service"),
+                normalize_text("السعر"): ("السعر", "سعر", "price", "pricing", "cost"),
+            }
+            aliases = aspect_aliases.get(normalize_text(aspect), (aspect,))
+            aspect_already_present = any(
+                re.search(
+                    rf"(?<!\\w){re.escape(normalize_text(alias))}(?!\\w)",
+                    normalized_topic,
+                )
+                for alias in aliases
+                if normalize_text(alias)
+            )
+            if not aspect_already_present:
+                candidates.append((
+                    f"{topic} {aspect}",
+                    "contextual_aspect",
+                    f"preserve the aspect resolved from the current dialogue turn: {aspect}",
+                ))
+
     if family == "official_site_lookup" or constraints.get("official_destination_required"):
         candidates.extend([
             (f"{topic} الموقع الرسمي", "official_destination", "exact official-site discovery"),
