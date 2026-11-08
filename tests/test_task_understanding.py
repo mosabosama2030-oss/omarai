@@ -784,3 +784,45 @@ def test_query_strategy_matrix_uses_resolved_topic_instead_of_imperative_query_p
         and row["query"].startswith("لابتوب للعمل Dell")
         for row in rows
     )
+
+
+@pytest.mark.parametrize(
+    ("seed_query", "expected_source_phrase"),
+    [
+        ("ما سعر iPhone 17 باليورو؟", "مصدر رسمي"),
+        ("iPhone 17 price in euros", "official source"),
+    ],
+)
+def test_short_contextual_followup_uses_primary_source_phrase_in_seed_language(
+    seed_query, expected_source_phrase
+):
+    question = "سعره؟"
+    context = {
+        "resolved_question": "ما سعر iPhone 17 باليورو؟",
+        "topic": "سعر iPhone 17",
+        "entities": ["iPhone 17"],
+        "slots": {"product": "iPhone 17", "currency": "اليورو"},
+        "changed_slots": ["currency"],
+        "is_follow_up": True,
+        "topic_shift": False,
+        "needs_clarification": False,
+    }
+    spec = build_task_spec(
+        question,
+        mode="auto",
+        intent_route="WEB_SIMPLE",
+        dialogue_context=context,
+    )
+
+    rows = build_query_strategy_matrix(
+        question,
+        spec,
+        [seed_query],
+        limit=8,
+    )
+
+    fallback = next(
+        row for row in rows
+        if row["strategy"] == "dialogue_followup_primary_source"
+    )
+    assert expected_source_phrase in fallback["query"]
