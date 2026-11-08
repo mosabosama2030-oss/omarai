@@ -126,16 +126,29 @@ def validate_dialogue_context(
     )
     topic_shift = candidate.get("topic_shift") is True
     model_marked_follow_up = candidate.get("is_follow_up") is True
-    is_follow_up = model_marked_follow_up and has_history and not topic_shift
-
-    # Context is inherited only when the semantic resolver explicitly says this is
-    # a follow-up. A standalone turn must not retain an old entity merely because
-    # the model accidentally emitted a blended resolved_question.
-    rejected_stale_context = (
-        not model_marked_follow_up
-        and resolved.casefold() != current.casefold()
+    # The model flag is insufficient on its own. The current message must contain
+    # a recognizable reference, correction, or constraint refinement before prior
+    # entities and slots are inherited.
+    current_has_context_signal = might_be_context_dependent(current)
+    is_follow_up = (
+        model_marked_follow_up
+        and has_history
+        and not topic_shift
+        and current_has_context_signal
     )
-    reset_context = topic_shift or not has_history or rejected_stale_context
+
+    # Reject model-generated blends when a standalone question is marked as a
+    # follow-up. Preserve the user's current wording and clear inherited metadata.
+    rejected_stale_context = (
+        resolved.casefold() != current.casefold()
+        and (not model_marked_follow_up or not current_has_context_signal)
+    )
+    reset_context = (
+        topic_shift
+        or not has_history
+        or rejected_stale_context
+        or (model_marked_follow_up and not current_has_context_signal)
+    )
     if reset_context:
         resolved = current
         is_follow_up = False
@@ -256,4 +269,22 @@ def might_be_context_dependent(question: str) -> bool:
         r"[\u0600-\u06FF]{0,18}(?:ه|ها|هم|هما|هن|ك|كم|كن)\b",
         current,
     )
-    return bool(lead_in or reference or fragment or attached_reference)
+    # Correction turns replace an earlier entity or slot instead of starting a
+    # standalone topic. Bare "لا" is deliberately excluded.
+    correction = re.search(
+        r"^(?:(?:لا|مش|مو)\\s*[،,]?\\s*)?(?:قصدي|اقصد|أقصد|اعني|أعني)\\s+\\S.{0,100}$"
+        r"|^(?:مش|مو|ليس)\\s+[^،,]{1,45}[،,]\\s*\\S.{0,80}$"
+        r"|^(?:بدل|بدلا\\s+من|بدلاً\\s+من)\\s+\\S.{0,80}$",
+        current,
+    )
+    location_refinement = re.search(
+        r"^(?:في|ب|بمحافظة|بمدينة)\\s+[\\u0600-\\u06FFa-z0-9]"
+        r"[\\u0600-\\u06FFa-z0-9\\s'-]{1,48}\\s+(?:بس|فقط|حصرا)$"
+        r"|^(?:only\\s+in|just\\s+in|in)\\s+[a-z][a-z\\s'-]{1,45}"
+        r"(?:\\s+(?:only|just))?$",
+        current,
+    )
+    return bool(
+        lead_in or reference or fragment or attached_reference
+        or correction or location_refinement
+    )
