@@ -1902,10 +1902,13 @@ class WebAgent:
                     normalized_item.setdefault("provider", name)
                     normalized_item.setdefault("search_query", search_query)
                     evidence = " ".join(str(normalized_item.get(k) or "") for k in ("title", "snippet"))
-                    if _relevance_ratio(search_query, evidence) < _minimum_relevance_ratio(search_query):
+                    retrieval_relevance = _relevance_ratio(search_query, evidence)
+                    if retrieval_relevance < _minimum_relevance_ratio(search_query):
                         rejected += 1
                         rejection_counts["relevance_below_threshold"] += 1
                         continue
+                    # This is a topical retrieval signal, not fact confidence or buyer intent.
+                    normalized_item["retrieval_relevance_score"] = round(retrieval_relevance, 4)
                     accepted.append(normalized_item)
                 if accepted:
                     status = "ok"
@@ -1980,15 +1983,29 @@ class WebAgent:
             # This method is synchronous by contract; the HTTP server invokes it in worker threads.
             raise RuntimeError("تعذر تشغيل مجدول موصلات البحث.") from exc
         combined = [item for batch in provider_batches for item in batch]
-        # De-duplicate repeated URLs before ranking/fusion.
-        unique: dict[str, dict[str, Any]] = {}
+        # Collapse duplicate URLs within each provider, but preserve the same page
+        # discovered by different providers until RRF records that consensus.
+        unique_by_provider: dict[tuple[str, str], dict[str, Any]] = {}
         for item in combined:
-            key = item["url"].split("#", 1)[0].rstrip("/")
-            if key not in unique or len(str(item.get("snippet") or "")) > len(str(unique[key].get("snippet") or "")):
-                unique[key] = item
-        if not unique:
+            provider = str(item.get("provider") or "web_search")
+            url_key = self._normalized_source_url_key(item.get("url"))
+            if not url_key:
+                continue
+            key = (provider, url_key)
+            previous = unique_by_provider.get(key)
+            candidate_quality = (
+                float(item.get("retrieval_relevance_score") or 0.0),
+                len(str(item.get("snippet") or "")),
+            )
+            previous_quality = (
+                float(previous.get("retrieval_relevance_score") or 0.0),
+                len(str(previous.get("snippet") or "")),
+            ) if previous is not None else None
+            if previous is None or candidate_quality > previous_quality:
+                unique_by_provider[key] = item
+        if not unique_by_provider:
             raise RuntimeError("لم تُرجع موصلات البحث نتائج مرتبطة وقابلة للاستخدام.")
-        return list(unique.values())
+        return list(unique_by_provider.values())
 
     def _reserve_search_call(self) -> None:
         """Reserve one outbound search/social-provider request before network I/O."""
