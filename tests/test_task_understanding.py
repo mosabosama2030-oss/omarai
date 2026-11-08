@@ -826,3 +826,43 @@ def test_short_contextual_followup_uses_primary_source_phrase_in_seed_language(
         if row["strategy"] == "dialogue_followup_primary_source"
     )
     assert expected_source_phrase in fallback["query"]
+
+
+def test_query_strategy_matrix_rejects_stale_planner_seed_after_context_entity_correction():
+    spec = {
+        "task_family": "recommendation",
+        "mode": "deep",
+        "intent_route": "WEB_DEEP",
+        "hypothesis_interpretations": [],
+        "constraints": {
+            "explicit_aspects": [],
+            "explicit_locations": [],
+            "explicit_budgets": [],
+        },
+        "context_resolution": {
+            "resolved_question": "ما سعر Samsung Galaxy S24 في مصر باليورو؟",
+            "topic": "سعر الهاتف",
+            "entities": ["Samsung Galaxy S24"],
+            "slots": {
+                "product": "هاتف سامسونج",
+                "model": "Samsung Galaxy S24",
+                "currency": "اليورو",
+                "location": "مصر",
+            },
+            "changed_slots": ["product", "model"],
+            "is_follow_up": True,
+            "topic_shift": False,
+            "needs_clarification": False,
+        },
+    }
+
+    rows = build_query_strategy_matrix(
+        "طب وسامسونج S24؟",
+        spec,
+        ["ما سعر iPhone 17 باليورو في مصر؟"],
+        limit=8,
+    )
+
+    assert rows
+    assert any("Samsung Galaxy S24" in row["query"] for row in rows)
+    assert all("iPhone 17" not in row["query"] for row in rows)
