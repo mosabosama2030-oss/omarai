@@ -146,3 +146,36 @@ def test_firecrawl_is_blocked_when_optional_providers_are_disabled(monkeypatch):
 )
 def test_firecrawl_search_uses_explicit_query_geography(query, expected):
     assert WebAgent._firecrawl_search_country(query) == expected
+
+
+@pytest.mark.parametrize(
+    ("enabled", "api_key", "budget", "expected_status"),
+    [
+        ("0", "", "0", "disabled"),
+        ("1", "", "1", "not_configured"),
+        ("1", "test-firecrawl-secret", "0", "budget_exhausted"),
+        ("1", "test-firecrawl-secret", "1", "configured"),
+    ],
+)
+def test_firecrawl_capability_snapshot_reports_configuration_and_budget(
+    monkeypatch, enabled, api_key, budget, expected_status
+):
+    monkeypatch.setenv("FIRECRAWL_SEARCH_ENABLED", enabled)
+    monkeypatch.setenv("OMARAI_FIRECRAWL_SEARCH_REQUEST_BUDGET", budget)
+    if api_key:
+        monkeypatch.setenv("FIRECRAWL_API_KEY", api_key)
+    else:
+        monkeypatch.delenv("FIRECRAWL_API_KEY", raising=False)
+
+    snapshot = WebAgent()._capability_status_snapshot()
+    firecrawl = next(
+        item for item in snapshot["providers"]
+        if item["name"] == "firecrawl_search_api"
+    )
+
+    assert firecrawl["implemented"] is True
+    assert firecrawl["configuration_status"] == expected_status
+    if expected_status == "configured":
+        assert firecrawl["runtime_status"] == "not_tested_in_this_response"
+    else:
+        assert firecrawl["runtime_status"] == expected_status
