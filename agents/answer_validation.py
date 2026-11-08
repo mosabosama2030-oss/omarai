@@ -228,7 +228,18 @@ def audit_answer_integrity(
             extracted_page_count += 1
         elif snippet.strip():
             snippet_count += 1
-        source_text = " ".join(part for part in (title, snippet, page_text, published_at) if part)
+        fetched_page_text = (
+            page_text
+            if bool(source.get("page_fetched")) and page_text.strip()
+            else ""
+        )
+        # A page_text field is not evidence of a successful read unless the
+        # fetch boundary explicitly confirms page_fetched.
+        # Publication timestamps are source metadata, not evidence for unrelated
+        # numeric claims in the cited content.
+        source_text = " ".join(
+            part for part in (title, snippet, fetched_page_text) if part
+        )
         if source_text.strip():
             bounded_source_text = source_text[:16000]
             source_texts.append(bounded_source_text)
