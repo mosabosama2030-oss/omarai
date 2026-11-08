@@ -257,6 +257,9 @@ def test_workspace_clears_chat_at_auth_boundaries_and_ignores_stale_responses():
     assert "chat.history=[]" in script
     assert 'chat.mode="deep"' in script
     assert "chat.sessionVersion=(chat.sessionVersion||0)+1" in script
+    assert "function advanceWorkspaceSessionVersion()" in script
+    login = script.split('$("loginForm").addEventListener("submit"', 1)[1].split('$("logoutButton").addEventListener', 1)[0]
+    assert "advanceWorkspaceSessionVersion()" in login
     api = script.split("async function api(", 1)[1].split("function clearChatSession(", 1)[0]
     assert "const requestSessionVersion=state.authSessionVersion" in api
     assert "if(state.authSessionVersion!==requestSessionVersion)" in api
