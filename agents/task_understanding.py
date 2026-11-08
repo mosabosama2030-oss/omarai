@@ -1275,9 +1275,13 @@ def build_query_strategy_matrix(
         scope_chars = 0
         for scope_term in scope_terms:
             normalized_scope = normalize_text(scope_term)
+            aliases = _LOCATION_QUERY_ALIASES.get(normalized_scope, ())
+            scope_is_present = bool(
+                _contains(normalized_candidate, (scope_term, *aliases))
+            )
             if (
                 not normalized_scope
-                or normalized_scope in normalized_candidate
+                or scope_is_present
                 or normalized_scope in seen_scope
             ):
                 continue
@@ -1303,8 +1307,7 @@ def build_query_strategy_matrix(
             return
         # Search modifications must preserve a subject anchor. Existing planner
         # queries are retained because they may already contain resolved context.
-        anchor_query = str(queries[0]).strip() if queries and isinstance(queries[0], str) else str(question or "")
-        topic_tokens = _TOKEN_RE.findall(_query_key(anchor_query))
+        topic_tokens = _TOKEN_RE.findall(_query_key(topic_anchor_query))
         query_tokens = _TOKEN_RE.findall(key)
         if enforce_topic and len(topic_tokens) >= 2 and not any(
             token in query_tokens for token in topic_tokens[:3]
