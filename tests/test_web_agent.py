@@ -3217,7 +3217,7 @@ def test_buyer_intent_queries_do_not_call_google_news(monkeypatch):
     )
 
     with pytest.raises(RuntimeError, match="لم تُرجع موصلات البحث"):
-        agent._search_web('"مطلوب شراء" "نظام إنذار حريق" latest')
+        agent._search_web('"مطلوب شراء" "نظام إنذار حريق" اليوم')
 
     assert not any(
         row.get("provider") == "google_news_rss"
