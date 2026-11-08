@@ -961,3 +961,43 @@ def test_query_matrix_never_exceeds_provider_limit_with_many_inherited_slots():
     assert all(len(row["query"]) <= 240 for row in rows)
     assert all("القاهرة الكبرى" in row["query"] for row in rows)
     assert all("20000 جنيه" in row["query"] for row in rows)
+
+
+def test_query_strategy_matrix_replaces_stale_location_and_budget_after_refinement():
+    question = "مراكز صيانة لابتوب"
+    context = {
+        "resolved_question": "مراكز صيانة لابتوب في الإسكندرية بميزانية أقل من 10000 جنيه",
+        "topic": "مراكز صيانة لابتوب",
+        "entities": ["لابتوب"],
+        "slots": {
+            "product": "لابتوب",
+            "location": "الإسكندرية",
+            "budget": "أقل من 10000 جنيه",
+        },
+        "changed_slots": ["location", "budget"],
+        "is_follow_up": True,
+        "topic_shift": False,
+        "needs_clarification": False,
+    }
+    spec = build_task_spec(
+        question,
+        mode="deep",
+        intent_route="WEB_DEEP",
+        dialogue_context=context,
+    )
+
+    rows = build_query_strategy_matrix(
+        question,
+        spec,
+        [
+            "ابحث عن مراكز صيانة لابتوب في القاهرة بميزانية أقل من 20000 جنيه",
+            "مراكز صيانة لابتوب القاهرة 20000 جنيه أفضل الخيارات",
+        ],
+        limit=8,
+    )
+
+    assert rows
+    assert all("الإسكندرية" in row["query"] for row in rows)
+    assert all("القاهرة" not in row["query"] for row in rows)
+    assert all("20000" not in row["query"] for row in rows)
+    assert all("أقل من 10000 جنيه" in row["query"] for row in rows)
