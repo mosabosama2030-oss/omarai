@@ -2254,7 +2254,7 @@ class WebAgent:
             ("AE", r"(?<!\w)(?:uae|united arab emirates|dubai|abu dhabi)(?!\w)|الامارات"),
             ("UK", r"(?<!\w)(?:united kingdom|great britain|uk|london)(?!\w)|المملكه المتحده|بريطانيا"),
             ("EG", r"(?<!\w)(?:egypt|egyptian|cairo|alexandria|giza)(?!\w)|مصر|القاهره|الاسكندريه|الجيزه"),
-            ("US", r"(?<!\w)(?:united states|usa|u\\.s\\.a\\.|america|new york|los angeles)(?!\w)|الولايات المتحده|امريكا"),
+            ("US", r"(?<!\w)(?:united states|usa|u\.s\.a\.|america|new york|los angeles)(?!\w)|الولايات المتحده|امريكا"),
         )
         for country, pattern in rules:
             if re.search(pattern, normalized, flags=re.IGNORECASE):
