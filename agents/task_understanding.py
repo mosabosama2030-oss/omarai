@@ -888,7 +888,7 @@ def build_task_spec(
             and len(explicit_aspects) < MAX_TASK_ASPECTS
         ):
             explicit_aspects.append(inherited_aspect[:120])
-        if len(explicit_aspects) > 1:
+        if inherited_aspect or len(explicit_aspects) > 1:
             if "track_evidence_coverage_per_explicit_aspect" not in evidence_requirements:
                 evidence_requirements.append("track_evidence_coverage_per_explicit_aspect")
             if "one_query_per_criterion" not in query_strategies:
@@ -1453,14 +1453,8 @@ def build_query_strategy_matrix(
                 (item.strip(), "location") for item in raw_locations[:5]
                 if isinstance(item, str) and item.strip()
             )
-        budget_scoped_families = {
-            "recommendation", "compare", "lead_generation", "find_or_discover"
-        }
         raw_budgets = constraints.get("explicit_budgets")
-        if (
-            spec.get("task_family") in budget_scoped_families
-            and isinstance(raw_budgets, list)
-        ):
+        if isinstance(raw_budgets, list):
             scope_terms.extend(
                 (item.strip(), "budget") for item in raw_budgets[:3]
                 if isinstance(item, str) and item.strip()
@@ -1646,8 +1640,14 @@ def build_query_strategy_matrix(
         spec.get("task_family") == "compare"
         and len(explicit_aspects) >= maximum
     )
+    has_planner_seed = bool(
+        queries and isinstance(queries[0], str) and queries[0].strip()
+    )
+    has_resolved_replacement_seed = (
+        replace_stale_planner_queries and bool(resolved_context_seed)
+    )
     if (
-        (queries or primary_seed)
+        (has_planner_seed or has_resolved_replacement_seed)
         and spec.get("task_family") != "lead_generation"
         and not reserve_all_slots_for_criteria
     ):
@@ -1693,9 +1693,9 @@ def build_query_strategy_matrix(
     ):
         context_seed = primary_seed or topic_anchor_query
         source_angle = (
-            "مستندات الشركة المصنعة ومصدر السعر"
+            "مصدر رسمي"
             if re.search(r"[\u0600-\u06FF]", context_seed)
-            else "manufacturer documentation and pricing source"
+            else "official source"
         )
         add(
             f"{context_seed} {source_angle}",
@@ -1716,7 +1716,7 @@ def build_query_strategy_matrix(
             r"^(?:من فضلك|لو سمحت|ابحث لي|ابحث|دورلي|دور|اعثر على|please|search for|find|look up)\s*",
             "", str(question or "").strip(), flags=re.IGNORECASE,
         )
-    if context_anchor:
+    if not primary_seed and context_anchor:
         base = context_anchor[:180]
     base = _QUERY_STOP.sub("", base).strip(" \t\r\n-،,؛;")
     if not base:
