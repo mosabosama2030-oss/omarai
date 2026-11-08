@@ -793,7 +793,7 @@ def test_query_strategy_matrix_uses_resolved_topic_instead_of_imperative_query_p
         ("iPhone 17 price in euros", "official source"),
     ],
 )
-def test_short_contextual_followup_uses_primary_source_phrase_in_seed_language(
+def test_short_contextual_followup_adds_source_angle_in_seed_language(
     seed_query, expected_source_phrase
 ):
     question = "سعره؟"
@@ -821,11 +821,11 @@ def test_short_contextual_followup_uses_primary_source_phrase_in_seed_language(
         limit=8,
     )
 
-    fallback = next(
+    refinement = next(
         row for row in rows
-        if row["strategy"] == "dialogue_followup_primary_source"
+        if row["strategy"] == "context_slot_refinement"
     )
-    assert expected_source_phrase in fallback["query"]
+    assert expected_source_phrase in refinement["query"]
 
 
 def test_query_strategy_matrix_rejects_stale_planner_seed_after_context_entity_correction():
