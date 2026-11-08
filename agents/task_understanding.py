@@ -1153,6 +1153,27 @@ def build_query_strategy_matrix(
     queries = existing_queries if isinstance(existing_queries, list) else []
     rows: list[dict[str, str]] = []
     seen: set[str] = set()
+    raw_context_resolution = spec.get("context_resolution")
+    raw_context_resolution = (
+        raw_context_resolution if isinstance(raw_context_resolution, dict) else {}
+    )
+    raw_context_slots = raw_context_resolution.get("slots")
+    context_slots = (
+        {
+            key: value
+            for key, value in raw_context_slots.items()
+            if key in TASK_CONTEXT_SLOT_KEYS
+            and isinstance(value, str)
+            and value.strip()
+        }
+        if isinstance(raw_context_slots, dict)
+        else {}
+    )
+    inherit_context_slots = (
+        raw_context_resolution.get("is_follow_up") is True
+        and raw_context_resolution.get("topic_shift") is not True
+        and raw_context_resolution.get("needs_clarification") is not True
+    )
 
     def add(query: Any, strategy: str, rationale: str, *, enforce_topic: bool = True) -> None:
         if not isinstance(query, str) or not query.strip() or len(rows) >= maximum:
@@ -1174,7 +1195,8 @@ def build_query_strategy_matrix(
                 if isinstance(item, str) and item.strip()
             )
         budget_scoped_families = {
-            "recommendation", "compare", "lead_generation", "find_or_discover"
+            "recommendation", "compare", "lead_generation", "find_or_discover",
+            "current_information", "general_research", "web_research",
         }
         raw_budgets = constraints.get("explicit_budgets")
         if (
@@ -1182,13 +1204,54 @@ def build_query_strategy_matrix(
             and isinstance(raw_budgets, list)
         ):
             scope_terms.extend(
-                item.strip() for item in raw_budgets[:3]
+                item.strip()[:60] for item in raw_budgets[:2]
                 if isinstance(item, str) and item.strip()
             )
+        if inherit_context_slots:
+            # The resolved turn may carry product identity and comparison scope
+            # that the short current utterance no longer repeats.
+            for slot_key in (
+                "product", "model", "version", "variant", "capacity",
+                "currency", "time_range",
+            ):
+                slot_value = context_slots.get(slot_key, "").strip()
+                if slot_value:
+                    scope_terms.append(slot_value[:45])
+            current_aspects = constraints.get("explicit_aspects")
+            if isinstance(current_aspects, list) and len(current_aspects) <= 1:
+                aspect_scope = context_slots.get("aspect", "").strip()
+                if aspect_scope:
+                    scope_terms.append(aspect_scope[:55])
+
+        normalized_candidate = normalize_text(candidate)
+        missing_scope_terms: list[str] = []
+        seen_scope: set[str] = set()
+        scope_chars = 0
         for scope_term in scope_terms:
-            if normalize_text(scope_term) not in normalize_text(candidate):
-                candidate = _SPACE.sub(" ", f"{candidate} {scope_term}").strip()
-        candidate = candidate[:240]
+            normalized_scope = normalize_text(scope_term)
+            if (
+                not normalized_scope
+                or normalized_scope in normalized_candidate
+                or normalized_scope in seen_scope
+            ):
+                continue
+            separator = 1 if missing_scope_terms else 0
+            available = 180 - scope_chars - separator
+            if available <= 0:
+                break
+            bounded_scope = scope_term[:available].strip()
+            if not bounded_scope:
+                continue
+            missing_scope_terms.append(bounded_scope)
+            seen_scope.add(normalized_scope)
+            scope_chars += len(bounded_scope) + separator
+        scope_suffix = _SPACE.sub(" ", " ".join(missing_scope_terms)).strip()
+        if scope_suffix:
+            core_limit = max(32, 240 - len(scope_suffix) - 1)
+            candidate = candidate[:core_limit].rstrip()
+            candidate = f"{candidate} {scope_suffix}".strip()
+        else:
+            candidate = candidate[:240].rstrip()
         key = _query_key(candidate)
         if not candidate or not key or key in seen:
             return
