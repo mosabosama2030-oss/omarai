@@ -212,3 +212,57 @@ def test_workspace_discovery_result_survives_history_refresh_failure():
     assert "state.activeDiscovery=savedRun" in discovery
     assert "try{await loadDiscoveryRuns()}catch(refreshError)" in discovery
     assert "حُفظت نتيجة البحث، لكن تعذر تحديث سجل العمليات" in discovery
+
+
+def test_workspace_exposes_ai_chat_as_secondary_entry_using_agent_api_safely():
+    workspace = Path(__file__).resolve().parents[1] / "web" / "workspace.html"
+    html = workspace.read_text(encoding="utf-8")
+    chat = html.split("function chatMessageNode(", 1)[1].split("function renderCurrent(){", 1)[0]
+
+    assert 'id="chatNav"' in html
+    assert '$("chatNav").addEventListener("click",()=>navigate("chat"))' in html
+    assert 'state.activeView==="chat"' in html
+    assert 'api("/api/agent"' in chat
+    assert "history:chat.history.slice(-8)" in chat
+    # Untrusted model/source text must only be rendered with textContent-based helpers.
+    assert "innerHTML" not in chat
+    assert "safeHttp(src.url)" in chat
+    assert "a.rel=\"noopener noreferrer\"" in chat
+
+
+def test_workspace_clears_chat_at_auth_boundaries_and_ignores_stale_responses():
+    workspace = Path(__file__).resolve().parents[1] / "web" / "workspace.html"
+    script = workspace.read_text(encoding="utf-8").split("<script>", 1)[1].split("</script>", 1)[0]
+    auth = script.split("function showAuth(", 1)[1].split("function hideAuth(", 1)[0]
+    chat = script.split("async function sendChat(", 1)[1].split("function renderCurrent(", 1)[0]
+
+    assert "function clearWorkspaceSession()" in script
+    assert "clearWorkspaceSession()" in auth
+    assert "state.authSessionVersion=(state.authSessionVersion||0)+1" in script
+    for field in (
+        "state.role=null",
+        "state.leads=[]",
+        "state.profiles=[]",
+        "state.discoveryRuns=[]",
+        "state.loadWarnings=[]",
+        "state.activeDiscovery=null",
+        "state.activeProfileId=null",
+        "state.analysis=null",
+    ):
+        assert field in script
+    assert 'replaceChildren(emptyState("مساحة العمل مقفلة"' in script
+    assert "function clearChatSession()" in script
+    assert "clearChatSession()" in script
+    assert "chat.messages=[]" in script
+    assert "chat.history=[]" in script
+    assert 'chat.mode="deep"' in script
+    assert "chat.sessionVersion=(chat.sessionVersion||0)+1" in script
+    assert "function advanceWorkspaceSessionVersion()" in script
+    login = script.split('$("loginForm").addEventListener("submit"', 1)[1].split('$("logoutButton").addEventListener', 1)[0]
+    assert "advanceWorkspaceSessionVersion()" in login
+    api = script.split("async function api(", 1)[1].split("function clearChatSession(", 1)[0]
+    assert "const requestSessionVersion=state.authSessionVersion" in api
+    assert "if(state.authSessionVersion!==requestSessionVersion)" in api
+    assert "const requestSessionVersion=chat.sessionVersion" in chat
+    assert "if(state.chat.sessionVersion!==requestSessionVersion)return;" in chat
+    assert "if(state.chat.sessionVersion===requestSessionVersion)" in chat
