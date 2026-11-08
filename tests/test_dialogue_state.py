@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import pytest
+
 from agents.dialogue_state import (
     fallback_dialogue_context,
     might_be_context_dependent,
