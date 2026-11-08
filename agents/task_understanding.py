@@ -1525,7 +1525,32 @@ def build_query_strategy_matrix(
                 normalize_text("الصيانة"): ("الصيانة", "الصيانه", "maintenance", "repair", "service"),
                 normalize_text("السعر"): ("السعر", "سعر", "price", "pricing", "cost"),
             },
+            "capacity": {
+                normalize_text("256 جيجابايت"): ("256 جيجابايت", "256gb", "256 gb"),
+                normalize_text("512 جيجابايت"): ("512 جيجابايت", "512gb", "512 gb"),
+                normalize_text("1 تيرابايت"): ("1 تيرابايت", "1tb", "1 tb", "1024gb"),
+            },
         }
+        normalized_planner_seed = normalize_text(planner_seed)
+
+        def _scope_aliases(term: str, slot_key: str) -> tuple[str, ...]:
+            normalized_scope = normalize_text(term)
+            if slot_key == "location":
+                return location_aliases.get(normalized_scope, (term,))
+            return slot_aliases.get(slot_key, {}).get(normalized_scope, (term,))
+
+        def _preferred_planner_alias(term: str, slot_key: str) -> str:
+            # Reuse the language/token already present in the planner seed so that
+            # all strategy variants keep one consistent country/currency/capacity
+            # representation instead of appending a duplicate in another language.
+            for alias in _scope_aliases(term, slot_key):
+                normalized_alias = normalize_text(alias)
+                if normalized_alias and re.search(
+                    rf"(?<!\w){re.escape(normalized_alias)}(?!\w)",
+                    normalized_planner_seed,
+                ):
+                    return alias
+            return term
 
         def scope_already_present(term: str, slot_key: str) -> bool:
             normalized_scope = normalize_text(term)
@@ -1565,8 +1590,9 @@ def build_query_strategy_matrix(
 
         missing_scope_terms: list[str] = []
         seen_scope_terms: set[str] = set()
-        for scope_term, slot_key in scope_terms:
-            normalized_scope = normalize_text(scope_term)
+        for raw_scope_term, slot_key in scope_terms:
+            scope_term = _preferred_planner_alias(raw_scope_term, slot_key)
+            normalized_scope = normalize_text(raw_scope_term)
             if not normalized_scope or normalized_scope in seen_scope_terms:
                 continue
             seen_scope_terms.add(normalized_scope)
@@ -1777,7 +1803,8 @@ def build_query_strategy_matrix(
         and queries
         and isinstance(queries[0], str)
     ):
-        seed_language_is_arabic = bool(re.search(r"[\u0600-\u06FF]", primary_seed))
+        source_language_seed = planner_seed or primary_seed
+        seed_language_is_arabic = bool(re.search(r"[\u0600-\u06FF]", source_language_seed))
         source_phrase = "مصدر رسمي" if seed_language_is_arabic else "official source"
         add(
             f"{primary_seed} {source_phrase}",
