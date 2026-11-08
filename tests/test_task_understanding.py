@@ -1001,3 +1001,44 @@ def test_query_strategy_matrix_replaces_stale_location_and_budget_after_refineme
     assert all("القاهرة" not in row["query"] for row in rows)
     assert all("20000" not in row["query"] for row in rows)
     assert all("أقل من 10000 جنيه" in row["query"] for row in rows)
+
+
+def test_buyer_intent_matrix_rebuilds_queries_after_location_refinement():
+    question = "نظام إنذار حريق صناعي"
+    context = {
+        "resolved_question": "مطلوب شراء نظام إنذار حريق صناعي في الإسكندرية فقط",
+        "topic": "نظام إنذار حريق صناعي",
+        "entities": ["نظام إنذار حريق صناعي"],
+        "slots": {
+            "product": "نظام إنذار حريق صناعي",
+            "location": "الإسكندرية",
+        },
+        "changed_slots": ["location"],
+        "is_follow_up": True,
+        "topic_shift": False,
+        "needs_clarification": False,
+    }
+    spec = build_task_spec(
+        question,
+        mode="deep",
+        intent_route="LEAD_GENERATION",
+        dialogue_context=context,
+    )
+
+    rows = build_query_strategy_matrix(
+        question,
+        spec,
+        [
+            '"مطلوب شراء" نظام إنذار حريق صناعي في القاهرة',
+            '"طلب عرض سعر" نظام إنذار حريق صناعي القاهرة',
+        ],
+        limit=8,
+    )
+
+    assert len(rows) >= 2
+    assert all("الإسكندرية" in row["query"] for row in rows)
+    assert all("القاهرة" not in row["query"] for row in rows)
+    assert all(
+        any(marker in row["query"] for marker in ('"مطلوب شراء"', '"طلب عرض سعر"', '"looking to buy"', '"request for quotation"'))
+        for row in rows
+    )
