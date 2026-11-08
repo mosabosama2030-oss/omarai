@@ -1510,6 +1510,26 @@ def build_query_strategy_matrix(
         if len(rows) >= maximum:
             break
 
+    # A brief confirmed follow-up can be fully understood yet produce no
+    # family-specific candidate (for example "سعره؟"). Add one primary-source
+    # alternative using the planner seed's language so alias checks prevent
+    # duplicating EUR/256GB/warranty as Arabic-only terms.
+    if (
+        len(rows) == 1
+        and inherit_context
+        and context_anchor
+        and queries
+        and isinstance(queries[0], str)
+    ):
+        seed_language_is_arabic = bool(re.search(r"[\\u0600-\\u06FF]", queries[0]))
+        source_phrase = "مصدر رسمي" if seed_language_is_arabic else "official source"
+        add(
+            f"{queries[0].strip()} {source_phrase}",
+            "dialogue_followup_primary_source",
+            "retrieve primary evidence for a confirmed contextual follow-up",
+            enforce_topic=False,
+        )
+
     # Preserve other planner alternatives only after task-targeted candidates.
     for index, query in enumerate(queries[1:], start=1):
         if len(rows) >= maximum:
