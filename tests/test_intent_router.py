@@ -293,3 +293,40 @@ def test_no_duplicate_followup_leadin_symbols():
     assert module_source.count("_FOLLOWUP_ASPECT_FRAGMENTS = frozenset") == 1
     assert module_source.count("def _strip_followup_leadin") == 1
 
+
+
+@pytest.mark.parametrize(
+    "followup",
+    [
+        "وبالنسبة للضمان بتاعه؟",
+        "ممكن اعرف اسعارهم؟",
+        "ضمانه كام؟",
+        "والتقييمات؟",
+        "وبخصوص الاسعار",
+    ],
+)
+def test_arabic_referential_followups_are_joined_to_prior_topic(followup):
+    history = [
+        {"role": "user", "content": "ايه سعر ايفون 15 في مصر"},
+        {"role": "assistant", "content": "السعر حوالي 45 الف جنيه"},
+    ]
+    resolved = resolve_followup_query(followup, history)
+    assert resolved.startswith("ايه سعر ايفون 15 في مصر")
+    assert followup in resolved
+
+
+@pytest.mark.parametrize(
+    "standalone",
+    [
+        "اسعار الذهب اليوم",
+        "ممكن اعرف اسعار الذهب",
+        "مواصفات لاب توب ديل",
+        "سعر الدولار النهاردة",
+    ],
+)
+def test_standalone_aspect_questions_are_not_merged_with_history(standalone):
+    history = [
+        {"role": "user", "content": "ايه سعر ايفون 15 في مصر"},
+        {"role": "assistant", "content": "السعر حوالي 45 الف جنيه"},
+    ]
+    assert resolve_followup_query(standalone, history) == standalone
