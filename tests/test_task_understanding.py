@@ -636,3 +636,37 @@ def test_long_query_reserves_space_for_inherited_location_and_budget():
     assert all(len(row["query"]) <= 240 for row in rows)
     assert all("الإسكندرية" in row["query"] for row in rows)
     assert all("أقل من 20000 جنيه" in row["query"] for row in rows)
+
+
+def test_long_query_keeps_location_and_budget_that_appear_only_in_truncated_tail():
+    question = (
+        "رشح لي أفضل لابتوب للعمل "
+        + ("مقارنة المواصفات والأداء والاستخدامات " * 10)
+        + "في الإسكندرية بميزانية أقل من 20000 جنيه"
+    )
+    context = {
+        "resolved_question": question,
+        "topic": "لابتوب للعمل",
+        "entities": ["لابتوب"],
+        "slots": {
+            "location": "الإسكندرية",
+            "budget": "أقل من 20000 جنيه",
+        },
+        "changed_slots": [],
+        "is_follow_up": True,
+        "topic_shift": False,
+        "needs_clarification": False,
+    }
+    spec = build_task_spec(
+        question,
+        mode="deep",
+        intent_route="WEB_DEEP",
+        dialogue_context=context,
+    )
+
+    rows = build_query_strategy_matrix(question, spec, [question], limit=8)
+
+    assert rows
+    assert all(len(row["query"]) <= 240 for row in rows)
+    assert all("الإسكندرية" in row["query"] for row in rows)
+    assert all("أقل من 20000 جنيه" in row["query"] for row in rows)
