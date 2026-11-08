@@ -1152,13 +1152,13 @@ def build_query_strategy_matrix(
             except (TypeError, ValueError):
                 candidate = ""
         candidate = _SPACE.sub(" ", candidate).strip()
-        # Carry explicit/inherited geography into every search candidate. Budgets
-        # constrain commercial discovery/recommendation tasks, not unrelated topics.
+        # Reserve query space for the highest-value explicit scope constraints.
+        # A long planner seed must never truncate the location or budget appended here.
         scope_terms: list[str] = []
         raw_locations = constraints.get("explicit_locations")
         if isinstance(raw_locations, list):
             scope_terms.extend(
-                item.strip() for item in raw_locations[:5]
+                item.strip()[:55] for item in raw_locations[:2]
                 if isinstance(item, str) and item.strip()
             )
         budget_scoped_families = {
@@ -1170,13 +1170,24 @@ def build_query_strategy_matrix(
             and isinstance(raw_budgets, list)
         ):
             scope_terms.extend(
-                item.strip() for item in raw_budgets[:3]
+                item.strip()[:70] for item in raw_budgets[:1]
                 if isinstance(item, str) and item.strip()
             )
+        normalized_candidate = normalize_text(candidate)
+        missing_scope_terms: list[str] = []
+        seen_scope: set[str] = set()
         for scope_term in scope_terms:
-            if normalize_text(scope_term) not in normalize_text(candidate):
-                candidate = _SPACE.sub(" ", f"{candidate} {scope_term}").strip()
-        candidate = candidate[:240]
+            normalized_scope = normalize_text(scope_term)
+            if normalized_scope and normalized_scope not in normalized_candidate and normalized_scope not in seen_scope:
+                missing_scope_terms.append(scope_term)
+                seen_scope.add(normalized_scope)
+        scope_suffix = _SPACE.sub(" ", " ".join(missing_scope_terms)).strip()
+        if scope_suffix:
+            core_limit = max(32, 240 - len(scope_suffix) - 1)
+            candidate = candidate[:core_limit].rstrip()
+            candidate = f"{candidate} {scope_suffix}".strip()
+        else:
+            candidate = candidate[:240].rstrip()
         key = _query_key(candidate)
         if not candidate or not key or key in seen:
             return
