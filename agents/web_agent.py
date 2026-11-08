@@ -1091,6 +1091,16 @@ class WebAgent:
     def _is_self_question(question: str) -> bool:
         """Recognize questions about Omarai itself so they do not need web search."""
         value = _normalize_search_query(question).casefold()
+        # Do not mistake a capability-flavoured request with a concrete subject
+        # for a question about Omarai's capabilities (e.g. "can you search for X?").
+        if re.search(
+            r"(?:هل\s+)?(?:تستطيع|يمكنك|تقدر)\s+(?:ان\s+)?(?:تبحث|البحث)\s+عن\s+\w{2,}",
+            value,
+        ) or re.search(
+            r"\b(?:can|could)\s+you\s+(?:search\s+for|look\s+up|find)\s+\w{2,}\b",
+            value,
+        ):
+            return False
         capability_phrases = (
             "كيف تستطيع مساعدتي", "ازاي تقدر تساعدني", "ازاي ممكن تساعدني",
             "ماذا تستطيع ان تفعل", "ما الذي تستطيع فعله", "ايه اللي تقدر تعمله",
@@ -1125,11 +1135,29 @@ class WebAgent:
     def _is_navigation_request(question: str) -> bool:
         """A link-finding task can be useful with one clearly labelled candidate result."""
         value = _normalize_search_query(question).casefold()
-        terms = (
-            "موقع", "رابط", "لينك", "الموقع الرسمي", "الصفحة الرسمية",
-            "official website", "website", "homepage", "link to",
+        explicit_web_terms = (
+            "رابط", "لينك", "الموقع الرسمي", "الصفحة الرسمية", "رابط الموقع",
+            "لينك الموقع", "موقع الانترنت", "موقع الويب", "موقع الكتروني",
+            "الموقع الالكتروني", "official website", "website", "homepage",
+            "web page", "webpage", "link to",
         )
-        return any(term in value for term in terms)
+        if any(term in value for term in explicit_web_terms):
+            return True
+        geographic_terms = (
+            "جغرافيا", "جغرافي", "على الخريطه", "اين تقع", "اين يقع",
+            "جغرافيه", "geographic location", "geographical location",
+            "geographically", "where is located",
+        )
+        if any(term in value for term in geographic_terms):
+            return False
+        # Bare "موقع" is ambiguous in Arabic. Keep the useful candidate-result
+        # exception only when the wording asks us to find/open a website.
+        website_actions = (
+            "ابحث عن موقع", "ابحث عن الموقع", "دور على موقع", "دورلي على موقع",
+            "هات موقع", "هاتلي موقع", "اعطني موقع", "عايز موقع", "عاوز موقع",
+            "محتاج موقع", "افتح موقع",
+        )
+        return any(term in value for term in website_actions)
 
     @staticmethod
     def _is_lead_search(question: str) -> bool:

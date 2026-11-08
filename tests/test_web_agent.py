@@ -1523,6 +1523,20 @@ def test_omarai_capability_question_is_answered_without_network(monkeypatch):
     assert "ليست إثباتًا" in result["answer"]
 
 
+def test_capability_phrased_question_with_a_search_target_is_not_self_question():
+    question = "هل تستطيع البحث عن أحدث أسعار الذهب في مصر؟"
+
+    assert WebAgent._is_self_question("كيف تبحث أنت في الإنترنت؟") is True
+    assert WebAgent._is_self_question(question) is False
+    assert WebAgent._requires_web_research(question, "auto") is True
+
+
+def test_geographical_location_is_not_treated_as_a_website_navigation_request():
+    assert WebAgent._is_navigation_request("ما موقع مصر جغرافيًا؟") is False
+    assert WebAgent._is_navigation_request("ابحث عن موقع مصر الرقمية") is True
+    assert WebAgent._is_navigation_request("ابحث عن الموقع الرسمي لوزارة الصحة") is True
+
+
 def test_link_lookup_can_return_one_clearly_labelled_candidate(monkeypatch):
     agent = WebAgent()
     agent.api_key = "test-key"

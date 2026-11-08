@@ -61,6 +61,17 @@ def test_capability_question_is_local() -> None:
     assert decision["reason"] == "capability_question"
 
 
+def test_concrete_research_request_takes_precedence_over_capability_marker() -> None:
+    decision = route_intent(
+        "هل تستطيع البحث عن أحدث أسعار الذهب في مصر؟",
+        capability_question=True,
+        requires_web=True,
+    )
+
+    assert decision["route"] == "WEB_SIMPLE"
+    assert decision["reason"] == "freshness_or_explicit_research_signal"
+
+
 def test_ambiguous_followup_uses_existing_conversation_context() -> None:
     history = [
         {"role": "user", "content": "عايز أعرف سعر iPhone 17 في مصر"},

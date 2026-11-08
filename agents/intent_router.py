@@ -487,7 +487,7 @@ def route_intent(
             "needs_clarification": False,
         }
 
-    if capability_question:
+    if capability_question and not requires_web:
         return {
             "route": "LOCAL",
             "reason": "capability_question",
