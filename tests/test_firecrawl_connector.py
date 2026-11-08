@@ -65,6 +65,7 @@ def test_firecrawl_search_normalizes_only_safe_described_web_results(monkeypatch
 
 
 def test_firecrawl_search_does_not_call_network_without_api_key(monkeypatch):
+    monkeypatch.setenv("FIRECRAWL_SEARCH_ENABLED", "1")
     monkeypatch.delenv("FIRECRAWL_API_KEY", raising=False)
 
     def unexpected_request(*args, **kwargs):
