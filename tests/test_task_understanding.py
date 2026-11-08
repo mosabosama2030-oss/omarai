@@ -749,3 +749,38 @@ def test_query_strategy_matrix_does_not_inherit_semantic_slots_after_topic_shift
     assert all("اليورو" not in row["query"] for row in rows)
     assert all("256 جيجابايت" not in row["query"] for row in rows)
     assert all("الضمان" not in row["query"] for row in rows)
+
+
+def test_query_strategy_matrix_uses_resolved_topic_instead_of_imperative_query_prefix():
+    spec = {
+        "task_family": "recommendation",
+        "mode": "deep",
+        "intent_route": "WEB_DEEP",
+        "hypothesis_interpretations": [],
+        "constraints": {
+            "explicit_aspects": [],
+            "explicit_locations": [],
+            "explicit_budgets": [],
+        },
+        "context_resolution": {
+            "topic": "لابتوب للعمل",
+            "entities": ["Dell"],
+            "slots": {"product": "لابتوب", "model": "Dell"},
+            "is_follow_up": True,
+            "topic_shift": False,
+            "needs_clarification": False,
+        },
+    }
+
+    rows = build_query_strategy_matrix(
+        "في وضعي، أبدأ بإيه؟",
+        spec,
+        ["ابحث لي عن أفضل لابتوب للعمل"],
+        limit=6,
+    )
+
+    assert any(
+        row["strategy"] == "tradeoffs_ar"
+        and row["query"].startswith("لابتوب للعمل Dell")
+        for row in rows
+    )
