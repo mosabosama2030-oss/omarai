@@ -4,7 +4,7 @@
 
 - الصفحة: **051**
 - سجلات الأسطر: **800**
-- النطاق: SRC-62DC597310-L000138 إلى SRC-4405E7912C-L000067
+- النطاق: SRC-62DC597310-L000084 إلى SRC-4405E7912C-L000013
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,60 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-62DC597310-L000084](../../tests/test_live_search_connectors.py#L84) | 84 | `""` | — |
+| [SRC-62DC597310-L000085](../../tests/test_live_search_connectors.py#L85) | 85 | `"def test_search_api_setup_status_reports_only_presence_not_secret_values(monkeypatch):"` | — |
+| [SRC-62DC597310-L000086](../../tests/test_live_search_connectors.py#L86) | 86 | `"    monkeypatch.setenv(\"BRAVE_SEARCH_API_KEY\", \"brave-secret\")"` | — |
+| [SRC-62DC597310-L000087](../../tests/test_live_search_connectors.py#L87) | 87 | `"    monkeypatch.setenv(\"TAVILY_API_KEY\", \"tavily-secret\")"` | — |
+| [SRC-62DC597310-L000088](../../tests/test_live_search_connectors.py#L88) | 88 | `"    status = WebAgent.status()"` | — |
+| [SRC-62DC597310-L000089](../../tests/test_live_search_connectors.py#L89) | 89 | `"    assert status[\"brave_search_api_configured\"] is True"` | — |
+| [SRC-62DC597310-L000090](../../tests/test_live_search_connectors.py#L90) | 90 | `"    assert status[\"tavily_search_api_configured\"] is True"` | — |
+| [SRC-62DC597310-L000091](../../tests/test_live_search_connectors.py#L91) | 91 | `"    assert \"brave-secret\" not in str(status)"` | — |
+| [SRC-62DC597310-L000092](../../tests/test_live_search_connectors.py#L92) | 92 | `"    assert \"tavily-secret\" not in str(status)"` | — |
+| [SRC-62DC597310-L000093](../../tests/test_live_search_connectors.py#L93) | 93 | `""` | — |
+| [SRC-62DC597310-L000094](../../tests/test_live_search_connectors.py#L94) | 94 | `""` | — |
+| [SRC-62DC597310-L000095](../../tests/test_live_search_connectors.py#L95) | 95 | `""` | — |
+| [SRC-62DC597310-L000096](../../tests/test_live_search_connectors.py#L96) | 96 | `"def test_bounded_provider_transport_caps_streamed_bytes_even_when_length_lies(monkeypatch):"` | — |
+| [SRC-62DC597310-L000097](../../tests/test_live_search_connectors.py#L97) | 97 | `"    chunks_read = []"` | — |
+| [SRC-62DC597310-L000098](../../tests/test_live_search_connectors.py#L98) | 98 | `"    observed = {}"` | — |
+| [SRC-62DC597310-L000099](../../tests/test_live_search_connectors.py#L99) | 99 | `""` | — |
+| [SRC-62DC597310-L000100](../../tests/test_live_search_connectors.py#L100) | 100 | `"    class FakeResponse:"` | — |
+| [SRC-62DC597310-L000101](../../tests/test_live_search_connectors.py#L101) | 101 | `"        status_code = 200"` | — |
+| [SRC-62DC597310-L000102](../../tests/test_live_search_connectors.py#L102) | 102 | `""` | — |
+| [SRC-62DC597310-L000103](../../tests/test_live_search_connectors.py#L103) | 103 | `"        def __init__(self):"` | — |
+| [SRC-62DC597310-L000104](../../tests/test_live_search_connectors.py#L104) | 104 | `"            self.headers = {\"content-length\": \"1\"}"` | — |
+| [SRC-62DC597310-L000105](../../tests/test_live_search_connectors.py#L105) | 105 | `"            self.request = httpx.Request(\"GET\", \"https://provider.example/search\")"` | — |
+| [SRC-62DC597310-L000106](../../tests/test_live_search_connectors.py#L106) | 106 | `""` | — |
+| [SRC-62DC597310-L000107](../../tests/test_live_search_connectors.py#L107) | 107 | `"        def __enter__(self):"` | — |
+| [SRC-62DC597310-L000108](../../tests/test_live_search_connectors.py#L108) | 108 | `"            return self"` | — |
+| [SRC-62DC597310-L000109](../../tests/test_live_search_connectors.py#L109) | 109 | `""` | — |
+| [SRC-62DC597310-L000110](../../tests/test_live_search_connectors.py#L110) | 110 | `"        def __exit__(self, *_args):"` | — |
+| [SRC-62DC597310-L000111](../../tests/test_live_search_connectors.py#L111) | 111 | `"            return False"` | — |
+| [SRC-62DC597310-L000112](../../tests/test_live_search_connectors.py#L112) | 112 | `""` | — |
+| [SRC-62DC597310-L000113](../../tests/test_live_search_connectors.py#L113) | 113 | `"        def iter_bytes(self):"` | — |
+| [SRC-62DC597310-L000114](../../tests/test_live_search_connectors.py#L114) | 114 | `"            for chunk in ("` | — |
+| [SRC-62DC597310-L000115](../../tests/test_live_search_connectors.py#L115) | 115 | `"                b\"A\" * MAX_PROVIDER_RESPONSE_BYTES,"` | — |
+| [SRC-62DC597310-L000116](../../tests/test_live_search_connectors.py#L116) | 116 | `"                b\"B\","` | — |
+| [SRC-62DC597310-L000117](../../tests/test_live_search_connectors.py#L117) | 117 | `"                b\"C\","` | — |
+| [SRC-62DC597310-L000118](../../tests/test_live_search_connectors.py#L118) | 118 | `"            ):"` | — |
+| [SRC-62DC597310-L000119](../../tests/test_live_search_connectors.py#L119) | 119 | `"                chunks_read.append(len(chunk))"` | — |
+| [SRC-62DC597310-L000120](../../tests/test_live_search_connectors.py#L120) | 120 | `"                yield chunk"` | — |
+| [SRC-62DC597310-L000121](../../tests/test_live_search_connectors.py#L121) | 121 | `""` | — |
+| [SRC-62DC597310-L000122](../../tests/test_live_search_connectors.py#L122) | 122 | `"    class FakeClient:"` | — |
+| [SRC-62DC597310-L000123](../../tests/test_live_search_connectors.py#L123) | 123 | `"        def __init__(self, **kwargs):"` | — |
+| [SRC-62DC597310-L000124](../../tests/test_live_search_connectors.py#L124) | 124 | `"            observed[\"client_options\"] = kwargs"` | — |
+| [SRC-62DC597310-L000125](../../tests/test_live_search_connectors.py#L125) | 125 | `""` | — |
+| [SRC-62DC597310-L000126](../../tests/test_live_search_connectors.py#L126) | 126 | `"        def __enter__(self):"` | — |
+| [SRC-62DC597310-L000127](../../tests/test_live_search_connectors.py#L127) | 127 | `"            return self"` | — |
+| [SRC-62DC597310-L000128](../../tests/test_live_search_connectors.py#L128) | 128 | `""` | — |
+| [SRC-62DC597310-L000129](../../tests/test_live_search_connectors.py#L129) | 129 | `"        def __exit__(self, *_args):"` | — |
+| [SRC-62DC597310-L000130](../../tests/test_live_search_connectors.py#L130) | 130 | `"            return False"` | — |
+| [SRC-62DC597310-L000131](../../tests/test_live_search_connectors.py#L131) | 131 | `""` | — |
+| [SRC-62DC597310-L000132](../../tests/test_live_search_connectors.py#L132) | 132 | `"        def stream(self, method, url, **kwargs):"` | — |
+| [SRC-62DC597310-L000133](../../tests/test_live_search_connectors.py#L133) | 133 | `"            observed[\"method\"] = method"` | — |
+| [SRC-62DC597310-L000134](../../tests/test_live_search_connectors.py#L134) | 134 | `"            observed[\"url\"] = url"` | — |
+| [SRC-62DC597310-L000135](../../tests/test_live_search_connectors.py#L135) | 135 | `"            observed[\"request_options\"] = kwargs"` | — |
+| [SRC-62DC597310-L000136](../../tests/test_live_search_connectors.py#L136) | 136 | `"            return FakeResponse()"` | — |
+| [SRC-62DC597310-L000137](../../tests/test_live_search_connectors.py#L137) | 137 | `""` | — |
 | [SRC-62DC597310-L000138](../../tests/test_live_search_connectors.py#L138) | 138 | `"    monkeypatch.setattr(httpx, \"Client\", FakeClient)"` | — |
 | [SRC-62DC597310-L000139](../../tests/test_live_search_connectors.py#L139) | 139 | `"    with pytest.raises(ValueError, match=\"size limit\"):"` | — |
 | [SRC-62DC597310-L000140](../../tests/test_live_search_connectors.py#L140) | 140 | `"        _bounded_http_request("` | — |
@@ -789,57 +843,3 @@
 | [SRC-4405E7912C-L000011](../../tests/test_multitenant_api.py#L11) | 11 | `"import pytest"` | — |
 | [SRC-4405E7912C-L000012](../../tests/test_multitenant_api.py#L12) | 12 | `""` | — |
 | [SRC-4405E7912C-L000013](../../tests/test_multitenant_api.py#L13) | 13 | `"from agents.omarai import LeadStore"` | — |
-| [SRC-4405E7912C-L000014](../../tests/test_multitenant_api.py#L14) | 14 | `"from api.omarai import Handler"` | — |
-| [SRC-4405E7912C-L000015](../../tests/test_multitenant_api.py#L15) | 15 | `""` | — |
-| [SRC-4405E7912C-L000016](../../tests/test_multitenant_api.py#L16) | 16 | `""` | — |
-| [SRC-4405E7912C-L000017](../../tests/test_multitenant_api.py#L17) | 17 | `"@pytest.fixture"` | — |
-| [SRC-4405E7912C-L000018](../../tests/test_multitenant_api.py#L18) | 18 | `"def tenant_api(tmp_path, monkeypatch):"` | — |
-| [SRC-4405E7912C-L000019](../../tests/test_multitenant_api.py#L19) | 19 | `"    monkeypatch.setenv(\"OMARAI_PUBLIC_DEPLOYMENT\", \"1\")"` | — |
-| [SRC-4405E7912C-L000020](../../tests/test_multitenant_api.py#L20) | 20 | `"    monkeypatch.delenv(\"OMARAI_ACCESS_TOKEN\", raising=False)"` | — |
-| [SRC-4405E7912C-L000021](../../tests/test_multitenant_api.py#L21) | 21 | `"    previous_store = Handler.store"` | — |
-| [SRC-4405E7912C-L000022](../../tests/test_multitenant_api.py#L22) | 22 | `"    previous_request_times = Handler._request_times"` | — |
-| [SRC-4405E7912C-L000023](../../tests/test_multitenant_api.py#L23) | 23 | `"    previous_rate_cleanup = Handler._rate_last_cleanup"` | — |
-| [SRC-4405E7912C-L000024](../../tests/test_multitenant_api.py#L24) | 24 | `"    Handler._request_times = defaultdict(deque)"` | — |
-| [SRC-4405E7912C-L000025](../../tests/test_multitenant_api.py#L25) | 25 | `"    Handler._rate_last_cleanup = 0.0"` | — |
-| [SRC-4405E7912C-L000026](../../tests/test_multitenant_api.py#L26) | 26 | `"    Handler.store = LeadStore(tmp_path / \"tenant-api.sqlite3\")"` | — |
-| [SRC-4405E7912C-L000027](../../tests/test_multitenant_api.py#L27) | 27 | `"    server = ThreadingHTTPServer((\"127.0.0.1\", 0), Handler)"` | — |
-| [SRC-4405E7912C-L000028](../../tests/test_multitenant_api.py#L28) | 28 | `"    thread = threading.Thread(target=server.serve_forever, daemon=True)"` | — |
-| [SRC-4405E7912C-L000029](../../tests/test_multitenant_api.py#L29) | 29 | `"    thread.start()"` | — |
-| [SRC-4405E7912C-L000030](../../tests/test_multitenant_api.py#L30) | 30 | `"    try:"` | — |
-| [SRC-4405E7912C-L000031](../../tests/test_multitenant_api.py#L31) | 31 | `"        yield f\"http://127.0.0.1:{server.server_port}\", Handler.store"` | — |
-| [SRC-4405E7912C-L000032](../../tests/test_multitenant_api.py#L32) | 32 | `"    finally:"` | — |
-| [SRC-4405E7912C-L000033](../../tests/test_multitenant_api.py#L33) | 33 | `"        server.shutdown()"` | — |
-| [SRC-4405E7912C-L000034](../../tests/test_multitenant_api.py#L34) | 34 | `"        server.server_close()"` | — |
-| [SRC-4405E7912C-L000035](../../tests/test_multitenant_api.py#L35) | 35 | `"        thread.join(timeout=3)"` | — |
-| [SRC-4405E7912C-L000036](../../tests/test_multitenant_api.py#L36) | 36 | `"        Handler.store = previous_store"` | — |
-| [SRC-4405E7912C-L000037](../../tests/test_multitenant_api.py#L37) | 37 | `"        Handler._request_times = previous_request_times"` | — |
-| [SRC-4405E7912C-L000038](../../tests/test_multitenant_api.py#L38) | 38 | `"        Handler._rate_last_cleanup = previous_rate_cleanup"` | — |
-| [SRC-4405E7912C-L000039](../../tests/test_multitenant_api.py#L39) | 39 | `""` | — |
-| [SRC-4405E7912C-L000040](../../tests/test_multitenant_api.py#L40) | 40 | `""` | — |
-| [SRC-4405E7912C-L000041](../../tests/test_multitenant_api.py#L41) | 41 | `"def request_json(base, path, *, method=\"GET\", payload=None, token=\"\"):"` | — |
-| [SRC-4405E7912C-L000042](../../tests/test_multitenant_api.py#L42) | 42 | `"    body = None if payload is None else json.dumps(payload).encode(\"utf-8\")"` | — |
-| [SRC-4405E7912C-L000043](../../tests/test_multitenant_api.py#L43) | 43 | `"    headers = {}"` | — |
-| [SRC-4405E7912C-L000044](../../tests/test_multitenant_api.py#L44) | 44 | `"    if body is not None:"` | — |
-| [SRC-4405E7912C-L000045](../../tests/test_multitenant_api.py#L45) | 45 | `"        headers[\"Content-Type\"] = \"application/json\""` | — |
-| [SRC-4405E7912C-L000046](../../tests/test_multitenant_api.py#L46) | 46 | `"    if token:"` | — |
-| [SRC-4405E7912C-L000047](../../tests/test_multitenant_api.py#L47) | 47 | `"        headers[\"Authorization\"] = \"Bearer \" + token"` | — |
-| [SRC-4405E7912C-L000048](../../tests/test_multitenant_api.py#L48) | 48 | `"    request = Request(base + path, data=body, method=method, headers=headers)"` | — |
-| [SRC-4405E7912C-L000049](../../tests/test_multitenant_api.py#L49) | 49 | `"    try:"` | — |
-| [SRC-4405E7912C-L000050](../../tests/test_multitenant_api.py#L50) | 50 | `"        with urlopen(request, timeout=3) as response:"` | — |
-| [SRC-4405E7912C-L000051](../../tests/test_multitenant_api.py#L51) | 51 | `"            return response.status, json.loads(response.read().decode(\"utf-8\"))"` | — |
-| [SRC-4405E7912C-L000052](../../tests/test_multitenant_api.py#L52) | 52 | `"    except HTTPError as error:"` | — |
-| [SRC-4405E7912C-L000053](../../tests/test_multitenant_api.py#L53) | 53 | `"        return error.code, json.loads(error.read().decode(\"utf-8\"))"` | — |
-| [SRC-4405E7912C-L000054](../../tests/test_multitenant_api.py#L54) | 54 | `""` | — |
-| [SRC-4405E7912C-L000055](../../tests/test_multitenant_api.py#L55) | 55 | `""` | — |
-| [SRC-4405E7912C-L000056](../../tests/test_multitenant_api.py#L56) | 56 | `"def _tenant(store, name, email, token):"` | — |
-| [SRC-4405E7912C-L000057](../../tests/test_multitenant_api.py#L57) | 57 | `"    tenant_id = store.create_tenant(name, name.casefold())"` | — |
-| [SRC-4405E7912C-L000058](../../tests/test_multitenant_api.py#L58) | 58 | `"    user_id = store.create_user(email, name + \" User\")"` | — |
-| [SRC-4405E7912C-L000059](../../tests/test_multitenant_api.py#L59) | 59 | `"    store.add_membership(tenant_id, user_id, \"sales_agent\")"` | — |
-| [SRC-4405E7912C-L000060](../../tests/test_multitenant_api.py#L60) | 60 | `"    store.create_api_token(token, tenant_id, user_id, label=name)"` | — |
-| [SRC-4405E7912C-L000061](../../tests/test_multitenant_api.py#L61) | 61 | `"    return tenant_id"` | — |
-| [SRC-4405E7912C-L000062](../../tests/test_multitenant_api.py#L62) | 62 | `""` | — |
-| [SRC-4405E7912C-L000063](../../tests/test_multitenant_api.py#L63) | 63 | `""` | — |
-| [SRC-4405E7912C-L000064](../../tests/test_multitenant_api.py#L64) | 64 | `"def test_api_ignores_client_tenant_id_and_blocks_cross_tenant_reads_and_updates(tenant_api):"` | — |
-| [SRC-4405E7912C-L000065](../../tests/test_multitenant_api.py#L65) | 65 | `"    base, store = tenant_api"` | — |
-| [SRC-4405E7912C-L000066](../../tests/test_multitenant_api.py#L66) | 66 | `"    token_a = \"tenant-a-token-\" + \"A\" * 32"` | — |
-| [SRC-4405E7912C-L000067](../../tests/test_multitenant_api.py#L67) | 67 | `"    token_b = \"tenant-b-token-\" + \"B\" * 32"` | — |
