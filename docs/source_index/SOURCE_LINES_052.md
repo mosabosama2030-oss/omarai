@@ -4,9 +4,69 @@
 
 - الصفحة: **052**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1521F490CA-L000049 إلى SRC-44CDA52D01-L000058
+- النطاق: SRC-D67DCEB693-L000153 إلى SRC-4405E7912C-L000352
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-D67DCEB693 — [tests/test_model_provider_failover.py](../../tests/test_model_provider_failover.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-D67DCEB693-L000153](../../tests/test_model_provider_failover.py#L153) | 153 | `"    monkeypatch.setenv(\"OPENROUTER_API_KEY\", \"test-openrouter-key\")"` | — |
+| [SRC-D67DCEB693-L000154](../../tests/test_model_provider_failover.py#L154) | 154 | `"    monkeypatch.setenv(\"GEMINI_API_KEY\", \"test-gemini-key\")"` | — |
+| [SRC-D67DCEB693-L000155](../../tests/test_model_provider_failover.py#L155) | 155 | `"    agent = WebAgent()"` | — |
+| [SRC-D67DCEB693-L000156](../../tests/test_model_provider_failover.py#L156) | 156 | `"    calls = []"` | — |
+| [SRC-D67DCEB693-L000157](../../tests/test_model_provider_failover.py#L157) | 157 | `""` | — |
+| [SRC-D67DCEB693-L000158](../../tests/test_model_provider_failover.py#L158) | 158 | `"    def fake_open(request, timeout):"` | — |
+| [SRC-D67DCEB693-L000159](../../tests/test_model_provider_failover.py#L159) | 159 | `"        calls.append(request.full_url)"` | — |
+| [SRC-D67DCEB693-L000160](../../tests/test_model_provider_failover.py#L160) | 160 | `"        raise HTTPError(request.full_url, 401, \"unauthorized\", None, None)"` | — |
+| [SRC-D67DCEB693-L000161](../../tests/test_model_provider_failover.py#L161) | 161 | `""` | — |
+| [SRC-D67DCEB693-L000162](../../tests/test_model_provider_failover.py#L162) | 162 | `"    monkeypatch.setattr(\"agents.web_agent._open_model_request\", fake_open)"` | — |
+| [SRC-D67DCEB693-L000163](../../tests/test_model_provider_failover.py#L163) | 163 | `"    try:"` | — |
+| [SRC-D67DCEB693-L000164](../../tests/test_model_provider_failover.py#L164) | 164 | `"        agent._request_completion("` | — |
+| [SRC-D67DCEB693-L000165](../../tests/test_model_provider_failover.py#L165) | 165 | `"            [{\"role\": \"user\", \"content\": \"claim verification\"}],"` | — |
+| [SRC-D67DCEB693-L000166](../../tests/test_model_provider_failover.py#L166) | 166 | `"            model=agent.verifier_model,"` | — |
+| [SRC-D67DCEB693-L000167](../../tests/test_model_provider_failover.py#L167) | 167 | `"            allow_fallback=False,"` | — |
+| [SRC-D67DCEB693-L000168](../../tests/test_model_provider_failover.py#L168) | 168 | `"        )"` | — |
+| [SRC-D67DCEB693-L000169](../../tests/test_model_provider_failover.py#L169) | 169 | `"    except RuntimeError as exc:"` | — |
+| [SRC-D67DCEB693-L000170](../../tests/test_model_provider_failover.py#L170) | 170 | `"        assert \"HTTP 401\" in str(exc)"` | — |
+| [SRC-D67DCEB693-L000171](../../tests/test_model_provider_failover.py#L171) | 171 | `"    else:"` | — |
+| [SRC-D67DCEB693-L000172](../../tests/test_model_provider_failover.py#L172) | 172 | `"        raise AssertionError(\"semantic verifier unexpectedly accepted a failed provider request\")"` | — |
+| [SRC-D67DCEB693-L000173](../../tests/test_model_provider_failover.py#L173) | 173 | `""` | — |
+| [SRC-D67DCEB693-L000174](../../tests/test_model_provider_failover.py#L174) | 174 | `"    assert calls == [\"https://openrouter.ai/api/v1/chat/completions\"]"` | — |
+| [SRC-D67DCEB693-L000175](../../tests/test_model_provider_failover.py#L175) | 175 | `""` | — |
+| [SRC-D67DCEB693-L000176](../../tests/test_model_provider_failover.py#L176) | 176 | `""` | — |
+| [SRC-D67DCEB693-L000177](../../tests/test_model_provider_failover.py#L177) | 177 | `"def test_openrouter_web_search_tool_is_not_sent_to_fallback_provider(monkeypatch):"` | — |
+| [SRC-D67DCEB693-L000178](../../tests/test_model_provider_failover.py#L178) | 178 | `"    _clear_model_environment(monkeypatch)"` | — |
+| [SRC-D67DCEB693-L000179](../../tests/test_model_provider_failover.py#L179) | 179 | `"    monkeypatch.setenv(\"OPENROUTER_API_KEY\", \"test-openrouter-key\")"` | — |
+| [SRC-D67DCEB693-L000180](../../tests/test_model_provider_failover.py#L180) | 180 | `"    monkeypatch.setenv(\"GEMINI_API_KEY\", \"test-gemini-key\")"` | — |
+| [SRC-D67DCEB693-L000181](../../tests/test_model_provider_failover.py#L181) | 181 | `"    monkeypatch.setenv(\"OMARAI_OPENROUTER_WEB_SEARCH\", \"1\")"` | — |
+| [SRC-D67DCEB693-L000182](../../tests/test_model_provider_failover.py#L182) | 182 | `"    agent = WebAgent()"` | — |
+| [SRC-D67DCEB693-L000183](../../tests/test_model_provider_failover.py#L183) | 183 | `"    observed = []"` | — |
+| [SRC-D67DCEB693-L000184](../../tests/test_model_provider_failover.py#L184) | 184 | `""` | — |
+| [SRC-D67DCEB693-L000185](../../tests/test_model_provider_failover.py#L185) | 185 | `"    def fake_open(request, timeout):"` | — |
+| [SRC-D67DCEB693-L000186](../../tests/test_model_provider_failover.py#L186) | 186 | `"        payload = json.loads(request.data.decode(\"utf-8\"))"` | — |
+| [SRC-D67DCEB693-L000187](../../tests/test_model_provider_failover.py#L187) | 187 | `"        observed.append((request.full_url, payload))"` | — |
+| [SRC-D67DCEB693-L000188](../../tests/test_model_provider_failover.py#L188) | 188 | `"        if \"openrouter.ai\" in request.full_url:"` | — |
+| [SRC-D67DCEB693-L000189](../../tests/test_model_provider_failover.py#L189) | 189 | `"            raise HTTPError(request.full_url, 503, \"temporary\", None, None)"` | — |
+| [SRC-D67DCEB693-L000190](../../tests/test_model_provider_failover.py#L190) | 190 | `"        return FakeCompletionResponse(\"إجابة احتياطية\")"` | — |
+| [SRC-D67DCEB693-L000191](../../tests/test_model_provider_failover.py#L191) | 191 | `""` | — |
+| [SRC-D67DCEB693-L000192](../../tests/test_model_provider_failover.py#L192) | 192 | `"    monkeypatch.setattr(\"agents.web_agent._open_model_request\", fake_open)"` | — |
+| [SRC-D67DCEB693-L000193](../../tests/test_model_provider_failover.py#L193) | 193 | `"    answer = agent._request_completion("` | — |
+| [SRC-D67DCEB693-L000194](../../tests/test_model_provider_failover.py#L194) | 194 | `"        [{\"role\": \"user\", \"content\": \"ابحث\"}],"` | — |
+| [SRC-D67DCEB693-L000195](../../tests/test_model_provider_failover.py#L195) | 195 | `"        model=agent.answer_model,"` | — |
+| [SRC-D67DCEB693-L000196](../../tests/test_model_provider_failover.py#L196) | 196 | `"        enable_web_search=True,"` | — |
+| [SRC-D67DCEB693-L000197](../../tests/test_model_provider_failover.py#L197) | 197 | `"    )"` | — |
+| [SRC-D67DCEB693-L000198](../../tests/test_model_provider_failover.py#L198) | 198 | `""` | — |
+| [SRC-D67DCEB693-L000199](../../tests/test_model_provider_failover.py#L199) | 199 | `"    assert answer == \"إجابة احتياطية\""` | — |
+| [SRC-D67DCEB693-L000200](../../tests/test_model_provider_failover.py#L200) | 200 | `"    assert observed[0][0].startswith(\"https://openrouter.ai/\")"` | — |
+| [SRC-D67DCEB693-L000201](../../tests/test_model_provider_failover.py#L201) | 201 | `"    assert observed[0][1][\"tools\"][0][\"type\"] == \"openrouter:web_search\""` | — |
+| [SRC-D67DCEB693-L000202](../../tests/test_model_provider_failover.py#L202) | 202 | `"    assert observed[-1][0].startswith(\"https://generativelanguage.googleapis.com/\")"` | — |
+| [SRC-D67DCEB693-L000203](../../tests/test_model_provider_failover.py#L203) | 203 | `"    assert \"tools\" not in observed[-1][1]"` | — |
 ## اختبارات
 
 ### FILE-1521F490CA — [tests/test_multitenant.py](../../tests/test_multitenant.py#L1)
@@ -16,6 +76,54 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1521F490CA-L000001](../../tests/test_multitenant.py#L1) | 1 | `"\"\"\"Tenant isolation, migration, and scoped export regression tests.\"\"\""` | — |
+| [SRC-1521F490CA-L000002](../../tests/test_multitenant.py#L2) | 2 | `"from __future__ import annotations"` | — |
+| [SRC-1521F490CA-L000003](../../tests/test_multitenant.py#L3) | 3 | `""` | — |
+| [SRC-1521F490CA-L000004](../../tests/test_multitenant.py#L4) | 4 | `"import csv"` | — |
+| [SRC-1521F490CA-L000005](../../tests/test_multitenant.py#L5) | 5 | `"import hashlib"` | — |
+| [SRC-1521F490CA-L000006](../../tests/test_multitenant.py#L6) | 6 | `"import sqlite3"` | — |
+| [SRC-1521F490CA-L000007](../../tests/test_multitenant.py#L7) | 7 | `""` | — |
+| [SRC-1521F490CA-L000008](../../tests/test_multitenant.py#L8) | 8 | `"import pytest"` | — |
+| [SRC-1521F490CA-L000009](../../tests/test_multitenant.py#L9) | 9 | `""` | — |
+| [SRC-1521F490CA-L000010](../../tests/test_multitenant.py#L10) | 10 | `"from agents.omarai import DEFAULT_TENANT_ID, LeadStore, normalize"` | — |
+| [SRC-1521F490CA-L000011](../../tests/test_multitenant.py#L11) | 11 | `""` | — |
+| [SRC-1521F490CA-L000012](../../tests/test_multitenant.py#L12) | 12 | `""` | — |
+| [SRC-1521F490CA-L000013](../../tests/test_multitenant.py#L13) | 13 | `"def _tenant_member(store: LeadStore, name: str, email: str, token: str):"` | — |
+| [SRC-1521F490CA-L000014](../../tests/test_multitenant.py#L14) | 14 | `"    tenant_id = store.create_tenant(name, name.casefold())"` | — |
+| [SRC-1521F490CA-L000015](../../tests/test_multitenant.py#L15) | 15 | `"    user_id = store.create_user(email, name + \" User\")"` | — |
+| [SRC-1521F490CA-L000016](../../tests/test_multitenant.py#L16) | 16 | `"    store.add_membership(tenant_id, user_id, \"sales_agent\")"` | — |
+| [SRC-1521F490CA-L000017](../../tests/test_multitenant.py#L17) | 17 | `"    store.create_api_token(token, tenant_id, user_id, label=name)"` | — |
+| [SRC-1521F490CA-L000018](../../tests/test_multitenant.py#L18) | 18 | `"    return tenant_id, user_id"` | — |
+| [SRC-1521F490CA-L000019](../../tests/test_multitenant.py#L19) | 19 | `""` | — |
+| [SRC-1521F490CA-L000020](../../tests/test_multitenant.py#L20) | 20 | `""` | — |
+| [SRC-1521F490CA-L000021](../../tests/test_multitenant.py#L21) | 21 | `"def test_tenant_scoped_fingerprints_reads_updates_and_exports(tmp_path):"` | — |
+| [SRC-1521F490CA-L000022](../../tests/test_multitenant.py#L22) | 22 | `"    store = LeadStore(tmp_path / \"multi.sqlite3\")"` | — |
+| [SRC-1521F490CA-L000023](../../tests/test_multitenant.py#L23) | 23 | `"    tenant_a, _, = _tenant_member("` | — |
+| [SRC-1521F490CA-L000024](../../tests/test_multitenant.py#L24) | 24 | `"        store, \"Company A\", \"a@example.test\", \"A\" * 40"` | — |
+| [SRC-1521F490CA-L000025](../../tests/test_multitenant.py#L25) | 25 | `"    )"` | — |
+| [SRC-1521F490CA-L000026](../../tests/test_multitenant.py#L26) | 26 | `"    tenant_b, _, = _tenant_member("` | — |
+| [SRC-1521F490CA-L000027](../../tests/test_multitenant.py#L27) | 27 | `"        store, \"Company B\", \"b@example.test\", \"B\" * 40"` | — |
+| [SRC-1521F490CA-L000028](../../tests/test_multitenant.py#L28) | 28 | `"    )"` | — |
+| [SRC-1521F490CA-L000029](../../tests/test_multitenant.py#L29) | 29 | `""` | — |
+| [SRC-1521F490CA-L000030](../../tests/test_multitenant.py#L30) | 30 | `"    payload = (\"Buyer asks to purchase a product\", \"https://example.test/post/1\")"` | — |
+| [SRC-1521F490CA-L000031](../../tests/test_multitenant.py#L31) | 31 | `"    lead_a, created_a = store.add("` | — |
+| [SRC-1521F490CA-L000032](../../tests/test_multitenant.py#L32) | 32 | `"        *payload, tenant_id=tenant_a"` | — |
+| [SRC-1521F490CA-L000033](../../tests/test_multitenant.py#L33) | 33 | `"    )"` | — |
+| [SRC-1521F490CA-L000034](../../tests/test_multitenant.py#L34) | 34 | `"    lead_b, created_b = store.add("` | — |
+| [SRC-1521F490CA-L000035](../../tests/test_multitenant.py#L35) | 35 | `"        *payload, tenant_id=tenant_b"` | — |
+| [SRC-1521F490CA-L000036](../../tests/test_multitenant.py#L36) | 36 | `"    )"` | — |
+| [SRC-1521F490CA-L000037](../../tests/test_multitenant.py#L37) | 37 | `""` | — |
+| [SRC-1521F490CA-L000038](../../tests/test_multitenant.py#L38) | 38 | `"    assert created_a is True"` | — |
+| [SRC-1521F490CA-L000039](../../tests/test_multitenant.py#L39) | 39 | `"    assert created_b is True"` | — |
+| [SRC-1521F490CA-L000040](../../tests/test_multitenant.py#L40) | 40 | `"    assert lead_a[\"id\"] != lead_b[\"id\"]"` | — |
+| [SRC-1521F490CA-L000041](../../tests/test_multitenant.py#L41) | 41 | `"    assert lead_a[\"tenant_id\"] == tenant_a"` | — |
+| [SRC-1521F490CA-L000042](../../tests/test_multitenant.py#L42) | 42 | `"    assert lead_b[\"tenant_id\"] == tenant_b"` | — |
+| [SRC-1521F490CA-L000043](../../tests/test_multitenant.py#L43) | 43 | `"    assert [row[\"id\"] for row in store.list(tenant_id=tenant_a)] == [lead_a[\"id\"]]"` | — |
+| [SRC-1521F490CA-L000044](../../tests/test_multitenant.py#L44) | 44 | `"    assert [row[\"id\"] for row in store.list(tenant_id=tenant_b)] == [lead_b[\"id\"]]"` | — |
+| [SRC-1521F490CA-L000045](../../tests/test_multitenant.py#L45) | 45 | `""` | — |
+| [SRC-1521F490CA-L000046](../../tests/test_multitenant.py#L46) | 46 | `"    assert store.update_status("` | — |
+| [SRC-1521F490CA-L000047](../../tests/test_multitenant.py#L47) | 47 | `"        lead_b[\"id\"], \"qualified\", tenant_id=tenant_a"` | — |
+| [SRC-1521F490CA-L000048](../../tests/test_multitenant.py#L48) | 48 | `"    ) is None"` | — |
 | [SRC-1521F490CA-L000049](../../tests/test_multitenant.py#L49) | 49 | `"    updated_b = store.update_status("` | — |
 | [SRC-1521F490CA-L000050](../../tests/test_multitenant.py#L50) | 50 | `"        lead_b[\"id\"], \"qualified\", tenant_id=tenant_b"` | — |
 | [SRC-1521F490CA-L000051](../../tests/test_multitenant.py#L51) | 51 | `"    )"` | — |
@@ -726,111 +834,3 @@
 | [SRC-4405E7912C-L000350](../../tests/test_multitenant_api.py#L350) | 350 | `"        return {\"answer\": \"test answer\"}"` | — |
 | [SRC-4405E7912C-L000351](../../tests/test_multitenant_api.py#L351) | 351 | `""` | — |
 | [SRC-4405E7912C-L000352](../../tests/test_multitenant_api.py#L352) | 352 | `"    monkeypatch.setattr(WebAgent, \"answer\", fake_answer)"` | — |
-| [SRC-4405E7912C-L000353](../../tests/test_multitenant_api.py#L353) | 353 | `"    status, result = request_json("` | — |
-| [SRC-4405E7912C-L000354](../../tests/test_multitenant_api.py#L354) | 354 | `"        base,"` | — |
-| [SRC-4405E7912C-L000355](../../tests/test_multitenant_api.py#L355) | 355 | `"        \"/api/agent\","` | — |
-| [SRC-4405E7912C-L000356](../../tests/test_multitenant_api.py#L356) | 356 | `"        method=\"POST\","` | — |
-| [SRC-4405E7912C-L000357](../../tests/test_multitenant_api.py#L357) | 357 | `"        token=token,"` | — |
-| [SRC-4405E7912C-L000358](../../tests/test_multitenant_api.py#L358) | 358 | `"        payload={"` | — |
-| [SRC-4405E7912C-L000359](../../tests/test_multitenant_api.py#L359) | 359 | `"            \"question\": \"اختبار ميزانية القبول\","` | — |
-| [SRC-4405E7912C-L000360](../../tests/test_multitenant_api.py#L360) | 360 | `"            \"mode\": \"auto\","` | — |
-| [SRC-4405E7912C-L000361](../../tests/test_multitenant_api.py#L361) | 361 | `"            \"request_profile\": \"hosted_smoke\","` | — |
-| [SRC-4405E7912C-L000362](../../tests/test_multitenant_api.py#L362) | 362 | `"        },"` | — |
-| [SRC-4405E7912C-L000363](../../tests/test_multitenant_api.py#L363) | 363 | `"    )"` | — |
-| [SRC-4405E7912C-L000364](../../tests/test_multitenant_api.py#L364) | 364 | `"    assert status == 200"` | — |
-| [SRC-4405E7912C-L000365](../../tests/test_multitenant_api.py#L365) | 365 | `"    assert result[\"answer\"] == \"test answer\""` | — |
-| [SRC-4405E7912C-L000366](../../tests/test_multitenant_api.py#L366) | 366 | `"    assert observed == {"` | — |
-| [SRC-4405E7912C-L000367](../../tests/test_multitenant_api.py#L367) | 367 | `"        \"question\": \"اختبار ميزانية القبول\","` | — |
-| [SRC-4405E7912C-L000368](../../tests/test_multitenant_api.py#L368) | 368 | `"        \"history\": [],"` | — |
-| [SRC-4405E7912C-L000369](../../tests/test_multitenant_api.py#L369) | 369 | `"        \"mode\": \"auto\","` | — |
-| [SRC-4405E7912C-L000370](../../tests/test_multitenant_api.py#L370) | 370 | `"        \"budget_profile\": \"hosted_smoke\","` | — |
-| [SRC-4405E7912C-L000371](../../tests/test_multitenant_api.py#L371) | 371 | `"    }"` | — |
-| [SRC-4405E7912C-L000372](../../tests/test_multitenant_api.py#L372) | 372 | `""` | — |
-| [SRC-4405E7912C-L000373](../../tests/test_multitenant_api.py#L373) | 373 | `"    status, error = request_json("` | — |
-| [SRC-4405E7912C-L000374](../../tests/test_multitenant_api.py#L374) | 374 | `"        base,"` | — |
-| [SRC-4405E7912C-L000375](../../tests/test_multitenant_api.py#L375) | 375 | `"        \"/api/agent\","` | — |
-| [SRC-4405E7912C-L000376](../../tests/test_multitenant_api.py#L376) | 376 | `"        method=\"POST\","` | — |
-| [SRC-4405E7912C-L000377](../../tests/test_multitenant_api.py#L377) | 377 | `"        token=token,"` | — |
-| [SRC-4405E7912C-L000378](../../tests/test_multitenant_api.py#L378) | 378 | `"        payload={\"question\": \"اختبار ملف غير مسموح\", \"request_profile\": \"unbounded\"},"` | — |
-| [SRC-4405E7912C-L000379](../../tests/test_multitenant_api.py#L379) | 379 | `"    )"` | — |
-| [SRC-4405E7912C-L000380](../../tests/test_multitenant_api.py#L380) | 380 | `"    assert status == 400"` | — |
-| [SRC-4405E7912C-L000381](../../tests/test_multitenant_api.py#L381) | 381 | `"    assert \"request_profile\" in error[\"error\"]"` | — |
-| [SRC-4405E7912C-L000382](../../tests/test_multitenant_api.py#L382) | 382 | `"    assert observed[\"budget_profile\"] == \"hosted_smoke\""` | — |
-| [SRC-4405E7912C-L000383](../../tests/test_multitenant_api.py#L383) | 383 | `""` | — |
-| [SRC-4405E7912C-L000384](../../tests/test_multitenant_api.py#L384) | 384 | `"    status, result = request_json("` | — |
-| [SRC-4405E7912C-L000385](../../tests/test_multitenant_api.py#L385) | 385 | `"        base,"` | — |
-| [SRC-4405E7912C-L000386](../../tests/test_multitenant_api.py#L386) | 386 | `"        \"/api/agent\","` | — |
-| [SRC-4405E7912C-L000387](../../tests/test_multitenant_api.py#L387) | 387 | `"        method=\"POST\","` | — |
-| [SRC-4405E7912C-L000388](../../tests/test_multitenant_api.py#L388) | 388 | `"        token=token,"` | — |
-| [SRC-4405E7912C-L000389](../../tests/test_multitenant_api.py#L389) | 389 | `"        payload={\"question\": \"اختبار التوافق مع الملف الافتراضي\"},"` | — |
-| [SRC-4405E7912C-L000390](../../tests/test_multitenant_api.py#L390) | 390 | `"    )"` | — |
-| [SRC-4405E7912C-L000391](../../tests/test_multitenant_api.py#L391) | 391 | `"    assert status == 200"` | — |
-| [SRC-4405E7912C-L000392](../../tests/test_multitenant_api.py#L392) | 392 | `"    assert result[\"answer\"] == \"test answer\""` | — |
-| [SRC-4405E7912C-L000393](../../tests/test_multitenant_api.py#L393) | 393 | `"    assert observed[\"budget_profile\"] == \"default\""` | — |
-## اختبارات
-
-### FILE-44CDA52D01 — [tests/test_omarai.py](../../tests/test_omarai.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-44CDA52D01-L000001](../../tests/test_omarai.py#L1) | 1 | `"import csv"` | — |
-| [SRC-44CDA52D01-L000002](../../tests/test_omarai.py#L2) | 2 | `""` | — |
-| [SRC-44CDA52D01-L000003](../../tests/test_omarai.py#L3) | 3 | `"import pytest"` | — |
-| [SRC-44CDA52D01-L000004](../../tests/test_omarai.py#L4) | 4 | `""` | — |
-| [SRC-44CDA52D01-L000005](../../tests/test_omarai.py#L5) | 5 | `"from agents.omarai import LeadStore, analyze, normalize"` | — |
-| [SRC-44CDA52D01-L000006](../../tests/test_omarai.py#L6) | 6 | `""` | — |
-| [SRC-44CDA52D01-L000007](../../tests/test_omarai.py#L7) | 7 | `""` | — |
-| [SRC-44CDA52D01-L000008](../../tests/test_omarai.py#L8) | 8 | `"def test_arabic_normalization():"` | — |
-| [SRC-44CDA52D01-L000009](../../tests/test_omarai.py#L9) | 9 | `"    assert normalize(\"إيجارٌ ـ شقة\") == normalize(\"ايجار شقة\")"` | — |
-| [SRC-44CDA52D01-L000010](../../tests/test_omarai.py#L10) | 10 | `""` | — |
-| [SRC-44CDA52D01-L000011](../../tests/test_omarai.py#L11) | 11 | `"def test_high_intent_with_next_step():"` | — |
-| [SRC-44CDA52D01-L000012](../../tests/test_omarai.py#L12) | 12 | `"    result=analyze(\"بدور على شقة وممكن معاينة\")"` | — |
-| [SRC-44CDA52D01-L000013](../../tests/test_omarai.py#L13) | 13 | `"    assert result[\"label\"]==\"high_intent\""` | — |
-| [SRC-44CDA52D01-L000014](../../tests/test_omarai.py#L14) | 14 | `"    assert result[\"score\"]>=55"` | — |
-| [SRC-44CDA52D01-L000015](../../tests/test_omarai.py#L15) | 15 | `""` | — |
-| [SRC-44CDA52D01-L000016](../../tests/test_omarai.py#L16) | 16 | `"def test_non_buyer_override():"` | — |
-| [SRC-44CDA52D01-L000017](../../tests/test_omarai.py#L17) | 17 | `"    result=analyze(\"مش عايز اشتري، عايز ابيع شقة\")"` | — |
-| [SRC-44CDA52D01-L000018](../../tests/test_omarai.py#L18) | 18 | `"    assert result[\"label\"]==\"not_buyer_signal\""` | — |
-| [SRC-44CDA52D01-L000019](../../tests/test_omarai.py#L19) | 19 | `"    assert result[\"score\"]==0"` | — |
-| [SRC-44CDA52D01-L000020](../../tests/test_omarai.py#L20) | 20 | `""` | — |
-| [SRC-44CDA52D01-L000021](../../tests/test_omarai.py#L21) | 21 | `"def test_empty_text_rejected():"` | — |
-| [SRC-44CDA52D01-L000022](../../tests/test_omarai.py#L22) | 22 | `"    with pytest.raises(ValueError):"` | — |
-| [SRC-44CDA52D01-L000023](../../tests/test_omarai.py#L23) | 23 | `"        analyze(\" \")"` | — |
-| [SRC-44CDA52D01-L000024](../../tests/test_omarai.py#L24) | 24 | `""` | — |
-| [SRC-44CDA52D01-L000025](../../tests/test_omarai.py#L25) | 25 | `"def test_url_required_and_validated(tmp_path):"` | — |
-| [SRC-44CDA52D01-L000026](../../tests/test_omarai.py#L26) | 26 | `"    store=LeadStore(tmp_path/\"db.sqlite3\")"` | — |
-| [SRC-44CDA52D01-L000027](../../tests/test_omarai.py#L27) | 27 | `"    with pytest.raises(ValueError):"` | — |
-| [SRC-44CDA52D01-L000028](../../tests/test_omarai.py#L28) | 28 | `"        store.add(\"بدور على شقة\",\"\",\"manual\")"` | — |
-| [SRC-44CDA52D01-L000029](../../tests/test_omarai.py#L29) | 29 | `"    with pytest.raises(ValueError):"` | — |
-| [SRC-44CDA52D01-L000030](../../tests/test_omarai.py#L30) | 30 | `"        store.add(\"بدور على شقة\",\"file:///tmp/private\",\"manual\")"` | — |
-| [SRC-44CDA52D01-L000031](../../tests/test_omarai.py#L31) | 31 | `""` | — |
-| [SRC-44CDA52D01-L000032](../../tests/test_omarai.py#L32) | 32 | `"def test_duplicate_is_idempotent(tmp_path):"` | — |
-| [SRC-44CDA52D01-L000033](../../tests/test_omarai.py#L33) | 33 | `"    store=LeadStore(tmp_path/\"db.sqlite3\")"` | — |
-| [SRC-44CDA52D01-L000034](../../tests/test_omarai.py#L34) | 34 | `"    one,created1=store.add(\"بدور على شقة\",\"https://example.com/post/1\",\"facebook\")"` | — |
-| [SRC-44CDA52D01-L000035](../../tests/test_omarai.py#L35) | 35 | `"    two,created2=store.add(\"بدور على شقة\",\"https://example.com/post/1\",\"facebook\")"` | — |
-| [SRC-44CDA52D01-L000036](../../tests/test_omarai.py#L36) | 36 | `"    assert created1 is True and created2 is False"` | — |
-| [SRC-44CDA52D01-L000037](../../tests/test_omarai.py#L37) | 37 | `"    assert one[\"id\"]==two[\"id\"]"` | — |
-| [SRC-44CDA52D01-L000038](../../tests/test_omarai.py#L38) | 38 | `"    assert len(store.list())==1"` | — |
-| [SRC-44CDA52D01-L000039](../../tests/test_omarai.py#L39) | 39 | `""` | — |
-| [SRC-44CDA52D01-L000040](../../tests/test_omarai.py#L40) | 40 | `"def test_status_updates_are_explicit(tmp_path):"` | — |
-| [SRC-44CDA52D01-L000041](../../tests/test_omarai.py#L41) | 41 | `"    store=LeadStore(tmp_path/\"db.sqlite3\")"` | — |
-| [SRC-44CDA52D01-L000042](../../tests/test_omarai.py#L42) | 42 | `"    lead,_=store.add(\"بدور على شقة\",\"https://example.com/p\",\"manual\")"` | — |
-| [SRC-44CDA52D01-L000043](../../tests/test_omarai.py#L43) | 43 | `"    updated=store.update_status(lead[\"id\"],\"qualified\")"` | — |
-| [SRC-44CDA52D01-L000044](../../tests/test_omarai.py#L44) | 44 | `"    assert updated[\"status\"]==\"qualified\""` | — |
-| [SRC-44CDA52D01-L000045](../../tests/test_omarai.py#L45) | 45 | `"    with pytest.raises(ValueError):"` | — |
-| [SRC-44CDA52D01-L000046](../../tests/test_omarai.py#L46) | 46 | `"        store.update_status(lead[\"id\"],\"magic\")"` | — |
-| [SRC-44CDA52D01-L000047](../../tests/test_omarai.py#L47) | 47 | `""` | — |
-| [SRC-44CDA52D01-L000048](../../tests/test_omarai.py#L48) | 48 | `"def test_csv_requires_columns(tmp_path):"` | — |
-| [SRC-44CDA52D01-L000049](../../tests/test_omarai.py#L49) | 49 | `"    bad=tmp_path/\"bad.csv\""` | — |
-| [SRC-44CDA52D01-L000050](../../tests/test_omarai.py#L50) | 50 | `"    bad.write_text(\"foo,bar\\na,b\\n\",encoding=\"utf-8\")"` | — |
-| [SRC-44CDA52D01-L000051](../../tests/test_omarai.py#L51) | 51 | `"    store=LeadStore(tmp_path/\"db.sqlite3\")"` | — |
-| [SRC-44CDA52D01-L000052](../../tests/test_omarai.py#L52) | 52 | `"    with pytest.raises(ValueError):"` | — |
-| [SRC-44CDA52D01-L000053](../../tests/test_omarai.py#L53) | 53 | `"        store.import_csv(bad)"` | — |
-| [SRC-44CDA52D01-L000054](../../tests/test_omarai.py#L54) | 54 | `""` | — |
-| [SRC-44CDA52D01-L000055](../../tests/test_omarai.py#L55) | 55 | `"def test_csv_export_neutralizes_spreadsheet_formula_injection(tmp_path):"` | — |
-| [SRC-44CDA52D01-L000056](../../tests/test_omarai.py#L56) | 56 | `"    store = LeadStore(tmp_path / \"db.sqlite3\")"` | — |
-| [SRC-44CDA52D01-L000057](../../tests/test_omarai.py#L57) | 57 | `"    store.add("` | — |
-| [SRC-44CDA52D01-L000058](../../tests/test_omarai.py#L58) | 58 | `"        '=HYPERLINK(\"https://evil.example\",\"click\")',"` | — |

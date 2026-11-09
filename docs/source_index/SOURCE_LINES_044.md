@@ -4,7 +4,7 @@
 
 - الصفحة: **044**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000459 إلى SRC-3451CC474D-L001258
+- النطاق: SRC-3451CC474D-L000418 إلى SRC-3451CC474D-L001217
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,47 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000418](../../tests/test_api.py#L418) | 418 | `"def test_http_ingress_rejects_excess_connections_and_releases_capacity():"` | — |
+| [SRC-3451CC474D-L000419](../../tests/test_api.py#L419) | 419 | `"    from api.omarai import BoundedThreadingHTTPServer"` | — |
+| [SRC-3451CC474D-L000420](../../tests/test_api.py#L420) | 420 | `""` | — |
+| [SRC-3451CC474D-L000421](../../tests/test_api.py#L421) | 421 | `"    server = BoundedThreadingHTTPServer("` | — |
+| [SRC-3451CC474D-L000422](../../tests/test_api.py#L422) | 422 | `"        (\"127.0.0.1\", 0),"` | — |
+| [SRC-3451CC474D-L000423](../../tests/test_api.py#L423) | 423 | `"        Handler,"` | — |
+| [SRC-3451CC474D-L000424](../../tests/test_api.py#L424) | 424 | `"        max_concurrent_connections=1,"` | — |
+| [SRC-3451CC474D-L000425](../../tests/test_api.py#L425) | 425 | `"    )"` | — |
+| [SRC-3451CC474D-L000426](../../tests/test_api.py#L426) | 426 | `"    first_client, first_request = socket.socketpair()"` | — |
+| [SRC-3451CC474D-L000427](../../tests/test_api.py#L427) | 427 | `"    second_client, second_request = socket.socketpair()"` | — |
+| [SRC-3451CC474D-L000428](../../tests/test_api.py#L428) | 428 | `"    worker_started = threading.Event()"` | — |
+| [SRC-3451CC474D-L000429](../../tests/test_api.py#L429) | 429 | `"    release_worker = threading.Event()"` | — |
+| [SRC-3451CC474D-L000430](../../tests/test_api.py#L430) | 430 | `"    worker_finished = threading.Event()"` | — |
+| [SRC-3451CC474D-L000431](../../tests/test_api.py#L431) | 431 | `""` | — |
+| [SRC-3451CC474D-L000432](../../tests/test_api.py#L432) | 432 | `"    def hold_handler(_request, _client_address):"` | — |
+| [SRC-3451CC474D-L000433](../../tests/test_api.py#L433) | 433 | `"        worker_started.set()"` | — |
+| [SRC-3451CC474D-L000434](../../tests/test_api.py#L434) | 434 | `"        release_worker.wait(timeout=2)"` | — |
+| [SRC-3451CC474D-L000435](../../tests/test_api.py#L435) | 435 | `""` | — |
+| [SRC-3451CC474D-L000436](../../tests/test_api.py#L436) | 436 | `"    server.finish_request = hold_handler"` | — |
+| [SRC-3451CC474D-L000437](../../tests/test_api.py#L437) | 437 | `"    original_worker = server.process_request_thread"` | — |
+| [SRC-3451CC474D-L000438](../../tests/test_api.py#L438) | 438 | `""` | — |
+| [SRC-3451CC474D-L000439](../../tests/test_api.py#L439) | 439 | `"    def track_worker(request, client_address):"` | — |
+| [SRC-3451CC474D-L000440](../../tests/test_api.py#L440) | 440 | `"        try:"` | — |
+| [SRC-3451CC474D-L000441](../../tests/test_api.py#L441) | 441 | `"            original_worker(request, client_address)"` | — |
+| [SRC-3451CC474D-L000442](../../tests/test_api.py#L442) | 442 | `"        finally:"` | — |
+| [SRC-3451CC474D-L000443](../../tests/test_api.py#L443) | 443 | `"            worker_finished.set()"` | — |
+| [SRC-3451CC474D-L000444](../../tests/test_api.py#L444) | 444 | `""` | — |
+| [SRC-3451CC474D-L000445](../../tests/test_api.py#L445) | 445 | `"    server.process_request_thread = track_worker"` | — |
+| [SRC-3451CC474D-L000446](../../tests/test_api.py#L446) | 446 | `"    try:"` | — |
+| [SRC-3451CC474D-L000447](../../tests/test_api.py#L447) | 447 | `"        server.process_request(first_request, (\"127.0.0.1\", 10001))"` | — |
+| [SRC-3451CC474D-L000448](../../tests/test_api.py#L448) | 448 | `"        assert worker_started.wait(timeout=1)"` | — |
+| [SRC-3451CC474D-L000449](../../tests/test_api.py#L449) | 449 | `""` | — |
+| [SRC-3451CC474D-L000450](../../tests/test_api.py#L450) | 450 | `"        # The saturated listener rejects before creating a second handler thread."` | — |
+| [SRC-3451CC474D-L000451](../../tests/test_api.py#L451) | 451 | `"        server.process_request(second_request, (\"127.0.0.1\", 10002))"` | — |
+| [SRC-3451CC474D-L000452](../../tests/test_api.py#L452) | 452 | `"        response = second_client.recv(512)"` | — |
+| [SRC-3451CC474D-L000453](../../tests/test_api.py#L453) | 453 | `"        assert response.startswith(b\"HTTP/1.1 503 Service Unavailable\\r\\n\")"` | — |
+| [SRC-3451CC474D-L000454](../../tests/test_api.py#L454) | 454 | `"        assert b\"Retry-After: 5\\r\\n\" in response"` | — |
+| [SRC-3451CC474D-L000455](../../tests/test_api.py#L455) | 455 | `"        assert not server._connection_slots.acquire(blocking=False)"` | — |
+| [SRC-3451CC474D-L000456](../../tests/test_api.py#L456) | 456 | `""` | — |
+| [SRC-3451CC474D-L000457](../../tests/test_api.py#L457) | 457 | `"        release_worker.set()"` | — |
+| [SRC-3451CC474D-L000458](../../tests/test_api.py#L458) | 458 | `"        assert worker_finished.wait(timeout=1)"` | — |
 | [SRC-3451CC474D-L000459](../../tests/test_api.py#L459) | 459 | `"        assert server._connection_slots.acquire(blocking=False)"` | — |
 | [SRC-3451CC474D-L000460](../../tests/test_api.py#L460) | 460 | `"        server._connection_slots.release()"` | — |
 | [SRC-3451CC474D-L000461](../../tests/test_api.py#L461) | 461 | `"    finally:"` | — |
@@ -775,44 +816,3 @@
 | [SRC-3451CC474D-L001215](../../tests/test_api.py#L1215) | 1215 | `"            b\"Content-Length\","` | — |
 | [SRC-3451CC474D-L001216](../../tests/test_api.py#L1216) | 1216 | `"        ),"` | — |
 | [SRC-3451CC474D-L001217](../../tests/test_api.py#L1217) | 1217 | `"        ("` | — |
-| [SRC-3451CC474D-L001218](../../tests/test_api.py#L1218) | 1218 | `"            \"GET /api/health HTTP/1.1\","` | — |
-| [SRC-3451CC474D-L001219](../../tests/test_api.py#L1219) | 1219 | `"            b\"Content-Length: 4\\r\\n\","` | — |
-| [SRC-3451CC474D-L001220](../../tests/test_api.py#L1220) | 1220 | `"            b\"test\","` | — |
-| [SRC-3451CC474D-L001221](../../tests/test_api.py#L1221) | 1221 | `"            b\"Content-Length\","` | — |
-| [SRC-3451CC474D-L001222](../../tests/test_api.py#L1222) | 1222 | `"        ),"` | — |
-| [SRC-3451CC474D-L001223](../../tests/test_api.py#L1223) | 1223 | `"    ],"` | — |
-| [SRC-3451CC474D-L001224](../../tests/test_api.py#L1224) | 1224 | `")"` | — |
-| [SRC-3451CC474D-L001225](../../tests/test_api.py#L1225) | 1225 | `"def test_api_rejects_ambiguous_or_unsupported_http_request_framing("` | — |
-| [SRC-3451CC474D-L001226](../../tests/test_api.py#L1226) | 1226 | `"    local_api, request_line, framing_headers, body, error_marker"` | — |
-| [SRC-3451CC474D-L001227](../../tests/test_api.py#L1227) | 1227 | `"):"` | — |
-| [SRC-3451CC474D-L001228](../../tests/test_api.py#L1228) | 1228 | `"    host_port = local_api.rsplit(\":\", 1)"` | — |
-| [SRC-3451CC474D-L001229](../../tests/test_api.py#L1229) | 1229 | `"    with socket.create_connection("` | — |
-| [SRC-3451CC474D-L001230](../../tests/test_api.py#L1230) | 1230 | `"        (host_port[0].removeprefix(\"http://\"), int(host_port[1])), timeout=2"` | — |
-| [SRC-3451CC474D-L001231](../../tests/test_api.py#L1231) | 1231 | `"    ) as client:"` | — |
-| [SRC-3451CC474D-L001232](../../tests/test_api.py#L1232) | 1232 | `"        client.settimeout(2)"` | — |
-| [SRC-3451CC474D-L001233](../../tests/test_api.py#L1233) | 1233 | `"        request = ("` | — |
-| [SRC-3451CC474D-L001234](../../tests/test_api.py#L1234) | 1234 | `"            request_line.encode(\"ascii\")"` | — |
-| [SRC-3451CC474D-L001235](../../tests/test_api.py#L1235) | 1235 | `"            + b\"\\r\\nHost: localhost\\r\\n\""` | — |
-| [SRC-3451CC474D-L001236](../../tests/test_api.py#L1236) | 1236 | `"            + b\"Content-Type: application/json\\r\\n\""` | — |
-| [SRC-3451CC474D-L001237](../../tests/test_api.py#L1237) | 1237 | `"            + framing_headers"` | — |
-| [SRC-3451CC474D-L001238](../../tests/test_api.py#L1238) | 1238 | `"            + b\"Connection: close\\r\\n\\r\\n\""` | — |
-| [SRC-3451CC474D-L001239](../../tests/test_api.py#L1239) | 1239 | `"            + body"` | — |
-| [SRC-3451CC474D-L001240](../../tests/test_api.py#L1240) | 1240 | `"        )"` | — |
-| [SRC-3451CC474D-L001241](../../tests/test_api.py#L1241) | 1241 | `"        client.sendall(request)"` | — |
-| [SRC-3451CC474D-L001242](../../tests/test_api.py#L1242) | 1242 | `"        response = b\"\""` | — |
-| [SRC-3451CC474D-L001243](../../tests/test_api.py#L1243) | 1243 | `"        while True:"` | — |
-| [SRC-3451CC474D-L001244](../../tests/test_api.py#L1244) | 1244 | `"            chunk = client.recv(4096)"` | — |
-| [SRC-3451CC474D-L001245](../../tests/test_api.py#L1245) | 1245 | `"            if not chunk:"` | — |
-| [SRC-3451CC474D-L001246](../../tests/test_api.py#L1246) | 1246 | `"                break"` | — |
-| [SRC-3451CC474D-L001247](../../tests/test_api.py#L1247) | 1247 | `"            response += chunk"` | — |
-| [SRC-3451CC474D-L001248](../../tests/test_api.py#L1248) | 1248 | `""` | — |
-| [SRC-3451CC474D-L001249](../../tests/test_api.py#L1249) | 1249 | `"    assert response.startswith(b\"HTTP/1.0 400\")"` | — |
-| [SRC-3451CC474D-L001250](../../tests/test_api.py#L1250) | 1250 | `"    assert error_marker in response"` | — |
-| [SRC-3451CC474D-L001251](../../tests/test_api.py#L1251) | 1251 | `"    assert b\"200 OK\" not in response"` | — |
-| [SRC-3451CC474D-L001252](../../tests/test_api.py#L1252) | 1252 | `""` | — |
-| [SRC-3451CC474D-L001253](../../tests/test_api.py#L1253) | 1253 | `"def test_api_closes_connection_when_declared_body_exceeds_limit(local_api):"` | — |
-| [SRC-3451CC474D-L001254](../../tests/test_api.py#L1254) | 1254 | `"    host_port = local_api.rsplit(\":\", 1)"` | — |
-| [SRC-3451CC474D-L001255](../../tests/test_api.py#L1255) | 1255 | `"    with socket.create_connection("` | — |
-| [SRC-3451CC474D-L001256](../../tests/test_api.py#L1256) | 1256 | `"        (host_port[0].removeprefix(\"http://\"), int(host_port[1])), timeout=2"` | — |
-| [SRC-3451CC474D-L001257](../../tests/test_api.py#L1257) | 1257 | `"    ) as client:"` | — |
-| [SRC-3451CC474D-L001258](../../tests/test_api.py#L1258) | 1258 | `"        client.settimeout(2)"` | — |

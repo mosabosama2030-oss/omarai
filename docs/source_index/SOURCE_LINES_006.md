@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-FDEEAFDFCA-L000083 إلى SRC-59CF4B7DE8-L000570
+- النطاق: SRC-FDEEAFDFCA-L000074 إلى SRC-59CF4B7DE8-L000561
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-FDEEAFDFCA-L000074](../../agents/request_budget.py#L74) | 74 | `"        self._lock = threading.Lock()"` | — |
+| [SRC-FDEEAFDFCA-L000075](../../agents/request_budget.py#L75) | 75 | `""` | — |
+| [SRC-FDEEAFDFCA-L000076](../../agents/request_budget.py#L76) | 76 | `"    @classmethod"` | — |
+| [SRC-FDEEAFDFCA-L000077](../../agents/request_budget.py#L77) | 77 | `"    def from_environment(cls, profile: str = \"default\") -> RequestBudget:"` | — |
+| [SRC-FDEEAFDFCA-L000078](../../agents/request_budget.py#L78) | 78 | `"        if profile not in {\"default\", \"hosted_smoke\"}:"` | — |
+| [SRC-FDEEAFDFCA-L000079](../../agents/request_budget.py#L79) | 79 | `"            raise ValueError(f\"unknown request-budget profile: {profile}\")"` | — |
+| [SRC-FDEEAFDFCA-L000080](../../agents/request_budget.py#L80) | 80 | `"        timeout = _bounded_env_int("` | — |
+| [SRC-FDEEAFDFCA-L000081](../../agents/request_budget.py#L81) | 81 | `"            \"OMARAI_REQUEST_BUDGET_SECONDS\","` | — |
+| [SRC-FDEEAFDFCA-L000082](../../agents/request_budget.py#L82) | 82 | `"            DEFAULT_TIMEOUT_SECONDS,"` | — |
 | [SRC-FDEEAFDFCA-L000083](../../agents/request_budget.py#L83) | 83 | `"            10,"` | — |
 | [SRC-FDEEAFDFCA-L000084](../../agents/request_budget.py#L84) | 84 | `"            MAX_TIMEOUT_SECONDS,"` | — |
 | [SRC-FDEEAFDFCA-L000085](../../agents/request_budget.py#L85) | 85 | `"        )"` | — |
@@ -825,12 +834,3 @@
 | [SRC-59CF4B7DE8-L000559](../../agents/research.py#L559) | 559 | `"    elif host.endswith((\".edu\", \".ac.uk\", \".edu.eg\")):"` | — |
 | [SRC-59CF4B7DE8-L000560](../../agents/research.py#L560) | 560 | `"        trust = \"academic\""` | — |
 | [SRC-59CF4B7DE8-L000561](../../agents/research.py#L561) | 561 | `"    elif host == \"news.google.com\" or any("` | — |
-| [SRC-59CF4B7DE8-L000562](../../agents/research.py#L562) | 562 | `"        host == name or host.endswith(\".\" + name)"` | — |
-| [SRC-59CF4B7DE8-L000563](../../agents/research.py#L563) | 563 | `"        for name in ("` | — |
-| [SRC-59CF4B7DE8-L000564](../../agents/research.py#L564) | 564 | `"            \"reuters.com\", \"apnews.com\", \"bbc.com\", \"bbc.co.uk\","` | — |
-| [SRC-59CF4B7DE8-L000565](../../agents/research.py#L565) | 565 | `"            \"ft.com\", \"nytimes.com\", \"theguardian.com\","` | — |
-| [SRC-59CF4B7DE8-L000566](../../agents/research.py#L566) | 566 | `"        )"` | — |
-| [SRC-59CF4B7DE8-L000567](../../agents/research.py#L567) | 567 | `"    ):"` | — |
-| [SRC-59CF4B7DE8-L000568](../../agents/research.py#L568) | 568 | `"        # Match publisher host boundaries; lookalike domains must not inherit a"` | — |
-| [SRC-59CF4B7DE8-L000569](../../agents/research.py#L569) | 569 | `"        # news label merely because their hostname contains a trusted brand string."` | — |
-| [SRC-59CF4B7DE8-L000570](../../agents/research.py#L570) | 570 | `"        trust = \"news\""` | — |

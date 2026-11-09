@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-8D00DCEC0D-L000351 إلى SRC-086D574B4E-L000301
+- النطاق: SRC-8D00DCEC0D-L000342 إلى SRC-086D574B4E-L000292
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-8D00DCEC0D-L000342](../../agents/sales_domain.py#L342) | 342 | `"            raise ValueError(\"taxonomy category paths must be unique\")"` | — |
+| [SRC-8D00DCEC0D-L000343](../../agents/sales_domain.py#L343) | 343 | `""` | — |
+| [SRC-8D00DCEC0D-L000344](../../agents/sales_domain.py#L344) | 344 | `"    def match_categories(self, text: str) -> tuple[tuple[str, ...], ...]:"` | — |
+| [SRC-8D00DCEC0D-L000345](../../agents/sales_domain.py#L345) | 345 | `"        \"\"\"Return all explicit taxonomy matches; never choose a winner by guessing.\"\"\""` | — |
+| [SRC-8D00DCEC0D-L000346](../../agents/sales_domain.py#L346) | 346 | `"        matches = ["` | — |
+| [SRC-8D00DCEC0D-L000347](../../agents/sales_domain.py#L347) | 347 | `"            category.path"` | — |
+| [SRC-8D00DCEC0D-L000348](../../agents/sales_domain.py#L348) | 348 | `"            for category in self.categories"` | — |
+| [SRC-8D00DCEC0D-L000349](../../agents/sales_domain.py#L349) | 349 | `"            if any(_contains_phrase(text, alias) for alias in category.aliases)"` | — |
+| [SRC-8D00DCEC0D-L000350](../../agents/sales_domain.py#L350) | 350 | `"        ]"` | — |
 | [SRC-8D00DCEC0D-L000351](../../agents/sales_domain.py#L351) | 351 | `"        return tuple(matches)"` | — |
 | [SRC-8D00DCEC0D-L000352](../../agents/sales_domain.py#L352) | 352 | `""` | — |
 | [SRC-8D00DCEC0D-L000353](../../agents/sales_domain.py#L353) | 353 | `"    def to_list(self) -> list[dict[str, list[str]]]:"` | — |
@@ -825,12 +834,3 @@
 | [SRC-086D574B4E-L000290](../../agents/semantic_claim_verifier.py#L290) | 290 | `"    assessed: list[dict[str, Any]] = []"` | — |
 | [SRC-086D574B4E-L000291](../../agents/semantic_claim_verifier.py#L291) | 291 | `"    unsupported_ids: list[str] = []"` | — |
 | [SRC-086D574B4E-L000292](../../agents/semantic_claim_verifier.py#L292) | 292 | `"    conflicted_ids: list[str] = []"` | — |
-| [SRC-086D574B4E-L000293](../../agents/semantic_claim_verifier.py#L293) | 293 | `"    factual_supported_count = 0"` | — |
-| [SRC-086D574B4E-L000294](../../agents/semantic_claim_verifier.py#L294) | 294 | `"    non_factual_count = 0"` | — |
-| [SRC-086D574B4E-L000295](../../agents/semantic_claim_verifier.py#L295) | 295 | `"    allowed_sources = set(range(1, len(source_rows) + 1))"` | — |
-| [SRC-086D574B4E-L000296](../../agents/semantic_claim_verifier.py#L296) | 296 | `""` | — |
-| [SRC-086D574B4E-L000297](../../agents/semantic_claim_verifier.py#L297) | 297 | `"    for row in rows:"` | — |
-| [SRC-086D574B4E-L000298](../../agents/semantic_claim_verifier.py#L298) | 298 | `"        if not isinstance(row, dict) or set(row) != {"` | — |
-| [SRC-086D574B4E-L000299](../../agents/semantic_claim_verifier.py#L299) | 299 | `"            \"segment_id\", \"assessment\", \"supporting_source_indexes\","` | — |
-| [SRC-086D574B4E-L000300](../../agents/semantic_claim_verifier.py#L300) | 300 | `"            \"contradicting_source_indexes\","` | — |
-| [SRC-086D574B4E-L000301](../../agents/semantic_claim_verifier.py#L301) | 301 | `"        }:"` | — |

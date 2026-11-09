@@ -4,7 +4,7 @@
 
 - الصفحة: **033**
 - سجلات الأسطر: **800**
-- النطاق: SRC-41EDB66D3C-L000184 إلى SRC-0F910493E8-L000437
+- النطاق: SRC-41EDB66D3C-L000143 إلى SRC-0F910493E8-L000396
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,47 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-41EDB66D3C-L000143](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L143) | 143 | `"12. **عرض النتيجة:** عرض فرصة أو مرشح أو نتيجة غير مؤهلة مع أدلتها وحدودها، وعدم إخفاء نتائج البحث السلبية أو فشل الموصلات."` | — |
+| [SRC-41EDB66D3C-L000144](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L144) | 144 | `"13. **توصية المبيعات:** اقتراح خطوة تالية أو مسودة تواصل يراجعها المستخدم. لا يُرسل شيء تلقائيًا."` | — |
+| [SRC-41EDB66D3C-L000145](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L145) | 145 | `"14. **التعلم من النتيجة:** يمكن استخدام قبول المستخدم أو رفضه أو نتيجة البيع لتحسين القواعد بعد ضبط جودة البيانات والصلاحيات؛ لا تتعلم المنظومة من إشارات غير متحققة باعتبارها حقيقة."` | — |
+| [SRC-41EDB66D3C-L000146](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L146) | 146 | `""` | — |
+| [SRC-41EDB66D3C-L000147](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L147) | 147 | `"---"` | — |
+| [SRC-41EDB66D3C-L000148](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L148) | 148 | `""` | — |
+| [SRC-41EDB66D3C-L000149](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L149) | 149 | `"## 5. تصنيف إشارات الطلب"` | — |
+| [SRC-41EDB66D3C-L000150](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L150) | 150 | `""` | — |
+| [SRC-41EDB66D3C-L000151](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L151) | 151 | `"هذه نقطة مركزية ويجب أن تكون مستقلة عن درجة ملاءمة الشركة."` | — |
+| [SRC-41EDB66D3C-L000152](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L152) | 152 | `""` | — |
+| [SRC-41EDB66D3C-L000153](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L153) | 153 | `"\| التصنيف \| التعريف \| ما يجوز استنتاجه \|"` | — |
+| [SRC-41EDB66D3C-L000154](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L154) | 154 | `"\|---\|---\|---\|"` | — |
+| [SRC-41EDB66D3C-L000155](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L155) | 155 | `"\| طلب شراء مباشر \| إعلان صريح عن الرغبة في شراء المنتج أو طلب مورد/عرض سعر \| توجد إشارة شراء معلنة في المصدر؛ لا تثبت وحدها استمرار الطلب أو هوية الكاتب \|"` | — |
+| [SRC-41EDB66D3C-L000156](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L156) | 156 | `"\| مناقصة / طلب عرض سعر / مشروع شراء \| طلب رسمي أو شبه رسمي يتضمن توريدًا أو مواصفات أو موعدًا \| فرصة توريد قابلة للفحص وفق شروط الجهة والمصدر \|"` | — |
+| [SRC-41EDB66D3C-L000157](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L157) | 157 | `"\| احتياج معلن \| وصف مشكلة أو متطلب أو نقص يمكن للمنتج حله \| توجد حاجة معلنة؛ لا يعني ذلك أن قرار الشراء اتخذ \|"` | — |
+| [SRC-41EDB66D3C-L000158](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L158) | 158 | `"\| مؤشر غير مباشر \| توسع أو مشروع جديد أو تغيير أو استبدال أو حدث قد ينشئ طلبًا \| فرصة تستحق التحقيق، وليست نية شراء مثبتة \|"` | — |
+| [SRC-41EDB66D3C-L000159](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L159) | 159 | `"\| تطابق ICP فقط \| شركة أو شخص يطابق السوق المستهدف بلا إشارة حاجة أو شراء \| حساب/كيان مستهدف للبحث؛ ليس Lead مؤهلًا بسبب التطابق وحده \|"` | — |
+| [SRC-41EDB66D3C-L000160](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L160) | 160 | `"\| إعلان بيع من الطرف المقابل \| شخص يعرض منتجًا للبيع بينما Omarai يبحث عن مشترٍ \| لا يصنف كمشترٍ لمجرد ظهور مفردات البيع \|"` | — |
+| [SRC-41EDB66D3C-L000161](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L161) | 161 | `"\| منفي / ملغى / منتهي / متعارض \| المصدر ينفي الرغبة أو يلغي الطلب أو يثبت انتهاءه أو توجد أدلة متعارضة \| يُستبعد أو يخفض ويعرض سبب الاستبعاد \|"` | — |
+| [SRC-41EDB66D3C-L000162](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L162) | 162 | `""` | — |
+| [SRC-41EDB66D3C-L000163](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L163) | 163 | ``"يجب حفظ التصنيف الأصلي والدليل الذي أدى إليه. لا تُدمج الأنواع في label واحد مثل `potential_customer` بما يخفي الفروق."`` | — |
+| [SRC-41EDB66D3C-L000164](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L164) | 164 | `""` | — |
+| [SRC-41EDB66D3C-L000165](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L165) | 165 | `"### حالات التأهيل المقترحة"` | — |
+| [SRC-41EDB66D3C-L000166](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L166) | 166 | `""` | — |
+| [SRC-41EDB66D3C-L000167](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L167) | 167 | ``"- `direct_demand`: طلب مباشر مدعوم بمصدر."`` | — |
+| [SRC-41EDB66D3C-L000168](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L168) | 168 | ``"- `stated_need`: احتياج معلن دون إثبات قرار شراء."`` | — |
+| [SRC-41EDB66D3C-L000169](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L169) | 169 | ``"- `indirect_opportunity`: مؤشر غير مباشر يستلزم تحققًا إضافيًا."`` | — |
+| [SRC-41EDB66D3C-L000170](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L170) | 170 | ``"- `icp_match_only`: تطابق سوقي دون دليل طلب."`` | — |
+| [SRC-41EDB66D3C-L000171](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L171) | 171 | ``"- `disqualified`: غير ذي صلة أو إعلان بيع أو نفي أو مصدر غير صالح."`` | — |
+| [SRC-41EDB66D3C-L000172](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L172) | 172 | ``"- `stale_or_closed`: قديم أو منتهٍ أو ملغى."`` | — |
+| [SRC-41EDB66D3C-L000173](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L173) | 173 | ``"- `research_incomplete`: تعذر البحث أو التحقق؛ لا يجوز تفسيره على أنه صفر فرص."`` | — |
+| [SRC-41EDB66D3C-L000174](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L174) | 174 | `""` | — |
+| [SRC-41EDB66D3C-L000175](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L175) | 175 | `"---"` | — |
+| [SRC-41EDB66D3C-L000176](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L176) | 176 | `""` | — |
+| [SRC-41EDB66D3C-L000177](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L177) | 177 | `"## 6. ملف المنتج والسوق"` | — |
+| [SRC-41EDB66D3C-L000178](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L178) | 178 | `""` | — |
+| [SRC-41EDB66D3C-L000179](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L179) | 179 | `"### 6.1 ProductProfile — ملف المنتج"` | — |
+| [SRC-41EDB66D3C-L000180](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L180) | 180 | `""` | — |
+| [SRC-41EDB66D3C-L000181](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L181) | 181 | `"يُبنى من معلومات قدمها المستخدم أو وثائق مصرح بها، ويحتوي عند توفرها على:"` | — |
+| [SRC-41EDB66D3C-L000182](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L182) | 182 | `""` | — |
+| [SRC-41EDB66D3C-L000183](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L183) | 183 | `"- اسم المنتج أو الخدمة والعلامة التجارية."` | — |
 | [SRC-41EDB66D3C-L000184](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L184) | 184 | `"- الأسماء البديلة والاختصارات والتهجئات الشائعة."` | — |
 | [SRC-41EDB66D3C-L000185](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L185) | 185 | `"- الفئة والوظائف والاستخدامات والمواصفات."` | — |
 | [SRC-41EDB66D3C-L000186](../OMARAI_SALES_INTELLIGENCE_ARCHITECTURE_AR.md#L186) | 186 | `"- المشكلة التي يحلها والنتائج التي يحققها."` | — |
@@ -784,44 +825,3 @@
 | [SRC-0F910493E8-L000394](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L394) | 394 | `"7. كيف سنعطل التغيير أو نتراجع عنه؟"` | — |
 | [SRC-0F910493E8-L000395](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L395) | 395 | `"8. من يملك قرار قبول المخاطر؟"` | — |
 | [SRC-0F910493E8-L000396](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L396) | 396 | `""` | — |
-| [SRC-0F910493E8-L000397](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L397) | 397 | `"يمكن استخدام التشابه الدلالي للمساعدة في اكتشاف مهارات أو أدوات مكررة، لكنه لا يكون وحده سببًا آليًا للحذف أو الرفض. القرار يعتمد على العقود والوظيفة والصلاحيات والاختبارات، مع مراجعة عند الغموض."` | — |
-| [SRC-0F910493E8-L000398](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L398) | 398 | `""` | — |
-| [SRC-0F910493E8-L000399](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L399) | 399 | `"لا تُنشأ خدمة مستقلة أو قاعدة بيانات أو طابور أو محرك Workflow عام لمجرد التوقع. ابدأ بأبسط بنية تحافظ على الحدود والاختبار، ثم وسعها عند وجود مبرر."` | — |
-| [SRC-0F910493E8-L000400](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L400) | 400 | `""` | — |
-| [SRC-0F910493E8-L000401](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L401) | 401 | `"---"` | — |
-| [SRC-0F910493E8-L000402](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L402) | 402 | `""` | — |
-| [SRC-0F910493E8-L000403](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L403) | 403 | `"# 12. خارطة التنفيذ وبوابات الانتقال"` | — |
-| [SRC-0F910493E8-L000404](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L404) | 404 | `""` | — |
-| [SRC-0F910493E8-L000405](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L405) | 405 | `"الترتيب التالي يخصص معمارية المهارات وسير العمل داخل مراحل النضج الموجودة في الدستور وسجل المتطلبات. لا يلغي المراحل الأوسع المتعلقة بالأمان والتشغيل والجودة والاستضافة."` | — |
-| [SRC-0F910493E8-L000406](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L406) | 406 | `""` | — |
-| [SRC-0F910493E8-L000407](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L407) | 407 | `"## P0 — إثبات الحالة وخط الأساس"` | — |
-| [SRC-0F910493E8-L000408](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L408) | 408 | `""` | — |
-| [SRC-0F910493E8-L000409](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L409) | 409 | `"- تثبيت الفرع وSHA وبيئة الاختبار."` | — |
-| [SRC-0F910493E8-L000410](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L410) | 410 | `"- رسم مسار الطلب الحقيقي."` | — |
-| [SRC-0F910493E8-L000411](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L411) | 411 | `"- حصر الأدوات والتكوينات والاعتماديات."` | — |
-| [SRC-0F910493E8-L000412](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L412) | 412 | `"- تشغيل الاختبارات ذات الصلة وتسجيل نتائجها."` | — |
-| [SRC-0F910493E8-L000413](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L413) | 413 | `"- تحديد أخطاء مثبتة وفجوات UNKNOWN."` | — |
-| [SRC-0F910493E8-L000414](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L414) | 414 | `"- حفظ مجموعة مرجعية للمسارات المهمة، بما فيها العربية وفشل المصادر وعدم كفاية الأدلة."` | — |
-| [SRC-0F910493E8-L000415](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L415) | 415 | `""` | — |
-| [SRC-0F910493E8-L000416](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L416) | 416 | `"**بوابة القبول:** حالة أساس وأدلة قابلة لإعادة التحقق، لا مجرد تقرير يصف ما يُفترض أنه موجود."` | — |
-| [SRC-0F910493E8-L000417](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L417) | 417 | `""` | — |
-| [SRC-0F910493E8-L000418](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L418) | 418 | `"## P1 — سلامة العقود والصلاحيات"` | — |
-| [SRC-0F910493E8-L000419](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L419) | 419 | `""` | — |
-| [SRC-0F910493E8-L000420](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L420) | 420 | `"- توحيد عقود الأدوات المطلوبة للتغييرات التالية."` | — |
-| [SRC-0F910493E8-L000421](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L421) | 421 | `"- فحص المدخلات والمخرجات."` | — |
-| [SRC-0F910493E8-L000422](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L422) | 422 | `"- فرض الصلاحيات والميزانيات عند التنفيذ."` | — |
-| [SRC-0F910493E8-L000423](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L423) | 423 | `"- اختبار حالات الرفض والفشل والتزامن بحسب المسار."` | — |
-| [SRC-0F910493E8-L000424](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L424) | 424 | `""` | — |
-| [SRC-0F910493E8-L000425](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L425) | 425 | `"**بوابة القبول:** نتائج فعلية تثبت السلوك في نطاق الاختبارات؛ وتبقى الحدود غير المختبرة UNKNOWN."` | — |
-| [SRC-0F910493E8-L000426](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L426) | 426 | `""` | — |
-| [SRC-0F910493E8-L000427](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L427) | 427 | `"## P2 — المهارات وسير العمل"` | — |
-| [SRC-0F910493E8-L000428](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L428) | 428 | `""` | — |
-| [SRC-0F910493E8-L000429](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L429) | 429 | `"- استخراج مهارات من وظائف موجودة عند وجود تكرار أو حاجة واضحة."` | — |
-| [SRC-0F910493E8-L000430](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L430) | 430 | `"- تحديد سير العمل للمسارات متعددة الخطوات."` | — |
-| [SRC-0F910493E8-L000431](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L431) | 431 | `"- الحفاظ على المسار المباشر للأسئلة البسيطة."` | — |
-| [SRC-0F910493E8-L000432](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L432) | 432 | `"- إضافة اختبارات لكل مهارة ومسار حرج."` | — |
-| [SRC-0F910493E8-L000433](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L433) | 433 | `"- إعادة تشغيل اختبارات الانحدار."` | — |
-| [SRC-0F910493E8-L000434](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L434) | 434 | `""` | — |
-| [SRC-0F910493E8-L000435](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L435) | 435 | `"**بوابة القبول:** تحسن قابل للقياس أو تنظيم يقلل التكرار دون تراجع في السلوك الحالي."` | — |
-| [SRC-0F910493E8-L000436](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L436) | 436 | `""` | — |
-| [SRC-0F910493E8-L000437](../OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md#L437) | 437 | `"## P3 — مواصفات مهام محدودة وتركيب القدرات"` | — |

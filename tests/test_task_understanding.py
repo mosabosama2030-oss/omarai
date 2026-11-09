@@ -43,6 +43,47 @@ def test_lead_generation_task_separates_demand_signal_from_product_fit():
     assert "product_anchored_stated_need" in strategies
 
 
+def test_lead_generation_query_matrix_preserves_only_buyer_language_queries():
+    # Structured product profiles can arrive without buyer wording in the original prompt.
+    question = "نظام إنذار حريق صناعي في مصر"
+    buyer_queries = [
+        '"مطلوب شراء" "نظام إنذار حريق صناعي" مصر',
+        '"طلب عرض سعر" "نظام إنذار حريق صناعي" مصر',
+        '"looking to buy" "industrial fire alarm system" Egypt',
+    ]
+    spec = build_task_spec(
+        question,
+        mode="deep",
+        intent_route="LEAD_GENERATION",
+    )
+
+    rows = build_query_strategy_matrix(question, spec, buyer_queries, limit=8)
+
+    assert spec["task_family"] == "lead_generation"
+    assert [row["query"] for row in rows] == buyer_queries
+    assert all(row["strategy"] == "buyer_intent" for row in rows)
+    assert all(row["rationale"] for row in rows)
+    assert not any(
+        marker in row["query"].casefold()
+        for row in rows
+        for marker in ("risk", "risks", "report", "reports", "مخاطر", "تقارير")
+    )
+
+
+def test_discovery_strategy_has_no_hardcoded_property_only_query_angles():
+    question = "ابحث عن شقق للبيع في العاصمة الإدارية"
+    spec = build_task_spec(question, mode="deep", intent_route="WEB_DEEP")
+
+    rows = build_query_strategy_matrix(question, spec, [question], limit=8)
+    queries = [row["query"] for row in rows]
+
+    assert not any(
+        marker in query
+        for query in queries
+        for marker in ("إعلانات عقارية", "متوسط أسعار السوق للمتر", "أسعار البيع الفعلية")
+    )
+
+
 def test_task_spec_preserves_only_explicit_constraints():
     spec = build_task_spec(
         "قارن نيسان صني 2022 مع BYD Dolphin في مصر، بميزانية أقل من 400 ألف جنيه",

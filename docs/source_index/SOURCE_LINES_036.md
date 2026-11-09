@@ -4,9 +4,48 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6B9B9ABE27-L000012 إلى SRC-70795F4B61-L000475
+- النطاق: SRC-BFCEEA0374-L000044 إلى SRC-70795F4B61-L000434
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## وثائق وفهرسة
+
+### FILE-BFCEEA0374 — [docs/superpowers/specs/2026-11-06-workspace-demand-discovery-design.md](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L1)
+
+- النوع: **Markdown**
+- نطاق الفهرسة: جرد الملف + عناوين Markdown
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-BFCEEA0374-L000044](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L44) | 44 | `""` | — |
+| [SRC-BFCEEA0374-L000045](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L45) | 45 | `"## البيانات والأمان"` | — |
+| [SRC-BFCEEA0374-L000046](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L46) | 46 | `""` | — |
+| [SRC-BFCEEA0374-L000047](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L47) | 47 | ``"- كل ملف منتج وكل تشغيل وكل مصدر محفوظ يقيّد بـ`tenant_id` المستمد من principal موثوق على الخادم، وليس من body أو query."`` | — |
+| [SRC-BFCEEA0374-L000048](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L48) | 48 | `"- يجب أن تشمل المفاتيح والقيود الفريدة نطاق المستأجر."` | — |
+| [SRC-BFCEEA0374-L000049](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L49) | 49 | ``"- استرجاع الإشارة للحفظ يكون بواسطة `run_id + source_index + tenant_id` من سجل محفوظ في الخادم؛ لا يثق الخادم في تصنيف يرسله المتصفح."`` | — |
+| [SRC-BFCEEA0374-L000050](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L50) | 50 | ``"- لا تُحفظ نتيجة غير مصنفة `public_demand_signal` كإشارة شراء من إجراء الحفظ الخاص بالتشغيل."`` | — |
+| [SRC-BFCEEA0374-L000051](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L51) | 51 | `"- لا يعرض النظام هوية الكاتب أو قناة اتصال إلا إذا كانت موجودة ومتحققًا منها في المصدر. لا تستنتجها."` | — |
+| [SRC-BFCEEA0374-L000052](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L52) | 52 | `"- النص والمقتطفات والصفحات بيانات غير موثوقة."` | — |
+| [SRC-BFCEEA0374-L000053](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L53) | 53 | `"- لا تُشغّل DeepSeek/Brave/Tavily أو موصلات اختيارية ذات حصص/تكلفة تلقائيًا في مسار الاكتشاف. التفعيل صريح ومن المالك فقط."` | — |
+| [SRC-BFCEEA0374-L000054](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L54) | 54 | `"- لا تُعرض درجة التحليل القواعدي الحالية كاحتمال شراء."` | — |
+| [SRC-BFCEEA0374-L000055](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L55) | 55 | `""` | — |
+| [SRC-BFCEEA0374-L000056](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L56) | 56 | `"## معيار القبول"` | — |
+| [SRC-BFCEEA0374-L000057](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L57) | 57 | `""` | — |
+| [SRC-BFCEEA0374-L000058](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L58) | 58 | `"- يمكن حفظ ملفين بمنتجين مختلفين لنفس المستأجر، واسترجاعهما؛ ولا يستطيع مستأجر آخر قراءتهما."` | — |
+| [SRC-BFCEEA0374-L000059](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L59) | 59 | `"- يرفض الخادم viewer من الكتابة أو تشغيل الاكتشاف."` | — |
+| [SRC-BFCEEA0374-L000060](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L60) | 60 | `"- يولد البحث استعلامات من أسماء/مرادفات المنتج والموقع، دون تسرب عبارات عقارية إلى المنتجات غير العقارية."` | — |
+| [SRC-BFCEEA0374-L000061](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L61) | 61 | `"- يستدعي endpoint محرك WebAgent الحالي بعقد buyer queries منظمة، لا بمحرك ثانٍ."` | — |
+| [SRC-BFCEEA0374-L000062](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L62) | 62 | `"- لا تُستدعى الموصلات الاختيارية عند ترك خيار الاستخدام الاختياري مغلقًا."` | — |
+| [SRC-BFCEEA0374-L000063](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L63) | 63 | `"- يحفظ سجل تشغيل مع مصادره وحالاتها تحت المستأجر."` | — |
+| [SRC-BFCEEA0374-L000064](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L64) | 64 | ``"- لا يقبل endpoint الحفظ مصدرًا غير مصنف `public_demand_signal`، ولا يقبل معرف تشغيل تابعًا لمستأجر آخر."`` | — |
+| [SRC-BFCEEA0374-L000065](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L65) | 65 | `"- الواجهة تعرض الدليل والمصدر ونوع النص/أساسه والحدود، وتسمح بحفظ الإشارة المؤهلة يدويًا فقط."` | — |
+| [SRC-BFCEEA0374-L000066](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L66) | 66 | `"- جميع الاختبارات الآلية وCI ذات الصلة ناجحة؛ قبول الاستضافة بعد النشر يبقى منفصلًا ويتطلب إجراء Human Director."` | — |
+| [SRC-BFCEEA0374-L000067](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L67) | 67 | `""` | — |
+| [SRC-BFCEEA0374-L000068](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L68) | 68 | `"## القرارات التنفيذية"` | — |
+| [SRC-BFCEEA0374-L000069](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L69) | 69 | `""` | — |
+| [SRC-BFCEEA0374-L000070](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L70) | 70 | ``"- إعادة استخدام `agents.sales_domain` و`WebAgent` و`LeadStore` بدل إنشاء محرك مستقل."`` | — |
+| [SRC-BFCEEA0374-L000071](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L71) | 71 | ``"- تخزين ملفات المنتج وتشغيلات الاكتشاف في SQLite مع migration آمن عبر `CREATE TABLE IF NOT EXISTS` وفهارس tenant-scoped."`` | — |
+| [SRC-BFCEEA0374-L000072](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L72) | 72 | `"- عدم تغيير أي مفتاح أو إعداد استضافة."` | — |
+| [SRC-BFCEEA0374-L000073](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L73) | 73 | `"- لا دمج ولا نشر ضمن هذا العمل."` | — |
 ## وثائق وفهرسة
 
 ### FILE-6B9B9ABE27 — [docs/ui-directions/README.md](../ui-directions/README.md#L1)
@@ -16,6 +55,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6B9B9ABE27-L000001](../ui-directions/README.md#L1) | 1 | `"# Omarai — Three Glass UI Directions"` | — |
+| [SRC-6B9B9ABE27-L000002](../ui-directions/README.md#L2) | 2 | `""` | — |
+| [SRC-6B9B9ABE27-L000003](../ui-directions/README.md#L3) | 3 | `"**Status:** Visual proposals for Human Director selection only. No direction is implemented or connected to production APIs."` | — |
+| [SRC-6B9B9ABE27-L000004](../ui-directions/README.md#L4) | 4 | `""` | — |
+| [SRC-6B9B9ABE27-L000005](../ui-directions/README.md#L5) | 5 | `"Design project: https://design.agent-native.com/design/sGSw7-l6baKesddSGTdvl?editorView=overview"` | — |
+| [SRC-6B9B9ABE27-L000006](../ui-directions/README.md#L6) | 6 | `""` | — |
+| [SRC-6B9B9ABE27-L000007](../ui-directions/README.md#L7) | 7 | `"## Option 01 — Aurora Glass"` | — |
+| [SRC-6B9B9ABE27-L000008](../ui-directions/README.md#L8) | 8 | `"- Expressive frosted surfaces with teal/cyan/violet ambient glow."` | — |
+| [SRC-6B9B9ABE27-L000009](../ui-directions/README.md#L9) | 9 | `"- Futuristic, colorful Android-inspired atmosphere with restrained layering."` | — |
+| [SRC-6B9B9ABE27-L000010](../ui-directions/README.md#L10) | 10 | `"- Best when the product should feel distinctly modern and visually memorable."` | — |
+| [SRC-6B9B9ABE27-L000011](../ui-directions/README.md#L11) | 11 | `"- Preview: [variant-01-aurora-glass.html](variant-01-aurora-glass.html)"` | — |
 | [SRC-6B9B9ABE27-L000012](../ui-directions/README.md#L12) | 12 | `""` | — |
 | [SRC-6B9B9ABE27-L000013](../ui-directions/README.md#L13) | 13 | `"## Option 02 — Precision Glass"` | — |
 | [SRC-6B9B9ABE27-L000014](../ui-directions/README.md#L14) | 14 | `"- Restrained graphite glass, generous spacing, soft blue accent, evidence-first hierarchy."` | — |
@@ -865,44 +915,3 @@
 | [SRC-70795F4B61-L000432](../../scripts/compare_answer_quality_runs.py#L432) | 432 | `"            \"executed_at_utc\": baseline.get(\"executed_at_utc\"),"` | — |
 | [SRC-70795F4B61-L000433](../../scripts/compare_answer_quality_runs.py#L433) | 433 | `"            \"metrics\": before_runtime,"` | — |
 | [SRC-70795F4B61-L000434](../../scripts/compare_answer_quality_runs.py#L434) | 434 | `"        },"` | — |
-| [SRC-70795F4B61-L000435](../../scripts/compare_answer_quality_runs.py#L435) | 435 | `"        \"candidate\": {"` | — |
-| [SRC-70795F4B61-L000436](../../scripts/compare_answer_quality_runs.py#L436) | 436 | `"            \"build_sha\": candidate.get(\"build_sha\", \"unknown\"),"` | — |
-| [SRC-70795F4B61-L000437](../../scripts/compare_answer_quality_runs.py#L437) | 437 | `"            \"executed_at_utc\": candidate.get(\"executed_at_utc\"),"` | — |
-| [SRC-70795F4B61-L000438](../../scripts/compare_answer_quality_runs.py#L438) | 438 | `"            \"metrics\": after_runtime,"` | — |
-| [SRC-70795F4B61-L000439](../../scripts/compare_answer_quality_runs.py#L439) | 439 | `"        },"` | — |
-| [SRC-70795F4B61-L000440](../../scripts/compare_answer_quality_runs.py#L440) | 440 | `"        \"runtime_deltas\": runtime_deltas,"` | — |
-| [SRC-70795F4B61-L000441](../../scripts/compare_answer_quality_runs.py#L441) | 441 | `"        \"latency_comparison\": time_metrics,"` | — |
-| [SRC-70795F4B61-L000442](../../scripts/compare_answer_quality_runs.py#L442) | 442 | `"        \"quality_comparison\": None,"` | — |
-| [SRC-70795F4B61-L000443](../../scripts/compare_answer_quality_runs.py#L443) | 443 | `"        \"acceptance_status\": \"PARTIAL\","` | — |
-| [SRC-70795F4B61-L000444](../../scripts/compare_answer_quality_runs.py#L444) | 444 | `"        \"acceptance_blockers\": [],"` | — |
-| [SRC-70795F4B61-L000445](../../scripts/compare_answer_quality_runs.py#L445) | 445 | `"        \"interpretation\": ["` | — |
-| [SRC-70795F4B61-L000446](../../scripts/compare_answer_quality_runs.py#L446) | 446 | `"            \"The same benchmark version, case IDs, and exact question text were compared.\","` | — |
-| [SRC-70795F4B61-L000447](../../scripts/compare_answer_quality_runs.py#L447) | 447 | `"            \"HTTP transport success is not semantic correctness, and a successful search request is not proof that the answer is correct.\","` | — |
-| [SRC-70795F4B61-L000448](../../scripts/compare_answer_quality_runs.py#L448) | 448 | `"            \"Required-tool success is scored only from complete tool-status matrices; missing required rows count as failures and block complete acceptance.\","` | — |
-| [SRC-70795F4B61-L000449](../../scripts/compare_answer_quality_runs.py#L449) | 449 | `"            \"Complete request cost is intentionally null because search connector costs are not consistently exposed; only explicit provider-reported model cost is summarized.\","` | — |
-| [SRC-70795F4B61-L000450](../../scripts/compare_answer_quality_runs.py#L450) | 450 | `"        ],"` | — |
-| [SRC-70795F4B61-L000451](../../scripts/compare_answer_quality_runs.py#L451) | 451 | `"    }"` | — |
-| [SRC-70795F4B61-L000452](../../scripts/compare_answer_quality_runs.py#L452) | 452 | `"    for label, metrics in ((\"baseline\", before_runtime), (\"candidate\", after_runtime)):"` | — |
-| [SRC-70795F4B61-L000453](../../scripts/compare_answer_quality_runs.py#L453) | 453 | `"        matrix_coverage = metrics[\"tool_usage\"][\"required_tool_matrix_coverage\"]"` | — |
-| [SRC-70795F4B61-L000454](../../scripts/compare_answer_quality_runs.py#L454) | 454 | `"        if ("` | — |
-| [SRC-70795F4B61-L000455](../../scripts/compare_answer_quality_runs.py#L455) | 455 | `"            matrix_coverage[\"status\"] != \"SCORED_FROM_EXPLICIT_TOOL_MATRIX\""` | — |
-| [SRC-70795F4B61-L000456](../../scripts/compare_answer_quality_runs.py#L456) | 456 | `"            or matrix_coverage[\"score\"] != 1.0"` | — |
-| [SRC-70795F4B61-L000457](../../scripts/compare_answer_quality_runs.py#L457) | 457 | `"        ):"` | — |
-| [SRC-70795F4B61-L000458](../../scripts/compare_answer_quality_runs.py#L458) | 458 | `"            comparison[\"acceptance_blockers\"].append("` | — |
-| [SRC-70795F4B61-L000459](../../scripts/compare_answer_quality_runs.py#L459) | 459 | `"                f\"{label}_required_tool_matrix_incomplete\""` | — |
-| [SRC-70795F4B61-L000460](../../scripts/compare_answer_quality_runs.py#L460) | 460 | `"            )"` | — |
-| [SRC-70795F4B61-L000461](../../scripts/compare_answer_quality_runs.py#L461) | 461 | `"    sha_re = re.compile(r\"^[0-9a-fA-F]{40}$\")"` | — |
-| [SRC-70795F4B61-L000462](../../scripts/compare_answer_quality_runs.py#L462) | 462 | `"    for label, run in ((\"baseline\", baseline), (\"candidate\", candidate)):"` | — |
-| [SRC-70795F4B61-L000463](../../scripts/compare_answer_quality_runs.py#L463) | 463 | `"        if not isinstance(run.get(\"build_sha\"), str) or not sha_re.fullmatch(run[\"build_sha\"]):"` | — |
-| [SRC-70795F4B61-L000464](../../scripts/compare_answer_quality_runs.py#L464) | 464 | `"            comparison[\"acceptance_blockers\"].append(f\"{label}_build_sha_missing_or_invalid\")"` | — |
-| [SRC-70795F4B61-L000465](../../scripts/compare_answer_quality_runs.py#L465) | 465 | `"    for label, metrics in ((\"baseline\", before_runtime), (\"candidate\", after_runtime)):"` | — |
-| [SRC-70795F4B61-L000466](../../scripts/compare_answer_quality_runs.py#L466) | 466 | `"        if metrics[\"provider_reported_model_cost\"][\"complete_request_cost_status\"] != \"RECONCILED_COMPLETE_REQUEST_COST\":"` | — |
-| [SRC-70795F4B61-L000467](../../scripts/compare_answer_quality_runs.py#L467) | 467 | `"            comparison[\"acceptance_blockers\"].append(f\"{label}_complete_request_cost_missing_or_partial\")"` | — |
-| [SRC-70795F4B61-L000468](../../scripts/compare_answer_quality_runs.py#L468) | 468 | `"    if baseline_reviews is None and candidate_reviews is None:"` | — |
-| [SRC-70795F4B61-L000469](../../scripts/compare_answer_quality_runs.py#L469) | 469 | `"        comparison[\"acceptance_blockers\"].append(\"human_review_files_missing\")"` | — |
-| [SRC-70795F4B61-L000470](../../scripts/compare_answer_quality_runs.py#L470) | 470 | `"    elif baseline_reviews is None or candidate_reviews is None or corpus is None:"` | — |
-| [SRC-70795F4B61-L000471](../../scripts/compare_answer_quality_runs.py#L471) | 471 | `"        comparison[\"acceptance_blockers\"].append(\"both_review_files_and_corpus_are_required\")"` | — |
-| [SRC-70795F4B61-L000472](../../scripts/compare_answer_quality_runs.py#L472) | 472 | `"    else:"` | — |
-| [SRC-70795F4B61-L000473](../../scripts/compare_answer_quality_runs.py#L473) | 473 | `"        corpus_ids = {"` | — |
-| [SRC-70795F4B61-L000474](../../scripts/compare_answer_quality_runs.py#L474) | 474 | `"            case.get(\"case_id\")"` | — |
-| [SRC-70795F4B61-L000475](../../scripts/compare_answer_quality_runs.py#L475) | 475 | `"            for case in corpus.get(\"cases\", [])"` | — |

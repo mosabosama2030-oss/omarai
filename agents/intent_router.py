@@ -479,6 +479,15 @@ def route_intent(
     # An explicitly selected mode controls research depth when the request itself
     # is sufficiently specified.
     if clean_mode != "auto":
+        # Research depth is a mode constraint; it must not erase the user's
+        # explicit buyer-discovery intent or turn leads into generic web research.
+        if _is_lead_generation_request(question):
+            return {
+                "route": "LEAD_GENERATION",
+                "reason": "explicit_buyer_discovery_with_selected_research_mode",
+                "context_available": context_available,
+                "needs_clarification": False,
+            }
         route = "WEB_DEEP" if clean_mode == "deep" else "WEB_SIMPLE"
         return {
             "route": route,

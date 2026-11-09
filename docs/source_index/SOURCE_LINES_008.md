@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3AA6165B18-L000069 إلى SRC-8D00DCEC0D-L000350
+- النطاق: SRC-3AA6165B18-L000060 إلى SRC-8D00DCEC0D-L000341
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3AA6165B18-L000060](../../agents/research_guardrails.py#L60) | 60 | `"_DISCUSSION_TERMS = ("` | — |
+| [SRC-3AA6165B18-L000061](../../agents/research_guardrails.py#L61) | 61 | `"    \"حد جرب\", \"هل جرب\", \"مين جرب\", \"ما رأيكم\", \"ايه رأيكم\", \"ماذا تظنون\","` | — |
+| [SRC-3AA6165B18-L000062](../../agents/research_guardrails.py#L62) | 62 | `"    \"anyone tried\", \"has anyone\", \"what do you think\", \"looking for opinions\","` | — |
+| [SRC-3AA6165B18-L000063](../../agents/research_guardrails.py#L63) | 63 | `")"` | — |
+| [SRC-3AA6165B18-L000064](../../agents/research_guardrails.py#L64) | 64 | `""` | — |
+| [SRC-3AA6165B18-L000065](../../agents/research_guardrails.py#L65) | 65 | `""` | — |
+| [SRC-3AA6165B18-L000066](../../agents/research_guardrails.py#L66) | 66 | `"def _normalized(value: Any) -> str:"` | — |
+| [SRC-3AA6165B18-L000067](../../agents/research_guardrails.py#L67) | 67 | `"    return re.sub(r\"\\s+\", \" \", str(value or \"\")).strip().casefold()"` | — |
+| [SRC-3AA6165B18-L000068](../../agents/research_guardrails.py#L68) | 68 | `""` | — |
 | [SRC-3AA6165B18-L000069](../../agents/research_guardrails.py#L69) | 69 | `""` | — |
 | [SRC-3AA6165B18-L000070](../../agents/research_guardrails.py#L70) | 70 | `"def _host(value: Any) -> str:"` | — |
 | [SRC-3AA6165B18-L000071](../../agents/research_guardrails.py#L71) | 71 | `"    try:"` | — |
@@ -825,12 +834,3 @@
 | [SRC-8D00DCEC0D-L000339](../../agents/sales_domain.py#L339) | 339 | `"            raise TypeError(\"categories must contain TaxonomyCategory instances\")"` | — |
 | [SRC-8D00DCEC0D-L000340](../../agents/sales_domain.py#L340) | 340 | `"        paths = [tuple(normalize_text(part) for part in item.path) for item in self.categories]"` | — |
 | [SRC-8D00DCEC0D-L000341](../../agents/sales_domain.py#L341) | 341 | `"        if len(paths) != len(set(paths)):"` | — |
-| [SRC-8D00DCEC0D-L000342](../../agents/sales_domain.py#L342) | 342 | `"            raise ValueError(\"taxonomy category paths must be unique\")"` | — |
-| [SRC-8D00DCEC0D-L000343](../../agents/sales_domain.py#L343) | 343 | `""` | — |
-| [SRC-8D00DCEC0D-L000344](../../agents/sales_domain.py#L344) | 344 | `"    def match_categories(self, text: str) -> tuple[tuple[str, ...], ...]:"` | — |
-| [SRC-8D00DCEC0D-L000345](../../agents/sales_domain.py#L345) | 345 | `"        \"\"\"Return all explicit taxonomy matches; never choose a winner by guessing.\"\"\""` | — |
-| [SRC-8D00DCEC0D-L000346](../../agents/sales_domain.py#L346) | 346 | `"        matches = ["` | — |
-| [SRC-8D00DCEC0D-L000347](../../agents/sales_domain.py#L347) | 347 | `"            category.path"` | — |
-| [SRC-8D00DCEC0D-L000348](../../agents/sales_domain.py#L348) | 348 | `"            for category in self.categories"` | — |
-| [SRC-8D00DCEC0D-L000349](../../agents/sales_domain.py#L349) | 349 | `"            if any(_contains_phrase(text, alias) for alias in category.aliases)"` | — |
-| [SRC-8D00DCEC0D-L000350](../../agents/sales_domain.py#L350) | 350 | `"        ]"` | — |

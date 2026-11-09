@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-C9CF9B54F8-L000653 إلى SRC-FDEEAFDFCA-L000082
+- النطاق: SRC-C9CF9B54F8-L000644 إلى SRC-FDEEAFDFCA-L000073
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-C9CF9B54F8-L000644](../../agents/omarai.py#L644) | 644 | `"                   WHERE t.id=? AND t.active=1 AND u.active=1\"\"\","` | — |
+| [SRC-C9CF9B54F8-L000645](../../agents/omarai.py#L645) | 645 | `"                (user_id, tenant),"` | — |
+| [SRC-C9CF9B54F8-L000646](../../agents/omarai.py#L646) | 646 | `"            ).fetchone()"` | — |
+| [SRC-C9CF9B54F8-L000647](../../agents/omarai.py#L647) | 647 | `"            if not exists:"` | — |
+| [SRC-C9CF9B54F8-L000648](../../agents/omarai.py#L648) | 648 | `"                raise ValueError(\"active tenant and user are required\")"` | — |
+| [SRC-C9CF9B54F8-L000649](../../agents/omarai.py#L649) | 649 | `"            db.execute("` | — |
+| [SRC-C9CF9B54F8-L000650](../../agents/omarai.py#L650) | 650 | `"                \"\"\"INSERT INTO tenant_memberships"` | — |
+| [SRC-C9CF9B54F8-L000651](../../agents/omarai.py#L651) | 651 | `"                   (tenant_id, user_id, role, active, created_at)"` | — |
+| [SRC-C9CF9B54F8-L000652](../../agents/omarai.py#L652) | 652 | `"                   VALUES (?, ?, ?, 1, ?)"` | — |
 | [SRC-C9CF9B54F8-L000653](../../agents/omarai.py#L653) | 653 | `"                   ON CONFLICT(tenant_id, user_id)"` | — |
 | [SRC-C9CF9B54F8-L000654](../../agents/omarai.py#L654) | 654 | `"                   DO UPDATE SET role=excluded.role, active=1\"\"\","` | — |
 | [SRC-C9CF9B54F8-L000655](../../agents/omarai.py#L655) | 655 | `"                (tenant, user_id, role, now_utc()),"` | — |
@@ -816,12 +825,3 @@
 | [SRC-FDEEAFDFCA-L000071](../../agents/request_budget.py#L71) | 71 | `"        }"` | — |
 | [SRC-FDEEAFDFCA-L000072](../../agents/request_budget.py#L72) | 72 | `"        self._counts = {key: 0 for key in self._limits}"` | — |
 | [SRC-FDEEAFDFCA-L000073](../../agents/request_budget.py#L73) | 73 | `"        self._exhausted_reasons: set[str] = set()"` | — |
-| [SRC-FDEEAFDFCA-L000074](../../agents/request_budget.py#L74) | 74 | `"        self._lock = threading.Lock()"` | — |
-| [SRC-FDEEAFDFCA-L000075](../../agents/request_budget.py#L75) | 75 | `""` | — |
-| [SRC-FDEEAFDFCA-L000076](../../agents/request_budget.py#L76) | 76 | `"    @classmethod"` | — |
-| [SRC-FDEEAFDFCA-L000077](../../agents/request_budget.py#L77) | 77 | `"    def from_environment(cls, profile: str = \"default\") -> RequestBudget:"` | — |
-| [SRC-FDEEAFDFCA-L000078](../../agents/request_budget.py#L78) | 78 | `"        if profile not in {\"default\", \"hosted_smoke\"}:"` | — |
-| [SRC-FDEEAFDFCA-L000079](../../agents/request_budget.py#L79) | 79 | `"            raise ValueError(f\"unknown request-budget profile: {profile}\")"` | — |
-| [SRC-FDEEAFDFCA-L000080](../../agents/request_budget.py#L80) | 80 | `"        timeout = _bounded_env_int("` | — |
-| [SRC-FDEEAFDFCA-L000081](../../agents/request_budget.py#L81) | 81 | `"            \"OMARAI_REQUEST_BUDGET_SECONDS\","` | — |
-| [SRC-FDEEAFDFCA-L000082](../../agents/request_budget.py#L82) | 82 | `"            DEFAULT_TIMEOUT_SECONDS,"` | — |

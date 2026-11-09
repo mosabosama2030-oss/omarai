@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-59CF4B7DE8-L000571 إلى SRC-3AA6165B18-L000068
+- النطاق: SRC-59CF4B7DE8-L000562 إلى SRC-3AA6165B18-L000059
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-59CF4B7DE8-L000562](../../agents/research.py#L562) | 562 | `"        host == name or host.endswith(\".\" + name)"` | — |
+| [SRC-59CF4B7DE8-L000563](../../agents/research.py#L563) | 563 | `"        for name in ("` | — |
+| [SRC-59CF4B7DE8-L000564](../../agents/research.py#L564) | 564 | `"            \"reuters.com\", \"apnews.com\", \"bbc.com\", \"bbc.co.uk\","` | — |
+| [SRC-59CF4B7DE8-L000565](../../agents/research.py#L565) | 565 | `"            \"ft.com\", \"nytimes.com\", \"theguardian.com\","` | — |
+| [SRC-59CF4B7DE8-L000566](../../agents/research.py#L566) | 566 | `"        )"` | — |
+| [SRC-59CF4B7DE8-L000567](../../agents/research.py#L567) | 567 | `"    ):"` | — |
+| [SRC-59CF4B7DE8-L000568](../../agents/research.py#L568) | 568 | `"        # Match publisher host boundaries; lookalike domains must not inherit a"` | — |
+| [SRC-59CF4B7DE8-L000569](../../agents/research.py#L569) | 569 | `"        # news label merely because their hostname contains a trusted brand string."` | — |
+| [SRC-59CF4B7DE8-L000570](../../agents/research.py#L570) | 570 | `"        trust = \"news\""` | — |
 | [SRC-59CF4B7DE8-L000571](../../agents/research.py#L571) | 571 | `"    elif platform != \"web\":"` | — |
 | [SRC-59CF4B7DE8-L000572](../../agents/research.py#L572) | 572 | `"        trust = \"social\""` | — |
 | [SRC-59CF4B7DE8-L000573](../../agents/research.py#L573) | 573 | `"    return {\"domain\": host, \"platform\": platform, \"source_class\": trust}"` | — |
@@ -825,12 +834,3 @@
 | [SRC-3AA6165B18-L000057](../../agents/research_guardrails.py#L57) | 57 | `"    \"بقالى\", \"بقالي\", \"I own\", \"I bought\", \"I have owned\", \"my experience\","` | — |
 | [SRC-3AA6165B18-L000058](../../agents/research_guardrails.py#L58) | 58 | `"    \"I've had\", \"i have had\", \"I use\", \"I drove\", \"in my experience\","` | — |
 | [SRC-3AA6165B18-L000059](../../agents/research_guardrails.py#L59) | 59 | `")"` | — |
-| [SRC-3AA6165B18-L000060](../../agents/research_guardrails.py#L60) | 60 | `"_DISCUSSION_TERMS = ("` | — |
-| [SRC-3AA6165B18-L000061](../../agents/research_guardrails.py#L61) | 61 | `"    \"حد جرب\", \"هل جرب\", \"مين جرب\", \"ما رأيكم\", \"ايه رأيكم\", \"ماذا تظنون\","` | — |
-| [SRC-3AA6165B18-L000062](../../agents/research_guardrails.py#L62) | 62 | `"    \"anyone tried\", \"has anyone\", \"what do you think\", \"looking for opinions\","` | — |
-| [SRC-3AA6165B18-L000063](../../agents/research_guardrails.py#L63) | 63 | `")"` | — |
-| [SRC-3AA6165B18-L000064](../../agents/research_guardrails.py#L64) | 64 | `""` | — |
-| [SRC-3AA6165B18-L000065](../../agents/research_guardrails.py#L65) | 65 | `""` | — |
-| [SRC-3AA6165B18-L000066](../../agents/research_guardrails.py#L66) | 66 | `"def _normalized(value: Any) -> str:"` | — |
-| [SRC-3AA6165B18-L000067](../../agents/research_guardrails.py#L67) | 67 | `"    return re.sub(r\"\\s+\", \" \", str(value or \"\")).strip().casefold()"` | — |
-| [SRC-3AA6165B18-L000068](../../agents/research_guardrails.py#L68) | 68 | `""` | — |

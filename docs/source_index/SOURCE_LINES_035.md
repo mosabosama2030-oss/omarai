@@ -4,9 +4,44 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-69F3587825-L000016 إلى SRC-6B9B9ABE27-L000011
+- النطاق: SRC-D911B73392-L000123 إلى SRC-BFCEEA0374-L000043
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## وثائق وفهرسة
+
+### FILE-D911B73392 — [docs/RESEARCH_CONNECTORS_AR.md](../RESEARCH_CONNECTORS_AR.md#L1)
+
+- النوع: **Markdown**
+- نطاق الفهرسة: جرد الملف + عناوين Markdown
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-D911B73392-L000123](../RESEARCH_CONNECTORS_AR.md#L123) | 123 | ````"```"```` | — |
+| [SRC-D911B73392-L000124](../RESEARCH_CONNECTORS_AR.md#L124) | 124 | `""` | — |
+| [SRC-D911B73392-L000125](../RESEARCH_CONNECTORS_AR.md#L125) | 125 | ``"افتح `http://127.0.0.1:8765` للمحادثة البحثية و`http://127.0.0.1:8765/api/health` لحالة الإعداد. تقرير الصحة يذكر ما إذا كانت المتغيرات موجودة فقط؛ ولا يمكنه التأكد من صلاحيتها حتى يجرب الموصل طلبًا حقيقيًا."`` | — |
+| [SRC-D911B73392-L000126](../RESEARCH_CONNECTORS_AR.md#L126) | 126 | `""` | — |
+| [SRC-D911B73392-L000127](../RESEARCH_CONNECTORS_AR.md#L127) | 127 | `"## 5. اختبار حي للاتصال"` | — |
+| [SRC-D911B73392-L000128](../RESEARCH_CONNECTORS_AR.md#L128) | 128 | `""` | — |
+| [SRC-D911B73392-L000129](../RESEARCH_CONNECTORS_AR.md#L129) | 129 | `"افتح لوحة Omarai واضغط **«اختبار حي للبحث والنموذج»**. هذا الفحص ينفّذ طلب بحث فعليًا إلى محركات البحث العامة، ويرسل طلبًا صغيرًا إلى نموذج الإجابة إذا كان المفتاح مضبوطًا. إذا فعّلت خيار اختبار المصادر الاجتماعية، فسينفّذ طلبات عامة/مصرحًا بها إلى الموصلات المناسبة. قد يستغرق فحص الشبكات الاجتماعية وقتًا أطول، وقد يستهلك حصص APIs أو يواجه حدود المعدل."` | — |
+| [SRC-D911B73392-L000130](../RESEARCH_CONNECTORS_AR.md#L130) | 130 | `""` | — |
+| [SRC-D911B73392-L000131](../RESEARCH_CONNECTORS_AR.md#L131) | 131 | `"يمكن تنفيذ الفحص نفسه من الطرفية أو أداة API:"` | — |
+| [SRC-D911B73392-L000132](../RESEARCH_CONNECTORS_AR.md#L132) | 132 | `""` | — |
+| [SRC-D911B73392-L000133](../RESEARCH_CONNECTORS_AR.md#L133) | 133 | ````"```bash"```` | — |
+| [SRC-D911B73392-L000134](../RESEARCH_CONNECTORS_AR.md#L134) | 134 | `"curl -sS -X POST http://127.0.0.1:8765/api/diagnostics \\"` | — |
+| [SRC-D911B73392-L000135](../RESEARCH_CONNECTORS_AR.md#L135) | 135 | `"  -H 'Content-Type: application/json' \\"` | — |
+| [SRC-D911B73392-L000136](../RESEARCH_CONNECTORS_AR.md#L136) | 136 | `"  -d '{\"test_model\":true,\"test_social\":false,\"allow_provider_usage\":true}'"` | — |
+| [SRC-D911B73392-L000137](../RESEARCH_CONNECTORS_AR.md#L137) | 137 | ````"```"```` | — |
+| [SRC-D911B73392-L000138](../RESEARCH_CONNECTORS_AR.md#L138) | 138 | `""` | — |
+| [SRC-D911B73392-L000139](../RESEARCH_CONNECTORS_AR.md#L139) | 139 | ``"للفحص الاجتماعي أيضًا، غيّر `test_social` إلى `true`. تعني حالة `degraded` أن الفحص لم يحصل على نتائج كافية أو أن أحد الأجزاء لم يعمل كما هو متوقع؛ ولا تثبت وحدها أن المنصة متوقفة. يظهر `/api/health` وجود إعدادات البيئة فقط، أما الفحص الحي فيختبر اتصالًا فعليًا. لا يعرض التقرير المفاتيح السرية أو يحتفظ بنص استجابة اختبار النموذج."`` | — |
+| [SRC-D911B73392-L000140](../RESEARCH_CONNECTORS_AR.md#L140) | 140 | `""` | — |
+| [SRC-D911B73392-L000141](../RESEARCH_CONNECTORS_AR.md#L141) | 141 | ``"**الموافقة والصلاحية:** قد يرسل هذا المسار طلبات فعلية ويستهلك حصصًا أو رسومًا؛ يجب ضبط `allow_provider_usage=true` بعد موافقة بشرية مستقلة، ولا يقبل الخادم الفحص الحي إلا من عضوية `owner`. رمز التطبيق المشترك يربط بالمالك الافتراضي في وضع التشغيل الأولي؛ رموز المستخدمين الإضافية ترتبط بعضوياتهم ومستأجرهم."`` | — |
+| [SRC-D911B73392-L000142](../RESEARCH_CONNECTORS_AR.md#L142) | 142 | `""` | — |
+| [SRC-D911B73392-L000143](../RESEARCH_CONNECTORS_AR.md#L143) | 143 | `"## 6. قراءة الأدلة والتحقق منها"` | — |
+| [SRC-D911B73392-L000144](../RESEARCH_CONNECTORS_AR.md#L144) | 144 | `""` | — |
+| [SRC-D911B73392-L000145](../RESEARCH_CONNECTORS_AR.md#L145) | 145 | `"- افتح المصادر الأساسية واقرأ السياق الكامل قبل اتخاذ قرار تجاري أو قانوني أو طبي."` | — |
+| [SRC-D911B73392-L000146](../RESEARCH_CONNECTORS_AR.md#L146) | 146 | `"- المنشور أو التعليق قد يكون ساخرًا أو قديمًا أو ترويجيًا أو خارج السياق. يوضح Omarai المصدر والنص المتاح، لكنه لا يثبت هوية الكاتب أو صحة كلامه."` | — |
+| [SRC-D911B73392-L000147](../RESEARCH_CONNECTORS_AR.md#L147) | 147 | `"- لا تستخدم بيانات شخصية غير لازمة، ولا تجمع محتوى خاصًا أو تتجاوز شروط أي منصة."` | — |
+| [SRC-D911B73392-L000148](../RESEARCH_CONNECTORS_AR.md#L148) | 148 | `"- لا يرسل Omarai رسائل أو يتواصل مع أصحاب الحسابات تلقائيًا. أي تواصل أو إجراء خارجي يجب أن يبقى بقرار بشري ومراجعة منفصلة."` | — |
 ## وثائق وفهرسة
 
 ### FILE-69F3587825 — [docs/search_code.py](../search_code.py#L1)
@@ -16,6 +51,21 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-69F3587825-L000001](../search_code.py#L1) | 1 | `"\"\"\"Text search across Omarai repository source files (no external AI required)."` | — |
+| [SRC-69F3587825-L000002](../search_code.py#L2) | 2 | `""` | — |
+| [SRC-69F3587825-L000003](../search_code.py#L3) | 3 | `"Examples:"` | — |
+| [SRC-69F3587825-L000004](../search_code.py#L4) | 4 | `"  python docs/search_code.py \"def analyze\""` | — |
+| [SRC-69F3587825-L000005](../search_code.py#L5) | 5 | `"  python docs/search_code.py --regex \"OMARAI_[A-Z_]+\" --ext py"` | — |
+| [SRC-69F3587825-L000006](../search_code.py#L6) | 6 | `"  python docs/search_code.py \"access token\" --max 20"` | — |
+| [SRC-69F3587825-L000007](../search_code.py#L7) | 7 | `"  python docs/search_code.py --root /path/to/omarai \"do_POST\""` | — |
+| [SRC-69F3587825-L000008](../search_code.py#L8) | 8 | `"\"\"\""` | — |
+| [SRC-69F3587825-L000009](../search_code.py#L9) | 9 | `""` | — |
+| [SRC-69F3587825-L000010](../search_code.py#L10) | 10 | `"from __future__ import annotations"` | — |
+| [SRC-69F3587825-L000011](../search_code.py#L11) | 11 | `""` | — |
+| [SRC-69F3587825-L000012](../search_code.py#L12) | 12 | `"import argparse"` | — |
+| [SRC-69F3587825-L000013](../search_code.py#L13) | 13 | `"import os"` | — |
+| [SRC-69F3587825-L000014](../search_code.py#L14) | 14 | `"import re"` | — |
+| [SRC-69F3587825-L000015](../search_code.py#L15) | 15 | `"import subprocess"` | — |
 | [SRC-69F3587825-L000016](../search_code.py#L16) | 16 | `"import sys"` | — |
 | [SRC-69F3587825-L000017](../search_code.py#L17) | 17 | `"from collections.abc import Sequence"` | — |
 | [SRC-69F3587825-L000018](../search_code.py#L18) | 18 | `"from dataclasses import dataclass"` | — |
@@ -820,53 +870,3 @@
 | [SRC-BFCEEA0374-L000041](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L41) | 41 | `"- بناء محرك بحث جديد أو تفعيل Firecrawl؛ PR #153 منفصل ومفتوح على خط الأساس الحالي."` | — |
 | [SRC-BFCEEA0374-L000042](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L42) | 42 | `"- إرسال رسائل أو جمع بيانات اتصال خاصة."` | — |
 | [SRC-BFCEEA0374-L000043](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L43) | 43 | `"- تغيير أسرار SnapDeploy أو مفاتيح المزودين أو النشر أو الدمج."` | — |
-| [SRC-BFCEEA0374-L000044](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L44) | 44 | `""` | — |
-| [SRC-BFCEEA0374-L000045](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L45) | 45 | `"## البيانات والأمان"` | — |
-| [SRC-BFCEEA0374-L000046](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L46) | 46 | `""` | — |
-| [SRC-BFCEEA0374-L000047](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L47) | 47 | ``"- كل ملف منتج وكل تشغيل وكل مصدر محفوظ يقيّد بـ`tenant_id` المستمد من principal موثوق على الخادم، وليس من body أو query."`` | — |
-| [SRC-BFCEEA0374-L000048](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L48) | 48 | `"- يجب أن تشمل المفاتيح والقيود الفريدة نطاق المستأجر."` | — |
-| [SRC-BFCEEA0374-L000049](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L49) | 49 | ``"- استرجاع الإشارة للحفظ يكون بواسطة `run_id + source_index + tenant_id` من سجل محفوظ في الخادم؛ لا يثق الخادم في تصنيف يرسله المتصفح."`` | — |
-| [SRC-BFCEEA0374-L000050](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L50) | 50 | ``"- لا تُحفظ نتيجة غير مصنفة `public_demand_signal` كإشارة شراء من إجراء الحفظ الخاص بالتشغيل."`` | — |
-| [SRC-BFCEEA0374-L000051](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L51) | 51 | `"- لا يعرض النظام هوية الكاتب أو قناة اتصال إلا إذا كانت موجودة ومتحققًا منها في المصدر. لا تستنتجها."` | — |
-| [SRC-BFCEEA0374-L000052](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L52) | 52 | `"- النص والمقتطفات والصفحات بيانات غير موثوقة."` | — |
-| [SRC-BFCEEA0374-L000053](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L53) | 53 | `"- لا تُشغّل DeepSeek/Brave/Tavily أو موصلات اختيارية ذات حصص/تكلفة تلقائيًا في مسار الاكتشاف. التفعيل صريح ومن المالك فقط."` | — |
-| [SRC-BFCEEA0374-L000054](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L54) | 54 | `"- لا تُعرض درجة التحليل القواعدي الحالية كاحتمال شراء."` | — |
-| [SRC-BFCEEA0374-L000055](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L55) | 55 | `""` | — |
-| [SRC-BFCEEA0374-L000056](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L56) | 56 | `"## معيار القبول"` | — |
-| [SRC-BFCEEA0374-L000057](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L57) | 57 | `""` | — |
-| [SRC-BFCEEA0374-L000058](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L58) | 58 | `"- يمكن حفظ ملفين بمنتجين مختلفين لنفس المستأجر، واسترجاعهما؛ ولا يستطيع مستأجر آخر قراءتهما."` | — |
-| [SRC-BFCEEA0374-L000059](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L59) | 59 | `"- يرفض الخادم viewer من الكتابة أو تشغيل الاكتشاف."` | — |
-| [SRC-BFCEEA0374-L000060](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L60) | 60 | `"- يولد البحث استعلامات من أسماء/مرادفات المنتج والموقع، دون تسرب عبارات عقارية إلى المنتجات غير العقارية."` | — |
-| [SRC-BFCEEA0374-L000061](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L61) | 61 | `"- يستدعي endpoint محرك WebAgent الحالي بعقد buyer queries منظمة، لا بمحرك ثانٍ."` | — |
-| [SRC-BFCEEA0374-L000062](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L62) | 62 | `"- لا تُستدعى الموصلات الاختيارية عند ترك خيار الاستخدام الاختياري مغلقًا."` | — |
-| [SRC-BFCEEA0374-L000063](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L63) | 63 | `"- يحفظ سجل تشغيل مع مصادره وحالاتها تحت المستأجر."` | — |
-| [SRC-BFCEEA0374-L000064](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L64) | 64 | ``"- لا يقبل endpoint الحفظ مصدرًا غير مصنف `public_demand_signal`، ولا يقبل معرف تشغيل تابعًا لمستأجر آخر."`` | — |
-| [SRC-BFCEEA0374-L000065](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L65) | 65 | `"- الواجهة تعرض الدليل والمصدر ونوع النص/أساسه والحدود، وتسمح بحفظ الإشارة المؤهلة يدويًا فقط."` | — |
-| [SRC-BFCEEA0374-L000066](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L66) | 66 | `"- جميع الاختبارات الآلية وCI ذات الصلة ناجحة؛ قبول الاستضافة بعد النشر يبقى منفصلًا ويتطلب إجراء Human Director."` | — |
-| [SRC-BFCEEA0374-L000067](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L67) | 67 | `""` | — |
-| [SRC-BFCEEA0374-L000068](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L68) | 68 | `"## القرارات التنفيذية"` | — |
-| [SRC-BFCEEA0374-L000069](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L69) | 69 | `""` | — |
-| [SRC-BFCEEA0374-L000070](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L70) | 70 | ``"- إعادة استخدام `agents.sales_domain` و`WebAgent` و`LeadStore` بدل إنشاء محرك مستقل."`` | — |
-| [SRC-BFCEEA0374-L000071](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L71) | 71 | ``"- تخزين ملفات المنتج وتشغيلات الاكتشاف في SQLite مع migration آمن عبر `CREATE TABLE IF NOT EXISTS` وفهارس tenant-scoped."`` | — |
-| [SRC-BFCEEA0374-L000072](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L72) | 72 | `"- عدم تغيير أي مفتاح أو إعداد استضافة."` | — |
-| [SRC-BFCEEA0374-L000073](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L73) | 73 | `"- لا دمج ولا نشر ضمن هذا العمل."` | — |
-## وثائق وفهرسة
-
-### FILE-6B9B9ABE27 — [docs/ui-directions/README.md](../ui-directions/README.md#L1)
-
-- النوع: **Markdown**
-- نطاق الفهرسة: جرد الملف + عناوين Markdown
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-6B9B9ABE27-L000001](../ui-directions/README.md#L1) | 1 | `"# Omarai — Three Glass UI Directions"` | — |
-| [SRC-6B9B9ABE27-L000002](../ui-directions/README.md#L2) | 2 | `""` | — |
-| [SRC-6B9B9ABE27-L000003](../ui-directions/README.md#L3) | 3 | `"**Status:** Visual proposals for Human Director selection only. No direction is implemented or connected to production APIs."` | — |
-| [SRC-6B9B9ABE27-L000004](../ui-directions/README.md#L4) | 4 | `""` | — |
-| [SRC-6B9B9ABE27-L000005](../ui-directions/README.md#L5) | 5 | `"Design project: https://design.agent-native.com/design/sGSw7-l6baKesddSGTdvl?editorView=overview"` | — |
-| [SRC-6B9B9ABE27-L000006](../ui-directions/README.md#L6) | 6 | `""` | — |
-| [SRC-6B9B9ABE27-L000007](../ui-directions/README.md#L7) | 7 | `"## Option 01 — Aurora Glass"` | — |
-| [SRC-6B9B9ABE27-L000008](../ui-directions/README.md#L8) | 8 | `"- Expressive frosted surfaces with teal/cyan/violet ambient glow."` | — |
-| [SRC-6B9B9ABE27-L000009](../ui-directions/README.md#L9) | 9 | `"- Futuristic, colorful Android-inspired atmosphere with restrained layering."` | — |
-| [SRC-6B9B9ABE27-L000010](../ui-directions/README.md#L10) | 10 | `"- Best when the product should feel distinctly modern and visually memorable."` | — |
-| [SRC-6B9B9ABE27-L000011](../ui-directions/README.md#L11) | 11 | `"- Preview: [variant-01-aurora-glass.html](variant-01-aurora-glass.html)"` | — |
