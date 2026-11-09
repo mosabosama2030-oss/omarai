@@ -432,20 +432,33 @@ def _has_official_site_target(question: str) -> bool:
     return False
 
 
+_LOCATION_CUES = (
+    ("مصر", ("في مصر", "داخل مصر", "المصري", "المصرية", "مصر", "egypt", "egyptian")),
+    ("القاهرة", ("القاهرة", "القاهره", "cairo")),
+    ("الإسكندرية", ("الاسكندرية", "الاسكندريه", "alexandria")),
+    ("السعودية", ("السعودية", "السعوديه", "saudi arabia")),
+    ("الإمارات", ("الامارات", "uae", "united arab emirates")),
+    ("المملكة المتحدة", ("المملكة المتحدة", "united kingdom", "the uk")),
+    ("الولايات المتحدة", ("الولايات المتحدة", "united states", "the us")),
+)
+
+
+def _location_already_in(scope_term: str, candidate: str) -> bool:
+    """True when the candidate already names this place in any known language form."""
+    normalized = normalize_text(candidate)
+    if normalize_text(scope_term) in normalized:
+        return True
+    for canonical, cues in _LOCATION_CUES:
+        if normalize_text(canonical) == normalize_text(scope_term):
+            return any(_contains(normalized, (cue,)) for cue in cues)
+    return False
+
+
 def _extract_explicit_locations(question: str) -> list[str]:
     """Return only a small, explicit location vocabulary; never infer geolocation."""
     normalized = normalize_text(question)
-    known = (
-        ("مصر", ("في مصر", "داخل مصر", "المصري", "المصرية", "مصر", "egypt", "egyptian")),
-        ("القاهرة", ("القاهرة", "القاهره", "cairo")),
-        ("الإسكندرية", ("الاسكندرية", "الاسكندريه", "alexandria")),
-        ("السعودية", ("السعودية", "السعوديه", "saudi arabia")),
-        ("الإمارات", ("الامارات", "uae", "united arab emirates")),
-        ("المملكة المتحدة", ("المملكة المتحدة", "united kingdom", "the uk")),
-        ("الولايات المتحدة", ("الولايات المتحدة", "united states", "the us")),
-    )
     result: list[str] = []
-    for canonical, cues in known:
+    for canonical, cues in _LOCATION_CUES:
         if any(_contains(normalized, (cue,)) for cue in cues):
             result.append(canonical)
     return result
@@ -1167,7 +1180,7 @@ def build_query_strategy_matrix(
                 if isinstance(item, str) and item.strip()
             )
         for scope_term in scope_terms:
-            if normalize_text(scope_term) not in normalize_text(candidate):
+            if not _location_already_in(scope_term, candidate):
                 candidate = _SPACE.sub(" ", f"{candidate} {scope_term}").strip()
         candidate = candidate[:240]
         key = _query_key(candidate)
