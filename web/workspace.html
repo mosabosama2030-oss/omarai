@@ -850,6 +850,10 @@ const chatModes=[
 function chatMessageNode(item){
  const row=make("div","chat-msg chat-"+item.role);
  row.append(make("div","chat-who",item.role==="user"?"أنت":"Omarai"));
+ if(item.role==="assistant"&&item.knowledge){
+  row.append(make("div","chat-who","ما أعرفه (من معرفة النموذج — غير موثّق)"),make("div","chat-text",item.knowledge));
+  row.append(make("div","chat-who","الإجابة المدعومة بالأدلة"));
+ }
  row.append(make("div","chat-text",item.text));
  if(item.role==="assistant"&&Array.isArray(item.sources)&&item.sources.length){
   const list=make("ul","chat-sources");
@@ -907,7 +911,9 @@ async function sendChat(){
   if(state.chat.sessionVersion!==requestSessionVersion)return;
   const answer=String(data.answer||"لم يرجع الخادم نص إجابة.");
   const note=data.kind==="general_answer"?"إجابة معرفة عامة دون بحث ويب.":(data.used_web_search===true?"":"لم يُجرَ بحث ويب لهذه الإجابة.");
-  chat.messages.push({role:"assistant",text:answer,sources:Array.isArray(data.sources)?data.sources:[],note:note});
+  const knowledge=typeof data.knowledge_answer==="string"?data.knowledge_answer:"";
+  const kcheck=data.knowledge_check&&typeof data.knowledge_check.note==="string"?data.knowledge_check.note:"";
+  chat.messages.push({role:"assistant",text:answer,knowledge:knowledge,sources:Array.isArray(data.sources)?data.sources:[],note:(kcheck||note)});
   chat.history.push({role:"user",content:question},{role:"assistant",content:answer});
   chat.history=chat.history.slice(-16);
  }catch(error){

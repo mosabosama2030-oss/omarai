@@ -266,3 +266,13 @@ def test_workspace_clears_chat_at_auth_boundaries_and_ignores_stale_responses():
     assert "const requestSessionVersion=chat.sessionVersion" in chat
     assert "if(state.chat.sessionVersion!==requestSessionVersion)return;" in chat
     assert "if(state.chat.sessionVersion===requestSessionVersion)" in chat
+
+
+def test_workspace_chat_shows_unverified_knowledge_answer_before_evidence_answer():
+    workspace = Path(__file__).resolve().parents[1] / "web" / "workspace.html"
+    html = workspace.read_text(encoding="utf-8")
+    chat = html.split("function chatMessageNode(", 1)[1].split("function renderCurrent(){", 1)[0]
+    assert "data.knowledge_answer" in chat
+    assert "غير موثّق" in chat
+    assert chat.index("item.knowledge") < chat.index("item.text")
+    assert "innerHTML" not in chat
