@@ -166,7 +166,6 @@ def test_viewer_membership_is_read_only(tenant_api):
     assert "للقراءة فقط" in error["error"]
 
 
-
 def test_api_revokes_only_the_authenticated_api_token(tenant_api):
     base, store = tenant_api
     tenant_id = store.create_tenant("Revocable Company", "revocable-company")
@@ -202,7 +201,6 @@ def test_api_does_not_claim_to_revoke_shared_environment_token(
     )
     assert status == 409
     assert "rotated by the operator" in result["error"]
-
 
 
 def test_live_diagnostics_requires_explicit_approval_before_any_provider_call(
@@ -300,7 +298,6 @@ def test_owner_can_run_diagnostics_only_after_explicit_approval(
     assert observed == {"test_model": True, "test_social": False}
 
 
-
 def test_viewer_cannot_invoke_agent_research_or_model_calls(tenant_api, monkeypatch):
     from api.omarai import WebAgent
 
@@ -391,3 +388,130 @@ def test_agent_api_allowlists_and_forwards_the_hosted_smoke_budget_profile(
     assert status == 200
     assert result["answer"] == "test answer"
     assert observed["budget_profile"] == "default"
+
+
+def test_product_profiles_and_discoveries_are_isolated_across_tenants(tenant_api, monkeypatch):
+    """P0 regression: product profiles and discovery runs must never cross tenants."""
+    from api.omarai import WebAgent
+
+    base, store = tenant_api
+    token_a = "profile-tenant-a-token-" + "A" * 24
+    token_b = "profile-tenant-b-token-" + "B" * 24
+    tenant_a = _tenant(store, "Profile Company A", "profiles-a@example.test", token_a)
+    tenant_b = _tenant(store, "Profile Company B", "profiles-b@example.test", token_b)
+
+    status, profile_a = request_json(
+        base,
+        "/api/product-profiles",
+        method="POST",
+        token=token_a,
+        payload={
+            "tenant_id": tenant_b,
+            "product": {
+                "name": "لوحة إنذار حريق A",
+                "aliases": ["FACP-A"],
+                "use_cases": ["حماية مباني"],
+                "problems_solved": [],
+            },
+            "market": {
+                "locations": ["Cairo"],
+                "industries": [],
+                "customer_types": [],
+                "decision_roles": [],
+                "exclusions": [],
+            },
+            "locale": "ar",
+        },
+    )
+    assert status == 201
+    assert profile_a["id"]
+    if profile_a.get("tenant_id"):
+        assert profile_a["tenant_id"] == tenant_a
+
+    status, profile_b = request_json(
+        base,
+        "/api/product-profiles",
+        method="POST",
+        token=token_b,
+        payload={
+            "tenant_id": tenant_a,
+            "product": {
+                "name": "لوحة إنذار حريق B",
+                "aliases": ["FACP-B"],
+                "use_cases": [],
+                "problems_solved": [],
+            },
+            "market": {
+                "locations": ["Riyadh"],
+                "industries": [],
+                "customer_types": [],
+                "decision_roles": [],
+                "exclusions": [],
+            },
+            "locale": "ar",
+        },
+    )
+    assert status == 201
+    assert profile_b["id"]
+    if profile_b.get("tenant_id"):
+        assert profile_b["tenant_id"] == tenant_b
+
+    status, listing_a = request_json(base, "/api/product-profiles", token=token_a)
+    assert status == 200
+    listed_ids_a = [row["id"] for row in listing_a["profiles"]]
+    assert listed_ids_a == [profile_a["id"]]
+    assert profile_b["id"] not in listed_ids_a
+
+    status, listing_b = request_json(base, "/api/product-profiles", token=token_b)
+    assert status == 200
+    listed_ids_b = [row["id"] for row in listing_b["profiles"]]
+    assert listed_ids_b == [profile_b["id"]]
+    assert profile_a["id"] not in listed_ids_b
+
+    def unexpected_answer(*_args, **_kwargs):
+        pytest.fail("cross-tenant discovery must be rejected before agent execution")
+
+    monkeypatch.setattr(WebAgent, "answer", unexpected_answer)
+
+    status, denied = request_json(
+        base,
+        "/api/discoveries",
+        method="POST",
+        token=token_a,
+        payload={"profile_id": profile_b["id"]},
+    )
+    assert status in {403, 404}
+    assert "error" in denied
+
+    def fake_answer(
+        self, question, history=None, mode="auto", *, budget_profile="default", buyer_queries=None
+    ):
+        return {
+            "answer": "no qualified signals",
+            "search_queries": buyer_queries or [],
+            "search_report": {"lead_generation": {"status": "no_candidate_signals"}},
+            "sources": [],
+        }
+
+    monkeypatch.setattr(WebAgent, "answer", fake_answer)
+    status, run_b = request_json(
+        base,
+        "/api/discoveries",
+        method="POST",
+        token=token_b,
+        payload={"profile_id": profile_b["id"]},
+    )
+    assert status == 201
+    if run_b.get("tenant_id"):
+        assert run_b["tenant_id"] == tenant_b
+    assert run_b.get("profile_id") == profile_b["id"] or run_b.get("id")
+
+    status, runs_a = request_json(base, "/api/discoveries", token=token_a)
+    assert status == 200
+    run_ids_a = [row["id"] for row in runs_a["runs"]]
+    assert run_b["id"] not in run_ids_a
+
+    status, foreign = request_json(
+        base, f"/api/discoveries/{run_b['id']}", token=token_a
+    )
+    assert status == 404
