@@ -104,7 +104,6 @@ def test_failed_knowledge_call_does_not_pollute_generation_diagnostics():
 
     def noisy(question, history):
         agent.generation_diagnostics.append({"status": "failed"})
-        return None
 
     agent._answer_without_search = noisy
     agent._attach_knowledge_first("سؤال", [], _web_result())
