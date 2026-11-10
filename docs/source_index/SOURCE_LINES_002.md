@@ -4,7 +4,7 @@
 
 - الصفحة: **002**
 - سجلات الأسطر: **800**
-- النطاق: SRC-138992B1FC-L000245 إلى SRC-7D6FC391EC-L000240
+- النطاق: SRC-138992B1FC-L000239 إلى SRC-7D6FC391EC-L000234
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-138992B1FC-L000239](../../agents/answer_validation.py#L239) | 239 | `"        # numeric claims in the cited content."` | — |
+| [SRC-138992B1FC-L000240](../../agents/answer_validation.py#L240) | 240 | `"        source_text = \" \".join("` | — |
+| [SRC-138992B1FC-L000241](../../agents/answer_validation.py#L241) | 241 | `"            part for part in (title, snippet, fetched_page_text) if part"` | — |
+| [SRC-138992B1FC-L000242](../../agents/answer_validation.py#L242) | 242 | `"        )"` | — |
+| [SRC-138992B1FC-L000243](../../agents/answer_validation.py#L243) | 243 | `"        if source_text.strip():"` | — |
+| [SRC-138992B1FC-L000244](../../agents/answer_validation.py#L244) | 244 | `"            bounded_source_text = source_text[:16000]"` | — |
 | [SRC-138992B1FC-L000245](../../agents/answer_validation.py#L245) | 245 | `"            source_texts.append(bounded_source_text)"` | — |
 | [SRC-138992B1FC-L000246](../../agents/answer_validation.py#L246) | 246 | `"            source_text_by_index[source_index] = bounded_source_text"` | — |
 | [SRC-138992B1FC-L000247](../../agents/answer_validation.py#L247) | 247 | `"            source_number_literals.update(_numeric_literals(bounded_source_text))"` | — |
@@ -828,9 +834,3 @@
 | [SRC-7D6FC391EC-L000232](../../agents/claim_evidence.py#L232) | 232 | `"        readable_cited += bool(raw_indexes) and has_readable"` | — |
 | [SRC-7D6FC391EC-L000233](../../agents/claim_evidence.py#L233) | 233 | `"        alignment = alignment_by_sentence.get(number, {})"` | — |
 | [SRC-7D6FC391EC-L000234](../../agents/claim_evidence.py#L234) | 234 | `"        lexical_status = str(alignment.get(\"status\") or \"not_assessed_no_citation_alignment\")"` | — |
-| [SRC-7D6FC391EC-L000235](../../agents/claim_evidence.py#L235) | 235 | `"        lexical_signals += lexical_status == \"lexical_overlap_signal_found\""` | — |
-| [SRC-7D6FC391EC-L000236](../../agents/claim_evidence.py#L236) | 236 | `"        weak_signals += lexical_status == \"weak_lexical_overlap\""` | — |
-| [SRC-7D6FC391EC-L000237](../../agents/claim_evidence.py#L237) | 237 | `"        if any(ref[\"reference_status\"] == \"index_out_of_citable_range\" for ref in refs):"` | — |
-| [SRC-7D6FC391EC-L000238](../../agents/claim_evidence.py#L238) | 238 | `"            status = \"citation_index_out_of_range\""` | — |
-| [SRC-7D6FC391EC-L000239](../../agents/claim_evidence.py#L239) | 239 | `"        elif any(ref[\"reference_status\"] == \"source_record_unavailable\" for ref in refs):"` | — |
-| [SRC-7D6FC391EC-L000240](../../agents/claim_evidence.py#L240) | 240 | `"            status = \"citation_source_record_unavailable\""` | — |

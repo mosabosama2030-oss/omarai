@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-8D00DCEC0D-L000342 إلى SRC-086D574B4E-L000292
+- النطاق: SRC-8D00DCEC0D-L000336 إلى SRC-086D574B4E-L000286
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-8D00DCEC0D-L000336](../../agents/sales_domain.py#L336) | 336 | `""` | — |
+| [SRC-8D00DCEC0D-L000337](../../agents/sales_domain.py#L337) | 337 | `"    def __post_init__(self) -> None:"` | — |
+| [SRC-8D00DCEC0D-L000338](../../agents/sales_domain.py#L338) | 338 | `"        if not all(isinstance(item, TaxonomyCategory) for item in self.categories):"` | — |
+| [SRC-8D00DCEC0D-L000339](../../agents/sales_domain.py#L339) | 339 | `"            raise TypeError(\"categories must contain TaxonomyCategory instances\")"` | — |
+| [SRC-8D00DCEC0D-L000340](../../agents/sales_domain.py#L340) | 340 | `"        paths = [tuple(normalize_text(part) for part in item.path) for item in self.categories]"` | — |
+| [SRC-8D00DCEC0D-L000341](../../agents/sales_domain.py#L341) | 341 | `"        if len(paths) != len(set(paths)):"` | — |
 | [SRC-8D00DCEC0D-L000342](../../agents/sales_domain.py#L342) | 342 | `"            raise ValueError(\"taxonomy category paths must be unique\")"` | — |
 | [SRC-8D00DCEC0D-L000343](../../agents/sales_domain.py#L343) | 343 | `""` | — |
 | [SRC-8D00DCEC0D-L000344](../../agents/sales_domain.py#L344) | 344 | `"    def match_categories(self, text: str) -> tuple[tuple[str, ...], ...]:"` | — |
@@ -828,9 +834,3 @@
 | [SRC-086D574B4E-L000284](../../agents/semantic_claim_verifier.py#L284) | 284 | `"        return _not_verifiable(\"invalid_response_schema\", ledger)"` | — |
 | [SRC-086D574B4E-L000285](../../agents/semantic_claim_verifier.py#L285) | 285 | `"    rows = parsed.get(\"claims\")"` | — |
 | [SRC-086D574B4E-L000286](../../agents/semantic_claim_verifier.py#L286) | 286 | `"    if not isinstance(rows, list) or len(rows) != len(expected_rows):"` | — |
-| [SRC-086D574B4E-L000287](../../agents/semantic_claim_verifier.py#L287) | 287 | `"        return _not_verifiable(\"claim_rows_missing_or_extra\", ledger)"` | — |
-| [SRC-086D574B4E-L000288](../../agents/semantic_claim_verifier.py#L288) | 288 | `""` | — |
-| [SRC-086D574B4E-L000289](../../agents/semantic_claim_verifier.py#L289) | 289 | `"    seen: set[str] = set()"` | — |
-| [SRC-086D574B4E-L000290](../../agents/semantic_claim_verifier.py#L290) | 290 | `"    assessed: list[dict[str, Any]] = []"` | — |
-| [SRC-086D574B4E-L000291](../../agents/semantic_claim_verifier.py#L291) | 291 | `"    unsupported_ids: list[str] = []"` | — |
-| [SRC-086D574B4E-L000292](../../agents/semantic_claim_verifier.py#L292) | 292 | `"    conflicted_ids: list[str] = []"` | — |

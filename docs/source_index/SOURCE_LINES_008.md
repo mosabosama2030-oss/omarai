@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3AA6165B18-L000060 إلى SRC-8D00DCEC0D-L000341
+- النطاق: SRC-3AA6165B18-L000054 إلى SRC-8D00DCEC0D-L000335
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3AA6165B18-L000054](../../agents/research_guardrails.py#L54) | 54 | `"_PERSONAL_EXPERIENCE_TERMS = ("` | — |
+| [SRC-3AA6165B18-L000055](../../agents/research_guardrails.py#L55) | 55 | `"    \"أنا امتلك\", \"انا امتلك\", \"أنا أملك\", \"انا املك\", \"عندي\", \"معايا\","` | — |
+| [SRC-3AA6165B18-L000056](../../agents/research_guardrails.py#L56) | 56 | `"    \"جربت\", \"استخدمت\", \"اشتريت\", \"امتلكت\", \"تجربتي\", \"عن تجربتي\","` | — |
+| [SRC-3AA6165B18-L000057](../../agents/research_guardrails.py#L57) | 57 | `"    \"بقالى\", \"بقالي\", \"I own\", \"I bought\", \"I have owned\", \"my experience\","` | — |
+| [SRC-3AA6165B18-L000058](../../agents/research_guardrails.py#L58) | 58 | `"    \"I've had\", \"i have had\", \"I use\", \"I drove\", \"in my experience\","` | — |
+| [SRC-3AA6165B18-L000059](../../agents/research_guardrails.py#L59) | 59 | `")"` | — |
 | [SRC-3AA6165B18-L000060](../../agents/research_guardrails.py#L60) | 60 | `"_DISCUSSION_TERMS = ("` | — |
 | [SRC-3AA6165B18-L000061](../../agents/research_guardrails.py#L61) | 61 | `"    \"حد جرب\", \"هل جرب\", \"مين جرب\", \"ما رأيكم\", \"ايه رأيكم\", \"ماذا تظنون\","` | — |
 | [SRC-3AA6165B18-L000062](../../agents/research_guardrails.py#L62) | 62 | `"    \"anyone tried\", \"has anyone\", \"what do you think\", \"looking for opinions\","` | — |
@@ -828,9 +834,3 @@
 | [SRC-8D00DCEC0D-L000333](../../agents/sales_domain.py#L333) | 333 | `"    \"\"\"Extensible taxonomy supplied by configuration or a verified product catalogue.\"\"\""` | — |
 | [SRC-8D00DCEC0D-L000334](../../agents/sales_domain.py#L334) | 334 | `""` | — |
 | [SRC-8D00DCEC0D-L000335](../../agents/sales_domain.py#L335) | 335 | `"    categories: tuple[TaxonomyCategory, ...] = ()"` | — |
-| [SRC-8D00DCEC0D-L000336](../../agents/sales_domain.py#L336) | 336 | `""` | — |
-| [SRC-8D00DCEC0D-L000337](../../agents/sales_domain.py#L337) | 337 | `"    def __post_init__(self) -> None:"` | — |
-| [SRC-8D00DCEC0D-L000338](../../agents/sales_domain.py#L338) | 338 | `"        if not all(isinstance(item, TaxonomyCategory) for item in self.categories):"` | — |
-| [SRC-8D00DCEC0D-L000339](../../agents/sales_domain.py#L339) | 339 | `"            raise TypeError(\"categories must contain TaxonomyCategory instances\")"` | — |
-| [SRC-8D00DCEC0D-L000340](../../agents/sales_domain.py#L340) | 340 | `"        paths = [tuple(normalize_text(part) for part in item.path) for item in self.categories]"` | — |
-| [SRC-8D00DCEC0D-L000341](../../agents/sales_domain.py#L341) | 341 | `"        if len(paths) != len(set(paths)):"` | — |

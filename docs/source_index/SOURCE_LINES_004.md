@@ -4,7 +4,7 @@
 
 - الصفحة: **004**
 - سجلات الأسطر: **800**
-- النطاق: SRC-5587371288-L000425 إلى SRC-C9CF9B54F8-L000643
+- النطاق: SRC-5587371288-L000419 إلى SRC-C9CF9B54F8-L000637
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-5587371288-L000419](../../agents/intent_router.py#L419) | 419 | `""` | — |
+| [SRC-5587371288-L000420](../../agents/intent_router.py#L420) | 420 | `"def _has_inline_summary_text(question: str) -> bool:"` | — |
+| [SRC-5587371288-L000421](../../agents/intent_router.py#L421) | 421 | `"    \"\"\"Detect text explicitly pasted after a summary instruction, not a web page URL.\"\"\""` | — |
+| [SRC-5587371288-L000422](../../agents/intent_router.py#L422) | 422 | `"    if re.search(r\"https?://\", question, flags=re.IGNORECASE):"` | — |
+| [SRC-5587371288-L000423](../../agents/intent_router.py#L423) | 423 | `"        return False"` | — |
+| [SRC-5587371288-L000424](../../agents/intent_router.py#L424) | 424 | `"    normalized = _normalize(question)"` | — |
 | [SRC-5587371288-L000425](../../agents/intent_router.py#L425) | 425 | `"    markers = ("` | — |
 | [SRC-5587371288-L000426](../../agents/intent_router.py#L426) | 426 | `"        \"النص التالي\", \"النص الاتي\", \"النص ده\", \"النص اللي جاي\","` | — |
 | [SRC-5587371288-L000427](../../agents/intent_router.py#L427) | 427 | `"        \"this text\", \"following text\", \"the following text\", \"text below\","` | — |
@@ -819,9 +825,3 @@
 | [SRC-C9CF9B54F8-L000635](../../agents/omarai.py#L635) | 635 | `""` | — |
 | [SRC-C9CF9B54F8-L000636](../../agents/omarai.py#L636) | 636 | `"    def add_membership(self, tenant_id: str, user_id: str, role: str = \"sales_agent\"):"` | — |
 | [SRC-C9CF9B54F8-L000637](../../agents/omarai.py#L637) | 637 | `"        tenant = self._tenant(tenant_id)"` | — |
-| [SRC-C9CF9B54F8-L000638](../../agents/omarai.py#L638) | 638 | `"        if role not in self.ALLOWED_ROLES:"` | — |
-| [SRC-C9CF9B54F8-L000639](../../agents/omarai.py#L639) | 639 | `"            raise ValueError(\"unsupported membership role\")"` | — |
-| [SRC-C9CF9B54F8-L000640](../../agents/omarai.py#L640) | 640 | `"        with self.connect() as db:"` | — |
-| [SRC-C9CF9B54F8-L000641](../../agents/omarai.py#L641) | 641 | `"            exists = db.execute("` | — |
-| [SRC-C9CF9B54F8-L000642](../../agents/omarai.py#L642) | 642 | `"                \"\"\"SELECT 1 FROM tenants t"` | — |
-| [SRC-C9CF9B54F8-L000643](../../agents/omarai.py#L643) | 643 | `"                   JOIN users u ON u.id=?"` | — |

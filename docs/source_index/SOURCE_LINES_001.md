@@ -4,7 +4,7 @@
 
 - الصفحة: **001**
 - سجلات الأسطر: **800**
-- النطاق: SRC-2F754321D6-L000001 إلى SRC-138992B1FC-L000244
+- النطاق: SRC-2F754321D6-L000001 إلى SRC-138992B1FC-L000238
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## إعدادات وتشغيل
@@ -62,23 +62,29 @@
 | [SRC-A3046DA0D1-L000024](../../.env.example#L24) | 24 | `"# BRAVE_SEARCH_API_KEY="` | — |
 | [SRC-A3046DA0D1-L000025](../../.env.example#L25) | 25 | `"# TAVILY_API_KEY="` | — |
 | [SRC-A3046DA0D1-L000026](../../.env.example#L26) | 26 | `""` | — |
-| [SRC-A3046DA0D1-L000027](../../.env.example#L27) | 27 | `""` | — |
-| [SRC-A3046DA0D1-L000028](../../.env.example#L28) | 28 | `"# Optional managed PostgreSQL (for example, Neon). When set, do not set OMARAI_DB_PATH."` | — |
-| [SRC-A3046DA0D1-L000029](../../.env.example#L29) | 29 | `"# Use the pooled connection URI from the provider; keep the real URI in deployment secrets."` | — |
-| [SRC-A3046DA0D1-L000030](../../.env.example#L30) | 30 | `"# OMARAI_DATABASE_URL=postgresql://USER:PASSWORD@HOST-pooler/DB?sslmode=require"` | — |
-| [SRC-A3046DA0D1-L000031](../../.env.example#L31) | 31 | `"# Optional local SQLite location (used only when neither database URL is configured)."` | — |
-| [SRC-A3046DA0D1-L000032](../../.env.example#L32) | 32 | `"# OMARAI_DB_PATH=/absolute/path/to/omarai.sqlite3"` | — |
+| [SRC-A3046DA0D1-L000027](../../.env.example#L27) | 27 | `"# Optional Firecrawl v2 search connector. Search requests may consume Firecrawl credits."` | — |
+| [SRC-A3046DA0D1-L000028](../../.env.example#L28) | 28 | `"# Disabled by default; enable only after reviewing plan/pricing and setting a budget."` | — |
+| [SRC-A3046DA0D1-L000029](../../.env.example#L29) | 29 | `"# FIRECRAWL_API_KEY="` | — |
+| [SRC-A3046DA0D1-L000030](../../.env.example#L30) | 30 | `"# FIRECRAWL_SEARCH_ENABLED=0"` | — |
+| [SRC-A3046DA0D1-L000031](../../.env.example#L31) | 31 | `"# OMARAI_FIRECRAWL_SEARCH_REQUEST_BUDGET=0  # hard-capped to 1 per answer/diagnostics run"` | — |
+| [SRC-A3046DA0D1-L000032](../../.env.example#L32) | 32 | `""` | — |
 | [SRC-A3046DA0D1-L000033](../../.env.example#L33) | 33 | `""` | — |
-| [SRC-A3046DA0D1-L000034](../../.env.example#L34) | 34 | `"# Optional process-local HTTP handler connection ceiling (1–128; default 32)."` | — |
-| [SRC-A3046DA0D1-L000035](../../.env.example#L35) | 35 | `"# Excess accepted connections receive HTTP 503 with Retry-After: 5."` | — |
-| [SRC-A3046DA0D1-L000036](../../.env.example#L36) | 36 | `"# OMARAI_MAX_CONCURRENT_HTTP_CONNECTIONS=32"` | — |
-| [SRC-A3046DA0D1-L000037](../../.env.example#L37) | 37 | `""` | — |
-| [SRC-A3046DA0D1-L000038](../../.env.example#L38) | 38 | `"# Optional experimental search comparison provider; disabled unless configured."` | — |
-| [SRC-A3046DA0D1-L000039](../../.env.example#L39) | 39 | `"# DeepSeek Search/Fetch are paid per successful request (see official pricing/docs)."` | — |
-| [SRC-A3046DA0D1-L000040](../../.env.example#L40) | 40 | `"# Do not enable without approval; keep DuckDuckGo/Bing as fallbacks during evaluation."` | — |
-| [SRC-A3046DA0D1-L000041](../../.env.example#L41) | 41 | `"# DEEPSEEK_SEARCH_API_KEY="` | — |
-| [SRC-A3046DA0D1-L000042](../../.env.example#L42) | 42 | `"# Optional cap per user question/diagnostic operation: integer from 0 to 3 (default 1)."` | — |
-| [SRC-A3046DA0D1-L000043](../../.env.example#L43) | 43 | `"# OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET=1"` | — |
+| [SRC-A3046DA0D1-L000034](../../.env.example#L34) | 34 | `"# Optional managed PostgreSQL (for example, Neon). When set, do not set OMARAI_DB_PATH."` | — |
+| [SRC-A3046DA0D1-L000035](../../.env.example#L35) | 35 | `"# Use the pooled connection URI from the provider; keep the real URI in deployment secrets."` | — |
+| [SRC-A3046DA0D1-L000036](../../.env.example#L36) | 36 | `"# OMARAI_DATABASE_URL=postgresql://USER:PASSWORD@HOST-pooler/DB?sslmode=require"` | — |
+| [SRC-A3046DA0D1-L000037](../../.env.example#L37) | 37 | `"# Optional local SQLite location (used only when neither database URL is configured)."` | — |
+| [SRC-A3046DA0D1-L000038](../../.env.example#L38) | 38 | `"# OMARAI_DB_PATH=/absolute/path/to/omarai.sqlite3"` | — |
+| [SRC-A3046DA0D1-L000039](../../.env.example#L39) | 39 | `""` | — |
+| [SRC-A3046DA0D1-L000040](../../.env.example#L40) | 40 | `"# Optional process-local HTTP handler connection ceiling (1–128; default 32)."` | — |
+| [SRC-A3046DA0D1-L000041](../../.env.example#L41) | 41 | `"# Excess accepted connections receive HTTP 503 with Retry-After: 5."` | — |
+| [SRC-A3046DA0D1-L000042](../../.env.example#L42) | 42 | `"# OMARAI_MAX_CONCURRENT_HTTP_CONNECTIONS=32"` | — |
+| [SRC-A3046DA0D1-L000043](../../.env.example#L43) | 43 | `""` | — |
+| [SRC-A3046DA0D1-L000044](../../.env.example#L44) | 44 | `"# Optional experimental search comparison provider; disabled unless configured."` | — |
+| [SRC-A3046DA0D1-L000045](../../.env.example#L45) | 45 | `"# DeepSeek Search/Fetch are paid per successful request (see official pricing/docs)."` | — |
+| [SRC-A3046DA0D1-L000046](../../.env.example#L46) | 46 | `"# Do not enable without approval; keep DuckDuckGo/Bing as fallbacks during evaluation."` | — |
+| [SRC-A3046DA0D1-L000047](../../.env.example#L47) | 47 | `"# DEEPSEEK_SEARCH_API_KEY="` | — |
+| [SRC-A3046DA0D1-L000048](../../.env.example#L48) | 48 | `"# Optional cap per user question/diagnostic operation: integer from 0 to 3 (default 1)."` | — |
+| [SRC-A3046DA0D1-L000049](../../.env.example#L49) | 49 | `"# OMARAI_DEEPSEEK_SEARCH_REQUEST_BUDGET=1"` | — |
 ## وثائق ونصوص
 
 ### FILE-18813C8694 — [.github/PULL_REQUEST_TEMPLATE.md](../../.github/PULL_REQUEST_TEMPLATE.md#L1)
@@ -891,9 +897,3 @@
 | [SRC-138992B1FC-L000236](../../agents/answer_validation.py#L236) | 236 | `"        # A page_text field is not evidence of a successful read unless the"` | — |
 | [SRC-138992B1FC-L000237](../../agents/answer_validation.py#L237) | 237 | `"        # fetch boundary explicitly confirms page_fetched."` | — |
 | [SRC-138992B1FC-L000238](../../agents/answer_validation.py#L238) | 238 | `"        # Publication timestamps are source metadata, not evidence for unrelated"` | — |
-| [SRC-138992B1FC-L000239](../../agents/answer_validation.py#L239) | 239 | `"        # numeric claims in the cited content."` | — |
-| [SRC-138992B1FC-L000240](../../agents/answer_validation.py#L240) | 240 | `"        source_text = \" \".join("` | — |
-| [SRC-138992B1FC-L000241](../../agents/answer_validation.py#L241) | 241 | `"            part for part in (title, snippet, fetched_page_text) if part"` | — |
-| [SRC-138992B1FC-L000242](../../agents/answer_validation.py#L242) | 242 | `"        )"` | — |
-| [SRC-138992B1FC-L000243](../../agents/answer_validation.py#L243) | 243 | `"        if source_text.strip():"` | — |
-| [SRC-138992B1FC-L000244](../../agents/answer_validation.py#L244) | 244 | `"            bounded_source_text = source_text[:16000]"` | — |

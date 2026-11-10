@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-086D574B4E-L000293 إلى SRC-686F71AA50-L000702
+- النطاق: SRC-086D574B4E-L000287 إلى SRC-686F71AA50-L000696
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-086D574B4E-L000287](../../agents/semantic_claim_verifier.py#L287) | 287 | `"        return _not_verifiable(\"claim_rows_missing_or_extra\", ledger)"` | — |
+| [SRC-086D574B4E-L000288](../../agents/semantic_claim_verifier.py#L288) | 288 | `""` | — |
+| [SRC-086D574B4E-L000289](../../agents/semantic_claim_verifier.py#L289) | 289 | `"    seen: set[str] = set()"` | — |
+| [SRC-086D574B4E-L000290](../../agents/semantic_claim_verifier.py#L290) | 290 | `"    assessed: list[dict[str, Any]] = []"` | — |
+| [SRC-086D574B4E-L000291](../../agents/semantic_claim_verifier.py#L291) | 291 | `"    unsupported_ids: list[str] = []"` | — |
+| [SRC-086D574B4E-L000292](../../agents/semantic_claim_verifier.py#L292) | 292 | `"    conflicted_ids: list[str] = []"` | — |
 | [SRC-086D574B4E-L000293](../../agents/semantic_claim_verifier.py#L293) | 293 | `"    factual_supported_count = 0"` | — |
 | [SRC-086D574B4E-L000294](../../agents/semantic_claim_verifier.py#L294) | 294 | `"    non_factual_count = 0"` | — |
 | [SRC-086D574B4E-L000295](../../agents/semantic_claim_verifier.py#L295) | 295 | `"    allowed_sources = set(range(1, len(source_rows) + 1))"` | — |
@@ -819,9 +825,3 @@
 | [SRC-686F71AA50-L000694](../../agents/task_understanding.py#L694) | 694 | `"            \"distinguish_official_destination_from_mentions_or_articles\","` | — |
 | [SRC-686F71AA50-L000695](../../agents/task_understanding.py#L695) | 695 | `"            \"do_not_claim_domain_ownership_without_independent_evidence\","` | — |
 | [SRC-686F71AA50-L000696](../../agents/task_understanding.py#L696) | 696 | `"        ])"` | — |
-| [SRC-686F71AA50-L000697](../../agents/task_understanding.py#L697) | 697 | `"        query_strategies.extend([\"official_domain\", \"government_portal_cross_check\"])"` | — |
-| [SRC-686F71AA50-L000698](../../agents/task_understanding.py#L698) | 698 | `"    if \"compare\" in matches and family != \"compare\":"` | — |
-| [SRC-686F71AA50-L000699](../../agents/task_understanding.py#L699) | 699 | `"        evidence_requirements.extend(["` | — |
-| [SRC-686F71AA50-L000700](../../agents/task_understanding.py#L700) | 700 | `"            \"preserve_explicit_comparison_criteria\","` | — |
-| [SRC-686F71AA50-L000701](../../agents/task_understanding.py#L701) | 701 | `"            \"do_not_collapse_multiple_dimensions_into_one_generic_answer\","` | — |
-| [SRC-686F71AA50-L000702](../../agents/task_understanding.py#L702) | 702 | `"        ])"` | — |

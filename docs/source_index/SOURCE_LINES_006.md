@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-FDEEAFDFCA-L000074 إلى SRC-59CF4B7DE8-L000561
+- النطاق: SRC-FDEEAFDFCA-L000068 إلى SRC-59CF4B7DE8-L000555
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-FDEEAFDFCA-L000068](../../agents/request_budget.py#L68) | 68 | `"            key: max(0, min(int(value), RESOURCE_LIMITS[key][1]))"` | — |
+| [SRC-FDEEAFDFCA-L000069](../../agents/request_budget.py#L69) | 69 | `"            for key, (default, _maximum) in RESOURCE_LIMITS.items()"` | — |
+| [SRC-FDEEAFDFCA-L000070](../../agents/request_budget.py#L70) | 70 | `"            for value in [limits[key] if limits and key in limits else default]"` | — |
+| [SRC-FDEEAFDFCA-L000071](../../agents/request_budget.py#L71) | 71 | `"        }"` | — |
+| [SRC-FDEEAFDFCA-L000072](../../agents/request_budget.py#L72) | 72 | `"        self._counts = {key: 0 for key in self._limits}"` | — |
+| [SRC-FDEEAFDFCA-L000073](../../agents/request_budget.py#L73) | 73 | `"        self._exhausted_reasons: set[str] = set()"` | — |
 | [SRC-FDEEAFDFCA-L000074](../../agents/request_budget.py#L74) | 74 | `"        self._lock = threading.Lock()"` | — |
 | [SRC-FDEEAFDFCA-L000075](../../agents/request_budget.py#L75) | 75 | `""` | — |
 | [SRC-FDEEAFDFCA-L000076](../../agents/request_budget.py#L76) | 76 | `"    @classmethod"` | — |
@@ -828,9 +834,3 @@
 | [SRC-59CF4B7DE8-L000553](../../agents/research.py#L553) | 553 | `"        if host == domain or host.endswith(\".\" + domain):"` | — |
 | [SRC-59CF4B7DE8-L000554](../../agents/research.py#L554) | 554 | `"            platform = label"` | — |
 | [SRC-59CF4B7DE8-L000555](../../agents/research.py#L555) | 555 | `"            break"` | — |
-| [SRC-59CF4B7DE8-L000556](../../agents/research.py#L556) | 556 | `"    trust = \"general\""` | — |
-| [SRC-59CF4B7DE8-L000557](../../agents/research.py#L557) | 557 | `"    if host.endswith((\".gov\", \".gov.eg\", \".gov.uk\")):"` | — |
-| [SRC-59CF4B7DE8-L000558](../../agents/research.py#L558) | 558 | `"        trust = \"government\""` | — |
-| [SRC-59CF4B7DE8-L000559](../../agents/research.py#L559) | 559 | `"    elif host.endswith((\".edu\", \".ac.uk\", \".edu.eg\")):"` | — |
-| [SRC-59CF4B7DE8-L000560](../../agents/research.py#L560) | 560 | `"        trust = \"academic\""` | — |
-| [SRC-59CF4B7DE8-L000561](../../agents/research.py#L561) | 561 | `"    elif host == \"news.google.com\" or any("` | — |

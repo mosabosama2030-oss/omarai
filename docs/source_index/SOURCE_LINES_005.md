@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-C9CF9B54F8-L000644 إلى SRC-FDEEAFDFCA-L000073
+- النطاق: SRC-C9CF9B54F8-L000638 إلى SRC-FDEEAFDFCA-L000067
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-C9CF9B54F8-L000638](../../agents/omarai.py#L638) | 638 | `"        if role not in self.ALLOWED_ROLES:"` | — |
+| [SRC-C9CF9B54F8-L000639](../../agents/omarai.py#L639) | 639 | `"            raise ValueError(\"unsupported membership role\")"` | — |
+| [SRC-C9CF9B54F8-L000640](../../agents/omarai.py#L640) | 640 | `"        with self.connect() as db:"` | — |
+| [SRC-C9CF9B54F8-L000641](../../agents/omarai.py#L641) | 641 | `"            exists = db.execute("` | — |
+| [SRC-C9CF9B54F8-L000642](../../agents/omarai.py#L642) | 642 | `"                \"\"\"SELECT 1 FROM tenants t"` | — |
+| [SRC-C9CF9B54F8-L000643](../../agents/omarai.py#L643) | 643 | `"                   JOIN users u ON u.id=?"` | — |
 | [SRC-C9CF9B54F8-L000644](../../agents/omarai.py#L644) | 644 | `"                   WHERE t.id=? AND t.active=1 AND u.active=1\"\"\","` | — |
 | [SRC-C9CF9B54F8-L000645](../../agents/omarai.py#L645) | 645 | `"                (user_id, tenant),"` | — |
 | [SRC-C9CF9B54F8-L000646](../../agents/omarai.py#L646) | 646 | `"            ).fetchone()"` | — |
@@ -819,9 +825,3 @@
 | [SRC-FDEEAFDFCA-L000065](../../agents/request_budget.py#L65) | 65 | `"        self.started_at = clock()"` | — |
 | [SRC-FDEEAFDFCA-L000066](../../agents/request_budget.py#L66) | 66 | `"        self.deadline = self.started_at + bounded_timeout"` | — |
 | [SRC-FDEEAFDFCA-L000067](../../agents/request_budget.py#L67) | 67 | `"        self._limits = {"` | — |
-| [SRC-FDEEAFDFCA-L000068](../../agents/request_budget.py#L68) | 68 | `"            key: max(0, min(int(value), RESOURCE_LIMITS[key][1]))"` | — |
-| [SRC-FDEEAFDFCA-L000069](../../agents/request_budget.py#L69) | 69 | `"            for key, (default, _maximum) in RESOURCE_LIMITS.items()"` | — |
-| [SRC-FDEEAFDFCA-L000070](../../agents/request_budget.py#L70) | 70 | `"            for value in [limits[key] if limits and key in limits else default]"` | — |
-| [SRC-FDEEAFDFCA-L000071](../../agents/request_budget.py#L71) | 71 | `"        }"` | — |
-| [SRC-FDEEAFDFCA-L000072](../../agents/request_budget.py#L72) | 72 | `"        self._counts = {key: 0 for key in self._limits}"` | — |
-| [SRC-FDEEAFDFCA-L000073](../../agents/request_budget.py#L73) | 73 | `"        self._exhausted_reasons: set[str] = set()"` | — |

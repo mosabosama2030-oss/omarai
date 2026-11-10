@@ -4,7 +4,7 @@
 
 - الصفحة: **003**
 - سجلات الأسطر: **800**
-- النطاق: SRC-7D6FC391EC-L000241 إلى SRC-5587371288-L000424
+- النطاق: SRC-7D6FC391EC-L000235 إلى SRC-5587371288-L000418
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,12 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-7D6FC391EC-L000235](../../agents/claim_evidence.py#L235) | 235 | `"        lexical_signals += lexical_status == \"lexical_overlap_signal_found\""` | — |
+| [SRC-7D6FC391EC-L000236](../../agents/claim_evidence.py#L236) | 236 | `"        weak_signals += lexical_status == \"weak_lexical_overlap\""` | — |
+| [SRC-7D6FC391EC-L000237](../../agents/claim_evidence.py#L237) | 237 | `"        if any(ref[\"reference_status\"] == \"index_out_of_citable_range\" for ref in refs):"` | — |
+| [SRC-7D6FC391EC-L000238](../../agents/claim_evidence.py#L238) | 238 | `"            status = \"citation_index_out_of_range\""` | — |
+| [SRC-7D6FC391EC-L000239](../../agents/claim_evidence.py#L239) | 239 | `"        elif any(ref[\"reference_status\"] == \"source_record_unavailable\" for ref in refs):"` | — |
+| [SRC-7D6FC391EC-L000240](../../agents/claim_evidence.py#L240) | 240 | `"            status = \"citation_source_record_unavailable\""` | — |
 | [SRC-7D6FC391EC-L000241](../../agents/claim_evidence.py#L241) | 241 | `"        elif invalid_source_index:"` | — |
 | [SRC-7D6FC391EC-L000242](../../agents/claim_evidence.py#L242) | 242 | `"            status = \"citation_index_invalid_or_too_large\""` | — |
 | [SRC-7D6FC391EC-L000243](../../agents/claim_evidence.py#L243) | 243 | `"        elif citation_references_truncated:"` | — |
@@ -828,9 +834,3 @@
 | [SRC-5587371288-L000416](../../agents/intent_router.py#L416) | 416 | `"        )"` | — |
 | [SRC-5587371288-L000417](../../agents/intent_router.py#L417) | 417 | `"    )"` | — |
 | [SRC-5587371288-L000418](../../agents/intent_router.py#L418) | 418 | `""` | — |
-| [SRC-5587371288-L000419](../../agents/intent_router.py#L419) | 419 | `""` | — |
-| [SRC-5587371288-L000420](../../agents/intent_router.py#L420) | 420 | `"def _has_inline_summary_text(question: str) -> bool:"` | — |
-| [SRC-5587371288-L000421](../../agents/intent_router.py#L421) | 421 | `"    \"\"\"Detect text explicitly pasted after a summary instruction, not a web page URL.\"\"\""` | — |
-| [SRC-5587371288-L000422](../../agents/intent_router.py#L422) | 422 | `"    if re.search(r\"https?://\", question, flags=re.IGNORECASE):"` | — |
-| [SRC-5587371288-L000423](../../agents/intent_router.py#L423) | 423 | `"        return False"` | — |
-| [SRC-5587371288-L000424](../../agents/intent_router.py#L424) | 424 | `"    normalized = _normalize(question)"` | — |
