@@ -1538,3 +1538,25 @@ def test_health_reports_storage_backend_without_exposing_database_credentials(mo
     assert payload["storage"]["database_url_configured"] is True
     assert payload["storage"]["durability_status"] == "external_database_configured"
     assert "health-password" not in json.dumps(payload)
+
+
+def test_client_safe_error_hides_internal_details_but_keeps_validation_messages():
+    import json
+
+    from api.omarai import _client_safe_error
+
+    assert _client_safe_error(ValueError("limit must be between 1 and 100")) == (
+        "limit must be between 1 and 100"
+    )
+    assert _client_safe_error(ValueError("bad value in /app/agents/omarai.py line 9")) == (
+        "invalid request"
+    )
+    assert _client_safe_error(TypeError("sqlite3.OperationalError: no such table")) == (
+        "invalid request"
+    )
+    assert _client_safe_error(ValueError("x" * 400)) == "invalid request"
+    assert _client_safe_error(ValueError("line1\nline2")) == "invalid request"
+    try:
+        json.loads("{bad")
+    except json.JSONDecodeError as exc:
+        assert _client_safe_error(exc) == "request body is not valid JSON"

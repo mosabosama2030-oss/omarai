@@ -1100,7 +1100,7 @@ class Handler(BaseHTTPRequestHandler):
                 return self.respond(200, {"lead": lead}) if lead else self.respond(404, {"error": "lead not found"})
             return self.respond(404, {"error": "not found"})
         except (ValueError, TypeError, json.JSONDecodeError) as exc:
-            return self.respond(400, {"error": str(exc)})
+            return self.respond(400, {"error": _client_safe_error(exc)})
         except Exception:  # noqa: BLE001 — keep unexpected details out of API responses
             return self.respond(500, {"error": "internal server error"})
 
@@ -1119,6 +1119,27 @@ class Handler(BaseHTTPRequestHandler):
 
     def log_message(self, *args):
         pass
+
+
+_UNSAFE_ERROR_MARKERS = ("traceback", "file \"", "/home/", "/app/", "/usr/", "\\", "sqlite", "psycopg", "0x")
+
+
+def _client_safe_error(exc: BaseException) -> str:
+    """Return a validation message that is safe to show to API clients.
+
+    Intentional validation errors are short and plain. Anything that looks like an
+    internal detail (paths, tracebacks, driver names, very long text) is replaced
+    by a generic message so unexpected ValueError/TypeError cannot leak internals.
+    """
+    if isinstance(exc, json.JSONDecodeError):
+        return "request body is not valid JSON"
+    message = str(exc).strip()
+    lowered = message.lower()
+    if not message or len(message) > 300 or "\n" in message:
+        return "invalid request"
+    if any(marker in lowered for marker in _UNSAFE_ERROR_MARKERS):
+        return "invalid request"
+    return message
 
 
 def answer_question(question, store, *, tenant_id=None):
