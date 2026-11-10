@@ -8,6 +8,8 @@ import urllib.error
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
+
+from agents.safe_xml import fromstring as safe_xml_fromstring
 from collections.abc import Callable
 from typing import Any
 
@@ -111,7 +113,7 @@ def search_arxiv(query: str, limit: int = MAX_CONNECTOR_RESULTS) -> list[dict[st
         "max_results": bounded_limit,
     })
     xml_text = _http_get_text(f"https://export.arxiv.org/api/query?{params}")
-    root = ET.fromstring(xml_text)
+    root = safe_xml_fromstring(xml_text)
     rows: list[dict[str, Any]] = []
     for entry in (node for node in root.iter() if node.tag.rsplit("}", 1)[-1] == "entry"):
         if len(rows) >= bounded_limit:

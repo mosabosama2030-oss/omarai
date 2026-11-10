@@ -24,6 +24,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Any
 
 from agents.intent_router import resolve_followup_query, route_intent
+from agents.safe_xml import fromstring as safe_xml_fromstring
 from agents.sales_domain import ProductProfile, build_buyer_queries
 from agents.dialogue_state import (
     fallback_dialogue_context,
@@ -1750,8 +1751,6 @@ class WebAgent:
             raise RuntimeError("anti-bot challenge returned no result cards")
         return rows
 
-    def _search_bing_rss(self, query: str) -> list[dict[str, Any]]:
-        import xml.etree.ElementTree as ET
 
         response = _bounded_http_request("GET", 
             "https://www.bing.com/search",
@@ -1770,7 +1769,7 @@ class WebAgent:
         )
         if response.status_code != 200:
             raise RuntimeError(f"HTTP {response.status_code}")
-        root = ET.fromstring(response.content)
+        root = safe_xml_fromstring(response.content)
         rows: list[dict[str, Any]] = []
         for item in root.iter():
             if item.tag.rsplit("}", 1)[-1] != "item":
@@ -2187,7 +2186,7 @@ class WebAgent:
         if response.status_code != 200:
             raise RuntimeError(f"HTTP {response.status_code}")
         try:
-            root = ET.fromstring(response.content)
+            root = safe_xml_fromstring(response.content)
         except ET.ParseError as exc:
             raise RuntimeError("invalid RSS XML") from exc
         results: list[dict[str, Any]] = []
@@ -2363,7 +2362,7 @@ class WebAgent:
                     follow_redirects=False,
                 )
                 if response.status_code == 200:
-                    root = ET.fromstring(response.content)
+                    root = safe_xml_fromstring(response.content)
                     for item in root.iter():
                         if item.tag.rsplit("}", 1)[-1] != "item":
                             continue
