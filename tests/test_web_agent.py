@@ -4509,7 +4509,11 @@ def test_search_web_preserves_same_url_discovered_by_distinct_providers(monkeypa
     monkeypatch.setattr(
         agent,
         "_search_bing_rss",
-        lambda _query: [dict(candidate)],
+        lambda _query: [{
+            **candidate,
+            "provider": "forged_provider",
+            "search_query": "forged search query",
+        }],
     )
     monkeypatch.setattr(agent, "_search_news", lambda _query: [])
 
@@ -4520,6 +4524,7 @@ def test_search_web_preserves_same_url_discovered_by_distinct_providers(monkeypa
         "duckduckgo_html",
         "bing_rss",
     }
+    assert all(item["search_query"] == query for item in results)
     assert len({
         agent._normalized_source_url_key(item["url"])
         for item in results
