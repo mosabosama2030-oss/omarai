@@ -1751,7 +1751,7 @@ class WebAgent:
             raise RuntimeError("anti-bot challenge returned no result cards")
         return rows
 
-
+    def _search_bing_rss(self, query: str) -> list[dict[str, Any]]:
         response = _bounded_http_request("GET", 
             "https://www.bing.com/search",
             params={"format": "rss", "q": query},
