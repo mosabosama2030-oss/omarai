@@ -4489,3 +4489,38 @@ def test_answer_is_withheld_when_semantic_claim_support_is_not_established(monke
     assert "المقتطفات أدناه مواد مصدرية" in result["answer"]
     assert result["search_report"]["pipeline_completion_status"] == "partial"
     assert result["citation_validation"]["valid_citation_count"] == 0
+
+
+
+def test_search_web_preserves_same_url_discovered_by_distinct_providers(monkeypatch):
+    agent = WebAgent()
+    agent.allow_optional_providers = False
+    query = "Central Bank of Egypt official website"
+    candidate = {
+        "title": "Central Bank of Egypt official website",
+        "url": "https://example.com/cbe",
+        "snippet": "Official Central Bank of Egypt website and monetary policy decisions.",
+    }
+    monkeypatch.setattr(
+        agent,
+        "_search_duckduckgo_html",
+        lambda _query: [dict(candidate), dict(candidate)],
+    )
+    monkeypatch.setattr(
+        agent,
+        "_search_bing_rss",
+        lambda _query: [dict(candidate)],
+    )
+    monkeypatch.setattr(agent, "_search_news", lambda _query: [])
+
+    results = agent._search_web(query)
+
+    assert len(results) == 2
+    assert {item["provider"] for item in results} == {
+        "duckduckgo_html",
+        "bing_rss",
+    }
+    assert len({
+        agent._normalized_source_url_key(item["url"])
+        for item in results
+    }) == 1
