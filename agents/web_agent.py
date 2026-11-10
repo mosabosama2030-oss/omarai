@@ -766,6 +766,7 @@ class WebAgent:
         self._provider_diagnostics_lock = threading.Lock()
         self._deepseek_budget_lock = threading.Lock()
         self._deepseek_search_requests_reserved = 0
+        self._firecrawl_search_requests_reserved = 0
         self.openrouter_web_search_enabled = (
             os.getenv("OMARAI_OPENROUTER_WEB_SEARCH", "").strip() == "1"
             and (urllib.parse.urlsplit(self.base_url).hostname or "").lower().rstrip(".")
@@ -922,12 +923,21 @@ class WebAgent:
                 "OpenRouter server-side live web search when OMARAI_OPENROUTER_WEB_SEARCH=1",
                 "Brave Search API when BRAVE_SEARCH_API_KEY is configured",
                 "Tavily Search API when TAVILY_API_KEY is configured",
+                "Firecrawl Search API when explicitly enabled with a one-request budget",
             ],
             "brave_search_api_configured": bool(os.getenv("BRAVE_SEARCH_API_KEY", "").strip()),
             "deepseek_search_api_configured": bool(
                 os.getenv("DEEPSEEK_SEARCH_API_KEY", "").strip()
             ),
             "tavily_search_api_configured": bool(os.getenv("TAVILY_API_KEY", "").strip()),
+            "firecrawl_search_api_configured": bool(os.getenv("FIRECRAWL_API_KEY", "").strip()),
+            "firecrawl_search_enabled": os.getenv("FIRECRAWL_SEARCH_ENABLED", "").strip() == "1",
+            "firecrawl_search_request_budget": max(0, min(
+                int(os.getenv("OMARAI_FIRECRAWL_SEARCH_REQUEST_BUDGET", "0").strip())
+                if os.getenv("OMARAI_FIRECRAWL_SEARCH_REQUEST_BUDGET", "0").strip().lstrip("+-").isdigit()
+                else 0,
+                1,
+            )),
             "openrouter_web_search_enabled": (
                 os.getenv("OMARAI_OPENROUTER_WEB_SEARCH", "").strip() == "1"
                 and (urllib.parse.urlsplit(primary_base_url).hostname or "").lower().rstrip(".")
@@ -1553,6 +1563,29 @@ class WebAgent:
                 else "not_configured",
             },
             {
+                "name": "firecrawl_search_api",
+                "implemented": True,
+                "configuration_status": (
+                    "disabled" if not status.get("firecrawl_search_enabled")
+                    else "not_configured" if not status.get("firecrawl_search_api_configured")
+                    else "budget_exhausted" if status.get("firecrawl_search_request_budget", 0) <= 0
+                    else "configured"
+                ),
+                "runtime_status": (
+                    not_tested
+                    if (
+                        status.get("firecrawl_search_enabled")
+                        and status.get("firecrawl_search_api_configured")
+                        and status.get("firecrawl_search_request_budget", 0) > 0
+                    )
+                    else (
+                        "disabled" if not status.get("firecrawl_search_enabled")
+                        else "not_configured" if not status.get("firecrawl_search_api_configured")
+                        else "budget_exhausted"
+                    )
+                ),
+            },
+            {
                 "name": "openrouter_web_search",
                 "implemented": True,
                 "configuration_status": (
@@ -1854,6 +1887,27 @@ class WebAgent:
         """Reset the bounded optional Search API request budget for one operation."""
         with self._deepseek_budget_lock:
             self._deepseek_search_requests_reserved = 0
+            self._firecrawl_search_requests_reserved = 0
+
+    def _reserve_firecrawl_search_request(self) -> bool:
+        """Reserve at most one explicitly budgeted Firecrawl request per operation."""
+        if (
+            os.getenv("FIRECRAWL_SEARCH_ENABLED", "").strip() != "1"
+            or not os.getenv("FIRECRAWL_API_KEY", "").strip()
+        ):
+            return False
+        try:
+            configured_budget = int(
+                os.getenv("OMARAI_FIRECRAWL_SEARCH_REQUEST_BUDGET", "0").strip()
+            )
+        except ValueError:
+            configured_budget = 0
+        budget = max(0, min(configured_budget, 1))
+        with self._deepseek_budget_lock:
+            if self._firecrawl_search_requests_reserved >= budget:
+                return False
+            self._firecrawl_search_requests_reserved += 1
+            return True
 
     def _reserve_deepseek_search_request(self) -> bool:
         """Reserve one paid search request before concurrent queries invoke the provider."""
@@ -1888,7 +1942,10 @@ class WebAgent:
             ("bing_rss", self._search_bing_rss),
         ]
         if not getattr(self, "allow_optional_providers", True):
-            for provider in ("deepseek_search_api", "brave_search_api", "tavily_search_api"):
+            for provider in (
+                "deepseek_search_api", "brave_search_api", "tavily_search_api",
+                "firecrawl_search_api",
+            ):
                 self._record_provider_diagnostic(
                     provider, search_query, "disabled_by_request",
                     error="optional provider use was not approved for this discovery run",
@@ -1920,6 +1977,33 @@ class WebAgent:
                 self._record_provider_diagnostic(
                     "tavily_search_api", search_query, "not_configured",
                     error="TAVILY_API_KEY is not set",
+                )
+            # Firecrawl can consume paid credits. It is disabled by default and
+            # remains subject to the per-request optional-provider policy above.
+            firecrawl_key = os.getenv("FIRECRAWL_API_KEY", "").strip()
+            if os.getenv("FIRECRAWL_SEARCH_ENABLED", "").strip() != "1":
+                self._record_provider_diagnostic(
+                    "firecrawl_search_api", search_query, "disabled",
+                    error="Firecrawl search is disabled by configuration",
+                )
+            elif not firecrawl_key:
+                self._record_provider_diagnostic(
+                    "firecrawl_search_api", search_query, "not_configured",
+                    error="FIRECRAWL_API_KEY is not set",
+                )
+            elif self._firecrawl_search_country(search_query) is None:
+                # Firecrawl Search defaults to US when country is omitted. Never
+                # invoke it for unspecified geography or silently bias results to US.
+                self._record_provider_diagnostic(
+                    "firecrawl_search_api", search_query, "not_attempted",
+                    error="Firecrawl requires explicit geography/country scope; API defaults to US",
+                )
+            elif self._reserve_firecrawl_search_request():
+                adapters.append(("firecrawl_search_api", self._search_firecrawl))
+            else:
+                self._record_provider_diagnostic(
+                    "firecrawl_search_api", search_query, "budget_exhausted",
+                    error="Firecrawl request budget is zero, invalid, or already used",
                 )
         if (
             detect_freshness(search_query)
@@ -2163,6 +2247,86 @@ class WebAgent:
                 "provider_rank": len(rows) + 1,
                 "search_query": query,
                 "published_at": _clean_text(item.get("published_date", ""), 100),
+            })
+            if len(rows) >= MAX_PROVIDER_RESULTS:
+                break
+        return rows
+
+    @staticmethod
+    def _firecrawl_search_country(query: str) -> str | None:
+        """Return a country code only when the query explicitly names geography."""
+        normalized = _normalize_search_query(query).casefold()
+        rules = (
+            ("SA", r"(?<!\w)(?:saudi arabia|ksa|riyadh|jeddah)(?!\w)|السعودي(?:ة|ه)"),
+            ("AE", r"(?<!\w)(?:uae|united arab emirates|dubai|abu dhabi)(?!\w)|الامارات"),
+            ("UK", r"(?<!\w)(?:united kingdom|great britain|uk|london)(?!\w)|المملكه المتحده|بريطانيا"),
+            ("EG", r"(?<!\w)(?:egypt|egyptian|cairo|alexandria|giza)(?!\w)|مصر|القاهره|الاسكندريه|الجيزه"),
+            ("US", r"(?<!\w)(?:united states|usa|u\.s\.a\.|america|new york|los angeles)(?!\w)|الولايات المتحده|امريكا"),
+        )
+        for country, pattern in rules:
+            if re.search(pattern, normalized, flags=re.IGNORECASE):
+                return country
+        # Language is not geography. Leave country unset when the user did not name one.
+
+    def _search_firecrawl(self, query: str) -> list[dict[str, Any]]:
+        """Use Firecrawl v2 web search; caller enforces explicit enablement and budget."""
+        api_key = os.getenv("FIRECRAWL_API_KEY", "").strip()
+        if (
+            os.getenv("FIRECRAWL_SEARCH_ENABLED", "").strip() != "1"
+            or not api_key
+        ):
+            return []
+        request_payload: dict[str, Any] = {
+            "query": query[:500],
+            "sources": ["web"],
+            "limit": MAX_PROVIDER_RESULTS,
+        }
+        country = self._firecrawl_search_country(query)
+        # Omission is not neutral: Firecrawl's API defaults the country to US.
+        # Guard direct calls as well as the adapter-registration path.
+        if country is None:
+            return []
+        request_payload["country"] = country
+        response = _bounded_http_request(
+            "POST",
+            "https://api.firecrawl.dev/v2/search",
+            json=request_payload,
+            headers={
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + api_key,
+                "User-Agent": "OmaraiResearchAgent/1.0",
+            },
+            timeout=self._effective_timeout(8.5),
+            follow_redirects=False,
+        )
+        response.raise_for_status()
+        payload = response.json()
+        if not isinstance(payload, dict) or payload.get("success") is False:
+            raise RuntimeError("Firecrawl search returned an unsuccessful response")
+        data = payload.get("data", {})
+        web_results = data.get("web", []) if isinstance(data, dict) else data
+        rows: list[dict[str, Any]] = []
+        for item in web_results if isinstance(web_results, list) else []:
+            if not isinstance(item, dict):
+                continue
+            url = _public_http_url(item.get("url", ""))
+            title = _clean_text(item.get("title", ""), 300)
+            description = _clean_text(
+                item.get("description", "") or item.get("snippet", ""), 1600
+            )
+            if not url or not title or not description:
+                continue
+            rows.append({
+                "title": title,
+                "url": url,
+                "snippet": description,
+                "provider": "firecrawl_search_api",
+                "provider_rank": len(rows) + 1,
+                "search_query": query,
+                "published_at": _clean_text(
+                    item.get("publishedAt", "") or item.get("published_at", ""), 100
+                ),
             })
             if len(rows) >= MAX_PROVIDER_RESULTS:
                 break
