@@ -4,7 +4,7 @@
 
 - الصفحة: **065**
 - سجلات الأسطر: **800**
-- النطاق: SRC-E3EEC2014A-L000121 إلى SRC-A16FA6D4B5-L000053
+- النطاق: SRC-E3EEC2014A-L000108 إلى SRC-A16FA6D4B5-L000040
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-E3EEC2014A-L000108](../../tests/test_workspace_discovery.py#L108) | 108 | `"    tenant = store.create_tenant(\"Workspace\", \"workspace\")"` | — |
+| [SRC-E3EEC2014A-L000109](../../tests/test_workspace_discovery.py#L109) | 109 | `"    profile = store.save_product_profile(product_profile(), tenant_id=tenant)"` | — |
+| [SRC-E3EEC2014A-L000110](../../tests/test_workspace_discovery.py#L110) | 110 | `"    run = store.save_discovery_run(profile[\"id\"], discovery_run(), tenant_id=tenant)"` | — |
+| [SRC-E3EEC2014A-L000111](../../tests/test_workspace_discovery.py#L111) | 111 | `""` | — |
+| [SRC-E3EEC2014A-L000112](../../tests/test_workspace_discovery.py#L112) | 112 | `"    assert store.save_discovery_signal(run[\"id\"], 1, tenant_id=tenant) is None"` | — |
+| [SRC-E3EEC2014A-L000113](../../tests/test_workspace_discovery.py#L113) | 113 | `""` | — |
+| [SRC-E3EEC2014A-L000114](../../tests/test_workspace_discovery.py#L114) | 114 | `"    saved, created = store.save_discovery_signal(run[\"id\"], 0, tenant_id=tenant)"` | — |
+| [SRC-E3EEC2014A-L000115](../../tests/test_workspace_discovery.py#L115) | 115 | `"    assert created is True"` | — |
+| [SRC-E3EEC2014A-L000116](../../tests/test_workspace_discovery.py#L116) | 116 | `"    assert saved[\"source_url\"] == \"https://example.org/public-request/1\""` | — |
+| [SRC-E3EEC2014A-L000117](../../tests/test_workspace_discovery.py#L117) | 117 | `"    assert \"نبحث عن مورد\" in saved[\"note\"]"` | — |
+| [SRC-E3EEC2014A-L000118](../../tests/test_workspace_discovery.py#L118) | 118 | `"    assert \"request_for_quotation\" in saved[\"note\"]"` | — |
+| [SRC-E3EEC2014A-L000119](../../tests/test_workspace_discovery.py#L119) | 119 | `"    assert store.save_discovery_signal(run[\"id\"], 0, tenant_id=tenant)[1] is False"` | — |
+| [SRC-E3EEC2014A-L000120](../../tests/test_workspace_discovery.py#L120) | 120 | `""` | — |
 | [SRC-E3EEC2014A-L000121](../../tests/test_workspace_discovery.py#L121) | 121 | `""` | — |
 | [SRC-E3EEC2014A-L000122](../../tests/test_workspace_discovery.py#L122) | 122 | `"def test_discovery_signal_save_rejects_other_tenant_run(tmp_path):"` | — |
 | [SRC-E3EEC2014A-L000123](../../tests/test_workspace_discovery.py#L123) | 123 | `"    store = LeadStore(tmp_path / \"workspace-run-isolation.sqlite3\")"` | — |
@@ -830,16 +843,3 @@
 | [SRC-A16FA6D4B5-L000038](../../web/dashboard.html#L38) | 38 | `"async function refresh(){try{const d=await request(\"/api/leads?limit=500\");const rows=d.leads;$(\"total\").textContent=rows.length;$(\"qualified\").textContent=rows.filter(x=>[\"qualified\",\"contacted\",\"converted\"].includes(x.status)).length;$(\"review\").textContent=rows.filter(x=>x.status===\"needs_review\").length;if(!rows.length){$(\"leadlist\").innerHTML='<div class=\"empty\">لا توجد إشارات محفوظة بعد. ابدأ بتحليل إشارة ثم احفظها.</div>';return}$(\"leadlist\").innerHTML=rows.map(l=>{const sourceUrl=safeSourceUrl(l.source_url);const sourceLink=sourceUrl?'<a target=\"_blank\" rel=\"noopener noreferrer\" href=\"'+esc(sourceUrl)+'\" style=\"color:#7b9cff\">فتح الرابط</a>':'<span class=\"muted\">لا يوجد رابط HTTP(S) صالح</span>';return '<article class=\"lead\"><div class=\"leadhead\"><span class=\"pill\">'+esc(labels[l.assessment.label]\|\|l.assessment.label)+'</span><span class=\"muted\">'+esc(l.platform)+' · '+esc(l.observed_at)+'</span></div><p>'+esc(l.text)+'</p><div class=\"muted\">المصدر: '+sourceLink+' · الدرجة '+l.assessment.score+'</div><div class=\"row\" style=\"margin-top:10px\"><select aria-label=\"حالة المتابعة\" id=\"status-'+esc(l.id)+'\">'+[\"new\",\"qualified\",\"contacted\",\"converted\",\"rejected\",\"needs_review\"].map(s=>'<option value=\"'+s+'\" '+(s===l.status?\"selected\":\"\")+'>'+({new:\"جديد\",qualified:\"مؤهل\",contacted:\"تم التواصل\",converted:\"تحوّل لعميل\",rejected:\"مرفوض\",needs_review:\"مراجعة\"}[s])+'</option>').join(\"\")+'</select><button class=\"secondary\" data-action=\"save-status\" data-lead-id=\"'+esc(l.id)+'\">تحديث الحالة</button></div></article>'}).join(\"\")}catch(e){$(\"leadlist\").innerHTML='<div class=\"empty\">'+esc(e.message)+'</div>'}}"` | — |
 | [SRC-A16FA6D4B5-L000039](../../web/dashboard.html#L39) | 39 | `"async function checkSession(){"` | — |
 | [SRC-A16FA6D4B5-L000040](../../web/dashboard.html#L40) | 40 | `"  try{"` | — |
-| [SRC-A16FA6D4B5-L000041](../../web/dashboard.html#L41) | 41 | `"    const response=await fetch(\"/api/session\",{credentials:\"same-origin\"});"` | — |
-| [SRC-A16FA6D4B5-L000042](../../web/dashboard.html#L42) | 42 | `"    const data=await response.json();"` | — |
-| [SRC-A16FA6D4B5-L000043](../../web/dashboard.html#L43) | 43 | `"    if(!response.ok)throw new Error(data.error\|\|\"لا توجد جلسة نشطة.\");"` | — |
-| [SRC-A16FA6D4B5-L000044](../../web/dashboard.html#L44) | 44 | `"    $(\"authMessage\").textContent=\"جلسة نشطة بدور: \"+data.role;"` | — |
-| [SRC-A16FA6D4B5-L000045](../../web/dashboard.html#L45) | 45 | `"    $(\"saveAccessToken\").textContent=\"متصل\";"` | — |
-| [SRC-A16FA6D4B5-L000046](../../web/dashboard.html#L46) | 46 | `"  }catch(_error){$(\"authMessage\").textContent=\"أدخل رمز الوصول لبدء جلسة آمنة.\";}"` | — |
-| [SRC-A16FA6D4B5-L000047](../../web/dashboard.html#L47) | 47 | `"}"` | — |
-| [SRC-A16FA6D4B5-L000048](../../web/dashboard.html#L48) | 48 | `"$(\"saveAccessToken\").onclick=async()=>{"` | — |
-| [SRC-A16FA6D4B5-L000049](../../web/dashboard.html#L49) | 49 | `"  const token=$(\"accessToken\").value.trim();"` | — |
-| [SRC-A16FA6D4B5-L000050](../../web/dashboard.html#L50) | 50 | `"  if(!token){$(\"authMessage\").textContent=\"أدخل رمز الوصول أولًا.\";return;}"` | — |
-| [SRC-A16FA6D4B5-L000051](../../web/dashboard.html#L51) | 51 | `"  try{"` | — |
-| [SRC-A16FA6D4B5-L000052](../../web/dashboard.html#L52) | 52 | `"    const response=await fetch(\"/api/session\",{method:\"POST\",credentials:\"same-origin\",headers:{\"Content-Type\":\"application/json\"},body:JSON.stringify({access_token:token})});"` | — |
-| [SRC-A16FA6D4B5-L000053](../../web/dashboard.html#L53) | 53 | `"    const data=await response.json();"` | — |

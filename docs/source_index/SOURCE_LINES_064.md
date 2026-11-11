@@ -4,7 +4,7 @@
 
 - الصفحة: **064**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L003955 إلى SRC-E3EEC2014A-L000120
+- النطاق: SRC-F725E90B2A-L003955 إلى SRC-E3EEC2014A-L000107
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -553,6 +553,19 @@
 | [SRC-F725E90B2A-L004489](../../tests/test_web_agent.py#L4489) | 4489 | `"    assert \"المقتطفات أدناه مواد مصدرية\" in result[\"answer\"]"` | — |
 | [SRC-F725E90B2A-L004490](../../tests/test_web_agent.py#L4490) | 4490 | `"    assert result[\"search_report\"][\"pipeline_completion_status\"] == \"partial\""` | — |
 | [SRC-F725E90B2A-L004491](../../tests/test_web_agent.py#L4491) | 4491 | `"    assert result[\"citation_validation\"][\"valid_citation_count\"] == 0"` | — |
+| [SRC-F725E90B2A-L004492](../../tests/test_web_agent.py#L4492) | 4492 | `""` | — |
+| [SRC-F725E90B2A-L004493](../../tests/test_web_agent.py#L4493) | 4493 | `"@pytest.mark.parametrize("` | — |
+| [SRC-F725E90B2A-L004494](../../tests/test_web_agent.py#L4494) | 4494 | `"    (\"query\", \"expected\"),"` | — |
+| [SRC-F725E90B2A-L004495](../../tests/test_web_agent.py#L4495) | 4495 | `"    ["` | — |
+| [SRC-F725E90B2A-L004496](../../tests/test_web_agent.py#L4496) | 4496 | `"        (\"بدور على معلومات عن أحدث أسعار أنظمة إنذار الحريق اليوم\", False),"` | — |
+| [SRC-F725E90B2A-L004497](../../tests/test_web_agent.py#L4497) | 4497 | `"        (\"بدور على مورد لنظام إنذار الحريق الصناعي\", True),"` | — |
+| [SRC-F725E90B2A-L004498](../../tests/test_web_agent.py#L4498) | 4498 | `"        (\"بدور على موردين لنظام إنذار الحريق الصناعي\", True),"` | — |
+| [SRC-F725E90B2A-L004499](../../tests/test_web_agent.py#L4499) | 4499 | `"        (\"looking for information about the latest industrial fire alarm systems\", False),"` | — |
+| [SRC-F725E90B2A-L004500](../../tests/test_web_agent.py#L4500) | 4500 | `"        (\"looking for a supplier of industrial fire alarm systems\", True),"` | — |
+| [SRC-F725E90B2A-L004501](../../tests/test_web_agent.py#L4501) | 4501 | `"    ],"` | — |
+| [SRC-F725E90B2A-L004502](../../tests/test_web_agent.py#L4502) | 4502 | `")"` | — |
+| [SRC-F725E90B2A-L004503](../../tests/test_web_agent.py#L4503) | 4503 | `"def test_buyer_intent_news_exclusion_requires_explicit_procurement_language(query, expected):"` | — |
+| [SRC-F725E90B2A-L004504](../../tests/test_web_agent.py#L4504) | 4504 | `"    assert WebAgent._is_buyer_intent_search_query(query) is expected"` | — |
 ## اختبارات
 
 ### FILE-8C13B81AB4 — [tests/test_web_agent_nlu_integration.py](../../tests/test_web_agent_nlu_integration.py#L1)
@@ -821,16 +834,3 @@
 | [SRC-E3EEC2014A-L000105](../../tests/test_workspace_discovery.py#L105) | 105 | `""` | — |
 | [SRC-E3EEC2014A-L000106](../../tests/test_workspace_discovery.py#L106) | 106 | `"def test_discovery_signal_save_uses_server_stored_qualification_and_evidence(tmp_path):"` | — |
 | [SRC-E3EEC2014A-L000107](../../tests/test_workspace_discovery.py#L107) | 107 | `"    store = LeadStore(tmp_path / \"workspace-signals.sqlite3\")"` | — |
-| [SRC-E3EEC2014A-L000108](../../tests/test_workspace_discovery.py#L108) | 108 | `"    tenant = store.create_tenant(\"Workspace\", \"workspace\")"` | — |
-| [SRC-E3EEC2014A-L000109](../../tests/test_workspace_discovery.py#L109) | 109 | `"    profile = store.save_product_profile(product_profile(), tenant_id=tenant)"` | — |
-| [SRC-E3EEC2014A-L000110](../../tests/test_workspace_discovery.py#L110) | 110 | `"    run = store.save_discovery_run(profile[\"id\"], discovery_run(), tenant_id=tenant)"` | — |
-| [SRC-E3EEC2014A-L000111](../../tests/test_workspace_discovery.py#L111) | 111 | `""` | — |
-| [SRC-E3EEC2014A-L000112](../../tests/test_workspace_discovery.py#L112) | 112 | `"    assert store.save_discovery_signal(run[\"id\"], 1, tenant_id=tenant) is None"` | — |
-| [SRC-E3EEC2014A-L000113](../../tests/test_workspace_discovery.py#L113) | 113 | `""` | — |
-| [SRC-E3EEC2014A-L000114](../../tests/test_workspace_discovery.py#L114) | 114 | `"    saved, created = store.save_discovery_signal(run[\"id\"], 0, tenant_id=tenant)"` | — |
-| [SRC-E3EEC2014A-L000115](../../tests/test_workspace_discovery.py#L115) | 115 | `"    assert created is True"` | — |
-| [SRC-E3EEC2014A-L000116](../../tests/test_workspace_discovery.py#L116) | 116 | `"    assert saved[\"source_url\"] == \"https://example.org/public-request/1\""` | — |
-| [SRC-E3EEC2014A-L000117](../../tests/test_workspace_discovery.py#L117) | 117 | `"    assert \"نبحث عن مورد\" in saved[\"note\"]"` | — |
-| [SRC-E3EEC2014A-L000118](../../tests/test_workspace_discovery.py#L118) | 118 | `"    assert \"request_for_quotation\" in saved[\"note\"]"` | — |
-| [SRC-E3EEC2014A-L000119](../../tests/test_workspace_discovery.py#L119) | 119 | `"    assert store.save_discovery_signal(run[\"id\"], 0, tenant_id=tenant)[1] is False"` | — |
-| [SRC-E3EEC2014A-L000120](../../tests/test_workspace_discovery.py#L120) | 120 | `""` | — |

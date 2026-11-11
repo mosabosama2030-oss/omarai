@@ -84,7 +84,7 @@
 | [SRC-1AE03B9EC3-L001305](../../agents/web_agent.py#L1305) | 1305 | `"        normalized = _normalize_search_query(query).casefold()"` | — |
 | [SRC-1AE03B9EC3-L001306](../../agents/web_agent.py#L1306) | 1306 | `"        buyer_phrases = ("` | — |
 | [SRC-1AE03B9EC3-L001307](../../agents/web_agent.py#L1307) | 1307 | `"            \"مطلوب شراء\", \"عايز اشتري\", \"عاوز اشتري\", \"اريد شراء\","` | — |
-| [SRC-1AE03B9EC3-L001308](../../agents/web_agent.py#L1308) | 1308 | `"            \"ارغب في شراء\", \"بدور على\", \"طلب عرض سعر\", \"نبحث عن مورد\","` | — |
+| [SRC-1AE03B9EC3-L001308](../../agents/web_agent.py#L1308) | 1308 | `"            \"ارغب في شراء\", \"بدور على مورد\", \"بدور على موردين\", \"بدور على شركة توريد\", \"بدور على مصنع\", \"بدور على عرض سعر\", \"طلب عرض سعر\", \"نبحث عن مورد\","` | — |
 | [SRC-1AE03B9EC3-L001309](../../agents/web_agent.py#L1309) | 1309 | `"            \"نحتاج الى مورد\", \"محتاج مورد\", \"looking to buy\","` | — |
 | [SRC-1AE03B9EC3-L001310](../../agents/web_agent.py#L1310) | 1310 | `"            \"looking to purchase\", \"want to buy\", \"wants to buy\","` | — |
 | [SRC-1AE03B9EC3-L001311](../../agents/web_agent.py#L1311) | 1311 | `"            \"want to purchase\", \"request for quotation\", \"request for quote\","` | — |

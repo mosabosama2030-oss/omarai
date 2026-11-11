@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **147**
 - ملفات Python المحللة: **86**
-- تعريفات Python المفهرسة: **2127**
+- تعريفات Python المفهرسة: **2128**
 - تعريفات Python موثقة بوجود Docstring: **308**
-- تعريفات Python بلا Docstring: **1403**
+- تعريفات Python بلا Docstring: **1404**
 - تعريفات لا ينطبق عليها Docstring: **416**
 - الرموز الساكنة الإضافية: **2969**
-- الأسطر النصية المفهرسة حرفيًا: **53114**
+- الأسطر النصية المفهرسة حرفيًا: **53127**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -55,7 +55,7 @@
 | FILE-686F71AA50 | الوكيل والمنطق | [agents/task_understanding.py](../agents/task_understanding.py#L1) | Python | 82064 | 1505 | جرد الملف + AST Python |
 | FILE-FC84E5B115 | الوكيل والمنطق | [agents/text_normalization.py](../agents/text_normalization.py#L1) | Python | 1779 | 41 | جرد الملف + AST Python |
 | FILE-0799EEEB02 | الوكيل والمنطق | [agents/tool_execution_status.py](../agents/tool_execution_status.py#L1) | Python | 12163 | 311 | جرد الملف + AST Python |
-| FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 398318 | 7513 | جرد الملف + AST Python |
+| FILE-1AE03B9EC3 | الوكيل والمنطق | [agents/web_agent.py](../agents/web_agent.py#L1) | Python | 398459 | 7513 | جرد الملف + AST Python |
 | FILE-D8438CDB65 | واجهات API | [api/__init__.py](../api/__init__.py#L1) | Python | 32 | 1 | جرد الملف + AST Python |
 | FILE-EEF2E6447C | واجهات API | [api/omarai.py](../api/omarai.py#L1) | Python | 59732 | 1236 | جرد الملف + AST Python |
 | FILE-65AAF94960 | وثائق ونصوص | [artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L1) | Markdown | 5586 | 41 | جرد الملف + عناوين Markdown |
@@ -168,7 +168,7 @@
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
 | FILE-AFEDC2645A | اختبارات | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L1) | Python | 23360 | 539 | جرد الملف + AST Python |
 | FILE-FBDC61DA0B | اختبارات | [tests/test_tool_execution_status.py](../tests/test_tool_execution_status.py#L1) | Python | 5490 | 149 | جرد الملف + AST Python |
-| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 174975 | 4491 | جرد الملف + AST Python |
+| FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 175687 | 4504 | جرد الملف + AST Python |
 | FILE-8C13B81AB4 | اختبارات | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L1) | Python | 6092 | 143 | جرد الملف + AST Python |
 | FILE-E3EEC2014A | اختبارات | [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L1) | Python | 9761 | 238 | جرد الملف + AST Python |
 | FILE-F7BF7F2B46 | اختبارات | [tests/test_workspace_ui_regressions.py](../tests/test_workspace_ui_regressions.py#L1) | Python | 4375 | 100 | جرد الملف + AST Python |
@@ -2276,6 +2276,7 @@
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L4397) | دالة | test_model_provider_rejects_remote_http_before_sending_bearer_key.unexpected_request | لا توجد Docstring. | ناقص | 4397 | [SRC-F725E90B2A-L004397](../tests/test_web_agent.py#L4397) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L4411) | دالة | test_health_status_redacts_model_provider_userinfo_path_and_query | لا توجد Docstring. | ناقص | 4411 | [SRC-F725E90B2A-L004411](../tests/test_web_agent.py#L4411) |
 | [tests/test_web_agent.py](../tests/test_web_agent.py#L4427) | دالة | test_answer_is_withheld_when_semantic_claim_support_is_not_established | لا توجد Docstring. | ناقص | 4427 | [SRC-F725E90B2A-L004427](../tests/test_web_agent.py#L4427) |
+| [tests/test_web_agent.py](../tests/test_web_agent.py#L4503) | دالة | test_buyer_intent_news_exclusion_requires_explicit_procurement_language | لا توجد Docstring. | ناقص | 4503 | [SRC-F725E90B2A-L004503](../tests/test_web_agent.py#L4503) |
 | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L10) | دالة | _academic_result | لا توجد Docstring. | ناقص | 10 | [SRC-8C13B81AB4-L000010](../tests/test_web_agent_nlu_integration.py#L10) |
 | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L29) | دالة | test_sparse_academic_search_uses_budgeted_safe_connectors | لا توجد Docstring. | ناقص | 29 | [SRC-8C13B81AB4-L000029](../tests/test_web_agent_nlu_integration.py#L29) |
 | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L49) | دالة | test_academic_connectors_are_not_called_for_ordinary_sparse_queries | لا توجد Docstring. | ناقص | 49 | [SRC-8C13B81AB4-L000049](../tests/test_web_agent_nlu_integration.py#L49) |

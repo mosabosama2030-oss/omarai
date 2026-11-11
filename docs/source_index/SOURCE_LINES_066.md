@@ -4,7 +4,7 @@
 
 - الصفحة: **066**
 - سجلات الأسطر: **800**
-- النطاق: SRC-A16FA6D4B5-L000054 إلى SRC-2C8F288796-L000779
+- النطاق: SRC-A16FA6D4B5-L000041 إلى SRC-2C8F288796-L000766
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-A16FA6D4B5-L000041](../../web/dashboard.html#L41) | 41 | `"    const response=await fetch(\"/api/session\",{credentials:\"same-origin\"});"` | — |
+| [SRC-A16FA6D4B5-L000042](../../web/dashboard.html#L42) | 42 | `"    const data=await response.json();"` | — |
+| [SRC-A16FA6D4B5-L000043](../../web/dashboard.html#L43) | 43 | `"    if(!response.ok)throw new Error(data.error\|\|\"لا توجد جلسة نشطة.\");"` | — |
+| [SRC-A16FA6D4B5-L000044](../../web/dashboard.html#L44) | 44 | `"    $(\"authMessage\").textContent=\"جلسة نشطة بدور: \"+data.role;"` | — |
+| [SRC-A16FA6D4B5-L000045](../../web/dashboard.html#L45) | 45 | `"    $(\"saveAccessToken\").textContent=\"متصل\";"` | — |
+| [SRC-A16FA6D4B5-L000046](../../web/dashboard.html#L46) | 46 | `"  }catch(_error){$(\"authMessage\").textContent=\"أدخل رمز الوصول لبدء جلسة آمنة.\";}"` | — |
+| [SRC-A16FA6D4B5-L000047](../../web/dashboard.html#L47) | 47 | `"}"` | — |
+| [SRC-A16FA6D4B5-L000048](../../web/dashboard.html#L48) | 48 | `"$(\"saveAccessToken\").onclick=async()=>{"` | — |
+| [SRC-A16FA6D4B5-L000049](../../web/dashboard.html#L49) | 49 | `"  const token=$(\"accessToken\").value.trim();"` | — |
+| [SRC-A16FA6D4B5-L000050](../../web/dashboard.html#L50) | 50 | `"  if(!token){$(\"authMessage\").textContent=\"أدخل رمز الوصول أولًا.\";return;}"` | — |
+| [SRC-A16FA6D4B5-L000051](../../web/dashboard.html#L51) | 51 | `"  try{"` | — |
+| [SRC-A16FA6D4B5-L000052](../../web/dashboard.html#L52) | 52 | `"    const response=await fetch(\"/api/session\",{method:\"POST\",credentials:\"same-origin\",headers:{\"Content-Type\":\"application/json\"},body:JSON.stringify({access_token:token})});"` | — |
+| [SRC-A16FA6D4B5-L000053](../../web/dashboard.html#L53) | 53 | `"    const data=await response.json();"` | — |
 | [SRC-A16FA6D4B5-L000054](../../web/dashboard.html#L54) | 54 | `"    if(!response.ok)throw Error(data.error\|\|\"تعذر تسجيل الدخول.\");"` | — |
 | [SRC-A16FA6D4B5-L000055](../../web/dashboard.html#L55) | 55 | `"    $(\"accessToken\").value=\"\";"` | — |
 | [SRC-A16FA6D4B5-L000056](../../web/dashboard.html#L56) | 56 | `"    $(\"authMessage\").textContent=\"تم تسجيل الدخول بجلسة HttpOnly تنتهي خلال 8 ساعات أو عند انتهاء/إبطال الرمز.\";"` | — |
@@ -812,16 +825,3 @@
 | [SRC-2C8F288796-L000764](../../web/workspace.html#L764) | 764 | `" else{"` | — |
 | [SRC-2C8F288796-L000765](../../web/workspace.html#L765) | 765 | `"  const list=make(\"div\",\"signal-list\");"` | — |
 | [SRC-2C8F288796-L000766](../../web/workspace.html#L766) | 766 | `"  state.profiles.forEach(profile=>{"` | — |
-| [SRC-2C8F288796-L000767](../../web/workspace.html#L767) | 767 | `"   const card=make(\"article\",\"signal-card\"),p=profile.profile\|\|{},m=p.market\|\|{};"` | — |
-| [SRC-2C8F288796-L000768](../../web/workspace.html#L768) | 768 | `"   card.append(make(\"strong\",\"\",profile.name\|\|\"منتج\"));"` | — |
-| [SRC-2C8F288796-L000769](../../web/workspace.html#L769) | 769 | `"   card.append(make(\"p\",\"subtle\",\"المناطق: \"+((m.locations\|\|[]).join(\"، \")\|\|\"غير محددة\")));"` | — |
-| [SRC-2C8F288796-L000770](../../web/workspace.html#L770) | 770 | `"   const row=make(\"div\",\"form-actions\");row.append(action(\"استخدام في الاكتشاف\",\"\",()=>{state.activeProfileId=profile.id;navigate(\"campaign\")}));"` | — |
-| [SRC-2C8F288796-L000771](../../web/workspace.html#L771) | 771 | `"   card.append(row);list.append(card);"` | — |
-| [SRC-2C8F288796-L000772](../../web/workspace.html#L772) | 772 | `"  });listPanel.append(list);"` | — |
-| [SRC-2C8F288796-L000773](../../web/workspace.html#L773) | 773 | `" }"` | — |
-| [SRC-2C8F288796-L000774](../../web/workspace.html#L774) | 774 | `" root.append(listPanel);"` | — |
-| [SRC-2C8F288796-L000775](../../web/workspace.html#L775) | 775 | `"}"` | — |
-| [SRC-2C8F288796-L000776](../../web/workspace.html#L776) | 776 | `"function renderDiscoveryRun(run){"` | — |
-| [SRC-2C8F288796-L000777](../../web/workspace.html#L777) | 777 | `" const panel=make(\"section\",\"glass panel profile-panel\"),head=make(\"div\",\"panel-head\"),title=make(\"div\");"` | — |
-| [SRC-2C8F288796-L000778](../../web/workspace.html#L778) | 778 | `" const report=run.search_report\|\|{},leadReport=report.lead_generation\|\|{},sources=Array.isArray(run.sources)?run.sources:[];"` | — |
-| [SRC-2C8F288796-L000779](../../web/workspace.html#L779) | 779 | `" title.append(make(\"h2\",\"\",\"نتيجة عملية الاكتشاف\"),make(\"p\",\"\",\"ملف المنتج: \"+String(run.profile_name\|\|\"غير محدد\")+\" · \"+String(run.created_at\|\|\"\")));"` | — |
