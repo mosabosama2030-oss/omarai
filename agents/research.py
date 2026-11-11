@@ -6,6 +6,7 @@ but all queries, result counts and source records are validated before use.
 from __future__ import annotations
 
 import ipaddress
+import math
 import re
 from datetime import UTC, datetime, timedelta
 from email.utils import parsedate_to_datetime
@@ -603,6 +604,7 @@ def fuse_ranked_results(
                     "providers": [],
                     "queries": [],
                     "rank_score": 0.0,
+                    "retrieval_relevance_score": None,
                     "best_raw_rank": position,
                     "published_at": _compact(source.get("published_at") or "", 100),
                     "publisher_name": _compact(source.get("publisher_name") or "", 200),
@@ -611,7 +613,23 @@ def fuse_ranked_results(
                 }
                 entry.update(classify_source(source_identity_url))
                 accumulated[url] = entry
-            elif source.get("publisher_url") and not entry.get("publisher_url"):
+            raw_relevance = source.get("retrieval_relevance_score")
+            if not isinstance(raw_relevance, bool):
+                try:
+                    parsed_relevance = float(raw_relevance)
+                except (TypeError, ValueError, OverflowError):
+                    parsed_relevance = None
+                if (
+                    parsed_relevance is not None
+                    and math.isfinite(parsed_relevance)
+                    and 0.0 <= parsed_relevance <= 1.0
+                    and (
+                        entry["retrieval_relevance_score"] is None
+                        or parsed_relevance > entry["retrieval_relevance_score"]
+                    )
+                ):
+                    entry["retrieval_relevance_score"] = parsed_relevance
+            if source.get("publisher_url") and not entry.get("publisher_url"):
                 entry["publisher_url"] = _compact(source.get("publisher_url"), 2048)
                 entry["publisher_name"] = _compact(source.get("publisher_name") or "", 200)
                 entry["publisher_domain"] = _compact(source.get("publisher_domain") or "", 300)
@@ -637,7 +655,18 @@ def fuse_ranked_results(
             entry["rank_score"] += 0.0001
         if "user_supplied_url" in entry["providers"]:
             entry["rank_score"] += 0.5
-    ranked = sorted(accumulated.values(), key=lambda item: item["rank_score"], reverse=True)
+    # RRF and cross-query consensus remain authoritative. Retrieval relevance is
+    # only a tie-breaker; it is not evidence confidence, claim truth, or buyer intent.
+    ranked = sorted(
+        accumulated.values(),
+        key=lambda item: (
+            item["rank_score"],
+            item["retrieval_relevance_score"]
+            if item["retrieval_relevance_score"] is not None
+            else -1.0,
+        ),
+        reverse=True,
+    )
     return ranked[:max(1, min(int(limit), MAX_FUSED_RESULTS))]
 
 
