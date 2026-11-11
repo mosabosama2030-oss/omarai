@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3AA6165B18-L000054 إلى SRC-8D00DCEC0D-L000335
+- النطاق: SRC-3AA6165B18-L000054 إلى SRC-8D00DCEC0D-L000308
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -492,6 +492,42 @@
 | [SRC-60066C6786-L000217](../../agents/research_pipeline.py#L217) | 217 | `"    }"` | — |
 ## الوكيل والمنطق
 
+### FILE-20574F34B1 — [agents/safe_xml.py](../../agents/safe_xml.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-20574F34B1-L000001](../../agents/safe_xml.py#L1) | 1 | `"\"\"\"Stdlib-only XML parsing for untrusted feeds (RSS/Atom/arXiv/sitemaps)."` | — |
+| [SRC-20574F34B1-L000002](../../agents/safe_xml.py#L2) | 2 | `""` | — |
+| [SRC-20574F34B1-L000003](../../agents/safe_xml.py#L3) | 3 | `"Feeds never need a DTD, so any DOCTYPE or ENTITY declaration is rejected before"` | — |
+| [SRC-20574F34B1-L000004](../../agents/safe_xml.py#L4) | 4 | `"parsing. This blocks entity-expansion (\"billion laughs\") and external-entity"` | — |
+| [SRC-20574F34B1-L000005](../../agents/safe_xml.py#L5) | 5 | `"tricks without adding a dependency."` | — |
+| [SRC-20574F34B1-L000006](../../agents/safe_xml.py#L6) | 6 | `"\"\"\""` | — |
+| [SRC-20574F34B1-L000007](../../agents/safe_xml.py#L7) | 7 | `"from __future__ import annotations"` | — |
+| [SRC-20574F34B1-L000008](../../agents/safe_xml.py#L8) | 8 | `""` | — |
+| [SRC-20574F34B1-L000009](../../agents/safe_xml.py#L9) | 9 | `"import re"` | — |
+| [SRC-20574F34B1-L000010](../../agents/safe_xml.py#L10) | 10 | `"import xml.etree.ElementTree as ET"` | — |
+| [SRC-20574F34B1-L000011](../../agents/safe_xml.py#L11) | 11 | `""` | — |
+| [SRC-20574F34B1-L000012](../../agents/safe_xml.py#L12) | 12 | `"_DTD_RE = re.compile(rb\"<!\\s*(?:DOCTYPE\|ENTITY)\", re.IGNORECASE)"` | — |
+| [SRC-20574F34B1-L000013](../../agents/safe_xml.py#L13) | 13 | `"_DTD_TEXT_RE = re.compile(r\"<!\\s*(?:DOCTYPE\|ENTITY)\", re.IGNORECASE)"` | — |
+| [SRC-20574F34B1-L000014](../../agents/safe_xml.py#L14) | 14 | `""` | — |
+| [SRC-20574F34B1-L000015](../../agents/safe_xml.py#L15) | 15 | `"ParseError = ET.ParseError"` | — |
+| [SRC-20574F34B1-L000016](../../agents/safe_xml.py#L16) | 16 | `""` | — |
+| [SRC-20574F34B1-L000017](../../agents/safe_xml.py#L17) | 17 | `""` | — |
+| [SRC-20574F34B1-L000018](../../agents/safe_xml.py#L18) | 18 | `"def fromstring(data: bytes \| str) -> ET.Element:"` | — |
+| [SRC-20574F34B1-L000019](../../agents/safe_xml.py#L19) | 19 | `"    \"\"\"Parse untrusted XML, refusing documents that declare a DTD or entities.\"\"\""` | — |
+| [SRC-20574F34B1-L000020](../../agents/safe_xml.py#L20) | 20 | `"    if isinstance(data, str):"` | — |
+| [SRC-20574F34B1-L000021](../../agents/safe_xml.py#L21) | 21 | `"        blocked = _DTD_TEXT_RE.search(data)"` | — |
+| [SRC-20574F34B1-L000022](../../agents/safe_xml.py#L22) | 22 | `"    else:"` | — |
+| [SRC-20574F34B1-L000023](../../agents/safe_xml.py#L23) | 23 | `"        # UTF-16 feeds interleave NUL bytes; strip them so the check still sees the markup."` | — |
+| [SRC-20574F34B1-L000024](../../agents/safe_xml.py#L24) | 24 | `"        blocked = _DTD_RE.search(data.replace(b\"\\x00\", b\"\"))"` | — |
+| [SRC-20574F34B1-L000025](../../agents/safe_xml.py#L25) | 25 | `"    if blocked:"` | — |
+| [SRC-20574F34B1-L000026](../../agents/safe_xml.py#L26) | 26 | `"        raise ET.ParseError(\"XML DOCTYPE/ENTITY declarations are not allowed\")"` | — |
+| [SRC-20574F34B1-L000027](../../agents/safe_xml.py#L27) | 27 | `"    return ET.fromstring(data)"` | — |
+## الوكيل والمنطق
+
 ### FILE-8D00DCEC0D — [agents/sales_domain.py](../../agents/sales_domain.py#L1)
 
 - النوع: **Python**
@@ -807,30 +843,3 @@
 | [SRC-8D00DCEC0D-L000306](../../agents/sales_domain.py#L306) | 306 | `"                name,"` | — |
 | [SRC-8D00DCEC0D-L000307](../../agents/sales_domain.py#L307) | 307 | `"                _clean_terms(getattr(self, name), field_name=name),"` | — |
 | [SRC-8D00DCEC0D-L000308](../../agents/sales_domain.py#L308) | 308 | `"            )"` | — |
-| [SRC-8D00DCEC0D-L000309](../../agents/sales_domain.py#L309) | 309 | `""` | — |
-| [SRC-8D00DCEC0D-L000310](../../agents/sales_domain.py#L310) | 310 | `"    def to_dict(self) -> dict[str, list[str]]:"` | — |
-| [SRC-8D00DCEC0D-L000311](../../agents/sales_domain.py#L311) | 311 | `"        return {"` | — |
-| [SRC-8D00DCEC0D-L000312](../../agents/sales_domain.py#L312) | 312 | `"            name: list(getattr(self, name))"` | — |
-| [SRC-8D00DCEC0D-L000313](../../agents/sales_domain.py#L313) | 313 | `"            for name in (\"locations\", \"industries\", \"customer_types\", \"decision_roles\", \"exclusions\")"` | — |
-| [SRC-8D00DCEC0D-L000314](../../agents/sales_domain.py#L314) | 314 | `"        }"` | — |
-| [SRC-8D00DCEC0D-L000315](../../agents/sales_domain.py#L315) | 315 | `""` | — |
-| [SRC-8D00DCEC0D-L000316](../../agents/sales_domain.py#L316) | 316 | `""` | — |
-| [SRC-8D00DCEC0D-L000317](../../agents/sales_domain.py#L317) | 317 | `"@dataclass(frozen=True, slots=True)"` | — |
-| [SRC-8D00DCEC0D-L000318](../../agents/sales_domain.py#L318) | 318 | `"class TaxonomyCategory:"` | — |
-| [SRC-8D00DCEC0D-L000319](../../agents/sales_domain.py#L319) | 319 | `"    \"\"\"A caller-defined taxonomy node; no sector is hard-coded in the matcher.\"\"\""` | — |
-| [SRC-8D00DCEC0D-L000320](../../agents/sales_domain.py#L320) | 320 | `""` | — |
-| [SRC-8D00DCEC0D-L000321](../../agents/sales_domain.py#L321) | 321 | `"    path: tuple[str, ...]"` | — |
-| [SRC-8D00DCEC0D-L000322](../../agents/sales_domain.py#L322) | 322 | `"    aliases: tuple[str, ...]"` | — |
-| [SRC-8D00DCEC0D-L000323](../../agents/sales_domain.py#L323) | 323 | `""` | — |
-| [SRC-8D00DCEC0D-L000324](../../agents/sales_domain.py#L324) | 324 | `"    def __post_init__(self) -> None:"` | — |
-| [SRC-8D00DCEC0D-L000325](../../agents/sales_domain.py#L325) | 325 | `"        object.__setattr__(self, \"path\", _clean_path(self.path, field_name=\"path\"))"` | — |
-| [SRC-8D00DCEC0D-L000326](../../agents/sales_domain.py#L326) | 326 | `"        object.__setattr__(self, \"aliases\", _clean_terms(self.aliases, field_name=\"aliases\"))"` | — |
-| [SRC-8D00DCEC0D-L000327](../../agents/sales_domain.py#L327) | 327 | `"        if not self.aliases:"` | — |
-| [SRC-8D00DCEC0D-L000328](../../agents/sales_domain.py#L328) | 328 | `"            raise ValueError(\"taxonomy category requires at least one alias\")"` | — |
-| [SRC-8D00DCEC0D-L000329](../../agents/sales_domain.py#L329) | 329 | `""` | — |
-| [SRC-8D00DCEC0D-L000330](../../agents/sales_domain.py#L330) | 330 | `""` | — |
-| [SRC-8D00DCEC0D-L000331](../../agents/sales_domain.py#L331) | 331 | `"@dataclass(frozen=True, slots=True)"` | — |
-| [SRC-8D00DCEC0D-L000332](../../agents/sales_domain.py#L332) | 332 | `"class ProductTaxonomy:"` | — |
-| [SRC-8D00DCEC0D-L000333](../../agents/sales_domain.py#L333) | 333 | `"    \"\"\"Extensible taxonomy supplied by configuration or a verified product catalogue.\"\"\""` | — |
-| [SRC-8D00DCEC0D-L000334](../../agents/sales_domain.py#L334) | 334 | `""` | — |
-| [SRC-8D00DCEC0D-L000335](../../agents/sales_domain.py#L335) | 335 | `"    categories: tuple[TaxonomyCategory, ...] = ()"` | — |

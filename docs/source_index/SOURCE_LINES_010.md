@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-086D574B4E-L000287 إلى SRC-686F71AA50-L000696
+- النطاق: SRC-086D574B4E-L000258 إلى SRC-686F71AA50-L000667
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,35 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-086D574B4E-L000258](../../agents/semantic_claim_verifier.py#L258) | 258 | `"    if prepared.get(\"status\") != \"ready\":"` | — |
+| [SRC-086D574B4E-L000259](../../agents/semantic_claim_verifier.py#L259) | 259 | `"        return _not_verifiable(str(prepared.get(\"reason\") or \"request_not_ready\"))"` | — |
+| [SRC-086D574B4E-L000260](../../agents/semantic_claim_verifier.py#L260) | 260 | `"    deterministic = deterministic_claim_screen(prepared)"` | — |
+| [SRC-086D574B4E-L000261](../../agents/semantic_claim_verifier.py#L261) | 261 | `"    if deterministic.get(\"status\") != \"passed\":"` | — |
+| [SRC-086D574B4E-L000262](../../agents/semantic_claim_verifier.py#L262) | 262 | `"        return deterministic"` | — |
+| [SRC-086D574B4E-L000263](../../agents/semantic_claim_verifier.py#L263) | 263 | `"    ledger = prepared.get(\"ledger\")"` | — |
+| [SRC-086D574B4E-L000264](../../agents/semantic_claim_verifier.py#L264) | 264 | `"    if not isinstance(ledger, dict):"` | — |
+| [SRC-086D574B4E-L000265](../../agents/semantic_claim_verifier.py#L265) | 265 | `"        return _not_verifiable(\"claim_ledger_unavailable\")"` | — |
+| [SRC-086D574B4E-L000266](../../agents/semantic_claim_verifier.py#L266) | 266 | `"    expected_rows = ledger.get(\"segments\")"` | — |
+| [SRC-086D574B4E-L000267](../../agents/semantic_claim_verifier.py#L267) | 267 | `"    source_rows = prepared.get(\"source_rows\")"` | — |
+| [SRC-086D574B4E-L000268](../../agents/semantic_claim_verifier.py#L268) | 268 | `"    readable_indexes = set(prepared.get(\"readable_source_indexes\") or [])"` | — |
+| [SRC-086D574B4E-L000269](../../agents/semantic_claim_verifier.py#L269) | 269 | `"    if not isinstance(expected_rows, list) or not expected_rows:"` | — |
+| [SRC-086D574B4E-L000270](../../agents/semantic_claim_verifier.py#L270) | 270 | `"        return _not_verifiable(\"no_claim_segments\", ledger)"` | — |
+| [SRC-086D574B4E-L000271](../../agents/semantic_claim_verifier.py#L271) | 271 | `"    if not isinstance(source_rows, list):"` | — |
+| [SRC-086D574B4E-L000272](../../agents/semantic_claim_verifier.py#L272) | 272 | `"        return _not_verifiable(\"source_manifest_unavailable\", ledger)"` | — |
+| [SRC-086D574B4E-L000273](../../agents/semantic_claim_verifier.py#L273) | 273 | `"    expected_by_id = {"` | — |
+| [SRC-086D574B4E-L000274](../../agents/semantic_claim_verifier.py#L274) | 274 | `"        str(row.get(\"segment_id\")): row"` | — |
+| [SRC-086D574B4E-L000275](../../agents/semantic_claim_verifier.py#L275) | 275 | `"        for row in expected_rows if isinstance(row, dict)"` | — |
+| [SRC-086D574B4E-L000276](../../agents/semantic_claim_verifier.py#L276) | 276 | `"    }"` | — |
+| [SRC-086D574B4E-L000277](../../agents/semantic_claim_verifier.py#L277) | 277 | `"    if len(expected_by_id) != len(expected_rows):"` | — |
+| [SRC-086D574B4E-L000278](../../agents/semantic_claim_verifier.py#L278) | 278 | `"        return _not_verifiable(\"duplicate_internal_segment_ids\", ledger)"` | — |
+| [SRC-086D574B4E-L000279](../../agents/semantic_claim_verifier.py#L279) | 279 | `"    try:"` | — |
+| [SRC-086D574B4E-L000280](../../agents/semantic_claim_verifier.py#L280) | 280 | `"        parsed = json.loads(str(raw_response or \"\"))"` | — |
+| [SRC-086D574B4E-L000281](../../agents/semantic_claim_verifier.py#L281) | 281 | `"    except (TypeError, ValueError, json.JSONDecodeError):"` | — |
+| [SRC-086D574B4E-L000282](../../agents/semantic_claim_verifier.py#L282) | 282 | `"        return _not_verifiable(\"invalid_json_response\", ledger)"` | — |
+| [SRC-086D574B4E-L000283](../../agents/semantic_claim_verifier.py#L283) | 283 | `"    if not isinstance(parsed, dict) or set(parsed) != {\"claims\"}:"` | — |
+| [SRC-086D574B4E-L000284](../../agents/semantic_claim_verifier.py#L284) | 284 | `"        return _not_verifiable(\"invalid_response_schema\", ledger)"` | — |
+| [SRC-086D574B4E-L000285](../../agents/semantic_claim_verifier.py#L285) | 285 | `"    rows = parsed.get(\"claims\")"` | — |
+| [SRC-086D574B4E-L000286](../../agents/semantic_claim_verifier.py#L286) | 286 | `"    if not isinstance(rows, list) or len(rows) != len(expected_rows):"` | — |
 | [SRC-086D574B4E-L000287](../../agents/semantic_claim_verifier.py#L287) | 287 | `"        return _not_verifiable(\"claim_rows_missing_or_extra\", ledger)"` | — |
 | [SRC-086D574B4E-L000288](../../agents/semantic_claim_verifier.py#L288) | 288 | `""` | — |
 | [SRC-086D574B4E-L000289](../../agents/semantic_claim_verifier.py#L289) | 289 | `"    seen: set[str] = set()"` | — |
@@ -796,32 +825,3 @@
 | [SRC-686F71AA50-L000665](../../agents/task_understanding.py#L665) | 665 | `"        ]"` | — |
 | [SRC-686F71AA50-L000666](../../agents/task_understanding.py#L666) | 666 | `"        query_strategies = [\"genre_and_voice\", \"creative_constraints\", \"revision_options\"]"` | — |
 | [SRC-686F71AA50-L000667](../../agents/task_understanding.py#L667) | 667 | `"    else:"` | — |
-| [SRC-686F71AA50-L000668](../../agents/task_understanding.py#L668) | 668 | `"        evidence_requirements = ["` | — |
-| [SRC-686F71AA50-L000669](../../agents/task_understanding.py#L669) | 669 | `"            \"match_sources_to_the_question\","` | — |
-| [SRC-686F71AA50-L000670](../../agents/task_understanding.py#L670) | 670 | `"            \"distinguish_search_snippet_from_read_page\","` | — |
-| [SRC-686F71AA50-L000671](../../agents/task_understanding.py#L671) | 671 | `"            \"cite_material_web_claims\","` | — |
-| [SRC-686F71AA50-L000672](../../agents/task_understanding.py#L672) | 672 | `"        ]"` | — |
-| [SRC-686F71AA50-L000673](../../agents/task_understanding.py#L673) | 673 | `"        query_strategies = [\"exact_topic\", \"primary_source\", \"cross_check_if_needed\"]"` | — |
-| [SRC-686F71AA50-L000674](../../agents/task_understanding.py#L674) | 674 | `""` | — |
-| [SRC-686F71AA50-L000675](../../agents/task_understanding.py#L675) | 675 | `"    # Source freshness, requested officiality, and social evidence are orthogonal"` | — |
-| [SRC-686F71AA50-L000676](../../agents/task_understanding.py#L676) | 676 | `"    # constraints. Preserve them even when another intent is the primary family."` | — |
-| [SRC-686F71AA50-L000677](../../agents/task_understanding.py#L677) | 677 | `"    if current_required and not official_destination:"` | — |
-| [SRC-686F71AA50-L000678](../../agents/task_understanding.py#L678) | 678 | `"        evidence_requirements.extend(["` | — |
-| [SRC-686F71AA50-L000679](../../agents/task_understanding.py#L679) | 679 | `"            \"publication_or_update_date\","` | — |
-| [SRC-686F71AA50-L000680](../../agents/task_understanding.py#L680) | 680 | `"            \"page_text_successfully_read\","` | — |
-| [SRC-686F71AA50-L000681](../../agents/task_understanding.py#L681) | 681 | `"            \"prefer_primary_current_source\","` | — |
-| [SRC-686F71AA50-L000682](../../agents/task_understanding.py#L682) | 682 | `"            \"do_not_use_stale_page_as_current_proof\","` | — |
-| [SRC-686F71AA50-L000683](../../agents/task_understanding.py#L683) | 683 | `"        ])"` | — |
-| [SRC-686F71AA50-L000684](../../agents/task_understanding.py#L684) | 684 | `"        query_strategies.extend([\"recent_official_update\", \"primary_source\", \"date_check\"])"` | — |
-| [SRC-686F71AA50-L000685](../../agents/task_understanding.py#L685) | 685 | `"    if social_required and family != \"social_opinions\":"` | — |
-| [SRC-686F71AA50-L000686](../../agents/task_understanding.py#L686) | 686 | `"        evidence_requirements.extend(["` | — |
-| [SRC-686F71AA50-L000687](../../agents/task_understanding.py#L687) | 687 | `"            \"public_social_platform_url\","` | — |
-| [SRC-686F71AA50-L000688](../../agents/task_understanding.py#L688) | 688 | `"            \"separate_personal_experience_from_promotion\","` | — |
-| [SRC-686F71AA50-L000689](../../agents/task_understanding.py#L689) | 689 | `"            \"heuristic_classification_is_not_identity_or_truth_verification\","` | — |
-| [SRC-686F71AA50-L000690](../../agents/task_understanding.py#L690) | 690 | `"        ])"` | — |
-| [SRC-686F71AA50-L000691](../../agents/task_understanding.py#L691) | 691 | `"        query_strategies.extend([\"personal_experience\", \"discussion\", \"commercial_exclusion\"])"` | — |
-| [SRC-686F71AA50-L000692](../../agents/task_understanding.py#L692) | 692 | `"    if official_destination and family != \"official_site_lookup\":"` | — |
-| [SRC-686F71AA50-L000693](../../agents/task_understanding.py#L693) | 693 | `"        evidence_requirements.extend(["` | — |
-| [SRC-686F71AA50-L000694](../../agents/task_understanding.py#L694) | 694 | `"            \"distinguish_official_destination_from_mentions_or_articles\","` | — |
-| [SRC-686F71AA50-L000695](../../agents/task_understanding.py#L695) | 695 | `"            \"do_not_claim_domain_ownership_without_independent_evidence\","` | — |
-| [SRC-686F71AA50-L000696](../../agents/task_understanding.py#L696) | 696 | `"        ])"` | — |

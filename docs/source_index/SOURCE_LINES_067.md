@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **067**
-- سجلات الأسطر: **327**
-- النطاق: SRC-2C8F288796-L000767 إلى SRC-2C8F288796-L001093
+- سجلات الأسطر: **395**
+- النطاق: SRC-2C8F288796-L000699 إلى SRC-2C8F288796-L001093
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,74 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-2C8F288796-L000699](../../web/workspace.html#L699) | 699 | `"}"` | — |
+| [SRC-2C8F288796-L000700](../../web/workspace.html#L700) | 700 | `"function csvValues(value){return String(value\|\|\"\").split(\",\").map(x=>x.trim()).filter(Boolean)}"` | — |
+| [SRC-2C8F288796-L000701](../../web/workspace.html#L701) | 701 | `"function textField(label,id,placeholder,value,multiline){"` | — |
+| [SRC-2C8F288796-L000702](../../web/workspace.html#L702) | 702 | `" const field=make(\"div\",\"field\"),control=make(multiline?\"textarea\":\"input\",\"\");"` | — |
+| [SRC-2C8F288796-L000703](../../web/workspace.html#L703) | 703 | `" control.id=id;control.value=value\|\|\"\";control.placeholder=placeholder\|\|\"\";"` | — |
+| [SRC-2C8F288796-L000704](../../web/workspace.html#L704) | 704 | `" const caption=make(\"label\",\"\",label);caption.htmlFor=id;field.append(caption,control);"` | — |
+| [SRC-2C8F288796-L000705](../../web/workspace.html#L705) | 705 | `" return {field,control};"` | — |
+| [SRC-2C8F288796-L000706](../../web/workspace.html#L706) | 706 | `"}"` | — |
+| [SRC-2C8F288796-L000707](../../web/workspace.html#L707) | 707 | `"function renderProductProfile(){"` | — |
+| [SRC-2C8F288796-L000708](../../web/workspace.html#L708) | 708 | `" setPage(\"ملف المنتج والعرض\",\"عرّف المنتج والسوق قبل تشغيل اكتشاف الطلب. كل ملف محفوظ مرتبط بمساحة العمل المصادق عليها.\",\"PRODUCT & MARKET PROFILE\");"` | — |
+| [SRC-2C8F288796-L000709](../../web/workspace.html#L709) | 709 | `" const root=$(\"viewRoot\");root.replaceChildren();"` | — |
+| [SRC-2C8F288796-L000710](../../web/workspace.html#L710) | 710 | `" const panel=make(\"section\",\"glass panel profile-panel\"),head=make(\"div\",\"panel-head\"),title=make(\"div\");"` | — |
+| [SRC-2C8F288796-L000711](../../web/workspace.html#L711) | 711 | `" title.append(make(\"h2\",\"\",\"بيانات المنتج والسوق\"),make(\"p\",\"\",\"أدخل المعلومات المعروفة صراحةً؛ لا يخترع Omarai مواصفات أو عملاء مستهدفين من اسم المنتج وحده.\"));"` | — |
+| [SRC-2C8F288796-L000712](../../web/workspace.html#L712) | 712 | `" head.append(title);panel.append(head);"` | — |
+| [SRC-2C8F288796-L000713](../../web/workspace.html#L713) | 713 | `" const grid=make(\"div\",\"form-grid\"),controls={};"` | — |
+| [SRC-2C8F288796-L000714](../../web/workspace.html#L714) | 714 | `" const fields=["` | — |
+| [SRC-2C8F288796-L000715](../../web/workspace.html#L715) | 715 | `"  [\"اسم المنتج أو الخدمة\",\"name\",\"مثال: لوحة إنذار حريق\"],"` | — |
+| [SRC-2C8F288796-L000716](../../web/workspace.html#L716) | 716 | `"  [\"الأسماء والمرادفات\",\"aliases\",\"FACP، لوحة إنذار، Fire Alarm Panel\"],"` | — |
+| [SRC-2C8F288796-L000717](../../web/workspace.html#L717) | 717 | `"  [\"الفئة أو التصنيف\",\"category\",\"السلامة، أنظمة إنذار\"],"` | — |
+| [SRC-2C8F288796-L000718](../../web/workspace.html#L718) | 718 | `"  [\"الاستخدامات\",\"useCases\",\"المصانع، المباني التجارية\"],"` | — |
+| [SRC-2C8F288796-L000719](../../web/workspace.html#L719) | 719 | `"  [\"المشكلات التي يحلها\",\"problems\",\"الكشف المبكر، تقليل المخاطر\"],"` | — |
+| [SRC-2C8F288796-L000720](../../web/workspace.html#L720) | 720 | `"  [\"المناطق المستهدفة\",\"locations\",\"القاهرة، الجيزة\"],"` | — |
+| [SRC-2C8F288796-L000721](../../web/workspace.html#L721) | 721 | `"  [\"القطاعات\",\"industries\",\"المقاولات، التصنيع\"],"` | — |
+| [SRC-2C8F288796-L000722](../../web/workspace.html#L722) | 722 | `"  [\"نوع العملاء\",\"customers\",\"مقاولون، ملاك مشروعات\"],"` | — |
+| [SRC-2C8F288796-L000723](../../web/workspace.html#L723) | 723 | `"  [\"أدوار الشراء\",\"roles\",\"مدير مشتريات، مدير مشروع\"],"` | — |
+| [SRC-2C8F288796-L000724](../../web/workspace.html#L724) | 724 | `"  [\"الاستثناءات\",\"exclusions\",\"القطاعات غير المناسبة\"]"` | — |
+| [SRC-2C8F288796-L000725](../../web/workspace.html#L725) | 725 | `" ];"` | — |
+| [SRC-2C8F288796-L000726](../../web/workspace.html#L726) | 726 | `" fields.forEach(([label,key,placeholder])=>{"` | — |
+| [SRC-2C8F288796-L000727](../../web/workspace.html#L727) | 727 | `"  const item=textField(label,\"profile_\"+key,placeholder,\"\",false);"` | — |
+| [SRC-2C8F288796-L000728](../../web/workspace.html#L728) | 728 | `"  controls[key]=item.control;if(!canWrite())item.control.disabled=true;grid.append(item.field);"` | — |
+| [SRC-2C8F288796-L000729](../../web/workspace.html#L729) | 729 | `" });"` | — |
+| [SRC-2C8F288796-L000730](../../web/workspace.html#L730) | 730 | `" const localeField=make(\"div\",\"field\"),locale=make(\"select\",\"\");"` | — |
+| [SRC-2C8F288796-L000731](../../web/workspace.html#L731) | 731 | `" [[\"auto\",\"تلقائي\"],[\"ar\",\"العربية\"],[\"en\",\"الإنجليزية\"],[\"mixed\",\"العربية والإنجليزية\"]].forEach(([v,l])=>{const o=make(\"option\",\"\",l);o.value=v;locale.append(o)});"` | — |
+| [SRC-2C8F288796-L000732](../../web/workspace.html#L732) | 732 | `" localeField.append(make(\"label\",\"\",\"لغة البحث\"),locale);controls.locale=locale;if(!canWrite())locale.disabled=true;grid.append(localeField);"` | — |
+| [SRC-2C8F288796-L000733](../../web/workspace.html#L733) | 733 | `" panel.append(grid,make(\"p\",\"profile-note\",\"افصل القيم المتعددة بفاصلة. تُستخدم المرادفات والمناطق لصياغة استعلامات مرتبطة بالمنتج؛ تطابق ICP وحده لا يثبت وجود طلب.\"));"` | — |
+| [SRC-2C8F288796-L000734](../../web/workspace.html#L734) | 734 | `" const actions=make(\"div\",\"form-actions\");"` | — |
+| [SRC-2C8F288796-L000735](../../web/workspace.html#L735) | 735 | `" const save=action(\"حفظ ملف المنتج والسوق\",\"primary\",async()=>{"` | — |
+| [SRC-2C8F288796-L000736](../../web/workspace.html#L736) | 736 | `"  save.disabled=true;"` | — |
+| [SRC-2C8F288796-L000737](../../web/workspace.html#L737) | 737 | `"  try{"` | — |
+| [SRC-2C8F288796-L000738](../../web/workspace.html#L738) | 738 | `"   const payload={"` | — |
+| [SRC-2C8F288796-L000739](../../web/workspace.html#L739) | 739 | `"    product:{name:controls.name.value,aliases:csvValues(controls.aliases.value),category_path:csvValues(controls.category.value),use_cases:csvValues(controls.useCases.value),problems_solved:csvValues(controls.problems.value)},"` | — |
+| [SRC-2C8F288796-L000740](../../web/workspace.html#L740) | 740 | `"    market:{locations:csvValues(controls.locations.value),industries:csvValues(controls.industries.value),customer_types:csvValues(controls.customers.value),decision_roles:csvValues(controls.roles.value),exclusions:csvValues(controls.exclusions.value)},"` | — |
+| [SRC-2C8F288796-L000741](../../web/workspace.html#L741) | 741 | `"    locale:controls.locale.value"` | — |
+| [SRC-2C8F288796-L000742](../../web/workspace.html#L742) | 742 | `"   };"` | — |
+| [SRC-2C8F288796-L000743](../../web/workspace.html#L743) | 743 | `"   const result=await api(\"/api/product-profiles\",{method:\"POST\",body:payload});"` | — |
+| [SRC-2C8F288796-L000744](../../web/workspace.html#L744) | 744 | `"   state.activeProfileId=result.id;"` | — |
+| [SRC-2C8F288796-L000745](../../web/workspace.html#L745) | 745 | `"   let refreshWarning=\"\";"` | — |
+| [SRC-2C8F288796-L000746](../../web/workspace.html#L746) | 746 | `"   try{"` | — |
+| [SRC-2C8F288796-L000747](../../web/workspace.html#L747) | 747 | `"    await loadProductProfiles();"` | — |
+| [SRC-2C8F288796-L000748](../../web/workspace.html#L748) | 748 | `"   }catch(refreshError){"` | — |
+| [SRC-2C8F288796-L000749](../../web/workspace.html#L749) | 749 | `"    refreshWarning=escapeMessage(refreshError.message);"` | — |
+| [SRC-2C8F288796-L000750](../../web/workspace.html#L750) | 750 | `"   }"` | — |
+| [SRC-2C8F288796-L000751](../../web/workspace.html#L751) | 751 | `"   if(refreshWarning){"` | — |
+| [SRC-2C8F288796-L000752](../../web/workspace.html#L752) | 752 | `"    panel.append(make(\"p\",\"auth-error\",\"تم حفظ ملف المنتج والسوق، لكن تعذر تحديث قائمة الملفات المحفوظة. \"+refreshWarning));"` | — |
+| [SRC-2C8F288796-L000753](../../web/workspace.html#L753) | 753 | `"   }else{"` | — |
+| [SRC-2C8F288796-L000754](../../web/workspace.html#L754) | 754 | `"    renderProductProfile();"` | — |
+| [SRC-2C8F288796-L000755](../../web/workspace.html#L755) | 755 | `"   }"` | — |
+| [SRC-2C8F288796-L000756](../../web/workspace.html#L756) | 756 | `"  }catch(error){panel.append(make(\"p\",\"auth-error\",escapeMessage(error.message)))}"` | — |
+| [SRC-2C8F288796-L000757](../../web/workspace.html#L757) | 757 | `"  finally{save.disabled=false}"` | — |
+| [SRC-2C8F288796-L000758](../../web/workspace.html#L758) | 758 | `" });"` | — |
+| [SRC-2C8F288796-L000759](../../web/workspace.html#L759) | 759 | `" save.disabled=!canWrite();actions.append(save);panel.append(actions);root.append(panel);"` | — |
+| [SRC-2C8F288796-L000760](../../web/workspace.html#L760) | 760 | `" const listPanel=make(\"section\",\"glass panel profile-panel\"),lh=make(\"div\",\"panel-head\"),lt=make(\"div\");"` | — |
+| [SRC-2C8F288796-L000761](../../web/workspace.html#L761) | 761 | `" lt.append(make(\"h2\",\"\",\"ملفات المنتجات المحفوظة\"),make(\"p\",\"\",\"اختر ملفًا محفوظًا للانتقال إلى تشغيل الاكتشاف.\"));"` | — |
+| [SRC-2C8F288796-L000762](../../web/workspace.html#L762) | 762 | `" lh.append(lt);listPanel.append(lh);"` | — |
+| [SRC-2C8F288796-L000763](../../web/workspace.html#L763) | 763 | `" if(!state.profiles.length)listPanel.append(emptyState(\"لا توجد ملفات بعد\",\"أنشئ ملف المنتج والسوق ثم احفظه.\"));"` | — |
+| [SRC-2C8F288796-L000764](../../web/workspace.html#L764) | 764 | `" else{"` | — |
+| [SRC-2C8F288796-L000765](../../web/workspace.html#L765) | 765 | `"  const list=make(\"div\",\"signal-list\");"` | — |
+| [SRC-2C8F288796-L000766](../../web/workspace.html#L766) | 766 | `"  state.profiles.forEach(profile=>{"` | — |
 | [SRC-2C8F288796-L000767](../../web/workspace.html#L767) | 767 | `"   const card=make(\"article\",\"signal-card\"),p=profile.profile\|\|{},m=p.market\|\|{};"` | — |
 | [SRC-2C8F288796-L000768](../../web/workspace.html#L768) | 768 | `"   card.append(make(\"strong\",\"\",profile.name\|\|\"منتج\"));"` | — |
 | [SRC-2C8F288796-L000769](../../web/workspace.html#L769) | 769 | `"   card.append(make(\"p\",\"subtle\",\"المناطق: \"+((m.locations\|\|[]).join(\"، \")\|\|\"غير محددة\")));"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **064**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L003955 إلى SRC-E3EEC2014A-L000107
+- النطاق: SRC-F725E90B2A-L003887 إلى SRC-E3EEC2014A-L000039
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,74 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L003887](../../tests/test_web_agent.py#L3887) | 3887 | `"        else:"` | — |
+| [SRC-F725E90B2A-L003888](../../tests/test_web_agent.py#L3888) | 3888 | `"            sources = [repair_candidate]"` | — |
+| [SRC-F725E90B2A-L003889](../../tests/test_web_agent.py#L3889) | 3889 | `"        return sources, [], {"` | — |
+| [SRC-F725E90B2A-L003890](../../tests/test_web_agent.py#L3890) | 3890 | `"            \"queries_planned\": len(research_plan.get(\"queries\", [])),"` | — |
+| [SRC-F725E90B2A-L003891](../../tests/test_web_agent.py#L3891) | 3891 | `"            \"queries_attempted\": 1,"` | — |
+| [SRC-F725E90B2A-L003892](../../tests/test_web_agent.py#L3892) | 3892 | `"            \"query_results\": [],"` | — |
+| [SRC-F725E90B2A-L003893](../../tests/test_web_agent.py#L3893) | 3893 | `"            \"unique_sources\": len(sources),"` | — |
+| [SRC-F725E90B2A-L003894](../../tests/test_web_agent.py#L3894) | 3894 | `"            \"pages_fetched\": len(sources),"` | — |
+| [SRC-F725E90B2A-L003895](../../tests/test_web_agent.py#L3895) | 3895 | `"            \"providers_used\": [\"reddit\"] if len(collect_calls) == 1 else [\"test_provider\"],"` | — |
+| [SRC-F725E90B2A-L003896](../../tests/test_web_agent.py#L3896) | 3896 | `"            \"provider_counts\": {},"` | — |
+| [SRC-F725E90B2A-L003897](../../tests/test_web_agent.py#L3897) | 3897 | `"            \"platform_counts\": {},"` | — |
+| [SRC-F725E90B2A-L003898](../../tests/test_web_agent.py#L3898) | 3898 | `"            \"social_direct_results\": len(sources) if len(collect_calls) == 1 else 0,"` | — |
+| [SRC-F725E90B2A-L003899](../../tests/test_web_agent.py#L3899) | 3899 | `"            \"depth\": research_plan.get(\"depth\", \"deep\"),"` | — |
+| [SRC-F725E90B2A-L003900](../../tests/test_web_agent.py#L3900) | 3900 | `"            \"planning_method\": \"test\","` | — |
+| [SRC-F725E90B2A-L003901](../../tests/test_web_agent.py#L3901) | 3901 | `"        }"` | — |
+| [SRC-F725E90B2A-L003902](../../tests/test_web_agent.py#L3902) | 3902 | `""` | — |
+| [SRC-F725E90B2A-L003903](../../tests/test_web_agent.py#L3903) | 3903 | `"    monkeypatch.setattr(agent, \"_plan_search\", plan)"` | — |
+| [SRC-F725E90B2A-L003904](../../tests/test_web_agent.py#L3904) | 3904 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
+| [SRC-F725E90B2A-L003905](../../tests/test_web_agent.py#L3905) | 3905 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", lambda _query, _source: True)"` | — |
+| [SRC-F725E90B2A-L003906](../../tests/test_web_agent.py#L3906) | 3906 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L003907](../../tests/test_web_agent.py#L3907) | 3907 | `"        agent,"` | — |
+| [SRC-F725E90B2A-L003908](../../tests/test_web_agent.py#L3908) | 3908 | `"        \"_generate\","` | — |
+| [SRC-F725E90B2A-L003909](../../tests/test_web_agent.py#L3909) | 3909 | `"        lambda *args, **kwargs: ("` | — |
+| [SRC-F725E90B2A-L003910](../../tests/test_web_agent.py#L3910) | 3910 | `"            \"السعر مناسب [المصدر 1]. الخصوصية جيدة [المصدر 2]. \""` | — |
+| [SRC-F725E90B2A-L003911](../../tests/test_web_agent.py#L3911) | 3911 | `"            \"الاعتمادية مناسبة [المصدر 1].\""` | — |
+| [SRC-F725E90B2A-L003912](../../tests/test_web_agent.py#L3912) | 3912 | `"        ),"` | — |
+| [SRC-F725E90B2A-L003913](../../tests/test_web_agent.py#L3913) | 3913 | `"    )"` | — |
+| [SRC-F725E90B2A-L003914](../../tests/test_web_agent.py#L3914) | 3914 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L003915](../../tests/test_web_agent.py#L3915) | 3915 | `"        agent,"` | — |
+| [SRC-F725E90B2A-L003916](../../tests/test_web_agent.py#L3916) | 3916 | `"        \"_review_answer\","` | — |
+| [SRC-F725E90B2A-L003917](../../tests/test_web_agent.py#L3917) | 3917 | `"        lambda _question, answer, _sources: answer,"` | — |
+| [SRC-F725E90B2A-L003918](../../tests/test_web_agent.py#L3918) | 3918 | `"    )"` | — |
+| [SRC-F725E90B2A-L003919](../../tests/test_web_agent.py#L3919) | 3919 | `""` | — |
+| [SRC-F725E90B2A-L003920](../../tests/test_web_agent.py#L3920) | 3920 | `"    result = agent.answer(question, mode=\"social\")"` | — |
+| [SRC-F725E90B2A-L003921](../../tests/test_web_agent.py#L3921) | 3921 | `"    report = result[\"search_report\"]"` | — |
+| [SRC-F725E90B2A-L003922](../../tests/test_web_agent.py#L3922) | 3922 | `"    repair_guardrails = report[\"source_guardrails\"][\"criterion_gap_repair\"]"` | — |
+| [SRC-F725E90B2A-L003923](../../tests/test_web_agent.py#L3923) | 3923 | `""` | — |
+| [SRC-F725E90B2A-L003924](../../tests/test_web_agent.py#L3924) | 3924 | `"    assert len(collect_calls) >= 2"` | — |
+| [SRC-F725E90B2A-L003925](../../tests/test_web_agent.py#L3925) | 3925 | `"    assert repair_guardrails[\"rejected_sources\"] >= 1"` | — |
+| [SRC-F725E90B2A-L003926](../../tests/test_web_agent.py#L3926) | 3926 | `"    assert repair_guardrails[\"rejection_counts\"][\"not_a_social_platform_source\"] >= 1"` | — |
+| [SRC-F725E90B2A-L003927](../../tests/test_web_agent.py#L3927) | 3927 | `"    assert all(\"reddit.com\" in source[\"url\"] for source in result[\"sources\"])"` | — |
+| [SRC-F725E90B2A-L003928](../../tests/test_web_agent.py#L3928) | 3928 | `"    assert \"https://example.com/unrelated-repair\" not in {"` | — |
+| [SRC-F725E90B2A-L003929](../../tests/test_web_agent.py#L3929) | 3929 | `"        source[\"url\"] for source in result[\"sources\"]"` | — |
+| [SRC-F725E90B2A-L003930](../../tests/test_web_agent.py#L3930) | 3930 | `"    }"` | — |
+| [SRC-F725E90B2A-L003931](../../tests/test_web_agent.py#L3931) | 3931 | `""` | — |
+| [SRC-F725E90B2A-L003932](../../tests/test_web_agent.py#L3932) | 3932 | `"def test_local_answer_exposes_task_spec_without_claiming_search(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L003933](../../tests/test_web_agent.py#L3933) | 3933 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L003934](../../tests/test_web_agent.py#L3934) | 3934 | `"    result = agent.answer(\"أهلا\")"` | — |
+| [SRC-F725E90B2A-L003935](../../tests/test_web_agent.py#L3935) | 3935 | `""` | — |
+| [SRC-F725E90B2A-L003936](../../tests/test_web_agent.py#L3936) | 3936 | `"    task_understanding = result[\"task_understanding\"]"` | — |
+| [SRC-F725E90B2A-L003937](../../tests/test_web_agent.py#L3937) | 3937 | `"    assert task_understanding[\"task_spec\"][\"schema\"] == \"omarai.task_spec.v1\""` | — |
+| [SRC-F725E90B2A-L003938](../../tests/test_web_agent.py#L3938) | 3938 | `"    assert task_understanding[\"tool_execution\"][\"search_outcome\"] == \"not_assessed\""` | — |
+| [SRC-F725E90B2A-L003939](../../tests/test_web_agent.py#L3939) | 3939 | `"    assert task_understanding[\"tool_execution\"][\"required_tools\"] == []"` | — |
+| [SRC-F725E90B2A-L003940](../../tests/test_web_agent.py#L3940) | 3940 | `"    assert all("` | — |
+| [SRC-F725E90B2A-L003941](../../tests/test_web_agent.py#L3941) | 3941 | `"        row[\"status\"] == \"not_required\""` | — |
+| [SRC-F725E90B2A-L003942](../../tests/test_web_agent.py#L3942) | 3942 | `"        for row in task_understanding[\"tool_execution\"][\"tool_status_matrix\"]"` | — |
+| [SRC-F725E90B2A-L003943](../../tests/test_web_agent.py#L3943) | 3943 | `"    )"` | — |
+| [SRC-F725E90B2A-L003944](../../tests/test_web_agent.py#L3944) | 3944 | `"    assert task_understanding[\"actual_queries\"] == []"` | — |
+| [SRC-F725E90B2A-L003945](../../tests/test_web_agent.py#L3945) | 3945 | `"    assert task_understanding[\"query_strategy_matrix\"] == []"` | — |
+| [SRC-F725E90B2A-L003946](../../tests/test_web_agent.py#L3946) | 3946 | `"    assert task_understanding[\"search_was_attempted\"] is False"` | — |
+| [SRC-F725E90B2A-L003947](../../tests/test_web_agent.py#L3947) | 3947 | `""` | — |
+| [SRC-F725E90B2A-L003948](../../tests/test_web_agent.py#L3948) | 3948 | `"def test_official_site_without_target_clarifies_before_planning_or_search(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L003949](../../tests/test_web_agent.py#L3949) | 3949 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L003950](../../tests/test_web_agent.py#L3950) | 3950 | `""` | — |
+| [SRC-F725E90B2A-L003951](../../tests/test_web_agent.py#L3951) | 3951 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L003952](../../tests/test_web_agent.py#L3952) | 3952 | `"        agent,"` | — |
+| [SRC-F725E90B2A-L003953](../../tests/test_web_agent.py#L3953) | 3953 | `"        \"_plan_search\","` | — |
+| [SRC-F725E90B2A-L003954](../../tests/test_web_agent.py#L3954) | 3954 | `"        lambda *args, **kwargs: pytest.fail(\"Missing official-site target must be clarified before planning\"),"` | — |
 | [SRC-F725E90B2A-L003955](../../tests/test_web_agent.py#L3955) | 3955 | `"    )"` | — |
 | [SRC-F725E90B2A-L003956](../../tests/test_web_agent.py#L3956) | 3956 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L003957](../../tests/test_web_agent.py#L3957) | 3957 | `"        agent,"` | — |
@@ -766,71 +834,3 @@
 | [SRC-E3EEC2014A-L000037](../../tests/test_workspace_discovery.py#L37) | 37 | `"                \"candidate_signal_count\": 1,"` | — |
 | [SRC-E3EEC2014A-L000038](../../tests/test_workspace_discovery.py#L38) | 38 | `"                \"related_results_reviewed\": 2,"` | — |
 | [SRC-E3EEC2014A-L000039](../../tests/test_workspace_discovery.py#L39) | 39 | `"                \"qualification_rule\": \"public_demand_signal_phrase_by_type\","` | — |
-| [SRC-E3EEC2014A-L000040](../../tests/test_workspace_discovery.py#L40) | 40 | `"                \"identity_verified\": False,"` | — |
-| [SRC-E3EEC2014A-L000041](../../tests/test_workspace_discovery.py#L41) | 41 | `"            },"` | — |
-| [SRC-E3EEC2014A-L000042](../../tests/test_workspace_discovery.py#L42) | 42 | `"            \"pipeline_completion_status\": \"completed\","` | — |
-| [SRC-E3EEC2014A-L000043](../../tests/test_workspace_discovery.py#L43) | 43 | `"        },"` | — |
-| [SRC-E3EEC2014A-L000044](../../tests/test_workspace_discovery.py#L44) | 44 | `"        \"sources\": ["` | — |
-| [SRC-E3EEC2014A-L000045](../../tests/test_workspace_discovery.py#L45) | 45 | `"            {"` | — |
-| [SRC-E3EEC2014A-L000046](../../tests/test_workspace_discovery.py#L46) | 46 | `"                \"title\": \"طلب توريد لوحة إنذار\","` | — |
-| [SRC-E3EEC2014A-L000047](../../tests/test_workspace_discovery.py#L47) | 47 | `"                \"url\": \"https://example.org/public-request/1\","` | — |
-| [SRC-E3EEC2014A-L000048](../../tests/test_workspace_discovery.py#L48) | 48 | `"                \"snippet\": \"نبحث عن مورد لتوريد لوحة إنذار حريق لمشروع في القاهرة.\","` | — |
-| [SRC-E3EEC2014A-L000049](../../tests/test_workspace_discovery.py#L49) | 49 | `"                \"platform\": \"web\","` | — |
-| [SRC-E3EEC2014A-L000050](../../tests/test_workspace_discovery.py#L50) | 50 | `"                \"published_at\": None,"` | — |
-| [SRC-E3EEC2014A-L000051](../../tests/test_workspace_discovery.py#L51) | 51 | `"                \"page_fetched\": False,"` | — |
-| [SRC-E3EEC2014A-L000052](../../tests/test_workspace_discovery.py#L52) | 52 | `"                \"lead_qualification\": \"public_demand_signal\","` | — |
-| [SRC-E3EEC2014A-L000053](../../tests/test_workspace_discovery.py#L53) | 53 | `"                \"lead_intent_evidence\": {"` | — |
-| [SRC-E3EEC2014A-L000054](../../tests/test_workspace_discovery.py#L54) | 54 | `"                    \"phrase\": \"نبحث عن مورد\","` | — |
-| [SRC-E3EEC2014A-L000055](../../tests/test_workspace_discovery.py#L55) | 55 | `"                    \"basis\": \"snippet\","` | — |
-| [SRC-E3EEC2014A-L000056](../../tests/test_workspace_discovery.py#L56) | 56 | `"                    \"signal_type\": \"request_for_quotation\","` | — |
-| [SRC-E3EEC2014A-L000057](../../tests/test_workspace_discovery.py#L57) | 57 | `"                    \"product_fit\": \"unassessed\","` | — |
-| [SRC-E3EEC2014A-L000058](../../tests/test_workspace_discovery.py#L58) | 58 | `"                },"` | — |
-| [SRC-E3EEC2014A-L000059](../../tests/test_workspace_discovery.py#L59) | 59 | `"            },"` | — |
-| [SRC-E3EEC2014A-L000060](../../tests/test_workspace_discovery.py#L60) | 60 | `"            {"` | — |
-| [SRC-E3EEC2014A-L000061](../../tests/test_workspace_discovery.py#L61) | 61 | `"                \"title\": \"كتالوج لوحات إنذار\","` | — |
-| [SRC-E3EEC2014A-L000062](../../tests/test_workspace_discovery.py#L62) | 62 | `"                \"url\": \"https://example.net/catalog\","` | — |
-| [SRC-E3EEC2014A-L000063](../../tests/test_workspace_discovery.py#L63) | 63 | `"                \"snippet\": \"كتالوج تعريفي بلوحات إنذار الحريق.\","` | — |
-| [SRC-E3EEC2014A-L000064](../../tests/test_workspace_discovery.py#L64) | 64 | `"                \"platform\": \"web\","` | — |
-| [SRC-E3EEC2014A-L000065](../../tests/test_workspace_discovery.py#L65) | 65 | `"                \"published_at\": None,"` | — |
-| [SRC-E3EEC2014A-L000066](../../tests/test_workspace_discovery.py#L66) | 66 | `"                \"page_fetched\": False,"` | — |
-| [SRC-E3EEC2014A-L000067](../../tests/test_workspace_discovery.py#L67) | 67 | `"                \"lead_qualification\": \"related_result_not_lead\","` | — |
-| [SRC-E3EEC2014A-L000068](../../tests/test_workspace_discovery.py#L68) | 68 | `"                \"lead_intent_evidence\": None,"` | — |
-| [SRC-E3EEC2014A-L000069](../../tests/test_workspace_discovery.py#L69) | 69 | `"            },"` | — |
-| [SRC-E3EEC2014A-L000070](../../tests/test_workspace_discovery.py#L70) | 70 | `"        ],"` | — |
-| [SRC-E3EEC2014A-L000071](../../tests/test_workspace_discovery.py#L71) | 71 | `"    }"` | — |
-| [SRC-E3EEC2014A-L000072](../../tests/test_workspace_discovery.py#L72) | 72 | `""` | — |
-| [SRC-E3EEC2014A-L000073](../../tests/test_workspace_discovery.py#L73) | 73 | `""` | — |
-| [SRC-E3EEC2014A-L000074](../../tests/test_workspace_discovery.py#L74) | 74 | `"def test_product_profiles_and_discovery_runs_are_tenant_scoped(tmp_path):"` | — |
-| [SRC-E3EEC2014A-L000075](../../tests/test_workspace_discovery.py#L75) | 75 | `"    store = LeadStore(tmp_path / \"workspace-discovery.sqlite3\")"` | — |
-| [SRC-E3EEC2014A-L000076](../../tests/test_workspace_discovery.py#L76) | 76 | `"    tenant_a = store.create_tenant(\"Workspace A\", \"workspace-a\")"` | — |
-| [SRC-E3EEC2014A-L000077](../../tests/test_workspace_discovery.py#L77) | 77 | `"    tenant_b = store.create_tenant(\"Workspace B\", \"workspace-b\")"` | — |
-| [SRC-E3EEC2014A-L000078](../../tests/test_workspace_discovery.py#L78) | 78 | `""` | — |
-| [SRC-E3EEC2014A-L000079](../../tests/test_workspace_discovery.py#L79) | 79 | `"    saved_profile = store.save_product_profile(product_profile(), tenant_id=tenant_a)"` | — |
-| [SRC-E3EEC2014A-L000080](../../tests/test_workspace_discovery.py#L80) | 80 | `"    saved_run = store.save_discovery_run("` | — |
-| [SRC-E3EEC2014A-L000081](../../tests/test_workspace_discovery.py#L81) | 81 | `"        saved_profile[\"id\"], discovery_run(), tenant_id=tenant_a"` | — |
-| [SRC-E3EEC2014A-L000082](../../tests/test_workspace_discovery.py#L82) | 82 | `"    )"` | — |
-| [SRC-E3EEC2014A-L000083](../../tests/test_workspace_discovery.py#L83) | 83 | `""` | — |
-| [SRC-E3EEC2014A-L000084](../../tests/test_workspace_discovery.py#L84) | 84 | `"    assert [item[\"id\"] for item in store.list_product_profiles(tenant_id=tenant_a)] == ["` | — |
-| [SRC-E3EEC2014A-L000085](../../tests/test_workspace_discovery.py#L85) | 85 | `"        saved_profile[\"id\"]"` | — |
-| [SRC-E3EEC2014A-L000086](../../tests/test_workspace_discovery.py#L86) | 86 | `"    ]"` | — |
-| [SRC-E3EEC2014A-L000087](../../tests/test_workspace_discovery.py#L87) | 87 | `"    assert store.list_product_profiles(tenant_id=tenant_b) == []"` | — |
-| [SRC-E3EEC2014A-L000088](../../tests/test_workspace_discovery.py#L88) | 88 | `"    assert store.get_product_profile(saved_profile[\"id\"], tenant_id=tenant_b) is None"` | — |
-| [SRC-E3EEC2014A-L000089](../../tests/test_workspace_discovery.py#L89) | 89 | `"    assert store.get_discovery_run(saved_run[\"id\"], tenant_id=tenant_b) is None"` | — |
-| [SRC-E3EEC2014A-L000090](../../tests/test_workspace_discovery.py#L90) | 90 | `"    assert store.list_discovery_runs(tenant_id=tenant_b) == []"` | — |
-| [SRC-E3EEC2014A-L000091](../../tests/test_workspace_discovery.py#L91) | 91 | `""` | — |
-| [SRC-E3EEC2014A-L000092](../../tests/test_workspace_discovery.py#L92) | 92 | `""` | — |
-| [SRC-E3EEC2014A-L000093](../../tests/test_workspace_discovery.py#L93) | 93 | `"def test_duplicate_product_profile_name_updates_within_tenant(tmp_path):"` | — |
-| [SRC-E3EEC2014A-L000094](../../tests/test_workspace_discovery.py#L94) | 94 | `"    store = LeadStore(tmp_path / \"workspace-profiles.sqlite3\")"` | — |
-| [SRC-E3EEC2014A-L000095](../../tests/test_workspace_discovery.py#L95) | 95 | `"    tenant = store.create_tenant(\"Workspace\", \"workspace\")"` | — |
-| [SRC-E3EEC2014A-L000096](../../tests/test_workspace_discovery.py#L96) | 96 | `"    first = store.save_product_profile(product_profile(), tenant_id=tenant)"` | — |
-| [SRC-E3EEC2014A-L000097](../../tests/test_workspace_discovery.py#L97) | 97 | `"    updated = store.save_product_profile("` | — |
-| [SRC-E3EEC2014A-L000098](../../tests/test_workspace_discovery.py#L98) | 98 | `"        product_profile(aliases=[\"FACP\", \"لوحة إنذار\"]), tenant_id=tenant"` | — |
-| [SRC-E3EEC2014A-L000099](../../tests/test_workspace_discovery.py#L99) | 99 | `"    )"` | — |
-| [SRC-E3EEC2014A-L000100](../../tests/test_workspace_discovery.py#L100) | 100 | `""` | — |
-| [SRC-E3EEC2014A-L000101](../../tests/test_workspace_discovery.py#L101) | 101 | `"    assert updated[\"id\"] == first[\"id\"]"` | — |
-| [SRC-E3EEC2014A-L000102](../../tests/test_workspace_discovery.py#L102) | 102 | `"    assert updated[\"profile\"][\"product\"][\"aliases\"] == [\"FACP\", \"لوحة إنذار\"]"` | — |
-| [SRC-E3EEC2014A-L000103](../../tests/test_workspace_discovery.py#L103) | 103 | `"    assert len(store.list_product_profiles(tenant_id=tenant)) == 1"` | — |
-| [SRC-E3EEC2014A-L000104](../../tests/test_workspace_discovery.py#L104) | 104 | `""` | — |
-| [SRC-E3EEC2014A-L000105](../../tests/test_workspace_discovery.py#L105) | 105 | `""` | — |
-| [SRC-E3EEC2014A-L000106](../../tests/test_workspace_discovery.py#L106) | 106 | `"def test_discovery_signal_save_uses_server_stored_qualification_and_evidence(tmp_path):"` | — |
-| [SRC-E3EEC2014A-L000107](../../tests/test_workspace_discovery.py#L107) | 107 | `"    store = LeadStore(tmp_path / \"workspace-signals.sqlite3\")"` | — |

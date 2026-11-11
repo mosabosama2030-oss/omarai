@@ -4,7 +4,7 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000126 إلى SRC-EEF2E6447C-L000925
+- النطاق: SRC-EEF2E6447C-L000098 إلى SRC-EEF2E6447C-L000897
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,34 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000098](../../api/omarai.py#L98) | 98 | `"        \"default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; \""` | — |
+| [SRC-EEF2E6447C-L000099](../../api/omarai.py#L99) | 99 | `"        \"form-action 'self'; connect-src 'self'; img-src 'self' data:; \""` | — |
+| [SRC-EEF2E6447C-L000100](../../api/omarai.py#L100) | 100 | `"        f\"script-src {' '.join(script_sources)}; \""` | — |
+| [SRC-EEF2E6447C-L000101](../../api/omarai.py#L101) | 101 | `"        f\"style-src {' '.join(style_sources)}; font-src 'self' data:\""` | — |
+| [SRC-EEF2E6447C-L000102](../../api/omarai.py#L102) | 102 | `"    )"` | — |
+| [SRC-EEF2E6447C-L000103](../../api/omarai.py#L103) | 103 | `"# Bound request-line + header parsing before application code or body processing."` | — |
+| [SRC-EEF2E6447C-L000104](../../api/omarai.py#L104) | 104 | `"REQUEST_HEADER_READ_TIMEOUT_SECONDS = 8.0"` | — |
+| [SRC-EEF2E6447C-L000105](../../api/omarai.py#L105) | 105 | `"REQUEST_HEADER_IDLE_TIMEOUT_SECONDS = 2.0"` | — |
+| [SRC-EEF2E6447C-L000106](../../api/omarai.py#L106) | 106 | `"MAX_REQUEST_HEADER_READ_TIMEOUT_SECONDS = 15.0"` | — |
+| [SRC-EEF2E6447C-L000107](../../api/omarai.py#L107) | 107 | `"# Absolute deadline for reading the entire body, not merely a per-read idle timeout."` | — |
+| [SRC-EEF2E6447C-L000108](../../api/omarai.py#L108) | 108 | `"REQUEST_BODY_READ_TIMEOUT_SECONDS = 10.0"` | — |
+| [SRC-EEF2E6447C-L000109](../../api/omarai.py#L109) | 109 | `"REQUEST_BODY_IDLE_TIMEOUT_SECONDS = 2.0"` | — |
+| [SRC-EEF2E6447C-L000110](../../api/omarai.py#L110) | 110 | `"MAX_REQUEST_BODY_READ_TIMEOUT_SECONDS = 30.0"` | — |
+| [SRC-EEF2E6447C-L000111](../../api/omarai.py#L111) | 111 | `"REQUEST_BODY_READ_CHUNK_BYTES = 8_192"` | — |
+| [SRC-EEF2E6447C-L000112](../../api/omarai.py#L112) | 112 | `""` | — |
+| [SRC-EEF2E6447C-L000113](../../api/omarai.py#L113) | 113 | `""` | — |
+| [SRC-EEF2E6447C-L000114](../../api/omarai.py#L114) | 114 | `""` | — |
+| [SRC-EEF2E6447C-L000115](../../api/omarai.py#L115) | 115 | `"def _lead_store_from_environment() -> LeadStore:"` | — |
+| [SRC-EEF2E6447C-L000116](../../api/omarai.py#L116) | 116 | `"    \"\"\"Select managed PostgreSQL when configured; otherwise retain local SQLite.\"\"\""` | — |
+| [SRC-EEF2E6447C-L000117](../../api/omarai.py#L117) | 117 | `"    database_url = ("` | — |
+| [SRC-EEF2E6447C-L000118](../../api/omarai.py#L118) | 118 | `"        os.getenv(\"OMARAI_DATABASE_URL\", \"\").strip()"` | — |
+| [SRC-EEF2E6447C-L000119](../../api/omarai.py#L119) | 119 | `"        or os.getenv(\"DATABASE_URL\", \"\").strip()"` | — |
+| [SRC-EEF2E6447C-L000120](../../api/omarai.py#L120) | 120 | `"    )"` | — |
+| [SRC-EEF2E6447C-L000121](../../api/omarai.py#L121) | 121 | `"    configured_path = os.getenv(\"OMARAI_DB_PATH\", \"\").strip()"` | — |
+| [SRC-EEF2E6447C-L000122](../../api/omarai.py#L122) | 122 | `"    if database_url and configured_path:"` | — |
+| [SRC-EEF2E6447C-L000123](../../api/omarai.py#L123) | 123 | `"        raise ValueError("` | — |
+| [SRC-EEF2E6447C-L000124](../../api/omarai.py#L124) | 124 | `"            \"configure either OMARAI_DATABASE_URL/DATABASE_URL or OMARAI_DB_PATH, not both\""` | — |
+| [SRC-EEF2E6447C-L000125](../../api/omarai.py#L125) | 125 | `"        )"` | — |
 | [SRC-EEF2E6447C-L000126](../../api/omarai.py#L126) | 126 | `"    return LeadStore(configured_path or None, database_url=database_url or None)"` | — |
 | [SRC-EEF2E6447C-L000127](../../api/omarai.py#L127) | 127 | `""` | — |
 | [SRC-EEF2E6447C-L000128](../../api/omarai.py#L128) | 128 | `""` | — |
@@ -788,31 +816,3 @@
 | [SRC-EEF2E6447C-L000895](../../api/omarai.py#L895) | 895 | `"                profile = self.store.get_product_profile("` | — |
 | [SRC-EEF2E6447C-L000896](../../api/omarai.py#L896) | 896 | `"                    profile_id, tenant_id=principal[\"tenant_id\"]"` | — |
 | [SRC-EEF2E6447C-L000897](../../api/omarai.py#L897) | 897 | `"                )"` | — |
-| [SRC-EEF2E6447C-L000898](../../api/omarai.py#L898) | 898 | `"                if profile is None:"` | — |
-| [SRC-EEF2E6447C-L000899](../../api/omarai.py#L899) | 899 | `"                    return self.respond(404, {\"error\": \"product profile not found\"})"` | — |
-| [SRC-EEF2E6447C-L000900](../../api/omarai.py#L900) | 900 | `"                product_data = profile[\"profile\"].get(\"product\", {})"` | — |
-| [SRC-EEF2E6447C-L000901](../../api/omarai.py#L901) | 901 | `"                market_data = profile[\"profile\"].get(\"market\", {})"` | — |
-| [SRC-EEF2E6447C-L000902](../../api/omarai.py#L902) | 902 | `"                product, market, locale = _product_market_from_payload({"` | — |
-| [SRC-EEF2E6447C-L000903](../../api/omarai.py#L903) | 903 | `"                    \"product\": product_data,"` | — |
-| [SRC-EEF2E6447C-L000904](../../api/omarai.py#L904) | 904 | `"                    \"market\": market_data,"` | — |
-| [SRC-EEF2E6447C-L000905](../../api/omarai.py#L905) | 905 | `"                    \"locale\": profile[\"profile\"].get(\"locale\", \"auto\"),"` | — |
-| [SRC-EEF2E6447C-L000906](../../api/omarai.py#L906) | 906 | `"                })"` | — |
-| [SRC-EEF2E6447C-L000907](../../api/omarai.py#L907) | 907 | `"                buyer_queries = build_buyer_queries(product, market, locale=locale)"` | — |
-| [SRC-EEF2E6447C-L000908](../../api/omarai.py#L908) | 908 | `"                if not buyer_queries:"` | — |
-| [SRC-EEF2E6447C-L000909](../../api/omarai.py#L909) | 909 | `"                    return self.respond(422, {\"error\": \"تعذر إنشاء استعلامات مرتبطة بملف المنتج والسوق.\"})"` | — |
-| [SRC-EEF2E6447C-L000910](../../api/omarai.py#L910) | 910 | `"                locations = \"، \".join(market.locations) if market.locations else \"الموقع غير محدد\""` | — |
-| [SRC-EEF2E6447C-L000911](../../api/omarai.py#L911) | 911 | `"                question = ("` | — |
-| [SRC-EEF2E6447C-L000912](../../api/omarai.py#L912) | 912 | `"                    \"اكتشف إشارات طلب شراء أو توريد معلنة، وميّز الطلب المباشر عن الاهتمام العام. \""` | — |
-| [SRC-EEF2E6447C-L000913](../../api/omarai.py#L913) | 913 | `"                    \"المنتج أو الخدمة: \" + product.name + \". السوق والمناطق: \" + locations + \". \""` | — |
-| [SRC-EEF2E6447C-L000914](../../api/omarai.py#L914) | 914 | `"                    \"لا تعتبر ذكر المنتج وحده دليل شراء، ولا تخمّن هوية الكاتب.\""` | — |
-| [SRC-EEF2E6447C-L000915](../../api/omarai.py#L915) | 915 | `"                )"` | — |
-| [SRC-EEF2E6447C-L000916](../../api/omarai.py#L916) | 916 | `"                agent = WebAgent()"` | — |
-| [SRC-EEF2E6447C-L000917](../../api/omarai.py#L917) | 917 | `"                agent.allow_optional_providers = allow_optional"` | — |
-| [SRC-EEF2E6447C-L000918](../../api/omarai.py#L918) | 918 | `"                if not allow_optional:"` | — |
-| [SRC-EEF2E6447C-L000919](../../api/omarai.py#L919) | 919 | `"                    agent.openrouter_web_search_enabled = False"` | — |
-| [SRC-EEF2E6447C-L000920](../../api/omarai.py#L920) | 920 | `"                cls = type(self)"` | — |
-| [SRC-EEF2E6447C-L000921](../../api/omarai.py#L921) | 921 | `"                if not cls._agent_semaphore.acquire(blocking=False):"` | — |
-| [SRC-EEF2E6447C-L000922](../../api/omarai.py#L922) | 922 | `"                    return self.respond("` | — |
-| [SRC-EEF2E6447C-L000923](../../api/omarai.py#L923) | 923 | `"                        503,"` | — |
-| [SRC-EEF2E6447C-L000924](../../api/omarai.py#L924) | 924 | `"                        {"` | — |
-| [SRC-EEF2E6447C-L000925](../../api/omarai.py#L925) | 925 | `"                            \"error\": \"خدمة البحث مشغولة حاليًا؛ أعد المحاولة بعد قليل.\","` | — |
