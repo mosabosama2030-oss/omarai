@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L001457 إلى SRC-1AE03B9EC3-L000399
+- النطاق: SRC-686F71AA50-L001428 إلى SRC-1AE03B9EC3-L000370
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,35 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L001428](../../agents/task_understanding.py#L1428) | 1428 | `"        name for name in _PATTERNS if not name.startswith(\"output_\")"` | — |
+| [SRC-686F71AA50-L001429](../../agents/task_understanding.py#L1429) | 1429 | `"    } \| {\"general_question\", \"ambiguous_or_incomplete\", \"web_research\"}"` | — |
+| [SRC-686F71AA50-L001430](../../agents/task_understanding.py#L1430) | 1430 | `"    raw_family = clean_text(value.get(\"task_family\"), 80)"` | — |
+| [SRC-686F71AA50-L001431](../../agents/task_understanding.py#L1431) | 1431 | `"    raw_mode = clean_text(value.get(\"mode\"), 20)"` | — |
+| [SRC-686F71AA50-L001432](../../agents/task_understanding.py#L1432) | 1432 | `"    raw_route = clean_text(value.get(\"intent_route\"), 40)"` | — |
+| [SRC-686F71AA50-L001433](../../agents/task_understanding.py#L1433) | 1433 | `"    allowed_routes = {"` | — |
+| [SRC-686F71AA50-L001434](../../agents/task_understanding.py#L1434) | 1434 | `"        \"LOCAL\", \"MODEL_ONLY\", \"CLARIFY\", \"WEB_SIMPLE\", \"WEB_DEEP\","` | — |
+| [SRC-686F71AA50-L001435](../../agents/task_understanding.py#L1435) | 1435 | `"        \"LEAD_GENERATION\", \"BUDGET_EXHAUSTED\", \"deterministic_fallback\","` | — |
+| [SRC-686F71AA50-L001436](../../agents/task_understanding.py#L1436) | 1436 | `"        \"validated_language_model_plan\", \"unassessed\","` | — |
+| [SRC-686F71AA50-L001437](../../agents/task_understanding.py#L1437) | 1437 | `"    }"` | — |
+| [SRC-686F71AA50-L001438](../../agents/task_understanding.py#L1438) | 1438 | `"    allowed_tools = {"` | — |
+| [SRC-686F71AA50-L001439](../../agents/task_understanding.py#L1439) | 1439 | `"        \"web_search\", \"page_fetch\", \"public_social_search_if_configured\","` | — |
+| [SRC-686F71AA50-L001440](../../agents/task_understanding.py#L1440) | 1440 | `"        \"language_model_generation_if_configured\", \"claim_review_if_configured\","` | — |
+| [SRC-686F71AA50-L001441](../../agents/task_understanding.py#L1441) | 1441 | `"    }"` | — |
+| [SRC-686F71AA50-L001442](../../agents/task_understanding.py#L1442) | 1442 | `"    allowed_slots = {"` | — |
+| [SRC-686F71AA50-L001443](../../agents/task_understanding.py#L1443) | 1443 | `"        \"aspect\", \"audience\", \"budget\", \"capacity\", \"country\", \"currency\","` | — |
+| [SRC-686F71AA50-L001444](../../agents/task_understanding.py#L1444) | 1444 | `"        \"entity\", \"goal\", \"language\", \"location\", \"model\", \"platform\","` | — |
+| [SRC-686F71AA50-L001445](../../agents/task_understanding.py#L1445) | 1445 | `"        \"product\", \"time_range\", \"variant\", \"version\","` | — |
+| [SRC-686F71AA50-L001446](../../agents/task_understanding.py#L1446) | 1446 | `"    }"` | — |
+| [SRC-686F71AA50-L001447](../../agents/task_understanding.py#L1447) | 1447 | `"    context_resolution[\"slots\"] = {"` | — |
+| [SRC-686F71AA50-L001448](../../agents/task_understanding.py#L1448) | 1448 | `"        key: item for key, item in context_resolution[\"slots\"].items()"` | — |
+| [SRC-686F71AA50-L001449](../../agents/task_understanding.py#L1449) | 1449 | `"        if key in allowed_slots"` | — |
+| [SRC-686F71AA50-L001450](../../agents/task_understanding.py#L1450) | 1450 | `"    }"` | — |
+| [SRC-686F71AA50-L001451](../../agents/task_understanding.py#L1451) | 1451 | `"    hypotheses = ["` | — |
+| [SRC-686F71AA50-L001452](../../agents/task_understanding.py#L1452) | 1452 | `"        item for item in hypotheses"` | — |
+| [SRC-686F71AA50-L001453](../../agents/task_understanding.py#L1453) | 1453 | `"        if item.get(\"family\") in allowed_families"` | — |
+| [SRC-686F71AA50-L001454](../../agents/task_understanding.py#L1454) | 1454 | `"    ]"` | — |
+| [SRC-686F71AA50-L001455](../../agents/task_understanding.py#L1455) | 1455 | `"    raw_secondary = clean_list(value.get(\"secondary_task_types\"), items=16, chars=80)"` | — |
+| [SRC-686F71AA50-L001456](../../agents/task_understanding.py#L1456) | 1456 | `"    spec = {"` | — |
 | [SRC-686F71AA50-L001457](../../agents/task_understanding.py#L1457) | 1457 | `"        \"schema\": \"omarai.task_spec.v1\","` | — |
 | [SRC-686F71AA50-L001458](../../agents/task_understanding.py#L1458) | 1458 | `"        \"task_family\": raw_family if raw_family in allowed_families else \"general_question\","` | — |
 | [SRC-686F71AA50-L001459](../../agents/task_understanding.py#L1459) | 1459 | `"        \"mode\": raw_mode if raw_mode in SUPPORTED_MODES else \"auto\","` | — |
@@ -814,32 +843,3 @@
 | [SRC-1AE03B9EC3-L000368](../../agents/web_agent.py#L368) | 368 | `"        # Relevance cannot be established from an instruction-only query."` | — |
 | [SRC-1AE03B9EC3-L000369](../../agents/web_agent.py#L369) | 369 | `"        return 0.0"` | — |
 | [SRC-1AE03B9EC3-L000370](../../agents/web_agent.py#L370) | 370 | `"    expanded_evidence = _search_tokens(evidence)"` | — |
-| [SRC-1AE03B9EC3-L000371](../../agents/web_agent.py#L371) | 371 | `""` | — |
-| [SRC-1AE03B9EC3-L000372](../../agents/web_agent.py#L372) | 372 | `"    def concept_found(token: str) -> bool:"` | — |
-| [SRC-1AE03B9EC3-L000373](../../agents/web_agent.py#L373) | 373 | `"        for form in _arabic_query_token_forms(token):"` | — |
-| [SRC-1AE03B9EC3-L000374](../../agents/web_agent.py#L374) | 374 | `"            if ("` | — |
-| [SRC-1AE03B9EC3-L000375](../../agents/web_agent.py#L375) | 375 | `"                form in expanded_evidence"` | — |
-| [SRC-1AE03B9EC3-L000376](../../agents/web_agent.py#L376) | 376 | `"                or (form.startswith(\"ال\") and form[2:] in expanded_evidence)"` | — |
-| [SRC-1AE03B9EC3-L000377](../../agents/web_agent.py#L377) | 377 | `"                or bool(_NORMALIZED_SEARCH_SYNONYMS.get(form, set()) & expanded_evidence)"` | — |
-| [SRC-1AE03B9EC3-L000378](../../agents/web_agent.py#L378) | 378 | `"            ):"` | — |
-| [SRC-1AE03B9EC3-L000379](../../agents/web_agent.py#L379) | 379 | `"                return True"` | — |
-| [SRC-1AE03B9EC3-L000380](../../agents/web_agent.py#L380) | 380 | `"            # Also match an English query term through the Arabic concept that"` | — |
-| [SRC-1AE03B9EC3-L000381](../../agents/web_agent.py#L381) | 381 | `"            # expands the evidence token. Synonym vocabulary is directional in its"` | — |
-| [SRC-1AE03B9EC3-L000382](../../agents/web_agent.py#L382) | 382 | `"            # storage, but evidence matching must work in both language directions."` | — |
-| [SRC-1AE03B9EC3-L000383](../../agents/web_agent.py#L383) | 383 | `"            if any("` | — |
-| [SRC-1AE03B9EC3-L000384](../../agents/web_agent.py#L384) | 384 | `"                form in aliases"` | — |
-| [SRC-1AE03B9EC3-L000385](../../agents/web_agent.py#L385) | 385 | `"                and ("` | — |
-| [SRC-1AE03B9EC3-L000386](../../agents/web_agent.py#L386) | 386 | `"                    arabic in expanded_evidence"` | — |
-| [SRC-1AE03B9EC3-L000387](../../agents/web_agent.py#L387) | 387 | `"                    or (arabic.startswith(\"ال\") and arabic[2:] in expanded_evidence)"` | — |
-| [SRC-1AE03B9EC3-L000388](../../agents/web_agent.py#L388) | 388 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L000389](../../agents/web_agent.py#L389) | 389 | `"                for arabic, aliases in _NORMALIZED_SEARCH_SYNONYMS.items()"` | — |
-| [SRC-1AE03B9EC3-L000390](../../agents/web_agent.py#L390) | 390 | `"            ):"` | — |
-| [SRC-1AE03B9EC3-L000391](../../agents/web_agent.py#L391) | 391 | `"                return True"` | — |
-| [SRC-1AE03B9EC3-L000392](../../agents/web_agent.py#L392) | 392 | `"        return False"` | — |
-| [SRC-1AE03B9EC3-L000393](../../agents/web_agent.py#L393) | 393 | `""` | — |
-| [SRC-1AE03B9EC3-L000394](../../agents/web_agent.py#L394) | 394 | `"    matched = sum(1 for token in query_tokens if concept_found(token))"` | — |
-| [SRC-1AE03B9EC3-L000395](../../agents/web_agent.py#L395) | 395 | `"    ratio = matched / len(query_tokens)"` | — |
-| [SRC-1AE03B9EC3-L000396](../../agents/web_agent.py#L396) | 396 | `"    # A multi-concept query must match at least two topic concepts. One generic"` | — |
-| [SRC-1AE03B9EC3-L000397](../../agents/web_agent.py#L397) | 397 | `"    # or incidental word is not enough to make a candidate relevant."` | — |
-| [SRC-1AE03B9EC3-L000398](../../agents/web_agent.py#L398) | 398 | `"    if len(query_tokens) >= 3 and matched < 2:"` | — |
-| [SRC-1AE03B9EC3-L000399](../../agents/web_agent.py#L399) | 399 | `"        return 0.0"` | — |

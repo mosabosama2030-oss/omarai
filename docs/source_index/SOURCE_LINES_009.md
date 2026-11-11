@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-8D00DCEC0D-L000298 إلى SRC-086D574B4E-L000246
+- النطاق: SRC-8D00DCEC0D-L000269 إلى SRC-086D574B4E-L000217
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,35 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-8D00DCEC0D-L000269](../../agents/sales_domain.py#L269) | 269 | `"            raise TypeError(\"facts must contain ProductFact instances\")"` | — |
+| [SRC-8D00DCEC0D-L000270](../../agents/sales_domain.py#L270) | 270 | `"        if len(self.facts) > MAX_TERM_COUNT:"` | — |
+| [SRC-8D00DCEC0D-L000271](../../agents/sales_domain.py#L271) | 271 | `"            raise ValueError(f\"facts exceeds {MAX_TERM_COUNT} items\")"` | — |
+| [SRC-8D00DCEC0D-L000272](../../agents/sales_domain.py#L272) | 272 | `""` | — |
+| [SRC-8D00DCEC0D-L000273](../../agents/sales_domain.py#L273) | 273 | `"    def matching_terms(self, text: str) -> tuple[str, ...]:"` | — |
+| [SRC-8D00DCEC0D-L000274](../../agents/sales_domain.py#L274) | 274 | `"        \"\"\"Return explicitly configured product terms mentioned in text."` | — |
+| [SRC-8D00DCEC0D-L000275](../../agents/sales_domain.py#L275) | 275 | `""` | — |
+| [SRC-8D00DCEC0D-L000276](../../agents/sales_domain.py#L276) | 276 | `"        A mention is not a demand signal and does not establish a buyer or product fit."` | — |
+| [SRC-8D00DCEC0D-L000277](../../agents/sales_domain.py#L277) | 277 | `"        \"\"\""` | — |
+| [SRC-8D00DCEC0D-L000278](../../agents/sales_domain.py#L278) | 278 | `"        terms = (self.name, *self.aliases)"` | — |
+| [SRC-8D00DCEC0D-L000279](../../agents/sales_domain.py#L279) | 279 | `"        return tuple(term for term in terms if _contains_phrase(text, term))"` | — |
+| [SRC-8D00DCEC0D-L000280](../../agents/sales_domain.py#L280) | 280 | `""` | — |
+| [SRC-8D00DCEC0D-L000281](../../agents/sales_domain.py#L281) | 281 | `"    def to_dict(self) -> dict[str, object]:"` | — |
+| [SRC-8D00DCEC0D-L000282](../../agents/sales_domain.py#L282) | 282 | `"        return {"` | — |
+| [SRC-8D00DCEC0D-L000283](../../agents/sales_domain.py#L283) | 283 | `"            \"name\": self.name,"` | — |
+| [SRC-8D00DCEC0D-L000284](../../agents/sales_domain.py#L284) | 284 | `"            \"aliases\": list(self.aliases),"` | — |
+| [SRC-8D00DCEC0D-L000285](../../agents/sales_domain.py#L285) | 285 | `"            \"category_path\": list(self.category_path),"` | — |
+| [SRC-8D00DCEC0D-L000286](../../agents/sales_domain.py#L286) | 286 | `"            \"use_cases\": list(self.use_cases),"` | — |
+| [SRC-8D00DCEC0D-L000287](../../agents/sales_domain.py#L287) | 287 | `"            \"problems_solved\": list(self.problems_solved),"` | — |
+| [SRC-8D00DCEC0D-L000288](../../agents/sales_domain.py#L288) | 288 | `"            \"facts\": [item.to_dict() for item in self.facts],"` | — |
+| [SRC-8D00DCEC0D-L000289](../../agents/sales_domain.py#L289) | 289 | `"        }"` | — |
+| [SRC-8D00DCEC0D-L000290](../../agents/sales_domain.py#L290) | 290 | `""` | — |
+| [SRC-8D00DCEC0D-L000291](../../agents/sales_domain.py#L291) | 291 | `""` | — |
+| [SRC-8D00DCEC0D-L000292](../../agents/sales_domain.py#L292) | 292 | `"@dataclass(frozen=True, slots=True)"` | — |
+| [SRC-8D00DCEC0D-L000293](../../agents/sales_domain.py#L293) | 293 | `"class MarketProfile:"` | — |
+| [SRC-8D00DCEC0D-L000294](../../agents/sales_domain.py#L294) | 294 | `"    \"\"\"Target-market constraints; matching an ICP is not evidence of purchase intent.\"\"\""` | — |
+| [SRC-8D00DCEC0D-L000295](../../agents/sales_domain.py#L295) | 295 | `""` | — |
+| [SRC-8D00DCEC0D-L000296](../../agents/sales_domain.py#L296) | 296 | `"    locations: tuple[str, ...] = ()"` | — |
+| [SRC-8D00DCEC0D-L000297](../../agents/sales_domain.py#L297) | 297 | `"    industries: tuple[str, ...] = ()"` | — |
 | [SRC-8D00DCEC0D-L000298](../../agents/sales_domain.py#L298) | 298 | `"    customer_types: tuple[str, ...] = ()"` | — |
 | [SRC-8D00DCEC0D-L000299](../../agents/sales_domain.py#L299) | 299 | `"    decision_roles: tuple[str, ...] = ()"` | — |
 | [SRC-8D00DCEC0D-L000300](../../agents/sales_domain.py#L300) | 300 | `"    exclusions: tuple[str, ...] = ()"` | — |
@@ -805,32 +834,3 @@
 | [SRC-086D574B4E-L000215](../../agents/semantic_claim_verifier.py#L215) | 215 | `"            },"` | — |
 | [SRC-086D574B4E-L000216](../../agents/semantic_claim_verifier.py#L216) | 216 | `"        ],"` | — |
 | [SRC-086D574B4E-L000217](../../agents/semantic_claim_verifier.py#L217) | 217 | `"    }"` | — |
-| [SRC-086D574B4E-L000218](../../agents/semantic_claim_verifier.py#L218) | 218 | `""` | — |
-| [SRC-086D574B4E-L000219](../../agents/semantic_claim_verifier.py#L219) | 219 | `""` | — |
-| [SRC-086D574B4E-L000220](../../agents/semantic_claim_verifier.py#L220) | 220 | `"def deterministic_claim_screen("` | — |
-| [SRC-086D574B4E-L000221](../../agents/semantic_claim_verifier.py#L221) | 221 | `"    prepared: dict[str, Any],"` | — |
-| [SRC-086D574B4E-L000222](../../agents/semantic_claim_verifier.py#L222) | 222 | `"    answer_integrity: dict[str, Any] \| None = None,"` | — |
-| [SRC-086D574B4E-L000223](../../agents/semantic_claim_verifier.py#L223) | 223 | `") -> dict[str, Any]:"` | — |
-| [SRC-086D574B4E-L000224](../../agents/semantic_claim_verifier.py#L224) | 224 | `"    \"\"\"Apply conservative numeric and claim-specific provenance gates before model review.\"\"\""` | — |
-| [SRC-086D574B4E-L000225](../../agents/semantic_claim_verifier.py#L225) | 225 | `"    if prepared.get(\"status\") != \"ready\":"` | — |
-| [SRC-086D574B4E-L000226](../../agents/semantic_claim_verifier.py#L226) | 226 | `"        return _not_verifiable(str(prepared.get(\"reason\") or \"request_not_ready\"), prepared.get(\"ledger\"))"` | — |
-| [SRC-086D574B4E-L000227](../../agents/semantic_claim_verifier.py#L227) | 227 | `"    integrity = answer_integrity if isinstance(answer_integrity, dict) else {}"` | — |
-| [SRC-086D574B4E-L000228](../../agents/semantic_claim_verifier.py#L228) | 228 | `"    unsupported_numeric = int("` | — |
-| [SRC-086D574B4E-L000229](../../agents/semantic_claim_verifier.py#L229) | 229 | `"        integrity.get(\"potentially_unsupported_numeric_by_citation_count\") or 0"` | — |
-| [SRC-086D574B4E-L000230](../../agents/semantic_claim_verifier.py#L230) | 230 | `"    )"` | — |
-| [SRC-086D574B4E-L000231](../../agents/semantic_claim_verifier.py#L231) | 231 | `"    if unsupported_numeric:"` | — |
-| [SRC-086D574B4E-L000232](../../agents/semantic_claim_verifier.py#L232) | 232 | `"        return _not_verifiable(\"deterministic_cited_numeric_support_failed\", prepared.get(\"ledger\"))"` | — |
-| [SRC-086D574B4E-L000233](../../agents/semantic_claim_verifier.py#L233) | 233 | `"    for claim in prepared.get(\"ledger\", {}).get(\"segments\", []):"` | — |
-| [SRC-086D574B4E-L000234](../../agents/semantic_claim_verifier.py#L234) | 234 | `"        if not isinstance(claim, dict):"` | — |
-| [SRC-086D574B4E-L000235](../../agents/semantic_claim_verifier.py#L235) | 235 | `"            return _not_verifiable(\"invalid_claim_segment\", prepared.get(\"ledger\"))"` | — |
-| [SRC-086D574B4E-L000236](../../agents/semantic_claim_verifier.py#L236) | 236 | `"        for reference in claim.get(\"sources\") or []:"` | — |
-| [SRC-086D574B4E-L000237](../../agents/semantic_claim_verifier.py#L237) | 237 | `"            if not isinstance(reference, dict):"` | — |
-| [SRC-086D574B4E-L000238](../../agents/semantic_claim_verifier.py#L238) | 238 | `"                return _not_verifiable(\"invalid_claim_source_reference\", prepared.get(\"ledger\"))"` | — |
-| [SRC-086D574B4E-L000239](../../agents/semantic_claim_verifier.py#L239) | 239 | `"            metadata = reference.get(\"metadata_audit\")"` | — |
-| [SRC-086D574B4E-L000240](../../agents/semantic_claim_verifier.py#L240) | 240 | `"            if not isinstance(metadata, dict):"` | — |
-| [SRC-086D574B4E-L000241](../../agents/semantic_claim_verifier.py#L241) | 241 | `"                return _not_verifiable(\"source_metadata_audit_missing\", prepared.get(\"ledger\"))"` | — |
-| [SRC-086D574B4E-L000242](../../agents/semantic_claim_verifier.py#L242) | 242 | `"            missing = set(metadata.get(\"required_fields_missing\") or [])"` | — |
-| [SRC-086D574B4E-L000243](../../agents/semantic_claim_verifier.py#L243) | 243 | `"            if \"valid_http_source_url\" in missing or \"readable_source_evidence\" in missing:"` | — |
-| [SRC-086D574B4E-L000244](../../agents/semantic_claim_verifier.py#L244) | 244 | `"                return _not_verifiable(\"deterministic_source_provenance_failed\", prepared.get(\"ledger\"))"` | — |
-| [SRC-086D574B4E-L000245](../../agents/semantic_claim_verifier.py#L245) | 245 | `"            if metadata.get(\"population_scope_required\") is True and ("` | — |
-| [SRC-086D574B4E-L000246](../../agents/semantic_claim_verifier.py#L246) | 246 | `"                \"data_reference_period_for_population_claim\" in missing"` | — |

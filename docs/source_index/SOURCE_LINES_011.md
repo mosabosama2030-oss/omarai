@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L000657 إلى SRC-686F71AA50-L001456
+- النطاق: SRC-686F71AA50-L000628 إلى SRC-686F71AA50-L001427
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,35 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L000628](../../agents/task_understanding.py#L628) | 628 | `"            \"inspect_missingness_duplicates_outliers_and_time_coverage\","` | — |
+| [SRC-686F71AA50-L000629](../../agents/task_understanding.py#L629) | 629 | `"            \"separate_observed_association_from_causal_explanation\","` | — |
+| [SRC-686F71AA50-L000630](../../agents/task_understanding.py#L630) | 630 | `"        ]"` | — |
+| [SRC-686F71AA50-L000631](../../agents/task_understanding.py#L631) | 631 | `"        query_strategies = [\"schema_and_grain\", \"data_quality\", \"metric_and_segment_checks\"]"` | — |
+| [SRC-686F71AA50-L000632](../../agents/task_understanding.py#L632) | 632 | `"    elif family == \"calculation\":"` | — |
+| [SRC-686F71AA50-L000633](../../agents/task_understanding.py#L633) | 633 | `"        evidence_requirements = ["` | — |
+| [SRC-686F71AA50-L000634](../../agents/task_understanding.py#L634) | 634 | `"            \"show_formula_and_units_when_useful\","` | — |
+| [SRC-686F71AA50-L000635](../../agents/task_understanding.py#L635) | 635 | `"            \"validate_input_units_and_rounding\","` | — |
+| [SRC-686F71AA50-L000636](../../agents/task_understanding.py#L636) | 636 | `"            \"distinguish_exact_result_from_assumption_based_estimate\","` | — |
+| [SRC-686F71AA50-L000637](../../agents/task_understanding.py#L637) | 637 | `"        ]"` | — |
+| [SRC-686F71AA50-L000638](../../agents/task_understanding.py#L638) | 638 | `"        query_strategies = [\"formula\", \"unit_validation\", \"independent_arithmetic_check\"]"` | — |
+| [SRC-686F71AA50-L000639](../../agents/task_understanding.py#L639) | 639 | `"    elif family == \"translation\":"` | — |
+| [SRC-686F71AA50-L000640](../../agents/task_understanding.py#L640) | 640 | `"        evidence_requirements = ["` | — |
+| [SRC-686F71AA50-L000641](../../agents/task_understanding.py#L641) | 641 | `"            \"preserve_meaning_tone_and_named_entities\","` | — |
+| [SRC-686F71AA50-L000642](../../agents/task_understanding.py#L642) | 642 | `"            \"surface_ambiguous_source_phrasing_instead_of_silently_inventing_meaning\","` | — |
+| [SRC-686F71AA50-L000643](../../agents/task_understanding.py#L643) | 643 | `"            \"respect_explicit_target_language_and_script\","` | — |
+| [SRC-686F71AA50-L000644](../../agents/task_understanding.py#L644) | 644 | `"        ]"` | — |
+| [SRC-686F71AA50-L000645](../../agents/task_understanding.py#L645) | 645 | `"        query_strategies = [\"source_text\", \"target_language\", \"terminology_and_tone\"]"` | — |
+| [SRC-686F71AA50-L000646](../../agents/task_understanding.py#L646) | 646 | `"    elif family == \"writing_or_editing\":"` | — |
+| [SRC-686F71AA50-L000647](../../agents/task_understanding.py#L647) | 647 | `"        evidence_requirements = ["` | — |
+| [SRC-686F71AA50-L000648](../../agents/task_understanding.py#L648) | 648 | `"            \"follow_requested_audience_tone_and_format\","` | — |
+| [SRC-686F71AA50-L000649](../../agents/task_understanding.py#L649) | 649 | `"            \"preserve_user_provided_facts_without_adding_unverified_claims\","` | — |
+| [SRC-686F71AA50-L000650](../../agents/task_understanding.py#L650) | 650 | `"            \"distinguish_rewrite_from_fact_check\","` | — |
+| [SRC-686F71AA50-L000651](../../agents/task_understanding.py#L651) | 651 | `"        ]"` | — |
+| [SRC-686F71AA50-L000652](../../agents/task_understanding.py#L652) | 652 | `"        query_strategies = [\"audience_and_purpose\", \"tone_and_format\", \"fact_preservation\"]"` | — |
+| [SRC-686F71AA50-L000653](../../agents/task_understanding.py#L653) | 653 | `"    elif family == \"planning\":"` | — |
+| [SRC-686F71AA50-L000654](../../agents/task_understanding.py#L654) | 654 | `"        evidence_requirements = ["` | — |
+| [SRC-686F71AA50-L000655](../../agents/task_understanding.py#L655) | 655 | `"            \"preserve_goal_constraints_dependencies_and_deadline\","` | — |
+| [SRC-686F71AA50-L000656](../../agents/task_understanding.py#L656) | 656 | `"            \"make_assumptions_and_unavailable_resources_explicit\","` | — |
 | [SRC-686F71AA50-L000657](../../agents/task_understanding.py#L657) | 657 | `"            \"separate_proposed_steps_from_completed_actions\","` | — |
 | [SRC-686F71AA50-L000658](../../agents/task_understanding.py#L658) | 658 | `"        ]"` | — |
 | [SRC-686F71AA50-L000659](../../agents/task_understanding.py#L659) | 659 | `"        query_strategies = [\"goal_and_constraints\", \"dependency_order\", \"risks_and_fallbacks\"]"` | — |
@@ -787,32 +816,3 @@
 | [SRC-686F71AA50-L001425](../../agents/task_understanding.py#L1425) | 1425 | `"            })"` | — |
 | [SRC-686F71AA50-L001426](../../agents/task_understanding.py#L1426) | 1426 | `""` | — |
 | [SRC-686F71AA50-L001427](../../agents/task_understanding.py#L1427) | 1427 | `"    allowed_families = {"` | — |
-| [SRC-686F71AA50-L001428](../../agents/task_understanding.py#L1428) | 1428 | `"        name for name in _PATTERNS if not name.startswith(\"output_\")"` | — |
-| [SRC-686F71AA50-L001429](../../agents/task_understanding.py#L1429) | 1429 | `"    } \| {\"general_question\", \"ambiguous_or_incomplete\", \"web_research\"}"` | — |
-| [SRC-686F71AA50-L001430](../../agents/task_understanding.py#L1430) | 1430 | `"    raw_family = clean_text(value.get(\"task_family\"), 80)"` | — |
-| [SRC-686F71AA50-L001431](../../agents/task_understanding.py#L1431) | 1431 | `"    raw_mode = clean_text(value.get(\"mode\"), 20)"` | — |
-| [SRC-686F71AA50-L001432](../../agents/task_understanding.py#L1432) | 1432 | `"    raw_route = clean_text(value.get(\"intent_route\"), 40)"` | — |
-| [SRC-686F71AA50-L001433](../../agents/task_understanding.py#L1433) | 1433 | `"    allowed_routes = {"` | — |
-| [SRC-686F71AA50-L001434](../../agents/task_understanding.py#L1434) | 1434 | `"        \"LOCAL\", \"MODEL_ONLY\", \"CLARIFY\", \"WEB_SIMPLE\", \"WEB_DEEP\","` | — |
-| [SRC-686F71AA50-L001435](../../agents/task_understanding.py#L1435) | 1435 | `"        \"LEAD_GENERATION\", \"BUDGET_EXHAUSTED\", \"deterministic_fallback\","` | — |
-| [SRC-686F71AA50-L001436](../../agents/task_understanding.py#L1436) | 1436 | `"        \"validated_language_model_plan\", \"unassessed\","` | — |
-| [SRC-686F71AA50-L001437](../../agents/task_understanding.py#L1437) | 1437 | `"    }"` | — |
-| [SRC-686F71AA50-L001438](../../agents/task_understanding.py#L1438) | 1438 | `"    allowed_tools = {"` | — |
-| [SRC-686F71AA50-L001439](../../agents/task_understanding.py#L1439) | 1439 | `"        \"web_search\", \"page_fetch\", \"public_social_search_if_configured\","` | — |
-| [SRC-686F71AA50-L001440](../../agents/task_understanding.py#L1440) | 1440 | `"        \"language_model_generation_if_configured\", \"claim_review_if_configured\","` | — |
-| [SRC-686F71AA50-L001441](../../agents/task_understanding.py#L1441) | 1441 | `"    }"` | — |
-| [SRC-686F71AA50-L001442](../../agents/task_understanding.py#L1442) | 1442 | `"    allowed_slots = {"` | — |
-| [SRC-686F71AA50-L001443](../../agents/task_understanding.py#L1443) | 1443 | `"        \"aspect\", \"audience\", \"budget\", \"capacity\", \"country\", \"currency\","` | — |
-| [SRC-686F71AA50-L001444](../../agents/task_understanding.py#L1444) | 1444 | `"        \"entity\", \"goal\", \"language\", \"location\", \"model\", \"platform\","` | — |
-| [SRC-686F71AA50-L001445](../../agents/task_understanding.py#L1445) | 1445 | `"        \"product\", \"time_range\", \"variant\", \"version\","` | — |
-| [SRC-686F71AA50-L001446](../../agents/task_understanding.py#L1446) | 1446 | `"    }"` | — |
-| [SRC-686F71AA50-L001447](../../agents/task_understanding.py#L1447) | 1447 | `"    context_resolution[\"slots\"] = {"` | — |
-| [SRC-686F71AA50-L001448](../../agents/task_understanding.py#L1448) | 1448 | `"        key: item for key, item in context_resolution[\"slots\"].items()"` | — |
-| [SRC-686F71AA50-L001449](../../agents/task_understanding.py#L1449) | 1449 | `"        if key in allowed_slots"` | — |
-| [SRC-686F71AA50-L001450](../../agents/task_understanding.py#L1450) | 1450 | `"    }"` | — |
-| [SRC-686F71AA50-L001451](../../agents/task_understanding.py#L1451) | 1451 | `"    hypotheses = ["` | — |
-| [SRC-686F71AA50-L001452](../../agents/task_understanding.py#L1452) | 1452 | `"        item for item in hypotheses"` | — |
-| [SRC-686F71AA50-L001453](../../agents/task_understanding.py#L1453) | 1453 | `"        if item.get(\"family\") in allowed_families"` | — |
-| [SRC-686F71AA50-L001454](../../agents/task_understanding.py#L1454) | 1454 | `"    ]"` | — |
-| [SRC-686F71AA50-L001455](../../agents/task_understanding.py#L1455) | 1455 | `"    raw_secondary = clean_list(value.get(\"secondary_task_types\"), items=16, chars=80)"` | — |
-| [SRC-686F71AA50-L001456](../../agents/task_understanding.py#L1456) | 1456 | `"    spec = {"` | — |

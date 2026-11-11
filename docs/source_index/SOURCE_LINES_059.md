@@ -4,7 +4,7 @@
 
 - الصفحة: **059**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AFEDC2645A-L000514 إلى SRC-F725E90B2A-L000625
+- النطاق: SRC-AFEDC2645A-L000440 إلى SRC-F725E90B2A-L000551
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,80 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AFEDC2645A-L000440](../../tests/test_task_understanding.py#L440) | 440 | `"    ]"` | — |
+| [SRC-AFEDC2645A-L000441](../../tests/test_task_understanding.py#L441) | 441 | `""` | — |
+| [SRC-AFEDC2645A-L000442](../../tests/test_task_understanding.py#L442) | 442 | `"    safe = validate_task_spec(candidate)"` | — |
+| [SRC-AFEDC2645A-L000443](../../tests/test_task_understanding.py#L443) | 443 | `"    assert safe[\"reasoning_strategy_ids\"] == [\"rank_testable_hypotheses\"]"` | — |
+| [SRC-AFEDC2645A-L000444](../../tests/test_task_understanding.py#L444) | 444 | `"    assert [row[\"stage\"] for row in safe[\"decision_matrix\"]] == ["` | — |
+| [SRC-AFEDC2645A-L000445](../../tests/test_task_understanding.py#L445) | 445 | `"        \"interpret\", \"route\", \"plan\", \"evidence\", \"synthesize\", \"terminate\""` | — |
+| [SRC-AFEDC2645A-L000446](../../tests/test_task_understanding.py#L446) | 446 | `"    ]"` | — |
+| [SRC-AFEDC2645A-L000447](../../tests/test_task_understanding.py#L447) | 447 | `"    assert not any(row.get(\"stage\") == \"exfiltrate\" for row in safe[\"decision_matrix\"])"` | — |
+| [SRC-AFEDC2645A-L000448](../../tests/test_task_understanding.py#L448) | 448 | `"    assert \"reasoning_guidance\" not in safe"` | — |
+| [SRC-AFEDC2645A-L000449](../../tests/test_task_understanding.py#L449) | 449 | `""` | — |
+| [SRC-AFEDC2645A-L000450](../../tests/test_task_understanding.py#L450) | 450 | `""` | — |
+| [SRC-AFEDC2645A-L000451](../../tests/test_task_understanding.py#L451) | 451 | `"def test_task_spec_merges_inherited_location_and_budget_slots_into_constraints():"` | — |
+| [SRC-AFEDC2645A-L000452](../../tests/test_task_understanding.py#L452) | 452 | `"    question = \"مراكز صيانة لابتوب اليوم\""` | — |
+| [SRC-AFEDC2645A-L000453](../../tests/test_task_understanding.py#L453) | 453 | `"    context = {"` | — |
+| [SRC-AFEDC2645A-L000454](../../tests/test_task_understanding.py#L454) | 454 | `"        \"resolved_question\": \"مراكز صيانة لابتوب اليوم في الإسكندرية بميزانية أقل من 20000 جنيه\","` | — |
+| [SRC-AFEDC2645A-L000455](../../tests/test_task_understanding.py#L455) | 455 | `"        \"topic\": \"مراكز صيانة لابتوب\","` | — |
+| [SRC-AFEDC2645A-L000456](../../tests/test_task_understanding.py#L456) | 456 | `"        \"entities\": [\"لابتوب\"],"` | — |
+| [SRC-AFEDC2645A-L000457](../../tests/test_task_understanding.py#L457) | 457 | `"        \"slots\": {"` | — |
+| [SRC-AFEDC2645A-L000458](../../tests/test_task_understanding.py#L458) | 458 | `"            \"location\": \"الإسكندرية\","` | — |
+| [SRC-AFEDC2645A-L000459](../../tests/test_task_understanding.py#L459) | 459 | `"            \"budget\": \"أقل من 20000 جنيه\","` | — |
+| [SRC-AFEDC2645A-L000460](../../tests/test_task_understanding.py#L460) | 460 | `"        },"` | — |
+| [SRC-AFEDC2645A-L000461](../../tests/test_task_understanding.py#L461) | 461 | `"        \"changed_slots\": [\"location\", \"budget\"],"` | — |
+| [SRC-AFEDC2645A-L000462](../../tests/test_task_understanding.py#L462) | 462 | `"        \"is_follow_up\": True,"` | — |
+| [SRC-AFEDC2645A-L000463](../../tests/test_task_understanding.py#L463) | 463 | `"        \"topic_shift\": False,"` | — |
+| [SRC-AFEDC2645A-L000464](../../tests/test_task_understanding.py#L464) | 464 | `"        \"needs_clarification\": False,"` | — |
+| [SRC-AFEDC2645A-L000465](../../tests/test_task_understanding.py#L465) | 465 | `"    }"` | — |
+| [SRC-AFEDC2645A-L000466](../../tests/test_task_understanding.py#L466) | 466 | `""` | — |
+| [SRC-AFEDC2645A-L000467](../../tests/test_task_understanding.py#L467) | 467 | `"    spec = build_task_spec("` | — |
+| [SRC-AFEDC2645A-L000468](../../tests/test_task_understanding.py#L468) | 468 | `"        question,"` | — |
+| [SRC-AFEDC2645A-L000469](../../tests/test_task_understanding.py#L469) | 469 | `"        mode=\"latest\","` | — |
+| [SRC-AFEDC2645A-L000470](../../tests/test_task_understanding.py#L470) | 470 | `"        intent_route=\"WEB_SIMPLE\","` | — |
+| [SRC-AFEDC2645A-L000471](../../tests/test_task_understanding.py#L471) | 471 | `"        dialogue_context=context,"` | — |
+| [SRC-AFEDC2645A-L000472](../../tests/test_task_understanding.py#L472) | 472 | `"    )"` | — |
+| [SRC-AFEDC2645A-L000473](../../tests/test_task_understanding.py#L473) | 473 | `""` | — |
+| [SRC-AFEDC2645A-L000474](../../tests/test_task_understanding.py#L474) | 474 | `"    assert \"الإسكندرية\" in spec[\"constraints\"][\"explicit_locations\"]"` | — |
+| [SRC-AFEDC2645A-L000475](../../tests/test_task_understanding.py#L475) | 475 | `"    assert \"أقل من 20000 جنيه\" in spec[\"constraints\"][\"explicit_budgets\"]"` | — |
+| [SRC-AFEDC2645A-L000476](../../tests/test_task_understanding.py#L476) | 476 | `""` | — |
+| [SRC-AFEDC2645A-L000477](../../tests/test_task_understanding.py#L477) | 477 | `"    rows = build_query_strategy_matrix("` | — |
+| [SRC-AFEDC2645A-L000478](../../tests/test_task_understanding.py#L478) | 478 | `"        question,"` | — |
+| [SRC-AFEDC2645A-L000479](../../tests/test_task_understanding.py#L479) | 479 | `"        spec,"` | — |
+| [SRC-AFEDC2645A-L000480](../../tests/test_task_understanding.py#L480) | 480 | `"        [spec[\"context_resolution\"][\"resolved_question\"]],"` | — |
+| [SRC-AFEDC2645A-L000481](../../tests/test_task_understanding.py#L481) | 481 | `"        limit=8,"` | — |
+| [SRC-AFEDC2645A-L000482](../../tests/test_task_understanding.py#L482) | 482 | `"    )"` | — |
+| [SRC-AFEDC2645A-L000483](../../tests/test_task_understanding.py#L483) | 483 | `"    assert any(\"الإسكندرية\" in row[\"query\"] for row in rows)"` | — |
+| [SRC-AFEDC2645A-L000484](../../tests/test_task_understanding.py#L484) | 484 | `""` | — |
+| [SRC-AFEDC2645A-L000485](../../tests/test_task_understanding.py#L485) | 485 | `""` | — |
+| [SRC-AFEDC2645A-L000486](../../tests/test_task_understanding.py#L486) | 486 | `"def test_task_spec_does_not_inherit_location_or_budget_from_topic_shift():"` | — |
+| [SRC-AFEDC2645A-L000487](../../tests/test_task_understanding.py#L487) | 487 | `"    question = \"مواصفات لاب توب ديل\""` | — |
+| [SRC-AFEDC2645A-L000488](../../tests/test_task_understanding.py#L488) | 488 | `"    context = {"` | — |
+| [SRC-AFEDC2645A-L000489](../../tests/test_task_understanding.py#L489) | 489 | `"        \"resolved_question\": question,"` | — |
+| [SRC-AFEDC2645A-L000490](../../tests/test_task_understanding.py#L490) | 490 | `"        \"topic\": \"\","` | — |
+| [SRC-AFEDC2645A-L000491](../../tests/test_task_understanding.py#L491) | 491 | `"        \"entities\": [],"` | — |
+| [SRC-AFEDC2645A-L000492](../../tests/test_task_understanding.py#L492) | 492 | `"        \"slots\": {"` | — |
+| [SRC-AFEDC2645A-L000493](../../tests/test_task_understanding.py#L493) | 493 | `"            \"location\": \"الإسكندرية\","` | — |
+| [SRC-AFEDC2645A-L000494](../../tests/test_task_understanding.py#L494) | 494 | `"            \"budget\": \"أقل من 20000 جنيه\","` | — |
+| [SRC-AFEDC2645A-L000495](../../tests/test_task_understanding.py#L495) | 495 | `"        },"` | — |
+| [SRC-AFEDC2645A-L000496](../../tests/test_task_understanding.py#L496) | 496 | `"        \"changed_slots\": [],"` | — |
+| [SRC-AFEDC2645A-L000497](../../tests/test_task_understanding.py#L497) | 497 | `"        \"is_follow_up\": False,"` | — |
+| [SRC-AFEDC2645A-L000498](../../tests/test_task_understanding.py#L498) | 498 | `"        \"topic_shift\": True,"` | — |
+| [SRC-AFEDC2645A-L000499](../../tests/test_task_understanding.py#L499) | 499 | `"        \"needs_clarification\": False,"` | — |
+| [SRC-AFEDC2645A-L000500](../../tests/test_task_understanding.py#L500) | 500 | `"    }"` | — |
+| [SRC-AFEDC2645A-L000501](../../tests/test_task_understanding.py#L501) | 501 | `""` | — |
+| [SRC-AFEDC2645A-L000502](../../tests/test_task_understanding.py#L502) | 502 | `"    spec = build_task_spec("` | — |
+| [SRC-AFEDC2645A-L000503](../../tests/test_task_understanding.py#L503) | 503 | `"        question,"` | — |
+| [SRC-AFEDC2645A-L000504](../../tests/test_task_understanding.py#L504) | 504 | `"        mode=\"auto\","` | — |
+| [SRC-AFEDC2645A-L000505](../../tests/test_task_understanding.py#L505) | 505 | `"        intent_route=\"WEB_SIMPLE\","` | — |
+| [SRC-AFEDC2645A-L000506](../../tests/test_task_understanding.py#L506) | 506 | `"        dialogue_context=context,"` | — |
+| [SRC-AFEDC2645A-L000507](../../tests/test_task_understanding.py#L507) | 507 | `"    )"` | — |
+| [SRC-AFEDC2645A-L000508](../../tests/test_task_understanding.py#L508) | 508 | `""` | — |
+| [SRC-AFEDC2645A-L000509](../../tests/test_task_understanding.py#L509) | 509 | `"    assert \"الإسكندرية\" not in spec[\"constraints\"][\"explicit_locations\"]"` | — |
+| [SRC-AFEDC2645A-L000510](../../tests/test_task_understanding.py#L510) | 510 | `"    assert \"أقل من 20000 جنيه\" not in spec[\"constraints\"][\"explicit_budgets\"]"` | — |
+| [SRC-AFEDC2645A-L000511](../../tests/test_task_understanding.py#L511) | 511 | `""` | — |
+| [SRC-AFEDC2645A-L000512](../../tests/test_task_understanding.py#L512) | 512 | `""` | — |
+| [SRC-AFEDC2645A-L000513](../../tests/test_task_understanding.py#L513) | 513 | `"def test_query_strategy_matrix_applies_inherited_location_and_budget_to_all_candidates():"` | — |
 | [SRC-AFEDC2645A-L000514](../../tests/test_task_understanding.py#L514) | 514 | `"    question = \"رشح لي أفضل لابتوب للعمل\""` | — |
 | [SRC-AFEDC2645A-L000515](../../tests/test_task_understanding.py#L515) | 515 | `"    context = {"` | — |
 | [SRC-AFEDC2645A-L000516](../../tests/test_task_understanding.py#L516) | 516 | `"        \"resolved_question\": \"رشح لي أفضل لابتوب للعمل في الإسكندرية بميزانية أقل من 20000 جنيه\","` | — |
@@ -760,77 +834,3 @@
 | [SRC-F725E90B2A-L000549](../../tests/test_web_agent.py#L549) | 549 | `"    class FakeResponse:"` | — |
 | [SRC-F725E90B2A-L000550](../../tests/test_web_agent.py#L550) | 550 | `"        status_code = 200"` | — |
 | [SRC-F725E90B2A-L000551](../../tests/test_web_agent.py#L551) | 551 | `""` | — |
-| [SRC-F725E90B2A-L000552](../../tests/test_web_agent.py#L552) | 552 | `"        def __init__(self, payload):"` | — |
-| [SRC-F725E90B2A-L000553](../../tests/test_web_agent.py#L553) | 553 | `"            self.payload = payload"` | — |
-| [SRC-F725E90B2A-L000554](../../tests/test_web_agent.py#L554) | 554 | `""` | — |
-| [SRC-F725E90B2A-L000555](../../tests/test_web_agent.py#L555) | 555 | `"        def json(self):"` | — |
-| [SRC-F725E90B2A-L000556](../../tests/test_web_agent.py#L556) | 556 | `"            return self.payload"` | — |
-| [SRC-F725E90B2A-L000557](../../tests/test_web_agent.py#L557) | 557 | `""` | — |
-| [SRC-F725E90B2A-L000558](../../tests/test_web_agent.py#L558) | 558 | `"    calls = []"` | — |
-| [SRC-F725E90B2A-L000559](../../tests/test_web_agent.py#L559) | 559 | `""` | — |
-| [SRC-F725E90B2A-L000560](../../tests/test_web_agent.py#L560) | 560 | `"    def fake_get(url, **kwargs):"` | — |
-| [SRC-F725E90B2A-L000561](../../tests/test_web_agent.py#L561) | 561 | `"        calls.append((url, kwargs))"` | — |
-| [SRC-F725E90B2A-L000562](../../tests/test_web_agent.py#L562) | 562 | `"        if url.endswith(\"/ig_hashtag_search\"):"` | — |
-| [SRC-F725E90B2A-L000563](../../tests/test_web_agent.py#L563) | 563 | `"            return FakeResponse({\"data\": [{\"id\": \"tag-7\", \"name\": \"cars\"}]})"` | — |
-| [SRC-F725E90B2A-L000564](../../tests/test_web_agent.py#L564) | 564 | `"        if url.endswith(\"/tag-7/recent_media\"):"` | — |
-| [SRC-F725E90B2A-L000565](../../tests/test_web_agent.py#L565) | 565 | `"            return FakeResponse({\"data\": [{"` | — |
-| [SRC-F725E90B2A-L000566](../../tests/test_web_agent.py#L566) | 566 | `"                \"permalink\": \"https://www.instagram.com/p/ABC123/\","` | — |
-| [SRC-F725E90B2A-L000567](../../tests/test_web_agent.py#L567) | 567 | `"                \"caption\": \"Owner shared an electric car review\","` | — |
-| [SRC-F725E90B2A-L000568](../../tests/test_web_agent.py#L568) | 568 | `"                \"media_type\": \"IMAGE\","` | — |
-| [SRC-F725E90B2A-L000569](../../tests/test_web_agent.py#L569) | 569 | `"                \"timestamp\": \"2026-10-12T10:00:00+0000\","` | — |
-| [SRC-F725E90B2A-L000570](../../tests/test_web_agent.py#L570) | 570 | `"                \"like_count\": 17,"` | — |
-| [SRC-F725E90B2A-L000571](../../tests/test_web_agent.py#L571) | 571 | `"                \"comments_count\": 4,"` | — |
-| [SRC-F725E90B2A-L000572](../../tests/test_web_agent.py#L572) | 572 | `"            }]})"` | — |
-| [SRC-F725E90B2A-L000573](../../tests/test_web_agent.py#L573) | 573 | `"        raise AssertionError(f\"Unexpected URL {url}\")"` | — |
-| [SRC-F725E90B2A-L000574](../../tests/test_web_agent.py#L574) | 574 | `""` | — |
-| [SRC-F725E90B2A-L000575](../../tests/test_web_agent.py#L575) | 575 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L000576](../../tests/test_web_agent.py#L576) | 576 | `"        \"agents.web_agent._bounded_http_request\","` | — |
-| [SRC-F725E90B2A-L000577](../../tests/test_web_agent.py#L577) | 577 | `"        lambda method, url, **kwargs: fake_get(url, **kwargs),"` | — |
-| [SRC-F725E90B2A-L000578](../../tests/test_web_agent.py#L578) | 578 | `"    )"` | — |
-| [SRC-F725E90B2A-L000579](../../tests/test_web_agent.py#L579) | 579 | `"    results, warnings = WebAgent()._search_social("` | — |
-| [SRC-F725E90B2A-L000580](../../tests/test_web_agent.py#L580) | 580 | `"        \"Instagram #cars\", [\"instagram\"]"` | — |
-| [SRC-F725E90B2A-L000581](../../tests/test_web_agent.py#L581) | 581 | `"    )"` | — |
-| [SRC-F725E90B2A-L000582](../../tests/test_web_agent.py#L582) | 582 | `"    assert warnings == []"` | — |
-| [SRC-F725E90B2A-L000583](../../tests/test_web_agent.py#L583) | 583 | `"    assert len(results) == 1"` | — |
-| [SRC-F725E90B2A-L000584](../../tests/test_web_agent.py#L584) | 584 | `"    assert results[0][\"provider\"] == \"instagram_graph_api\""` | — |
-| [SRC-F725E90B2A-L000585](../../tests/test_web_agent.py#L585) | 585 | `"    assert results[0][\"url\"] == \"https://www.instagram.com/p/ABC123/\""` | — |
-| [SRC-F725E90B2A-L000586](../../tests/test_web_agent.py#L586) | 586 | `"    assert \"likes=17\" in results[0][\"snippet\"]"` | — |
-| [SRC-F725E90B2A-L000587](../../tests/test_web_agent.py#L587) | 587 | `"    assert calls[0][1][\"params\"][\"q\"] == \"cars\""` | — |
-| [SRC-F725E90B2A-L000588](../../tests/test_web_agent.py#L588) | 588 | `"    assert calls[0][1][\"params\"][\"access_token\"] == \"test-ig-token\""` | — |
-| [SRC-F725E90B2A-L000589](../../tests/test_web_agent.py#L589) | 589 | `"    assert \"test-ig-token\" not in str(results)"` | — |
-| [SRC-F725E90B2A-L000590](../../tests/test_web_agent.py#L590) | 590 | `""` | — |
-| [SRC-F725E90B2A-L000591](../../tests/test_web_agent.py#L591) | 591 | `""` | — |
-| [SRC-F725E90B2A-L000592](../../tests/test_web_agent.py#L592) | 592 | `"def test_instagram_api_not_configured_uses_honest_fallback_warning(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L000593](../../tests/test_web_agent.py#L593) | 593 | `"    monkeypatch.delenv(\"INSTAGRAM_USER_ID\", raising=False)"` | — |
-| [SRC-F725E90B2A-L000594](../../tests/test_web_agent.py#L594) | 594 | `"    monkeypatch.delenv(\"INSTAGRAM_ACCESS_TOKEN\", raising=False)"` | — |
-| [SRC-F725E90B2A-L000595](../../tests/test_web_agent.py#L595) | 595 | `"    results, warnings = WebAgent()._search_social("` | — |
-| [SRC-F725E90B2A-L000596](../../tests/test_web_agent.py#L596) | 596 | `"        \"تجارب عامة على Instagram\", [\"instagram\"]"` | — |
-| [SRC-F725E90B2A-L000597](../../tests/test_web_agent.py#L597) | 597 | `"    )"` | — |
-| [SRC-F725E90B2A-L000598](../../tests/test_web_agent.py#L598) | 598 | `"    assert results == []"` | — |
-| [SRC-F725E90B2A-L000599](../../tests/test_web_agent.py#L599) | 599 | `"    assert any(\"indexed public Instagram\" in warning for warning in warnings)"` | — |
-| [SRC-F725E90B2A-L000600](../../tests/test_web_agent.py#L600) | 600 | `""` | — |
-| [SRC-F725E90B2A-L000601](../../tests/test_web_agent.py#L601) | 601 | `""` | — |
-| [SRC-F725E90B2A-L000602](../../tests/test_web_agent.py#L602) | 602 | `"def test_facebook_pages_api_reads_only_operator_configured_pages(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L000603](../../tests/test_web_agent.py#L603) | 603 | `""` | — |
-| [SRC-F725E90B2A-L000604](../../tests/test_web_agent.py#L604) | 604 | `"    monkeypatch.setenv(\"FACEBOOK_PAGE_ACCESS_TOKEN\", \"test-page-token\")"` | — |
-| [SRC-F725E90B2A-L000605](../../tests/test_web_agent.py#L605) | 605 | `"    monkeypatch.setenv(\"FACEBOOK_PAGE_IDS\", \"page-1,page-2\")"` | — |
-| [SRC-F725E90B2A-L000606](../../tests/test_web_agent.py#L606) | 606 | `""` | — |
-| [SRC-F725E90B2A-L000607](../../tests/test_web_agent.py#L607) | 607 | `"    class FakeResponse:"` | — |
-| [SRC-F725E90B2A-L000608](../../tests/test_web_agent.py#L608) | 608 | `"        status_code = 200"` | — |
-| [SRC-F725E90B2A-L000609](../../tests/test_web_agent.py#L609) | 609 | `""` | — |
-| [SRC-F725E90B2A-L000610](../../tests/test_web_agent.py#L610) | 610 | `"        def json(self):"` | — |
-| [SRC-F725E90B2A-L000611](../../tests/test_web_agent.py#L611) | 611 | `"            return {\"data\": [{"` | — |
-| [SRC-F725E90B2A-L000612](../../tests/test_web_agent.py#L612) | 612 | `"                \"message\": \"Electric car owners looking for charging advice\","` | — |
-| [SRC-F725E90B2A-L000613](../../tests/test_web_agent.py#L613) | 613 | `"                \"permalink_url\": \"https://www.facebook.com/example/posts/123\","` | — |
-| [SRC-F725E90B2A-L000614](../../tests/test_web_agent.py#L614) | 614 | `"                \"created_time\": \"2026-10-12T12:00:00+0000\","` | — |
-| [SRC-F725E90B2A-L000615](../../tests/test_web_agent.py#L615) | 615 | `"                \"comments\": {\"data\": ["` | — |
-| [SRC-F725E90B2A-L000616](../../tests/test_web_agent.py#L616) | 616 | `"                    {\"message\": \"What is the current price?\", \"like_count\": 3}"` | — |
-| [SRC-F725E90B2A-L000617](../../tests/test_web_agent.py#L617) | 617 | `"                ]},"` | — |
-| [SRC-F725E90B2A-L000618](../../tests/test_web_agent.py#L618) | 618 | `"            }]}"` | — |
-| [SRC-F725E90B2A-L000619](../../tests/test_web_agent.py#L619) | 619 | `""` | — |
-| [SRC-F725E90B2A-L000620](../../tests/test_web_agent.py#L620) | 620 | `"    calls = []"` | — |
-| [SRC-F725E90B2A-L000621](../../tests/test_web_agent.py#L621) | 621 | `""` | — |
-| [SRC-F725E90B2A-L000622](../../tests/test_web_agent.py#L622) | 622 | `"    def fake_get(url, **kwargs):"` | — |
-| [SRC-F725E90B2A-L000623](../../tests/test_web_agent.py#L623) | 623 | `"        calls.append((url, kwargs))"` | — |
-| [SRC-F725E90B2A-L000624](../../tests/test_web_agent.py#L624) | 624 | `"        return FakeResponse()"` | — |
-| [SRC-F725E90B2A-L000625](../../tests/test_web_agent.py#L625) | 625 | `""` | — |

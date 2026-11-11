@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003600 إلى SRC-1AE03B9EC3-L004399
+- النطاق: SRC-1AE03B9EC3-L003571 إلى SRC-1AE03B9EC3-L004370
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,35 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L003571](../../agents/web_agent.py#L3571) | 3571 | `"        }"` | — |
+| [SRC-1AE03B9EC3-L003572](../../agents/web_agent.py#L3572) | 3572 | `"        uncertain_attempt_statuses = {\"timeout\", \"failed\", \"error\", \"unknown\", \"inconclusive\"}"` | — |
+| [SRC-1AE03B9EC3-L003573](../../agents/web_agent.py#L3573) | 3573 | `""` | — |
+| [SRC-1AE03B9EC3-L003574](../../agents/web_agent.py#L3574) | 3574 | `"        def redact(value: Any) -> str:"` | — |
+| [SRC-1AE03B9EC3-L003575](../../agents/web_agent.py#L3575) | 3575 | `"            safe = _clean_text(str(value or \"\"), 180)"` | — |
+| [SRC-1AE03B9EC3-L003576](../../agents/web_agent.py#L3576) | 3576 | `"            safe = re.sub(r\"(?i)(bearer\\s+)[A-Za-z0-9._~+/-]+=*\", r\"\\1[REDACTED]\", safe)"` | — |
+| [SRC-1AE03B9EC3-L003577](../../agents/web_agent.py#L3577) | 3577 | `"            safe = re.sub(r\"(?i)\\b(api[_-]?key\|access[_-]?token\|refresh[_-]?token\|token\|secret\|password)\\s*[:=]\\s*[^\\s,;]+\", r\"\\1=[REDACTED]\", safe)"` | — |
+| [SRC-1AE03B9EC3-L003578](../../agents/web_agent.py#L3578) | 3578 | `"            safe = re.sub(r\"(?i)([?&](?:api[_-]?key\|access[_-]?token\|token\|key)=)[^&\\s]+\", r\"\\1[REDACTED]\", safe)"` | — |
+| [SRC-1AE03B9EC3-L003579](../../agents/web_agent.py#L3579) | 3579 | `"            return safe[:180]"` | — |
+| [SRC-1AE03B9EC3-L003580](../../agents/web_agent.py#L3580) | 3580 | `""` | — |
+| [SRC-1AE03B9EC3-L003581](../../agents/web_agent.py#L3581) | 3581 | `"        names = set(config) \| set(grouped) \| set(useful)"` | — |
+| [SRC-1AE03B9EC3-L003582](../../agents/web_agent.py#L3582) | 3582 | `"        connectors = []"` | — |
+| [SRC-1AE03B9EC3-L003583](../../agents/web_agent.py#L3583) | 3583 | `"        for name in sorted(names):"` | — |
+| [SRC-1AE03B9EC3-L003584](../../agents/web_agent.py#L3584) | 3584 | `"            ready, config_status = config.get(name, (bool(grouped.get(name) or useful.get(name)), \"observed_in_code_path\"))"` | — |
+| [SRC-1AE03B9EC3-L003585](../../agents/web_agent.py#L3585) | 3585 | `"            attempts = grouped.get(name, [])"` | — |
+| [SRC-1AE03B9EC3-L003586](../../agents/web_agent.py#L3586) | 3586 | `"            statuses = [_clean_text(row.get(\"status\", \"unknown\"), 40).lower() or \"unknown\" for row in attempts]"` | — |
+| [SRC-1AE03B9EC3-L003587](../../agents/web_agent.py#L3587) | 3587 | `"            status = max(statuses, key=lambda value: priority.get(value, 6)) if statuses else ("` | — |
+| [SRC-1AE03B9EC3-L003588](../../agents/web_agent.py#L3588) | 3588 | `"                \"ok\" if useful.get(name, 0) else \"not_configured\" if not ready else \"not_attempted\")"` | — |
+| [SRC-1AE03B9EC3-L003589](../../agents/web_agent.py#L3589) | 3589 | `"            if any(value in confirmed_attempt_statuses for value in statuses) or useful.get(name, 0):"` | — |
+| [SRC-1AE03B9EC3-L003590](../../agents/web_agent.py#L3590) | 3590 | `"                attempted: bool \| None = True"` | — |
+| [SRC-1AE03B9EC3-L003591](../../agents/web_agent.py#L3591) | 3591 | `"            elif any(value in uncertain_attempt_statuses for value in statuses):"` | — |
+| [SRC-1AE03B9EC3-L003592](../../agents/web_agent.py#L3592) | 3592 | `"                attempted = None"` | — |
+| [SRC-1AE03B9EC3-L003593](../../agents/web_agent.py#L3593) | 3593 | `"            else:"` | — |
+| [SRC-1AE03B9EC3-L003594](../../agents/web_agent.py#L3594) | 3594 | `"                attempted = False"` | — |
+| [SRC-1AE03B9EC3-L003595](../../agents/web_agent.py#L3595) | 3595 | `"            successful_statuses = set(statuses) & _SEARCH_ATTEMPT_DIAGNOSTIC_STATUSES"` | — |
+| [SRC-1AE03B9EC3-L003596](../../agents/web_agent.py#L3596) | 3596 | `"            error_response_statuses = set(statuses) & {"` | — |
+| [SRC-1AE03B9EC3-L003597](../../agents/web_agent.py#L3597) | 3597 | `"                \"blocked\", \"http_error\", \"unauthorized\", \"rate_limited\", \"invalid_response\""` | — |
+| [SRC-1AE03B9EC3-L003598](../../agents/web_agent.py#L3598) | 3598 | `"            }"` | — |
+| [SRC-1AE03B9EC3-L003599](../../agents/web_agent.py#L3599) | 3599 | `"            uncertain_failure_statuses = set(statuses) & {\"timeout\", \"failed\", \"error\", \"unknown\", \"inconclusive\"}"` | — |
 | [SRC-1AE03B9EC3-L003600](../../agents/web_agent.py#L3600) | 3600 | `"            failure_observed = bool(error_response_statuses or uncertain_failure_statuses or \"budget_exhausted\" in statuses)"` | — |
 | [SRC-1AE03B9EC3-L003601](../../agents/web_agent.py#L3601) | 3601 | `"            available: bool \| None = ("` | — |
 | [SRC-1AE03B9EC3-L003602](../../agents/web_agent.py#L3602) | 3602 | `"                True if successful_statuses or useful.get(name, 0)"` | — |
@@ -787,32 +816,3 @@
 | [SRC-1AE03B9EC3-L004368](../../agents/web_agent.py#L4368) | 4368 | `"        }"` | — |
 | [SRC-1AE03B9EC3-L004369](../../agents/web_agent.py#L4369) | 4369 | `"        report_text = json.dumps("` | — |
 | [SRC-1AE03B9EC3-L004370](../../agents/web_agent.py#L4370) | 4370 | `"            {"` | — |
-| [SRC-1AE03B9EC3-L004371](../../agents/web_agent.py#L4371) | 4371 | `"                \"research_plan\": {"` | — |
-| [SRC-1AE03B9EC3-L004372](../../agents/web_agent.py#L4372) | 4372 | `"                    \"depth\": plan.get(\"depth\", \"standard\"),"` | — |
-| [SRC-1AE03B9EC3-L004373](../../agents/web_agent.py#L4373) | 4373 | `"                    \"freshness\": plan.get(\"freshness\", \"any\"),"` | — |
-| [SRC-1AE03B9EC3-L004374](../../agents/web_agent.py#L4374) | 4374 | `"                    \"social_focus\": bool(plan.get(\"social_focus\")),"` | — |
-| [SRC-1AE03B9EC3-L004375](../../agents/web_agent.py#L4375) | 4375 | `"                    \"queries\": planned_queries,"` | — |
-| [SRC-1AE03B9EC3-L004376](../../agents/web_agent.py#L4376) | 4376 | `"                    \"dialogue_context\": task_spec.get(\"context_resolution\", {}),"` | — |
-| [SRC-1AE03B9EC3-L004377](../../agents/web_agent.py#L4377) | 4377 | `"                    \"task_planning_context\": task_planning_context,"` | — |
-| [SRC-1AE03B9EC3-L004378](../../agents/web_agent.py#L4378) | 4378 | `"                },"` | — |
-| [SRC-1AE03B9EC3-L004379](../../agents/web_agent.py#L4379) | 4379 | `"                \"search_report\": {"` | — |
-| [SRC-1AE03B9EC3-L004380](../../agents/web_agent.py#L4380) | 4380 | `"                    \"queries_planned\": report.get(\"queries_planned\", 0),"` | — |
-| [SRC-1AE03B9EC3-L004381](../../agents/web_agent.py#L4381) | 4381 | `"                    \"unique_sources\": report.get(\"unique_sources\", 0),"` | — |
-| [SRC-1AE03B9EC3-L004382](../../agents/web_agent.py#L4382) | 4382 | `"                    \"pages_fetched\": report.get(\"pages_fetched\", 0),"` | — |
-| [SRC-1AE03B9EC3-L004383](../../agents/web_agent.py#L4383) | 4383 | `"                    \"providers_used\": report.get(\"providers_used\", []),"` | — |
-| [SRC-1AE03B9EC3-L004384](../../agents/web_agent.py#L4384) | 4384 | `"                    \"platform_counts\": report.get(\"platform_counts\", {}),"` | — |
-| [SRC-1AE03B9EC3-L004385](../../agents/web_agent.py#L4385) | 4385 | `"                    \"evidence_signals\": report.get(\"evidence_signals\", {}),"` | — |
-| [SRC-1AE03B9EC3-L004386](../../agents/web_agent.py#L4386) | 4386 | `"                    \"source_guardrails\": {"` | — |
-| [SRC-1AE03B9EC3-L004387](../../agents/web_agent.py#L4387) | 4387 | `"                        \"official_government_domain_required\": ("` | — |
-| [SRC-1AE03B9EC3-L004388](../../agents/web_agent.py#L4388) | 4388 | `"                            ((report.get(\"source_guardrails\") or {}).get(\"final\")"` | — |
-| [SRC-1AE03B9EC3-L004389](../../agents/web_agent.py#L4389) | 4389 | `"                             or (report.get(\"source_guardrails\") or {}).get(\"initial\") or {})"` | — |
-| [SRC-1AE03B9EC3-L004390](../../agents/web_agent.py#L4390) | 4390 | `"                            .get(\"official_government_domain_required\", False)"` | — |
-| [SRC-1AE03B9EC3-L004391](../../agents/web_agent.py#L4391) | 4391 | `"                        ),"` | — |
-| [SRC-1AE03B9EC3-L004392](../../agents/web_agent.py#L4392) | 4392 | `"                        \"official_domain_policy\": ("` | — |
-| [SRC-1AE03B9EC3-L004393](../../agents/web_agent.py#L4393) | 4393 | `"                            ((report.get(\"source_guardrails\") or {}).get(\"final\")"` | — |
-| [SRC-1AE03B9EC3-L004394](../../agents/web_agent.py#L4394) | 4394 | `"                             or (report.get(\"source_guardrails\") or {}).get(\"initial\") or {})"` | — |
-| [SRC-1AE03B9EC3-L004395](../../agents/web_agent.py#L4395) | 4395 | `"                            .get(\"official_domain_policy\", \"not_required\")"` | — |
-| [SRC-1AE03B9EC3-L004396](../../agents/web_agent.py#L4396) | 4396 | `"                        ),"` | — |
-| [SRC-1AE03B9EC3-L004397](../../agents/web_agent.py#L4397) | 4397 | `"                        \"current_evidence_required\": ("` | — |
-| [SRC-1AE03B9EC3-L004398](../../agents/web_agent.py#L4398) | 4398 | `"                            ((report.get(\"source_guardrails\") or {}).get(\"final\")"` | — |
-| [SRC-1AE03B9EC3-L004399](../../agents/web_agent.py#L4399) | 4399 | `"                             or (report.get(\"source_guardrails\") or {}).get(\"initial\") or {})"` | — |

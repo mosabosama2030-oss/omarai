@@ -4,7 +4,7 @@
 
 - الصفحة: **058**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AC9D8384E8-L000239 إلى SRC-AFEDC2645A-L000513
+- النطاق: SRC-AC9D8384E8-L000165 إلى SRC-AFEDC2645A-L000439
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,80 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AC9D8384E8-L000165](../../tests/test_semantic_claim_verifier.py#L165) | 165 | `""` | — |
+| [SRC-AC9D8384E8-L000166](../../tests/test_semantic_claim_verifier.py#L166) | 166 | `"    monkeypatch.setattr(agent, \"_request_completion\", fake_completion)"` | — |
+| [SRC-AC9D8384E8-L000167](../../tests/test_semantic_claim_verifier.py#L167) | 167 | `"    result = agent._verify_semantic_claims("` | — |
+| [SRC-AC9D8384E8-L000168](../../tests/test_semantic_claim_verifier.py#L168) | 168 | `"        \"How many facilities?\","` | — |
+| [SRC-AC9D8384E8-L000169](../../tests/test_semantic_claim_verifier.py#L169) | 169 | `"        \"The system serves 12 facilities [source 1].\","` | — |
+| [SRC-AC9D8384E8-L000170](../../tests/test_semantic_claim_verifier.py#L170) | 170 | `"        [source()],"` | — |
+| [SRC-AC9D8384E8-L000171](../../tests/test_semantic_claim_verifier.py#L171) | 171 | `"    )"` | — |
+| [SRC-AC9D8384E8-L000172](../../tests/test_semantic_claim_verifier.py#L172) | 172 | `""` | — |
+| [SRC-AC9D8384E8-L000173](../../tests/test_semantic_claim_verifier.py#L173) | 173 | `"    assert result[\"status\"] == \"completed_all_claims_supported\""` | — |
+| [SRC-AC9D8384E8-L000174](../../tests/test_semantic_claim_verifier.py#L174) | 174 | `"    assert result[\"independence_scope\"] == \"distinct_model_id_same_provider\""` | — |
+| [SRC-AC9D8384E8-L000175](../../tests/test_semantic_claim_verifier.py#L175) | 175 | `"    assert captured[\"kwargs\"][\"model\"] == \"verifier/model\""` | — |
+| [SRC-AC9D8384E8-L000176](../../tests/test_semantic_claim_verifier.py#L176) | 176 | `"    assert captured[\"kwargs\"][\"allow_fallback\"] is False"` | — |
+| [SRC-AC9D8384E8-L000177](../../tests/test_semantic_claim_verifier.py#L177) | 177 | `"    assert captured[\"kwargs\"][\"enable_web_search\"] is False"` | — |
+| [SRC-AC9D8384E8-L000178](../../tests/test_semantic_claim_verifier.py#L178) | 178 | `""` | — |
+| [SRC-AC9D8384E8-L000179](../../tests/test_semantic_claim_verifier.py#L179) | 179 | `""` | — |
+| [SRC-AC9D8384E8-L000180](../../tests/test_semantic_claim_verifier.py#L180) | 180 | `"def test_web_agent_refuses_same_model_as_answer_generator(monkeypatch):"` | — |
+| [SRC-AC9D8384E8-L000181](../../tests/test_semantic_claim_verifier.py#L181) | 181 | `"    agent = WebAgent()"` | — |
+| [SRC-AC9D8384E8-L000182](../../tests/test_semantic_claim_verifier.py#L182) | 182 | `"    agent.answer_model = \"same/model\""` | — |
+| [SRC-AC9D8384E8-L000183](../../tests/test_semantic_claim_verifier.py#L183) | 183 | `"    agent.verifier_model = \"same/model\""` | — |
+| [SRC-AC9D8384E8-L000184](../../tests/test_semantic_claim_verifier.py#L184) | 184 | `"    monkeypatch.setattr("` | — |
+| [SRC-AC9D8384E8-L000185](../../tests/test_semantic_claim_verifier.py#L185) | 185 | `"        agent, \"_request_completion\","` | — |
+| [SRC-AC9D8384E8-L000186](../../tests/test_semantic_claim_verifier.py#L186) | 186 | `"        lambda *args, **kwargs: (_ for _ in ()).throw(AssertionError(\"must not call\")),"` | — |
+| [SRC-AC9D8384E8-L000187](../../tests/test_semantic_claim_verifier.py#L187) | 187 | `"    )"` | — |
+| [SRC-AC9D8384E8-L000188](../../tests/test_semantic_claim_verifier.py#L188) | 188 | `"    result = agent._verify_semantic_claims("` | — |
+| [SRC-AC9D8384E8-L000189](../../tests/test_semantic_claim_verifier.py#L189) | 189 | `"        \"Question?\","` | — |
+| [SRC-AC9D8384E8-L000190](../../tests/test_semantic_claim_verifier.py#L190) | 190 | `"        \"Factual statement [source 1].\","` | — |
+| [SRC-AC9D8384E8-L000191](../../tests/test_semantic_claim_verifier.py#L191) | 191 | `"        [source()],"` | — |
+| [SRC-AC9D8384E8-L000192](../../tests/test_semantic_claim_verifier.py#L192) | 192 | `"    )"` | — |
+| [SRC-AC9D8384E8-L000193](../../tests/test_semantic_claim_verifier.py#L193) | 193 | `"    assert result[\"status\"] == \"verifier_not_independent\""` | — |
+| [SRC-AC9D8384E8-L000194](../../tests/test_semantic_claim_verifier.py#L194) | 194 | `"    assert result[\"withhold_answer\"] is True"` | — |
+| [SRC-AC9D8384E8-L000195](../../tests/test_semantic_claim_verifier.py#L195) | 195 | `""` | — |
+| [SRC-AC9D8384E8-L000196](../../tests/test_semantic_claim_verifier.py#L196) | 196 | `""` | — |
+| [SRC-AC9D8384E8-L000197](../../tests/test_semantic_claim_verifier.py#L197) | 197 | `"def test_web_agent_fails_closed_when_verifier_call_fails(monkeypatch):"` | — |
+| [SRC-AC9D8384E8-L000198](../../tests/test_semantic_claim_verifier.py#L198) | 198 | `"    agent = WebAgent()"` | — |
+| [SRC-AC9D8384E8-L000199](../../tests/test_semantic_claim_verifier.py#L199) | 199 | `"    agent.answer_model = \"answer/model\""` | — |
+| [SRC-AC9D8384E8-L000200](../../tests/test_semantic_claim_verifier.py#L200) | 200 | `"    agent.verifier_model = \"verifier/model\""` | — |
+| [SRC-AC9D8384E8-L000201](../../tests/test_semantic_claim_verifier.py#L201) | 201 | `"    agent.api_key = \"test-only\""` | — |
+| [SRC-AC9D8384E8-L000202](../../tests/test_semantic_claim_verifier.py#L202) | 202 | `"    monkeypatch.setattr("` | — |
+| [SRC-AC9D8384E8-L000203](../../tests/test_semantic_claim_verifier.py#L203) | 203 | `"        agent, \"_request_completion\","` | — |
+| [SRC-AC9D8384E8-L000204](../../tests/test_semantic_claim_verifier.py#L204) | 204 | `"        lambda *args, **kwargs: (_ for _ in ()).throw(RuntimeError(\"unavailable\")),"` | — |
+| [SRC-AC9D8384E8-L000205](../../tests/test_semantic_claim_verifier.py#L205) | 205 | `"    )"` | — |
+| [SRC-AC9D8384E8-L000206](../../tests/test_semantic_claim_verifier.py#L206) | 206 | `"    result = agent._verify_semantic_claims("` | — |
+| [SRC-AC9D8384E8-L000207](../../tests/test_semantic_claim_verifier.py#L207) | 207 | `"        \"Question?\","` | — |
+| [SRC-AC9D8384E8-L000208](../../tests/test_semantic_claim_verifier.py#L208) | 208 | `"        \"Factual statement [source 1].\","` | — |
+| [SRC-AC9D8384E8-L000209](../../tests/test_semantic_claim_verifier.py#L209) | 209 | `"        [source()],"` | — |
+| [SRC-AC9D8384E8-L000210](../../tests/test_semantic_claim_verifier.py#L210) | 210 | `"    )"` | — |
+| [SRC-AC9D8384E8-L000211](../../tests/test_semantic_claim_verifier.py#L211) | 211 | `"    assert result[\"status\"] == \"not_verifiable\""` | — |
+| [SRC-AC9D8384E8-L000212](../../tests/test_semantic_claim_verifier.py#L212) | 212 | `"    assert result[\"reason\"] == \"verifier_call_failed\""` | — |
+| [SRC-AC9D8384E8-L000213](../../tests/test_semantic_claim_verifier.py#L213) | 213 | `"    assert result[\"withhold_answer\"] is True"` | — |
+| [SRC-AC9D8384E8-L000214](../../tests/test_semantic_claim_verifier.py#L214) | 214 | `""` | — |
+| [SRC-AC9D8384E8-L000215](../../tests/test_semantic_claim_verifier.py#L215) | 215 | `""` | — |
+| [SRC-AC9D8384E8-L000216](../../tests/test_semantic_claim_verifier.py#L216) | 216 | `"def test_ninth_citation_reference_is_not_silently_truncated():"` | — |
+| [SRC-AC9D8384E8-L000217](../../tests/test_semantic_claim_verifier.py#L217) | 217 | `"    sources = ["` | — |
+| [SRC-AC9D8384E8-L000218](../../tests/test_semantic_claim_verifier.py#L218) | 218 | `"        source(url=f\"https://example.org/source-{index}\")"` | — |
+| [SRC-AC9D8384E8-L000219](../../tests/test_semantic_claim_verifier.py#L219) | 219 | `"        for index in range(1, 10)"` | — |
+| [SRC-AC9D8384E8-L000220](../../tests/test_semantic_claim_verifier.py#L220) | 220 | `"    ]"` | — |
+| [SRC-AC9D8384E8-L000221](../../tests/test_semantic_claim_verifier.py#L221) | 221 | `"    citations = \" \".join(f\"[source {index}]\" for index in range(1, 10))"` | — |
+| [SRC-AC9D8384E8-L000222](../../tests/test_semantic_claim_verifier.py#L222) | 222 | `"    request = prepared(answer=f\"The claim cites many sources {citations}.\", sources=sources)"` | — |
+| [SRC-AC9D8384E8-L000223](../../tests/test_semantic_claim_verifier.py#L223) | 223 | `"    assert request[\"status\"] == \"not_verifiable\""` | — |
+| [SRC-AC9D8384E8-L000224](../../tests/test_semantic_claim_verifier.py#L224) | 224 | `"    assert request[\"reason\"] == \"citation_reference_list_truncated\""` | — |
+| [SRC-AC9D8384E8-L000225](../../tests/test_semantic_claim_verifier.py#L225) | 225 | `""` | — |
+| [SRC-AC9D8384E8-L000226](../../tests/test_semantic_claim_verifier.py#L226) | 226 | `""` | — |
+| [SRC-AC9D8384E8-L000227](../../tests/test_semantic_claim_verifier.py#L227) | 227 | `"def test_request_completion_can_disable_fallback_for_verifier_calls(monkeypatch):"` | — |
+| [SRC-AC9D8384E8-L000228](../../tests/test_semantic_claim_verifier.py#L228) | 228 | `"    import json"` | — |
+| [SRC-AC9D8384E8-L000229](../../tests/test_semantic_claim_verifier.py#L229) | 229 | `"    import urllib.error"` | — |
+| [SRC-AC9D8384E8-L000230](../../tests/test_semantic_claim_verifier.py#L230) | 230 | `""` | — |
+| [SRC-AC9D8384E8-L000231](../../tests/test_semantic_claim_verifier.py#L231) | 231 | `"    agent = WebAgent()"` | — |
+| [SRC-AC9D8384E8-L000232](../../tests/test_semantic_claim_verifier.py#L232) | 232 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-AC9D8384E8-L000233](../../tests/test_semantic_claim_verifier.py#L233) | 233 | `"    agent.fallback_model = \"fallback/model\""` | — |
+| [SRC-AC9D8384E8-L000234](../../tests/test_semantic_claim_verifier.py#L234) | 234 | `"    called = []"` | — |
+| [SRC-AC9D8384E8-L000235](../../tests/test_semantic_claim_verifier.py#L235) | 235 | `""` | — |
+| [SRC-AC9D8384E8-L000236](../../tests/test_semantic_claim_verifier.py#L236) | 236 | `"    def unavailable(request, timeout):"` | — |
+| [SRC-AC9D8384E8-L000237](../../tests/test_semantic_claim_verifier.py#L237) | 237 | `"        payload = json.loads(request.data.decode(\"utf-8\"))"` | — |
+| [SRC-AC9D8384E8-L000238](../../tests/test_semantic_claim_verifier.py#L238) | 238 | `"        called.append(payload[\"model\"])"` | — |
 | [SRC-AC9D8384E8-L000239](../../tests/test_semantic_claim_verifier.py#L239) | 239 | `"        raise urllib.error.URLError(\"network unavailable\")"` | — |
 | [SRC-AC9D8384E8-L000240](../../tests/test_semantic_claim_verifier.py#L240) | 240 | `""` | — |
 | [SRC-AC9D8384E8-L000241](../../tests/test_semantic_claim_verifier.py#L241) | 241 | `"    monkeypatch.setattr(\"agents.web_agent._open_model_request\", unavailable)"` | — |
@@ -769,77 +843,3 @@
 | [SRC-AFEDC2645A-L000437](../../tests/test_task_understanding.py#L437) | 437 | `"            \"pass_action\": \"run_arbitrary_commands\","` | — |
 | [SRC-AFEDC2645A-L000438](../../tests/test_task_understanding.py#L438) | 438 | `"            \"fail_action\": \"pretend_success\","` | — |
 | [SRC-AFEDC2645A-L000439](../../tests/test_task_understanding.py#L439) | 439 | `"        }"` | — |
-| [SRC-AFEDC2645A-L000440](../../tests/test_task_understanding.py#L440) | 440 | `"    ]"` | — |
-| [SRC-AFEDC2645A-L000441](../../tests/test_task_understanding.py#L441) | 441 | `""` | — |
-| [SRC-AFEDC2645A-L000442](../../tests/test_task_understanding.py#L442) | 442 | `"    safe = validate_task_spec(candidate)"` | — |
-| [SRC-AFEDC2645A-L000443](../../tests/test_task_understanding.py#L443) | 443 | `"    assert safe[\"reasoning_strategy_ids\"] == [\"rank_testable_hypotheses\"]"` | — |
-| [SRC-AFEDC2645A-L000444](../../tests/test_task_understanding.py#L444) | 444 | `"    assert [row[\"stage\"] for row in safe[\"decision_matrix\"]] == ["` | — |
-| [SRC-AFEDC2645A-L000445](../../tests/test_task_understanding.py#L445) | 445 | `"        \"interpret\", \"route\", \"plan\", \"evidence\", \"synthesize\", \"terminate\""` | — |
-| [SRC-AFEDC2645A-L000446](../../tests/test_task_understanding.py#L446) | 446 | `"    ]"` | — |
-| [SRC-AFEDC2645A-L000447](../../tests/test_task_understanding.py#L447) | 447 | `"    assert not any(row.get(\"stage\") == \"exfiltrate\" for row in safe[\"decision_matrix\"])"` | — |
-| [SRC-AFEDC2645A-L000448](../../tests/test_task_understanding.py#L448) | 448 | `"    assert \"reasoning_guidance\" not in safe"` | — |
-| [SRC-AFEDC2645A-L000449](../../tests/test_task_understanding.py#L449) | 449 | `""` | — |
-| [SRC-AFEDC2645A-L000450](../../tests/test_task_understanding.py#L450) | 450 | `""` | — |
-| [SRC-AFEDC2645A-L000451](../../tests/test_task_understanding.py#L451) | 451 | `"def test_task_spec_merges_inherited_location_and_budget_slots_into_constraints():"` | — |
-| [SRC-AFEDC2645A-L000452](../../tests/test_task_understanding.py#L452) | 452 | `"    question = \"مراكز صيانة لابتوب اليوم\""` | — |
-| [SRC-AFEDC2645A-L000453](../../tests/test_task_understanding.py#L453) | 453 | `"    context = {"` | — |
-| [SRC-AFEDC2645A-L000454](../../tests/test_task_understanding.py#L454) | 454 | `"        \"resolved_question\": \"مراكز صيانة لابتوب اليوم في الإسكندرية بميزانية أقل من 20000 جنيه\","` | — |
-| [SRC-AFEDC2645A-L000455](../../tests/test_task_understanding.py#L455) | 455 | `"        \"topic\": \"مراكز صيانة لابتوب\","` | — |
-| [SRC-AFEDC2645A-L000456](../../tests/test_task_understanding.py#L456) | 456 | `"        \"entities\": [\"لابتوب\"],"` | — |
-| [SRC-AFEDC2645A-L000457](../../tests/test_task_understanding.py#L457) | 457 | `"        \"slots\": {"` | — |
-| [SRC-AFEDC2645A-L000458](../../tests/test_task_understanding.py#L458) | 458 | `"            \"location\": \"الإسكندرية\","` | — |
-| [SRC-AFEDC2645A-L000459](../../tests/test_task_understanding.py#L459) | 459 | `"            \"budget\": \"أقل من 20000 جنيه\","` | — |
-| [SRC-AFEDC2645A-L000460](../../tests/test_task_understanding.py#L460) | 460 | `"        },"` | — |
-| [SRC-AFEDC2645A-L000461](../../tests/test_task_understanding.py#L461) | 461 | `"        \"changed_slots\": [\"location\", \"budget\"],"` | — |
-| [SRC-AFEDC2645A-L000462](../../tests/test_task_understanding.py#L462) | 462 | `"        \"is_follow_up\": True,"` | — |
-| [SRC-AFEDC2645A-L000463](../../tests/test_task_understanding.py#L463) | 463 | `"        \"topic_shift\": False,"` | — |
-| [SRC-AFEDC2645A-L000464](../../tests/test_task_understanding.py#L464) | 464 | `"        \"needs_clarification\": False,"` | — |
-| [SRC-AFEDC2645A-L000465](../../tests/test_task_understanding.py#L465) | 465 | `"    }"` | — |
-| [SRC-AFEDC2645A-L000466](../../tests/test_task_understanding.py#L466) | 466 | `""` | — |
-| [SRC-AFEDC2645A-L000467](../../tests/test_task_understanding.py#L467) | 467 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000468](../../tests/test_task_understanding.py#L468) | 468 | `"        question,"` | — |
-| [SRC-AFEDC2645A-L000469](../../tests/test_task_understanding.py#L469) | 469 | `"        mode=\"latest\","` | — |
-| [SRC-AFEDC2645A-L000470](../../tests/test_task_understanding.py#L470) | 470 | `"        intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-AFEDC2645A-L000471](../../tests/test_task_understanding.py#L471) | 471 | `"        dialogue_context=context,"` | — |
-| [SRC-AFEDC2645A-L000472](../../tests/test_task_understanding.py#L472) | 472 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000473](../../tests/test_task_understanding.py#L473) | 473 | `""` | — |
-| [SRC-AFEDC2645A-L000474](../../tests/test_task_understanding.py#L474) | 474 | `"    assert \"الإسكندرية\" in spec[\"constraints\"][\"explicit_locations\"]"` | — |
-| [SRC-AFEDC2645A-L000475](../../tests/test_task_understanding.py#L475) | 475 | `"    assert \"أقل من 20000 جنيه\" in spec[\"constraints\"][\"explicit_budgets\"]"` | — |
-| [SRC-AFEDC2645A-L000476](../../tests/test_task_understanding.py#L476) | 476 | `""` | — |
-| [SRC-AFEDC2645A-L000477](../../tests/test_task_understanding.py#L477) | 477 | `"    rows = build_query_strategy_matrix("` | — |
-| [SRC-AFEDC2645A-L000478](../../tests/test_task_understanding.py#L478) | 478 | `"        question,"` | — |
-| [SRC-AFEDC2645A-L000479](../../tests/test_task_understanding.py#L479) | 479 | `"        spec,"` | — |
-| [SRC-AFEDC2645A-L000480](../../tests/test_task_understanding.py#L480) | 480 | `"        [spec[\"context_resolution\"][\"resolved_question\"]],"` | — |
-| [SRC-AFEDC2645A-L000481](../../tests/test_task_understanding.py#L481) | 481 | `"        limit=8,"` | — |
-| [SRC-AFEDC2645A-L000482](../../tests/test_task_understanding.py#L482) | 482 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000483](../../tests/test_task_understanding.py#L483) | 483 | `"    assert any(\"الإسكندرية\" in row[\"query\"] for row in rows)"` | — |
-| [SRC-AFEDC2645A-L000484](../../tests/test_task_understanding.py#L484) | 484 | `""` | — |
-| [SRC-AFEDC2645A-L000485](../../tests/test_task_understanding.py#L485) | 485 | `""` | — |
-| [SRC-AFEDC2645A-L000486](../../tests/test_task_understanding.py#L486) | 486 | `"def test_task_spec_does_not_inherit_location_or_budget_from_topic_shift():"` | — |
-| [SRC-AFEDC2645A-L000487](../../tests/test_task_understanding.py#L487) | 487 | `"    question = \"مواصفات لاب توب ديل\""` | — |
-| [SRC-AFEDC2645A-L000488](../../tests/test_task_understanding.py#L488) | 488 | `"    context = {"` | — |
-| [SRC-AFEDC2645A-L000489](../../tests/test_task_understanding.py#L489) | 489 | `"        \"resolved_question\": question,"` | — |
-| [SRC-AFEDC2645A-L000490](../../tests/test_task_understanding.py#L490) | 490 | `"        \"topic\": \"\","` | — |
-| [SRC-AFEDC2645A-L000491](../../tests/test_task_understanding.py#L491) | 491 | `"        \"entities\": [],"` | — |
-| [SRC-AFEDC2645A-L000492](../../tests/test_task_understanding.py#L492) | 492 | `"        \"slots\": {"` | — |
-| [SRC-AFEDC2645A-L000493](../../tests/test_task_understanding.py#L493) | 493 | `"            \"location\": \"الإسكندرية\","` | — |
-| [SRC-AFEDC2645A-L000494](../../tests/test_task_understanding.py#L494) | 494 | `"            \"budget\": \"أقل من 20000 جنيه\","` | — |
-| [SRC-AFEDC2645A-L000495](../../tests/test_task_understanding.py#L495) | 495 | `"        },"` | — |
-| [SRC-AFEDC2645A-L000496](../../tests/test_task_understanding.py#L496) | 496 | `"        \"changed_slots\": [],"` | — |
-| [SRC-AFEDC2645A-L000497](../../tests/test_task_understanding.py#L497) | 497 | `"        \"is_follow_up\": False,"` | — |
-| [SRC-AFEDC2645A-L000498](../../tests/test_task_understanding.py#L498) | 498 | `"        \"topic_shift\": True,"` | — |
-| [SRC-AFEDC2645A-L000499](../../tests/test_task_understanding.py#L499) | 499 | `"        \"needs_clarification\": False,"` | — |
-| [SRC-AFEDC2645A-L000500](../../tests/test_task_understanding.py#L500) | 500 | `"    }"` | — |
-| [SRC-AFEDC2645A-L000501](../../tests/test_task_understanding.py#L501) | 501 | `""` | — |
-| [SRC-AFEDC2645A-L000502](../../tests/test_task_understanding.py#L502) | 502 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000503](../../tests/test_task_understanding.py#L503) | 503 | `"        question,"` | — |
-| [SRC-AFEDC2645A-L000504](../../tests/test_task_understanding.py#L504) | 504 | `"        mode=\"auto\","` | — |
-| [SRC-AFEDC2645A-L000505](../../tests/test_task_understanding.py#L505) | 505 | `"        intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-AFEDC2645A-L000506](../../tests/test_task_understanding.py#L506) | 506 | `"        dialogue_context=context,"` | — |
-| [SRC-AFEDC2645A-L000507](../../tests/test_task_understanding.py#L507) | 507 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000508](../../tests/test_task_understanding.py#L508) | 508 | `""` | — |
-| [SRC-AFEDC2645A-L000509](../../tests/test_task_understanding.py#L509) | 509 | `"    assert \"الإسكندرية\" not in spec[\"constraints\"][\"explicit_locations\"]"` | — |
-| [SRC-AFEDC2645A-L000510](../../tests/test_task_understanding.py#L510) | 510 | `"    assert \"أقل من 20000 جنيه\" not in spec[\"constraints\"][\"explicit_budgets\"]"` | — |
-| [SRC-AFEDC2645A-L000511](../../tests/test_task_understanding.py#L511) | 511 | `""` | — |
-| [SRC-AFEDC2645A-L000512](../../tests/test_task_understanding.py#L512) | 512 | `""` | — |
-| [SRC-AFEDC2645A-L000513](../../tests/test_task_understanding.py#L513) | 513 | `"def test_query_strategy_matrix_applies_inherited_location_and_budget_to_all_candidates():"` | — |

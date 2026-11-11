@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-086D574B4E-L000247 إلى SRC-686F71AA50-L000656
+- النطاق: SRC-086D574B4E-L000218 إلى SRC-686F71AA50-L000627
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,35 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-086D574B4E-L000218](../../agents/semantic_claim_verifier.py#L218) | 218 | `""` | — |
+| [SRC-086D574B4E-L000219](../../agents/semantic_claim_verifier.py#L219) | 219 | `""` | — |
+| [SRC-086D574B4E-L000220](../../agents/semantic_claim_verifier.py#L220) | 220 | `"def deterministic_claim_screen("` | — |
+| [SRC-086D574B4E-L000221](../../agents/semantic_claim_verifier.py#L221) | 221 | `"    prepared: dict[str, Any],"` | — |
+| [SRC-086D574B4E-L000222](../../agents/semantic_claim_verifier.py#L222) | 222 | `"    answer_integrity: dict[str, Any] \| None = None,"` | — |
+| [SRC-086D574B4E-L000223](../../agents/semantic_claim_verifier.py#L223) | 223 | `") -> dict[str, Any]:"` | — |
+| [SRC-086D574B4E-L000224](../../agents/semantic_claim_verifier.py#L224) | 224 | `"    \"\"\"Apply conservative numeric and claim-specific provenance gates before model review.\"\"\""` | — |
+| [SRC-086D574B4E-L000225](../../agents/semantic_claim_verifier.py#L225) | 225 | `"    if prepared.get(\"status\") != \"ready\":"` | — |
+| [SRC-086D574B4E-L000226](../../agents/semantic_claim_verifier.py#L226) | 226 | `"        return _not_verifiable(str(prepared.get(\"reason\") or \"request_not_ready\"), prepared.get(\"ledger\"))"` | — |
+| [SRC-086D574B4E-L000227](../../agents/semantic_claim_verifier.py#L227) | 227 | `"    integrity = answer_integrity if isinstance(answer_integrity, dict) else {}"` | — |
+| [SRC-086D574B4E-L000228](../../agents/semantic_claim_verifier.py#L228) | 228 | `"    unsupported_numeric = int("` | — |
+| [SRC-086D574B4E-L000229](../../agents/semantic_claim_verifier.py#L229) | 229 | `"        integrity.get(\"potentially_unsupported_numeric_by_citation_count\") or 0"` | — |
+| [SRC-086D574B4E-L000230](../../agents/semantic_claim_verifier.py#L230) | 230 | `"    )"` | — |
+| [SRC-086D574B4E-L000231](../../agents/semantic_claim_verifier.py#L231) | 231 | `"    if unsupported_numeric:"` | — |
+| [SRC-086D574B4E-L000232](../../agents/semantic_claim_verifier.py#L232) | 232 | `"        return _not_verifiable(\"deterministic_cited_numeric_support_failed\", prepared.get(\"ledger\"))"` | — |
+| [SRC-086D574B4E-L000233](../../agents/semantic_claim_verifier.py#L233) | 233 | `"    for claim in prepared.get(\"ledger\", {}).get(\"segments\", []):"` | — |
+| [SRC-086D574B4E-L000234](../../agents/semantic_claim_verifier.py#L234) | 234 | `"        if not isinstance(claim, dict):"` | — |
+| [SRC-086D574B4E-L000235](../../agents/semantic_claim_verifier.py#L235) | 235 | `"            return _not_verifiable(\"invalid_claim_segment\", prepared.get(\"ledger\"))"` | — |
+| [SRC-086D574B4E-L000236](../../agents/semantic_claim_verifier.py#L236) | 236 | `"        for reference in claim.get(\"sources\") or []:"` | — |
+| [SRC-086D574B4E-L000237](../../agents/semantic_claim_verifier.py#L237) | 237 | `"            if not isinstance(reference, dict):"` | — |
+| [SRC-086D574B4E-L000238](../../agents/semantic_claim_verifier.py#L238) | 238 | `"                return _not_verifiable(\"invalid_claim_source_reference\", prepared.get(\"ledger\"))"` | — |
+| [SRC-086D574B4E-L000239](../../agents/semantic_claim_verifier.py#L239) | 239 | `"            metadata = reference.get(\"metadata_audit\")"` | — |
+| [SRC-086D574B4E-L000240](../../agents/semantic_claim_verifier.py#L240) | 240 | `"            if not isinstance(metadata, dict):"` | — |
+| [SRC-086D574B4E-L000241](../../agents/semantic_claim_verifier.py#L241) | 241 | `"                return _not_verifiable(\"source_metadata_audit_missing\", prepared.get(\"ledger\"))"` | — |
+| [SRC-086D574B4E-L000242](../../agents/semantic_claim_verifier.py#L242) | 242 | `"            missing = set(metadata.get(\"required_fields_missing\") or [])"` | — |
+| [SRC-086D574B4E-L000243](../../agents/semantic_claim_verifier.py#L243) | 243 | `"            if \"valid_http_source_url\" in missing or \"readable_source_evidence\" in missing:"` | — |
+| [SRC-086D574B4E-L000244](../../agents/semantic_claim_verifier.py#L244) | 244 | `"                return _not_verifiable(\"deterministic_source_provenance_failed\", prepared.get(\"ledger\"))"` | — |
+| [SRC-086D574B4E-L000245](../../agents/semantic_claim_verifier.py#L245) | 245 | `"            if metadata.get(\"population_scope_required\") is True and ("` | — |
+| [SRC-086D574B4E-L000246](../../agents/semantic_claim_verifier.py#L246) | 246 | `"                \"data_reference_period_for_population_claim\" in missing"` | — |
 | [SRC-086D574B4E-L000247](../../agents/semantic_claim_verifier.py#L247) | 247 | `"                or \"geographic_scope_for_population_claim\" in missing"` | — |
 | [SRC-086D574B4E-L000248](../../agents/semantic_claim_verifier.py#L248) | 248 | `"            ):"` | — |
 | [SRC-086D574B4E-L000249](../../agents/semantic_claim_verifier.py#L249) | 249 | `"                return _not_verifiable(\"population_scope_metadata_incomplete\", prepared.get(\"ledger\"))"` | — |
@@ -796,32 +825,3 @@
 | [SRC-686F71AA50-L000625](../../agents/task_understanding.py#L625) | 625 | `"    elif family == \"data_analysis\":"` | — |
 | [SRC-686F71AA50-L000626](../../agents/task_understanding.py#L626) | 626 | `"        evidence_requirements = ["` | — |
 | [SRC-686F71AA50-L000627](../../agents/task_understanding.py#L627) | 627 | `"            \"preserve_dataset_grain_and_metric_definition\","` | — |
-| [SRC-686F71AA50-L000628](../../agents/task_understanding.py#L628) | 628 | `"            \"inspect_missingness_duplicates_outliers_and_time_coverage\","` | — |
-| [SRC-686F71AA50-L000629](../../agents/task_understanding.py#L629) | 629 | `"            \"separate_observed_association_from_causal_explanation\","` | — |
-| [SRC-686F71AA50-L000630](../../agents/task_understanding.py#L630) | 630 | `"        ]"` | — |
-| [SRC-686F71AA50-L000631](../../agents/task_understanding.py#L631) | 631 | `"        query_strategies = [\"schema_and_grain\", \"data_quality\", \"metric_and_segment_checks\"]"` | — |
-| [SRC-686F71AA50-L000632](../../agents/task_understanding.py#L632) | 632 | `"    elif family == \"calculation\":"` | — |
-| [SRC-686F71AA50-L000633](../../agents/task_understanding.py#L633) | 633 | `"        evidence_requirements = ["` | — |
-| [SRC-686F71AA50-L000634](../../agents/task_understanding.py#L634) | 634 | `"            \"show_formula_and_units_when_useful\","` | — |
-| [SRC-686F71AA50-L000635](../../agents/task_understanding.py#L635) | 635 | `"            \"validate_input_units_and_rounding\","` | — |
-| [SRC-686F71AA50-L000636](../../agents/task_understanding.py#L636) | 636 | `"            \"distinguish_exact_result_from_assumption_based_estimate\","` | — |
-| [SRC-686F71AA50-L000637](../../agents/task_understanding.py#L637) | 637 | `"        ]"` | — |
-| [SRC-686F71AA50-L000638](../../agents/task_understanding.py#L638) | 638 | `"        query_strategies = [\"formula\", \"unit_validation\", \"independent_arithmetic_check\"]"` | — |
-| [SRC-686F71AA50-L000639](../../agents/task_understanding.py#L639) | 639 | `"    elif family == \"translation\":"` | — |
-| [SRC-686F71AA50-L000640](../../agents/task_understanding.py#L640) | 640 | `"        evidence_requirements = ["` | — |
-| [SRC-686F71AA50-L000641](../../agents/task_understanding.py#L641) | 641 | `"            \"preserve_meaning_tone_and_named_entities\","` | — |
-| [SRC-686F71AA50-L000642](../../agents/task_understanding.py#L642) | 642 | `"            \"surface_ambiguous_source_phrasing_instead_of_silently_inventing_meaning\","` | — |
-| [SRC-686F71AA50-L000643](../../agents/task_understanding.py#L643) | 643 | `"            \"respect_explicit_target_language_and_script\","` | — |
-| [SRC-686F71AA50-L000644](../../agents/task_understanding.py#L644) | 644 | `"        ]"` | — |
-| [SRC-686F71AA50-L000645](../../agents/task_understanding.py#L645) | 645 | `"        query_strategies = [\"source_text\", \"target_language\", \"terminology_and_tone\"]"` | — |
-| [SRC-686F71AA50-L000646](../../agents/task_understanding.py#L646) | 646 | `"    elif family == \"writing_or_editing\":"` | — |
-| [SRC-686F71AA50-L000647](../../agents/task_understanding.py#L647) | 647 | `"        evidence_requirements = ["` | — |
-| [SRC-686F71AA50-L000648](../../agents/task_understanding.py#L648) | 648 | `"            \"follow_requested_audience_tone_and_format\","` | — |
-| [SRC-686F71AA50-L000649](../../agents/task_understanding.py#L649) | 649 | `"            \"preserve_user_provided_facts_without_adding_unverified_claims\","` | — |
-| [SRC-686F71AA50-L000650](../../agents/task_understanding.py#L650) | 650 | `"            \"distinguish_rewrite_from_fact_check\","` | — |
-| [SRC-686F71AA50-L000651](../../agents/task_understanding.py#L651) | 651 | `"        ]"` | — |
-| [SRC-686F71AA50-L000652](../../agents/task_understanding.py#L652) | 652 | `"        query_strategies = [\"audience_and_purpose\", \"tone_and_format\", \"fact_preservation\"]"` | — |
-| [SRC-686F71AA50-L000653](../../agents/task_understanding.py#L653) | 653 | `"    elif family == \"planning\":"` | — |
-| [SRC-686F71AA50-L000654](../../agents/task_understanding.py#L654) | 654 | `"        evidence_requirements = ["` | — |
-| [SRC-686F71AA50-L000655](../../agents/task_understanding.py#L655) | 655 | `"            \"preserve_goal_constraints_dependencies_and_deadline\","` | — |
-| [SRC-686F71AA50-L000656](../../agents/task_understanding.py#L656) | 656 | `"            \"make_assumptions_and_unavailable_resources_explicit\","` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3AA6165B18-L000043 إلى SRC-8D00DCEC0D-L000297
+- النطاق: SRC-3AA6165B18-L000014 إلى SRC-8D00DCEC0D-L000268
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,35 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3AA6165B18-L000014](../../agents/research_guardrails.py#L14) | 14 | `"    _parse_publication_date,"` | — |
+| [SRC-3AA6165B18-L000015](../../agents/research_guardrails.py#L15) | 15 | `"    detect_freshness,"` | — |
+| [SRC-3AA6165B18-L000016](../../agents/research_guardrails.py#L16) | 16 | `")"` | — |
+| [SRC-3AA6165B18-L000017](../../agents/research_guardrails.py#L17) | 17 | `""` | — |
+| [SRC-3AA6165B18-L000018](../../agents/research_guardrails.py#L18) | 18 | `"_CURRENT_EVIDENCE_MAX_AGE_DAYS = 7"` | — |
+| [SRC-3AA6165B18-L000019](../../agents/research_guardrails.py#L19) | 19 | `"_GOVERNMENT_SUFFIXES = ("` | — |
+| [SRC-3AA6165B18-L000020](../../agents/research_guardrails.py#L20) | 20 | `"    \".gov\", \".gov.eg\", \".gov.uk\", \".gov.sa\", \".gov.ae\", \".gov.au\","` | — |
+| [SRC-3AA6165B18-L000021](../../agents/research_guardrails.py#L21) | 21 | `"    \".gov.in\", \".gov.cn\", \".gov.br\", \".gob.mx\", \".go.jp\", \".gc.ca\","` | — |
+| [SRC-3AA6165B18-L000022](../../agents/research_guardrails.py#L22) | 22 | `"    \".govt.nz\", \".gouv.fr\","` | — |
+| [SRC-3AA6165B18-L000023](../../agents/research_guardrails.py#L23) | 23 | `")"` | — |
+| [SRC-3AA6165B18-L000024](../../agents/research_guardrails.py#L24) | 24 | `"_CURRENT_GOVERNMENT_SERVICE_TERMS = ("` | — |
+| [SRC-3AA6165B18-L000025](../../agents/research_guardrails.py#L25) | 25 | `"    \"الجوازات\", \"مكتب الجوازات\", \"مصلحة الجوازات\", \"السجل المدني\","` | — |
+| [SRC-3AA6165B18-L000026](../../agents/research_guardrails.py#L26) | 26 | `"    \"الشهر العقاري\", \"مكتب المرور\", \"إدارة المرور\", \"مكتب حكومي\","` | — |
+| [SRC-3AA6165B18-L000027](../../agents/research_guardrails.py#L27) | 27 | `"    \"خدمة حكومية\", \"مصلحة حكومية\", \"وزارة\", \"هيئة حكومية\","` | — |
+| [SRC-3AA6165B18-L000028](../../agents/research_guardrails.py#L28) | 28 | `"    \"passport office\", \"civil registry\", \"traffic office\","` | — |
+| [SRC-3AA6165B18-L000029](../../agents/research_guardrails.py#L29) | 29 | `"    \"government office\", \"government service\","` | — |
+| [SRC-3AA6165B18-L000030](../../agents/research_guardrails.py#L30) | 30 | `")"` | — |
+| [SRC-3AA6165B18-L000031](../../agents/research_guardrails.py#L31) | 31 | `"_GOVERNMENT_HOURS_TERMS = ("` | — |
+| [SRC-3AA6165B18-L000032](../../agents/research_guardrails.py#L32) | 32 | `"    \"مواعيد\", \"مواعيد العمل\", \"ساعات العمل\", \"يفتح\", \"مفتوح\","` | — |
+| [SRC-3AA6165B18-L000033](../../agents/research_guardrails.py#L33) | 33 | `"    \"يغلق\", \"مواعيد الدوام\", \"working hours\", \"opening hours\","` | — |
+| [SRC-3AA6165B18-L000034](../../agents/research_guardrails.py#L34) | 34 | `"    \"office hours\", \"open today\", \"closes today\","` | — |
+| [SRC-3AA6165B18-L000035](../../agents/research_guardrails.py#L35) | 35 | `")"` | — |
+| [SRC-3AA6165B18-L000036](../../agents/research_guardrails.py#L36) | 36 | `"_OFFICIAL_WORDS = ("` | — |
+| [SRC-3AA6165B18-L000037](../../agents/research_guardrails.py#L37) | 37 | `"    \"الموقع الرسمي\", \"موقع رسمي\", \"الصفحة الرسمية\", \"الموقع الحكومي\","` | — |
+| [SRC-3AA6165B18-L000038](../../agents/research_guardrails.py#L38) | 38 | `"    \"official website\", \"official site\", \"official homepage\","` | — |
+| [SRC-3AA6165B18-L000039](../../agents/research_guardrails.py#L39) | 39 | `")"` | — |
+| [SRC-3AA6165B18-L000040](../../agents/research_guardrails.py#L40) | 40 | `"_GOVERNMENT_ENTITY_WORDS = ("` | — |
+| [SRC-3AA6165B18-L000041](../../agents/research_guardrails.py#L41) | 41 | `"    \"وزارة\", \"الوزارة\", \"وزاره\", \"هيئة حكومية\", \"جهة حكومية\", \"مصلحة حكومية\","` | — |
+| [SRC-3AA6165B18-L000042](../../agents/research_guardrails.py#L42) | 42 | `"    \"ministry\", \"government agency\", \"government ministry\", \"department of\","` | — |
 | [SRC-3AA6165B18-L000043](../../agents/research_guardrails.py#L43) | 43 | `")"` | — |
 | [SRC-3AA6165B18-L000044](../../agents/research_guardrails.py#L44) | 44 | `"_TODAY_WORDS = ("` | — |
 | [SRC-3AA6165B18-L000045](../../agents/research_guardrails.py#L45) | 45 | `"    \"اليوم\", \"النهارده\", \"النهاردة\", \"دلوقتي\", \"الآن\", \"حاليا\","` | — |
@@ -814,32 +843,3 @@
 | [SRC-8D00DCEC0D-L000266](../../agents/sales_domain.py#L266) | 266 | `"                _clean_path(self.category_path, field_name=\"category_path\"),"` | — |
 | [SRC-8D00DCEC0D-L000267](../../agents/sales_domain.py#L267) | 267 | `"            )"` | — |
 | [SRC-8D00DCEC0D-L000268](../../agents/sales_domain.py#L268) | 268 | `"        if not all(isinstance(item, ProductFact) for item in self.facts):"` | — |
-| [SRC-8D00DCEC0D-L000269](../../agents/sales_domain.py#L269) | 269 | `"            raise TypeError(\"facts must contain ProductFact instances\")"` | — |
-| [SRC-8D00DCEC0D-L000270](../../agents/sales_domain.py#L270) | 270 | `"        if len(self.facts) > MAX_TERM_COUNT:"` | — |
-| [SRC-8D00DCEC0D-L000271](../../agents/sales_domain.py#L271) | 271 | `"            raise ValueError(f\"facts exceeds {MAX_TERM_COUNT} items\")"` | — |
-| [SRC-8D00DCEC0D-L000272](../../agents/sales_domain.py#L272) | 272 | `""` | — |
-| [SRC-8D00DCEC0D-L000273](../../agents/sales_domain.py#L273) | 273 | `"    def matching_terms(self, text: str) -> tuple[str, ...]:"` | — |
-| [SRC-8D00DCEC0D-L000274](../../agents/sales_domain.py#L274) | 274 | `"        \"\"\"Return explicitly configured product terms mentioned in text."` | — |
-| [SRC-8D00DCEC0D-L000275](../../agents/sales_domain.py#L275) | 275 | `""` | — |
-| [SRC-8D00DCEC0D-L000276](../../agents/sales_domain.py#L276) | 276 | `"        A mention is not a demand signal and does not establish a buyer or product fit."` | — |
-| [SRC-8D00DCEC0D-L000277](../../agents/sales_domain.py#L277) | 277 | `"        \"\"\""` | — |
-| [SRC-8D00DCEC0D-L000278](../../agents/sales_domain.py#L278) | 278 | `"        terms = (self.name, *self.aliases)"` | — |
-| [SRC-8D00DCEC0D-L000279](../../agents/sales_domain.py#L279) | 279 | `"        return tuple(term for term in terms if _contains_phrase(text, term))"` | — |
-| [SRC-8D00DCEC0D-L000280](../../agents/sales_domain.py#L280) | 280 | `""` | — |
-| [SRC-8D00DCEC0D-L000281](../../agents/sales_domain.py#L281) | 281 | `"    def to_dict(self) -> dict[str, object]:"` | — |
-| [SRC-8D00DCEC0D-L000282](../../agents/sales_domain.py#L282) | 282 | `"        return {"` | — |
-| [SRC-8D00DCEC0D-L000283](../../agents/sales_domain.py#L283) | 283 | `"            \"name\": self.name,"` | — |
-| [SRC-8D00DCEC0D-L000284](../../agents/sales_domain.py#L284) | 284 | `"            \"aliases\": list(self.aliases),"` | — |
-| [SRC-8D00DCEC0D-L000285](../../agents/sales_domain.py#L285) | 285 | `"            \"category_path\": list(self.category_path),"` | — |
-| [SRC-8D00DCEC0D-L000286](../../agents/sales_domain.py#L286) | 286 | `"            \"use_cases\": list(self.use_cases),"` | — |
-| [SRC-8D00DCEC0D-L000287](../../agents/sales_domain.py#L287) | 287 | `"            \"problems_solved\": list(self.problems_solved),"` | — |
-| [SRC-8D00DCEC0D-L000288](../../agents/sales_domain.py#L288) | 288 | `"            \"facts\": [item.to_dict() for item in self.facts],"` | — |
-| [SRC-8D00DCEC0D-L000289](../../agents/sales_domain.py#L289) | 289 | `"        }"` | — |
-| [SRC-8D00DCEC0D-L000290](../../agents/sales_domain.py#L290) | 290 | `""` | — |
-| [SRC-8D00DCEC0D-L000291](../../agents/sales_domain.py#L291) | 291 | `""` | — |
-| [SRC-8D00DCEC0D-L000292](../../agents/sales_domain.py#L292) | 292 | `"@dataclass(frozen=True, slots=True)"` | — |
-| [SRC-8D00DCEC0D-L000293](../../agents/sales_domain.py#L293) | 293 | `"class MarketProfile:"` | — |
-| [SRC-8D00DCEC0D-L000294](../../agents/sales_domain.py#L294) | 294 | `"    \"\"\"Target-market constraints; matching an ICP is not evidence of purchase intent.\"\"\""` | — |
-| [SRC-8D00DCEC0D-L000295](../../agents/sales_domain.py#L295) | 295 | `""` | — |
-| [SRC-8D00DCEC0D-L000296](../../agents/sales_domain.py#L296) | 296 | `"    locations: tuple[str, ...] = ()"` | — |
-| [SRC-8D00DCEC0D-L000297](../../agents/sales_domain.py#L297) | 297 | `"    industries: tuple[str, ...] = ()"` | — |
