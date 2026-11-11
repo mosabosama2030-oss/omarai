@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002811 إلى SRC-1AE03B9EC3-L003610
+- النطاق: SRC-1AE03B9EC3-L002800 إلى SRC-1AE03B9EC3-L003599
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002800](../../agents/web_agent.py#L2800) | 2800 | `"                        \"query\": query + \" -is:retweet\","` | — |
+| [SRC-1AE03B9EC3-L002801](../../agents/web_agent.py#L2801) | 2801 | `"                        \"max_results\": 10,"` | — |
+| [SRC-1AE03B9EC3-L002802](../../agents/web_agent.py#L2802) | 2802 | `"                        \"tweet.fields\": \"created_at,lang,public_metrics,author_id\","` | — |
+| [SRC-1AE03B9EC3-L002803](../../agents/web_agent.py#L2803) | 2803 | `"                        \"expansions\": \"author_id\","` | — |
+| [SRC-1AE03B9EC3-L002804](../../agents/web_agent.py#L2804) | 2804 | `"                        \"user.fields\": \"name,username\","` | — |
+| [SRC-1AE03B9EC3-L002805](../../agents/web_agent.py#L2805) | 2805 | `"                    },"` | — |
+| [SRC-1AE03B9EC3-L002806](../../agents/web_agent.py#L2806) | 2806 | `"                    headers={"` | — |
+| [SRC-1AE03B9EC3-L002807](../../agents/web_agent.py#L2807) | 2807 | `"                        **headers,"` | — |
+| [SRC-1AE03B9EC3-L002808](../../agents/web_agent.py#L2808) | 2808 | `"                        \"Authorization\": \"Bearer \" + os.getenv(\"X_BEARER_TOKEN\", \"\").strip(),"` | — |
+| [SRC-1AE03B9EC3-L002809](../../agents/web_agent.py#L2809) | 2809 | `"                    },"` | — |
+| [SRC-1AE03B9EC3-L002810](../../agents/web_agent.py#L2810) | 2810 | `"                    timeout=self._effective_timeout(9.0),"` | — |
 | [SRC-1AE03B9EC3-L002811](../../agents/web_agent.py#L2811) | 2811 | `"                    follow_redirects=False,"` | — |
 | [SRC-1AE03B9EC3-L002812](../../agents/web_agent.py#L2812) | 2812 | `"                )"` | — |
 | [SRC-1AE03B9EC3-L002813](../../agents/web_agent.py#L2813) | 2813 | `"                if response.status_code == 200:"` | — |
@@ -805,14 +816,3 @@
 | [SRC-1AE03B9EC3-L003597](../../agents/web_agent.py#L3597) | 3597 | `"                \"blocked\", \"http_error\", \"unauthorized\", \"rate_limited\", \"invalid_response\""` | — |
 | [SRC-1AE03B9EC3-L003598](../../agents/web_agent.py#L3598) | 3598 | `"            }"` | — |
 | [SRC-1AE03B9EC3-L003599](../../agents/web_agent.py#L3599) | 3599 | `"            uncertain_failure_statuses = set(statuses) & {\"timeout\", \"failed\", \"error\", \"unknown\", \"inconclusive\"}"` | — |
-| [SRC-1AE03B9EC3-L003600](../../agents/web_agent.py#L3600) | 3600 | `"            failure_observed = bool(error_response_statuses or uncertain_failure_statuses or \"budget_exhausted\" in statuses)"` | — |
-| [SRC-1AE03B9EC3-L003601](../../agents/web_agent.py#L3601) | 3601 | `"            available: bool \| None = ("` | — |
-| [SRC-1AE03B9EC3-L003602](../../agents/web_agent.py#L3602) | 3602 | `"                True if successful_statuses or useful.get(name, 0)"` | — |
-| [SRC-1AE03B9EC3-L003603](../../agents/web_agent.py#L3603) | 3603 | `"                else False if error_response_statuses or not ready or \"disabled\" in statuses or \"budget_exhausted\" in statuses"` | — |
-| [SRC-1AE03B9EC3-L003604](../../agents/web_agent.py#L3604) | 3604 | `"                else None"` | — |
-| [SRC-1AE03B9EC3-L003605](../../agents/web_agent.py#L3605) | 3605 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L003606](../../agents/web_agent.py#L3606) | 3606 | `"            verified: bool \| None = ("` | — |
-| [SRC-1AE03B9EC3-L003607](../../agents/web_agent.py#L3607) | 3607 | `"                True if successful_statuses or useful.get(name, 0)"` | — |
-| [SRC-1AE03B9EC3-L003608](../../agents/web_agent.py#L3608) | 3608 | `"                else False if error_response_statuses"` | — |
-| [SRC-1AE03B9EC3-L003609](../../agents/web_agent.py#L3609) | 3609 | `"                else None"` | — |
-| [SRC-1AE03B9EC3-L003610](../../agents/web_agent.py#L3610) | 3610 | `"            )"` | — |

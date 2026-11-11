@@ -4,9 +4,42 @@
 
 - الصفحة: **050**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AAA21D04E8-L000038 إلى SRC-1A176AD4F0-L000460
+- النطاق: SRC-829A979985-L000599 إلى SRC-1A176AD4F0-L000399
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-829A979985 — [tests/test_generation_acceptance_matrix.py](../../tests/test_generation_acceptance_matrix.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-829A979985-L000599](../../tests/test_generation_acceptance_matrix.py#L599) | 599 | `"    ["` | — |
+| [SRC-829A979985-L000600](../../tests/test_generation_acceptance_matrix.py#L600) | 600 | `"        \"إجابة من دون أي علامات فصل\","` | — |
+| [SRC-829A979985-L000601](../../tests/test_generation_acceptance_matrix.py#L601) | 601 | `"        \"<<<OMARAI_FINAL_ANSWER>>>إجابة بلا علامة نهاية\","` | — |
+| [SRC-829A979985-L000602](../../tests/test_generation_acceptance_matrix.py#L602) | 602 | `"        \"<<<OMARAI_FINAL_ANSWER>>>إجابة<<<END_OMARAI_FINAL_ANSWER>>> نص زائد خارج الإجابة\","` | — |
+| [SRC-829A979985-L000603](../../tests/test_generation_acceptance_matrix.py#L603) | 603 | `"    ],"` | — |
+| [SRC-829A979985-L000604](../../tests/test_generation_acceptance_matrix.py#L604) | 604 | `")"` | — |
+| [SRC-829A979985-L000605](../../tests/test_generation_acceptance_matrix.py#L605) | 605 | `"def test_reviewer_rejects_missing_or_unbounded_final_answer_delimiters("` | — |
+| [SRC-829A979985-L000606](../../tests/test_generation_acceptance_matrix.py#L606) | 606 | `"    monkeypatch, malformed_review"` | — |
+| [SRC-829A979985-L000607](../../tests/test_generation_acceptance_matrix.py#L607) | 607 | `"):"` | — |
+| [SRC-829A979985-L000608](../../tests/test_generation_acceptance_matrix.py#L608) | 608 | `"    agent = WebAgent()"` | — |
+| [SRC-829A979985-L000609](../../tests/test_generation_acceptance_matrix.py#L609) | 609 | `"    monkeypatch.setattr("` | — |
+| [SRC-829A979985-L000610](../../tests/test_generation_acceptance_matrix.py#L610) | 610 | `"        agent,"` | — |
+| [SRC-829A979985-L000611](../../tests/test_generation_acceptance_matrix.py#L611) | 611 | `"        \"_request_completion\","` | — |
+| [SRC-829A979985-L000612](../../tests/test_generation_acceptance_matrix.py#L612) | 612 | `"        lambda *args, **kwargs: malformed_review,"` | — |
+| [SRC-829A979985-L000613](../../tests/test_generation_acceptance_matrix.py#L613) | 613 | `"    )"` | — |
+| [SRC-829A979985-L000614](../../tests/test_generation_acceptance_matrix.py#L614) | 614 | `"    test_source = source("` | — |
+| [SRC-829A979985-L000615](../../tests/test_generation_acceptance_matrix.py#L615) | 615 | `"        \"https://one.example/page\","` | — |
+| [SRC-829A979985-L000616](../../tests/test_generation_acceptance_matrix.py#L616) | 616 | `"        \"one.example\","` | — |
+| [SRC-829A979985-L000617](../../tests/test_generation_acceptance_matrix.py#L617) | 617 | `"        page_fetched=True,"` | — |
+| [SRC-829A979985-L000618](../../tests/test_generation_acceptance_matrix.py#L618) | 618 | `"        page_text=\"نص الصفحة\","` | — |
+| [SRC-829A979985-L000619](../../tests/test_generation_acceptance_matrix.py#L619) | 619 | `"    )"` | — |
+| [SRC-829A979985-L000620](../../tests/test_generation_acceptance_matrix.py#L620) | 620 | `""` | — |
+| [SRC-829A979985-L000621](../../tests/test_generation_acceptance_matrix.py#L621) | 621 | `"    with pytest.raises(RuntimeError, match=\"فصل الإجابة النهائية\"):"` | — |
+| [SRC-829A979985-L000622](../../tests/test_generation_acceptance_matrix.py#L622) | 622 | `"        agent._review_answer(\"ما مضمون الصفحة؟\", \"مسودة\", [test_source])"` | — |
 ## اختبارات
 
 ### FILE-AAA21D04E8 — [tests/test_generation_capabilities.py](../../tests/test_generation_capabilities.py#L1)
@@ -16,6 +49,43 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AAA21D04E8-L000001](../../tests/test_generation_capabilities.py#L1) | 1 | `"from __future__ import annotations"` | — |
+| [SRC-AAA21D04E8-L000002](../../tests/test_generation_capabilities.py#L2) | 2 | `""` | — |
+| [SRC-AAA21D04E8-L000003](../../tests/test_generation_capabilities.py#L3) | 3 | `"import json"` | — |
+| [SRC-AAA21D04E8-L000004](../../tests/test_generation_capabilities.py#L4) | 4 | `""` | — |
+| [SRC-AAA21D04E8-L000005](../../tests/test_generation_capabilities.py#L5) | 5 | `"import pytest"` | — |
+| [SRC-AAA21D04E8-L000006](../../tests/test_generation_capabilities.py#L6) | 6 | `""` | — |
+| [SRC-AAA21D04E8-L000007](../../tests/test_generation_capabilities.py#L7) | 7 | `"from agents.web_agent import WebAgent"` | — |
+| [SRC-AAA21D04E8-L000008](../../tests/test_generation_capabilities.py#L8) | 8 | `""` | — |
+| [SRC-AAA21D04E8-L000009](../../tests/test_generation_capabilities.py#L9) | 9 | `""` | — |
+| [SRC-AAA21D04E8-L000010](../../tests/test_generation_capabilities.py#L10) | 10 | `"class FakeResponse:"` | — |
+| [SRC-AAA21D04E8-L000011](../../tests/test_generation_capabilities.py#L11) | 11 | `"    def __init__(self, content: str, finish_reason: str \| None = None, *, include_reason: bool = True):"` | — |
+| [SRC-AAA21D04E8-L000012](../../tests/test_generation_capabilities.py#L12) | 12 | `"        choice = {\"message\": {\"content\": content}}"` | — |
+| [SRC-AAA21D04E8-L000013](../../tests/test_generation_capabilities.py#L13) | 13 | `"        if include_reason:"` | — |
+| [SRC-AAA21D04E8-L000014](../../tests/test_generation_capabilities.py#L14) | 14 | `"            choice[\"finish_reason\"] = finish_reason"` | — |
+| [SRC-AAA21D04E8-L000015](../../tests/test_generation_capabilities.py#L15) | 15 | `"        self.body = json.dumps({\"choices\": [choice]}).encode(\"utf-8\")"` | — |
+| [SRC-AAA21D04E8-L000016](../../tests/test_generation_capabilities.py#L16) | 16 | `""` | — |
+| [SRC-AAA21D04E8-L000017](../../tests/test_generation_capabilities.py#L17) | 17 | `"    def __enter__(self):"` | — |
+| [SRC-AAA21D04E8-L000018](../../tests/test_generation_capabilities.py#L18) | 18 | `"        return self"` | — |
+| [SRC-AAA21D04E8-L000019](../../tests/test_generation_capabilities.py#L19) | 19 | `""` | — |
+| [SRC-AAA21D04E8-L000020](../../tests/test_generation_capabilities.py#L20) | 20 | `"    def __exit__(self, exc_type, exc, traceback):"` | — |
+| [SRC-AAA21D04E8-L000021](../../tests/test_generation_capabilities.py#L21) | 21 | `"        return False"` | — |
+| [SRC-AAA21D04E8-L000022](../../tests/test_generation_capabilities.py#L22) | 22 | `""` | — |
+| [SRC-AAA21D04E8-L000023](../../tests/test_generation_capabilities.py#L23) | 23 | `"    def read(self, limit: int) -> bytes:"` | — |
+| [SRC-AAA21D04E8-L000024](../../tests/test_generation_capabilities.py#L24) | 24 | `"        return self.body[:limit]"` | — |
+| [SRC-AAA21D04E8-L000025](../../tests/test_generation_capabilities.py#L25) | 25 | `""` | — |
+| [SRC-AAA21D04E8-L000026](../../tests/test_generation_capabilities.py#L26) | 26 | `""` | — |
+| [SRC-AAA21D04E8-L000027](../../tests/test_generation_capabilities.py#L27) | 27 | `"def test_missing_finish_reason_is_rejected_and_bounded_fallback_is_used(monkeypatch):"` | — |
+| [SRC-AAA21D04E8-L000028](../../tests/test_generation_capabilities.py#L28) | 28 | `"    agent = WebAgent()"` | — |
+| [SRC-AAA21D04E8-L000029](../../tests/test_generation_capabilities.py#L29) | 29 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-AAA21D04E8-L000030](../../tests/test_generation_capabilities.py#L30) | 30 | `"    agent.fallback_model = \"backup/model\""` | — |
+| [SRC-AAA21D04E8-L000031](../../tests/test_generation_capabilities.py#L31) | 31 | `"    calls: list[str] = []"` | — |
+| [SRC-AAA21D04E8-L000032](../../tests/test_generation_capabilities.py#L32) | 32 | `""` | — |
+| [SRC-AAA21D04E8-L000033](../../tests/test_generation_capabilities.py#L33) | 33 | `"    def fake_urlopen(request, timeout):"` | — |
+| [SRC-AAA21D04E8-L000034](../../tests/test_generation_capabilities.py#L34) | 34 | `"        model = json.loads(request.data.decode(\"utf-8\"))[\"model\"]"` | — |
+| [SRC-AAA21D04E8-L000035](../../tests/test_generation_capabilities.py#L35) | 35 | `"        calls.append(model)"` | — |
+| [SRC-AAA21D04E8-L000036](../../tests/test_generation_capabilities.py#L36) | 36 | `"        if model == \"primary/model\":"` | — |
+| [SRC-AAA21D04E8-L000037](../../tests/test_generation_capabilities.py#L37) | 37 | `"            return FakeResponse(\"possibly incomplete response\", include_reason=False)"` | — |
 | [SRC-AAA21D04E8-L000038](../../tests/test_generation_capabilities.py#L38) | 38 | `"        return FakeResponse(\"إجابة مكتملة من النموذج الاحتياطي\", \"stop\")"` | — |
 | [SRC-AAA21D04E8-L000039](../../tests/test_generation_capabilities.py#L39) | 39 | `""` | — |
 | [SRC-AAA21D04E8-L000040](../../tests/test_generation_capabilities.py#L40) | 40 | `"    monkeypatch.setattr(\"agents.web_agent._open_model_request\", fake_urlopen)"` | — |
@@ -764,64 +834,3 @@
 | [SRC-1A176AD4F0-L000397](../../tests/test_hosted_smoke.py#L397) | 397 | `"    assert report[\"endpoint_diagnostics\"][\"health\"][\"http_status\"] == 403"` | — |
 | [SRC-1A176AD4F0-L000398](../../tests/test_hosted_smoke.py#L398) | 398 | `"    assert report[\"endpoint_diagnostics\"][\"unauthenticated_agent\"][\"http_status\"] == 403"` | — |
 | [SRC-1A176AD4F0-L000399](../../tests/test_hosted_smoke.py#L399) | 399 | `"    assert report[\"http_responses\"][\"health\"][\"cf_ray\"] == \"ray-example-403\""` | — |
-| [SRC-1A176AD4F0-L000400](../../tests/test_hosted_smoke.py#L400) | 400 | `"    assert \"body_sha256\" in report[\"http_responses\"][\"health\"]"` | — |
-| [SRC-1A176AD4F0-L000401](../../tests/test_hosted_smoke.py#L401) | 401 | `"    assert \"blocked\" not in str(report)"` | — |
-| [SRC-1A176AD4F0-L000402](../../tests/test_hosted_smoke.py#L402) | 402 | `"    assert \"b\" * 128 not in str(report)"` | — |
-| [SRC-1A176AD4F0-L000403](../../tests/test_hosted_smoke.py#L403) | 403 | `"    assert TOKEN not in str(report)"` | — |
-| [SRC-1A176AD4F0-L000404](../../tests/test_hosted_smoke.py#L404) | 404 | `""` | — |
-| [SRC-1A176AD4F0-L000405](../../tests/test_hosted_smoke.py#L405) | 405 | `""` | — |
-| [SRC-1A176AD4F0-L000406](../../tests/test_hosted_smoke.py#L406) | 406 | `"def test_no_cost_preflight_keeps_probing_when_only_health_route_is_blocked(monkeypatch):"` | — |
-| [SRC-1A176AD4F0-L000407](../../tests/test_hosted_smoke.py#L407) | 407 | `"    calls = []"` | — |
-| [SRC-1A176AD4F0-L000408](../../tests/test_hosted_smoke.py#L408) | 408 | `""` | — |
-| [SRC-1A176AD4F0-L000409](../../tests/test_hosted_smoke.py#L409) | 409 | `"    def request_with_health_block(url: str, *, token=\"\", payload=None, timeout=90):"` | — |
-| [SRC-1A176AD4F0-L000410](../../tests/test_hosted_smoke.py#L410) | 410 | `"        path = urlsplit(url).path"` | — |
-| [SRC-1A176AD4F0-L000411](../../tests/test_hosted_smoke.py#L411) | 411 | `"        calls.append(path)"` | — |
-| [SRC-1A176AD4F0-L000412](../../tests/test_hosted_smoke.py#L412) | 412 | `"        if path == \"/\":"` | — |
-| [SRC-1A176AD4F0-L000413](../../tests/test_hosted_smoke.py#L413) | 413 | `"            return 200, None"` | — |
-| [SRC-1A176AD4F0-L000414](../../tests/test_hosted_smoke.py#L414) | 414 | `"        if path == \"/api/health\":"` | — |
-| [SRC-1A176AD4F0-L000415](../../tests/test_hosted_smoke.py#L415) | 415 | `"            return 403, {\"_smoke_http\": {\"status\": 403, \"cf_ray\": \"health-ray\"}}"` | — |
-| [SRC-1A176AD4F0-L000416](../../tests/test_hosted_smoke.py#L416) | 416 | `"        if path == \"/api/agent\":"` | — |
-| [SRC-1A176AD4F0-L000417](../../tests/test_hosted_smoke.py#L417) | 417 | `"            return 401, None"` | — |
-| [SRC-1A176AD4F0-L000418](../../tests/test_hosted_smoke.py#L418) | 418 | `"        raise AssertionError(path)"` | — |
-| [SRC-1A176AD4F0-L000419](../../tests/test_hosted_smoke.py#L419) | 419 | `""` | — |
-| [SRC-1A176AD4F0-L000420](../../tests/test_hosted_smoke.py#L420) | 420 | `"    monkeypatch.setattr(hosted_smoke_test, \"request_json\", request_with_health_block)"` | — |
-| [SRC-1A176AD4F0-L000421](../../tests/test_hosted_smoke.py#L421) | 421 | `"    with pytest.raises(SmokeError) as failure:"` | — |
-| [SRC-1A176AD4F0-L000422](../../tests/test_hosted_smoke.py#L422) | 422 | `"        run_smoke(\"https://omarai.example.test\", \"\", preflight_only=True)"` | — |
-| [SRC-1A176AD4F0-L000423](../../tests/test_hosted_smoke.py#L423) | 423 | `""` | — |
-| [SRC-1A176AD4F0-L000424](../../tests/test_hosted_smoke.py#L424) | 424 | `"    assert calls == [\"/\", \"/api/health\", \"/api/agent\"]"` | — |
-| [SRC-1A176AD4F0-L000425](../../tests/test_hosted_smoke.py#L425) | 425 | `"    diagnostics = failure.value.report[\"endpoint_diagnostics\"]"` | — |
-| [SRC-1A176AD4F0-L000426](../../tests/test_hosted_smoke.py#L426) | 426 | `"    assert diagnostics[\"homepage\"][\"status\"] == \"passed\""` | — |
-| [SRC-1A176AD4F0-L000427](../../tests/test_hosted_smoke.py#L427) | 427 | `"    assert diagnostics[\"health\"][\"status\"] == \"failed\""` | — |
-| [SRC-1A176AD4F0-L000428](../../tests/test_hosted_smoke.py#L428) | 428 | `"    assert diagnostics[\"unauthenticated_agent\"][\"status\"] == \"passed\""` | — |
-| [SRC-1A176AD4F0-L000429](../../tests/test_hosted_smoke.py#L429) | 429 | `""` | — |
-| [SRC-1A176AD4F0-L000430](../../tests/test_hosted_smoke.py#L430) | 430 | `""` | — |
-| [SRC-1A176AD4F0-L000431](../../tests/test_hosted_smoke.py#L431) | 431 | `""` | — |
-| [SRC-1A176AD4F0-L000432](../../tests/test_hosted_smoke.py#L432) | 432 | `""` | — |
-| [SRC-1A176AD4F0-L000433](../../tests/test_hosted_smoke.py#L433) | 433 | `"def test_smoke_preflight_runs_without_provider_usage_or_model_calls(hosted_server):"` | — |
-| [SRC-1A176AD4F0-L000434](../../tests/test_hosted_smoke.py#L434) | 434 | `"    result = run_smoke("` | — |
-| [SRC-1A176AD4F0-L000435](../../tests/test_hosted_smoke.py#L435) | 435 | `"        hosted_server, TOKEN, allow_http=True, preflight_only=True, allow_provider_usage=False, timeout=5"` | — |
-| [SRC-1A176AD4F0-L000436](../../tests/test_hosted_smoke.py#L436) | 436 | `"    )"` | — |
-| [SRC-1A176AD4F0-L000437](../../tests/test_hosted_smoke.py#L437) | 437 | `"    assert result[\"result\"] == \"preflight_passed\""` | — |
-| [SRC-1A176AD4F0-L000438](../../tests/test_hosted_smoke.py#L438) | 438 | `"    assert result[\"checks\"][\"health\"] == \"passed\""` | — |
-| [SRC-1A176AD4F0-L000439](../../tests/test_hosted_smoke.py#L439) | 439 | `"    assert result[\"checks\"][\"authentication\"] == \"passed\""` | — |
-| [SRC-1A176AD4F0-L000440](../../tests/test_hosted_smoke.py#L440) | 440 | `"    assert result[\"checks\"][\"provider_usage\"][\"status\"] == \"skipped_not_approved\""` | — |
-| [SRC-1A176AD4F0-L000441](../../tests/test_hosted_smoke.py#L441) | 441 | `"    assert result[\"transcript\"] == []"` | — |
-| [SRC-1A176AD4F0-L000442](../../tests/test_hosted_smoke.py#L442) | 442 | `""` | — |
-| [SRC-1A176AD4F0-L000443](../../tests/test_hosted_smoke.py#L443) | 443 | `""` | — |
-| [SRC-1A176AD4F0-L000444](../../tests/test_hosted_smoke.py#L444) | 444 | `"def test_smoke_requires_provider_approval_after_no_cost_preflight(monkeypatch):"` | — |
-| [SRC-1A176AD4F0-L000445](../../tests/test_hosted_smoke.py#L445) | 445 | `"    calls = []"` | — |
-| [SRC-1A176AD4F0-L000446](../../tests/test_hosted_smoke.py#L446) | 446 | `""` | — |
-| [SRC-1A176AD4F0-L000447](../../tests/test_hosted_smoke.py#L447) | 447 | `"    def fake_request(url, *, token=\"\", payload=None, timeout=90):"` | — |
-| [SRC-1A176AD4F0-L000448](../../tests/test_hosted_smoke.py#L448) | 448 | `"        calls.append((urlsplit(url).path, token, payload))"` | — |
-| [SRC-1A176AD4F0-L000449](../../tests/test_hosted_smoke.py#L449) | 449 | `"        if url.endswith(\"/api/health\"):"` | — |
-| [SRC-1A176AD4F0-L000450](../../tests/test_hosted_smoke.py#L450) | 450 | `"            return 200, {\"ok\": True}"` | — |
-| [SRC-1A176AD4F0-L000451](../../tests/test_hosted_smoke.py#L451) | 451 | `"        if url.endswith(\"/api/agent\") and not token:"` | — |
-| [SRC-1A176AD4F0-L000452](../../tests/test_hosted_smoke.py#L452) | 452 | `"            assert payload == {\"question\": \"\"}"` | — |
-| [SRC-1A176AD4F0-L000453](../../tests/test_hosted_smoke.py#L453) | 453 | `"            return 401, None"` | — |
-| [SRC-1A176AD4F0-L000454](../../tests/test_hosted_smoke.py#L454) | 454 | `"        raise AssertionError(\"provider-dependent request must not run without approval\")"` | — |
-| [SRC-1A176AD4F0-L000455](../../tests/test_hosted_smoke.py#L455) | 455 | `""` | — |
-| [SRC-1A176AD4F0-L000456](../../tests/test_hosted_smoke.py#L456) | 456 | `"    monkeypatch.setattr(hosted_smoke_test, \"request_json\", fake_request)"` | — |
-| [SRC-1A176AD4F0-L000457](../../tests/test_hosted_smoke.py#L457) | 457 | `"    with pytest.raises(SmokeError, match=\"explicit human approval\") as failure:"` | — |
-| [SRC-1A176AD4F0-L000458](../../tests/test_hosted_smoke.py#L458) | 458 | `"        run_smoke(\"https://omarai.example.test\", TOKEN, allow_provider_usage=False)"` | — |
-| [SRC-1A176AD4F0-L000459](../../tests/test_hosted_smoke.py#L459) | 459 | `"    assert calls == [(\"/api/health\", \"\", None), (\"/api/agent\", \"\", {\"question\": \"\"})]"` | — |
-| [SRC-1A176AD4F0-L000460](../../tests/test_hosted_smoke.py#L460) | 460 | `"    assert failure.value.report[\"checks\"][\"authentication\"] == \"passed\""` | — |

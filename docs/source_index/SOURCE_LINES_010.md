@@ -4,7 +4,7 @@
 
 - الصفحة: **010**
 - سجلات الأسطر: **800**
-- النطاق: SRC-086D574B4E-L000258 إلى SRC-686F71AA50-L000667
+- النطاق: SRC-086D574B4E-L000247 إلى SRC-686F71AA50-L000656
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-086D574B4E-L000247](../../agents/semantic_claim_verifier.py#L247) | 247 | `"                or \"geographic_scope_for_population_claim\" in missing"` | — |
+| [SRC-086D574B4E-L000248](../../agents/semantic_claim_verifier.py#L248) | 248 | `"            ):"` | — |
+| [SRC-086D574B4E-L000249](../../agents/semantic_claim_verifier.py#L249) | 249 | `"                return _not_verifiable(\"population_scope_metadata_incomplete\", prepared.get(\"ledger\"))"` | — |
+| [SRC-086D574B4E-L000250](../../agents/semantic_claim_verifier.py#L250) | 250 | `"    return {\"status\": \"passed\", \"reason\": None}"` | — |
+| [SRC-086D574B4E-L000251](../../agents/semantic_claim_verifier.py#L251) | 251 | `""` | — |
+| [SRC-086D574B4E-L000252](../../agents/semantic_claim_verifier.py#L252) | 252 | `""` | — |
+| [SRC-086D574B4E-L000253](../../agents/semantic_claim_verifier.py#L253) | 253 | `"def parse_semantic_verification_response("` | — |
+| [SRC-086D574B4E-L000254](../../agents/semantic_claim_verifier.py#L254) | 254 | `"    raw_response: str,"` | — |
+| [SRC-086D574B4E-L000255](../../agents/semantic_claim_verifier.py#L255) | 255 | `"    prepared: dict[str, Any],"` | — |
+| [SRC-086D574B4E-L000256](../../agents/semantic_claim_verifier.py#L256) | 256 | `") -> dict[str, Any]:"` | — |
+| [SRC-086D574B4E-L000257](../../agents/semantic_claim_verifier.py#L257) | 257 | `"    \"\"\"Parse and validate a strict one-row-per-claim assessment; fail closed.\"\"\""` | — |
 | [SRC-086D574B4E-L000258](../../agents/semantic_claim_verifier.py#L258) | 258 | `"    if prepared.get(\"status\") != \"ready\":"` | — |
 | [SRC-086D574B4E-L000259](../../agents/semantic_claim_verifier.py#L259) | 259 | `"        return _not_verifiable(str(prepared.get(\"reason\") or \"request_not_ready\"))"` | — |
 | [SRC-086D574B4E-L000260](../../agents/semantic_claim_verifier.py#L260) | 260 | `"    deterministic = deterministic_claim_screen(prepared)"` | — |
@@ -814,14 +825,3 @@
 | [SRC-686F71AA50-L000654](../../agents/task_understanding.py#L654) | 654 | `"        evidence_requirements = ["` | — |
 | [SRC-686F71AA50-L000655](../../agents/task_understanding.py#L655) | 655 | `"            \"preserve_goal_constraints_dependencies_and_deadline\","` | — |
 | [SRC-686F71AA50-L000656](../../agents/task_understanding.py#L656) | 656 | `"            \"make_assumptions_and_unavailable_resources_explicit\","` | — |
-| [SRC-686F71AA50-L000657](../../agents/task_understanding.py#L657) | 657 | `"            \"separate_proposed_steps_from_completed_actions\","` | — |
-| [SRC-686F71AA50-L000658](../../agents/task_understanding.py#L658) | 658 | `"        ]"` | — |
-| [SRC-686F71AA50-L000659](../../agents/task_understanding.py#L659) | 659 | `"        query_strategies = [\"goal_and_constraints\", \"dependency_order\", \"risks_and_fallbacks\"]"` | — |
-| [SRC-686F71AA50-L000660](../../agents/task_understanding.py#L660) | 660 | `"    elif family == \"creative_generation\":"` | — |
-| [SRC-686F71AA50-L000661](../../agents/task_understanding.py#L661) | 661 | `"        evidence_requirements = ["` | — |
-| [SRC-686F71AA50-L000662](../../agents/task_understanding.py#L662) | 662 | `"            \"follow_requested_genre_voice_and_constraints\","` | — |
-| [SRC-686F71AA50-L000663](../../agents/task_understanding.py#L663) | 663 | `"            \"do_not_present_invented_story_details_as_real_facts\","` | — |
-| [SRC-686F71AA50-L000664](../../agents/task_understanding.py#L664) | 664 | `"            \"preserve_explicit_content_boundaries\","` | — |
-| [SRC-686F71AA50-L000665](../../agents/task_understanding.py#L665) | 665 | `"        ]"` | — |
-| [SRC-686F71AA50-L000666](../../agents/task_understanding.py#L666) | 666 | `"        query_strategies = [\"genre_and_voice\", \"creative_constraints\", \"revision_options\"]"` | — |
-| [SRC-686F71AA50-L000667](../../agents/task_understanding.py#L667) | 667 | `"    else:"` | — |

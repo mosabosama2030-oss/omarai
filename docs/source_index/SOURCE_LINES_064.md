@@ -4,7 +4,7 @@
 
 - الصفحة: **064**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L003887 إلى SRC-E3EEC2014A-L000039
+- النطاق: SRC-F725E90B2A-L003826 إلى SRC-8C13B81AB4-L000121
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,67 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L003826](../../tests/test_web_agent.py#L3826) | 3826 | `"    assert guardrails[\"initial\"][\"rejection_counts\"] == {"` | — |
+| [SRC-F725E90B2A-L003827](../../tests/test_web_agent.py#L3827) | 3827 | `"        \"not_an_official_government_domain\": 1"` | — |
+| [SRC-F725E90B2A-L003828](../../tests/test_web_agent.py#L3828) | 3828 | `"    }"` | — |
+| [SRC-F725E90B2A-L003829](../../tests/test_web_agent.py#L3829) | 3829 | `"    assert guardrails[\"final\"][\"accepted_sources\"] == 0"` | — |
+| [SRC-F725E90B2A-L003830](../../tests/test_web_agent.py#L3830) | 3830 | `"    assert result[\"search_report\"][\"usable_sources_after_filtering\"] == 0"` | — |
+| [SRC-F725E90B2A-L003831](../../tests/test_web_agent.py#L3831) | 3831 | `""` | — |
+| [SRC-F725E90B2A-L003832](../../tests/test_web_agent.py#L3832) | 3832 | `"def test_criterion_gap_repair_cannot_reintroduce_non_social_source(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L003833](../../tests/test_web_agent.py#L3833) | 3833 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L003834](../../tests/test_web_agent.py#L3834) | 3834 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-F725E90B2A-L003835](../../tests/test_web_agent.py#L3835) | 3835 | `"    question = ("` | — |
+| [SRC-F725E90B2A-L003836](../../tests/test_web_agent.py#L3836) | 3836 | `"        \"قارن بين خدمتين من حيث السعر والخصوصية والاعتمادية \""` | — |
+| [SRC-F725E90B2A-L003837](../../tests/test_web_agent.py#L3837) | 3837 | `"        \"واعرض آراء وتجارب المستخدمين\""` | — |
+| [SRC-F725E90B2A-L003838](../../tests/test_web_agent.py#L3838) | 3838 | `"    )"` | — |
+| [SRC-F725E90B2A-L003839](../../tests/test_web_agent.py#L3839) | 3839 | `"    initial_sources = ["` | — |
+| [SRC-F725E90B2A-L003840](../../tests/test_web_agent.py#L3840) | 3840 | `"        {"` | — |
+| [SRC-F725E90B2A-L003841](../../tests/test_web_agent.py#L3841) | 3841 | `"            **sample_source(0),"` | — |
+| [SRC-F725E90B2A-L003842](../../tests/test_web_agent.py#L3842) | 3842 | `"            \"url\": \"https://www.reddit.com/r/example/comments/1\","` | — |
+| [SRC-F725E90B2A-L003843](../../tests/test_web_agent.py#L3843) | 3843 | `"            \"domain\": \"reddit.com\","` | — |
+| [SRC-F725E90B2A-L003844](../../tests/test_web_agent.py#L3844) | 3844 | `"            \"title\": \"مناقشة تجارب المستخدمين للخدمتين\","` | — |
+| [SRC-F725E90B2A-L003845](../../tests/test_web_agent.py#L3845) | 3845 | `"            \"snippet\": \"تجارب وآراء مستخدمين حول الخدمتين\","` | — |
+| [SRC-F725E90B2A-L003846](../../tests/test_web_agent.py#L3846) | 3846 | `"            \"page_text\": \"تجارب وآراء مستخدمين حول الخدمتين\","` | — |
+| [SRC-F725E90B2A-L003847](../../tests/test_web_agent.py#L3847) | 3847 | `"            \"platform\": \"reddit\","` | — |
+| [SRC-F725E90B2A-L003848](../../tests/test_web_agent.py#L3848) | 3848 | `"            \"providers\": [\"reddit\"],"` | — |
+| [SRC-F725E90B2A-L003849](../../tests/test_web_agent.py#L3849) | 3849 | `"        },"` | — |
+| [SRC-F725E90B2A-L003850](../../tests/test_web_agent.py#L3850) | 3850 | `"        {"` | — |
+| [SRC-F725E90B2A-L003851](../../tests/test_web_agent.py#L3851) | 3851 | `"            **sample_source(1),"` | — |
+| [SRC-F725E90B2A-L003852](../../tests/test_web_agent.py#L3852) | 3852 | `"            \"url\": \"https://www.reddit.com/r/example/comments/2\","` | — |
+| [SRC-F725E90B2A-L003853](../../tests/test_web_agent.py#L3853) | 3853 | `"            \"domain\": \"reddit.com\","` | — |
+| [SRC-F725E90B2A-L003854](../../tests/test_web_agent.py#L3854) | 3854 | `"            \"title\": \"مناقشة أخرى عن الخدمتين\","` | — |
+| [SRC-F725E90B2A-L003855](../../tests/test_web_agent.py#L3855) | 3855 | `"            \"snippet\": \"مناقشة وتجارب مستخدمين حول الخدمتين\","` | — |
+| [SRC-F725E90B2A-L003856](../../tests/test_web_agent.py#L3856) | 3856 | `"            \"page_text\": \"مناقشة وتجارب مستخدمين حول الخدمتين\","` | — |
+| [SRC-F725E90B2A-L003857](../../tests/test_web_agent.py#L3857) | 3857 | `"            \"platform\": \"reddit\","` | — |
+| [SRC-F725E90B2A-L003858](../../tests/test_web_agent.py#L3858) | 3858 | `"            \"providers\": [\"reddit\"],"` | — |
+| [SRC-F725E90B2A-L003859](../../tests/test_web_agent.py#L3859) | 3859 | `"        },"` | — |
+| [SRC-F725E90B2A-L003860](../../tests/test_web_agent.py#L3860) | 3860 | `"    ]"` | — |
+| [SRC-F725E90B2A-L003861](../../tests/test_web_agent.py#L3861) | 3861 | `"    repair_candidate = {"` | — |
+| [SRC-F725E90B2A-L003862](../../tests/test_web_agent.py#L3862) | 3862 | `"        **sample_source(2),"` | — |
+| [SRC-F725E90B2A-L003863](../../tests/test_web_agent.py#L3863) | 3863 | `"        \"url\": \"https://example.com/unrelated-repair\","` | — |
+| [SRC-F725E90B2A-L003864](../../tests/test_web_agent.py#L3864) | 3864 | `"        \"domain\": \"example.com\","` | — |
+| [SRC-F725E90B2A-L003865](../../tests/test_web_agent.py#L3865) | 3865 | `"        \"title\": \"معلومات عن الخدمة\","` | — |
+| [SRC-F725E90B2A-L003866](../../tests/test_web_agent.py#L3866) | 3866 | `"        \"snippet\": \"معلومات عامة عن الخدمة\","` | — |
+| [SRC-F725E90B2A-L003867](../../tests/test_web_agent.py#L3867) | 3867 | `"        \"page_text\": \"معلومات عامة عن الخدمة\","` | — |
+| [SRC-F725E90B2A-L003868](../../tests/test_web_agent.py#L3868) | 3868 | `"        \"providers\": [\"test_provider\"],"` | — |
+| [SRC-F725E90B2A-L003869](../../tests/test_web_agent.py#L3869) | 3869 | `"    }"` | — |
+| [SRC-F725E90B2A-L003870](../../tests/test_web_agent.py#L3870) | 3870 | `"    collect_calls = []"` | — |
+| [SRC-F725E90B2A-L003871](../../tests/test_web_agent.py#L3871) | 3871 | `""` | — |
+| [SRC-F725E90B2A-L003872](../../tests/test_web_agent.py#L3872) | 3872 | `"    def plan(_question, _history):"` | — |
+| [SRC-F725E90B2A-L003873](../../tests/test_web_agent.py#L3873) | 3873 | `"        return {"` | — |
+| [SRC-F725E90B2A-L003874](../../tests/test_web_agent.py#L3874) | 3874 | `"            \"queries\": [_question],"` | — |
+| [SRC-F725E90B2A-L003875](../../tests/test_web_agent.py#L3875) | 3875 | `"            \"direct_urls\": [],"` | — |
+| [SRC-F725E90B2A-L003876](../../tests/test_web_agent.py#L3876) | 3876 | `"            \"social_focus\": True,"` | — |
+| [SRC-F725E90B2A-L003877](../../tests/test_web_agent.py#L3877) | 3877 | `"            \"freshness\": \"any\","` | — |
+| [SRC-F725E90B2A-L003878](../../tests/test_web_agent.py#L3878) | 3878 | `"            \"depth\": \"deep\","` | — |
+| [SRC-F725E90B2A-L003879](../../tests/test_web_agent.py#L3879) | 3879 | `"            \"platforms\": [\"reddit\"],"` | — |
+| [SRC-F725E90B2A-L003880](../../tests/test_web_agent.py#L3880) | 3880 | `"            \"planning_method\": \"test\","` | — |
+| [SRC-F725E90B2A-L003881](../../tests/test_web_agent.py#L3881) | 3881 | `"        }"` | — |
+| [SRC-F725E90B2A-L003882](../../tests/test_web_agent.py#L3882) | 3882 | `""` | — |
+| [SRC-F725E90B2A-L003883](../../tests/test_web_agent.py#L3883) | 3883 | `"    def collect(research_plan):"` | — |
+| [SRC-F725E90B2A-L003884](../../tests/test_web_agent.py#L3884) | 3884 | `"        collect_calls.append(dict(research_plan))"` | — |
+| [SRC-F725E90B2A-L003885](../../tests/test_web_agent.py#L3885) | 3885 | `"        if len(collect_calls) == 1:"` | — |
+| [SRC-F725E90B2A-L003886](../../tests/test_web_agent.py#L3886) | 3886 | `"            sources = initial_sources"` | — |
 | [SRC-F725E90B2A-L003887](../../tests/test_web_agent.py#L3887) | 3887 | `"        else:"` | — |
 | [SRC-F725E90B2A-L003888](../../tests/test_web_agent.py#L3888) | 3888 | `"            sources = [repair_candidate]"` | — |
 | [SRC-F725E90B2A-L003889](../../tests/test_web_agent.py#L3889) | 3889 | `"        return sources, [], {"` | — |
@@ -764,73 +825,3 @@
 | [SRC-8C13B81AB4-L000119](../../tests/test_web_agent_nlu_integration.py#L119) | 119 | `""` | — |
 | [SRC-8C13B81AB4-L000120](../../tests/test_web_agent_nlu_integration.py#L120) | 120 | `"def test_no_lexical_gap_is_not_presented_as_semantic_proof() -> None:"` | — |
 | [SRC-8C13B81AB4-L000121](../../tests/test_web_agent_nlu_integration.py#L121) | 121 | `"    from agents.web_agent import enforce_aspect_answer_completeness"` | — |
-| [SRC-8C13B81AB4-L000122](../../tests/test_web_agent_nlu_integration.py#L122) | 122 | `""` | — |
-| [SRC-8C13B81AB4-L000123](../../tests/test_web_agent_nlu_integration.py#L123) | 123 | `"    payload = {"` | — |
-| [SRC-8C13B81AB4-L000124](../../tests/test_web_agent_nlu_integration.py#L124) | 124 | `"        \"answer\": \"Supported draft.\","` | — |
-| [SRC-8C13B81AB4-L000125](../../tests/test_web_agent_nlu_integration.py#L125) | 125 | `"        \"sources\": ["` | — |
-| [SRC-8C13B81AB4-L000126](../../tests/test_web_agent_nlu_integration.py#L126) | 126 | `"            {"` | — |
-| [SRC-8C13B81AB4-L000127](../../tests/test_web_agent_nlu_integration.py#L127) | 127 | `"                \"title\": \"Price and warranty terms\","` | — |
-| [SRC-8C13B81AB4-L000128](../../tests/test_web_agent_nlu_integration.py#L128) | 128 | `"                \"url\": \"https://example.org/terms\","` | — |
-| [SRC-8C13B81AB4-L000129](../../tests/test_web_agent_nlu_integration.py#L129) | 129 | `"                \"snippet\": \"price cost warranty warranty coverage\","` | — |
-| [SRC-8C13B81AB4-L000130](../../tests/test_web_agent_nlu_integration.py#L130) | 130 | `"                \"provider\": \"mock\","` | — |
-| [SRC-8C13B81AB4-L000131](../../tests/test_web_agent_nlu_integration.py#L131) | 131 | `"            }"` | — |
-| [SRC-8C13B81AB4-L000132](../../tests/test_web_agent_nlu_integration.py#L132) | 132 | `"        ],"` | — |
-| [SRC-8C13B81AB4-L000133](../../tests/test_web_agent_nlu_integration.py#L133) | 133 | `"        \"search_report\": {"` | — |
-| [SRC-8C13B81AB4-L000134](../../tests/test_web_agent_nlu_integration.py#L134) | 134 | `"            \"evidence_ledger\": {\"aspects\": [\"price\", \"warranty\"], \"missing\": []},"` | — |
-| [SRC-8C13B81AB4-L000135](../../tests/test_web_agent_nlu_integration.py#L135) | 135 | `"            \"aspect_diagnostics_ar\": [],"` | — |
-| [SRC-8C13B81AB4-L000136](../../tests/test_web_agent_nlu_integration.py#L136) | 136 | `"        },"` | — |
-| [SRC-8C13B81AB4-L000137](../../tests/test_web_agent_nlu_integration.py#L137) | 137 | `"    }"` | — |
-| [SRC-8C13B81AB4-L000138](../../tests/test_web_agent_nlu_integration.py#L138) | 138 | `"    result = enforce_aspect_answer_completeness(payload)"` | — |
-| [SRC-8C13B81AB4-L000139](../../tests/test_web_agent_nlu_integration.py#L139) | 139 | `"    assert result[\"answer_was_withheld\"] is False"` | — |
-| [SRC-8C13B81AB4-L000140](../../tests/test_web_agent_nlu_integration.py#L140) | 140 | `"    assert result[\"answer_completeness_status\"] == ("` | — |
-| [SRC-8C13B81AB4-L000141](../../tests/test_web_agent_nlu_integration.py#L141) | 141 | `"        \"no_lexical_gaps_detected_semantic_completeness_not_proven\""` | — |
-| [SRC-8C13B81AB4-L000142](../../tests/test_web_agent_nlu_integration.py#L142) | 142 | `"    )"` | — |
-| [SRC-8C13B81AB4-L000143](../../tests/test_web_agent_nlu_integration.py#L143) | 143 | `"    assert result[\"aspect_coverage_is_not_truth_score\"] is True"` | — |
-## اختبارات
-
-### FILE-E3EEC2014A — [tests/test_workspace_discovery.py](../../tests/test_workspace_discovery.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-E3EEC2014A-L000001](../../tests/test_workspace_discovery.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-E3EEC2014A-L000002](../../tests/test_workspace_discovery.py#L2) | 2 | `""` | — |
-| [SRC-E3EEC2014A-L000003](../../tests/test_workspace_discovery.py#L3) | 3 | `"import pytest"` | — |
-| [SRC-E3EEC2014A-L000004](../../tests/test_workspace_discovery.py#L4) | 4 | `""` | — |
-| [SRC-E3EEC2014A-L000005](../../tests/test_workspace_discovery.py#L5) | 5 | `"from agents.omarai import LeadStore"` | — |
-| [SRC-E3EEC2014A-L000006](../../tests/test_workspace_discovery.py#L6) | 6 | `"from agents.web_agent import WebAgent"` | — |
-| [SRC-E3EEC2014A-L000007](../../tests/test_workspace_discovery.py#L7) | 7 | `""` | — |
-| [SRC-E3EEC2014A-L000008](../../tests/test_workspace_discovery.py#L8) | 8 | `""` | — |
-| [SRC-E3EEC2014A-L000009](../../tests/test_workspace_discovery.py#L9) | 9 | `"def product_profile(name=\"لوحة إنذار الحريق\", aliases=None):"` | — |
-| [SRC-E3EEC2014A-L000010](../../tests/test_workspace_discovery.py#L10) | 10 | `"    return {"` | — |
-| [SRC-E3EEC2014A-L000011](../../tests/test_workspace_discovery.py#L11) | 11 | `"        \"product\": {"` | — |
-| [SRC-E3EEC2014A-L000012](../../tests/test_workspace_discovery.py#L12) | 12 | `"            \"name\": name,"` | — |
-| [SRC-E3EEC2014A-L000013](../../tests/test_workspace_discovery.py#L13) | 13 | `"            \"aliases\": aliases or [\"FACP\"],"` | — |
-| [SRC-E3EEC2014A-L000014](../../tests/test_workspace_discovery.py#L14) | 14 | `"            \"category_path\": [\"السلامة\", \"إنذار الحريق\"],"` | — |
-| [SRC-E3EEC2014A-L000015](../../tests/test_workspace_discovery.py#L15) | 15 | `"            \"use_cases\": [\"حماية المباني\"],"` | — |
-| [SRC-E3EEC2014A-L000016](../../tests/test_workspace_discovery.py#L16) | 16 | `"            \"problems_solved\": [\"اكتشاف الحريق مبكرًا\"],"` | — |
-| [SRC-E3EEC2014A-L000017](../../tests/test_workspace_discovery.py#L17) | 17 | `"            \"facts\": [],"` | — |
-| [SRC-E3EEC2014A-L000018](../../tests/test_workspace_discovery.py#L18) | 18 | `"        },"` | — |
-| [SRC-E3EEC2014A-L000019](../../tests/test_workspace_discovery.py#L19) | 19 | `"        \"market\": {"` | — |
-| [SRC-E3EEC2014A-L000020](../../tests/test_workspace_discovery.py#L20) | 20 | `"            \"locations\": [\"القاهرة\", \"الجيزة\"],"` | — |
-| [SRC-E3EEC2014A-L000021](../../tests/test_workspace_discovery.py#L21) | 21 | `"            \"industries\": [\"المقاولات\"],"` | — |
-| [SRC-E3EEC2014A-L000022](../../tests/test_workspace_discovery.py#L22) | 22 | `"            \"customer_types\": [\"مقاولون\", \"ملاك مشروعات\"],"` | — |
-| [SRC-E3EEC2014A-L000023](../../tests/test_workspace_discovery.py#L23) | 23 | `"            \"decision_roles\": [\"مدير مشتريات\"],"` | — |
-| [SRC-E3EEC2014A-L000024](../../tests/test_workspace_discovery.py#L24) | 24 | `"            \"exclusions\": [],"` | — |
-| [SRC-E3EEC2014A-L000025](../../tests/test_workspace_discovery.py#L25) | 25 | `"        },"` | — |
-| [SRC-E3EEC2014A-L000026](../../tests/test_workspace_discovery.py#L26) | 26 | `"        \"locale\": \"ar\","` | — |
-| [SRC-E3EEC2014A-L000027](../../tests/test_workspace_discovery.py#L27) | 27 | `"    }"` | — |
-| [SRC-E3EEC2014A-L000028](../../tests/test_workspace_discovery.py#L28) | 28 | `""` | — |
-| [SRC-E3EEC2014A-L000029](../../tests/test_workspace_discovery.py#L29) | 29 | `""` | — |
-| [SRC-E3EEC2014A-L000030](../../tests/test_workspace_discovery.py#L30) | 30 | `"def discovery_run():"` | — |
-| [SRC-E3EEC2014A-L000031](../../tests/test_workspace_discovery.py#L31) | 31 | `"    return {"` | — |
-| [SRC-E3EEC2014A-L000032](../../tests/test_workspace_discovery.py#L32) | 32 | `"        \"answer\": \"عُثر على إشارة طلب واحدة.\","` | — |
-| [SRC-E3EEC2014A-L000033](../../tests/test_workspace_discovery.py#L33) | 33 | `"        \"search_queries\": ['\"مطلوب شراء\" \"لوحة إنذار الحريق\"'],"` | — |
-| [SRC-E3EEC2014A-L000034](../../tests/test_workspace_discovery.py#L34) | 34 | `"        \"search_report\": {"` | — |
-| [SRC-E3EEC2014A-L000035](../../tests/test_workspace_discovery.py#L35) | 35 | `"            \"lead_generation\": {"` | — |
-| [SRC-E3EEC2014A-L000036](../../tests/test_workspace_discovery.py#L36) | 36 | `"                \"status\": \"candidate_signals_found\","` | — |
-| [SRC-E3EEC2014A-L000037](../../tests/test_workspace_discovery.py#L37) | 37 | `"                \"candidate_signal_count\": 1,"` | — |
-| [SRC-E3EEC2014A-L000038](../../tests/test_workspace_discovery.py#L38) | 38 | `"                \"related_results_reviewed\": 2,"` | — |
-| [SRC-E3EEC2014A-L000039](../../tests/test_workspace_discovery.py#L39) | 39 | `"                \"qualification_rule\": \"public_demand_signal_phrase_by_type\","` | — |

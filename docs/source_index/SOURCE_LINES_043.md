@@ -4,7 +4,7 @@
 
 - الصفحة: **043**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B3062EB677-L000125 إلى SRC-3451CC474D-L000105
+- النطاق: SRC-B3062EB677-L000109 إلى SRC-3451CC474D-L000089
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B3062EB677-L000109](../../tests/test_answer_quality_runner.py#L109) | 109 | `"            \"used_language_model\": True,"` | — |
+| [SRC-B3062EB677-L000110](../../tests/test_answer_quality_runner.py#L110) | 110 | `"            \"sources\": [],"` | — |
+| [SRC-B3062EB677-L000111](../../tests/test_answer_quality_runner.py#L111) | 111 | `"        }"` | — |
+| [SRC-B3062EB677-L000112](../../tests/test_answer_quality_runner.py#L112) | 112 | `""` | — |
+| [SRC-B3062EB677-L000113](../../tests/test_answer_quality_runner.py#L113) | 113 | `"    monkeypatch.setattr(mod, \"get_verified_build_sha\", lambda base_url, timeout, token=None: \"a\" * 40)"` | — |
+| [SRC-B3062EB677-L000114](../../tests/test_answer_quality_runner.py#L114) | 114 | `"    monkeypatch.setattr(mod, \"post_agent\", fake_post)"` | — |
+| [SRC-B3062EB677-L000115](../../tests/test_answer_quality_runner.py#L115) | 115 | `"    out = tmp_path / \"results.json\""` | — |
+| [SRC-B3062EB677-L000116](../../tests/test_answer_quality_runner.py#L116) | 116 | `"    rc = mod.main("` | — |
+| [SRC-B3062EB677-L000117](../../tests/test_answer_quality_runner.py#L117) | 117 | `"        ["` | — |
+| [SRC-B3062EB677-L000118](../../tests/test_answer_quality_runner.py#L118) | 118 | `"            \"--mode\","` | — |
+| [SRC-B3062EB677-L000119](../../tests/test_answer_quality_runner.py#L119) | 119 | `"            \"live\","` | — |
+| [SRC-B3062EB677-L000120](../../tests/test_answer_quality_runner.py#L120) | 120 | `"            \"--corpus\","` | — |
+| [SRC-B3062EB677-L000121](../../tests/test_answer_quality_runner.py#L121) | 121 | `"            str(CORPUS),"` | — |
+| [SRC-B3062EB677-L000122](../../tests/test_answer_quality_runner.py#L122) | 122 | `"            \"--case-id\","` | — |
+| [SRC-B3062EB677-L000123](../../tests/test_answer_quality_runner.py#L123) | 123 | `"            \"AQ-001\","` | — |
+| [SRC-B3062EB677-L000124](../../tests/test_answer_quality_runner.py#L124) | 124 | `"            \"--limit\","` | — |
 | [SRC-B3062EB677-L000125](../../tests/test_answer_quality_runner.py#L125) | 125 | `"            \"1\","` | — |
 | [SRC-B3062EB677-L000126](../../tests/test_answer_quality_runner.py#L126) | 126 | `"            \"--out\","` | — |
 | [SRC-B3062EB677-L000127](../../tests/test_answer_quality_runner.py#L127) | 127 | `"            str(out),"` | — |
@@ -827,19 +843,3 @@
 | [SRC-3451CC474D-L000087](../../tests/test_api.py#L87) | 87 | `"    assert health[\"mode\"] == \"web-research\""` | — |
 | [SRC-3451CC474D-L000088](../../tests/test_api.py#L88) | 88 | `"    assert health[\"storage\"][\"durability_status\"] == \"not_guaranteed\""` | — |
 | [SRC-3451CC474D-L000089](../../tests/test_api.py#L89) | 89 | `"    assert health[\"storage\"][\"persistent_volume_operator_asserted\"] is False"` | — |
-| [SRC-3451CC474D-L000090](../../tests/test_api.py#L90) | 90 | `"    assert \"ephemeral filesystem\" in health[\"storage\"][\"warning\"]"` | — |
-| [SRC-3451CC474D-L000091](../../tests/test_api.py#L91) | 91 | `"    assert health[\"storage\"][\"durability_status\"] == \"not_guaranteed\""` | — |
-| [SRC-3451CC474D-L000092](../../tests/test_api.py#L92) | 92 | `"    assert health[\"storage\"][\"persistent_volume_operator_asserted\"] is False"` | — |
-| [SRC-3451CC474D-L000093](../../tests/test_api.py#L93) | 93 | `"    assert \"ephemeral filesystem\" in health[\"storage\"][\"warning\"]"` | — |
-| [SRC-3451CC474D-L000094](../../tests/test_api.py#L94) | 94 | `"    assert health[\"agent\"][\"verification_scope\"][\"live_network_checks_performed\"] is False"` | — |
-| [SRC-3451CC474D-L000095](../../tests/test_api.py#L95) | 95 | `"    assert health[\"agent\"][\"verification_scope\"][\"live_diagnostics_endpoint\"] == \"POST /api/diagnostics\""` | — |
-| [SRC-3451CC474D-L000096](../../tests/test_api.py#L96) | 96 | `""` | — |
-| [SRC-3451CC474D-L000097](../../tests/test_api.py#L97) | 97 | `"    text = \"بدور على شقة في التجمع الخامس وممكن معاينة\""` | — |
-| [SRC-3451CC474D-L000098](../../tests/test_api.py#L98) | 98 | `"    status, assessment = request_json("` | — |
-| [SRC-3451CC474D-L000099](../../tests/test_api.py#L99) | 99 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L000100](../../tests/test_api.py#L100) | 100 | `"        \"/api/analyze\","` | — |
-| [SRC-3451CC474D-L000101](../../tests/test_api.py#L101) | 101 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L000102](../../tests/test_api.py#L102) | 102 | `"        payload={\"text\": text, \"product_terms\": [\"شقة\"], \"location_terms\": [\"التجمع الخامس\"]},"` | — |
-| [SRC-3451CC474D-L000103](../../tests/test_api.py#L103) | 103 | `"    )"` | — |
-| [SRC-3451CC474D-L000104](../../tests/test_api.py#L104) | 104 | `"    assert status == 200"` | — |
-| [SRC-3451CC474D-L000105](../../tests/test_api.py#L105) | 105 | `"    assert assessment[\"label\"] == \"high_intent\""` | — |

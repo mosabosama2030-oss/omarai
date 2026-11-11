@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-62CE5126F9-L000657 إلى SRC-65551FB29F-L000497
+- النطاق: SRC-62CE5126F9-L000641 إلى SRC-65551FB29F-L000481
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-62CE5126F9-L000641](../OMARAI_REMEDIATION_REGISTER_AR.md#L641) | 641 | ``"- عُدّل تصنيف سؤال القدرة ليستثني الطلب ذا الهدف البحثي الملموس، وأضيف حاجز في موجه النية كي لا تتقدم إجابة القدرة على `requires_web`."`` | — |
+| [SRC-62CE5126F9-L000642](../OMARAI_REMEDIATION_REGISTER_AR.md#L642) | 642 | `"- أضيفت اختبارات انحدار للصيغة العربية، تشمل توجيه السؤال إلى البحث لا إلى إجابة القدرة."` | — |
+| [SRC-62CE5126F9-L000643](../OMARAI_REMEDIATION_REGISTER_AR.md#L643) | 643 | `""` | — |
+| [SRC-62CE5126F9-L000644](../OMARAI_REMEDIATION_REGISTER_AR.md#L644) | 644 | `"### دليل الاختبار والحدود"` | — |
+| [SRC-62CE5126F9-L000645](../OMARAI_REMEDIATION_REGISTER_AR.md#L645) | 645 | `""` | — |
+| [SRC-62CE5126F9-L000646](../OMARAI_REMEDIATION_REGISTER_AR.md#L646) | 646 | ``"- الأمر: `/tmp/omarai-venv/bin/python -m pytest -q` من جذر الفرع؛ **927 passed, 2 skipped**."`` | — |
+| [SRC-62CE5126F9-L000647](../OMARAI_REMEDIATION_REGISTER_AR.md#L647) | 647 | ``"- الأمر: `/tmp/omarai-venv/bin/ruff check agents/intent_router.py agents/web_agent.py tests/test_intent_router.py tests/test_web_agent.py`؛ `All checks passed!`."`` | — |
+| [SRC-62CE5126F9-L000648](../OMARAI_REMEDIATION_REGISTER_AR.md#L648) | 648 | ``"- `git diff --check` ناجح. هذه اختبارات محلية على الفرع أعلاه، وليست CI أو اختبار استضافة."`` | — |
+| [SRC-62CE5126F9-L000649](../OMARAI_REMEDIATION_REGISTER_AR.md#L649) | 649 | `"- **NOT_RUN:** لا اتصال حي بموفر بحث أو نموذج، ولا فحص لإعدادات أسرار الإنتاج، ولا تحقق من نسخة مستضافة أو قياس دقة الإجابة."` | — |
+| [SRC-62CE5126F9-L000650](../OMARAI_REMEDIATION_REGISTER_AR.md#L650) | 650 | `""` | — |
+| [SRC-62CE5126F9-L000651](../OMARAI_REMEDIATION_REGISTER_AR.md#L651) | 651 | `"## OMR-SEARCH-005 — الفصل بين الموقع الجغرافي وطلب رابط موقع ويب — 8 نوفمبر 2026"` | — |
+| [SRC-62CE5126F9-L000652](../OMARAI_REMEDIATION_REGISTER_AR.md#L652) | 652 | `""` | — |
+| [SRC-62CE5126F9-L000653](../OMARAI_REMEDIATION_REGISTER_AR.md#L653) | 653 | `"**الأولوية:** P1 — صحة نوع المهمة وعدد الأدلة المطلوب."` | — |
+| [SRC-62CE5126F9-L000654](../OMARAI_REMEDIATION_REGISTER_AR.md#L654) | 654 | ``"**الحالة:** FIXED_AND_TESTED على الفرع `fix/intent-routing-navigation-2026-11-08`؛ لم يُدمج ولم يُنشر."`` | — |
+| [SRC-62CE5126F9-L000655](../OMARAI_REMEDIATION_REGISTER_AR.md#L655) | 655 | ``"**خط الأساس:** `main` عند SHA `850c8c83aeaeb6838dd0f0474e5b8ef9c43e7e6f`."`` | — |
+| [SRC-62CE5126F9-L000656](../OMARAI_REMEDIATION_REGISTER_AR.md#L656) | 656 | `""` | — |
 | [SRC-62CE5126F9-L000657](../OMARAI_REMEDIATION_REGISTER_AR.md#L657) | 657 | `"### العيب المثبت والمعالجة"` | — |
 | [SRC-62CE5126F9-L000658](../OMARAI_REMEDIATION_REGISTER_AR.md#L658) | 658 | `""` | — |
 | [SRC-62CE5126F9-L000659](../OMARAI_REMEDIATION_REGISTER_AR.md#L659) | 659 | `"- كان ذكر «موقع» في سؤال جغرافي مثل «ما موقع مصر جغرافيًا؟» قد يصنّف المسار كتنقل إلى موقع ويب. وهذا قد يفعّل استثناء بحث صفحة واحدة بدل البحث العام المؤيد بأدلة متعددة."` | — |
@@ -818,19 +834,3 @@
 | [SRC-65551FB29F-L000479](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L479) | 479 | `"7. تُراجع المعايير المرجعية عند تغيرها أو تغير احتياجات Omarai."` | — |
 | [SRC-65551FB29F-L000480](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L480) | 480 | `"8. يمكن اكتشاف المتطلبات القديمة أو المتعارضة وتحديثها."` | — |
 | [SRC-65551FB29F-L000481](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L481) | 481 | `"9. توجد طريقة لمعرفة من وافق على الاستثناء ومتى تنتهي صلاحيته."` | — |
-| [SRC-65551FB29F-L000482](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L482) | 482 | `"10. لا تعتمد الموافقة على عدد تقارير الوكلاء بل على الأدلة."` | — |
-| [SRC-65551FB29F-L000483](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L483) | 483 | `""` | — |
-| [SRC-65551FB29F-L000484](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L484) | 484 | `"## 28. نموذج سجل متطلب قابل للنسخ"` | — |
-| [SRC-65551FB29F-L000485](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L485) | 485 | `""` | — |
-| [SRC-65551FB29F-L000486](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L486) | 486 | ````"```yaml"```` | — |
-| [SRC-65551FB29F-L000487](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L487) | 487 | `"id: SEC-EXAMPLE-001"` | — |
-| [SRC-65551FB29F-L000488](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L488) | 488 | `"requirement: \"يجب منع أداة جلب الصفحات من الوصول إلى عناوين الشبكات الداخلية.\""` | — |
-| [SRC-65551FB29F-L000489](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L489) | 489 | `"source:"` | — |
-| [SRC-65551FB29F-L000490](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L490) | 490 | `"  document: \"OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md\""` | — |
-| [SRC-65551FB29F-L000491](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L491) | 491 | `"  section: \"أمن واجهات API وحدود الشبكة\""` | — |
-| [SRC-65551FB29F-L000492](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L492) | 492 | `"applicability: MUST-BASE"` | — |
-| [SRC-65551FB29F-L000493](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L493) | 493 | `"risk: \"SSRF والوصول غير المصرح إلى موارد داخلية\""` | — |
-| [SRC-65551FB29F-L000494](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L494) | 494 | `"status: UNKNOWN"` | — |
-| [SRC-65551FB29F-L000495](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L495) | 495 | `"implementation:"` | — |
-| [SRC-65551FB29F-L000496](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L496) | 496 | `"  paths: []"` | — |
-| [SRC-65551FB29F-L000497](../OMARAI_REQUIREMENTS_TRACEABILITY_AND_MATURITY_MODEL_AR.md#L497) | 497 | `"  commit: null"` | — |

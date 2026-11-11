@@ -4,7 +4,7 @@
 
 - الصفحة: **044**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000106 إلى SRC-3451CC474D-L000905
+- النطاق: SRC-3451CC474D-L000090 إلى SRC-3451CC474D-L000889
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000090](../../tests/test_api.py#L90) | 90 | `"    assert \"ephemeral filesystem\" in health[\"storage\"][\"warning\"]"` | — |
+| [SRC-3451CC474D-L000091](../../tests/test_api.py#L91) | 91 | `"    assert health[\"storage\"][\"durability_status\"] == \"not_guaranteed\""` | — |
+| [SRC-3451CC474D-L000092](../../tests/test_api.py#L92) | 92 | `"    assert health[\"storage\"][\"persistent_volume_operator_asserted\"] is False"` | — |
+| [SRC-3451CC474D-L000093](../../tests/test_api.py#L93) | 93 | `"    assert \"ephemeral filesystem\" in health[\"storage\"][\"warning\"]"` | — |
+| [SRC-3451CC474D-L000094](../../tests/test_api.py#L94) | 94 | `"    assert health[\"agent\"][\"verification_scope\"][\"live_network_checks_performed\"] is False"` | — |
+| [SRC-3451CC474D-L000095](../../tests/test_api.py#L95) | 95 | `"    assert health[\"agent\"][\"verification_scope\"][\"live_diagnostics_endpoint\"] == \"POST /api/diagnostics\""` | — |
+| [SRC-3451CC474D-L000096](../../tests/test_api.py#L96) | 96 | `""` | — |
+| [SRC-3451CC474D-L000097](../../tests/test_api.py#L97) | 97 | `"    text = \"بدور على شقة في التجمع الخامس وممكن معاينة\""` | — |
+| [SRC-3451CC474D-L000098](../../tests/test_api.py#L98) | 98 | `"    status, assessment = request_json("` | — |
+| [SRC-3451CC474D-L000099](../../tests/test_api.py#L99) | 99 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L000100](../../tests/test_api.py#L100) | 100 | `"        \"/api/analyze\","` | — |
+| [SRC-3451CC474D-L000101](../../tests/test_api.py#L101) | 101 | `"        method=\"POST\","` | — |
+| [SRC-3451CC474D-L000102](../../tests/test_api.py#L102) | 102 | `"        payload={\"text\": text, \"product_terms\": [\"شقة\"], \"location_terms\": [\"التجمع الخامس\"]},"` | — |
+| [SRC-3451CC474D-L000103](../../tests/test_api.py#L103) | 103 | `"    )"` | — |
+| [SRC-3451CC474D-L000104](../../tests/test_api.py#L104) | 104 | `"    assert status == 200"` | — |
+| [SRC-3451CC474D-L000105](../../tests/test_api.py#L105) | 105 | `"    assert assessment[\"label\"] == \"high_intent\""` | — |
 | [SRC-3451CC474D-L000106](../../tests/test_api.py#L106) | 106 | `"    assert {item[\"category\"] for item in assessment[\"matched_signals\"]} >= {"` | — |
 | [SRC-3451CC474D-L000107](../../tests/test_api.py#L107) | 107 | `"        \"high\", \"next_step\", \"product_context\", \"location_context\""` | — |
 | [SRC-3451CC474D-L000108](../../tests/test_api.py#L108) | 108 | `"    }"` | — |
@@ -800,19 +816,3 @@
 | [SRC-3451CC474D-L000887](../../tests/test_api.py#L887) | 887 | `"                \"camera=(), microphone=(), geolocation=()\""` | — |
 | [SRC-3451CC474D-L000888](../../tests/test_api.py#L888) | 888 | `"            )"` | — |
 | [SRC-3451CC474D-L000889](../../tests/test_api.py#L889) | 889 | `""` | — |
-| [SRC-3451CC474D-L000890](../../tests/test_api.py#L890) | 890 | `""` | — |
-| [SRC-3451CC474D-L000891](../../tests/test_api.py#L891) | 891 | `"def test_health_exposes_only_validated_image_baked_sha(monkeypatch, tmp_path):"` | — |
-| [SRC-3451CC474D-L000892](../../tests/test_api.py#L892) | 892 | `"    import api.omarai as api_module"` | — |
-| [SRC-3451CC474D-L000893](../../tests/test_api.py#L893) | 893 | `""` | — |
-| [SRC-3451CC474D-L000894](../../tests/test_api.py#L894) | 894 | `"    build_sha_file = tmp_path / \"BUILD_SHA\""` | — |
-| [SRC-3451CC474D-L000895](../../tests/test_api.py#L895) | 895 | `"    monkeypatch.setattr(api_module, \"BUILD_SHA_FILE\", build_sha_file)"` | — |
-| [SRC-3451CC474D-L000896](../../tests/test_api.py#L896) | 896 | `"    assert api_module._build_sha() == \"unknown\""` | — |
-| [SRC-3451CC474D-L000897](../../tests/test_api.py#L897) | 897 | `"    build_sha_file.write_text(\"a\" * 40, encoding=\"ascii\")"` | — |
-| [SRC-3451CC474D-L000898](../../tests/test_api.py#L898) | 898 | `"    assert api_module._build_sha() == \"a\" * 40"` | — |
-| [SRC-3451CC474D-L000899](../../tests/test_api.py#L899) | 899 | `"    build_sha_file.write_text(\"not-a-git-sha\", encoding=\"ascii\")"` | — |
-| [SRC-3451CC474D-L000900](../../tests/test_api.py#L900) | 900 | `"    assert api_module._build_sha() == \"unknown\""` | — |
-| [SRC-3451CC474D-L000901](../../tests/test_api.py#L901) | 901 | `""` | — |
-| [SRC-3451CC474D-L000902](../../tests/test_api.py#L902) | 902 | `""` | — |
-| [SRC-3451CC474D-L000903](../../tests/test_api.py#L903) | 903 | `""` | — |
-| [SRC-3451CC474D-L000904](../../tests/test_api.py#L904) | 904 | `"@pytest.mark.parametrize("` | — |
-| [SRC-3451CC474D-L000905](../../tests/test_api.py#L905) | 905 | `"    (\"variable\", \"source\"),"` | — |

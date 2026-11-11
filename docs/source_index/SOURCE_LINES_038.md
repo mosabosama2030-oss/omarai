@@ -4,7 +4,7 @@
 
 - الصفحة: **038**
 - سجلات الأسطر: **800**
-- النطاق: SRC-A8360B1B03-L000392 إلى SRC-4FFD5AFC54-L000545
+- النطاق: SRC-A8360B1B03-L000376 إلى SRC-4FFD5AFC54-L000529
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-A8360B1B03-L000376](../../scripts/hosted_smoke_test.py#L376) | 376 | `""` | — |
+| [SRC-A8360B1B03-L000377](../../scripts/hosted_smoke_test.py#L377) | 377 | `"    if not allow_provider_usage:"` | — |
+| [SRC-A8360B1B03-L000378](../../scripts/hosted_smoke_test.py#L378) | 378 | `"        checks[\"provider_usage\"] = {\"status\": \"blocked_not_approved\"}"` | — |
+| [SRC-A8360B1B03-L000379](../../scripts/hosted_smoke_test.py#L379) | 379 | `"        raise SmokeError("` | — |
+| [SRC-A8360B1B03-L000380](../../scripts/hosted_smoke_test.py#L380) | 380 | `"            \"No-cost preflight passed, but live search/model usage was not approved. \""` | — |
+| [SRC-A8360B1B03-L000381](../../scripts/hosted_smoke_test.py#L381) | 381 | `"            \"Re-run with --allow-provider-usage only after explicit human approval.\","` | — |
+| [SRC-A8360B1B03-L000382](../../scripts/hosted_smoke_test.py#L382) | 382 | `"            partial_report,"` | — |
+| [SRC-A8360B1B03-L000383](../../scripts/hosted_smoke_test.py#L383) | 383 | `"        )"` | — |
+| [SRC-A8360B1B03-L000384](../../scripts/hosted_smoke_test.py#L384) | 384 | `""` | — |
+| [SRC-A8360B1B03-L000385](../../scripts/hosted_smoke_test.py#L385) | 385 | `"    checks[\"provider_usage\"] = {"` | — |
+| [SRC-A8360B1B03-L000386](../../scripts/hosted_smoke_test.py#L386) | 386 | `"        \"status\": \"approved\","` | — |
+| [SRC-A8360B1B03-L000387](../../scripts/hosted_smoke_test.py#L387) | 387 | `"        \"scope\": {"` | — |
+| [SRC-A8360B1B03-L000388](../../scripts/hosted_smoke_test.py#L388) | 388 | `"            \"profile\": \"hosted_smoke\","` | — |
+| [SRC-A8360B1B03-L000389](../../scripts/hosted_smoke_test.py#L389) | 389 | `"            \"max_search_queries\": HOSTED_SMOKE_BUDGET_MAX[\"search_queries\"],"` | — |
+| [SRC-A8360B1B03-L000390](../../scripts/hosted_smoke_test.py#L390) | 390 | `"            \"max_provider_requests\": HOSTED_SMOKE_BUDGET_MAX[\"search_calls\"],"` | — |
+| [SRC-A8360B1B03-L000391](../../scripts/hosted_smoke_test.py#L391) | 391 | `"            \"max_model_calls\": HOSTED_SMOKE_BUDGET_MAX[\"model_calls\"],"` | — |
 | [SRC-A8360B1B03-L000392](../../scripts/hosted_smoke_test.py#L392) | 392 | `"            \"max_page_fetches\": HOSTED_SMOKE_BUDGET_MAX[\"page_fetches\"],"` | — |
 | [SRC-A8360B1B03-L000393](../../scripts/hosted_smoke_test.py#L393) | 393 | `"            \"tool_calls\": HOSTED_SMOKE_BUDGET_MAX[\"tool_calls\"],"` | — |
 | [SRC-A8360B1B03-L000394](../../scripts/hosted_smoke_test.py#L394) | 394 | `"            \"note\": \"Server-enforced per-request ceilings; operator settings may be stricter.\","` | — |
@@ -809,19 +825,3 @@
 | [SRC-4FFD5AFC54-L000527](../../scripts/run_answer_quality_benchmark.py#L527) | 527 | `"    base_url: str,"` | — |
 | [SRC-4FFD5AFC54-L000528](../../scripts/run_answer_quality_benchmark.py#L528) | 528 | `"    case_id: str \| None,"` | — |
 | [SRC-4FFD5AFC54-L000529](../../scripts/run_answer_quality_benchmark.py#L529) | 529 | `"    limit: int,"` | — |
-| [SRC-4FFD5AFC54-L000530](../../scripts/run_answer_quality_benchmark.py#L530) | 530 | `"    timeout: float,"` | — |
-| [SRC-4FFD5AFC54-L000531](../../scripts/run_answer_quality_benchmark.py#L531) | 531 | `"    delay: float,"` | — |
-| [SRC-4FFD5AFC54-L000532](../../scripts/run_answer_quality_benchmark.py#L532) | 532 | `"    out_path: Path \| None,"` | — |
-| [SRC-4FFD5AFC54-L000533](../../scripts/run_answer_quality_benchmark.py#L533) | 533 | `"    build_sha: str \| None = None,"` | — |
-| [SRC-4FFD5AFC54-L000534](../../scripts/run_answer_quality_benchmark.py#L534) | 534 | `"    request_costs_path: Path \| None = None,"` | — |
-| [SRC-4FFD5AFC54-L000535](../../scripts/run_answer_quality_benchmark.py#L535) | 535 | `") -> int:"` | — |
-| [SRC-4FFD5AFC54-L000536](../../scripts/run_answer_quality_benchmark.py#L536) | 536 | `"    data = load_corpus(corpus_path)"` | — |
-| [SRC-4FFD5AFC54-L000537](../../scripts/run_answer_quality_benchmark.py#L537) | 537 | `"    problems = validate_corpus(data)"` | — |
-| [SRC-4FFD5AFC54-L000538](../../scripts/run_answer_quality_benchmark.py#L538) | 538 | `"    if problems:"` | — |
-| [SRC-4FFD5AFC54-L000539](../../scripts/run_answer_quality_benchmark.py#L539) | 539 | `"        print(\"Corpus invalid; refusing live run:\")"` | — |
-| [SRC-4FFD5AFC54-L000540](../../scripts/run_answer_quality_benchmark.py#L540) | 540 | `"        for p in problems:"` | — |
-| [SRC-4FFD5AFC54-L000541](../../scripts/run_answer_quality_benchmark.py#L541) | 541 | `"            print(\" -\", p)"` | — |
-| [SRC-4FFD5AFC54-L000542](../../scripts/run_answer_quality_benchmark.py#L542) | 542 | `"        return 2"` | — |
-| [SRC-4FFD5AFC54-L000543](../../scripts/run_answer_quality_benchmark.py#L543) | 543 | `""` | — |
-| [SRC-4FFD5AFC54-L000544](../../scripts/run_answer_quality_benchmark.py#L544) | 544 | `"    try:"` | — |
-| [SRC-4FFD5AFC54-L000545](../../scripts/run_answer_quality_benchmark.py#L545) | 545 | `"        full_case_ids = {case.get(\"case_id\") for case in data.get(\"cases\", []) if isinstance(case, dict)}"` | — |

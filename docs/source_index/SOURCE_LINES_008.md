@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3AA6165B18-L000054 إلى SRC-8D00DCEC0D-L000308
+- النطاق: SRC-3AA6165B18-L000043 إلى SRC-8D00DCEC0D-L000297
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3AA6165B18-L000043](../../agents/research_guardrails.py#L43) | 43 | `")"` | — |
+| [SRC-3AA6165B18-L000044](../../agents/research_guardrails.py#L44) | 44 | `"_TODAY_WORDS = ("` | — |
+| [SRC-3AA6165B18-L000045](../../agents/research_guardrails.py#L45) | 45 | `"    \"اليوم\", \"النهارده\", \"النهاردة\", \"دلوقتي\", \"الآن\", \"حاليا\","` | — |
+| [SRC-3AA6165B18-L000046](../../agents/research_guardrails.py#L46) | 46 | `"    \"today\", \"right now\", \"currently\", \"current hours\","` | — |
+| [SRC-3AA6165B18-L000047](../../agents/research_guardrails.py#L47) | 47 | `")"` | — |
+| [SRC-3AA6165B18-L000048](../../agents/research_guardrails.py#L48) | 48 | `"_PROMOTION_TERMS = ("` | — |
+| [SRC-3AA6165B18-L000049](../../agents/research_guardrails.py#L49) | 49 | `"    \"للبيع\", \"للايجار\", \"للإيجار\", \"تواصل معنا\", \"اتصل الآن\", \"واتساب\","` | — |
+| [SRC-3AA6165B18-L000050](../../agents/research_guardrails.py#L50) | 50 | `"    \"للحجز\", \"اشتر الآن\", \"اطلب الآن\", \"خصم\", \"عرض خاص\", \"السعر يبدأ\","` | — |
+| [SRC-3AA6165B18-L000051](../../agents/research_guardrails.py#L51) | 51 | `"    \"for sale\", \"contact us\", \"call now\", \"whatsapp\", \"buy now\", \"shop now\","` | — |
+| [SRC-3AA6165B18-L000052](../../agents/research_guardrails.py#L52) | 52 | `"    \"special offer\", \"discount\", \"sponsored\", \"affiliate\","` | — |
+| [SRC-3AA6165B18-L000053](../../agents/research_guardrails.py#L53) | 53 | `")"` | — |
 | [SRC-3AA6165B18-L000054](../../agents/research_guardrails.py#L54) | 54 | `"_PERSONAL_EXPERIENCE_TERMS = ("` | — |
 | [SRC-3AA6165B18-L000055](../../agents/research_guardrails.py#L55) | 55 | `"    \"أنا امتلك\", \"انا امتلك\", \"أنا أملك\", \"انا املك\", \"عندي\", \"معايا\","` | — |
 | [SRC-3AA6165B18-L000056](../../agents/research_guardrails.py#L56) | 56 | `"    \"جربت\", \"استخدمت\", \"اشتريت\", \"امتلكت\", \"تجربتي\", \"عن تجربتي\","` | — |
@@ -832,14 +843,3 @@
 | [SRC-8D00DCEC0D-L000295](../../agents/sales_domain.py#L295) | 295 | `""` | — |
 | [SRC-8D00DCEC0D-L000296](../../agents/sales_domain.py#L296) | 296 | `"    locations: tuple[str, ...] = ()"` | — |
 | [SRC-8D00DCEC0D-L000297](../../agents/sales_domain.py#L297) | 297 | `"    industries: tuple[str, ...] = ()"` | — |
-| [SRC-8D00DCEC0D-L000298](../../agents/sales_domain.py#L298) | 298 | `"    customer_types: tuple[str, ...] = ()"` | — |
-| [SRC-8D00DCEC0D-L000299](../../agents/sales_domain.py#L299) | 299 | `"    decision_roles: tuple[str, ...] = ()"` | — |
-| [SRC-8D00DCEC0D-L000300](../../agents/sales_domain.py#L300) | 300 | `"    exclusions: tuple[str, ...] = ()"` | — |
-| [SRC-8D00DCEC0D-L000301](../../agents/sales_domain.py#L301) | 301 | `""` | — |
-| [SRC-8D00DCEC0D-L000302](../../agents/sales_domain.py#L302) | 302 | `"    def __post_init__(self) -> None:"` | — |
-| [SRC-8D00DCEC0D-L000303](../../agents/sales_domain.py#L303) | 303 | `"        for name in (\"locations\", \"industries\", \"customer_types\", \"decision_roles\", \"exclusions\"):"` | — |
-| [SRC-8D00DCEC0D-L000304](../../agents/sales_domain.py#L304) | 304 | `"            object.__setattr__("` | — |
-| [SRC-8D00DCEC0D-L000305](../../agents/sales_domain.py#L305) | 305 | `"                self,"` | — |
-| [SRC-8D00DCEC0D-L000306](../../agents/sales_domain.py#L306) | 306 | `"                name,"` | — |
-| [SRC-8D00DCEC0D-L000307](../../agents/sales_domain.py#L307) | 307 | `"                _clean_terms(getattr(self, name), field_name=name),"` | — |
-| [SRC-8D00DCEC0D-L000308](../../agents/sales_domain.py#L308) | 308 | `"            )"` | — |

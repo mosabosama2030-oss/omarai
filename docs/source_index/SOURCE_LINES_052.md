@@ -4,7 +4,7 @@
 
 - الصفحة: **052**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4397BC2CD2-L000103 إلى SRC-1521F490CA-L000132
+- النطاق: SRC-4397BC2CD2-L000042 إلى SRC-1521F490CA-L000071
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,67 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4397BC2CD2-L000042](../../tests/test_intent_router_integration.py#L42) | 42 | `""` | — |
+| [SRC-4397BC2CD2-L000043](../../tests/test_intent_router_integration.py#L43) | 43 | `"def test_greeting_is_local_without_model_or_search(monkeypatch) -> None:"` | — |
+| [SRC-4397BC2CD2-L000044](../../tests/test_intent_router_integration.py#L44) | 44 | `"    agent = WebAgent()"` | — |
+| [SRC-4397BC2CD2-L000045](../../tests/test_intent_router_integration.py#L45) | 45 | `""` | — |
+| [SRC-4397BC2CD2-L000046](../../tests/test_intent_router_integration.py#L46) | 46 | `"    def unexpected(*args, **kwargs):"` | — |
+| [SRC-4397BC2CD2-L000047](../../tests/test_intent_router_integration.py#L47) | 47 | `"        pytest.fail(\"Greeting must not call the model or search.\")"` | — |
+| [SRC-4397BC2CD2-L000048](../../tests/test_intent_router_integration.py#L48) | 48 | `""` | — |
+| [SRC-4397BC2CD2-L000049](../../tests/test_intent_router_integration.py#L49) | 49 | `"    monkeypatch.setattr(agent, \"_answer_without_search\", unexpected)"` | — |
+| [SRC-4397BC2CD2-L000050](../../tests/test_intent_router_integration.py#L50) | 50 | `"    monkeypatch.setattr(agent, \"_plan_search\", unexpected)"` | — |
+| [SRC-4397BC2CD2-L000051](../../tests/test_intent_router_integration.py#L51) | 51 | `""` | — |
+| [SRC-4397BC2CD2-L000052](../../tests/test_intent_router_integration.py#L52) | 52 | `"    result = agent.answer(\"ازيك؟ عامل ايه النهاردة؟\")"` | — |
+| [SRC-4397BC2CD2-L000053](../../tests/test_intent_router_integration.py#L53) | 53 | `""` | — |
+| [SRC-4397BC2CD2-L000054](../../tests/test_intent_router_integration.py#L54) | 54 | `"    assert result[\"kind\"] == \"local_conversation\""` | — |
+| [SRC-4397BC2CD2-L000055](../../tests/test_intent_router_integration.py#L55) | 55 | `"    assert result[\"intent_route\"] == \"LOCAL\""` | — |
+| [SRC-4397BC2CD2-L000056](../../tests/test_intent_router_integration.py#L56) | 56 | `"    assert result[\"research_plan\"][\"intent_route\"] == \"LOCAL\""` | — |
+| [SRC-4397BC2CD2-L000057](../../tests/test_intent_router_integration.py#L57) | 57 | `"    assert result[\"used_web_search\"] is False"` | — |
+| [SRC-4397BC2CD2-L000058](../../tests/test_intent_router_integration.py#L58) | 58 | `"    assert result[\"used_language_model\"] is False"` | — |
+| [SRC-4397BC2CD2-L000059](../../tests/test_intent_router_integration.py#L59) | 59 | `"    assert result[\"sources\"] == []"` | — |
+| [SRC-4397BC2CD2-L000060](../../tests/test_intent_router_integration.py#L60) | 60 | `""` | — |
+| [SRC-4397BC2CD2-L000061](../../tests/test_intent_router_integration.py#L61) | 61 | `""` | — |
+| [SRC-4397BC2CD2-L000062](../../tests/test_intent_router_integration.py#L62) | 62 | `"def test_ambiguous_question_clarifies_without_model_or_search(monkeypatch) -> None:"` | — |
+| [SRC-4397BC2CD2-L000063](../../tests/test_intent_router_integration.py#L63) | 63 | `"    agent = WebAgent()"` | — |
+| [SRC-4397BC2CD2-L000064](../../tests/test_intent_router_integration.py#L64) | 64 | `""` | — |
+| [SRC-4397BC2CD2-L000065](../../tests/test_intent_router_integration.py#L65) | 65 | `"    def unexpected(*args, **kwargs):"` | — |
+| [SRC-4397BC2CD2-L000066](../../tests/test_intent_router_integration.py#L66) | 66 | `"        pytest.fail(\"An unresolved referent must be clarified without model/search.\")"` | — |
+| [SRC-4397BC2CD2-L000067](../../tests/test_intent_router_integration.py#L67) | 67 | `""` | — |
+| [SRC-4397BC2CD2-L000068](../../tests/test_intent_router_integration.py#L68) | 68 | `"    monkeypatch.setattr(agent, \"_answer_without_search\", unexpected)"` | — |
+| [SRC-4397BC2CD2-L000069](../../tests/test_intent_router_integration.py#L69) | 69 | `"    monkeypatch.setattr(agent, \"_plan_search\", unexpected)"` | — |
+| [SRC-4397BC2CD2-L000070](../../tests/test_intent_router_integration.py#L70) | 70 | `"    monkeypatch.setattr(agent, \"_collect_research\", unexpected)"` | — |
+| [SRC-4397BC2CD2-L000071](../../tests/test_intent_router_integration.py#L71) | 71 | `""` | — |
+| [SRC-4397BC2CD2-L000072](../../tests/test_intent_router_integration.py#L72) | 72 | `"    result = agent.answer(\"كام سعرها؟\")"` | — |
+| [SRC-4397BC2CD2-L000073](../../tests/test_intent_router_integration.py#L73) | 73 | `""` | — |
+| [SRC-4397BC2CD2-L000074](../../tests/test_intent_router_integration.py#L74) | 74 | `"    assert result[\"kind\"] == \"clarification_needed\""` | — |
+| [SRC-4397BC2CD2-L000075](../../tests/test_intent_router_integration.py#L75) | 75 | `"    assert result[\"intent_route\"] == \"CLARIFY\""` | — |
+| [SRC-4397BC2CD2-L000076](../../tests/test_intent_router_integration.py#L76) | 76 | `"    assert result[\"research_plan\"][\"intent_route\"] == \"CLARIFY\""` | — |
+| [SRC-4397BC2CD2-L000077](../../tests/test_intent_router_integration.py#L77) | 77 | `"    assert \"تقصد\" in result[\"answer\"]"` | — |
+| [SRC-4397BC2CD2-L000078](../../tests/test_intent_router_integration.py#L78) | 78 | `"    assert result[\"used_web_search\"] is False"` | — |
+| [SRC-4397BC2CD2-L000079](../../tests/test_intent_router_integration.py#L79) | 79 | `"    assert result[\"used_language_model\"] is False"` | — |
+| [SRC-4397BC2CD2-L000080](../../tests/test_intent_router_integration.py#L80) | 80 | `"    assert result[\"sources\"] == []"` | — |
+| [SRC-4397BC2CD2-L000081](../../tests/test_intent_router_integration.py#L81) | 81 | `""` | — |
+| [SRC-4397BC2CD2-L000082](../../tests/test_intent_router_integration.py#L82) | 82 | `""` | — |
+| [SRC-4397BC2CD2-L000083](../../tests/test_intent_router_integration.py#L83) | 83 | `"def test_contextual_price_followup_searches_with_previous_subject(monkeypatch) -> None:"` | — |
+| [SRC-4397BC2CD2-L000084](../../tests/test_intent_router_integration.py#L84) | 84 | `"    agent = WebAgent()"` | — |
+| [SRC-4397BC2CD2-L000085](../../tests/test_intent_router_integration.py#L85) | 85 | `"    agent.api_key = \"\"  # Keep this acceptance test deterministic and offline."` | — |
+| [SRC-4397BC2CD2-L000086](../../tests/test_intent_router_integration.py#L86) | 86 | `"    seen: dict = {}"` | — |
+| [SRC-4397BC2CD2-L000087](../../tests/test_intent_router_integration.py#L87) | 87 | `"    history = ["` | — |
+| [SRC-4397BC2CD2-L000088](../../tests/test_intent_router_integration.py#L88) | 88 | `"        {\"role\": \"user\", \"content\": \"عايز أعرف سعر iPhone 17 في مصر\"},"` | — |
+| [SRC-4397BC2CD2-L000089](../../tests/test_intent_router_integration.py#L89) | 89 | `"        {\"role\": \"assistant\", \"content\": \"نتحدث عن هاتف iPhone 17 في السوق المصري.\"},"` | — |
+| [SRC-4397BC2CD2-L000090](../../tests/test_intent_router_integration.py#L90) | 90 | `"    ]"` | — |
+| [SRC-4397BC2CD2-L000091](../../tests/test_intent_router_integration.py#L91) | 91 | `""` | — |
+| [SRC-4397BC2CD2-L000092](../../tests/test_intent_router_integration.py#L92) | 92 | `"    def collect(plan):"` | — |
+| [SRC-4397BC2CD2-L000093](../../tests/test_intent_router_integration.py#L93) | 93 | `"        seen[\"plan\"] = dict(plan)"` | — |
+| [SRC-4397BC2CD2-L000094](../../tests/test_intent_router_integration.py#L94) | 94 | `"        sources = ["` | — |
+| [SRC-4397BC2CD2-L000095](../../tests/test_intent_router_integration.py#L95) | 95 | `"            _evidence(\"example.com\", plan[\"queries\"]),"` | — |
+| [SRC-4397BC2CD2-L000096](../../tests/test_intent_router_integration.py#L96) | 96 | `"            _evidence(\"example.net\", plan[\"queries\"]),"` | — |
+| [SRC-4397BC2CD2-L000097](../../tests/test_intent_router_integration.py#L97) | 97 | `"        ]"` | — |
+| [SRC-4397BC2CD2-L000098](../../tests/test_intent_router_integration.py#L98) | 98 | `"        return sources, [], _report(plan, sources)"` | — |
+| [SRC-4397BC2CD2-L000099](../../tests/test_intent_router_integration.py#L99) | 99 | `""` | — |
+| [SRC-4397BC2CD2-L000100](../../tests/test_intent_router_integration.py#L100) | 100 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
+| [SRC-4397BC2CD2-L000101](../../tests/test_intent_router_integration.py#L101) | 101 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", lambda query, source: True)"` | — |
+| [SRC-4397BC2CD2-L000102](../../tests/test_intent_router_integration.py#L102) | 102 | `"    def generate(resolved_question, *args, **kwargs):"` | — |
 | [SRC-4397BC2CD2-L000103](../../tests/test_intent_router_integration.py#L103) | 103 | `"        seen[\"generation_question\"] = resolved_question"` | — |
 | [SRC-4397BC2CD2-L000104](../../tests/test_intent_router_integration.py#L104) | 104 | `"        return \"توجد أسعار مختلفة حسب النسخة [المصدر 1].\""` | — |
 | [SRC-4397BC2CD2-L000105](../../tests/test_intent_router_integration.py#L105) | 105 | `""` | — |
@@ -782,64 +843,3 @@
 | [SRC-1521F490CA-L000069](../../tests/test_multitenant.py#L69) | 69 | `""` | — |
 | [SRC-1521F490CA-L000070](../../tests/test_multitenant.py#L70) | 70 | `"    principal = store.resolve_api_token(\"C\" * 40)"` | — |
 | [SRC-1521F490CA-L000071](../../tests/test_multitenant.py#L71) | 71 | `"    assert principal == {"` | — |
-| [SRC-1521F490CA-L000072](../../tests/test_multitenant.py#L72) | 72 | `"        \"tenant_id\": tenant_id,"` | — |
-| [SRC-1521F490CA-L000073](../../tests/test_multitenant.py#L73) | 73 | `"        \"user_id\": user_id,"` | — |
-| [SRC-1521F490CA-L000074](../../tests/test_multitenant.py#L74) | 74 | `"        \"role\": \"sales_agent\","` | — |
-| [SRC-1521F490CA-L000075](../../tests/test_multitenant.py#L75) | 75 | `"    }"` | — |
-| [SRC-1521F490CA-L000076](../../tests/test_multitenant.py#L76) | 76 | `"    assert store.resolve_api_token(\"X\" * 40) is None"` | — |
-| [SRC-1521F490CA-L000077](../../tests/test_multitenant.py#L77) | 77 | `""` | — |
-| [SRC-1521F490CA-L000078](../../tests/test_multitenant.py#L78) | 78 | `"    with store.connect() as db:"` | — |
-| [SRC-1521F490CA-L000079](../../tests/test_multitenant.py#L79) | 79 | `"        db.execute("` | — |
-| [SRC-1521F490CA-L000080](../../tests/test_multitenant.py#L80) | 80 | `"            \"UPDATE tenant_memberships SET active=0 WHERE tenant_id=? AND user_id=?\","` | — |
-| [SRC-1521F490CA-L000081](../../tests/test_multitenant.py#L81) | 81 | `"            (tenant_id, user_id),"` | — |
-| [SRC-1521F490CA-L000082](../../tests/test_multitenant.py#L82) | 82 | `"        )"` | — |
-| [SRC-1521F490CA-L000083](../../tests/test_multitenant.py#L83) | 83 | `"    assert store.resolve_api_token(\"C\" * 40) is None"` | — |
-| [SRC-1521F490CA-L000084](../../tests/test_multitenant.py#L84) | 84 | `""` | — |
-| [SRC-1521F490CA-L000085](../../tests/test_multitenant.py#L85) | 85 | `""` | — |
-| [SRC-1521F490CA-L000086](../../tests/test_multitenant.py#L86) | 86 | `"def test_legacy_single_company_database_migrates_without_losing_leads(tmp_path):"` | — |
-| [SRC-1521F490CA-L000087](../../tests/test_multitenant.py#L87) | 87 | `"    path = tmp_path / \"legacy.sqlite3\""` | — |
-| [SRC-1521F490CA-L000088](../../tests/test_multitenant.py#L88) | 88 | `"    legacy_text = \"Old lead\""` | — |
-| [SRC-1521F490CA-L000089](../../tests/test_multitenant.py#L89) | 89 | `"    legacy_url = \"https://example.test/legacy\""` | — |
-| [SRC-1521F490CA-L000090](../../tests/test_multitenant.py#L90) | 90 | `"    legacy_fingerprint = hashlib.sha256("` | — |
-| [SRC-1521F490CA-L000091](../../tests/test_multitenant.py#L91) | 91 | `"        (legacy_url.rstrip(\"/\") + \"\\n\" + normalize(legacy_text)).encode()"` | — |
-| [SRC-1521F490CA-L000092](../../tests/test_multitenant.py#L92) | 92 | `"    ).hexdigest()"` | — |
-| [SRC-1521F490CA-L000093](../../tests/test_multitenant.py#L93) | 93 | `"    with sqlite3.connect(path) as db:"` | — |
-| [SRC-1521F490CA-L000094](../../tests/test_multitenant.py#L94) | 94 | `"        db.execute("` | — |
-| [SRC-1521F490CA-L000095](../../tests/test_multitenant.py#L95) | 95 | `"            \"\"\"CREATE TABLE leads ("` | — |
-| [SRC-1521F490CA-L000096](../../tests/test_multitenant.py#L96) | 96 | `"                id TEXT PRIMARY KEY,"` | — |
-| [SRC-1521F490CA-L000097](../../tests/test_multitenant.py#L97) | 97 | `"                fingerprint TEXT UNIQUE NOT NULL,"` | — |
-| [SRC-1521F490CA-L000098](../../tests/test_multitenant.py#L98) | 98 | `"                text TEXT NOT NULL,"` | — |
-| [SRC-1521F490CA-L000099](../../tests/test_multitenant.py#L99) | 99 | `"                source_url TEXT NOT NULL,"` | — |
-| [SRC-1521F490CA-L000100](../../tests/test_multitenant.py#L100) | 100 | `"                platform TEXT NOT NULL,"` | — |
-| [SRC-1521F490CA-L000101](../../tests/test_multitenant.py#L101) | 101 | `"                observed_at TEXT NOT NULL,"` | — |
-| [SRC-1521F490CA-L000102](../../tests/test_multitenant.py#L102) | 102 | `"                assessment TEXT NOT NULL,"` | — |
-| [SRC-1521F490CA-L000103](../../tests/test_multitenant.py#L103) | 103 | `"                status TEXT NOT NULL,"` | — |
-| [SRC-1521F490CA-L000104](../../tests/test_multitenant.py#L104) | 104 | `"                note TEXT NOT NULL,"` | — |
-| [SRC-1521F490CA-L000105](../../tests/test_multitenant.py#L105) | 105 | `"                created_at TEXT NOT NULL,"` | — |
-| [SRC-1521F490CA-L000106](../../tests/test_multitenant.py#L106) | 106 | `"                updated_at TEXT NOT NULL"` | — |
-| [SRC-1521F490CA-L000107](../../tests/test_multitenant.py#L107) | 107 | `"            )\"\"\""` | — |
-| [SRC-1521F490CA-L000108](../../tests/test_multitenant.py#L108) | 108 | `"        )"` | — |
-| [SRC-1521F490CA-L000109](../../tests/test_multitenant.py#L109) | 109 | `"        db.execute("` | — |
-| [SRC-1521F490CA-L000110](../../tests/test_multitenant.py#L110) | 110 | `"            \"\"\"INSERT INTO leads VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)\"\"\","` | — |
-| [SRC-1521F490CA-L000111](../../tests/test_multitenant.py#L111) | 111 | `"            ("` | — |
-| [SRC-1521F490CA-L000112](../../tests/test_multitenant.py#L112) | 112 | `"                \"legacy-lead\", legacy_fingerprint, legacy_text,"` | — |
-| [SRC-1521F490CA-L000113](../../tests/test_multitenant.py#L113) | 113 | `"                legacy_url, \"manual\", \"2026-10-30T00:00:00Z\","` | — |
-| [SRC-1521F490CA-L000114](../../tests/test_multitenant.py#L114) | 114 | `"                '{\"score\": 0}', \"new\", \"\", \"2026-10-30T00:00:00Z\","` | — |
-| [SRC-1521F490CA-L000115](../../tests/test_multitenant.py#L115) | 115 | `"                \"2026-10-30T00:00:00Z\","` | — |
-| [SRC-1521F490CA-L000116](../../tests/test_multitenant.py#L116) | 116 | `"            ),"` | — |
-| [SRC-1521F490CA-L000117](../../tests/test_multitenant.py#L117) | 117 | `"        )"` | — |
-| [SRC-1521F490CA-L000118](../../tests/test_multitenant.py#L118) | 118 | `""` | — |
-| [SRC-1521F490CA-L000119](../../tests/test_multitenant.py#L119) | 119 | `"    store = LeadStore(path)"` | — |
-| [SRC-1521F490CA-L000120](../../tests/test_multitenant.py#L120) | 120 | `"    leads = store.list(tenant_id=DEFAULT_TENANT_ID)"` | — |
-| [SRC-1521F490CA-L000121](../../tests/test_multitenant.py#L121) | 121 | `"    assert len(leads) == 1"` | — |
-| [SRC-1521F490CA-L000122](../../tests/test_multitenant.py#L122) | 122 | `"    assert leads[0][\"id\"] == \"legacy-lead\""` | — |
-| [SRC-1521F490CA-L000123](../../tests/test_multitenant.py#L123) | 123 | `"    assert leads[0][\"tenant_id\"] == DEFAULT_TENANT_ID"` | — |
-| [SRC-1521F490CA-L000124](../../tests/test_multitenant.py#L124) | 124 | `""` | — |
-| [SRC-1521F490CA-L000125](../../tests/test_multitenant.py#L125) | 125 | `"    duplicate, created = store.add("` | — |
-| [SRC-1521F490CA-L000126](../../tests/test_multitenant.py#L126) | 126 | `"        \"Old lead\", \"https://example.test/legacy\", tenant_id=DEFAULT_TENANT_ID"` | — |
-| [SRC-1521F490CA-L000127](../../tests/test_multitenant.py#L127) | 127 | `"    )"` | — |
-| [SRC-1521F490CA-L000128](../../tests/test_multitenant.py#L128) | 128 | `"    assert created is False"` | — |
-| [SRC-1521F490CA-L000129](../../tests/test_multitenant.py#L129) | 129 | `"    assert duplicate[\"id\"] == \"legacy-lead\""` | — |
-| [SRC-1521F490CA-L000130](../../tests/test_multitenant.py#L130) | 130 | `""` | — |
-| [SRC-1521F490CA-L000131](../../tests/test_multitenant.py#L131) | 131 | `"    with store.connect() as db:"` | — |
-| [SRC-1521F490CA-L000132](../../tests/test_multitenant.py#L132) | 132 | `"        columns = {row[\"name\"] for row in db.execute(\"PRAGMA table_info(leads)\")}"` | — |

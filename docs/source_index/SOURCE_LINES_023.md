@@ -4,7 +4,7 @@
 
 - الصفحة: **023**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L000898 إلى SRC-C4C6C55E1A-L000126
+- النطاق: SRC-EEF2E6447C-L000882 إلى SRC-C4C6C55E1A-L000110
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000882](../../api/omarai.py#L882) | 882 | `"                if principal.get(\"role\") == \"viewer\":"` | — |
+| [SRC-EEF2E6447C-L000883](../../api/omarai.py#L883) | 883 | `"                    return self.respond(403, {\"error\": \"هذه العضوية للقراءة فقط؛ لا يمكنها تشغيل الاكتشاف.\"})"` | — |
+| [SRC-EEF2E6447C-L000884](../../api/omarai.py#L884) | 884 | `"                profile_id = data.get(\"profile_id\")"` | — |
+| [SRC-EEF2E6447C-L000885](../../api/omarai.py#L885) | 885 | `"                if not isinstance(profile_id, str) or not profile_id.strip():"` | — |
+| [SRC-EEF2E6447C-L000886](../../api/omarai.py#L886) | 886 | `"                    return self.respond(400, {\"error\": \"profile_id is required\"})"` | — |
+| [SRC-EEF2E6447C-L000887](../../api/omarai.py#L887) | 887 | `"                allow_optional = data.get(\"allow_optional_providers\", False)"` | — |
+| [SRC-EEF2E6447C-L000888](../../api/omarai.py#L888) | 888 | `"                if not isinstance(allow_optional, bool):"` | — |
+| [SRC-EEF2E6447C-L000889](../../api/omarai.py#L889) | 889 | `"                    return self.respond(400, {\"error\": \"allow_optional_providers must be a boolean\"})"` | — |
+| [SRC-EEF2E6447C-L000890](../../api/omarai.py#L890) | 890 | `"                if allow_optional and principal.get(\"role\") != \"owner\":"` | — |
+| [SRC-EEF2E6447C-L000891](../../api/omarai.py#L891) | 891 | `"                    return self.respond("` | — |
+| [SRC-EEF2E6447C-L000892](../../api/omarai.py#L892) | 892 | `"                        403,"` | — |
+| [SRC-EEF2E6447C-L000893](../../api/omarai.py#L893) | 893 | `"                        {\"error\": \"تفعيل موصلات البحث الاختيارية ذات الحصص متاح لمالك مساحة العمل فقط.\"},"` | — |
+| [SRC-EEF2E6447C-L000894](../../api/omarai.py#L894) | 894 | `"                    )"` | — |
+| [SRC-EEF2E6447C-L000895](../../api/omarai.py#L895) | 895 | `"                profile = self.store.get_product_profile("` | — |
+| [SRC-EEF2E6447C-L000896](../../api/omarai.py#L896) | 896 | `"                    profile_id, tenant_id=principal[\"tenant_id\"]"` | — |
+| [SRC-EEF2E6447C-L000897](../../api/omarai.py#L897) | 897 | `"                )"` | — |
 | [SRC-EEF2E6447C-L000898](../../api/omarai.py#L898) | 898 | `"                if profile is None:"` | — |
 | [SRC-EEF2E6447C-L000899](../../api/omarai.py#L899) | 899 | `"                    return self.respond(404, {\"error\": \"product profile not found\"})"` | — |
 | [SRC-EEF2E6447C-L000900](../../api/omarai.py#L900) | 900 | `"                product_data = profile[\"profile\"].get(\"product\", {})"` | — |
@@ -854,19 +870,3 @@
 | [SRC-C4C6C55E1A-L000108](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L108) | 108 | `""` | — |
 | [SRC-C4C6C55E1A-L000109](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L109) | 109 | `"### M-06 — فصل دليل الاختبارات وقبول التكامل الحي"` | — |
 | [SRC-C4C6C55E1A-L000110](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L110) | 110 | `""` | — |
-| [SRC-C4C6C55E1A-L000111](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L111) | 111 | ``"أُغلق PR #51 دون دمج. CI [39216670939](https://github.com/mosabosama2030-oss/omarai/actions/runs/39216670939) على HEAD `9d1b64a982cf50f9558a4b58c3799fd4c96bd9ec` دليل تاريخي فقط. أُضيفت مصفوفة أدلة محدثة لاحقًا في `main` ضمن توثيق #76."`` | — |
-| [SRC-C4C6C55E1A-L000112](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L112) | 112 | `""` | — |
-| [SRC-C4C6C55E1A-L000113](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L113) | 113 | `"**الاختبار الحي لموفرين على استضافة محددة: NOT_RUN.** لم يُنفذ فحص حي شامل لكل موفري البحث والنموذج. إجراءات القبول الحية قد تستهلك رصيد مزود خارجي؛ لا تُشغّل دون تفويض مناسب وتحديد البيئة والهدف."` | — |
-| [SRC-C4C6C55E1A-L000114](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L114) | 114 | `""` | — |
-| [SRC-C4C6C55E1A-L000115](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L115) | 115 | `"### M-07 — قبول الاستضافة"` | — |
-| [SRC-C4C6C55E1A-L000116](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L116) | 116 | `""` | — |
-| [SRC-C4C6C55E1A-L000117](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L117) | 117 | `"**UNKNOWN / NOT_RUN.** لا يوجد في هذه اللقطة دليل مرتبط بعنوان خدمة مستضافة وSHA منشور يمكن التحقق منه. لا يُنشأ حساب أو تُمنح صلاحية GitHub أو تُنشر الخدمة ضمن هذا التقرير."` | — |
-| [SRC-C4C6C55E1A-L000118](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L118) | 118 | `""` | — |
-| [SRC-C4C6C55E1A-L000119](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L119) | 119 | `"### M-08 — مراجعة نتيجة Grok ومراجعة مصدر مستقلة مبدئية"` | — |
-| [SRC-C4C6C55E1A-L000120](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L120) | 120 | `""` | — |
-| [SRC-C4C6C55E1A-L000121](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L121) | 121 | `"**حالة مراجعة Grok: PENDING INPUT.** لم تتوفر نتيجة تدقيق Grok النهائية أو PRs الأمنية الناتجة عنه ضمن هذه اللقطة. لا يجوز اعتبار هذه المراجعة المصدرية بديلًا عن مدقق مستقل، ولا يمكن إعلان مراجعة Grok مكتملة دون تقريره الفعلي."` | — |
-| [SRC-C4C6C55E1A-L000122](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L122) | 122 | `""` | — |
-| [SRC-C4C6C55E1A-L000123](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L123) | 123 | ``"**نتيجة فحص مصدر محدود على `main` SHA `871d2930405d164d3ae4c53f368937a4f5f01a6f`:**"`` | — |
-| [SRC-C4C6C55E1A-L000124](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L124) | 124 | `""` | — |
-| [SRC-C4C6C55E1A-L000125](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L125) | 125 | `"\| المجال \| الدليل الذي شوهد \| التقييم الحالي والحد \|"` | — |
-| [SRC-C4C6C55E1A-L000126](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L126) | 126 | `"\|---\|---\|---\|"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-61B24BEFCC-L000123 إلى SRC-676B69CB6C-L000031
+- النطاق: SRC-61B24BEFCC-L000107 إلى SRC-676B69CB6C-L000015
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-61B24BEFCC-L000107](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L107) | 107 | `"- ما يثبته الاختبار وما لا يثبته."` | — |
+| [SRC-61B24BEFCC-L000108](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L108) | 108 | `"- الحالات المستثناة أو التي لم تُنفّذ."` | — |
+| [SRC-61B24BEFCC-L000109](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L109) | 109 | `"- المسؤول عن مراجعة النتيجة ومعايير الإغلاق."` | — |
+| [SRC-61B24BEFCC-L000110](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L110) | 110 | `""` | — |
+| [SRC-61B24BEFCC-L000111](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L111) | 111 | ``"لا تُحوّل `NOT_RUN` إلى `PASS`، ولا تستخدم نجاح Mock دليلًا على توفر موفر حي."`` | — |
+| [SRC-61B24BEFCC-L000112](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L112) | 112 | `""` | — |
+| [SRC-61B24BEFCC-L000113](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L113) | 113 | `"## ملحق مصفوفة الدليل قبل الدمج — لقطة 21 أكتوبر 2026"` | — |
+| [SRC-61B24BEFCC-L000114](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L114) | 114 | `""` | — |
+| [SRC-61B24BEFCC-L000115](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L115) | 115 | `"\| الدليل \| SHA/التشغيل \| النتيجة \| ما لا يثبته \|"` | — |
+| [SRC-61B24BEFCC-L000116](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L116) | 116 | `"\|---\|---\|---\|---\|"` | — |
+| [SRC-61B24BEFCC-L000117](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L117) | 117 | `"\| اختبارات #76 / Ruff / حاوية / API محمي \| SHA 10d8a7d9f07ef3f91cbb90a5834ac6b71f963de1، تشغيل [#39650978817](https://github.com/mosabosama2030-oss/omarai/actions/runs/39650978817) \| 380 passed على Python 3.11 و380 passed على Python 3.12؛ Ruff وبناء الحاوية واختبار API المحمي ناجحة \| لا يثبت اتصال مزودي البحث/النموذج من مضيف حقيقي أو صحة كل إجابة دلاليًا \|"` | — |
+| [SRC-61B24BEFCC-L000118](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L118) | 118 | `"\| إعادة توليد وفحص الفهرس \| [#39650974507](https://github.com/mosabosama2030-oss/omarai/actions/runs/39650974507) \| ناجح \| لا يثبت خلو الفهرس من كل العيوب ولا صحة الإجابات \|"` | — |
+| [SRC-61B24BEFCC-L000119](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L119) | 119 | `"\| رأس الفهرس الحالي \| b6aadf7ea02627bbf523501bb879b0fd6705a5c8 \| ملفات فهرسة مولدة فقط بعد رأس 10d8a7d المختبر \| لا يُنسب إليه تشغيل pytest مباشر؛ تشغيل #39651004404 على الرأس نفسه كان action_required بلا jobs \|"` | — |
+| [SRC-61B24BEFCC-L000120](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L120) | 120 | `"\| Hosted smoke وSHA الخدمة \| لم يُشغّل \| NOT_RUN \| يتطلب خدمة فعلية وأسرار البيئة وموافقة على الاتصال الخارجي \|"` | — |
+| [SRC-61B24BEFCC-L000121](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L121) | 121 | `"\| اختبارات prompt injection \| اختبارات regression محلية موجودة \| دليل حتمي محدود \| ليست red-team حية شاملة \|"` | — |
+| [SRC-61B24BEFCC-L000122](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L122) | 122 | `"\| ثبات التخزين والنسخ الاحتياطي \| لم يُختبر على مضيف \| NOT_RUN \| يحتاج Volume دائمًا واختبار استعادة فعليًا \|"` | — |
 | [SRC-61B24BEFCC-L000123](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L123) | 123 | `"\| الحمل والعزل متعدد المستأجرين \| لم يُختبر \| UNKNOWN / NOT_RUN؛ تعدد المستأجرين خارج نطاق المشغّل الواحد \| لا تُستنتج السعة أو العزل من CI \|"` | — |
 | [SRC-61B24BEFCC-L000124](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L124) | 124 | `""` | — |
 | [SRC-61B24BEFCC-L000125](../OMARAI_TEST_EVIDENCE_MATRIX_AR.md#L125) | 125 | ``"عند كتابة هذا المقطع كان مرشح الإغلاق [PR #76](https://github.com/mosabosama2030-oss/omarai/pull/76) مفتوحًا على أساس `main` عند `d46a546aba97a9ca32a32c92f1cd6d8a9db2cc81`. وقد دُمج لاحقًا عبر `528a255...` كما يوضح تحديث ما بعد الدمج أعلى الوثيقة. لا تُحوّل UNKNOWN أو NOT_RUN إلى PASS دون دليل من البيئة التي سيُستخدم فيها التطبيق."`` | — |
@@ -863,19 +879,3 @@
 | [SRC-676B69CB6C-L000013](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L13) | 13 | `"## Global Constraints"` | — |
 | [SRC-676B69CB6C-L000014](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L14) | 14 | ``"- Work only on `feat/workspace-demand-discovery-2026-11-06`, based on current main SHA `a297abd271d48f459effad083a9f424a1499cd39`."`` | — |
 | [SRC-676B69CB6C-L000015](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L15) | 15 | ``"- Never trust a client-supplied `tenant_id`; use the authenticated principal."`` | — |
-| [SRC-676B69CB6C-L000016](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L16) | 16 | `"- Viewer is read-only and cannot run discovery or write product data."` | — |
-| [SRC-676B69CB6C-L000017](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L17) | 17 | `"- Paid/optional search providers must stay disabled by default in this workflow."` | — |
-| [SRC-676B69CB6C-L000018](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L18) | 18 | ``"- Save a source as a demand signal only when the server-side stored run labels it `public_demand_signal`."`` | — |
-| [SRC-676B69CB6C-L000019](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L19) | 19 | `"- Preserve publication date, event date, and observation time as distinct/unknown where not supplied."` | — |
-| [SRC-676B69CB6C-L000020](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L20) | 20 | `"- No secrets, hosting configuration changes, production deployment, or PR merge."` | — |
-| [SRC-676B69CB6C-L000021](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L21) | 21 | `"- Do not activate UI modules without real API contracts."` | — |
-| [SRC-676B69CB6C-L000022](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L22) | 22 | `""` | — |
-| [SRC-676B69CB6C-L000023](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L23) | 23 | `"## Review Focus"` | — |
-| [SRC-676B69CB6C-L000024](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L24) | 24 | `"- Cross-tenant product-profile/run access using guessed IDs."` | — |
-| [SRC-676B69CB6C-L000025](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L25) | 25 | `"- Viewer attempts to create profiles, discover, or save a signal."` | — |
-| [SRC-676B69CB6C-L000026](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L26) | 26 | `"- Malformed arrays, oversized product text, invalid locale, empty query plan, and duplicate product profiles."` | — |
-| [SRC-676B69CB6C-L000027](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L27) | 27 | `"- Optional connectors with configured API keys but no explicit per-run owner approval."` | — |
-| [SRC-676B69CB6C-L000028](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L28) | 28 | `"- Discovery results containing related listings, negative intent, or no qualified buyer signal."` | — |
-| [SRC-676B69CB6C-L000029](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L29) | 29 | `"- Browser attempting to save an unrelated result or alter a server-side qualification label."` | — |
-| [SRC-676B69CB6C-L000030](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L30) | 30 | `""` | — |
-| [SRC-676B69CB6C-L000031](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L31) | 31 | `"---"` | — |

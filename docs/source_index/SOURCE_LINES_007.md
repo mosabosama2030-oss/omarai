@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-59CF4B7DE8-L000556 إلى SRC-3AA6165B18-L000053
+- النطاق: SRC-59CF4B7DE8-L000545 إلى SRC-3AA6165B18-L000042
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-59CF4B7DE8-L000545](../../agents/research.py#L545) | 545 | `"        \"reddit.com\": \"reddit\", \"old.reddit.com\": \"reddit\","` | — |
+| [SRC-59CF4B7DE8-L000546](../../agents/research.py#L546) | 546 | `"        \"youtube.com\": \"youtube\", \"youtu.be\": \"youtube\","` | — |
+| [SRC-59CF4B7DE8-L000547](../../agents/research.py#L547) | 547 | `"        \"facebook.com\": \"facebook\", \"instagram.com\": \"instagram\","` | — |
+| [SRC-59CF4B7DE8-L000548](../../agents/research.py#L548) | 548 | `"        \"x.com\": \"x\", \"twitter.com\": \"x\", \"tiktok.com\": \"tiktok\","` | — |
+| [SRC-59CF4B7DE8-L000549](../../agents/research.py#L549) | 549 | `"        \"linkedin.com\": \"linkedin\", \"threads.net\": \"threads\","` | — |
+| [SRC-59CF4B7DE8-L000550](../../agents/research.py#L550) | 550 | `"        \"bsky.app\": \"bluesky\","` | — |
+| [SRC-59CF4B7DE8-L000551](../../agents/research.py#L551) | 551 | `"    }"` | — |
+| [SRC-59CF4B7DE8-L000552](../../agents/research.py#L552) | 552 | `"    for domain, label in mapping.items():"` | — |
+| [SRC-59CF4B7DE8-L000553](../../agents/research.py#L553) | 553 | `"        if host == domain or host.endswith(\".\" + domain):"` | — |
+| [SRC-59CF4B7DE8-L000554](../../agents/research.py#L554) | 554 | `"            platform = label"` | — |
+| [SRC-59CF4B7DE8-L000555](../../agents/research.py#L555) | 555 | `"            break"` | — |
 | [SRC-59CF4B7DE8-L000556](../../agents/research.py#L556) | 556 | `"    trust = \"general\""` | — |
 | [SRC-59CF4B7DE8-L000557](../../agents/research.py#L557) | 557 | `"    if host.endswith((\".gov\", \".gov.eg\", \".gov.uk\")):"` | — |
 | [SRC-59CF4B7DE8-L000558](../../agents/research.py#L558) | 558 | `"        trust = \"government\""` | — |
@@ -823,14 +834,3 @@
 | [SRC-3AA6165B18-L000040](../../agents/research_guardrails.py#L40) | 40 | `"_GOVERNMENT_ENTITY_WORDS = ("` | — |
 | [SRC-3AA6165B18-L000041](../../agents/research_guardrails.py#L41) | 41 | `"    \"وزارة\", \"الوزارة\", \"وزاره\", \"هيئة حكومية\", \"جهة حكومية\", \"مصلحة حكومية\","` | — |
 | [SRC-3AA6165B18-L000042](../../agents/research_guardrails.py#L42) | 42 | `"    \"ministry\", \"government agency\", \"government ministry\", \"department of\","` | — |
-| [SRC-3AA6165B18-L000043](../../agents/research_guardrails.py#L43) | 43 | `")"` | — |
-| [SRC-3AA6165B18-L000044](../../agents/research_guardrails.py#L44) | 44 | `"_TODAY_WORDS = ("` | — |
-| [SRC-3AA6165B18-L000045](../../agents/research_guardrails.py#L45) | 45 | `"    \"اليوم\", \"النهارده\", \"النهاردة\", \"دلوقتي\", \"الآن\", \"حاليا\","` | — |
-| [SRC-3AA6165B18-L000046](../../agents/research_guardrails.py#L46) | 46 | `"    \"today\", \"right now\", \"currently\", \"current hours\","` | — |
-| [SRC-3AA6165B18-L000047](../../agents/research_guardrails.py#L47) | 47 | `")"` | — |
-| [SRC-3AA6165B18-L000048](../../agents/research_guardrails.py#L48) | 48 | `"_PROMOTION_TERMS = ("` | — |
-| [SRC-3AA6165B18-L000049](../../agents/research_guardrails.py#L49) | 49 | `"    \"للبيع\", \"للايجار\", \"للإيجار\", \"تواصل معنا\", \"اتصل الآن\", \"واتساب\","` | — |
-| [SRC-3AA6165B18-L000050](../../agents/research_guardrails.py#L50) | 50 | `"    \"للحجز\", \"اشتر الآن\", \"اطلب الآن\", \"خصم\", \"عرض خاص\", \"السعر يبدأ\","` | — |
-| [SRC-3AA6165B18-L000051](../../agents/research_guardrails.py#L51) | 51 | `"    \"for sale\", \"contact us\", \"call now\", \"whatsapp\", \"buy now\", \"shop now\","` | — |
-| [SRC-3AA6165B18-L000052](../../agents/research_guardrails.py#L52) | 52 | `"    \"special offer\", \"discount\", \"sponsored\", \"affiliate\","` | — |
-| [SRC-3AA6165B18-L000053](../../agents/research_guardrails.py#L53) | 53 | `")"` | — |

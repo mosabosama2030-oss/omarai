@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000906 إلى SRC-6B37B7D6D3-L000048
+- النطاق: SRC-3451CC474D-L000890 إلى SRC-6B37B7D6D3-L000032
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000890](../../tests/test_api.py#L890) | 890 | `""` | — |
+| [SRC-3451CC474D-L000891](../../tests/test_api.py#L891) | 891 | `"def test_health_exposes_only_validated_image_baked_sha(monkeypatch, tmp_path):"` | — |
+| [SRC-3451CC474D-L000892](../../tests/test_api.py#L892) | 892 | `"    import api.omarai as api_module"` | — |
+| [SRC-3451CC474D-L000893](../../tests/test_api.py#L893) | 893 | `""` | — |
+| [SRC-3451CC474D-L000894](../../tests/test_api.py#L894) | 894 | `"    build_sha_file = tmp_path / \"BUILD_SHA\""` | — |
+| [SRC-3451CC474D-L000895](../../tests/test_api.py#L895) | 895 | `"    monkeypatch.setattr(api_module, \"BUILD_SHA_FILE\", build_sha_file)"` | — |
+| [SRC-3451CC474D-L000896](../../tests/test_api.py#L896) | 896 | `"    assert api_module._build_sha() == \"unknown\""` | — |
+| [SRC-3451CC474D-L000897](../../tests/test_api.py#L897) | 897 | `"    build_sha_file.write_text(\"a\" * 40, encoding=\"ascii\")"` | — |
+| [SRC-3451CC474D-L000898](../../tests/test_api.py#L898) | 898 | `"    assert api_module._build_sha() == \"a\" * 40"` | — |
+| [SRC-3451CC474D-L000899](../../tests/test_api.py#L899) | 899 | `"    build_sha_file.write_text(\"not-a-git-sha\", encoding=\"ascii\")"` | — |
+| [SRC-3451CC474D-L000900](../../tests/test_api.py#L900) | 900 | `"    assert api_module._build_sha() == \"unknown\""` | — |
+| [SRC-3451CC474D-L000901](../../tests/test_api.py#L901) | 901 | `""` | — |
+| [SRC-3451CC474D-L000902](../../tests/test_api.py#L902) | 902 | `""` | — |
+| [SRC-3451CC474D-L000903](../../tests/test_api.py#L903) | 903 | `""` | — |
+| [SRC-3451CC474D-L000904](../../tests/test_api.py#L904) | 904 | `"@pytest.mark.parametrize("` | — |
+| [SRC-3451CC474D-L000905](../../tests/test_api.py#L905) | 905 | `"    (\"variable\", \"source\"),"` | — |
 | [SRC-3451CC474D-L000906](../../tests/test_api.py#L906) | 906 | `"    ["` | — |
 | [SRC-3451CC474D-L000907](../../tests/test_api.py#L907) | 907 | `"        (\"RAILWAY_GIT_COMMIT_SHA\", \"platform:railway\"),"` | — |
 | [SRC-3451CC474D-L000908](../../tests/test_api.py#L908) | 908 | `"        (\"RENDER_GIT_COMMIT\", \"platform:render\"),"` | — |
@@ -818,19 +834,3 @@
 | [SRC-6B37B7D6D3-L000030](../../tests/test_claim_evidence_metadata.py#L30) | 30 | `"            \"url\": \"https://example.org/census\","` | — |
 | [SRC-6B37B7D6D3-L000031](../../tests/test_claim_evidence_metadata.py#L31) | 31 | `"            \"title\": \"Population table\","` | — |
 | [SRC-6B37B7D6D3-L000032](../../tests/test_claim_evidence_metadata.py#L32) | 32 | `"            \"publisher\": \"Example Statistics Office\","` | — |
-| [SRC-6B37B7D6D3-L000033](../../tests/test_claim_evidence_metadata.py#L33) | 33 | `"            \"snippet\": \"Population estimate.\","` | — |
-| [SRC-6B37B7D6D3-L000034](../../tests/test_claim_evidence_metadata.py#L34) | 34 | `"        },"` | — |
-| [SRC-6B37B7D6D3-L000035](../../tests/test_claim_evidence_metadata.py#L35) | 35 | `"        claim_text=\"عدد سكان القاهرة الكبرى\","` | — |
-| [SRC-6B37B7D6D3-L000036](../../tests/test_claim_evidence_metadata.py#L36) | 36 | `"    )"` | — |
-| [SRC-6B37B7D6D3-L000037](../../tests/test_claim_evidence_metadata.py#L37) | 37 | `""` | — |
-| [SRC-6B37B7D6D3-L000038](../../tests/test_claim_evidence_metadata.py#L38) | 38 | `"    assert result[\"status\"] == \"metadata_incomplete\""` | — |
-| [SRC-6B37B7D6D3-L000039](../../tests/test_claim_evidence_metadata.py#L39) | 39 | `"    assert \"publication_date\" in result[\"required_fields_missing\"]"` | — |
-| [SRC-6B37B7D6D3-L000040](../../tests/test_claim_evidence_metadata.py#L40) | 40 | `"    assert \"data_reference_period_for_population_claim\" in result[\"required_fields_missing\"]"` | — |
-| [SRC-6B37B7D6D3-L000041](../../tests/test_claim_evidence_metadata.py#L41) | 41 | `"    assert \"geographic_scope_for_population_claim\" in result[\"required_fields_missing\"]"` | — |
-| [SRC-6B37B7D6D3-L000042](../../tests/test_claim_evidence_metadata.py#L42) | 42 | `""` | — |
-| [SRC-6B37B7D6D3-L000043](../../tests/test_claim_evidence_metadata.py#L43) | 43 | `""` | — |
-| [SRC-6B37B7D6D3-L000044](../../tests/test_claim_evidence_metadata.py#L44) | 44 | `"def test_source_metadata_rejects_non_http_urls_and_urls_with_credentials():"` | — |
-| [SRC-6B37B7D6D3-L000045](../../tests/test_claim_evidence_metadata.py#L45) | 45 | `"    for url in (\"javascript:alert(1)\", \"https://user:password@example.org/data\"):"` | — |
-| [SRC-6B37B7D6D3-L000046](../../tests/test_claim_evidence_metadata.py#L46) | 46 | `"        result = audit_source_metadata("` | — |
-| [SRC-6B37B7D6D3-L000047](../../tests/test_claim_evidence_metadata.py#L47) | 47 | `"            {"` | — |
-| [SRC-6B37B7D6D3-L000048](../../tests/test_claim_evidence_metadata.py#L48) | 48 | `"                \"url\": url,"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **011**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L000668 إلى SRC-686F71AA50-L001467
+- النطاق: SRC-686F71AA50-L000657 إلى SRC-686F71AA50-L001456
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L000657](../../agents/task_understanding.py#L657) | 657 | `"            \"separate_proposed_steps_from_completed_actions\","` | — |
+| [SRC-686F71AA50-L000658](../../agents/task_understanding.py#L658) | 658 | `"        ]"` | — |
+| [SRC-686F71AA50-L000659](../../agents/task_understanding.py#L659) | 659 | `"        query_strategies = [\"goal_and_constraints\", \"dependency_order\", \"risks_and_fallbacks\"]"` | — |
+| [SRC-686F71AA50-L000660](../../agents/task_understanding.py#L660) | 660 | `"    elif family == \"creative_generation\":"` | — |
+| [SRC-686F71AA50-L000661](../../agents/task_understanding.py#L661) | 661 | `"        evidence_requirements = ["` | — |
+| [SRC-686F71AA50-L000662](../../agents/task_understanding.py#L662) | 662 | `"            \"follow_requested_genre_voice_and_constraints\","` | — |
+| [SRC-686F71AA50-L000663](../../agents/task_understanding.py#L663) | 663 | `"            \"do_not_present_invented_story_details_as_real_facts\","` | — |
+| [SRC-686F71AA50-L000664](../../agents/task_understanding.py#L664) | 664 | `"            \"preserve_explicit_content_boundaries\","` | — |
+| [SRC-686F71AA50-L000665](../../agents/task_understanding.py#L665) | 665 | `"        ]"` | — |
+| [SRC-686F71AA50-L000666](../../agents/task_understanding.py#L666) | 666 | `"        query_strategies = [\"genre_and_voice\", \"creative_constraints\", \"revision_options\"]"` | — |
+| [SRC-686F71AA50-L000667](../../agents/task_understanding.py#L667) | 667 | `"    else:"` | — |
 | [SRC-686F71AA50-L000668](../../agents/task_understanding.py#L668) | 668 | `"        evidence_requirements = ["` | — |
 | [SRC-686F71AA50-L000669](../../agents/task_understanding.py#L669) | 669 | `"            \"match_sources_to_the_question\","` | — |
 | [SRC-686F71AA50-L000670](../../agents/task_understanding.py#L670) | 670 | `"            \"distinguish_search_snippet_from_read_page\","` | — |
@@ -805,14 +816,3 @@
 | [SRC-686F71AA50-L001454](../../agents/task_understanding.py#L1454) | 1454 | `"    ]"` | — |
 | [SRC-686F71AA50-L001455](../../agents/task_understanding.py#L1455) | 1455 | `"    raw_secondary = clean_list(value.get(\"secondary_task_types\"), items=16, chars=80)"` | — |
 | [SRC-686F71AA50-L001456](../../agents/task_understanding.py#L1456) | 1456 | `"    spec = {"` | — |
-| [SRC-686F71AA50-L001457](../../agents/task_understanding.py#L1457) | 1457 | `"        \"schema\": \"omarai.task_spec.v1\","` | — |
-| [SRC-686F71AA50-L001458](../../agents/task_understanding.py#L1458) | 1458 | `"        \"task_family\": raw_family if raw_family in allowed_families else \"general_question\","` | — |
-| [SRC-686F71AA50-L001459](../../agents/task_understanding.py#L1459) | 1459 | `"        \"mode\": raw_mode if raw_mode in SUPPORTED_MODES else \"auto\","` | — |
-| [SRC-686F71AA50-L001460](../../agents/task_understanding.py#L1460) | 1460 | `"        \"intent_route\": raw_route if raw_route in allowed_routes else \"unassessed\","` | — |
-| [SRC-686F71AA50-L001461](../../agents/task_understanding.py#L1461) | 1461 | `"        \"classification_method\": clean_text(value.get(\"classification_method\"), 100),"` | — |
-| [SRC-686F71AA50-L001462](../../agents/task_understanding.py#L1462) | 1462 | `"        \"classification_is_probability\": False,"` | — |
-| [SRC-686F71AA50-L001463](../../agents/task_understanding.py#L1463) | 1463 | `"        \"ambiguity_status\": clean_text(value.get(\"ambiguity_status\"), 80) or \"unassessed\","` | — |
-| [SRC-686F71AA50-L001464](../../agents/task_understanding.py#L1464) | 1464 | `"        \"missing_required_inputs\": ["` | — |
-| [SRC-686F71AA50-L001465](../../agents/task_understanding.py#L1465) | 1465 | `"            item for item in clean_list(value.get(\"missing_required_inputs\"), items=8, chars=100)"` | — |
-| [SRC-686F71AA50-L001466](../../agents/task_understanding.py#L1466) | 1466 | `"            if item in {"` | — |
-| [SRC-686F71AA50-L001467](../../agents/task_understanding.py#L1467) | 1467 | `"                \"unresolved_referent_or_incomplete_request\","` | — |

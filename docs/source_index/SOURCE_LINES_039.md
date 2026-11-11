@@ -4,7 +4,7 @@
 
 - الصفحة: **039**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4FFD5AFC54-L000546 إلى SRC-90FAA34ADE-L000228
+- النطاق: SRC-4FFD5AFC54-L000530 إلى SRC-90FAA34ADE-L000212
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4FFD5AFC54-L000530](../../scripts/run_answer_quality_benchmark.py#L530) | 530 | `"    timeout: float,"` | — |
+| [SRC-4FFD5AFC54-L000531](../../scripts/run_answer_quality_benchmark.py#L531) | 531 | `"    delay: float,"` | — |
+| [SRC-4FFD5AFC54-L000532](../../scripts/run_answer_quality_benchmark.py#L532) | 532 | `"    out_path: Path \| None,"` | — |
+| [SRC-4FFD5AFC54-L000533](../../scripts/run_answer_quality_benchmark.py#L533) | 533 | `"    build_sha: str \| None = None,"` | — |
+| [SRC-4FFD5AFC54-L000534](../../scripts/run_answer_quality_benchmark.py#L534) | 534 | `"    request_costs_path: Path \| None = None,"` | — |
+| [SRC-4FFD5AFC54-L000535](../../scripts/run_answer_quality_benchmark.py#L535) | 535 | `") -> int:"` | — |
+| [SRC-4FFD5AFC54-L000536](../../scripts/run_answer_quality_benchmark.py#L536) | 536 | `"    data = load_corpus(corpus_path)"` | — |
+| [SRC-4FFD5AFC54-L000537](../../scripts/run_answer_quality_benchmark.py#L537) | 537 | `"    problems = validate_corpus(data)"` | — |
+| [SRC-4FFD5AFC54-L000538](../../scripts/run_answer_quality_benchmark.py#L538) | 538 | `"    if problems:"` | — |
+| [SRC-4FFD5AFC54-L000539](../../scripts/run_answer_quality_benchmark.py#L539) | 539 | `"        print(\"Corpus invalid; refusing live run:\")"` | — |
+| [SRC-4FFD5AFC54-L000540](../../scripts/run_answer_quality_benchmark.py#L540) | 540 | `"        for p in problems:"` | — |
+| [SRC-4FFD5AFC54-L000541](../../scripts/run_answer_quality_benchmark.py#L541) | 541 | `"            print(\" -\", p)"` | — |
+| [SRC-4FFD5AFC54-L000542](../../scripts/run_answer_quality_benchmark.py#L542) | 542 | `"        return 2"` | — |
+| [SRC-4FFD5AFC54-L000543](../../scripts/run_answer_quality_benchmark.py#L543) | 543 | `""` | — |
+| [SRC-4FFD5AFC54-L000544](../../scripts/run_answer_quality_benchmark.py#L544) | 544 | `"    try:"` | — |
+| [SRC-4FFD5AFC54-L000545](../../scripts/run_answer_quality_benchmark.py#L545) | 545 | `"        full_case_ids = {case.get(\"case_id\") for case in data.get(\"cases\", []) if isinstance(case, dict)}"` | — |
 | [SRC-4FFD5AFC54-L000546](../../scripts/run_answer_quality_benchmark.py#L546) | 546 | `"        request_costs, request_cost_source = _load_request_cost_ledger(request_costs_path, full_case_ids)"` | — |
 | [SRC-4FFD5AFC54-L000547](../../scripts/run_answer_quality_benchmark.py#L547) | 547 | `"    except (OSError, ValueError, TypeError, json.JSONDecodeError) as exc:"` | — |
 | [SRC-4FFD5AFC54-L000548](../../scripts/run_answer_quality_benchmark.py#L548) | 548 | `"        print(f\"Invalid request-cost ledger; refusing live run: {exc}\", file=sys.stderr)"` | — |
@@ -827,19 +843,3 @@
 | [SRC-90FAA34ADE-L000210](../../tests/fixtures/answer_quality_cases.json#L210) | 210 | `"        \"type\": \"controlled_search\","` | — |
 | [SRC-90FAA34ADE-L000211](../../tests/fixtures/answer_quality_cases.json#L211) | 211 | `"        \"sources\": [],"` | — |
 | [SRC-90FAA34ADE-L000212](../../tests/fixtures/answer_quality_cases.json#L212) | 212 | `"        \"notes\": \"Empty results path also valid if agent abstains\""` | — |
-| [SRC-90FAA34ADE-L000213](../../tests/fixtures/answer_quality_cases.json#L213) | 213 | `"      },"` | — |
-| [SRC-90FAA34ADE-L000214](../../tests/fixtures/answer_quality_cases.json#L214) | 214 | `"      \"failure_conditions\": ["` | — |
-| [SRC-90FAA34ADE-L000215](../../tests/fixtures/answer_quality_cases.json#L215) | 215 | `"        \"Invented news items without URLs\""` | — |
-| [SRC-90FAA34ADE-L000216](../../tests/fixtures/answer_quality_cases.json#L216) | 216 | `"      ],"` | — |
-| [SRC-90FAA34ADE-L000217](../../tests/fixtures/answer_quality_cases.json#L217) | 217 | `"      \"evaluation_mode\": \"human_judgment\""` | — |
-| [SRC-90FAA34ADE-L000218](../../tests/fixtures/answer_quality_cases.json#L218) | 218 | `"    },"` | — |
-| [SRC-90FAA34ADE-L000219](../../tests/fixtures/answer_quality_cases.json#L219) | 219 | `"    {"` | — |
-| [SRC-90FAA34ADE-L000220](../../tests/fixtures/answer_quality_cases.json#L220) | 220 | `"      \"case_id\": \"AQ-009\","` | — |
-| [SRC-90FAA34ADE-L000221](../../tests/fixtures/answer_quality_cases.json#L221) | 221 | `"      \"category\": \"multi_subquestions\","` | — |
-| [SRC-90FAA34ADE-L000222](../../tests/fixtures/answer_quality_cases.json#L222) | 222 | `"      \"language\": \"ar-EG\","` | — |
-| [SRC-90FAA34ADE-L000223](../../tests/fixtures/answer_quality_cases.json#L223) | 223 | `"      \"question\": \"قولي ثلاث حاجات: ١) ايه الفرق بين الإيجار والتمليك في مصر باختصار ٢) ايه المخاطر القانونية الشائعة ٣) ازاي اتأكد من عقد الإيجار\","` | — |
-| [SRC-90FAA34ADE-L000224](../../tests/fixtures/answer_quality_cases.json#L224) | 224 | `"      \"expected_strategy\": \"web_search\","` | — |
-| [SRC-90FAA34ADE-L000225](../../tests/fixtures/answer_quality_cases.json#L225) | 225 | `"      \"required_behaviors\": ["` | — |
-| [SRC-90FAA34ADE-L000226](../../tests/fixtures/answer_quality_cases.json#L226) | 226 | `"        \"Addresses all three parts or explicitly marks which parts lack evidence\","` | — |
-| [SRC-90FAA34ADE-L000227](../../tests/fixtures/answer_quality_cases.json#L227) | 227 | `"        \"Does not drop part 3 silently\""` | — |
-| [SRC-90FAA34ADE-L000228](../../tests/fixtures/answer_quality_cases.json#L228) | 228 | `"      ],"` | — |

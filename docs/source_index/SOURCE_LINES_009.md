@@ -4,7 +4,7 @@
 
 - الصفحة: **009**
 - سجلات الأسطر: **800**
-- النطاق: SRC-8D00DCEC0D-L000309 إلى SRC-086D574B4E-L000257
+- النطاق: SRC-8D00DCEC0D-L000298 إلى SRC-086D574B4E-L000246
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-8D00DCEC0D-L000298](../../agents/sales_domain.py#L298) | 298 | `"    customer_types: tuple[str, ...] = ()"` | — |
+| [SRC-8D00DCEC0D-L000299](../../agents/sales_domain.py#L299) | 299 | `"    decision_roles: tuple[str, ...] = ()"` | — |
+| [SRC-8D00DCEC0D-L000300](../../agents/sales_domain.py#L300) | 300 | `"    exclusions: tuple[str, ...] = ()"` | — |
+| [SRC-8D00DCEC0D-L000301](../../agents/sales_domain.py#L301) | 301 | `""` | — |
+| [SRC-8D00DCEC0D-L000302](../../agents/sales_domain.py#L302) | 302 | `"    def __post_init__(self) -> None:"` | — |
+| [SRC-8D00DCEC0D-L000303](../../agents/sales_domain.py#L303) | 303 | `"        for name in (\"locations\", \"industries\", \"customer_types\", \"decision_roles\", \"exclusions\"):"` | — |
+| [SRC-8D00DCEC0D-L000304](../../agents/sales_domain.py#L304) | 304 | `"            object.__setattr__("` | — |
+| [SRC-8D00DCEC0D-L000305](../../agents/sales_domain.py#L305) | 305 | `"                self,"` | — |
+| [SRC-8D00DCEC0D-L000306](../../agents/sales_domain.py#L306) | 306 | `"                name,"` | — |
+| [SRC-8D00DCEC0D-L000307](../../agents/sales_domain.py#L307) | 307 | `"                _clean_terms(getattr(self, name), field_name=name),"` | — |
+| [SRC-8D00DCEC0D-L000308](../../agents/sales_domain.py#L308) | 308 | `"            )"` | — |
 | [SRC-8D00DCEC0D-L000309](../../agents/sales_domain.py#L309) | 309 | `""` | — |
 | [SRC-8D00DCEC0D-L000310](../../agents/sales_domain.py#L310) | 310 | `"    def to_dict(self) -> dict[str, list[str]]:"` | — |
 | [SRC-8D00DCEC0D-L000311](../../agents/sales_domain.py#L311) | 311 | `"        return {"` | — |
@@ -823,14 +834,3 @@
 | [SRC-086D574B4E-L000244](../../agents/semantic_claim_verifier.py#L244) | 244 | `"                return _not_verifiable(\"deterministic_source_provenance_failed\", prepared.get(\"ledger\"))"` | — |
 | [SRC-086D574B4E-L000245](../../agents/semantic_claim_verifier.py#L245) | 245 | `"            if metadata.get(\"population_scope_required\") is True and ("` | — |
 | [SRC-086D574B4E-L000246](../../agents/semantic_claim_verifier.py#L246) | 246 | `"                \"data_reference_period_for_population_claim\" in missing"` | — |
-| [SRC-086D574B4E-L000247](../../agents/semantic_claim_verifier.py#L247) | 247 | `"                or \"geographic_scope_for_population_claim\" in missing"` | — |
-| [SRC-086D574B4E-L000248](../../agents/semantic_claim_verifier.py#L248) | 248 | `"            ):"` | — |
-| [SRC-086D574B4E-L000249](../../agents/semantic_claim_verifier.py#L249) | 249 | `"                return _not_verifiable(\"population_scope_metadata_incomplete\", prepared.get(\"ledger\"))"` | — |
-| [SRC-086D574B4E-L000250](../../agents/semantic_claim_verifier.py#L250) | 250 | `"    return {\"status\": \"passed\", \"reason\": None}"` | — |
-| [SRC-086D574B4E-L000251](../../agents/semantic_claim_verifier.py#L251) | 251 | `""` | — |
-| [SRC-086D574B4E-L000252](../../agents/semantic_claim_verifier.py#L252) | 252 | `""` | — |
-| [SRC-086D574B4E-L000253](../../agents/semantic_claim_verifier.py#L253) | 253 | `"def parse_semantic_verification_response("` | — |
-| [SRC-086D574B4E-L000254](../../agents/semantic_claim_verifier.py#L254) | 254 | `"    raw_response: str,"` | — |
-| [SRC-086D574B4E-L000255](../../agents/semantic_claim_verifier.py#L255) | 255 | `"    prepared: dict[str, Any],"` | — |
-| [SRC-086D574B4E-L000256](../../agents/semantic_claim_verifier.py#L256) | 256 | `") -> dict[str, Any]:"` | — |
-| [SRC-086D574B4E-L000257](../../agents/semantic_claim_verifier.py#L257) | 257 | `"    \"\"\"Parse and validate a strict one-row-per-claim assessment; fail closed.\"\"\""` | — |

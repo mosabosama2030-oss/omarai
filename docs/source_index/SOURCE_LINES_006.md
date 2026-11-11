@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-FDEEAFDFCA-L000068 إلى SRC-59CF4B7DE8-L000555
+- النطاق: SRC-FDEEAFDFCA-L000057 إلى SRC-59CF4B7DE8-L000544
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-FDEEAFDFCA-L000057](../../agents/request_budget.py#L57) | 57 | `"        timeout_seconds: int = DEFAULT_TIMEOUT_SECONDS,"` | — |
+| [SRC-FDEEAFDFCA-L000058](../../agents/request_budget.py#L58) | 58 | `"        limits: Mapping[str, int] \| None = None,"` | — |
+| [SRC-FDEEAFDFCA-L000059](../../agents/request_budget.py#L59) | 59 | `"        clock: Callable[[], float] = time.monotonic,"` | — |
+| [SRC-FDEEAFDFCA-L000060](../../agents/request_budget.py#L60) | 60 | `"        profile: str = \"default\","` | — |
+| [SRC-FDEEAFDFCA-L000061](../../agents/request_budget.py#L61) | 61 | `"    ) -> None:"` | — |
+| [SRC-FDEEAFDFCA-L000062](../../agents/request_budget.py#L62) | 62 | `"        self._clock = clock"` | — |
+| [SRC-FDEEAFDFCA-L000063](../../agents/request_budget.py#L63) | 63 | `"        self.profile = profile"` | — |
+| [SRC-FDEEAFDFCA-L000064](../../agents/request_budget.py#L64) | 64 | `"        bounded_timeout = max(10, min(int(timeout_seconds), MAX_TIMEOUT_SECONDS))"` | — |
+| [SRC-FDEEAFDFCA-L000065](../../agents/request_budget.py#L65) | 65 | `"        self.started_at = clock()"` | — |
+| [SRC-FDEEAFDFCA-L000066](../../agents/request_budget.py#L66) | 66 | `"        self.deadline = self.started_at + bounded_timeout"` | — |
+| [SRC-FDEEAFDFCA-L000067](../../agents/request_budget.py#L67) | 67 | `"        self._limits = {"` | — |
 | [SRC-FDEEAFDFCA-L000068](../../agents/request_budget.py#L68) | 68 | `"            key: max(0, min(int(value), RESOURCE_LIMITS[key][1]))"` | — |
 | [SRC-FDEEAFDFCA-L000069](../../agents/request_budget.py#L69) | 69 | `"            for key, (default, _maximum) in RESOURCE_LIMITS.items()"` | — |
 | [SRC-FDEEAFDFCA-L000070](../../agents/request_budget.py#L70) | 70 | `"            for value in [limits[key] if limits and key in limits else default]"` | — |
@@ -823,14 +834,3 @@
 | [SRC-59CF4B7DE8-L000542](../../agents/research.py#L542) | 542 | `"    host = (urlparse(url).hostname or \"\").lower().removeprefix(\"www.\")"` | — |
 | [SRC-59CF4B7DE8-L000543](../../agents/research.py#L543) | 543 | `"    platform = \"web\""` | — |
 | [SRC-59CF4B7DE8-L000544](../../agents/research.py#L544) | 544 | `"    mapping = {"` | — |
-| [SRC-59CF4B7DE8-L000545](../../agents/research.py#L545) | 545 | `"        \"reddit.com\": \"reddit\", \"old.reddit.com\": \"reddit\","` | — |
-| [SRC-59CF4B7DE8-L000546](../../agents/research.py#L546) | 546 | `"        \"youtube.com\": \"youtube\", \"youtu.be\": \"youtube\","` | — |
-| [SRC-59CF4B7DE8-L000547](../../agents/research.py#L547) | 547 | `"        \"facebook.com\": \"facebook\", \"instagram.com\": \"instagram\","` | — |
-| [SRC-59CF4B7DE8-L000548](../../agents/research.py#L548) | 548 | `"        \"x.com\": \"x\", \"twitter.com\": \"x\", \"tiktok.com\": \"tiktok\","` | — |
-| [SRC-59CF4B7DE8-L000549](../../agents/research.py#L549) | 549 | `"        \"linkedin.com\": \"linkedin\", \"threads.net\": \"threads\","` | — |
-| [SRC-59CF4B7DE8-L000550](../../agents/research.py#L550) | 550 | `"        \"bsky.app\": \"bluesky\","` | — |
-| [SRC-59CF4B7DE8-L000551](../../agents/research.py#L551) | 551 | `"    }"` | — |
-| [SRC-59CF4B7DE8-L000552](../../agents/research.py#L552) | 552 | `"    for domain, label in mapping.items():"` | — |
-| [SRC-59CF4B7DE8-L000553](../../agents/research.py#L553) | 553 | `"        if host == domain or host.endswith(\".\" + domain):"` | — |
-| [SRC-59CF4B7DE8-L000554](../../agents/research.py#L554) | 554 | `"            platform = label"` | — |
-| [SRC-59CF4B7DE8-L000555](../../agents/research.py#L555) | 555 | `"            break"` | — |

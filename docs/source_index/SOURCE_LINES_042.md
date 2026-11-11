@@ -4,7 +4,7 @@
 
 - الصفحة: **042**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6A7519AC10-L000043 إلى SRC-B3062EB677-L000124
+- النطاق: SRC-6A7519AC10-L000027 إلى SRC-B3062EB677-L000108
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6A7519AC10-L000027](../../tests/test_answer_quality_comparison.py#L27) | 27 | `"        \"build_sha\": build_sha,"` | — |
+| [SRC-6A7519AC10-L000028](../../tests/test_answer_quality_comparison.py#L28) | 28 | `"        \"executed_at_utc\": \"2026-10-29T12:00:00+00:00\","` | — |
+| [SRC-6A7519AC10-L000029](../../tests/test_answer_quality_comparison.py#L29) | 29 | `"        \"results\": results,"` | — |
+| [SRC-6A7519AC10-L000030](../../tests/test_answer_quality_comparison.py#L30) | 30 | `"    }"` | — |
+| [SRC-6A7519AC10-L000031](../../tests/test_answer_quality_comparison.py#L31) | 31 | `""` | — |
+| [SRC-6A7519AC10-L000032](../../tests/test_answer_quality_comparison.py#L32) | 32 | `""` | — |
+| [SRC-6A7519AC10-L000033](../../tests/test_answer_quality_comparison.py#L33) | 33 | `"def _row(case_id: str, *, latency: float, tool_status: str, cost: float \| None, request_cost: float \| None = None, expected_strategy: str = \"web_search\") -> dict:"` | — |
+| [SRC-6A7519AC10-L000034](../../tests/test_answer_quality_comparison.py#L34) | 34 | `"    row = {"` | — |
+| [SRC-6A7519AC10-L000035](../../tests/test_answer_quality_comparison.py#L35) | 35 | `"        \"case_id\": case_id,"` | — |
+| [SRC-6A7519AC10-L000036](../../tests/test_answer_quality_comparison.py#L36) | 36 | `"        \"prompt\": \"Test question \" + case_id,"` | — |
+| [SRC-6A7519AC10-L000037](../../tests/test_answer_quality_comparison.py#L37) | 37 | `"        \"expected_strategy\": expected_strategy,"` | — |
+| [SRC-6A7519AC10-L000038](../../tests/test_answer_quality_comparison.py#L38) | 38 | `"        \"transport_ok\": True,"` | — |
+| [SRC-6A7519AC10-L000039](../../tests/test_answer_quality_comparison.py#L39) | 39 | `"        \"elapsed_ms\": latency,"` | — |
+| [SRC-6A7519AC10-L000040](../../tests/test_answer_quality_comparison.py#L40) | 40 | `"        \"tool_status\": tool_status,"` | — |
+| [SRC-6A7519AC10-L000041](../../tests/test_answer_quality_comparison.py#L41) | 41 | `"        \"search_outcome\": \"attempted_with_usable_sources\" if tool_status == \"SUCCESS_WITH_USABLE_RESULTS\" else \"attempted_no_usable_sources\","` | — |
+| [SRC-6A7519AC10-L000042](../../tests/test_answer_quality_comparison.py#L42) | 42 | `"        \"provider_reported_model_cost_status\": \"COMPLETE_FOR_RETURNED_MODEL_CALLS\" if cost is not None else \"PROVIDER_COST_NOT_REPORTED\","` | — |
 | [SRC-6A7519AC10-L000043](../../tests/test_answer_quality_comparison.py#L43) | 43 | `"        \"request_cost_status\": \"RECONCILED_COMPLETE_REQUEST_COST\" if request_cost is not None else \"NOT_MEASURED_TOTAL_CONNECTOR_COSTS_NOT_EXPOSED\","` | — |
 | [SRC-6A7519AC10-L000044](../../tests/test_answer_quality_comparison.py#L44) | 44 | `"        \"required_tool_matrix_complete\": True,"` | — |
 | [SRC-6A7519AC10-L000045](../../tests/test_answer_quality_comparison.py#L45) | 45 | `"        \"required_tool_statuses\": ("` | — |
@@ -836,19 +852,3 @@
 | [SRC-B3062EB677-L000106](../../tests/test_answer_quality_runner.py#L106) | 106 | `"        return 200, {"` | — |
 | [SRC-B3062EB677-L000107](../../tests/test_answer_quality_runner.py#L107) | 107 | `"            \"answer\": \"hello used_web_search should not force PASS\","` | — |
 | [SRC-B3062EB677-L000108](../../tests/test_answer_quality_runner.py#L108) | 108 | `"            \"used_web_search\": False,"` | — |
-| [SRC-B3062EB677-L000109](../../tests/test_answer_quality_runner.py#L109) | 109 | `"            \"used_language_model\": True,"` | — |
-| [SRC-B3062EB677-L000110](../../tests/test_answer_quality_runner.py#L110) | 110 | `"            \"sources\": [],"` | — |
-| [SRC-B3062EB677-L000111](../../tests/test_answer_quality_runner.py#L111) | 111 | `"        }"` | — |
-| [SRC-B3062EB677-L000112](../../tests/test_answer_quality_runner.py#L112) | 112 | `""` | — |
-| [SRC-B3062EB677-L000113](../../tests/test_answer_quality_runner.py#L113) | 113 | `"    monkeypatch.setattr(mod, \"get_verified_build_sha\", lambda base_url, timeout, token=None: \"a\" * 40)"` | — |
-| [SRC-B3062EB677-L000114](../../tests/test_answer_quality_runner.py#L114) | 114 | `"    monkeypatch.setattr(mod, \"post_agent\", fake_post)"` | — |
-| [SRC-B3062EB677-L000115](../../tests/test_answer_quality_runner.py#L115) | 115 | `"    out = tmp_path / \"results.json\""` | — |
-| [SRC-B3062EB677-L000116](../../tests/test_answer_quality_runner.py#L116) | 116 | `"    rc = mod.main("` | — |
-| [SRC-B3062EB677-L000117](../../tests/test_answer_quality_runner.py#L117) | 117 | `"        ["` | — |
-| [SRC-B3062EB677-L000118](../../tests/test_answer_quality_runner.py#L118) | 118 | `"            \"--mode\","` | — |
-| [SRC-B3062EB677-L000119](../../tests/test_answer_quality_runner.py#L119) | 119 | `"            \"live\","` | — |
-| [SRC-B3062EB677-L000120](../../tests/test_answer_quality_runner.py#L120) | 120 | `"            \"--corpus\","` | — |
-| [SRC-B3062EB677-L000121](../../tests/test_answer_quality_runner.py#L121) | 121 | `"            str(CORPUS),"` | — |
-| [SRC-B3062EB677-L000122](../../tests/test_answer_quality_runner.py#L122) | 122 | `"            \"--case-id\","` | — |
-| [SRC-B3062EB677-L000123](../../tests/test_answer_quality_runner.py#L123) | 123 | `"            \"AQ-001\","` | — |
-| [SRC-B3062EB677-L000124](../../tests/test_answer_quality_runner.py#L124) | 124 | `"            \"--limit\","` | — |

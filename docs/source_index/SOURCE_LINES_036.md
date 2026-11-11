@@ -4,7 +4,7 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-676B69CB6C-L000032 إلى SRC-70795F4B61-L000122
+- النطاق: SRC-676B69CB6C-L000016 إلى SRC-70795F4B61-L000106
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-676B69CB6C-L000016](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L16) | 16 | `"- Viewer is read-only and cannot run discovery or write product data."` | — |
+| [SRC-676B69CB6C-L000017](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L17) | 17 | `"- Paid/optional search providers must stay disabled by default in this workflow."` | — |
+| [SRC-676B69CB6C-L000018](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L18) | 18 | ``"- Save a source as a demand signal only when the server-side stored run labels it `public_demand_signal`."`` | — |
+| [SRC-676B69CB6C-L000019](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L19) | 19 | `"- Preserve publication date, event date, and observation time as distinct/unknown where not supplied."` | — |
+| [SRC-676B69CB6C-L000020](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L20) | 20 | `"- No secrets, hosting configuration changes, production deployment, or PR merge."` | — |
+| [SRC-676B69CB6C-L000021](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L21) | 21 | `"- Do not activate UI modules without real API contracts."` | — |
+| [SRC-676B69CB6C-L000022](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L22) | 22 | `""` | — |
+| [SRC-676B69CB6C-L000023](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L23) | 23 | `"## Review Focus"` | — |
+| [SRC-676B69CB6C-L000024](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L24) | 24 | `"- Cross-tenant product-profile/run access using guessed IDs."` | — |
+| [SRC-676B69CB6C-L000025](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L25) | 25 | `"- Viewer attempts to create profiles, discover, or save a signal."` | — |
+| [SRC-676B69CB6C-L000026](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L26) | 26 | `"- Malformed arrays, oversized product text, invalid locale, empty query plan, and duplicate product profiles."` | — |
+| [SRC-676B69CB6C-L000027](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L27) | 27 | `"- Optional connectors with configured API keys but no explicit per-run owner approval."` | — |
+| [SRC-676B69CB6C-L000028](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L28) | 28 | `"- Discovery results containing related listings, negative intent, or no qualified buyer signal."` | — |
+| [SRC-676B69CB6C-L000029](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L29) | 29 | `"- Browser attempting to save an unrelated result or alter a server-side qualification label."` | — |
+| [SRC-676B69CB6C-L000030](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L30) | 30 | `""` | — |
+| [SRC-676B69CB6C-L000031](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L31) | 31 | `"---"` | — |
 | [SRC-676B69CB6C-L000032](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L32) | 32 | `""` | — |
 | [SRC-676B69CB6C-L000033](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L33) | 33 | `"### Task 1: Pin storage and API contracts with failing tests"` | — |
 | [SRC-676B69CB6C-L000034](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L34) | 34 | `""` | — |
@@ -935,19 +951,3 @@
 | [SRC-70795F4B61-L000104](../../scripts/compare_answer_quality_runs.py#L104) | 104 | `"        float(value)"` | — |
 | [SRC-70795F4B61-L000105](../../scripts/compare_answer_quality_runs.py#L105) | 105 | `"        for record in results"` | — |
 | [SRC-70795F4B61-L000106](../../scripts/compare_answer_quality_runs.py#L106) | 106 | `"        if (value := _finite_nonnegative(record.get(\"provider_reported_model_cost_usd\"))) is not None"` | — |
-| [SRC-70795F4B61-L000107](../../scripts/compare_answer_quality_runs.py#L107) | 107 | `"    ]"` | — |
-| [SRC-70795F4B61-L000108](../../scripts/compare_answer_quality_runs.py#L108) | 108 | `"    required_tool_rows = ["` | — |
-| [SRC-70795F4B61-L000109](../../scripts/compare_answer_quality_runs.py#L109) | 109 | `"        row"` | — |
-| [SRC-70795F4B61-L000110](../../scripts/compare_answer_quality_runs.py#L110) | 110 | `"        for record in results"` | — |
-| [SRC-70795F4B61-L000111](../../scripts/compare_answer_quality_runs.py#L111) | 111 | `"        for row in record.get(\"required_tool_statuses\", [])"` | — |
-| [SRC-70795F4B61-L000112](../../scripts/compare_answer_quality_runs.py#L112) | 112 | `"        if isinstance(row, dict) and isinstance(row.get(\"successful_completion\"), bool)"` | — |
-| [SRC-70795F4B61-L000113](../../scripts/compare_answer_quality_runs.py#L113) | 113 | `"    ]"` | — |
-| [SRC-70795F4B61-L000114](../../scripts/compare_answer_quality_runs.py#L114) | 114 | `"    required_tool_successes = sum("` | — |
-| [SRC-70795F4B61-L000115](../../scripts/compare_answer_quality_runs.py#L115) | 115 | `"        1 for row in required_tool_rows if row[\"successful_completion\"] is True"` | — |
-| [SRC-70795F4B61-L000116](../../scripts/compare_answer_quality_runs.py#L116) | 116 | `"    )"` | — |
-| [SRC-70795F4B61-L000117](../../scripts/compare_answer_quality_runs.py#L117) | 117 | `"    tool_status_counts: dict[str, int] = {}"` | — |
-| [SRC-70795F4B61-L000118](../../scripts/compare_answer_quality_runs.py#L118) | 118 | `"    for row in required_tool_rows:"` | — |
-| [SRC-70795F4B61-L000119](../../scripts/compare_answer_quality_runs.py#L119) | 119 | `"        status = row.get(\"status\")"` | — |
-| [SRC-70795F4B61-L000120](../../scripts/compare_answer_quality_runs.py#L120) | 120 | `"        if isinstance(status, str):"` | — |
-| [SRC-70795F4B61-L000121](../../scripts/compare_answer_quality_runs.py#L121) | 121 | `"            tool_status_counts[status] = tool_status_counts.get(status, 0) + 1"` | — |
-| [SRC-70795F4B61-L000122](../../scripts/compare_answer_quality_runs.py#L122) | 122 | `"    required_tool_matrix_telemetry_known = all("` | — |

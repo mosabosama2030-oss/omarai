@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L001468 إلى SRC-1AE03B9EC3-L000410
+- النطاق: SRC-686F71AA50-L001457 إلى SRC-1AE03B9EC3-L000399
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L001457](../../agents/task_understanding.py#L1457) | 1457 | `"        \"schema\": \"omarai.task_spec.v1\","` | — |
+| [SRC-686F71AA50-L001458](../../agents/task_understanding.py#L1458) | 1458 | `"        \"task_family\": raw_family if raw_family in allowed_families else \"general_question\","` | — |
+| [SRC-686F71AA50-L001459](../../agents/task_understanding.py#L1459) | 1459 | `"        \"mode\": raw_mode if raw_mode in SUPPORTED_MODES else \"auto\","` | — |
+| [SRC-686F71AA50-L001460](../../agents/task_understanding.py#L1460) | 1460 | `"        \"intent_route\": raw_route if raw_route in allowed_routes else \"unassessed\","` | — |
+| [SRC-686F71AA50-L001461](../../agents/task_understanding.py#L1461) | 1461 | `"        \"classification_method\": clean_text(value.get(\"classification_method\"), 100),"` | — |
+| [SRC-686F71AA50-L001462](../../agents/task_understanding.py#L1462) | 1462 | `"        \"classification_is_probability\": False,"` | — |
+| [SRC-686F71AA50-L001463](../../agents/task_understanding.py#L1463) | 1463 | `"        \"ambiguity_status\": clean_text(value.get(\"ambiguity_status\"), 80) or \"unassessed\","` | — |
+| [SRC-686F71AA50-L001464](../../agents/task_understanding.py#L1464) | 1464 | `"        \"missing_required_inputs\": ["` | — |
+| [SRC-686F71AA50-L001465](../../agents/task_understanding.py#L1465) | 1465 | `"            item for item in clean_list(value.get(\"missing_required_inputs\"), items=8, chars=100)"` | — |
+| [SRC-686F71AA50-L001466](../../agents/task_understanding.py#L1466) | 1466 | `"            if item in {"` | — |
+| [SRC-686F71AA50-L001467](../../agents/task_understanding.py#L1467) | 1467 | `"                \"unresolved_referent_or_incomplete_request\","` | — |
 | [SRC-686F71AA50-L001468](../../agents/task_understanding.py#L1468) | 1468 | `"                \"official_destination_target_entity\","` | — |
 | [SRC-686F71AA50-L001469](../../agents/task_understanding.py#L1469) | 1469 | `"                \"summary_source_url_or_pasted_text\","` | — |
 | [SRC-686F71AA50-L001470](../../agents/task_understanding.py#L1470) | 1470 | `"            }"` | — |
@@ -832,14 +843,3 @@
 | [SRC-1AE03B9EC3-L000397](../../agents/web_agent.py#L397) | 397 | `"    # or incidental word is not enough to make a candidate relevant."` | — |
 | [SRC-1AE03B9EC3-L000398](../../agents/web_agent.py#L398) | 398 | `"    if len(query_tokens) >= 3 and matched < 2:"` | — |
 | [SRC-1AE03B9EC3-L000399](../../agents/web_agent.py#L399) | 399 | `"        return 0.0"` | — |
-| [SRC-1AE03B9EC3-L000400](../../agents/web_agent.py#L400) | 400 | `"    return ratio"` | — |
-| [SRC-1AE03B9EC3-L000401](../../agents/web_agent.py#L401) | 401 | `""` | — |
-| [SRC-1AE03B9EC3-L000402](../../agents/web_agent.py#L402) | 402 | `"def _blocked_source_url(url: str) -> bool:"` | — |
-| [SRC-1AE03B9EC3-L000403](../../agents/web_agent.py#L403) | 403 | `"    try:"` | — |
-| [SRC-1AE03B9EC3-L000404](../../agents/web_agent.py#L404) | 404 | `"        host = (urllib.parse.urlparse(url).hostname or \"\").lower().rstrip(\".\")"` | — |
-| [SRC-1AE03B9EC3-L000405](../../agents/web_agent.py#L405) | 405 | `"        return any(host == domain or host.endswith(\".\" + domain) for domain in _BLOCKED_SOURCE_DOMAINS)"` | — |
-| [SRC-1AE03B9EC3-L000406](../../agents/web_agent.py#L406) | 406 | `"    except (TypeError, ValueError):"` | — |
-| [SRC-1AE03B9EC3-L000407](../../agents/web_agent.py#L407) | 407 | `"        return True"` | — |
-| [SRC-1AE03B9EC3-L000408](../../agents/web_agent.py#L408) | 408 | `""` | — |
-| [SRC-1AE03B9EC3-L000409](../../agents/web_agent.py#L409) | 409 | `"class AgentDependencyError(RuntimeError):"` | — |
-| [SRC-1AE03B9EC3-L000410](../../agents/web_agent.py#L410) | 410 | `"    \"\"\"A required optional runtime dependency is unavailable.\"\"\""` | — |

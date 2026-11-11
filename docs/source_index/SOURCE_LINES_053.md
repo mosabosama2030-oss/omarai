@@ -4,7 +4,7 @@
 
 - الصفحة: **053**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1521F490CA-L000133 إلى SRC-44CDA52D01-L000142
+- النطاق: SRC-1521F490CA-L000072 إلى SRC-44CDA52D01-L000081
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,67 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1521F490CA-L000072](../../tests/test_multitenant.py#L72) | 72 | `"        \"tenant_id\": tenant_id,"` | — |
+| [SRC-1521F490CA-L000073](../../tests/test_multitenant.py#L73) | 73 | `"        \"user_id\": user_id,"` | — |
+| [SRC-1521F490CA-L000074](../../tests/test_multitenant.py#L74) | 74 | `"        \"role\": \"sales_agent\","` | — |
+| [SRC-1521F490CA-L000075](../../tests/test_multitenant.py#L75) | 75 | `"    }"` | — |
+| [SRC-1521F490CA-L000076](../../tests/test_multitenant.py#L76) | 76 | `"    assert store.resolve_api_token(\"X\" * 40) is None"` | — |
+| [SRC-1521F490CA-L000077](../../tests/test_multitenant.py#L77) | 77 | `""` | — |
+| [SRC-1521F490CA-L000078](../../tests/test_multitenant.py#L78) | 78 | `"    with store.connect() as db:"` | — |
+| [SRC-1521F490CA-L000079](../../tests/test_multitenant.py#L79) | 79 | `"        db.execute("` | — |
+| [SRC-1521F490CA-L000080](../../tests/test_multitenant.py#L80) | 80 | `"            \"UPDATE tenant_memberships SET active=0 WHERE tenant_id=? AND user_id=?\","` | — |
+| [SRC-1521F490CA-L000081](../../tests/test_multitenant.py#L81) | 81 | `"            (tenant_id, user_id),"` | — |
+| [SRC-1521F490CA-L000082](../../tests/test_multitenant.py#L82) | 82 | `"        )"` | — |
+| [SRC-1521F490CA-L000083](../../tests/test_multitenant.py#L83) | 83 | `"    assert store.resolve_api_token(\"C\" * 40) is None"` | — |
+| [SRC-1521F490CA-L000084](../../tests/test_multitenant.py#L84) | 84 | `""` | — |
+| [SRC-1521F490CA-L000085](../../tests/test_multitenant.py#L85) | 85 | `""` | — |
+| [SRC-1521F490CA-L000086](../../tests/test_multitenant.py#L86) | 86 | `"def test_legacy_single_company_database_migrates_without_losing_leads(tmp_path):"` | — |
+| [SRC-1521F490CA-L000087](../../tests/test_multitenant.py#L87) | 87 | `"    path = tmp_path / \"legacy.sqlite3\""` | — |
+| [SRC-1521F490CA-L000088](../../tests/test_multitenant.py#L88) | 88 | `"    legacy_text = \"Old lead\""` | — |
+| [SRC-1521F490CA-L000089](../../tests/test_multitenant.py#L89) | 89 | `"    legacy_url = \"https://example.test/legacy\""` | — |
+| [SRC-1521F490CA-L000090](../../tests/test_multitenant.py#L90) | 90 | `"    legacy_fingerprint = hashlib.sha256("` | — |
+| [SRC-1521F490CA-L000091](../../tests/test_multitenant.py#L91) | 91 | `"        (legacy_url.rstrip(\"/\") + \"\\n\" + normalize(legacy_text)).encode()"` | — |
+| [SRC-1521F490CA-L000092](../../tests/test_multitenant.py#L92) | 92 | `"    ).hexdigest()"` | — |
+| [SRC-1521F490CA-L000093](../../tests/test_multitenant.py#L93) | 93 | `"    with sqlite3.connect(path) as db:"` | — |
+| [SRC-1521F490CA-L000094](../../tests/test_multitenant.py#L94) | 94 | `"        db.execute("` | — |
+| [SRC-1521F490CA-L000095](../../tests/test_multitenant.py#L95) | 95 | `"            \"\"\"CREATE TABLE leads ("` | — |
+| [SRC-1521F490CA-L000096](../../tests/test_multitenant.py#L96) | 96 | `"                id TEXT PRIMARY KEY,"` | — |
+| [SRC-1521F490CA-L000097](../../tests/test_multitenant.py#L97) | 97 | `"                fingerprint TEXT UNIQUE NOT NULL,"` | — |
+| [SRC-1521F490CA-L000098](../../tests/test_multitenant.py#L98) | 98 | `"                text TEXT NOT NULL,"` | — |
+| [SRC-1521F490CA-L000099](../../tests/test_multitenant.py#L99) | 99 | `"                source_url TEXT NOT NULL,"` | — |
+| [SRC-1521F490CA-L000100](../../tests/test_multitenant.py#L100) | 100 | `"                platform TEXT NOT NULL,"` | — |
+| [SRC-1521F490CA-L000101](../../tests/test_multitenant.py#L101) | 101 | `"                observed_at TEXT NOT NULL,"` | — |
+| [SRC-1521F490CA-L000102](../../tests/test_multitenant.py#L102) | 102 | `"                assessment TEXT NOT NULL,"` | — |
+| [SRC-1521F490CA-L000103](../../tests/test_multitenant.py#L103) | 103 | `"                status TEXT NOT NULL,"` | — |
+| [SRC-1521F490CA-L000104](../../tests/test_multitenant.py#L104) | 104 | `"                note TEXT NOT NULL,"` | — |
+| [SRC-1521F490CA-L000105](../../tests/test_multitenant.py#L105) | 105 | `"                created_at TEXT NOT NULL,"` | — |
+| [SRC-1521F490CA-L000106](../../tests/test_multitenant.py#L106) | 106 | `"                updated_at TEXT NOT NULL"` | — |
+| [SRC-1521F490CA-L000107](../../tests/test_multitenant.py#L107) | 107 | `"            )\"\"\""` | — |
+| [SRC-1521F490CA-L000108](../../tests/test_multitenant.py#L108) | 108 | `"        )"` | — |
+| [SRC-1521F490CA-L000109](../../tests/test_multitenant.py#L109) | 109 | `"        db.execute("` | — |
+| [SRC-1521F490CA-L000110](../../tests/test_multitenant.py#L110) | 110 | `"            \"\"\"INSERT INTO leads VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)\"\"\","` | — |
+| [SRC-1521F490CA-L000111](../../tests/test_multitenant.py#L111) | 111 | `"            ("` | — |
+| [SRC-1521F490CA-L000112](../../tests/test_multitenant.py#L112) | 112 | `"                \"legacy-lead\", legacy_fingerprint, legacy_text,"` | — |
+| [SRC-1521F490CA-L000113](../../tests/test_multitenant.py#L113) | 113 | `"                legacy_url, \"manual\", \"2026-10-30T00:00:00Z\","` | — |
+| [SRC-1521F490CA-L000114](../../tests/test_multitenant.py#L114) | 114 | `"                '{\"score\": 0}', \"new\", \"\", \"2026-10-30T00:00:00Z\","` | — |
+| [SRC-1521F490CA-L000115](../../tests/test_multitenant.py#L115) | 115 | `"                \"2026-10-30T00:00:00Z\","` | — |
+| [SRC-1521F490CA-L000116](../../tests/test_multitenant.py#L116) | 116 | `"            ),"` | — |
+| [SRC-1521F490CA-L000117](../../tests/test_multitenant.py#L117) | 117 | `"        )"` | — |
+| [SRC-1521F490CA-L000118](../../tests/test_multitenant.py#L118) | 118 | `""` | — |
+| [SRC-1521F490CA-L000119](../../tests/test_multitenant.py#L119) | 119 | `"    store = LeadStore(path)"` | — |
+| [SRC-1521F490CA-L000120](../../tests/test_multitenant.py#L120) | 120 | `"    leads = store.list(tenant_id=DEFAULT_TENANT_ID)"` | — |
+| [SRC-1521F490CA-L000121](../../tests/test_multitenant.py#L121) | 121 | `"    assert len(leads) == 1"` | — |
+| [SRC-1521F490CA-L000122](../../tests/test_multitenant.py#L122) | 122 | `"    assert leads[0][\"id\"] == \"legacy-lead\""` | — |
+| [SRC-1521F490CA-L000123](../../tests/test_multitenant.py#L123) | 123 | `"    assert leads[0][\"tenant_id\"] == DEFAULT_TENANT_ID"` | — |
+| [SRC-1521F490CA-L000124](../../tests/test_multitenant.py#L124) | 124 | `""` | — |
+| [SRC-1521F490CA-L000125](../../tests/test_multitenant.py#L125) | 125 | `"    duplicate, created = store.add("` | — |
+| [SRC-1521F490CA-L000126](../../tests/test_multitenant.py#L126) | 126 | `"        \"Old lead\", \"https://example.test/legacy\", tenant_id=DEFAULT_TENANT_ID"` | — |
+| [SRC-1521F490CA-L000127](../../tests/test_multitenant.py#L127) | 127 | `"    )"` | — |
+| [SRC-1521F490CA-L000128](../../tests/test_multitenant.py#L128) | 128 | `"    assert created is False"` | — |
+| [SRC-1521F490CA-L000129](../../tests/test_multitenant.py#L129) | 129 | `"    assert duplicate[\"id\"] == \"legacy-lead\""` | — |
+| [SRC-1521F490CA-L000130](../../tests/test_multitenant.py#L130) | 130 | `""` | — |
+| [SRC-1521F490CA-L000131](../../tests/test_multitenant.py#L131) | 131 | `"    with store.connect() as db:"` | — |
+| [SRC-1521F490CA-L000132](../../tests/test_multitenant.py#L132) | 132 | `"        columns = {row[\"name\"] for row in db.execute(\"PRAGMA table_info(leads)\")}"` | — |
 | [SRC-1521F490CA-L000133](../../tests/test_multitenant.py#L133) | 133 | `"        unique_indexes = ["` | — |
 | [SRC-1521F490CA-L000134](../../tests/test_multitenant.py#L134) | 134 | `"            row[\"name\"] for row in db.execute(\"PRAGMA index_list(leads)\")"` | — |
 | [SRC-1521F490CA-L000135](../../tests/test_multitenant.py#L135) | 135 | `"            if row[\"unique\"]"` | — |
@@ -773,64 +834,3 @@
 | [SRC-44CDA52D01-L000079](../../tests/test_omarai.py#L79) | 79 | `"    row2 = next(row for row in rows if row[\"source_url\"] == \"https://example.com/post/2\")"` | — |
 | [SRC-44CDA52D01-L000080](../../tests/test_omarai.py#L80) | 80 | `"    assert row1[\"text\"].startswith(\"\\t=\")"` | — |
 | [SRC-44CDA52D01-L000081](../../tests/test_omarai.py#L81) | 81 | `"    assert row1[\"note\"].startswith(\"\\t  +\")"` | — |
-| [SRC-44CDA52D01-L000082](../../tests/test_omarai.py#L82) | 82 | `"    assert row2[\"text\"].startswith(\"\\t\\ufeff=\")"` | — |
-| [SRC-44CDA52D01-L000083](../../tests/test_omarai.py#L83) | 83 | `"    assert row2[\"note\"].startswith(\"\\t\\u00a0\\ufeff=\")"` | — |
-| [SRC-44CDA52D01-L000084](../../tests/test_omarai.py#L84) | 84 | `""` | — |
-| [SRC-44CDA52D01-L000085](../../tests/test_omarai.py#L85) | 85 | `""` | — |
-| [SRC-44CDA52D01-L000086](../../tests/test_omarai.py#L86) | 86 | `""` | — |
-| [SRC-44CDA52D01-L000087](../../tests/test_omarai.py#L87) | 87 | `"def test_generic_fire_alarm_and_supplier_requests_are_sector_neutral():"` | — |
-| [SRC-44CDA52D01-L000088](../../tests/test_omarai.py#L88) | 88 | `"    fire_alarm = analyze(\"نحتاج نظام إنذار حريق للمصنع\")"` | — |
-| [SRC-44CDA52D01-L000089](../../tests/test_omarai.py#L89) | 89 | `"    supplier = analyze(\"نبحث عن مورد لافتات لمشروع جديد\")"` | — |
-| [SRC-44CDA52D01-L000090](../../tests/test_omarai.py#L90) | 90 | `"    assert fire_alarm[\"label\"] == \"high_intent\""` | — |
-| [SRC-44CDA52D01-L000091](../../tests/test_omarai.py#L91) | 91 | `"    assert supplier[\"label\"] == \"high_intent\""` | — |
-| [SRC-44CDA52D01-L000092](../../tests/test_omarai.py#L92) | 92 | `"    assert fire_alarm[\"score\"] >= 55"` | — |
-| [SRC-44CDA52D01-L000093](../../tests/test_omarai.py#L93) | 93 | `"    assert supplier[\"score\"] >= 55"` | — |
-| [SRC-44CDA52D01-L000094](../../tests/test_omarai.py#L94) | 94 | `""` | — |
-| [SRC-44CDA52D01-L000095](../../tests/test_omarai.py#L95) | 95 | `""` | — |
-| [SRC-44CDA52D01-L000096](../../tests/test_omarai.py#L96) | 96 | `"def test_product_mention_alone_does_not_create_a_demand_signal():"` | — |
-| [SRC-44CDA52D01-L000097](../../tests/test_omarai.py#L97) | 97 | `"    result = analyze(\"نظام إنذار حريق\")"` | — |
-| [SRC-44CDA52D01-L000098](../../tests/test_omarai.py#L98) | 98 | `"    assert result[\"label\"] == \"unclear\""` | — |
-| [SRC-44CDA52D01-L000099](../../tests/test_omarai.py#L99) | 99 | `"    assert result[\"score\"] == 0"` | — |
-| [SRC-44CDA52D01-L000100](../../tests/test_omarai.py#L100) | 100 | `""` | — |
-| [SRC-44CDA52D01-L000101](../../tests/test_omarai.py#L101) | 101 | `""` | — |
-| [SRC-44CDA52D01-L000102](../../tests/test_omarai.py#L102) | 102 | `"@pytest.mark.parametrize("` | — |
-| [SRC-44CDA52D01-L000103](../../tests/test_omarai.py#L103) | 103 | `"    \"text\","` | — |
-| [SRC-44CDA52D01-L000104](../../tests/test_omarai.py#L104) | 104 | `"    ["` | — |
-| [SRC-44CDA52D01-L000105](../../tests/test_omarai.py#L105) | 105 | `"        \"مش بدور على شقة\","` | — |
-| [SRC-44CDA52D01-L000106](../../tests/test_omarai.py#L106) | 106 | `"        \"مش محتاج نظام إنذار حريق\","` | — |
-| [SRC-44CDA52D01-L000107](../../tests/test_omarai.py#L107) | 107 | `"        \"لا نحتاج مورد لافتات\","` | — |
-| [SRC-44CDA52D01-L000108](../../tests/test_omarai.py#L108) | 108 | `"        \"not looking for a supplier\","` | — |
-| [SRC-44CDA52D01-L000109](../../tests/test_omarai.py#L109) | 109 | `"        \"we do not need a fire alarm system\","` | — |
-| [SRC-44CDA52D01-L000110](../../tests/test_omarai.py#L110) | 110 | `"    ],"` | — |
-| [SRC-44CDA52D01-L000111](../../tests/test_omarai.py#L111) | 111 | `")"` | — |
-| [SRC-44CDA52D01-L000112](../../tests/test_omarai.py#L112) | 112 | `"def test_explicit_negation_never_scores_as_buyer_intent(text):"` | — |
-| [SRC-44CDA52D01-L000113](../../tests/test_omarai.py#L113) | 113 | `"    result = analyze(text)"` | — |
-| [SRC-44CDA52D01-L000114](../../tests/test_omarai.py#L114) | 114 | `"    assert result[\"label\"] == \"not_buyer_signal\""` | — |
-| [SRC-44CDA52D01-L000115](../../tests/test_omarai.py#L115) | 115 | `"    assert result[\"score\"] == 0"` | — |
-| [SRC-44CDA52D01-L000116](../../tests/test_omarai.py#L116) | 116 | `""` | — |
-| [SRC-44CDA52D01-L000117](../../tests/test_omarai.py#L117) | 117 | `""` | — |
-| [SRC-44CDA52D01-L000118](../../tests/test_omarai.py#L118) | 118 | `"@pytest.mark.parametrize("` | — |
-| [SRC-44CDA52D01-L000119](../../tests/test_omarai.py#L119) | 119 | `"    \"text\","` | — |
-| [SRC-44CDA52D01-L000120](../../tests/test_omarai.py#L120) | 120 | `"    ["` | — |
-| [SRC-44CDA52D01-L000121](../../tests/test_omarai.py#L121) | 121 | `"        \"تم الشراء بالفعل\","` | — |
-| [SRC-44CDA52D01-L000122](../../tests/test_omarai.py#L122) | 122 | `"        \"وجدنا مورد وتم التعاقد\","` | — |
-| [SRC-44CDA52D01-L000123](../../tests/test_omarai.py#L123) | 123 | `"        \"already purchased the equipment\","` | — |
-| [SRC-44CDA52D01-L000124](../../tests/test_omarai.py#L124) | 124 | `"        \"supplier selected\","` | — |
-| [SRC-44CDA52D01-L000125](../../tests/test_omarai.py#L125) | 125 | `"        \"كنت بدور على شقة\","` | — |
-| [SRC-44CDA52D01-L000126](../../tests/test_omarai.py#L126) | 126 | `"    ],"` | — |
-| [SRC-44CDA52D01-L000127](../../tests/test_omarai.py#L127) | 127 | `")"` | — |
-| [SRC-44CDA52D01-L000128](../../tests/test_omarai.py#L128) | 128 | `"def test_completed_or_past_need_is_not_active_demand(text):"` | — |
-| [SRC-44CDA52D01-L000129](../../tests/test_omarai.py#L129) | 129 | `"    result = analyze(text)"` | — |
-| [SRC-44CDA52D01-L000130](../../tests/test_omarai.py#L130) | 130 | `"    assert result[\"label\"] == \"closed_or_stale_signal\""` | — |
-| [SRC-44CDA52D01-L000131](../../tests/test_omarai.py#L131) | 131 | `"    assert result[\"score\"] == 0"` | — |
-| [SRC-44CDA52D01-L000132](../../tests/test_omarai.py#L132) | 132 | `""` | — |
-| [SRC-44CDA52D01-L000133](../../tests/test_omarai.py#L133) | 133 | `""` | — |
-| [SRC-44CDA52D01-L000134](../../tests/test_omarai.py#L134) | 134 | `"def test_product_and_location_context_do_not_inflate_demand_score():"` | — |
-| [SRC-44CDA52D01-L000135](../../tests/test_omarai.py#L135) | 135 | `"    result = analyze("` | — |
-| [SRC-44CDA52D01-L000136](../../tests/test_omarai.py#L136) | 136 | `"        \"نظام إنذار حريق في القاهرة\","` | — |
-| [SRC-44CDA52D01-L000137](../../tests/test_omarai.py#L137) | 137 | `"        product_terms=[\"نظام إنذار حريق\"],"` | — |
-| [SRC-44CDA52D01-L000138](../../tests/test_omarai.py#L138) | 138 | `"        location_terms=[\"القاهرة\"],"` | — |
-| [SRC-44CDA52D01-L000139](../../tests/test_omarai.py#L139) | 139 | `"    )"` | — |
-| [SRC-44CDA52D01-L000140](../../tests/test_omarai.py#L140) | 140 | `"    assert result[\"score\"] == 0"` | — |
-| [SRC-44CDA52D01-L000141](../../tests/test_omarai.py#L141) | 141 | `"    assert result[\"label\"] == \"unclear\""` | — |
-| [SRC-44CDA52D01-L000142](../../tests/test_omarai.py#L142) | 142 | `"    assert {item[\"category\"] for item in result[\"matched_signals\"]} == {"` | — |

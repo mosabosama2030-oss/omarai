@@ -4,7 +4,7 @@
 
 - الصفحة: **003**
 - سجلات الأسطر: **800**
-- النطاق: SRC-7D6FC391EC-L000235 إلى SRC-5587371288-L000418
+- النطاق: SRC-7D6FC391EC-L000235 إلى SRC-5587371288-L000407
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -347,66 +347,77 @@
 | [SRC-2D53795445-L000258](../../agents/dialogue_state.py#L258) | 258 | `"        r\"(?:\\s+(?:only\|just))?$\","` | — |
 | [SRC-2D53795445-L000259](../../agents/dialogue_state.py#L259) | 259 | `"        current,"` | — |
 | [SRC-2D53795445-L000260](../../agents/dialogue_state.py#L260) | 260 | `"    )"` | — |
-| [SRC-2D53795445-L000261](../../agents/dialogue_state.py#L261) | 261 | `"    return bool(correction or location_refinement)"` | — |
-| [SRC-2D53795445-L000262](../../agents/dialogue_state.py#L262) | 262 | `""` | — |
-| [SRC-2D53795445-L000263](../../agents/dialogue_state.py#L263) | 263 | `""` | — |
-| [SRC-2D53795445-L000264](../../agents/dialogue_state.py#L264) | 264 | `"def _has_implicit_context_reference(question: str) -> bool:"` | — |
-| [SRC-2D53795445-L000265](../../agents/dialogue_state.py#L265) | 265 | `"    \"\"\"Recognize situation-dependent phrasing reserved for semantic context review.\"\"\""` | — |
-| [SRC-2D53795445-L000266](../../agents/dialogue_state.py#L266) | 266 | `"    current = _clean_text(question, MAX_RESOLVED_QUESTION_CHARS).casefold()"` | — |
-| [SRC-2D53795445-L000267](../../agents/dialogue_state.py#L267) | 267 | `"    if not current or len(current) > 220:"` | — |
-| [SRC-2D53795445-L000268](../../agents/dialogue_state.py#L268) | 268 | `"        return False"` | — |
-| [SRC-2D53795445-L000269](../../agents/dialogue_state.py#L269) | 269 | `"    return bool("` | — |
-| [SRC-2D53795445-L000270](../../agents/dialogue_state.py#L270) | 270 | `"        re.search(r\"^(?:في\|على)\\s+(?:وضعي\|حالتي\|ظروفي\|ظروفى)\\b\", current)"` | — |
-| [SRC-2D53795445-L000271](../../agents/dialogue_state.py#L271) | 271 | `"        or re.search("` | — |
-| [SRC-2D53795445-L000272](../../agents/dialogue_state.py#L272) | 272 | `"            r\"^(?:بناء على\|بناءً على\|حسب)\\s+(?:ما\|اللي\|كلام)\\s+\""` | — |
-| [SRC-2D53795445-L000273](../../agents/dialogue_state.py#L273) | 273 | `"            r\"(?:قلت\|ذكرته\|وضحته\|شرحته)\","` | — |
-| [SRC-2D53795445-L000274](../../agents/dialogue_state.py#L274) | 274 | `"            current,"` | — |
-| [SRC-2D53795445-L000275](../../agents/dialogue_state.py#L275) | 275 | `"        )"` | — |
-| [SRC-2D53795445-L000276](../../agents/dialogue_state.py#L276) | 276 | `"        or re.search("` | — |
-| [SRC-2D53795445-L000277](../../agents/dialogue_state.py#L277) | 277 | `"            r\"^(?:in my case\|given my situation\|based on my situation\|\""` | — |
-| [SRC-2D53795445-L000278](../../agents/dialogue_state.py#L278) | 278 | `"            r\"with my constraints\|based on what i (?:said\|shared))\\b\","` | — |
-| [SRC-2D53795445-L000279](../../agents/dialogue_state.py#L279) | 279 | `"            current,"` | — |
-| [SRC-2D53795445-L000280](../../agents/dialogue_state.py#L280) | 280 | `"        )"` | — |
-| [SRC-2D53795445-L000281](../../agents/dialogue_state.py#L281) | 281 | `"    )"` | — |
-| [SRC-2D53795445-L000282](../../agents/dialogue_state.py#L282) | 282 | `""` | — |
-| [SRC-2D53795445-L000283](../../agents/dialogue_state.py#L283) | 283 | `""` | — |
-| [SRC-2D53795445-L000284](../../agents/dialogue_state.py#L284) | 284 | `"def might_be_context_dependent(question: str) -> bool:"` | — |
-| [SRC-2D53795445-L000285](../../agents/dialogue_state.py#L285) | 285 | `"    \"\"\"Cheap trigger only; it does not decide the meaning of a contextual message.\"\"\""` | — |
-| [SRC-2D53795445-L000286](../../agents/dialogue_state.py#L286) | 286 | `"    current = _clean_text(question, MAX_RESOLVED_QUESTION_CHARS).casefold()"` | — |
-| [SRC-2D53795445-L000287](../../agents/dialogue_state.py#L287) | 287 | `"    if not current or len(current) > 220:"` | — |
-| [SRC-2D53795445-L000288](../../agents/dialogue_state.py#L288) | 288 | `"        return False"` | — |
-| [SRC-2D53795445-L000289](../../agents/dialogue_state.py#L289) | 289 | `"    lead_in = re.search("` | — |
-| [SRC-2D53795445-L000290](../../agents/dialogue_state.py#L290) | 290 | `"        r\"^(?:و?طب\|و?طيب\|و?تمام\|ثم\|كمان\|وبالنسبه\|بالنسبه\|\""` | — |
-| [SRC-2D53795445-L000291](../../agents/dialogue_state.py#L291) | 291 | `"        r\"(?:و)?(?:ال)?(?:سعر\|اسعار\|ثمن\|ضمان\|بطاريه\|كاميرا\|مكان\|رابط\|\""` | — |
-| [SRC-2D53795445-L000292](../../agents/dialogue_state.py#L292) | 292 | `"        r\"مصدر\|مميزات\|عيوب\|فرق\|توفر\|سرعه\|اداء\|جوده\|صيانه)\\b\|\""` | — |
-| [SRC-2D53795445-L000293](../../agents/dialogue_state.py#L293) | 293 | `"        r\"and\\s+(?:what\|the\|how)\|what\\s+about\|how\\s+about\|\""` | — |
-| [SRC-2D53795445-L000294](../../agents/dialogue_state.py#L294) | 294 | `"        r\"then\\b\|also\\b\|as\\s+for\\b\|and\\s+its\\b)\","` | — |
-| [SRC-2D53795445-L000295](../../agents/dialogue_state.py#L295) | 295 | `"        current,"` | — |
-| [SRC-2D53795445-L000296](../../agents/dialogue_state.py#L296) | 296 | `"    )"` | — |
-| [SRC-2D53795445-L000297](../../agents/dialogue_state.py#L297) | 297 | `"    reference = re.search("` | — |
-| [SRC-2D53795445-L000298](../../agents/dialogue_state.py#L298) | 298 | `"        r\"\\b(?:it\|its\|they\|them\|their\|this\|that\|these\|those\|there\|\""` | — |
-| [SRC-2D53795445-L000299](../../agents/dialogue_state.py#L299) | 299 | `"        r\"he\|she\|هو\|هي\|هذا\|هذه\|هذان\|هاتان\|هؤلاء\|ذلك\|تلك\|اللذان\|اللتان\|\""` | — |
-| [SRC-2D53795445-L000300](../../agents/dialogue_state.py#L300) | 300 | `"        r\"الذي\|التي\|الذين\|ده\|دي\|دا\|دول\|عليه\|عليها\|فيه\|فيها\|لها\|له\|\""` | — |
-| [SRC-2D53795445-L000301](../../agents/dialogue_state.py#L301) | 301 | `"        r\"سعرها\|سعره\|ضمانها\|ضمانه\|بطاريتها\|كاميرتها)\\b\","` | — |
-| [SRC-2D53795445-L000302](../../agents/dialogue_state.py#L302) | 302 | `"        current,"` | — |
-| [SRC-2D53795445-L000303](../../agents/dialogue_state.py#L303) | 303 | `"    )"` | — |
-| [SRC-2D53795445-L000304](../../agents/dialogue_state.py#L304) | 304 | `"    fragment = re.fullmatch("` | — |
-| [SRC-2D53795445-L000305](../../agents/dialogue_state.py#L305) | 305 | `"        r\"[؟?\\s]*(?:و)?(?:السعر\|الاسعار\|الضمان\|البطاريه\|الكاميرا\|\""` | — |
-| [SRC-2D53795445-L000306](../../agents/dialogue_state.py#L306) | 306 | `"        r\"المكان\|الرابط\|المصدر\|المميزات\|العيوب\|سعر\|ضمان\|بطاريه\|كاميرا\|\""` | — |
-| [SRC-2D53795445-L000307](../../agents/dialogue_state.py#L307) | 307 | `"        r\"مكان\|رابط\|مصدر\|warranty\|price\|battery\|camera\|location\|source\|pros\|cons)\""` | — |
-| [SRC-2D53795445-L000308](../../agents/dialogue_state.py#L308) | 308 | `"        r\"[؟?\\s]*\","` | — |
-| [SRC-2D53795445-L000309](../../agents/dialogue_state.py#L309) | 309 | `"        current,"` | — |
-| [SRC-2D53795445-L000310](../../agents/dialogue_state.py#L310) | 310 | `"    )"` | — |
-| [SRC-2D53795445-L000311](../../agents/dialogue_state.py#L311) | 311 | `"    # Arabic object pronouns are often attached to verbs, as in \"أشتريه\""` | — |
-| [SRC-2D53795445-L000312](../../agents/dialogue_state.py#L312) | 312 | `"    # or \"أستخدمها\"; whitespace-token pronoun lists miss these natural follow-ups."` | — |
-| [SRC-2D53795445-L000313](../../agents/dialogue_state.py#L313) | 313 | `"    attached_reference = re.search("` | — |
-| [SRC-2D53795445-L000314](../../agents/dialogue_state.py#L314) | 314 | `"        r\"\\b(?:استخدم\|أستخدم\|اشتري\|أشتري\|اجيب\|أجيب\|اشغل\|أشغل\|افتح\|أفتح\|\""` | — |
-| [SRC-2D53795445-L000315](../../agents/dialogue_state.py#L315) | 315 | `"        r\"اصلح\|أصلح\|احط\|أحط\|اجرب\|أجرب\|اربط\|أربط\|اوصل\|أوصل\|اخد\|آخد\|\""` | — |
-| [SRC-2D53795445-L000316](../../agents/dialogue_state.py#L316) | 316 | `"        r\"اخلي\|أخلي\|اركب\|أركب\|انقل\|أنقل\|ادفع\|أدفع\|اطلب\|أطلب\|احجز\|أحجز)\""` | — |
-| [SRC-2D53795445-L000317](../../agents/dialogue_state.py#L317) | 317 | `"        r\"[\\u0600-\\u06FF]{0,18}(?:ه\|ها\|هم\|هما\|هن\|ك\|كم\|كن)\\b\","` | — |
-| [SRC-2D53795445-L000318](../../agents/dialogue_state.py#L318) | 318 | `"        current,"` | — |
-| [SRC-2D53795445-L000319](../../agents/dialogue_state.py#L319) | 319 | `"    )"` | — |
-| [SRC-2D53795445-L000320](../../agents/dialogue_state.py#L320) | 320 | `"    return bool(lead_in or reference or fragment or attached_reference or _has_explicit_context_refinement(current))"` | — |
+| [SRC-2D53795445-L000261](../../agents/dialogue_state.py#L261) | 261 | `"    # A named replacement product after a contextual lead-in updates the entity"` | — |
+| [SRC-2D53795445-L000262](../../agents/dialogue_state.py#L262) | 262 | `"    # slot while keeping the original task and its dimensions (e.g. \"طب وسامسونج S24\")."` | — |
+| [SRC-2D53795445-L000263](../../agents/dialogue_state.py#L263) | 263 | `"    # Keep this list bounded; a complete new question such as \"أسعار الذهب اليوم\""` | — |
+| [SRC-2D53795445-L000264](../../agents/dialogue_state.py#L264) | 264 | `"    # must remain a topic shift."` | — |
+| [SRC-2D53795445-L000265](../../agents/dialogue_state.py#L265) | 265 | `"    entity_substitution = re.search("` | — |
+| [SRC-2D53795445-L000266](../../agents/dialogue_state.py#L266) | 266 | `"        r\"^(?:و?طب\|و?طيب\|و?كمان\|و?(?:بالنسبه\|بالنسبة)(?:\\s*ل)?)\\s*\""` | — |
+| [SRC-2D53795445-L000267](../../agents/dialogue_state.py#L267) | 267 | `"        r\"(?:و\\s*)?(?:سامسونج\|ايفون\|آيفون\|شاومي\|هواوي\|ديل\|لينوفو\|ابل\|أبل\|\""` | — |
+| [SRC-2D53795445-L000268](../../agents/dialogue_state.py#L268) | 268 | `"        r\"byd\|samsung\|iphone\|apple\|xiaomi\|huawei\|dell\|lenovo\|hp)\\s+\""` | — |
+| [SRC-2D53795445-L000269](../../agents/dialogue_state.py#L269) | 269 | `"        r\"(?:[a-z]{1,8}\\s*)?\\d{1,4}(?:\\s+[a-z0-9+.-]{1,12}){0,2}$\","` | — |
+| [SRC-2D53795445-L000270](../../agents/dialogue_state.py#L270) | 270 | `"        current,"` | — |
+| [SRC-2D53795445-L000271](../../agents/dialogue_state.py#L271) | 271 | `"    )"` | — |
+| [SRC-2D53795445-L000272](../../agents/dialogue_state.py#L272) | 272 | `"    return bool(correction or location_refinement or entity_substitution)"` | — |
+| [SRC-2D53795445-L000273](../../agents/dialogue_state.py#L273) | 273 | `""` | — |
+| [SRC-2D53795445-L000274](../../agents/dialogue_state.py#L274) | 274 | `""` | — |
+| [SRC-2D53795445-L000275](../../agents/dialogue_state.py#L275) | 275 | `"def _has_implicit_context_reference(question: str) -> bool:"` | — |
+| [SRC-2D53795445-L000276](../../agents/dialogue_state.py#L276) | 276 | `"    \"\"\"Recognize situation-dependent phrasing reserved for semantic context review.\"\"\""` | — |
+| [SRC-2D53795445-L000277](../../agents/dialogue_state.py#L277) | 277 | `"    current = _clean_text(question, MAX_RESOLVED_QUESTION_CHARS).casefold()"` | — |
+| [SRC-2D53795445-L000278](../../agents/dialogue_state.py#L278) | 278 | `"    if not current or len(current) > 220:"` | — |
+| [SRC-2D53795445-L000279](../../agents/dialogue_state.py#L279) | 279 | `"        return False"` | — |
+| [SRC-2D53795445-L000280](../../agents/dialogue_state.py#L280) | 280 | `"    return bool("` | — |
+| [SRC-2D53795445-L000281](../../agents/dialogue_state.py#L281) | 281 | `"        re.search(r\"^(?:في\|على)\\s+(?:وضعي\|حالتي\|ظروفي\|ظروفى)\\b\", current)"` | — |
+| [SRC-2D53795445-L000282](../../agents/dialogue_state.py#L282) | 282 | `"        or re.search("` | — |
+| [SRC-2D53795445-L000283](../../agents/dialogue_state.py#L283) | 283 | `"            r\"^(?:بناء على\|بناءً على\|حسب)\\s+(?:ما\|اللي\|كلام)\\s+\""` | — |
+| [SRC-2D53795445-L000284](../../agents/dialogue_state.py#L284) | 284 | `"            r\"(?:قلت\|ذكرته\|وضحته\|شرحته)\","` | — |
+| [SRC-2D53795445-L000285](../../agents/dialogue_state.py#L285) | 285 | `"            current,"` | — |
+| [SRC-2D53795445-L000286](../../agents/dialogue_state.py#L286) | 286 | `"        )"` | — |
+| [SRC-2D53795445-L000287](../../agents/dialogue_state.py#L287) | 287 | `"        or re.search("` | — |
+| [SRC-2D53795445-L000288](../../agents/dialogue_state.py#L288) | 288 | `"            r\"^(?:in my case\|given my situation\|based on my situation\|\""` | — |
+| [SRC-2D53795445-L000289](../../agents/dialogue_state.py#L289) | 289 | `"            r\"with my constraints\|based on what i (?:said\|shared))\\b\","` | — |
+| [SRC-2D53795445-L000290](../../agents/dialogue_state.py#L290) | 290 | `"            current,"` | — |
+| [SRC-2D53795445-L000291](../../agents/dialogue_state.py#L291) | 291 | `"        )"` | — |
+| [SRC-2D53795445-L000292](../../agents/dialogue_state.py#L292) | 292 | `"    )"` | — |
+| [SRC-2D53795445-L000293](../../agents/dialogue_state.py#L293) | 293 | `""` | — |
+| [SRC-2D53795445-L000294](../../agents/dialogue_state.py#L294) | 294 | `""` | — |
+| [SRC-2D53795445-L000295](../../agents/dialogue_state.py#L295) | 295 | `"def might_be_context_dependent(question: str) -> bool:"` | — |
+| [SRC-2D53795445-L000296](../../agents/dialogue_state.py#L296) | 296 | `"    \"\"\"Cheap trigger only; it does not decide the meaning of a contextual message.\"\"\""` | — |
+| [SRC-2D53795445-L000297](../../agents/dialogue_state.py#L297) | 297 | `"    current = _clean_text(question, MAX_RESOLVED_QUESTION_CHARS).casefold()"` | — |
+| [SRC-2D53795445-L000298](../../agents/dialogue_state.py#L298) | 298 | `"    if not current or len(current) > 220:"` | — |
+| [SRC-2D53795445-L000299](../../agents/dialogue_state.py#L299) | 299 | `"        return False"` | — |
+| [SRC-2D53795445-L000300](../../agents/dialogue_state.py#L300) | 300 | `"    lead_in = re.search("` | — |
+| [SRC-2D53795445-L000301](../../agents/dialogue_state.py#L301) | 301 | `"        r\"^(?:و?طب\|و?طيب\|و?تمام\|ثم\|كمان\|وبالنسبه\|بالنسبه\|\""` | — |
+| [SRC-2D53795445-L000302](../../agents/dialogue_state.py#L302) | 302 | `"        r\"(?:و)?(?:ال)?(?:سعر\|اسعار\|ثمن\|ضمان\|بطاريه\|كاميرا\|مكان\|رابط\|\""` | — |
+| [SRC-2D53795445-L000303](../../agents/dialogue_state.py#L303) | 303 | `"        r\"مصدر\|مميزات\|عيوب\|فرق\|توفر\|سرعه\|اداء\|جوده\|صيانه)\\b\|\""` | — |
+| [SRC-2D53795445-L000304](../../agents/dialogue_state.py#L304) | 304 | `"        r\"and\\s+(?:what\|the\|how)\|what\\s+about\|how\\s+about\|\""` | — |
+| [SRC-2D53795445-L000305](../../agents/dialogue_state.py#L305) | 305 | `"        r\"then\\b\|also\\b\|as\\s+for\\b\|and\\s+its\\b)\","` | — |
+| [SRC-2D53795445-L000306](../../agents/dialogue_state.py#L306) | 306 | `"        current,"` | — |
+| [SRC-2D53795445-L000307](../../agents/dialogue_state.py#L307) | 307 | `"    )"` | — |
+| [SRC-2D53795445-L000308](../../agents/dialogue_state.py#L308) | 308 | `"    reference = re.search("` | — |
+| [SRC-2D53795445-L000309](../../agents/dialogue_state.py#L309) | 309 | `"        r\"\\b(?:it\|its\|they\|them\|their\|this\|that\|these\|those\|there\|\""` | — |
+| [SRC-2D53795445-L000310](../../agents/dialogue_state.py#L310) | 310 | `"        r\"he\|she\|هو\|هي\|هذا\|هذه\|هذان\|هاتان\|هؤلاء\|ذلك\|تلك\|اللذان\|اللتان\|\""` | — |
+| [SRC-2D53795445-L000311](../../agents/dialogue_state.py#L311) | 311 | `"        r\"الذي\|التي\|الذين\|ده\|دي\|دا\|دول\|عليه\|عليها\|فيه\|فيها\|لها\|له\|\""` | — |
+| [SRC-2D53795445-L000312](../../agents/dialogue_state.py#L312) | 312 | `"        r\"سعرها\|سعره\|ضمانها\|ضمانه\|بطاريتها\|كاميرتها)\\b\","` | — |
+| [SRC-2D53795445-L000313](../../agents/dialogue_state.py#L313) | 313 | `"        current,"` | — |
+| [SRC-2D53795445-L000314](../../agents/dialogue_state.py#L314) | 314 | `"    )"` | — |
+| [SRC-2D53795445-L000315](../../agents/dialogue_state.py#L315) | 315 | `"    fragment = re.fullmatch("` | — |
+| [SRC-2D53795445-L000316](../../agents/dialogue_state.py#L316) | 316 | `"        r\"[؟?\\s]*(?:و)?(?:السعر\|الاسعار\|الضمان\|البطاريه\|الكاميرا\|\""` | — |
+| [SRC-2D53795445-L000317](../../agents/dialogue_state.py#L317) | 317 | `"        r\"المكان\|الرابط\|المصدر\|المميزات\|العيوب\|سعر\|ضمان\|بطاريه\|كاميرا\|\""` | — |
+| [SRC-2D53795445-L000318](../../agents/dialogue_state.py#L318) | 318 | `"        r\"مكان\|رابط\|مصدر\|warranty\|price\|battery\|camera\|location\|source\|pros\|cons)\""` | — |
+| [SRC-2D53795445-L000319](../../agents/dialogue_state.py#L319) | 319 | `"        r\"[؟?\\s]*\","` | — |
+| [SRC-2D53795445-L000320](../../agents/dialogue_state.py#L320) | 320 | `"        current,"` | — |
+| [SRC-2D53795445-L000321](../../agents/dialogue_state.py#L321) | 321 | `"    )"` | — |
+| [SRC-2D53795445-L000322](../../agents/dialogue_state.py#L322) | 322 | `"    # Arabic object pronouns are often attached to verbs, as in \"أشتريه\""` | — |
+| [SRC-2D53795445-L000323](../../agents/dialogue_state.py#L323) | 323 | `"    # or \"أستخدمها\"; whitespace-token pronoun lists miss these natural follow-ups."` | — |
+| [SRC-2D53795445-L000324](../../agents/dialogue_state.py#L324) | 324 | `"    attached_reference = re.search("` | — |
+| [SRC-2D53795445-L000325](../../agents/dialogue_state.py#L325) | 325 | `"        r\"\\b(?:استخدم\|أستخدم\|اشتري\|أشتري\|اجيب\|أجيب\|اشغل\|أشغل\|افتح\|أفتح\|\""` | — |
+| [SRC-2D53795445-L000326](../../agents/dialogue_state.py#L326) | 326 | `"        r\"اصلح\|أصلح\|احط\|أحط\|اجرب\|أجرب\|اربط\|أربط\|اوصل\|أوصل\|اخد\|آخد\|\""` | — |
+| [SRC-2D53795445-L000327](../../agents/dialogue_state.py#L327) | 327 | `"        r\"اخلي\|أخلي\|اركب\|أركب\|انقل\|أنقل\|ادفع\|أدفع\|اطلب\|أطلب\|احجز\|أحجز)\""` | — |
+| [SRC-2D53795445-L000328](../../agents/dialogue_state.py#L328) | 328 | `"        r\"[\\u0600-\\u06FF]{0,18}(?:ه\|ها\|هم\|هما\|هن\|ك\|كم\|كن)\\b\","` | — |
+| [SRC-2D53795445-L000329](../../agents/dialogue_state.py#L329) | 329 | `"        current,"` | — |
+| [SRC-2D53795445-L000330](../../agents/dialogue_state.py#L330) | 330 | `"    )"` | — |
+| [SRC-2D53795445-L000331](../../agents/dialogue_state.py#L331) | 331 | `"    return bool(lead_in or reference or fragment or attached_reference or _has_explicit_context_refinement(current))"` | — |
 ## الوكيل والمنطق
 
 ### FILE-5587371288 — [agents/intent_router.py](../../agents/intent_router.py#L1)
@@ -823,14 +834,3 @@
 | [SRC-5587371288-L000405](../../agents/intent_router.py#L405) | 405 | `"    normalized = _normalize(question)"` | — |
 | [SRC-5587371288-L000406](../../agents/intent_router.py#L406) | 406 | `"    terms = (\"لخص\", \"تلخيص\", \"ملخص\", \"summarize\", \"summarise\", \"summary\")"` | — |
 | [SRC-5587371288-L000407](../../agents/intent_router.py#L407) | 407 | `"    page_references = ("` | — |
-| [SRC-5587371288-L000408](../../agents/intent_router.py#L408) | 408 | `"        \"صفحه\", \"الصفحه\", \"مقال\", \"المقال\", \"رابط\", \"لينك\", \"url\","` | — |
-| [SRC-5587371288-L000409](../../agents/intent_router.py#L409) | 409 | `"        \"link\", \"article\", \"page\", \"webpage\", \"web page\", \"website\","` | — |
-| [SRC-5587371288-L000410](../../agents/intent_router.py#L410) | 410 | `"    )"` | — |
-| [SRC-5587371288-L000411](../../agents/intent_router.py#L411) | 411 | `"    return ("` | — |
-| [SRC-5587371288-L000412](../../agents/intent_router.py#L412) | 412 | `"        any(_normalize(term) in normalized for term in terms)"` | — |
-| [SRC-5587371288-L000413](../../agents/intent_router.py#L413) | 413 | `"        and ("` | — |
-| [SRC-5587371288-L000414](../../agents/intent_router.py#L414) | 414 | `"            bool(re.search(r\"https?://\", question, flags=re.IGNORECASE))"` | — |
-| [SRC-5587371288-L000415](../../agents/intent_router.py#L415) | 415 | `"            or any(_normalize(term) in normalized for term in page_references)"` | — |
-| [SRC-5587371288-L000416](../../agents/intent_router.py#L416) | 416 | `"        )"` | — |
-| [SRC-5587371288-L000417](../../agents/intent_router.py#L417) | 417 | `"    )"` | — |
-| [SRC-5587371288-L000418](../../agents/intent_router.py#L418) | 418 | `""` | — |

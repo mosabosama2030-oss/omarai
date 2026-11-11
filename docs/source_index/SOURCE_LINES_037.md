@@ -4,7 +4,7 @@
 
 - الصفحة: **037**
 - سجلات الأسطر: **800**
-- النطاق: SRC-70795F4B61-L000123 إلى SRC-A8360B1B03-L000391
+- النطاق: SRC-70795F4B61-L000107 إلى SRC-A8360B1B03-L000375
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## ملفات أخرى
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-70795F4B61-L000107](../../scripts/compare_answer_quality_runs.py#L107) | 107 | `"    ]"` | — |
+| [SRC-70795F4B61-L000108](../../scripts/compare_answer_quality_runs.py#L108) | 108 | `"    required_tool_rows = ["` | — |
+| [SRC-70795F4B61-L000109](../../scripts/compare_answer_quality_runs.py#L109) | 109 | `"        row"` | — |
+| [SRC-70795F4B61-L000110](../../scripts/compare_answer_quality_runs.py#L110) | 110 | `"        for record in results"` | — |
+| [SRC-70795F4B61-L000111](../../scripts/compare_answer_quality_runs.py#L111) | 111 | `"        for row in record.get(\"required_tool_statuses\", [])"` | — |
+| [SRC-70795F4B61-L000112](../../scripts/compare_answer_quality_runs.py#L112) | 112 | `"        if isinstance(row, dict) and isinstance(row.get(\"successful_completion\"), bool)"` | — |
+| [SRC-70795F4B61-L000113](../../scripts/compare_answer_quality_runs.py#L113) | 113 | `"    ]"` | — |
+| [SRC-70795F4B61-L000114](../../scripts/compare_answer_quality_runs.py#L114) | 114 | `"    required_tool_successes = sum("` | — |
+| [SRC-70795F4B61-L000115](../../scripts/compare_answer_quality_runs.py#L115) | 115 | `"        1 for row in required_tool_rows if row[\"successful_completion\"] is True"` | — |
+| [SRC-70795F4B61-L000116](../../scripts/compare_answer_quality_runs.py#L116) | 116 | `"    )"` | — |
+| [SRC-70795F4B61-L000117](../../scripts/compare_answer_quality_runs.py#L117) | 117 | `"    tool_status_counts: dict[str, int] = {}"` | — |
+| [SRC-70795F4B61-L000118](../../scripts/compare_answer_quality_runs.py#L118) | 118 | `"    for row in required_tool_rows:"` | — |
+| [SRC-70795F4B61-L000119](../../scripts/compare_answer_quality_runs.py#L119) | 119 | `"        status = row.get(\"status\")"` | — |
+| [SRC-70795F4B61-L000120](../../scripts/compare_answer_quality_runs.py#L120) | 120 | `"        if isinstance(status, str):"` | — |
+| [SRC-70795F4B61-L000121](../../scripts/compare_answer_quality_runs.py#L121) | 121 | `"            tool_status_counts[status] = tool_status_counts.get(status, 0) + 1"` | — |
+| [SRC-70795F4B61-L000122](../../scripts/compare_answer_quality_runs.py#L122) | 122 | `"    required_tool_matrix_telemetry_known = all("` | — |
 | [SRC-70795F4B61-L000123](../../scripts/compare_answer_quality_runs.py#L123) | 123 | `"        isinstance(record.get(\"required_tool_matrix_complete\"), bool)"` | — |
 | [SRC-70795F4B61-L000124](../../scripts/compare_answer_quality_runs.py#L124) | 124 | `"        for record in results"` | — |
 | [SRC-70795F4B61-L000125](../../scripts/compare_answer_quality_runs.py#L125) | 125 | `"    )"` | — |
@@ -809,19 +825,3 @@
 | [SRC-A8360B1B03-L000373](../../scripts/hosted_smoke_test.py#L373) | 373 | `"        checks[\"authentication\"] = \"passed\""` | — |
 | [SRC-A8360B1B03-L000374](../../scripts/hosted_smoke_test.py#L374) | 374 | `"    else:"` | — |
 | [SRC-A8360B1B03-L000375](../../scripts/hosted_smoke_test.py#L375) | 375 | `"        checks[\"authentication\"] = \"local_loopback_dev_bypass\""` | — |
-| [SRC-A8360B1B03-L000376](../../scripts/hosted_smoke_test.py#L376) | 376 | `""` | — |
-| [SRC-A8360B1B03-L000377](../../scripts/hosted_smoke_test.py#L377) | 377 | `"    if not allow_provider_usage:"` | — |
-| [SRC-A8360B1B03-L000378](../../scripts/hosted_smoke_test.py#L378) | 378 | `"        checks[\"provider_usage\"] = {\"status\": \"blocked_not_approved\"}"` | — |
-| [SRC-A8360B1B03-L000379](../../scripts/hosted_smoke_test.py#L379) | 379 | `"        raise SmokeError("` | — |
-| [SRC-A8360B1B03-L000380](../../scripts/hosted_smoke_test.py#L380) | 380 | `"            \"No-cost preflight passed, but live search/model usage was not approved. \""` | — |
-| [SRC-A8360B1B03-L000381](../../scripts/hosted_smoke_test.py#L381) | 381 | `"            \"Re-run with --allow-provider-usage only after explicit human approval.\","` | — |
-| [SRC-A8360B1B03-L000382](../../scripts/hosted_smoke_test.py#L382) | 382 | `"            partial_report,"` | — |
-| [SRC-A8360B1B03-L000383](../../scripts/hosted_smoke_test.py#L383) | 383 | `"        )"` | — |
-| [SRC-A8360B1B03-L000384](../../scripts/hosted_smoke_test.py#L384) | 384 | `""` | — |
-| [SRC-A8360B1B03-L000385](../../scripts/hosted_smoke_test.py#L385) | 385 | `"    checks[\"provider_usage\"] = {"` | — |
-| [SRC-A8360B1B03-L000386](../../scripts/hosted_smoke_test.py#L386) | 386 | `"        \"status\": \"approved\","` | — |
-| [SRC-A8360B1B03-L000387](../../scripts/hosted_smoke_test.py#L387) | 387 | `"        \"scope\": {"` | — |
-| [SRC-A8360B1B03-L000388](../../scripts/hosted_smoke_test.py#L388) | 388 | `"            \"profile\": \"hosted_smoke\","` | — |
-| [SRC-A8360B1B03-L000389](../../scripts/hosted_smoke_test.py#L389) | 389 | `"            \"max_search_queries\": HOSTED_SMOKE_BUDGET_MAX[\"search_queries\"],"` | — |
-| [SRC-A8360B1B03-L000390](../../scripts/hosted_smoke_test.py#L390) | 390 | `"            \"max_provider_requests\": HOSTED_SMOKE_BUDGET_MAX[\"search_calls\"],"` | — |
-| [SRC-A8360B1B03-L000391](../../scripts/hosted_smoke_test.py#L391) | 391 | `"            \"max_model_calls\": HOSTED_SMOKE_BUDGET_MAX[\"model_calls\"],"` | — |

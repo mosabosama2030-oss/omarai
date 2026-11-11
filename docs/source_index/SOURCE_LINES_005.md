@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-C9CF9B54F8-L000638 إلى SRC-FDEEAFDFCA-L000067
+- النطاق: SRC-C9CF9B54F8-L000627 إلى SRC-FDEEAFDFCA-L000056
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-C9CF9B54F8-L000627](../../agents/omarai.py#L627) | 627 | `"        identity = str(user_id or (\"user_\" + uuid.uuid4().hex))"` | — |
+| [SRC-C9CF9B54F8-L000628](../../agents/omarai.py#L628) | 628 | `"        with self.connect() as db:"` | — |
+| [SRC-C9CF9B54F8-L000629](../../agents/omarai.py#L629) | 629 | `"            db.execute("` | — |
+| [SRC-C9CF9B54F8-L000630](../../agents/omarai.py#L630) | 630 | `"                \"\"\"INSERT INTO users (id, email, display_name, active, created_at)"` | — |
+| [SRC-C9CF9B54F8-L000631](../../agents/omarai.py#L631) | 631 | `"                   VALUES (?, ?, ?, 1, ?)\"\"\","` | — |
+| [SRC-C9CF9B54F8-L000632](../../agents/omarai.py#L632) | 632 | `"                (identity, clean_email, clean_name, now_utc()),"` | — |
+| [SRC-C9CF9B54F8-L000633](../../agents/omarai.py#L633) | 633 | `"            )"` | — |
+| [SRC-C9CF9B54F8-L000634](../../agents/omarai.py#L634) | 634 | `"        return identity"` | — |
+| [SRC-C9CF9B54F8-L000635](../../agents/omarai.py#L635) | 635 | `""` | — |
+| [SRC-C9CF9B54F8-L000636](../../agents/omarai.py#L636) | 636 | `"    def add_membership(self, tenant_id: str, user_id: str, role: str = \"sales_agent\"):"` | — |
+| [SRC-C9CF9B54F8-L000637](../../agents/omarai.py#L637) | 637 | `"        tenant = self._tenant(tenant_id)"` | — |
 | [SRC-C9CF9B54F8-L000638](../../agents/omarai.py#L638) | 638 | `"        if role not in self.ALLOWED_ROLES:"` | — |
 | [SRC-C9CF9B54F8-L000639](../../agents/omarai.py#L639) | 639 | `"            raise ValueError(\"unsupported membership role\")"` | — |
 | [SRC-C9CF9B54F8-L000640](../../agents/omarai.py#L640) | 640 | `"        with self.connect() as db:"` | — |
@@ -814,14 +825,3 @@
 | [SRC-FDEEAFDFCA-L000054](../../agents/request_budget.py#L54) | 54 | `""` | — |
 | [SRC-FDEEAFDFCA-L000055](../../agents/request_budget.py#L55) | 55 | `"    def __init__("` | — |
 | [SRC-FDEEAFDFCA-L000056](../../agents/request_budget.py#L56) | 56 | `"        self,"` | — |
-| [SRC-FDEEAFDFCA-L000057](../../agents/request_budget.py#L57) | 57 | `"        timeout_seconds: int = DEFAULT_TIMEOUT_SECONDS,"` | — |
-| [SRC-FDEEAFDFCA-L000058](../../agents/request_budget.py#L58) | 58 | `"        limits: Mapping[str, int] \| None = None,"` | — |
-| [SRC-FDEEAFDFCA-L000059](../../agents/request_budget.py#L59) | 59 | `"        clock: Callable[[], float] = time.monotonic,"` | — |
-| [SRC-FDEEAFDFCA-L000060](../../agents/request_budget.py#L60) | 60 | `"        profile: str = \"default\","` | — |
-| [SRC-FDEEAFDFCA-L000061](../../agents/request_budget.py#L61) | 61 | `"    ) -> None:"` | — |
-| [SRC-FDEEAFDFCA-L000062](../../agents/request_budget.py#L62) | 62 | `"        self._clock = clock"` | — |
-| [SRC-FDEEAFDFCA-L000063](../../agents/request_budget.py#L63) | 63 | `"        self.profile = profile"` | — |
-| [SRC-FDEEAFDFCA-L000064](../../agents/request_budget.py#L64) | 64 | `"        bounded_timeout = max(10, min(int(timeout_seconds), MAX_TIMEOUT_SECONDS))"` | — |
-| [SRC-FDEEAFDFCA-L000065](../../agents/request_budget.py#L65) | 65 | `"        self.started_at = clock()"` | — |
-| [SRC-FDEEAFDFCA-L000066](../../agents/request_budget.py#L66) | 66 | `"        self.deadline = self.started_at + bounded_timeout"` | — |
-| [SRC-FDEEAFDFCA-L000067](../../agents/request_budget.py#L67) | 67 | `"        self._limits = {"` | — |

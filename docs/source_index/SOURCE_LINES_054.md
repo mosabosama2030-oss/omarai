@@ -4,7 +4,7 @@
 
 - الصفحة: **054**
 - سجلات الأسطر: **800**
-- النطاق: SRC-44CDA52D01-L000143 إلى SRC-6BF96689A8-L000047
+- النطاق: SRC-44CDA52D01-L000082 إلى SRC-50E7F53B84-L000045
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,67 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-44CDA52D01-L000082](../../tests/test_omarai.py#L82) | 82 | `"    assert row2[\"text\"].startswith(\"\\t\\ufeff=\")"` | — |
+| [SRC-44CDA52D01-L000083](../../tests/test_omarai.py#L83) | 83 | `"    assert row2[\"note\"].startswith(\"\\t\\u00a0\\ufeff=\")"` | — |
+| [SRC-44CDA52D01-L000084](../../tests/test_omarai.py#L84) | 84 | `""` | — |
+| [SRC-44CDA52D01-L000085](../../tests/test_omarai.py#L85) | 85 | `""` | — |
+| [SRC-44CDA52D01-L000086](../../tests/test_omarai.py#L86) | 86 | `""` | — |
+| [SRC-44CDA52D01-L000087](../../tests/test_omarai.py#L87) | 87 | `"def test_generic_fire_alarm_and_supplier_requests_are_sector_neutral():"` | — |
+| [SRC-44CDA52D01-L000088](../../tests/test_omarai.py#L88) | 88 | `"    fire_alarm = analyze(\"نحتاج نظام إنذار حريق للمصنع\")"` | — |
+| [SRC-44CDA52D01-L000089](../../tests/test_omarai.py#L89) | 89 | `"    supplier = analyze(\"نبحث عن مورد لافتات لمشروع جديد\")"` | — |
+| [SRC-44CDA52D01-L000090](../../tests/test_omarai.py#L90) | 90 | `"    assert fire_alarm[\"label\"] == \"high_intent\""` | — |
+| [SRC-44CDA52D01-L000091](../../tests/test_omarai.py#L91) | 91 | `"    assert supplier[\"label\"] == \"high_intent\""` | — |
+| [SRC-44CDA52D01-L000092](../../tests/test_omarai.py#L92) | 92 | `"    assert fire_alarm[\"score\"] >= 55"` | — |
+| [SRC-44CDA52D01-L000093](../../tests/test_omarai.py#L93) | 93 | `"    assert supplier[\"score\"] >= 55"` | — |
+| [SRC-44CDA52D01-L000094](../../tests/test_omarai.py#L94) | 94 | `""` | — |
+| [SRC-44CDA52D01-L000095](../../tests/test_omarai.py#L95) | 95 | `""` | — |
+| [SRC-44CDA52D01-L000096](../../tests/test_omarai.py#L96) | 96 | `"def test_product_mention_alone_does_not_create_a_demand_signal():"` | — |
+| [SRC-44CDA52D01-L000097](../../tests/test_omarai.py#L97) | 97 | `"    result = analyze(\"نظام إنذار حريق\")"` | — |
+| [SRC-44CDA52D01-L000098](../../tests/test_omarai.py#L98) | 98 | `"    assert result[\"label\"] == \"unclear\""` | — |
+| [SRC-44CDA52D01-L000099](../../tests/test_omarai.py#L99) | 99 | `"    assert result[\"score\"] == 0"` | — |
+| [SRC-44CDA52D01-L000100](../../tests/test_omarai.py#L100) | 100 | `""` | — |
+| [SRC-44CDA52D01-L000101](../../tests/test_omarai.py#L101) | 101 | `""` | — |
+| [SRC-44CDA52D01-L000102](../../tests/test_omarai.py#L102) | 102 | `"@pytest.mark.parametrize("` | — |
+| [SRC-44CDA52D01-L000103](../../tests/test_omarai.py#L103) | 103 | `"    \"text\","` | — |
+| [SRC-44CDA52D01-L000104](../../tests/test_omarai.py#L104) | 104 | `"    ["` | — |
+| [SRC-44CDA52D01-L000105](../../tests/test_omarai.py#L105) | 105 | `"        \"مش بدور على شقة\","` | — |
+| [SRC-44CDA52D01-L000106](../../tests/test_omarai.py#L106) | 106 | `"        \"مش محتاج نظام إنذار حريق\","` | — |
+| [SRC-44CDA52D01-L000107](../../tests/test_omarai.py#L107) | 107 | `"        \"لا نحتاج مورد لافتات\","` | — |
+| [SRC-44CDA52D01-L000108](../../tests/test_omarai.py#L108) | 108 | `"        \"not looking for a supplier\","` | — |
+| [SRC-44CDA52D01-L000109](../../tests/test_omarai.py#L109) | 109 | `"        \"we do not need a fire alarm system\","` | — |
+| [SRC-44CDA52D01-L000110](../../tests/test_omarai.py#L110) | 110 | `"    ],"` | — |
+| [SRC-44CDA52D01-L000111](../../tests/test_omarai.py#L111) | 111 | `")"` | — |
+| [SRC-44CDA52D01-L000112](../../tests/test_omarai.py#L112) | 112 | `"def test_explicit_negation_never_scores_as_buyer_intent(text):"` | — |
+| [SRC-44CDA52D01-L000113](../../tests/test_omarai.py#L113) | 113 | `"    result = analyze(text)"` | — |
+| [SRC-44CDA52D01-L000114](../../tests/test_omarai.py#L114) | 114 | `"    assert result[\"label\"] == \"not_buyer_signal\""` | — |
+| [SRC-44CDA52D01-L000115](../../tests/test_omarai.py#L115) | 115 | `"    assert result[\"score\"] == 0"` | — |
+| [SRC-44CDA52D01-L000116](../../tests/test_omarai.py#L116) | 116 | `""` | — |
+| [SRC-44CDA52D01-L000117](../../tests/test_omarai.py#L117) | 117 | `""` | — |
+| [SRC-44CDA52D01-L000118](../../tests/test_omarai.py#L118) | 118 | `"@pytest.mark.parametrize("` | — |
+| [SRC-44CDA52D01-L000119](../../tests/test_omarai.py#L119) | 119 | `"    \"text\","` | — |
+| [SRC-44CDA52D01-L000120](../../tests/test_omarai.py#L120) | 120 | `"    ["` | — |
+| [SRC-44CDA52D01-L000121](../../tests/test_omarai.py#L121) | 121 | `"        \"تم الشراء بالفعل\","` | — |
+| [SRC-44CDA52D01-L000122](../../tests/test_omarai.py#L122) | 122 | `"        \"وجدنا مورد وتم التعاقد\","` | — |
+| [SRC-44CDA52D01-L000123](../../tests/test_omarai.py#L123) | 123 | `"        \"already purchased the equipment\","` | — |
+| [SRC-44CDA52D01-L000124](../../tests/test_omarai.py#L124) | 124 | `"        \"supplier selected\","` | — |
+| [SRC-44CDA52D01-L000125](../../tests/test_omarai.py#L125) | 125 | `"        \"كنت بدور على شقة\","` | — |
+| [SRC-44CDA52D01-L000126](../../tests/test_omarai.py#L126) | 126 | `"    ],"` | — |
+| [SRC-44CDA52D01-L000127](../../tests/test_omarai.py#L127) | 127 | `")"` | — |
+| [SRC-44CDA52D01-L000128](../../tests/test_omarai.py#L128) | 128 | `"def test_completed_or_past_need_is_not_active_demand(text):"` | — |
+| [SRC-44CDA52D01-L000129](../../tests/test_omarai.py#L129) | 129 | `"    result = analyze(text)"` | — |
+| [SRC-44CDA52D01-L000130](../../tests/test_omarai.py#L130) | 130 | `"    assert result[\"label\"] == \"closed_or_stale_signal\""` | — |
+| [SRC-44CDA52D01-L000131](../../tests/test_omarai.py#L131) | 131 | `"    assert result[\"score\"] == 0"` | — |
+| [SRC-44CDA52D01-L000132](../../tests/test_omarai.py#L132) | 132 | `""` | — |
+| [SRC-44CDA52D01-L000133](../../tests/test_omarai.py#L133) | 133 | `""` | — |
+| [SRC-44CDA52D01-L000134](../../tests/test_omarai.py#L134) | 134 | `"def test_product_and_location_context_do_not_inflate_demand_score():"` | — |
+| [SRC-44CDA52D01-L000135](../../tests/test_omarai.py#L135) | 135 | `"    result = analyze("` | — |
+| [SRC-44CDA52D01-L000136](../../tests/test_omarai.py#L136) | 136 | `"        \"نظام إنذار حريق في القاهرة\","` | — |
+| [SRC-44CDA52D01-L000137](../../tests/test_omarai.py#L137) | 137 | `"        product_terms=[\"نظام إنذار حريق\"],"` | — |
+| [SRC-44CDA52D01-L000138](../../tests/test_omarai.py#L138) | 138 | `"        location_terms=[\"القاهرة\"],"` | — |
+| [SRC-44CDA52D01-L000139](../../tests/test_omarai.py#L139) | 139 | `"    )"` | — |
+| [SRC-44CDA52D01-L000140](../../tests/test_omarai.py#L140) | 140 | `"    assert result[\"score\"] == 0"` | — |
+| [SRC-44CDA52D01-L000141](../../tests/test_omarai.py#L141) | 141 | `"    assert result[\"label\"] == \"unclear\""` | — |
+| [SRC-44CDA52D01-L000142](../../tests/test_omarai.py#L142) | 142 | `"    assert {item[\"category\"] for item in result[\"matched_signals\"]} == {"` | — |
 | [SRC-44CDA52D01-L000143](../../tests/test_omarai.py#L143) | 143 | `"        \"product_context\","` | — |
 | [SRC-44CDA52D01-L000144](../../tests/test_omarai.py#L144) | 144 | `"        \"location_context\","` | — |
 | [SRC-44CDA52D01-L000145](../../tests/test_omarai.py#L145) | 145 | `"    }"` | — |
@@ -800,73 +861,3 @@
 | [SRC-50E7F53B84-L000043](../../tests/test_requirement_evidence.py#L43) | 43 | `""` | — |
 | [SRC-50E7F53B84-L000044](../../tests/test_requirement_evidence.py#L44) | 44 | `"    battery = by_target[\"البطارية\"]"` | — |
 | [SRC-50E7F53B84-L000045](../../tests/test_requirement_evidence.py#L45) | 45 | `"    assert battery[\"status\"] == \"no_candidate_evidence_found\""` | — |
-| [SRC-50E7F53B84-L000046](../../tests/test_requirement_evidence.py#L46) | 46 | `"    assert battery[\"candidate_source_indexes\"] == []"` | — |
-| [SRC-50E7F53B84-L000047](../../tests/test_requirement_evidence.py#L47) | 47 | `"    assert battery[\"semantic_verification\"] is False"` | — |
-| [SRC-50E7F53B84-L000048](../../tests/test_requirement_evidence.py#L48) | 48 | `""` | — |
-| [SRC-50E7F53B84-L000049](../../tests/test_requirement_evidence.py#L49) | 49 | `""` | — |
-| [SRC-50E7F53B84-L000050](../../tests/test_requirement_evidence.py#L50) | 50 | `"def test_title_only_match_remains_a_candidate_not_verified_evidence() -> None:"` | — |
-| [SRC-50E7F53B84-L000051](../../tests/test_requirement_evidence.py#L51) | 51 | `"    ledger = build_requirement_evidence_ledger("` | — |
-| [SRC-50E7F53B84-L000052](../../tests/test_requirement_evidence.py#L52) | 52 | `"        [\"battery\"],"` | — |
-| [SRC-50E7F53B84-L000053](../../tests/test_requirement_evidence.py#L53) | 53 | `"        [{\"title\": \"Battery overview\", \"page_fetched\": False}],"` | — |
-| [SRC-50E7F53B84-L000054](../../tests/test_requirement_evidence.py#L54) | 54 | `"    )"` | — |
-| [SRC-50E7F53B84-L000055](../../tests/test_requirement_evidence.py#L55) | 55 | `""` | — |
-| [SRC-50E7F53B84-L000056](../../tests/test_requirement_evidence.py#L56) | 56 | `"    assert ledger[0][\"status\"] == \"candidate_evidence_found_not_verified\""` | — |
-| [SRC-50E7F53B84-L000057](../../tests/test_requirement_evidence.py#L57) | 57 | `"    assert ledger[0][\"candidate_sources\"][0][\"evidence_basis\"] == \"title_only\""` | — |
-| [SRC-50E7F53B84-L000058](../../tests/test_requirement_evidence.py#L58) | 58 | `"    assert ledger[0][\"semantic_verification\"] is False"` | — |
-| [SRC-50E7F53B84-L000059](../../tests/test_requirement_evidence.py#L59) | 59 | `"    assert ledger[0][\"source_entailment_verified\"] is False"` | — |
-## اختبارات
-
-### FILE-6BF96689A8 — [tests/test_research.py](../../tests/test_research.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-6BF96689A8-L000001](../../tests/test_research.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-6BF96689A8-L000002](../../tests/test_research.py#L2) | 2 | `""` | — |
-| [SRC-6BF96689A8-L000003](../../tests/test_research.py#L3) | 3 | `"from agents.research import ("` | — |
-| [SRC-6BF96689A8-L000004](../../tests/test_research.py#L4) | 4 | `"    classify_source,"` | — |
-| [SRC-6BF96689A8-L000005](../../tests/test_research.py#L5) | 5 | `"    compact_search_query,"` | — |
-| [SRC-6BF96689A8-L000006](../../tests/test_research.py#L6) | 6 | `"    evidence_signal_report,"` | — |
-| [SRC-6BF96689A8-L000007](../../tests/test_research.py#L7) | 7 | `"    fallback_plan,"` | — |
-| [SRC-6BF96689A8-L000008](../../tests/test_research.py#L8) | 8 | `"    fuse_ranked_results,"` | — |
-| [SRC-6BF96689A8-L000009](../../tests/test_research.py#L9) | 9 | `"    registrable_domain,"` | — |
-| [SRC-6BF96689A8-L000010](../../tests/test_research.py#L10) | 10 | `"    validate_plan,"` | — |
-| [SRC-6BF96689A8-L000011](../../tests/test_research.py#L11) | 11 | `")"` | — |
-| [SRC-6BF96689A8-L000012](../../tests/test_research.py#L12) | 12 | `""` | — |
-| [SRC-6BF96689A8-L000013](../../tests/test_research.py#L13) | 13 | `""` | — |
-| [SRC-6BF96689A8-L000014](../../tests/test_research.py#L14) | 14 | `"def test_social_question_gets_platform_targeted_queries():"` | — |
-| [SRC-6BF96689A8-L000015](../../tests/test_research.py#L15) | 15 | `"    plan = fallback_plan(\"ابحث في Reddit عن تجارب العملاء مع السيارات الكهربائية\")"` | — |
-| [SRC-6BF96689A8-L000016](../../tests/test_research.py#L16) | 16 | `"    assert plan[\"social_focus\"] is True"` | — |
-| [SRC-6BF96689A8-L000017](../../tests/test_research.py#L17) | 17 | `"    assert \"reddit\" in plan[\"platforms\"]"` | — |
-| [SRC-6BF96689A8-L000018](../../tests/test_research.py#L18) | 18 | `"    assert any(\"site:reddit.com\" in query for query in plan[\"queries\"])"` | — |
-| [SRC-6BF96689A8-L000019](../../tests/test_research.py#L19) | 19 | `"    assert len(plan[\"queries\"]) <= 8"` | — |
-| [SRC-6BF96689A8-L000020](../../tests/test_research.py#L20) | 20 | `""` | — |
-| [SRC-6BF96689A8-L000021](../../tests/test_research.py#L21) | 21 | `""` | — |
-| [SRC-6BF96689A8-L000022](../../tests/test_research.py#L22) | 22 | `"def test_follow_up_query_keeps_prior_topic():"` | — |
-| [SRC-6BF96689A8-L000023](../../tests/test_research.py#L23) | 23 | `"    history = [{\"role\": \"user\", \"content\": \"قارن سوق السيارات الكهربائية في مصر\"}]"` | — |
-| [SRC-6BF96689A8-L000024](../../tests/test_research.py#L24) | 24 | `"    plan = fallback_plan(\"وطب الأسعار الحالية؟\", history)"` | — |
-| [SRC-6BF96689A8-L000025](../../tests/test_research.py#L25) | 25 | `"    assert \"السيارات الكهربائية\" in plan[\"queries\"][0]"` | — |
-| [SRC-6BF96689A8-L000026](../../tests/test_research.py#L26) | 26 | `"    assert plan[\"freshness\"] == \"current\""` | — |
-| [SRC-6BF96689A8-L000027](../../tests/test_research.py#L27) | 27 | `""` | — |
-| [SRC-6BF96689A8-L000028](../../tests/test_research.py#L28) | 28 | `""` | — |
-| [SRC-6BF96689A8-L000029](../../tests/test_research.py#L29) | 29 | `"def test_plan_validation_caps_queries_and_rejects_non_string_values():"` | — |
-| [SRC-6BF96689A8-L000030](../../tests/test_research.py#L30) | 30 | `"    candidate = {"` | — |
-| [SRC-6BF96689A8-L000031](../../tests/test_research.py#L31) | 31 | `"        \"queries\": [\"بحث أ\", \"بحث ب\", None, \"بحث ج\", \"بحث د\", \"بحث هـ\", \"بحث سادس\", \"بحث سابع\", \"بحث ثامن\", \"بحث تاسع\"],"` | — |
-| [SRC-6BF96689A8-L000032](../../tests/test_research.py#L32) | 32 | `"        \"social_focus\": True,"` | — |
-| [SRC-6BF96689A8-L000033](../../tests/test_research.py#L33) | 33 | `"        \"freshness\": \"current\","` | — |
-| [SRC-6BF96689A8-L000034](../../tests/test_research.py#L34) | 34 | `"        \"depth\": \"deep\","` | — |
-| [SRC-6BF96689A8-L000035](../../tests/test_research.py#L35) | 35 | `"        \"platforms\": [\"reddit\", \"unknown\"],"` | — |
-| [SRC-6BF96689A8-L000036](../../tests/test_research.py#L36) | 36 | `"    }"` | — |
-| [SRC-6BF96689A8-L000037](../../tests/test_research.py#L37) | 37 | `"    plan = validate_plan(candidate, \"بحث عن منشورات\")"` | — |
-| [SRC-6BF96689A8-L000038](../../tests/test_research.py#L38) | 38 | `"    assert len(plan[\"queries\"]) <= 8"` | — |
-| [SRC-6BF96689A8-L000039](../../tests/test_research.py#L39) | 39 | `"    assert \"unknown\" not in plan[\"platforms\"]"` | — |
-| [SRC-6BF96689A8-L000040](../../tests/test_research.py#L40) | 40 | `"    assert plan[\"social_focus\"] is True"` | — |
-| [SRC-6BF96689A8-L000041](../../tests/test_research.py#L41) | 41 | `"    assert plan[\"freshness\"] == \"current\""` | — |
-| [SRC-6BF96689A8-L000042](../../tests/test_research.py#L42) | 42 | `""` | — |
-| [SRC-6BF96689A8-L000043](../../tests/test_research.py#L43) | 43 | `""` | — |
-| [SRC-6BF96689A8-L000044](../../tests/test_research.py#L44) | 44 | `"def test_rank_fusion_promotes_cross_provider_consensus_and_deduplicates():"` | — |
-| [SRC-6BF96689A8-L000045](../../tests/test_research.py#L45) | 45 | `"    batches = ["` | — |
-| [SRC-6BF96689A8-L000046](../../tests/test_research.py#L46) | 46 | `"        {"` | — |
-| [SRC-6BF96689A8-L000047](../../tests/test_research.py#L47) | 47 | `"            \"query\": \"cars Egypt\","` | — |

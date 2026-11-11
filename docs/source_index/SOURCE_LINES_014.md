@@ -4,7 +4,7 @@
 
 - الصفحة: **014**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001211 إلى SRC-1AE03B9EC3-L002010
+- النطاق: SRC-1AE03B9EC3-L001200 إلى SRC-1AE03B9EC3-L001999
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001200](../../agents/web_agent.py#L1200) | 1200 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L001201](../../agents/web_agent.py#L1201) | 1201 | `""` | — |
+| [SRC-1AE03B9EC3-L001202](../../agents/web_agent.py#L1202) | 1202 | `"        def contains(term: str) -> bool:"` | — |
+| [SRC-1AE03B9EC3-L001203](../../agents/web_agent.py#L1203) | 1203 | `"            normalized_term = _normalize_search_query(term).casefold()"` | — |
+| [SRC-1AE03B9EC3-L001204](../../agents/web_agent.py#L1204) | 1204 | `"            if re.search(r\"[a-z]\", normalized_term):"` | — |
+| [SRC-1AE03B9EC3-L001205](../../agents/web_agent.py#L1205) | 1205 | `"                return bool(re.search("` | — |
+| [SRC-1AE03B9EC3-L001206](../../agents/web_agent.py#L1206) | 1206 | `"                    r\"(?<![a-z0-9])\" + re.escape(normalized_term) + r\"(?![a-z0-9])\","` | — |
+| [SRC-1AE03B9EC3-L001207](../../agents/web_agent.py#L1207) | 1207 | `"                    normalized,"` | — |
+| [SRC-1AE03B9EC3-L001208](../../agents/web_agent.py#L1208) | 1208 | `"                ))"` | — |
+| [SRC-1AE03B9EC3-L001209](../../agents/web_agent.py#L1209) | 1209 | `"            return normalized_term in normalized"` | — |
+| [SRC-1AE03B9EC3-L001210](../../agents/web_agent.py#L1210) | 1210 | `""` | — |
 | [SRC-1AE03B9EC3-L001211](../../agents/web_agent.py#L1211) | 1211 | `"        categories: set[str] = set()"` | — |
 | [SRC-1AE03B9EC3-L001212](../../agents/web_agent.py#L1212) | 1212 | `"        if any(contains(term) for term in property_terms):"` | — |
 | [SRC-1AE03B9EC3-L001213](../../agents/web_agent.py#L1213) | 1213 | `"            categories.add(\"property\")"` | — |
@@ -805,14 +816,3 @@
 | [SRC-1AE03B9EC3-L001997](../../agents/web_agent.py#L1997) | 1997 | `"                    \"firecrawl_search_api\", search_query, \"not_attempted\","` | — |
 | [SRC-1AE03B9EC3-L001998](../../agents/web_agent.py#L1998) | 1998 | `"                    error=\"Firecrawl requires explicit geography/country scope; API defaults to US\","` | — |
 | [SRC-1AE03B9EC3-L001999](../../agents/web_agent.py#L1999) | 1999 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L002000](../../agents/web_agent.py#L2000) | 2000 | `"            elif self._reserve_firecrawl_search_request():"` | — |
-| [SRC-1AE03B9EC3-L002001](../../agents/web_agent.py#L2001) | 2001 | `"                adapters.append((\"firecrawl_search_api\", self._search_firecrawl))"` | — |
-| [SRC-1AE03B9EC3-L002002](../../agents/web_agent.py#L2002) | 2002 | `"            else:"` | — |
-| [SRC-1AE03B9EC3-L002003](../../agents/web_agent.py#L2003) | 2003 | `"                self._record_provider_diagnostic("` | — |
-| [SRC-1AE03B9EC3-L002004](../../agents/web_agent.py#L2004) | 2004 | `"                    \"firecrawl_search_api\", search_query, \"budget_exhausted\","` | — |
-| [SRC-1AE03B9EC3-L002005](../../agents/web_agent.py#L2005) | 2005 | `"                    error=\"Firecrawl request budget is zero, invalid, or already used\","` | — |
-| [SRC-1AE03B9EC3-L002006](../../agents/web_agent.py#L2006) | 2006 | `"                )"` | — |
-| [SRC-1AE03B9EC3-L002007](../../agents/web_agent.py#L2007) | 2007 | `"        if ("` | — |
-| [SRC-1AE03B9EC3-L002008](../../agents/web_agent.py#L2008) | 2008 | `"            detect_freshness(search_query)"` | — |
-| [SRC-1AE03B9EC3-L002009](../../agents/web_agent.py#L2009) | 2009 | `"            and not self._is_buyer_intent_search_query(search_query)"` | — |
-| [SRC-1AE03B9EC3-L002010](../../agents/web_agent.py#L2010) | 2010 | `"        ):"` | — |

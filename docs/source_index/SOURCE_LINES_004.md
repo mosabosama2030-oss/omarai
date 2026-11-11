@@ -4,7 +4,7 @@
 
 - الصفحة: **004**
 - سجلات الأسطر: **800**
-- النطاق: SRC-5587371288-L000419 إلى SRC-C9CF9B54F8-L000637
+- النطاق: SRC-5587371288-L000408 إلى SRC-C9CF9B54F8-L000626
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-5587371288-L000408](../../agents/intent_router.py#L408) | 408 | `"        \"صفحه\", \"الصفحه\", \"مقال\", \"المقال\", \"رابط\", \"لينك\", \"url\","` | — |
+| [SRC-5587371288-L000409](../../agents/intent_router.py#L409) | 409 | `"        \"link\", \"article\", \"page\", \"webpage\", \"web page\", \"website\","` | — |
+| [SRC-5587371288-L000410](../../agents/intent_router.py#L410) | 410 | `"    )"` | — |
+| [SRC-5587371288-L000411](../../agents/intent_router.py#L411) | 411 | `"    return ("` | — |
+| [SRC-5587371288-L000412](../../agents/intent_router.py#L412) | 412 | `"        any(_normalize(term) in normalized for term in terms)"` | — |
+| [SRC-5587371288-L000413](../../agents/intent_router.py#L413) | 413 | `"        and ("` | — |
+| [SRC-5587371288-L000414](../../agents/intent_router.py#L414) | 414 | `"            bool(re.search(r\"https?://\", question, flags=re.IGNORECASE))"` | — |
+| [SRC-5587371288-L000415](../../agents/intent_router.py#L415) | 415 | `"            or any(_normalize(term) in normalized for term in page_references)"` | — |
+| [SRC-5587371288-L000416](../../agents/intent_router.py#L416) | 416 | `"        )"` | — |
+| [SRC-5587371288-L000417](../../agents/intent_router.py#L417) | 417 | `"    )"` | — |
+| [SRC-5587371288-L000418](../../agents/intent_router.py#L418) | 418 | `""` | — |
 | [SRC-5587371288-L000419](../../agents/intent_router.py#L419) | 419 | `""` | — |
 | [SRC-5587371288-L000420](../../agents/intent_router.py#L420) | 420 | `"def _has_inline_summary_text(question: str) -> bool:"` | — |
 | [SRC-5587371288-L000421](../../agents/intent_router.py#L421) | 421 | `"    \"\"\"Detect text explicitly pasted after a summary instruction, not a web page URL.\"\"\""` | — |
@@ -814,14 +825,3 @@
 | [SRC-C9CF9B54F8-L000624](../../agents/omarai.py#L624) | 624 | `"        clean_name = str(display_name or \"\").strip()[:160]"` | — |
 | [SRC-C9CF9B54F8-L000625](../../agents/omarai.py#L625) | 625 | `"        if not clean_email or \"@\" not in clean_email or not clean_name:"` | — |
 | [SRC-C9CF9B54F8-L000626](../../agents/omarai.py#L626) | 626 | `"            raise ValueError(\"valid email and display name are required\")"` | — |
-| [SRC-C9CF9B54F8-L000627](../../agents/omarai.py#L627) | 627 | `"        identity = str(user_id or (\"user_\" + uuid.uuid4().hex))"` | — |
-| [SRC-C9CF9B54F8-L000628](../../agents/omarai.py#L628) | 628 | `"        with self.connect() as db:"` | — |
-| [SRC-C9CF9B54F8-L000629](../../agents/omarai.py#L629) | 629 | `"            db.execute("` | — |
-| [SRC-C9CF9B54F8-L000630](../../agents/omarai.py#L630) | 630 | `"                \"\"\"INSERT INTO users (id, email, display_name, active, created_at)"` | — |
-| [SRC-C9CF9B54F8-L000631](../../agents/omarai.py#L631) | 631 | `"                   VALUES (?, ?, ?, 1, ?)\"\"\","` | — |
-| [SRC-C9CF9B54F8-L000632](../../agents/omarai.py#L632) | 632 | `"                (identity, clean_email, clean_name, now_utc()),"` | — |
-| [SRC-C9CF9B54F8-L000633](../../agents/omarai.py#L633) | 633 | `"            )"` | — |
-| [SRC-C9CF9B54F8-L000634](../../agents/omarai.py#L634) | 634 | `"        return identity"` | — |
-| [SRC-C9CF9B54F8-L000635](../../agents/omarai.py#L635) | 635 | `""` | — |
-| [SRC-C9CF9B54F8-L000636](../../agents/omarai.py#L636) | 636 | `"    def add_membership(self, tenant_id: str, user_id: str, role: str = \"sales_agent\"):"` | — |
-| [SRC-C9CF9B54F8-L000637](../../agents/omarai.py#L637) | 637 | `"        tenant = self._tenant(tenant_id)"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **013**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L000411 إلى SRC-1AE03B9EC3-L001210
+- النطاق: SRC-1AE03B9EC3-L000400 إلى SRC-1AE03B9EC3-L001199
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L000400](../../agents/web_agent.py#L400) | 400 | `"    return ratio"` | — |
+| [SRC-1AE03B9EC3-L000401](../../agents/web_agent.py#L401) | 401 | `""` | — |
+| [SRC-1AE03B9EC3-L000402](../../agents/web_agent.py#L402) | 402 | `"def _blocked_source_url(url: str) -> bool:"` | — |
+| [SRC-1AE03B9EC3-L000403](../../agents/web_agent.py#L403) | 403 | `"    try:"` | — |
+| [SRC-1AE03B9EC3-L000404](../../agents/web_agent.py#L404) | 404 | `"        host = (urllib.parse.urlparse(url).hostname or \"\").lower().rstrip(\".\")"` | — |
+| [SRC-1AE03B9EC3-L000405](../../agents/web_agent.py#L405) | 405 | `"        return any(host == domain or host.endswith(\".\" + domain) for domain in _BLOCKED_SOURCE_DOMAINS)"` | — |
+| [SRC-1AE03B9EC3-L000406](../../agents/web_agent.py#L406) | 406 | `"    except (TypeError, ValueError):"` | — |
+| [SRC-1AE03B9EC3-L000407](../../agents/web_agent.py#L407) | 407 | `"        return True"` | — |
+| [SRC-1AE03B9EC3-L000408](../../agents/web_agent.py#L408) | 408 | `""` | — |
+| [SRC-1AE03B9EC3-L000409](../../agents/web_agent.py#L409) | 409 | `"class AgentDependencyError(RuntimeError):"` | — |
+| [SRC-1AE03B9EC3-L000410](../../agents/web_agent.py#L410) | 410 | `"    \"\"\"A required optional runtime dependency is unavailable.\"\"\""` | — |
 | [SRC-1AE03B9EC3-L000411](../../agents/web_agent.py#L411) | 411 | `""` | — |
 | [SRC-1AE03B9EC3-L000412](../../agents/web_agent.py#L412) | 412 | `"class _NoRedirectHandler(urllib.request.HTTPRedirectHandler):"` | — |
 | [SRC-1AE03B9EC3-L000413](../../agents/web_agent.py#L413) | 413 | `"    \"\"\"Fail closed on provider redirects so bearer credentials stay on the configured origin.\"\"\""` | — |
@@ -805,14 +816,3 @@
 | [SRC-1AE03B9EC3-L001197](../../agents/web_agent.py#L1197) | 1197 | `"        vehicle_terms = ("` | — |
 | [SRC-1AE03B9EC3-L001198](../../agents/web_agent.py#L1198) | 1198 | `"            \"سياره\", \"سيارات\", \"عربيه\", \"عربيات\", \"مركبه\", \"مركبات\","` | — |
 | [SRC-1AE03B9EC3-L001199](../../agents/web_agent.py#L1199) | 1199 | `"            \"car\", \"cars\", \"vehicle\", \"vehicles\", \"automobile\", \"automobiles\","` | — |
-| [SRC-1AE03B9EC3-L001200](../../agents/web_agent.py#L1200) | 1200 | `"        )"` | — |
-| [SRC-1AE03B9EC3-L001201](../../agents/web_agent.py#L1201) | 1201 | `""` | — |
-| [SRC-1AE03B9EC3-L001202](../../agents/web_agent.py#L1202) | 1202 | `"        def contains(term: str) -> bool:"` | — |
-| [SRC-1AE03B9EC3-L001203](../../agents/web_agent.py#L1203) | 1203 | `"            normalized_term = _normalize_search_query(term).casefold()"` | — |
-| [SRC-1AE03B9EC3-L001204](../../agents/web_agent.py#L1204) | 1204 | `"            if re.search(r\"[a-z]\", normalized_term):"` | — |
-| [SRC-1AE03B9EC3-L001205](../../agents/web_agent.py#L1205) | 1205 | `"                return bool(re.search("` | — |
-| [SRC-1AE03B9EC3-L001206](../../agents/web_agent.py#L1206) | 1206 | `"                    r\"(?<![a-z0-9])\" + re.escape(normalized_term) + r\"(?![a-z0-9])\","` | — |
-| [SRC-1AE03B9EC3-L001207](../../agents/web_agent.py#L1207) | 1207 | `"                    normalized,"` | — |
-| [SRC-1AE03B9EC3-L001208](../../agents/web_agent.py#L1208) | 1208 | `"                ))"` | — |
-| [SRC-1AE03B9EC3-L001209](../../agents/web_agent.py#L1209) | 1209 | `"            return normalized_term in normalized"` | — |
-| [SRC-1AE03B9EC3-L001210](../../agents/web_agent.py#L1210) | 1210 | `""` | — |

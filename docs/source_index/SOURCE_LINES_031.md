@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B2C95EAEE1-L000112 إلى SRC-62CE5126F9-L000656
+- النطاق: SRC-B2C95EAEE1-L000096 إلى SRC-62CE5126F9-L000640
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,22 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B2C95EAEE1-L000096](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L96) | 96 | `"## 5. الإجراءات التالية — مرتبة حسب الأولوية"` | — |
+| [SRC-B2C95EAEE1-L000097](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L97) | 97 | `""` | — |
+| [SRC-B2C95EAEE1-L000098](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L98) | 98 | ``"1. **P0 — إثبات CI على `main`:** التأكد من تشغيل workflow على merge commit أو SHA حالي لاحق من `main`. لا حاجة لاختبار مدفوع لهذا البند."`` | — |
+| [SRC-B2C95EAEE1-L000099](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L99) | 99 | `"2. **P1 — توحيد السجلات:** تحديث سجل الإغلاق المركزي ومصفوفة الأدلة ونطاق التنفيذ لتُظهر أن #76 مدمج؛ وتحديد أن أي ادعاء أقدم هو لقطة تاريخية."` | — |
+| [SRC-B2C95EAEE1-L000100](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L100) | 100 | ``"3. **P1 — مراجعة مستقلة:** طلب مراجعة Grok على SHA الحالي، لا على خط الأساس السابق `d46a546...`. يبقى الإغلاق معتمدًا على وجود التقرير وأدلته لا على مجرد إرسال الطلب."`` | — |
+| [SRC-B2C95EAEE1-L000101](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L101) | 101 | `"4. **P1 — قبول الواجهة:** تنفيذ قائمة Issue #11 يدويًا على جهاز/متصفح حقيقي وتسجيل النتائج."` | — |
+| [SRC-B2C95EAEE1-L000102](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L102) | 102 | `"5. **P1 — قبول التشغيل الحي:** لا يبدأ hosted smoke أو أي تشخيص يمكن أن يستهلك حصة/أموالًا إلا بعد اعتماد المضيف وإعداد الأسرار الآمن وموافقة بشرية واضحة على التنفيذ."` | — |
+| [SRC-B2C95EAEE1-L000103](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L103) | 103 | `""` | — |
+| [SRC-B2C95EAEE1-L000104](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L104) | 104 | `"## 6. سياسة الإغلاق"` | — |
+| [SRC-B2C95EAEE1-L000105](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L105) | 105 | `""` | — |
+| [SRC-B2C95EAEE1-L000106](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L106) | 106 | ``"- `FIXED_AND_TESTED` يعني أن الإصلاح اجتاز اختبارًا محددًا على SHA معين؛ لا يعني أنه صحيح لكل الحالات."`` | — |
+| [SRC-B2C95EAEE1-L000107](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L107) | 107 | ``"- `NOT_CONFIRMED` تعني أن الدليل المباشر المطلوب لم يُتحقق منه في هذه المراجعة، ولا تعني أن الفحص فشل."`` | — |
+| [SRC-B2C95EAEE1-L000108](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L108) | 108 | ``"- `NOT_RUN` تعني أن الاختبار لم يُنفذ."`` | — |
+| [SRC-B2C95EAEE1-L000109](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L109) | 109 | `"- لا يُعلن إغلاق التأسيس أو جاهزية الإنتاج اعتمادًا على نجاح CI وحده."` | — |
+| [SRC-B2C95EAEE1-L000110](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L110) | 110 | `""` | — |
+| [SRC-B2C95EAEE1-L000111](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L111) | 111 | `"## الروابط المرجعية"` | — |
 | [SRC-B2C95EAEE1-L000112](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L112) | 112 | `""` | — |
 | [SRC-B2C95EAEE1-L000113](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L113) | 113 | `"- [PR #76](https://github.com/mosabosama2030-oss/omarai/pull/76)"` | — |
 | [SRC-B2C95EAEE1-L000114](../OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md#L114) | 114 | `"- [CI على رأس PR: run #39654908040](https://github.com/mosabosama2030-oss/omarai/actions/runs/39654908040)"` | — |
@@ -818,19 +834,3 @@
 | [SRC-62CE5126F9-L000638](../OMARAI_REMEDIATION_REGISTER_AR.md#L638) | 638 | `"### العيب المثبت والمعالجة"` | — |
 | [SRC-62CE5126F9-L000639](../OMARAI_REMEDIATION_REGISTER_AR.md#L639) | 639 | `""` | — |
 | [SRC-62CE5126F9-L000640](../OMARAI_REMEDIATION_REGISTER_AR.md#L640) | 640 | `"- كانت صيغة مثل «هل تستطيع البحث عن أحدث…؟» قد تُصنّف سؤالًا عن قدرات Omarai بسبب صيغة «هل تستطيع»، ثم تعود بإجابة قدرة محلية بدل تنفيذ البحث رغم وجود هدف بحث محدد."` | — |
-| [SRC-62CE5126F9-L000641](../OMARAI_REMEDIATION_REGISTER_AR.md#L641) | 641 | ``"- عُدّل تصنيف سؤال القدرة ليستثني الطلب ذا الهدف البحثي الملموس، وأضيف حاجز في موجه النية كي لا تتقدم إجابة القدرة على `requires_web`."`` | — |
-| [SRC-62CE5126F9-L000642](../OMARAI_REMEDIATION_REGISTER_AR.md#L642) | 642 | `"- أضيفت اختبارات انحدار للصيغة العربية، تشمل توجيه السؤال إلى البحث لا إلى إجابة القدرة."` | — |
-| [SRC-62CE5126F9-L000643](../OMARAI_REMEDIATION_REGISTER_AR.md#L643) | 643 | `""` | — |
-| [SRC-62CE5126F9-L000644](../OMARAI_REMEDIATION_REGISTER_AR.md#L644) | 644 | `"### دليل الاختبار والحدود"` | — |
-| [SRC-62CE5126F9-L000645](../OMARAI_REMEDIATION_REGISTER_AR.md#L645) | 645 | `""` | — |
-| [SRC-62CE5126F9-L000646](../OMARAI_REMEDIATION_REGISTER_AR.md#L646) | 646 | ``"- الأمر: `/tmp/omarai-venv/bin/python -m pytest -q` من جذر الفرع؛ **927 passed, 2 skipped**."`` | — |
-| [SRC-62CE5126F9-L000647](../OMARAI_REMEDIATION_REGISTER_AR.md#L647) | 647 | ``"- الأمر: `/tmp/omarai-venv/bin/ruff check agents/intent_router.py agents/web_agent.py tests/test_intent_router.py tests/test_web_agent.py`؛ `All checks passed!`."`` | — |
-| [SRC-62CE5126F9-L000648](../OMARAI_REMEDIATION_REGISTER_AR.md#L648) | 648 | ``"- `git diff --check` ناجح. هذه اختبارات محلية على الفرع أعلاه، وليست CI أو اختبار استضافة."`` | — |
-| [SRC-62CE5126F9-L000649](../OMARAI_REMEDIATION_REGISTER_AR.md#L649) | 649 | `"- **NOT_RUN:** لا اتصال حي بموفر بحث أو نموذج، ولا فحص لإعدادات أسرار الإنتاج، ولا تحقق من نسخة مستضافة أو قياس دقة الإجابة."` | — |
-| [SRC-62CE5126F9-L000650](../OMARAI_REMEDIATION_REGISTER_AR.md#L650) | 650 | `""` | — |
-| [SRC-62CE5126F9-L000651](../OMARAI_REMEDIATION_REGISTER_AR.md#L651) | 651 | `"## OMR-SEARCH-005 — الفصل بين الموقع الجغرافي وطلب رابط موقع ويب — 8 نوفمبر 2026"` | — |
-| [SRC-62CE5126F9-L000652](../OMARAI_REMEDIATION_REGISTER_AR.md#L652) | 652 | `""` | — |
-| [SRC-62CE5126F9-L000653](../OMARAI_REMEDIATION_REGISTER_AR.md#L653) | 653 | `"**الأولوية:** P1 — صحة نوع المهمة وعدد الأدلة المطلوب."` | — |
-| [SRC-62CE5126F9-L000654](../OMARAI_REMEDIATION_REGISTER_AR.md#L654) | 654 | ``"**الحالة:** FIXED_AND_TESTED على الفرع `fix/intent-routing-navigation-2026-11-08`؛ لم يُدمج ولم يُنشر."`` | — |
-| [SRC-62CE5126F9-L000655](../OMARAI_REMEDIATION_REGISTER_AR.md#L655) | 655 | ``"**خط الأساس:** `main` عند SHA `850c8c83aeaeb6838dd0f0474e5b8ef9c43e7e6f`."`` | — |
-| [SRC-62CE5126F9-L000656](../OMARAI_REMEDIATION_REGISTER_AR.md#L656) | 656 | `""` | — |

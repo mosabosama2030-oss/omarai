@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002011 إلى SRC-1AE03B9EC3-L002810
+- النطاق: SRC-1AE03B9EC3-L002000 إلى SRC-1AE03B9EC3-L002799
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002000](../../agents/web_agent.py#L2000) | 2000 | `"            elif self._reserve_firecrawl_search_request():"` | — |
+| [SRC-1AE03B9EC3-L002001](../../agents/web_agent.py#L2001) | 2001 | `"                adapters.append((\"firecrawl_search_api\", self._search_firecrawl))"` | — |
+| [SRC-1AE03B9EC3-L002002](../../agents/web_agent.py#L2002) | 2002 | `"            else:"` | — |
+| [SRC-1AE03B9EC3-L002003](../../agents/web_agent.py#L2003) | 2003 | `"                self._record_provider_diagnostic("` | — |
+| [SRC-1AE03B9EC3-L002004](../../agents/web_agent.py#L2004) | 2004 | `"                    \"firecrawl_search_api\", search_query, \"budget_exhausted\","` | — |
+| [SRC-1AE03B9EC3-L002005](../../agents/web_agent.py#L2005) | 2005 | `"                    error=\"Firecrawl request budget is zero, invalid, or already used\","` | — |
+| [SRC-1AE03B9EC3-L002006](../../agents/web_agent.py#L2006) | 2006 | `"                )"` | — |
+| [SRC-1AE03B9EC3-L002007](../../agents/web_agent.py#L2007) | 2007 | `"        if ("` | — |
+| [SRC-1AE03B9EC3-L002008](../../agents/web_agent.py#L2008) | 2008 | `"            detect_freshness(search_query)"` | — |
+| [SRC-1AE03B9EC3-L002009](../../agents/web_agent.py#L2009) | 2009 | `"            and not self._is_buyer_intent_search_query(search_query)"` | — |
+| [SRC-1AE03B9EC3-L002010](../../agents/web_agent.py#L2010) | 2010 | `"        ):"` | — |
 | [SRC-1AE03B9EC3-L002011](../../agents/web_agent.py#L2011) | 2011 | `"            adapters.append((\"google_news_rss\", self._search_news))"` | — |
 | [SRC-1AE03B9EC3-L002012](../../agents/web_agent.py#L2012) | 2012 | `""` | — |
 | [SRC-1AE03B9EC3-L002013](../../agents/web_agent.py#L2013) | 2013 | `"        async def run_one(name: str, method: Any) -> list[dict[str, Any]]:"` | — |
@@ -805,14 +816,3 @@
 | [SRC-1AE03B9EC3-L002797](../../agents/web_agent.py#L2797) | 2797 | `"                response = _bounded_http_request(\"GET\", "` | — |
 | [SRC-1AE03B9EC3-L002798](../../agents/web_agent.py#L2798) | 2798 | `"                    \"https://api.x.com/2/tweets/search/recent\","` | — |
 | [SRC-1AE03B9EC3-L002799](../../agents/web_agent.py#L2799) | 2799 | `"                    params={"` | — |
-| [SRC-1AE03B9EC3-L002800](../../agents/web_agent.py#L2800) | 2800 | `"                        \"query\": query + \" -is:retweet\","` | — |
-| [SRC-1AE03B9EC3-L002801](../../agents/web_agent.py#L2801) | 2801 | `"                        \"max_results\": 10,"` | — |
-| [SRC-1AE03B9EC3-L002802](../../agents/web_agent.py#L2802) | 2802 | `"                        \"tweet.fields\": \"created_at,lang,public_metrics,author_id\","` | — |
-| [SRC-1AE03B9EC3-L002803](../../agents/web_agent.py#L2803) | 2803 | `"                        \"expansions\": \"author_id\","` | — |
-| [SRC-1AE03B9EC3-L002804](../../agents/web_agent.py#L2804) | 2804 | `"                        \"user.fields\": \"name,username\","` | — |
-| [SRC-1AE03B9EC3-L002805](../../agents/web_agent.py#L2805) | 2805 | `"                    },"` | — |
-| [SRC-1AE03B9EC3-L002806](../../agents/web_agent.py#L2806) | 2806 | `"                    headers={"` | — |
-| [SRC-1AE03B9EC3-L002807](../../agents/web_agent.py#L2807) | 2807 | `"                        **headers,"` | — |
-| [SRC-1AE03B9EC3-L002808](../../agents/web_agent.py#L2808) | 2808 | `"                        \"Authorization\": \"Bearer \" + os.getenv(\"X_BEARER_TOKEN\", \"\").strip(),"` | — |
-| [SRC-1AE03B9EC3-L002809](../../agents/web_agent.py#L2809) | 2809 | `"                    },"` | — |
-| [SRC-1AE03B9EC3-L002810](../../agents/web_agent.py#L2810) | 2810 | `"                    timeout=self._effective_timeout(9.0),"` | — |
