@@ -4490,6 +4490,101 @@ def test_answer_is_withheld_when_semantic_claim_support_is_not_established(monke
     assert result["search_report"]["pipeline_completion_status"] == "partial"
     assert result["citation_validation"]["valid_citation_count"] == 0
 
+@pytest.mark.parametrize("mode", ["auto", "deep"])
+def test_fire_alarm_buyer_discovery_acceptance_keeps_only_public_demand(monkeypatch, mode):
+    agent = WebAgent()
+    question = (
+        "ابحث عن شركات ومصانع ومشروعات في مصر لديها طلب معلن أو احتياج حقيقي "
+        "لشراء نظام إنذار حريق صناعي، وأعطني الأدلة وروابط الطلبات وتاريخها"
+    )
+    captured = {}
+    plan = {
+        "queries": ["نظام إنذار حريق صناعي مصر"],
+        "direct_urls": [],
+        "social_focus": False,
+        "freshness": "any",
+        "depth": "standard",
+        "platforms": [],
+        "planning_method": "acceptance-test",
+    }
+
+    def collect(research_plan):
+        captured.update(research_plan)
+        buyer = sample_source(0)
+        buyer.update({
+            "title": "مطلوب توريد نظام إنذار حريق صناعي لمصنع في مصر",
+            "snippet": "نبحث عن مورد معتمد لتوريد نظام إنذار حريق صناعي.",
+            "page_text": (
+                "تعلن إدارة المصنع عن حاجتها إلى شراء نظام إنذار حريق صناعي، "
+                "ونطلب عرض سعر من مورد متخصص للتوريد والتركيب."
+            ),
+            "page_fetched": True,
+            "page_fetch_status": "content_extracted",
+            "published_at": "2026-11-09T09:00:00Z",
+            "queries": list(research_plan["queries"]),
+        })
+        seller = sample_source(1)
+        seller.update({
+            "title": "شركة تبيع أنظمة إنذار الحريق الصناعية",
+            "snippet": "منتجات وأنظمة إنذار حريق متاحة للبيع.",
+            "page_text": "نحن شركة تبيع وتورد أنظمة إنذار الحريق للمصانع.",
+            "page_fetched": True,
+            "page_fetch_status": "content_extracted",
+            "queries": list(research_plan["queries"]),
+        })
+        article = sample_source(2)
+        article.update({
+            "title": "دليل أنظمة إنذار الحريق الصناعية",
+            "snippet": "شرح أنواع الحساسات ولوحات التحكم ومتطلبات التصميم.",
+            "page_text": "مقال تعريفي عن تصميم أنظمة إنذار الحريق الصناعية.",
+            "page_fetched": True,
+            "page_fetch_status": "content_extracted",
+            "queries": list(research_plan["queries"]),
+        })
+        return [buyer, seller, article], [], {
+            "queries_planned": len(research_plan["queries"]),
+            "queries_attempted": len(research_plan["queries"]),
+            "query_results": [],
+            "unique_sources": 3,
+            "pages_fetched": 3,
+            "providers_used": ["test_provider"],
+            "provider_counts": {"test_provider": 3},
+            "platform_counts": {"web": 3},
+            "social_direct_results": 0,
+            "depth": research_plan["depth"],
+            "planning_method": "acceptance-test",
+        }
+
+    monkeypatch.setattr(agent, "_plan_search", lambda q, history: dict(plan))
+    monkeypatch.setattr(agent, "_collect_research", collect)
+    monkeypatch.setattr(
+        agent,
+        "_generate",
+        lambda *args, **kwargs: "رصدت طلب توريد معلن لنظام إنذار حريق صناعي [المصدر 1].",
+    )
+    monkeypatch.setattr(agent, "_review_answer", lambda question, answer, sources: answer)
+
+    result = agent.answer(question, mode=mode)
+
+    assert result["intent_route"] == "LEAD_GENERATION"
+    assert captured["social_focus"] is True
+    assert captured["depth"] == ("deep" if mode == "deep" else "standard")
+    assert len(captured["queries"]) >= 4
+    assert any(
+        marker in query
+        for query in captured["queries"]
+        for marker in ("مطلوب شراء", "طلب عرض سعر", "نحتاج مورد", "نحتاج توريد")
+    )
+    lead_report = result["search_report"]["lead_generation"]
+    assert lead_report["candidate_signal_count"] == 1
+    assert lead_report["related_results_reviewed"] == 2
+    assert result["sources"][0]["lead_qualification"] == "public_demand_signal"
+    assert result["sources"][0]["lead_intent_evidence"]["basis"] == "page_text"
+    assert all(
+        source["lead_qualification"] == "related_result_not_lead"
+        for source in result["sources"][1:]
+    )
+
 @pytest.mark.parametrize(
     ("query", "expected"),
     [
