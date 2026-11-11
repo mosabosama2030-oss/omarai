@@ -54,7 +54,16 @@
 - [ ] Preserve successful manual-signal, product-profile, and discovery-signal writes when their subsequent list refresh fails.
 - [ ] Keep the existing discovery-run partial-success behavior.
 
-### Task 4: Verify
+### Task 4: Link inline citations in workspace chat
+
+**Files:**
+- Modify: `web/workspace.html`
+- Test: `tests/test_workspace_ui_regressions.py`
+
+- [ ] Render `[المصدر N]` and `[source N]` markers as safe links to `sources[N-1]` only when the indexed source has a valid HTTP(S) URL.
+- [ ] Keep invalid/out-of-range markers as plain text; never infer or shift source indexes.
+
+### Task 5: Verify
 
 - [ ] Run targeted UI contract tests.
 - [ ] Run full pytest and Ruff on Python 3.11 and 3.12 through GitHub Actions.
