@@ -178,7 +178,7 @@ def test_postgres_records_survive_a_new_python_process(postgres_store):
     from pathlib import Path
 
     marker = uuid.uuid4().hex
-    tenant_id, user_id = _tenant_user(postgres_store, f"restart-{marker}")
+    tenant_id, _user_id = _tenant_user(postgres_store, f"restart-{marker}")
     lead, created = postgres_store.add(
         f"نحتاج موردًا لنظام إنذار حريق {marker}",
         f"https://example.com/postgres/restart/{marker}",
