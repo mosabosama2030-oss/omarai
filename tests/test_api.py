@@ -1538,3 +1538,58 @@ def test_health_reports_storage_backend_without_exposing_database_credentials(mo
     assert payload["storage"]["database_url_configured"] is True
     assert payload["storage"]["durability_status"] == "external_database_configured"
     assert "health-password" not in json.dumps(payload)
+
+def test_client_safe_error_only_returns_allowlisted_validation_messages():
+    import json
+
+    from api.omarai import _client_safe_error
+
+    assert _client_safe_error(ValueError("text must not be empty")) == "text must not be empty"
+    assert _client_safe_error(
+        ValueError("locations must be a list of at most 40 strings")
+    ) == "locations must be a list of at most 40 strings"
+    assert _client_safe_error(
+        ValueError("text must be at most 20000 characters")
+    ) == "text must be at most 20000 characters"
+
+    unsafe_messages = (
+        "database password=health-password",
+        "connection failed at http://10.0.0.8:5432/internal",
+        "sqlite3.OperationalError: no such table",
+        "unexpected object at 0x7f00cafe",
+        "/app/agents/omarai.py: internal traceback",
+        "provider credential sk-live-secret",
+        "x" * 400,
+        "line one\\nline two",
+    )
+    for message in unsafe_messages:
+        assert _client_safe_error(ValueError(message)) == "invalid request"
+        assert _client_safe_error(TypeError(message)) == "invalid request"
+
+    try:
+        json.loads("{bad")
+    except json.JSONDecodeError as exc:
+        assert _client_safe_error(exc) == "request body is not valid JSON"
+
+
+def test_api_does_not_echo_unknown_store_validation_error(local_api, monkeypatch):
+    secret = "database-password-not-for-client"
+
+    def fail_store_write(*_args, **_kwargs):
+        raise ValueError(f"database connection rejected password={secret}")
+
+    monkeypatch.setattr(Handler.store, "add", fail_store_write)
+    status, payload = request_json(
+        local_api,
+        "/api/leads",
+        method="POST",
+        payload={
+            "text": "طلب توريد اختباري",
+            "source_url": "https://example.org/request",
+            "platform": "manual",
+        },
+    )
+
+    assert status == 400
+    assert payload["error"] == "invalid request"
+    assert secret not in json.dumps(payload)

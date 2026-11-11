@@ -1100,7 +1100,7 @@ class Handler(BaseHTTPRequestHandler):
                 return self.respond(200, {"lead": lead}) if lead else self.respond(404, {"error": "lead not found"})
             return self.respond(404, {"error": "not found"})
         except (ValueError, TypeError, json.JSONDecodeError) as exc:
-            return self.respond(400, {"error": str(exc)})
+            return self.respond(400, {"error": _client_safe_error(exc)})
         except Exception:  # noqa: BLE001 — keep unexpected details out of API responses
             return self.respond(500, {"error": "internal server error"})
 
@@ -1119,6 +1119,77 @@ class Handler(BaseHTTPRequestHandler):
 
     def log_message(self, *args):
         pass
+
+
+_SAFE_CLIENT_VALIDATION_ERRORS = frozenset({
+    "text must not be empty",
+    "text is required",
+    "text is too long",
+    "source_url must be an absolute http(s) URL without embedded credentials",
+    "source_url is too long",
+    "tenant_id is invalid",
+    "tenant name is required",
+    "tenant slug is invalid",
+    "valid email and display name are required",
+    "unsupported membership role",
+    "active tenant and user are required",
+    "expires_at must be an ISO-8601 timestamp with a timezone",
+    "expires_at must include an explicit timezone",
+    "expires_at must be in the future",
+    "API token must contain at least 32 characters",
+    "active tenant membership is required",
+    "browser session lifetime must be between 60 seconds and 24 hours",
+    "unsupported status",
+    "profile must be an object",
+    "product profile is required",
+    "product name is required and must be at most 240 characters",
+    "product name is invalid",
+    "product profile is too large",
+    "active tenant is required",
+    "discovery source URL is not public",
+    "discovery result exceeds the storage limit",
+    "discovery run must be an object",
+    "CSV must contain text,source_url,platform columns",
+    "product and market objects are required",
+    "locale must be auto, ar, en, or mixed",
+    "browser access token has an unsupported format",
+})
+_SAFE_PROFILE_TERM_FIELDS = frozenset({
+    "aliases",
+    "category_path",
+    "use_cases",
+    "problems_solved",
+    "locations",
+    "industries",
+    "customer_types",
+    "decision_roles",
+    "exclusions",
+})
+
+
+def _client_safe_error(exc: BaseException) -> str:
+    """Return only known validation messages; never echo arbitrary exception text.
+
+    API route handlers can receive exceptions from parsers, storage drivers, and
+    user-controlled values. A short message is not evidence that it is safe:
+    secrets, SQL fragments, hostnames, and internal paths can all be short.
+    """
+    if isinstance(exc, json.JSONDecodeError):
+        return "request body is not valid JSON"
+    message = str(exc).strip()
+    if message in _SAFE_CLIENT_VALIDATION_ERRORS:
+        return message
+    if isinstance(exc, ValueError) and re.fullmatch(
+        r"text must be at most [0-9]{1,8} characters", message
+    ):
+        return message
+    profile_error = re.fullmatch(
+        r"([a-z_]+) (must be a list of at most 40 strings|items must be strings of at most 240 characters)",
+        message,
+    )
+    if profile_error and profile_error.group(1) in _SAFE_PROFILE_TERM_FIELDS:
+        return message
+    return "invalid request"
 
 
 def answer_question(question, store, *, tenant_id=None):
