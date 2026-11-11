@@ -170,3 +170,74 @@ def test_postgres_database_url_rejects_unsupported_scheme():
 def test_postgres_database_url_cannot_be_combined_with_sqlite_path(tmp_path):
     with pytest.raises(ValueError, match="either database_url or a SQLite path"):
         LeadStore(tmp_path / "local.sqlite3", database_url="postgresql://user:pass@example.com/db")
+
+def test_postgres_records_survive_a_new_python_process(postgres_store):
+    import json
+    import subprocess
+    import sys
+    from pathlib import Path
+
+    marker = uuid.uuid4().hex
+    tenant_id, _user_id = _tenant_user(postgres_store, f"restart-{marker}")
+    lead, created = postgres_store.add(
+        f"نحتاج موردًا لنظام إنذار حريق {marker}",
+        f"https://example.com/postgres/restart/{marker}",
+        tenant_id=tenant_id,
+    )
+    assert created is True
+    profile = postgres_store.save_product_profile(
+        {
+            "product": {"name": f"PostgreSQL restart {marker}", "aliases": ["FACP"]},
+            "market": {"locations": ["Cairo"], "industries": ["Manufacturing"]},
+        },
+        tenant_id=tenant_id,
+    )
+    run = postgres_store.save_discovery_run(
+        profile["id"],
+        {
+            "answer": "تم حفظ عملية اكتشاف اختبارية.",
+            "kind": "lead_discovery",
+            "search_queries": ["نحتاج موردًا لنظام إنذار حريق"],
+            "sources": [{
+                "title": "طلب توريد اختباري",
+                "url": f"https://example.com/postgres/source/{marker}",
+                "snippet": "نحتاج موردًا لنظام إنذار حريق",
+                "lead_qualification": "public_demand_signal",
+                "lead_intent_evidence": {
+                    "phrase": "نحتاج موردًا",
+                    "basis": "source_text",
+                    "signal_type": "direct_purchase_request",
+                },
+            }],
+            "search_report": {"search_outcome": "results_found"},
+        },
+        tenant_id=tenant_id,
+    )
+
+    child_code = """
+import json
+import os
+import sys
+from agents.omarai import LeadStore
+store = LeadStore(database_url=os.environ["OMARAI_TEST_DATABASE_URL"])
+tenant_id = sys.argv[1]
+print(json.dumps({
+    "lead_ids": [row["id"] for row in store.list(tenant_id=tenant_id)],
+    "profile_ids": [row["id"] for row in store.list_product_profiles(tenant_id=tenant_id)],
+    "run_ids": [row["id"] for row in store.list_discovery_runs(tenant_id=tenant_id)],
+}))
+"""
+    repository_root = Path(__file__).resolve().parents[1]
+    completed = subprocess.run(
+        [sys.executable, "-c", child_code, tenant_id],
+        cwd=repository_root,
+        env=os.environ.copy(),
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    persisted = json.loads(completed.stdout)
+
+    assert persisted["lead_ids"] == [lead["id"]]
+    assert persisted["profile_ids"] == [profile["id"]]
+    assert persisted["run_ids"] == [run["id"]]
