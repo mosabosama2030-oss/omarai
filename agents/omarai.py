@@ -48,6 +48,11 @@ SIGNALS = {
         "نحتاج توريد", "محتاجين توريد", "نحتاج نظام", "محتاجين نظام",
         "نحتاج خدمة", "نحتاج عرض سعر", "مطلوب شراء", "طلب شراء", "طلب عرض سعر",
         "طلب عروض اسعار", "مناقصة توريد", "نبحث عن شركة", "نحتاج شركة",
+        # Sector-neutral procurement phrasing (e.g. fire-alarm systems, signage, CCTV).
+        "ابحث عن مورد", "ابحث عن شركة", "مطلوب نظام", "مطلوب خدمة", "مطلوب شركة",
+        "مطلوب تركيب", "مطلوب صيانة", "نحتاج تركيب", "نحتاج صيانة", "محتاجين شركة",
+        "محتاج مورد", "محتاج عرض سعر", "عايز عرض سعر", "نرغب في شراء", "نرغب بشراء",
+        "نرغب في توريد", "اريد شراء",
         "looking to buy", "need to purchase", "seeking a supplier",
         "need a supplier", "request for quotation", "purchase request",
         "procurement request", "rfq", "request a quote",
@@ -120,7 +125,8 @@ def _signal_type_for_matches(matches: list[dict]) -> DemandSignalType:
     if "direct_demand" in categories:
         if any(token in phrases for token in {
             normalize("طلب عرض سعر"), normalize("طلب عروض اسعار"),
-            normalize("نحتاج عرض سعر"), normalize("request for quotation"), normalize("rfq"),
+            normalize("نحتاج عرض سعر"), normalize("محتاج عرض سعر"), normalize("عايز عرض سعر"),
+            normalize("request for quotation"), normalize("rfq"),
             normalize("request a quote"),
         }):
             return DemandSignalType.REQUEST_FOR_QUOTATION

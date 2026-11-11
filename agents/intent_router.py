@@ -130,8 +130,31 @@ def _is_lead_generation_request(question: str) -> bool:
     english_patterns = (
         r"\b(?:find|search for|look for|identify|generate|build|create)\b.{0,45}\b(?:buyers?|customers?|prospects?|leads?)\b|\b(?:find|build|create|generate)\s+(?:a\s+)?(?:lead generation|prospect list)\b",
     )
-    if any(action in normalized for action in arabic_actions) and any(
-        target in normalized for target in arabic_targets
+    arabic_entity_targets = (
+        "شركة", "شركات", "مصنع", "مصانع", "مشروع", "مشروعات",
+        "جهة", "جهات", "مؤسسة", "مؤسسات",
+    )
+    arabic_procurement_signals = (
+        "لديها طلب معلن", "لديهم طلب معلن", "طلب شراء معلن",
+        "طلب توريد معلن", "احتياج حقيقي لشراء", "احتياج فعلي لشراء",
+        "بحاجه الى شراء", "بحاجه لشراء", "تحتاج الى شراء", "تحتاج شراء",
+        "نحتاج شراء", "نحتاج توريد", "محتاجين توريد", "مطلوب شراء",
+        "مطلوب توريد", "طلب عرض سعر", "مناقصة توريد",
+    )
+    explicit_entity_procurement_search = (
+        any(action in normalized for action in arabic_actions)
+        and any(target in normalized for target in arabic_entity_targets)
+        and any(signal in normalized for signal in arabic_procurement_signals)
+    )
+    if explicit_entity_procurement_search:
+        return True
+    english_entity_procurement_patterns = (
+        r"\b(?:find|search for|identify)\b.{0,60}\b(?:companies|manufacturers|projects|organizations)\b.{0,60}\b(?:need to buy|need to purchase|looking to buy|purchase request|procurement need|request for quotation|rfq)\b",
+    )
+    if (
+        any(re.search(pattern, normalized) for pattern in english_entity_procurement_patterns)
+        or any(action in normalized for action in arabic_actions)
+        and any(target in normalized for target in arabic_targets)
     ):
         return True
     if any(re.search(pattern, normalized) for pattern in english_patterns):
