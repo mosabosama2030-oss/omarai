@@ -4,9 +4,34 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3AA6165B18-L000014 إلى SRC-8D00DCEC0D-L000268
+- النطاق: SRC-1E32639872-L000381 إلى SRC-8D00DCEC0D-L000239
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## الوكيل والمنطق
+
+### FILE-1E32639872 — [agents/research_completion.py](../../agents/research_completion.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-1E32639872-L000381](../../agents/research_completion.py#L381) | 381 | `"            \"status\": \"mismatch_detected\" if counter_issues else ("` | — |
+| [SRC-1E32639872-L000382](../../agents/research_completion.py#L382) | 382 | `"                \"matched\" if reported_sources is not None or reported_fetched is not None"` | — |
+| [SRC-1E32639872-L000383](../../agents/research_completion.py#L383) | 383 | `"                else \"not_computable\""` | — |
+| [SRC-1E32639872-L000384](../../agents/research_completion.py#L384) | 384 | `"            ),"` | — |
+| [SRC-1E32639872-L000385](../../agents/research_completion.py#L385) | 385 | `"            \"reported_unique_sources\": reported_sources,"` | — |
+| [SRC-1E32639872-L000386](../../agents/research_completion.py#L386) | 386 | `"            \"recomputed_final_source_count\": len(sources),"` | — |
+| [SRC-1E32639872-L000387](../../agents/research_completion.py#L387) | 387 | `"            \"reported_pages_fetched\": reported_fetched,"` | — |
+| [SRC-1E32639872-L000388](../../agents/research_completion.py#L388) | 388 | `"            \"recomputed_pages_fetched_flag_count\": fetched,"` | — |
+| [SRC-1E32639872-L000389](../../agents/research_completion.py#L389) | 389 | `"            \"issues\": counter_issues,"` | — |
+| [SRC-1E32639872-L000390](../../agents/research_completion.py#L390) | 390 | `"        },"` | — |
+| [SRC-1E32639872-L000391](../../agents/research_completion.py#L391) | 391 | `"        \"semantic_verification\": semantic_phase,"` | — |
+| [SRC-1E32639872-L000392](../../agents/research_completion.py#L392) | 392 | `"        \"warning\": ("` | — |
+| [SRC-1E32639872-L000393](../../agents/research_completion.py#L393) | 393 | `"            \"Readable pages and valid citation indexes do not prove semantic support \""` | — |
+| [SRC-1E32639872-L000394](../../agents/research_completion.py#L394) | 394 | `"            \"for each claim in the answer.\""` | — |
+| [SRC-1E32639872-L000395](../../agents/research_completion.py#L395) | 395 | `"        ),"` | — |
+| [SRC-1E32639872-L000396](../../agents/research_completion.py#L396) | 396 | `"    }"` | — |
 ## الوكيل والمنطق
 
 ### FILE-3AA6165B18 — [agents/research_guardrails.py](../../agents/research_guardrails.py#L1)
@@ -16,6 +41,19 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3AA6165B18-L000001](../../agents/research_guardrails.py#L1) | 1 | `"\"\"\"Task-specific guardrails for search evidence."` | — |
+| [SRC-3AA6165B18-L000002](../../agents/research_guardrails.py#L2) | 2 | `""` | — |
+| [SRC-3AA6165B18-L000003](../../agents/research_guardrails.py#L3) | 3 | `"These checks are conservative retrieval filters, not proof of factual correctness."` | — |
+| [SRC-3AA6165B18-L000004](../../agents/research_guardrails.py#L4) | 4 | `"\"\"\""` | — |
+| [SRC-3AA6165B18-L000005](../../agents/research_guardrails.py#L5) | 5 | `"from __future__ import annotations"` | — |
+| [SRC-3AA6165B18-L000006](../../agents/research_guardrails.py#L6) | 6 | `""` | — |
+| [SRC-3AA6165B18-L000007](../../agents/research_guardrails.py#L7) | 7 | `"import re"` | — |
+| [SRC-3AA6165B18-L000008](../../agents/research_guardrails.py#L8) | 8 | `"from datetime import UTC, datetime, timedelta"` | — |
+| [SRC-3AA6165B18-L000009](../../agents/research_guardrails.py#L9) | 9 | `"from typing import Any"` | — |
+| [SRC-3AA6165B18-L000010](../../agents/research_guardrails.py#L10) | 10 | `"from urllib.parse import urlsplit"` | — |
+| [SRC-3AA6165B18-L000011](../../agents/research_guardrails.py#L11) | 11 | `""` | — |
+| [SRC-3AA6165B18-L000012](../../agents/research_guardrails.py#L12) | 12 | `"from agents.research import ("` | — |
+| [SRC-3AA6165B18-L000013](../../agents/research_guardrails.py#L13) | 13 | `"    SOCIAL_DOMAINS,"` | — |
 | [SRC-3AA6165B18-L000014](../../agents/research_guardrails.py#L14) | 14 | `"    _parse_publication_date,"` | — |
 | [SRC-3AA6165B18-L000015](../../agents/research_guardrails.py#L15) | 15 | `"    detect_freshness,"` | — |
 | [SRC-3AA6165B18-L000016](../../agents/research_guardrails.py#L16) | 16 | `")"` | — |
@@ -814,32 +852,3 @@
 | [SRC-8D00DCEC0D-L000237](../../agents/sales_domain.py#L237) | 237 | `"            \"origin\": self.origin.value,"` | — |
 | [SRC-8D00DCEC0D-L000238](../../agents/sales_domain.py#L238) | 238 | `"            \"evidence_id\": self.evidence_id,"` | — |
 | [SRC-8D00DCEC0D-L000239](../../agents/sales_domain.py#L239) | 239 | `"        }"` | — |
-| [SRC-8D00DCEC0D-L000240](../../agents/sales_domain.py#L240) | 240 | `""` | — |
-| [SRC-8D00DCEC0D-L000241](../../agents/sales_domain.py#L241) | 241 | `""` | — |
-| [SRC-8D00DCEC0D-L000242](../../agents/sales_domain.py#L242) | 242 | `"@dataclass(frozen=True, slots=True)"` | — |
-| [SRC-8D00DCEC0D-L000243](../../agents/sales_domain.py#L243) | 243 | `"class ProductProfile:"` | — |
-| [SRC-8D00DCEC0D-L000244](../../agents/sales_domain.py#L244) | 244 | `"    \"\"\"Explicit product/service facts supplied by a user or supported by sources.\"\"\""` | — |
-| [SRC-8D00DCEC0D-L000245](../../agents/sales_domain.py#L245) | 245 | `""` | — |
-| [SRC-8D00DCEC0D-L000246](../../agents/sales_domain.py#L246) | 246 | `"    name: str"` | — |
-| [SRC-8D00DCEC0D-L000247](../../agents/sales_domain.py#L247) | 247 | `"    aliases: tuple[str, ...] = ()"` | — |
-| [SRC-8D00DCEC0D-L000248](../../agents/sales_domain.py#L248) | 248 | `"    category_path: tuple[str, ...] = ()"` | — |
-| [SRC-8D00DCEC0D-L000249](../../agents/sales_domain.py#L249) | 249 | `"    use_cases: tuple[str, ...] = ()"` | — |
-| [SRC-8D00DCEC0D-L000250](../../agents/sales_domain.py#L250) | 250 | `"    problems_solved: tuple[str, ...] = ()"` | — |
-| [SRC-8D00DCEC0D-L000251](../../agents/sales_domain.py#L251) | 251 | `"    facts: tuple[ProductFact, ...] = ()"` | — |
-| [SRC-8D00DCEC0D-L000252](../../agents/sales_domain.py#L252) | 252 | `""` | — |
-| [SRC-8D00DCEC0D-L000253](../../agents/sales_domain.py#L253) | 253 | `"    def __post_init__(self) -> None:"` | — |
-| [SRC-8D00DCEC0D-L000254](../../agents/sales_domain.py#L254) | 254 | `"        object.__setattr__(self, \"name\", _clean_text(self.name, field_name=\"name\", maximum=MAX_NAME_LENGTH))"` | — |
-| [SRC-8D00DCEC0D-L000255](../../agents/sales_domain.py#L255) | 255 | `"        object.__setattr__(self, \"aliases\", _clean_terms(self.aliases, field_name=\"aliases\"))"` | — |
-| [SRC-8D00DCEC0D-L000256](../../agents/sales_domain.py#L256) | 256 | `"        object.__setattr__(self, \"use_cases\", _clean_terms(self.use_cases, field_name=\"use_cases\"))"` | — |
-| [SRC-8D00DCEC0D-L000257](../../agents/sales_domain.py#L257) | 257 | `"        object.__setattr__("` | — |
-| [SRC-8D00DCEC0D-L000258](../../agents/sales_domain.py#L258) | 258 | `"            self,"` | — |
-| [SRC-8D00DCEC0D-L000259](../../agents/sales_domain.py#L259) | 259 | `"            \"problems_solved\","` | — |
-| [SRC-8D00DCEC0D-L000260](../../agents/sales_domain.py#L260) | 260 | `"            _clean_terms(self.problems_solved, field_name=\"problems_solved\"),"` | — |
-| [SRC-8D00DCEC0D-L000261](../../agents/sales_domain.py#L261) | 261 | `"        )"` | — |
-| [SRC-8D00DCEC0D-L000262](../../agents/sales_domain.py#L262) | 262 | `"        if self.category_path:"` | — |
-| [SRC-8D00DCEC0D-L000263](../../agents/sales_domain.py#L263) | 263 | `"            object.__setattr__("` | — |
-| [SRC-8D00DCEC0D-L000264](../../agents/sales_domain.py#L264) | 264 | `"                self,"` | — |
-| [SRC-8D00DCEC0D-L000265](../../agents/sales_domain.py#L265) | 265 | `"                \"category_path\","` | — |
-| [SRC-8D00DCEC0D-L000266](../../agents/sales_domain.py#L266) | 266 | `"                _clean_path(self.category_path, field_name=\"category_path\"),"` | — |
-| [SRC-8D00DCEC0D-L000267](../../agents/sales_domain.py#L267) | 267 | `"            )"` | — |
-| [SRC-8D00DCEC0D-L000268](../../agents/sales_domain.py#L268) | 268 | `"        if not all(isinstance(item, ProductFact) for item in self.facts):"` | — |
