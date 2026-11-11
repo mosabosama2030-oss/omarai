@@ -170,3 +170,37 @@ def test_explicit_demand_types_are_not_product_fit_or_purchase_probability():
     assert direct["signal_type"] == "direct_purchase_request"
     assert quote["signal_type"] == "request_for_quotation"
     assert product_only["signal_type"] == "unknown"
+
+
+@pytest.mark.parametrize(
+    "text",
+    [
+        "مطلوب نظام انذار حريق لمبنى اداري",
+        "ابحث عن مورد لافتات إعلانية",
+        "نحتاج صيانة لنظام الانذار",
+        "نرغب في شراء طفايات حريق",
+    ],
+)
+def test_non_property_procurement_requests_are_direct_demand(text):
+    result = analyze(text)
+    assert result["label"] == "high_intent"
+    assert result["signal_type"] == "direct_purchase_request"
+
+
+@pytest.mark.parametrize(
+    "text",
+    [
+        "نظام انذار حريق شركتنا تبيعه",
+        "مطلوب مهندس مبيعات",
+        "ما هي افضل انظمة الانذار",
+    ],
+)
+def test_product_mention_or_job_ad_is_not_a_buying_signal(text):
+    result = analyze(text)
+    assert result["score"] == 0
+    assert result["label"] == "unclear"
+
+
+def test_procurement_phrase_with_negation_or_closure_is_not_live():
+    assert analyze("مش محتاج نظام انذار")["label"] == "not_buyer_signal"
+    assert analyze("تم التعاقد على نظام انذار حريق")["label"] == "closed_or_stale_signal"
