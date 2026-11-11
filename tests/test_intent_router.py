@@ -378,3 +378,14 @@ def test_aspect_plus_beta3_possessive_remains_a_contextual_followup():
     resolved = resolve_followup_query("السعر بتاعه كام؟", history)
     assert resolved.startswith("ايه سعر ايفون 15 في مصر")
     assert "السعر بتاعه كام" in resolved
+
+def test_explicit_company_purchase_need_search_routes_to_buyer_discovery():
+    question = (
+        "ابحث عن شركات ومصانع ومشروعات في مصر لديها طلب معلن أو احتياج حقيقي "
+        "لشراء نظام إنذار حريق صناعي، وأعطني الأدلة وروابط الطلبات وتاريخها"
+    )
+    for mode in ("auto", "deep"):
+        assert route_intent(question, mode=mode)["route"] == "LEAD_GENERATION"
+
+    seller_search = "ابحث عن شركات ومصانع تبيع أنظمة إنذار حريق صناعي في مصر"
+    assert route_intent(seller_search)["route"] != "LEAD_GENERATION"
