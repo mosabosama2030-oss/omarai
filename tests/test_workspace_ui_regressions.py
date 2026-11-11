@@ -87,3 +87,14 @@ def test_discovery_history_refresh_failure_keeps_the_saved_run_visible():
     assert "state.activeDiscovery=savedRun" in body
     assert "refreshWarning" in body
     assert "تعذر تحديث سجل العمليات" in body
+
+
+def test_workspace_chat_links_each_inline_citation_to_its_exact_source_index():
+    script = inline_script("workspace.html")
+    renderer = function_source(script, "appendCitedAnswer")
+    message = function_source(script, "chatMessageNode")
+    assert "sources[index-1]" in renderer
+    assert "safeHttp(source.url)" in renderer
+    assert "document.createTextNode" in renderer
+    assert "chat-citation" in renderer
+    assert "appendCitedAnswer" in message
