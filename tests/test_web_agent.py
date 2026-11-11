@@ -4489,3 +4489,16 @@ def test_answer_is_withheld_when_semantic_claim_support_is_not_established(monke
     assert "المقتطفات أدناه مواد مصدرية" in result["answer"]
     assert result["search_report"]["pipeline_completion_status"] == "partial"
     assert result["citation_validation"]["valid_citation_count"] == 0
+
+@pytest.mark.parametrize(
+    ("query", "expected"),
+    [
+        ("بدور على معلومات عن أحدث أسعار أنظمة إنذار الحريق اليوم", False),
+        ("بدور على مورد لنظام إنذار الحريق الصناعي", True),
+        ("بدور على موردين لنظام إنذار الحريق الصناعي", True),
+        ("looking for information about the latest industrial fire alarm systems", False),
+        ("looking for a supplier of industrial fire alarm systems", True),
+    ],
+)
+def test_buyer_intent_news_exclusion_requires_explicit_procurement_language(query, expected):
+    assert WebAgent._is_buyer_intent_search_query(query) is expected

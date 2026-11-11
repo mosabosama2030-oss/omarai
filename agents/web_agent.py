@@ -1305,7 +1305,7 @@ class WebAgent:
         normalized = _normalize_search_query(query).casefold()
         buyer_phrases = (
             "مطلوب شراء", "عايز اشتري", "عاوز اشتري", "اريد شراء",
-            "ارغب في شراء", "بدور على", "طلب عرض سعر", "نبحث عن مورد",
+            "ارغب في شراء", "بدور على مورد", "بدور على موردين", "بدور على شركة توريد", "بدور على مصنع", "بدور على عرض سعر", "طلب عرض سعر", "نبحث عن مورد",
             "نحتاج الى مورد", "محتاج مورد", "looking to buy",
             "looking to purchase", "want to buy", "wants to buy",
             "want to purchase", "request for quotation", "request for quote",
