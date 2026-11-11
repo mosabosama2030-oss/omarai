@@ -4,7 +4,7 @@
 
 - الصفحة: **050**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AAA21D04E8-L000169 إلى SRC-1A176AD4F0-L000591
+- النطاق: SRC-AAA21D04E8-L000077 إلى SRC-1A176AD4F0-L000499
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,98 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AAA21D04E8-L000077](../../tests/test_generation_capabilities.py#L77) | 77 | `"        [{\"role\": \"user\", \"content\": \"اختبار\"}],"` | — |
+| [SRC-AAA21D04E8-L000078](../../tests/test_generation_capabilities.py#L78) | 78 | `"        model=\"primary/model\","` | — |
+| [SRC-AAA21D04E8-L000079](../../tests/test_generation_capabilities.py#L79) | 79 | `"    )"` | — |
+| [SRC-AAA21D04E8-L000080](../../tests/test_generation_capabilities.py#L80) | 80 | `""` | — |
+| [SRC-AAA21D04E8-L000081](../../tests/test_generation_capabilities.py#L81) | 81 | `"    assert answer == \"إجابة مكتملة\""` | — |
+| [SRC-AAA21D04E8-L000082](../../tests/test_generation_capabilities.py#L82) | 82 | `"    assert calls == [\"primary/model\", \"backup/model\"]"` | — |
+| [SRC-AAA21D04E8-L000083](../../tests/test_generation_capabilities.py#L83) | 83 | `"    assert agent.generation_diagnostics[0][\"status\"] == \"finish_reason_not_accepted\""` | — |
+| [SRC-AAA21D04E8-L000084](../../tests/test_generation_capabilities.py#L84) | 84 | `"    assert agent.generation_diagnostics[0][\"finish_reason\"] == \"vendor_specific_done\""` | — |
+| [SRC-AAA21D04E8-L000085](../../tests/test_generation_capabilities.py#L85) | 85 | `""` | — |
+| [SRC-AAA21D04E8-L000086](../../tests/test_generation_capabilities.py#L86) | 86 | `""` | — |
+| [SRC-AAA21D04E8-L000087](../../tests/test_generation_capabilities.py#L87) | 87 | `"def test_missing_finish_reason_from_all_models_fails_closed(monkeypatch):"` | — |
+| [SRC-AAA21D04E8-L000088](../../tests/test_generation_capabilities.py#L88) | 88 | `"    agent = WebAgent()"` | — |
+| [SRC-AAA21D04E8-L000089](../../tests/test_generation_capabilities.py#L89) | 89 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-AAA21D04E8-L000090](../../tests/test_generation_capabilities.py#L90) | 90 | `"    agent.fallback_model = \"\""` | — |
+| [SRC-AAA21D04E8-L000091](../../tests/test_generation_capabilities.py#L91) | 91 | `"    calls: list[str] = []"` | — |
+| [SRC-AAA21D04E8-L000092](../../tests/test_generation_capabilities.py#L92) | 92 | `""` | — |
+| [SRC-AAA21D04E8-L000093](../../tests/test_generation_capabilities.py#L93) | 93 | `"    def fake_urlopen(request, timeout):"` | — |
+| [SRC-AAA21D04E8-L000094](../../tests/test_generation_capabilities.py#L94) | 94 | `"        calls.append(json.loads(request.data.decode(\"utf-8\"))[\"model\"])"` | — |
+| [SRC-AAA21D04E8-L000095](../../tests/test_generation_capabilities.py#L95) | 95 | `"        return FakeResponse(\"may be incomplete\", include_reason=False)"` | — |
+| [SRC-AAA21D04E8-L000096](../../tests/test_generation_capabilities.py#L96) | 96 | `""` | — |
+| [SRC-AAA21D04E8-L000097](../../tests/test_generation_capabilities.py#L97) | 97 | `"    monkeypatch.setattr(\"agents.web_agent._open_model_request\", fake_urlopen)"` | — |
+| [SRC-AAA21D04E8-L000098](../../tests/test_generation_capabilities.py#L98) | 98 | `""` | — |
+| [SRC-AAA21D04E8-L000099](../../tests/test_generation_capabilities.py#L99) | 99 | `"    with pytest.raises(RuntimeError, match=\"سبب انتهاء واضحًا\"):"` | — |
+| [SRC-AAA21D04E8-L000100](../../tests/test_generation_capabilities.py#L100) | 100 | `"        agent._request_completion("` | — |
+| [SRC-AAA21D04E8-L000101](../../tests/test_generation_capabilities.py#L101) | 101 | `"            [{\"role\": \"user\", \"content\": \"اختبار\"}],"` | — |
+| [SRC-AAA21D04E8-L000102](../../tests/test_generation_capabilities.py#L102) | 102 | `"            model=\"primary/model\","` | — |
+| [SRC-AAA21D04E8-L000103](../../tests/test_generation_capabilities.py#L103) | 103 | `"        )"` | — |
+| [SRC-AAA21D04E8-L000104](../../tests/test_generation_capabilities.py#L104) | 104 | `""` | — |
+| [SRC-AAA21D04E8-L000105](../../tests/test_generation_capabilities.py#L105) | 105 | `"    assert calls == [\"primary/model\"]"` | — |
+| [SRC-AAA21D04E8-L000106](../../tests/test_generation_capabilities.py#L106) | 106 | `"    assert agent.model_usage == []"` | — |
+| [SRC-AAA21D04E8-L000107](../../tests/test_generation_capabilities.py#L107) | 107 | `"    assert agent.generation_diagnostics == [{"` | — |
+| [SRC-AAA21D04E8-L000108](../../tests/test_generation_capabilities.py#L108) | 108 | `"        \"attempt_number\": 1,"` | — |
+| [SRC-AAA21D04E8-L000109](../../tests/test_generation_capabilities.py#L109) | 109 | `"        \"requested_model\": \"primary/model\","` | — |
+| [SRC-AAA21D04E8-L000110](../../tests/test_generation_capabilities.py#L110) | 110 | `"        \"attempted_model\": \"primary/model\","` | — |
+| [SRC-AAA21D04E8-L000111](../../tests/test_generation_capabilities.py#L111) | 111 | `"        \"fallback_used\": False,"` | — |
+| [SRC-AAA21D04E8-L000112](../../tests/test_generation_capabilities.py#L112) | 112 | `"        \"request_started\": True,"` | — |
+| [SRC-AAA21D04E8-L000113](../../tests/test_generation_capabilities.py#L113) | 113 | `"        \"remote_response_received\": True,"` | — |
+| [SRC-AAA21D04E8-L000114](../../tests/test_generation_capabilities.py#L114) | 114 | `"        \"status\": \"finish_reason_missing\","` | — |
+| [SRC-AAA21D04E8-L000115](../../tests/test_generation_capabilities.py#L115) | 115 | `"    }]"` | — |
+| [SRC-AAA21D04E8-L000116](../../tests/test_generation_capabilities.py#L116) | 116 | `""` | — |
+| [SRC-AAA21D04E8-L000117](../../tests/test_generation_capabilities.py#L117) | 117 | `""` | — |
+| [SRC-AAA21D04E8-L000118](../../tests/test_generation_capabilities.py#L118) | 118 | `"def test_capability_question_distinguishes_configuration_from_live_health(monkeypatch):"` | — |
+| [SRC-AAA21D04E8-L000119](../../tests/test_generation_capabilities.py#L119) | 119 | `"    agent = WebAgent()"` | — |
+| [SRC-AAA21D04E8-L000120](../../tests/test_generation_capabilities.py#L120) | 120 | `""` | — |
+| [SRC-AAA21D04E8-L000121](../../tests/test_generation_capabilities.py#L121) | 121 | `"    monkeypatch.setattr("` | — |
+| [SRC-AAA21D04E8-L000122](../../tests/test_generation_capabilities.py#L122) | 122 | `"        agent,"` | — |
+| [SRC-AAA21D04E8-L000123](../../tests/test_generation_capabilities.py#L123) | 123 | `"        \"_collect_research\","` | — |
+| [SRC-AAA21D04E8-L000124](../../tests/test_generation_capabilities.py#L124) | 124 | `"        lambda plan: pytest.fail(\"Capability questions must not run live search\"),"` | — |
+| [SRC-AAA21D04E8-L000125](../../tests/test_generation_capabilities.py#L125) | 125 | `"    )"` | — |
+| [SRC-AAA21D04E8-L000126](../../tests/test_generation_capabilities.py#L126) | 126 | `""` | — |
+| [SRC-AAA21D04E8-L000127](../../tests/test_generation_capabilities.py#L127) | 127 | `"    result = agent.answer(\"هل تستطيع البحث على الانترنت؟\")"` | — |
+| [SRC-AAA21D04E8-L000128](../../tests/test_generation_capabilities.py#L128) | 128 | `""` | — |
+| [SRC-AAA21D04E8-L000129](../../tests/test_generation_capabilities.py#L129) | 129 | `"    assert result[\"kind\"] == \"capability_answer\""` | — |
+| [SRC-AAA21D04E8-L000130](../../tests/test_generation_capabilities.py#L130) | 130 | `"    assert result[\"final_answer_status\"] == \"local_response_no_generation\""` | — |
+| [SRC-AAA21D04E8-L000131](../../tests/test_generation_capabilities.py#L131) | 131 | `"    assert result[\"search_attempted\"] is False"` | — |
+| [SRC-AAA21D04E8-L000132](../../tests/test_generation_capabilities.py#L132) | 132 | `"    assert result[\"used_web_search\"] is False"` | — |
+| [SRC-AAA21D04E8-L000133](../../tests/test_generation_capabilities.py#L133) | 133 | `"    capability = result[\"capability_status\"][\"web_search\"]"` | — |
+| [SRC-AAA21D04E8-L000134](../../tests/test_generation_capabilities.py#L134) | 134 | `"    assert capability[\"implemented\"] is True"` | — |
+| [SRC-AAA21D04E8-L000135](../../tests/test_generation_capabilities.py#L135) | 135 | `"    assert capability[\"runtime_status\"] == \"not_tested_in_this_response\""` | — |
+| [SRC-AAA21D04E8-L000136](../../tests/test_generation_capabilities.py#L136) | 136 | `"    assert capability[\"local_dependencies_ready\"] is True"` | — |
+| [SRC-AAA21D04E8-L000137](../../tests/test_generation_capabilities.py#L137) | 137 | `"    assert \"لم أنفّذ اختبار اتصال حي\" in result[\"answer\"]"` | — |
+| [SRC-AAA21D04E8-L000138](../../tests/test_generation_capabilities.py#L138) | 138 | `"    assert \"DuckDuckGo HTML\" in result[\"answer\"]"` | — |
+| [SRC-AAA21D04E8-L000139](../../tests/test_generation_capabilities.py#L139) | 139 | `""` | — |
+| [SRC-AAA21D04E8-L000140](../../tests/test_generation_capabilities.py#L140) | 140 | `""` | — |
+| [SRC-AAA21D04E8-L000141](../../tests/test_generation_capabilities.py#L141) | 141 | `"@pytest.mark.parametrize(\"mode\", [\"auto\", \"deep\", \"latest\", \"social\"])"` | — |
+| [SRC-AAA21D04E8-L000142](../../tests/test_generation_capabilities.py#L142) | 142 | `"def test_current_request_search_status_is_not_confused_with_capability(monkeypatch, mode):"` | — |
+| [SRC-AAA21D04E8-L000143](../../tests/test_generation_capabilities.py#L143) | 143 | `"    agent = WebAgent()"` | — |
+| [SRC-AAA21D04E8-L000144](../../tests/test_generation_capabilities.py#L144) | 144 | `"    monkeypatch.setattr("` | — |
+| [SRC-AAA21D04E8-L000145](../../tests/test_generation_capabilities.py#L145) | 145 | `"        agent,"` | — |
+| [SRC-AAA21D04E8-L000146](../../tests/test_generation_capabilities.py#L146) | 146 | `"        \"_collect_research\","` | — |
+| [SRC-AAA21D04E8-L000147](../../tests/test_generation_capabilities.py#L147) | 147 | `"        lambda plan: pytest.fail(\"This asks about the current response, not a web lookup\"),"` | — |
+| [SRC-AAA21D04E8-L000148](../../tests/test_generation_capabilities.py#L148) | 148 | `"    )"` | — |
+| [SRC-AAA21D04E8-L000149](../../tests/test_generation_capabilities.py#L149) | 149 | `""` | — |
+| [SRC-AAA21D04E8-L000150](../../tests/test_generation_capabilities.py#L150) | 150 | `"    result = agent.answer(\"هل بحثت في الانترنت للاجابة الحالية؟\", mode=mode)"` | — |
+| [SRC-AAA21D04E8-L000151](../../tests/test_generation_capabilities.py#L151) | 151 | `""` | — |
+| [SRC-AAA21D04E8-L000152](../../tests/test_generation_capabilities.py#L152) | 152 | `"    assert result[\"kind\"] == \"capability_answer\""` | — |
+| [SRC-AAA21D04E8-L000153](../../tests/test_generation_capabilities.py#L153) | 153 | `"    assert result[\"request_execution_status\"] == {"` | — |
+| [SRC-AAA21D04E8-L000154](../../tests/test_generation_capabilities.py#L154) | 154 | `"        \"search_attempted\": False,"` | — |
+| [SRC-AAA21D04E8-L000155](../../tests/test_generation_capabilities.py#L155) | 155 | `"        \"search_outcome\": \"not_attempted\","` | — |
+| [SRC-AAA21D04E8-L000156](../../tests/test_generation_capabilities.py#L156) | 156 | `"        \"semantics\": \"status_of_this_request_only\","` | — |
+| [SRC-AAA21D04E8-L000157](../../tests/test_generation_capabilities.py#L157) | 157 | `"    }"` | — |
+| [SRC-AAA21D04E8-L000158](../../tests/test_generation_capabilities.py#L158) | 158 | `"    assert \"لم أنفّذ بحثًا حيًا للإجابة عن هذا السؤال تحديدًا\" in result[\"answer\"]"` | — |
+| [SRC-AAA21D04E8-L000159](../../tests/test_generation_capabilities.py#L159) | 159 | `"    assert result[\"capability_status\"][\"web_search\"][\"runtime_status\"] == ("` | — |
+| [SRC-AAA21D04E8-L000160](../../tests/test_generation_capabilities.py#L160) | 160 | `"        \"not_tested_in_this_response\""` | — |
+| [SRC-AAA21D04E8-L000161](../../tests/test_generation_capabilities.py#L161) | 161 | `"    )"` | — |
+| [SRC-AAA21D04E8-L000162](../../tests/test_generation_capabilities.py#L162) | 162 | `"    assert result[\"search_attempted\"] is False"` | — |
+| [SRC-AAA21D04E8-L000163](../../tests/test_generation_capabilities.py#L163) | 163 | `""` | — |
+| [SRC-AAA21D04E8-L000164](../../tests/test_generation_capabilities.py#L164) | 164 | `""` | — |
+| [SRC-AAA21D04E8-L000165](../../tests/test_generation_capabilities.py#L165) | 165 | `"def test_generation_failure_returns_partial_sources_and_diagnostics(monkeypatch):"` | — |
+| [SRC-AAA21D04E8-L000166](../../tests/test_generation_capabilities.py#L166) | 166 | `"    agent = WebAgent()"` | — |
+| [SRC-AAA21D04E8-L000167](../../tests/test_generation_capabilities.py#L167) | 167 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-AAA21D04E8-L000168](../../tests/test_generation_capabilities.py#L168) | 168 | `"    question = \"ابحث عن أحدث تقرير عن الذكاء الاصطناعي\""` | — |
 | [SRC-AAA21D04E8-L000169](../../tests/test_generation_capabilities.py#L169) | 169 | `""` | — |
 | [SRC-AAA21D04E8-L000170](../../tests/test_generation_capabilities.py#L170) | 170 | `"    sources = ["` | — |
 | [SRC-AAA21D04E8-L000171](../../tests/test_generation_capabilities.py#L171) | 171 | `"        {"` | — |
@@ -733,95 +825,3 @@
 | [SRC-1A176AD4F0-L000497](../../tests/test_hosted_smoke.py#L497) | 497 | `"                \"search_report\": {"` | — |
 | [SRC-1A176AD4F0-L000498](../../tests/test_hosted_smoke.py#L498) | 498 | `"                    \"pipeline_completion_status\": \"completed\","` | — |
 | [SRC-1A176AD4F0-L000499](../../tests/test_hosted_smoke.py#L499) | 499 | `"                    \"semantic_claim_verification\": {\"status\": \"completed_all_claims_supported\"},"` | — |
-| [SRC-1A176AD4F0-L000500](../../tests/test_hosted_smoke.py#L500) | 500 | `"                    \"insufficient_evidence\": False,"` | — |
-| [SRC-1A176AD4F0-L000501](../../tests/test_hosted_smoke.py#L501) | 501 | `"                    \"claim_audit_semantics\": \"distinct_model_assessed_source_support_not_ground_truth\","` | — |
-| [SRC-1A176AD4F0-L000502](../../tests/test_hosted_smoke.py#L502) | 502 | `"                },"` | — |
-| [SRC-1A176AD4F0-L000503](../../tests/test_hosted_smoke.py#L503) | 503 | `"            }"` | — |
-| [SRC-1A176AD4F0-L000504](../../tests/test_hosted_smoke.py#L504) | 504 | `"        return original(url, **kwargs)"` | — |
-| [SRC-1A176AD4F0-L000505](../../tests/test_hosted_smoke.py#L505) | 505 | `""` | — |
-| [SRC-1A176AD4F0-L000506](../../tests/test_hosted_smoke.py#L506) | 506 | `"    monkeypatch.setattr(hosted_smoke_test, \"request_json\", non_string_answer)"` | — |
-| [SRC-1A176AD4F0-L000507](../../tests/test_hosted_smoke.py#L507) | 507 | `"    with pytest.raises(SmokeError, match=\"empty or whitespace-only answer\"):"` | — |
-| [SRC-1A176AD4F0-L000508](../../tests/test_hosted_smoke.py#L508) | 508 | `"        run_smoke(hosted_server, TOKEN, allow_http=True, allow_provider_usage=True, timeout=5)"` | — |
-| [SRC-1A176AD4F0-L000509](../../tests/test_hosted_smoke.py#L509) | 509 | `""` | — |
-| [SRC-1A176AD4F0-L000510](../../tests/test_hosted_smoke.py#L510) | 510 | `""` | — |
-| [SRC-1A176AD4F0-L000511](../../tests/test_hosted_smoke.py#L511) | 511 | `"def test_smoke_rejects_partial_pipeline_even_with_sources(hosted_server, monkeypatch):"` | — |
-| [SRC-1A176AD4F0-L000512](../../tests/test_hosted_smoke.py#L512) | 512 | `"    original = hosted_smoke_test.request_json"` | — |
-| [SRC-1A176AD4F0-L000513](../../tests/test_hosted_smoke.py#L513) | 513 | `""` | — |
-| [SRC-1A176AD4F0-L000514](../../tests/test_hosted_smoke.py#L514) | 514 | `"    def partial_pipeline(url: str, **kwargs):"` | — |
-| [SRC-1A176AD4F0-L000515](../../tests/test_hosted_smoke.py#L515) | 515 | `"        if urlsplit(url).path == \"/api/agent\" and kwargs.get(\"token\") == TOKEN:"` | — |
-| [SRC-1A176AD4F0-L000516](../../tests/test_hosted_smoke.py#L516) | 516 | `"            return 200, {"` | — |
-| [SRC-1A176AD4F0-L000517](../../tests/test_hosted_smoke.py#L517) | 517 | `"                \"answer\": \"إجابة جزئية [المصدر 1]\", \"used_web_search\": True,"` | — |
-| [SRC-1A176AD4F0-L000518](../../tests/test_hosted_smoke.py#L518) | 518 | `"                \"used_language_model\": True,"` | — |
-| [SRC-1A176AD4F0-L000519](../../tests/test_hosted_smoke.py#L519) | 519 | `"                \"answer_evidence_status\": \"citation_indices_validated_only\","` | — |
-| [SRC-1A176AD4F0-L000520](../../tests/test_hosted_smoke.py#L520) | 520 | `"                \"sources\": [{\"url\": \"https://example.com/source\"}],"` | — |
-| [SRC-1A176AD4F0-L000521](../../tests/test_hosted_smoke.py#L521) | 521 | `"                \"request_budget\": {\"profile\": \"hosted_smoke\", \"timeout_seconds\": 75, \"budget_exhausted\": False, \"deadline_exceeded\": False, \"limits\": {\"search_queries\": 3, \"search_calls\": 12, \"model_calls\": 6, \"page_fetches\": 4, \"tool_calls\": 0}, \"counts\": {\"search_queries\": 2, \"search_calls\": 4, \"model_calls\": 4, \"page_fetches\": 1, \"tool_calls\": 0}},"` | — |
-| [SRC-1A176AD4F0-L000522](../../tests/test_hosted_smoke.py#L522) | 522 | `"                \"search_report\": {"` | — |
-| [SRC-1A176AD4F0-L000523](../../tests/test_hosted_smoke.py#L523) | 523 | `"                    \"pipeline_completion_status\": \"partial\","` | — |
-| [SRC-1A176AD4F0-L000524](../../tests/test_hosted_smoke.py#L524) | 524 | `"                    \"semantic_claim_verification\": {\"status\": \"completed_all_claims_supported\"},"` | — |
-| [SRC-1A176AD4F0-L000525](../../tests/test_hosted_smoke.py#L525) | 525 | `"                    \"insufficient_evidence\": False,"` | — |
-| [SRC-1A176AD4F0-L000526](../../tests/test_hosted_smoke.py#L526) | 526 | `"                    \"claim_audit_semantics\": \"distinct_model_assessed_source_support_not_ground_truth\","` | — |
-| [SRC-1A176AD4F0-L000527](../../tests/test_hosted_smoke.py#L527) | 527 | `"                },"` | — |
-| [SRC-1A176AD4F0-L000528](../../tests/test_hosted_smoke.py#L528) | 528 | `"            }"` | — |
-| [SRC-1A176AD4F0-L000529](../../tests/test_hosted_smoke.py#L529) | 529 | `"        return original(url, **kwargs)"` | — |
-| [SRC-1A176AD4F0-L000530](../../tests/test_hosted_smoke.py#L530) | 530 | `""` | — |
-| [SRC-1A176AD4F0-L000531](../../tests/test_hosted_smoke.py#L531) | 531 | `"    monkeypatch.setattr(hosted_smoke_test, \"request_json\", partial_pipeline)"` | — |
-| [SRC-1A176AD4F0-L000532](../../tests/test_hosted_smoke.py#L532) | 532 | `"    with pytest.raises(SmokeError, match=\"pipeline did not complete\"):"` | — |
-| [SRC-1A176AD4F0-L000533](../../tests/test_hosted_smoke.py#L533) | 533 | `"        run_smoke(hosted_server, TOKEN, allow_http=True, allow_provider_usage=True, timeout=5)"` | — |
-| [SRC-1A176AD4F0-L000534](../../tests/test_hosted_smoke.py#L534) | 534 | `""` | — |
-| [SRC-1A176AD4F0-L000535](../../tests/test_hosted_smoke.py#L535) | 535 | `""` | — |
-| [SRC-1A176AD4F0-L000536](../../tests/test_hosted_smoke.py#L536) | 536 | `"def test_smoke_rejects_unvalidated_answer_evidence(hosted_server, monkeypatch):"` | — |
-| [SRC-1A176AD4F0-L000537](../../tests/test_hosted_smoke.py#L537) | 537 | `"    original = hosted_smoke_test.request_json"` | — |
-| [SRC-1A176AD4F0-L000538](../../tests/test_hosted_smoke.py#L538) | 538 | `""` | — |
-| [SRC-1A176AD4F0-L000539](../../tests/test_hosted_smoke.py#L539) | 539 | `"    def invalid_evidence(url: str, **kwargs):"` | — |
-| [SRC-1A176AD4F0-L000540](../../tests/test_hosted_smoke.py#L540) | 540 | `"        if urlsplit(url).path == \"/api/agent\" and kwargs.get(\"token\") == TOKEN:"` | — |
-| [SRC-1A176AD4F0-L000541](../../tests/test_hosted_smoke.py#L541) | 541 | `"            return 200, {"` | — |
-| [SRC-1A176AD4F0-L000542](../../tests/test_hosted_smoke.py#L542) | 542 | `"                \"answer\": \"إجابة بلا إحالات صالحة\", \"used_web_search\": True,"` | — |
-| [SRC-1A176AD4F0-L000543](../../tests/test_hosted_smoke.py#L543) | 543 | `"                \"used_language_model\": True, \"answer_evidence_status\": \"not_assessed\","` | — |
-| [SRC-1A176AD4F0-L000544](../../tests/test_hosted_smoke.py#L544) | 544 | `"                \"sources\": [{\"url\": \"https://example.com/source\"}],"` | — |
-| [SRC-1A176AD4F0-L000545](../../tests/test_hosted_smoke.py#L545) | 545 | `"                \"request_budget\": {\"profile\": \"hosted_smoke\", \"timeout_seconds\": 75, \"budget_exhausted\": False, \"deadline_exceeded\": False, \"limits\": {\"search_queries\": 3, \"search_calls\": 12, \"model_calls\": 6, \"page_fetches\": 4, \"tool_calls\": 0}, \"counts\": {\"search_queries\": 2, \"search_calls\": 4, \"model_calls\": 4, \"page_fetches\": 1, \"tool_calls\": 0}},"` | — |
-| [SRC-1A176AD4F0-L000546](../../tests/test_hosted_smoke.py#L546) | 546 | `"                \"search_report\": {"` | — |
-| [SRC-1A176AD4F0-L000547](../../tests/test_hosted_smoke.py#L547) | 547 | `"                    \"pipeline_completion_status\": \"completed\","` | — |
-| [SRC-1A176AD4F0-L000548](../../tests/test_hosted_smoke.py#L548) | 548 | `"                    \"semantic_claim_verification\": {\"status\": \"completed_all_claims_supported\"},"` | — |
-| [SRC-1A176AD4F0-L000549](../../tests/test_hosted_smoke.py#L549) | 549 | `"                    \"insufficient_evidence\": False,"` | — |
-| [SRC-1A176AD4F0-L000550](../../tests/test_hosted_smoke.py#L550) | 550 | `"                    \"claim_audit_semantics\": \"distinct_model_assessed_source_support_not_ground_truth\","` | — |
-| [SRC-1A176AD4F0-L000551](../../tests/test_hosted_smoke.py#L551) | 551 | `"                },"` | — |
-| [SRC-1A176AD4F0-L000552](../../tests/test_hosted_smoke.py#L552) | 552 | `"            }"` | — |
-| [SRC-1A176AD4F0-L000553](../../tests/test_hosted_smoke.py#L553) | 553 | `"        return original(url, **kwargs)"` | — |
-| [SRC-1A176AD4F0-L000554](../../tests/test_hosted_smoke.py#L554) | 554 | `""` | — |
-| [SRC-1A176AD4F0-L000555](../../tests/test_hosted_smoke.py#L555) | 555 | `"    monkeypatch.setattr(hosted_smoke_test, \"request_json\", invalid_evidence)"` | — |
-| [SRC-1A176AD4F0-L000556](../../tests/test_hosted_smoke.py#L556) | 556 | `"    with pytest.raises(SmokeError, match=\"evidence status\"):"` | — |
-| [SRC-1A176AD4F0-L000557](../../tests/test_hosted_smoke.py#L557) | 557 | `"        run_smoke(hosted_server, TOKEN, allow_http=True, allow_provider_usage=True, timeout=5)"` | — |
-| [SRC-1A176AD4F0-L000558](../../tests/test_hosted_smoke.py#L558) | 558 | `""` | — |
-| [SRC-1A176AD4F0-L000559](../../tests/test_hosted_smoke.py#L559) | 559 | `""` | — |
-| [SRC-1A176AD4F0-L000560](../../tests/test_hosted_smoke.py#L560) | 560 | `""` | — |
-| [SRC-1A176AD4F0-L000561](../../tests/test_hosted_smoke.py#L561) | 561 | `""` | — |
-| [SRC-1A176AD4F0-L000562](../../tests/test_hosted_smoke.py#L562) | 562 | `"def test_smoke_rejects_missing_or_exceeded_server_budget_profile(hosted_server, monkeypatch):"` | — |
-| [SRC-1A176AD4F0-L000563](../../tests/test_hosted_smoke.py#L563) | 563 | `"    original = hosted_smoke_test.request_json"` | — |
-| [SRC-1A176AD4F0-L000564](../../tests/test_hosted_smoke.py#L564) | 564 | `""` | — |
-| [SRC-1A176AD4F0-L000565](../../tests/test_hosted_smoke.py#L565) | 565 | `"    def unbounded_budget(url: str, **kwargs):"` | — |
-| [SRC-1A176AD4F0-L000566](../../tests/test_hosted_smoke.py#L566) | 566 | `"        if urlsplit(url).path == \"/api/agent\" and kwargs.get(\"token\") == TOKEN:"` | — |
-| [SRC-1A176AD4F0-L000567](../../tests/test_hosted_smoke.py#L567) | 567 | `"            status, payload = original(url, **kwargs)"` | — |
-| [SRC-1A176AD4F0-L000568](../../tests/test_hosted_smoke.py#L568) | 568 | `"            payload[\"request_budget\"] = {"` | — |
-| [SRC-1A176AD4F0-L000569](../../tests/test_hosted_smoke.py#L569) | 569 | `"                \"profile\": \"default\","` | — |
-| [SRC-1A176AD4F0-L000570](../../tests/test_hosted_smoke.py#L570) | 570 | `"                \"budget_exhausted\": False,"` | — |
-| [SRC-1A176AD4F0-L000571](../../tests/test_hosted_smoke.py#L571) | 571 | `"                \"deadline_exceeded\": False,"` | — |
-| [SRC-1A176AD4F0-L000572](../../tests/test_hosted_smoke.py#L572) | 572 | `"                \"limits\": {\"search_queries\": 8, \"search_calls\": 32, \"model_calls\": 8, \"page_fetches\": 8, \"tool_calls\": 3},"` | — |
-| [SRC-1A176AD4F0-L000573](../../tests/test_hosted_smoke.py#L573) | 573 | `"                \"counts\": {\"search_queries\": 1, \"search_calls\": 2, \"model_calls\": 2, \"page_fetches\": 1, \"tool_calls\": 0},"` | — |
-| [SRC-1A176AD4F0-L000574](../../tests/test_hosted_smoke.py#L574) | 574 | `"            }"` | — |
-| [SRC-1A176AD4F0-L000575](../../tests/test_hosted_smoke.py#L575) | 575 | `"            return status, payload"` | — |
-| [SRC-1A176AD4F0-L000576](../../tests/test_hosted_smoke.py#L576) | 576 | `"        return original(url, **kwargs)"` | — |
-| [SRC-1A176AD4F0-L000577](../../tests/test_hosted_smoke.py#L577) | 577 | `""` | — |
-| [SRC-1A176AD4F0-L000578](../../tests/test_hosted_smoke.py#L578) | 578 | `"    monkeypatch.setattr(hosted_smoke_test, \"request_json\", unbounded_budget)"` | — |
-| [SRC-1A176AD4F0-L000579](../../tests/test_hosted_smoke.py#L579) | 579 | `"    with pytest.raises(SmokeError, match=\"hosted_smoke request budget\"):"` | — |
-| [SRC-1A176AD4F0-L000580](../../tests/test_hosted_smoke.py#L580) | 580 | `"        run_smoke(hosted_server, TOKEN, allow_http=True, allow_provider_usage=True, timeout=5)"` | — |
-| [SRC-1A176AD4F0-L000581](../../tests/test_hosted_smoke.py#L581) | 581 | `""` | — |
-| [SRC-1A176AD4F0-L000582](../../tests/test_hosted_smoke.py#L582) | 582 | `""` | — |
-| [SRC-1A176AD4F0-L000583](../../tests/test_hosted_smoke.py#L583) | 583 | `""` | — |
-| [SRC-1A176AD4F0-L000584](../../tests/test_hosted_smoke.py#L584) | 584 | `"def test_smoke_rejects_pipeline_complete_without_semantic_claim_support(hosted_server, monkeypatch):"` | — |
-| [SRC-1A176AD4F0-L000585](../../tests/test_hosted_smoke.py#L585) | 585 | `"    original = hosted_smoke_test.request_json"` | — |
-| [SRC-1A176AD4F0-L000586](../../tests/test_hosted_smoke.py#L586) | 586 | `""` | — |
-| [SRC-1A176AD4F0-L000587](../../tests/test_hosted_smoke.py#L587) | 587 | `"    def unverified_claims(url: str, **kwargs):"` | — |
-| [SRC-1A176AD4F0-L000588](../../tests/test_hosted_smoke.py#L588) | 588 | `"        if urlsplit(url).path == \"/api/agent\" and kwargs.get(\"token\") == TOKEN:"` | — |
-| [SRC-1A176AD4F0-L000589](../../tests/test_hosted_smoke.py#L589) | 589 | `"            return 200, {"` | — |
-| [SRC-1A176AD4F0-L000590](../../tests/test_hosted_smoke.py#L590) | 590 | `"                \"answer\": \"ادعاء غير متحقق [المصدر 1]\", \"used_web_search\": True,"` | — |
-| [SRC-1A176AD4F0-L000591](../../tests/test_hosted_smoke.py#L591) | 591 | `"                \"used_language_model\": True,"` | — |

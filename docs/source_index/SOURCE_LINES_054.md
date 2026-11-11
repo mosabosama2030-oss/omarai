@@ -4,7 +4,7 @@
 
 - الصفحة: **054**
 - سجلات الأسطر: **800**
-- النطاق: SRC-851E7A87D6-L000102 إلى SRC-6BF96689A8-L000178
+- النطاق: SRC-851E7A87D6-L000010 إلى SRC-6BF96689A8-L000086
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,98 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-851E7A87D6-L000010](../../tests/test_postgres_store.py#L10) | 10 | `""` | — |
+| [SRC-851E7A87D6-L000011](../../tests/test_postgres_store.py#L11) | 11 | `"import pytest"` | — |
+| [SRC-851E7A87D6-L000012](../../tests/test_postgres_store.py#L12) | 12 | `""` | — |
+| [SRC-851E7A87D6-L000013](../../tests/test_postgres_store.py#L13) | 13 | `"from agents.omarai import LeadStore, _PostgresConnection, _qmark_to_psycopg"` | — |
+| [SRC-851E7A87D6-L000014](../../tests/test_postgres_store.py#L14) | 14 | `""` | — |
+| [SRC-851E7A87D6-L000015](../../tests/test_postgres_store.py#L15) | 15 | `""` | — |
+| [SRC-851E7A87D6-L000016](../../tests/test_postgres_store.py#L16) | 16 | `"@pytest.fixture"` | — |
+| [SRC-851E7A87D6-L000017](../../tests/test_postgres_store.py#L17) | 17 | `"def postgres_store():"` | — |
+| [SRC-851E7A87D6-L000018](../../tests/test_postgres_store.py#L18) | 18 | `"    database_url = os.getenv(\"OMARAI_TEST_DATABASE_URL\", \"\").strip()"` | — |
+| [SRC-851E7A87D6-L000019](../../tests/test_postgres_store.py#L19) | 19 | `"    if not database_url:"` | — |
+| [SRC-851E7A87D6-L000020](../../tests/test_postgres_store.py#L20) | 20 | `"        pytest.skip(\"OMARAI_TEST_DATABASE_URL is not configured\")"` | — |
+| [SRC-851E7A87D6-L000021](../../tests/test_postgres_store.py#L21) | 21 | `"    return LeadStore(database_url=database_url)"` | — |
+| [SRC-851E7A87D6-L000022](../../tests/test_postgres_store.py#L22) | 22 | `""` | — |
+| [SRC-851E7A87D6-L000023](../../tests/test_postgres_store.py#L23) | 23 | `""` | — |
+| [SRC-851E7A87D6-L000024](../../tests/test_postgres_store.py#L24) | 24 | `"def _tenant_user(store: LeadStore, marker: str) -> tuple[str, str]:"` | — |
+| [SRC-851E7A87D6-L000025](../../tests/test_postgres_store.py#L25) | 25 | `"    tenant_id = store.create_tenant(f\"PostgreSQL test {marker}\", f\"pg-{marker}\")"` | — |
+| [SRC-851E7A87D6-L000026](../../tests/test_postgres_store.py#L26) | 26 | `"    user_id = store.create_user(f\"{marker}@example.invalid\", f\"PostgreSQL {marker}\")"` | — |
+| [SRC-851E7A87D6-L000027](../../tests/test_postgres_store.py#L27) | 27 | `"    store.add_membership(tenant_id, user_id, \"owner\")"` | — |
+| [SRC-851E7A87D6-L000028](../../tests/test_postgres_store.py#L28) | 28 | `"    return tenant_id, user_id"` | — |
+| [SRC-851E7A87D6-L000029](../../tests/test_postgres_store.py#L29) | 29 | `""` | — |
+| [SRC-851E7A87D6-L000030](../../tests/test_postgres_store.py#L30) | 30 | `""` | — |
+| [SRC-851E7A87D6-L000031](../../tests/test_postgres_store.py#L31) | 31 | `"def test_postgres_leads_preserve_tenant_scoping_and_duplicate_semantics(postgres_store):"` | — |
+| [SRC-851E7A87D6-L000032](../../tests/test_postgres_store.py#L32) | 32 | `"    marker = uuid.uuid4().hex"` | — |
+| [SRC-851E7A87D6-L000033](../../tests/test_postgres_store.py#L33) | 33 | `"    tenant_a, _ = _tenant_user(postgres_store, f\"a-{marker}\")"` | — |
+| [SRC-851E7A87D6-L000034](../../tests/test_postgres_store.py#L34) | 34 | `"    tenant_b, _ = _tenant_user(postgres_store, f\"b-{marker}\")"` | — |
+| [SRC-851E7A87D6-L000035](../../tests/test_postgres_store.py#L35) | 35 | `"    text = f\"نبحث عن مورد لتجهيزات اختبار PostgreSQL {marker}\""` | — |
+| [SRC-851E7A87D6-L000036](../../tests/test_postgres_store.py#L36) | 36 | `"    source_url = f\"https://example.com/postgres/{marker}\""` | — |
+| [SRC-851E7A87D6-L000037](../../tests/test_postgres_store.py#L37) | 37 | `""` | — |
+| [SRC-851E7A87D6-L000038](../../tests/test_postgres_store.py#L38) | 38 | `"    lead_a, created_a = postgres_store.add(text, source_url, tenant_id=tenant_a)"` | — |
+| [SRC-851E7A87D6-L000039](../../tests/test_postgres_store.py#L39) | 39 | `"    lead_b, created_b = postgres_store.add(text, source_url, tenant_id=tenant_b)"` | — |
+| [SRC-851E7A87D6-L000040](../../tests/test_postgres_store.py#L40) | 40 | `""` | — |
+| [SRC-851E7A87D6-L000041](../../tests/test_postgres_store.py#L41) | 41 | `"    assert created_a is True"` | — |
+| [SRC-851E7A87D6-L000042](../../tests/test_postgres_store.py#L42) | 42 | `"    assert created_b is True"` | — |
+| [SRC-851E7A87D6-L000043](../../tests/test_postgres_store.py#L43) | 43 | `"    assert lead_a[\"id\"] != lead_b[\"id\"]"` | — |
+| [SRC-851E7A87D6-L000044](../../tests/test_postgres_store.py#L44) | 44 | `"    assert [row[\"id\"] for row in postgres_store.list(tenant_id=tenant_a)] == [lead_a[\"id\"]]"` | — |
+| [SRC-851E7A87D6-L000045](../../tests/test_postgres_store.py#L45) | 45 | `"    assert [row[\"id\"] for row in postgres_store.list(tenant_id=tenant_b)] == [lead_b[\"id\"]]"` | — |
+| [SRC-851E7A87D6-L000046](../../tests/test_postgres_store.py#L46) | 46 | `""` | — |
+| [SRC-851E7A87D6-L000047](../../tests/test_postgres_store.py#L47) | 47 | `"    duplicate, created_again = postgres_store.add("` | — |
+| [SRC-851E7A87D6-L000048](../../tests/test_postgres_store.py#L48) | 48 | `"        text, source_url, tenant_id=tenant_a"` | — |
+| [SRC-851E7A87D6-L000049](../../tests/test_postgres_store.py#L49) | 49 | `"    )"` | — |
+| [SRC-851E7A87D6-L000050](../../tests/test_postgres_store.py#L50) | 50 | `"    assert created_again is False"` | — |
+| [SRC-851E7A87D6-L000051](../../tests/test_postgres_store.py#L51) | 51 | `"    assert duplicate[\"id\"] == lead_a[\"id\"]"` | — |
+| [SRC-851E7A87D6-L000052](../../tests/test_postgres_store.py#L52) | 52 | `""` | — |
+| [SRC-851E7A87D6-L000053](../../tests/test_postgres_store.py#L53) | 53 | `"    assert postgres_store.update_status("` | — |
+| [SRC-851E7A87D6-L000054](../../tests/test_postgres_store.py#L54) | 54 | `"        lead_a[\"id\"], \"qualified\", tenant_id=tenant_b"` | — |
+| [SRC-851E7A87D6-L000055](../../tests/test_postgres_store.py#L55) | 55 | `"    ) is None"` | — |
+| [SRC-851E7A87D6-L000056](../../tests/test_postgres_store.py#L56) | 56 | `"    updated = postgres_store.update_status("` | — |
+| [SRC-851E7A87D6-L000057](../../tests/test_postgres_store.py#L57) | 57 | `"        lead_a[\"id\"], \"qualified\", tenant_id=tenant_a"` | — |
+| [SRC-851E7A87D6-L000058](../../tests/test_postgres_store.py#L58) | 58 | `"    )"` | — |
+| [SRC-851E7A87D6-L000059](../../tests/test_postgres_store.py#L59) | 59 | `"    assert updated[\"status\"] == \"qualified\""` | — |
+| [SRC-851E7A87D6-L000060](../../tests/test_postgres_store.py#L60) | 60 | `"    assert postgres_store.list(\"qualified\", tenant_id=tenant_a)[0][\"id\"] == lead_a[\"id\"]"` | — |
+| [SRC-851E7A87D6-L000061](../../tests/test_postgres_store.py#L61) | 61 | `"    assert postgres_store.list(tenant_id=tenant_b)[0][\"status\"] == \"new\""` | — |
+| [SRC-851E7A87D6-L000062](../../tests/test_postgres_store.py#L62) | 62 | `""` | — |
+| [SRC-851E7A87D6-L000063](../../tests/test_postgres_store.py#L63) | 63 | `""` | — |
+| [SRC-851E7A87D6-L000064](../../tests/test_postgres_store.py#L64) | 64 | `"def test_postgres_tokens_sessions_and_reusable_workspace_records(postgres_store):"` | — |
+| [SRC-851E7A87D6-L000065](../../tests/test_postgres_store.py#L65) | 65 | `"    marker = uuid.uuid4().hex"` | — |
+| [SRC-851E7A87D6-L000066](../../tests/test_postgres_store.py#L66) | 66 | `"    tenant_id, user_id = _tenant_user(postgres_store, marker)"` | — |
+| [SRC-851E7A87D6-L000067](../../tests/test_postgres_store.py#L67) | 67 | `"    token = f\"postgres-test-{marker}-\" + (\"T\" * 40)"` | — |
+| [SRC-851E7A87D6-L000068](../../tests/test_postgres_store.py#L68) | 68 | `""` | — |
+| [SRC-851E7A87D6-L000069](../../tests/test_postgres_store.py#L69) | 69 | `"    postgres_store.create_api_token(token, tenant_id, user_id, label=\"integration\")"` | — |
+| [SRC-851E7A87D6-L000070](../../tests/test_postgres_store.py#L70) | 70 | `"    principal = postgres_store.resolve_api_token(token)"` | — |
+| [SRC-851E7A87D6-L000071](../../tests/test_postgres_store.py#L71) | 71 | `"    assert principal == {\"tenant_id\": tenant_id, \"user_id\": user_id, \"role\": \"owner\"}"` | — |
+| [SRC-851E7A87D6-L000072](../../tests/test_postgres_store.py#L72) | 72 | `""` | — |
+| [SRC-851E7A87D6-L000073](../../tests/test_postgres_store.py#L73) | 73 | `"    created_session = postgres_store.create_web_session(token)"` | — |
+| [SRC-851E7A87D6-L000074](../../tests/test_postgres_store.py#L74) | 74 | `"    assert created_session is not None"` | — |
+| [SRC-851E7A87D6-L000075](../../tests/test_postgres_store.py#L75) | 75 | `"    session_id, session_principal = created_session"` | — |
+| [SRC-851E7A87D6-L000076](../../tests/test_postgres_store.py#L76) | 76 | `"    assert session_principal == principal"` | — |
+| [SRC-851E7A87D6-L000077](../../tests/test_postgres_store.py#L77) | 77 | `"    assert postgres_store.resolve_web_session(session_id) == principal"` | — |
+| [SRC-851E7A87D6-L000078](../../tests/test_postgres_store.py#L78) | 78 | `"    assert postgres_store.revoke_web_session(session_id) is True"` | — |
+| [SRC-851E7A87D6-L000079](../../tests/test_postgres_store.py#L79) | 79 | `"    assert postgres_store.resolve_web_session(session_id) is None"` | — |
+| [SRC-851E7A87D6-L000080](../../tests/test_postgres_store.py#L80) | 80 | `""` | — |
+| [SRC-851E7A87D6-L000081](../../tests/test_postgres_store.py#L81) | 81 | `"    profile_input = {"` | — |
+| [SRC-851E7A87D6-L000082](../../tests/test_postgres_store.py#L82) | 82 | `"        \"product\": {\"name\": f\"PostgreSQL Widget {marker}\", \"aliases\": [\"Widget\"]},"` | — |
+| [SRC-851E7A87D6-L000083](../../tests/test_postgres_store.py#L83) | 83 | `"        \"market\": {\"locations\": [\"Cairo\"], \"industries\": [\"Testing\"]},"` | — |
+| [SRC-851E7A87D6-L000084](../../tests/test_postgres_store.py#L84) | 84 | `"    }"` | — |
+| [SRC-851E7A87D6-L000085](../../tests/test_postgres_store.py#L85) | 85 | `"    profile = postgres_store.save_product_profile(profile_input, tenant_id=tenant_id)"` | — |
+| [SRC-851E7A87D6-L000086](../../tests/test_postgres_store.py#L86) | 86 | `"    assert profile[\"name\"] == profile_input[\"product\"][\"name\"]"` | — |
+| [SRC-851E7A87D6-L000087](../../tests/test_postgres_store.py#L87) | 87 | `"    assert postgres_store.get_product_profile("` | — |
+| [SRC-851E7A87D6-L000088](../../tests/test_postgres_store.py#L88) | 88 | `"        profile[\"id\"], tenant_id=tenant_id"` | — |
+| [SRC-851E7A87D6-L000089](../../tests/test_postgres_store.py#L89) | 89 | `"    )[\"profile\"] == profile_input"` | — |
+| [SRC-851E7A87D6-L000090](../../tests/test_postgres_store.py#L90) | 90 | `"    assert postgres_store.list_product_profiles(tenant_id=tenant_id)[0][\"id\"] == profile[\"id\"]"` | — |
+| [SRC-851E7A87D6-L000091](../../tests/test_postgres_store.py#L91) | 91 | `""` | — |
+| [SRC-851E7A87D6-L000092](../../tests/test_postgres_store.py#L92) | 92 | `"    run = postgres_store.save_discovery_run("` | — |
+| [SRC-851E7A87D6-L000093](../../tests/test_postgres_store.py#L93) | 93 | `"        profile[\"id\"],"` | — |
+| [SRC-851E7A87D6-L000094](../../tests/test_postgres_store.py#L94) | 94 | `"        {"` | — |
+| [SRC-851E7A87D6-L000095](../../tests/test_postgres_store.py#L95) | 95 | `"            \"answer\": \"تم العثور على طلب توريد معلن.\","` | — |
+| [SRC-851E7A87D6-L000096](../../tests/test_postgres_store.py#L96) | 96 | `"            \"kind\": \"lead_discovery\","` | — |
+| [SRC-851E7A87D6-L000097](../../tests/test_postgres_store.py#L97) | 97 | `"            \"search_queries\": [\"نبحث عن مورد\"],"` | — |
+| [SRC-851E7A87D6-L000098](../../tests/test_postgres_store.py#L98) | 98 | `"            \"sources\": [{"` | — |
+| [SRC-851E7A87D6-L000099](../../tests/test_postgres_store.py#L99) | 99 | `"                \"title\": \"طلب مورد تجريبي\","` | — |
+| [SRC-851E7A87D6-L000100](../../tests/test_postgres_store.py#L100) | 100 | `"                \"url\": f\"https://example.com/demand/{marker}\","` | — |
+| [SRC-851E7A87D6-L000101](../../tests/test_postgres_store.py#L101) | 101 | `"                \"snippet\": \"نبحث عن مورد لتوريد المنتج\","` | — |
 | [SRC-851E7A87D6-L000102](../../tests/test_postgres_store.py#L102) | 102 | `"                \"platform\": \"web\","` | — |
 | [SRC-851E7A87D6-L000103](../../tests/test_postgres_store.py#L103) | 103 | `"                \"lead_qualification\": \"public_demand_signal\","` | — |
 | [SRC-851E7A87D6-L000104](../../tests/test_postgres_store.py#L104) | 104 | `"                \"lead_intent_evidence\": {"` | — |
@@ -769,95 +861,3 @@
 | [SRC-6BF96689A8-L000084](../../tests/test_research.py#L84) | 84 | `"    question = \"حلل هذه الصفحة بالتفصيل https://example.com/a?utm_source=chat#section.\""` | — |
 | [SRC-6BF96689A8-L000085](../../tests/test_research.py#L85) | 85 | `"    plan = fallback_plan(question)"` | — |
 | [SRC-6BF96689A8-L000086](../../tests/test_research.py#L86) | 86 | `"    assert extract_urls(question) == [\"https://example.com/a?utm_source=chat#section\"]"` | — |
-| [SRC-6BF96689A8-L000087](../../tests/test_research.py#L87) | 87 | `"    assert plan[\"direct_urls\"] == [\"https://example.com/a?utm_source=chat#section\"]"` | — |
-| [SRC-6BF96689A8-L000088](../../tests/test_research.py#L88) | 88 | `"    assert \"https://\" not in plan[\"queries\"][0]"` | — |
-| [SRC-6BF96689A8-L000089](../../tests/test_research.py#L89) | 89 | `""` | — |
-| [SRC-6BF96689A8-L000090](../../tests/test_research.py#L90) | 90 | `"def test_registrable_domain_groups_subdomains_and_respects_public_suffixes():"` | — |
-| [SRC-6BF96689A8-L000091](../../tests/test_research.py#L91) | 91 | `"    assert registrable_domain(\"news.example.com\") == \"example.com\""` | — |
-| [SRC-6BF96689A8-L000092](../../tests/test_research.py#L92) | 92 | `"    assert registrable_domain(\"offers.example.com\") == \"example.com\""` | — |
-| [SRC-6BF96689A8-L000093](../../tests/test_research.py#L93) | 93 | `"    assert registrable_domain(\"news.example.co.uk\") == \"example.co.uk\""` | — |
-| [SRC-6BF96689A8-L000094](../../tests/test_research.py#L94) | 94 | `"    assert registrable_domain(\"other.co.uk\") == \"other.co.uk\""` | — |
-| [SRC-6BF96689A8-L000095](../../tests/test_research.py#L95) | 95 | `"    assert registrable_domain(\"alice.github.io\") == \"alice.github.io\""` | — |
-| [SRC-6BF96689A8-L000096](../../tests/test_research.py#L96) | 96 | `"    assert registrable_domain(\"https://www.example.com/path\") == \"example.com\""` | — |
-| [SRC-6BF96689A8-L000097](../../tests/test_research.py#L97) | 97 | `""` | — |
-| [SRC-6BF96689A8-L000098](../../tests/test_research.py#L98) | 98 | `""` | — |
-| [SRC-6BF96689A8-L000099](../../tests/test_research.py#L99) | 99 | `"def test_evidence_coverage_does_not_count_sibling_subdomains_as_independent():"` | — |
-| [SRC-6BF96689A8-L000100](../../tests/test_research.py#L100) | 100 | `"    report = evidence_signal_report(["` | — |
-| [SRC-6BF96689A8-L000101](../../tests/test_research.py#L101) | 101 | `"        {"` | — |
-| [SRC-6BF96689A8-L000102](../../tests/test_research.py#L102) | 102 | `"            \"url\": \"https://news.example.com/story\","` | — |
-| [SRC-6BF96689A8-L000103](../../tests/test_research.py#L103) | 103 | `"            \"domain\": \"news.example.com\","` | — |
-| [SRC-6BF96689A8-L000104](../../tests/test_research.py#L104) | 104 | `"            \"providers\": [\"search_a\"],"` | — |
-| [SRC-6BF96689A8-L000105](../../tests/test_research.py#L105) | 105 | `"        },"` | — |
-| [SRC-6BF96689A8-L000106](../../tests/test_research.py#L106) | 106 | `"        {"` | — |
-| [SRC-6BF96689A8-L000107](../../tests/test_research.py#L107) | 107 | `"            \"url\": \"https://offers.example.com/second-story\","` | — |
-| [SRC-6BF96689A8-L000108](../../tests/test_research.py#L108) | 108 | `"            \"domain\": \"offers.example.com\","` | — |
-| [SRC-6BF96689A8-L000109](../../tests/test_research.py#L109) | 109 | `"            \"providers\": [\"search_b\"],"` | — |
-| [SRC-6BF96689A8-L000110](../../tests/test_research.py#L110) | 110 | `"        },"` | — |
-| [SRC-6BF96689A8-L000111](../../tests/test_research.py#L111) | 111 | `"    ])"` | — |
-| [SRC-6BF96689A8-L000112](../../tests/test_research.py#L112) | 112 | `"    assert report[\"unique_domains\"] == 1"` | — |
-| [SRC-6BF96689A8-L000113](../../tests/test_research.py#L113) | 113 | `"    assert report[\"coverage_level\"] == \"محدود\""` | — |
-| [SRC-6BF96689A8-L000114](../../tests/test_research.py#L114) | 114 | `""` | — |
-| [SRC-6BF96689A8-L000115](../../tests/test_research.py#L115) | 115 | `""` | — |
-| [SRC-6BF96689A8-L000116](../../tests/test_research.py#L116) | 116 | `""` | — |
-| [SRC-6BF96689A8-L000117](../../tests/test_research.py#L117) | 117 | `"def test_standard_fallback_plan_does_not_add_deep_research_query():"` | — |
-| [SRC-6BF96689A8-L000118](../../tests/test_research.py#L118) | 118 | `"    plan = fallback_plan(\"اشرح طريقة عمل المحرك الكهربائي\")"` | — |
-| [SRC-6BF96689A8-L000119](../../tests/test_research.py#L119) | 119 | `"    assert plan[\"depth\"] == \"standard\""` | — |
-| [SRC-6BF96689A8-L000120](../../tests/test_research.py#L120) | 120 | `"    assert not any(\"مصادر موثوقة تقارير إحصاءات\" in query for query in plan[\"queries\"])"` | — |
-| [SRC-6BF96689A8-L000121](../../tests/test_research.py#L121) | 121 | `""` | — |
-| [SRC-6BF96689A8-L000122](../../tests/test_research.py#L122) | 122 | `""` | — |
-| [SRC-6BF96689A8-L000123](../../tests/test_research.py#L123) | 123 | `"def test_deep_fallback_plan_adds_deep_research_query_for_explicit_comparison():"` | — |
-| [SRC-6BF96689A8-L000124](../../tests/test_research.py#L124) | 124 | `"    plan = fallback_plan(\"قارن مميزات وعيوب المحرك الكهربائي\")"` | — |
-| [SRC-6BF96689A8-L000125](../../tests/test_research.py#L125) | 125 | `"    assert plan[\"depth\"] == \"deep\""` | — |
-| [SRC-6BF96689A8-L000126](../../tests/test_research.py#L126) | 126 | `"    assert any(\"مصادر موثوقة تقارير إحصاءات\" in query for query in plan[\"queries\"])"` | — |
-| [SRC-6BF96689A8-L000127](../../tests/test_research.py#L127) | 127 | `""` | — |
-| [SRC-6BF96689A8-L000128](../../tests/test_research.py#L128) | 128 | `""` | — |
-| [SRC-6BF96689A8-L000129](../../tests/test_research.py#L129) | 129 | `"def test_fallback_plan_expands_warranty_followup_with_previous_topic():"` | — |
-| [SRC-6BF96689A8-L000130](../../tests/test_research.py#L130) | 130 | `"    history = ["` | — |
-| [SRC-6BF96689A8-L000131](../../tests/test_research.py#L131) | 131 | `"        {\"role\": \"user\", \"content\": \"سعر آيفون 16 في مصر\"},"` | — |
-| [SRC-6BF96689A8-L000132](../../tests/test_research.py#L132) | 132 | `"        {\"role\": \"assistant\", \"content\": \"سأبحث عن معلومات حديثة.\"},"` | — |
-| [SRC-6BF96689A8-L000133](../../tests/test_research.py#L133) | 133 | `"    ]"` | — |
-| [SRC-6BF96689A8-L000134](../../tests/test_research.py#L134) | 134 | `"    plan = fallback_plan(\"هل فيه ضمان؟\", history)"` | — |
-| [SRC-6BF96689A8-L000135](../../tests/test_research.py#L135) | 135 | `"    assert \"آيفون 16\" in plan[\"queries\"][0]"` | — |
-| [SRC-6BF96689A8-L000136](../../tests/test_research.py#L136) | 136 | `"    assert \"ضمان\" in plan[\"queries\"][0]"` | — |
-| [SRC-6BF96689A8-L000137](../../tests/test_research.py#L137) | 137 | `""` | — |
-| [SRC-6BF96689A8-L000138](../../tests/test_research.py#L138) | 138 | `""` | — |
-| [SRC-6BF96689A8-L000139](../../tests/test_research.py#L139) | 139 | `"def test_fallback_plan_does_not_reuse_topic_after_acknowledgment():"` | — |
-| [SRC-6BF96689A8-L000140](../../tests/test_research.py#L140) | 140 | `"    history = ["` | — |
-| [SRC-6BF96689A8-L000141](../../tests/test_research.py#L141) | 141 | `"        {\"role\": \"user\", \"content\": \"سعر آيفون 16 في مصر\"},"` | — |
-| [SRC-6BF96689A8-L000142](../../tests/test_research.py#L142) | 142 | `"        {\"role\": \"assistant\", \"content\": \"سأبحث عن معلومات حديثة.\"},"` | — |
-| [SRC-6BF96689A8-L000143](../../tests/test_research.py#L143) | 143 | `"        {\"role\": \"user\", \"content\": \"شكرًا\"},"` | — |
-| [SRC-6BF96689A8-L000144](../../tests/test_research.py#L144) | 144 | `"        {\"role\": \"assistant\", \"content\": \"العفو.\"},"` | — |
-| [SRC-6BF96689A8-L000145](../../tests/test_research.py#L145) | 145 | `"    ]"` | — |
-| [SRC-6BF96689A8-L000146](../../tests/test_research.py#L146) | 146 | `"    plan = fallback_plan(\"فين؟\", history)"` | — |
-| [SRC-6BF96689A8-L000147](../../tests/test_research.py#L147) | 147 | `"    assert \"آيفون 16\" not in plan[\"queries\"][0]"` | — |
-| [SRC-6BF96689A8-L000148](../../tests/test_research.py#L148) | 148 | `""` | — |
-| [SRC-6BF96689A8-L000149](../../tests/test_research.py#L149) | 149 | `""` | — |
-| [SRC-6BF96689A8-L000150](../../tests/test_research.py#L150) | 150 | `"def test_compact_search_query_keeps_subject_and_removes_answer_format_instructions():"` | — |
-| [SRC-6BF96689A8-L000151](../../tests/test_research.py#L151) | 151 | `"    cases = ["` | — |
-| [SRC-6BF96689A8-L000152](../../tests/test_research.py#L152) | 152 | `"        ("` | — |
-| [SRC-6BF96689A8-L000153](../../tests/test_research.py#L153) | 153 | `"            \"ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر، وأجب بالعربية بإيجاز.\","` | — |
-| [SRC-6BF96689A8-L000154](../../tests/test_research.py#L154) | 154 | `"            (\"عاصمة مصر\",),"` | — |
-| [SRC-6BF96689A8-L000155](../../tests/test_research.py#L155) | 155 | `"            (\"اذكر مصدرًا موثوقًا\", \"رابط مباشر\", \"بالعربية بإيجاز\"),"` | — |
-| [SRC-6BF96689A8-L000156](../../tests/test_research.py#L156) | 156 | `"        ),"` | — |
-| [SRC-6BF96689A8-L000157](../../tests/test_research.py#L157) | 157 | `"        ("` | — |
-| [SRC-6BF96689A8-L000158](../../tests/test_research.py#L158) | 158 | `"            \"حلل أهم التحديات التي تواجه السيارات الكهربائية في مصر، وقارن بين التكلفة والبنية التحتية والشحن. استخدم مصادر متعددة، وميز بين الحقائق والاستنتاجات، واذكر روابط المصادر.\","` | — |
-| [SRC-6BF96689A8-L000159](../../tests/test_research.py#L159) | 159 | `"            (\"السيارات الكهربائية\", \"مصر\", \"التكلفة\", \"البنية التحتية\", \"الشحن\"),"` | — |
-| [SRC-6BF96689A8-L000160](../../tests/test_research.py#L160) | 160 | `"            (\"استخدم مصادر متعددة\", \"الحقائق والاستنتاجات\", \"روابط المصادر\"),"` | — |
-| [SRC-6BF96689A8-L000161](../../tests/test_research.py#L161) | 161 | `"        ),"` | — |
-| [SRC-6BF96689A8-L000162](../../tests/test_research.py#L162) | 162 | `"        ("` | — |
-| [SRC-6BF96689A8-L000163](../../tests/test_research.py#L163) | 163 | `"            \"ما أحدث التطورات في وكلاء الذكاء الاصطناعي خلال الأيام السبعة الماضية؟ اذكر تواريخ الأخبار وروابط المصادر، ولا تعرض معلومات قديمة باعتبارها جديدة.\","` | — |
-| [SRC-6BF96689A8-L000164](../../tests/test_research.py#L164) | 164 | `"            (\"وكلاء الذكاء الاصطناعي\", \"الأيام السبعة الماضية\"),"` | — |
-| [SRC-6BF96689A8-L000165](../../tests/test_research.py#L165) | 165 | `"            (\"تواريخ الأخبار\", \"روابط المصادر\", \"معلومات قديمة\"),"` | — |
-| [SRC-6BF96689A8-L000166](../../tests/test_research.py#L166) | 166 | `"        ),"` | — |
-| [SRC-6BF96689A8-L000167](../../tests/test_research.py#L167) | 167 | `"        ("` | — |
-| [SRC-6BF96689A8-L000168](../../tests/test_research.py#L168) | 168 | `"            \"اجمع آراء وتجارب المستخدمين العامة حول السيارات الكهربائية في مصر. اعرض الآراء الإيجابية والسلبية، واذكر روابط المنشورات أو المصادر المتاحة. وضح إذا كانت النتائج غير كافية لتمثيل آراء المستخدمين عمومًا.\","` | — |
-| [SRC-6BF96689A8-L000169](../../tests/test_research.py#L169) | 169 | `"            (\"آراء وتجارب المستخدمين\", \"السيارات الكهربائية في مصر\", \"الإيجابية والسلبية\"),"` | — |
-| [SRC-6BF96689A8-L000170](../../tests/test_research.py#L170) | 170 | `"            (\"روابط المنشورات\", \"النتائج غير كافية\", \"تمثيل آراء المستخدمين عمومًا\"),"` | — |
-| [SRC-6BF96689A8-L000171](../../tests/test_research.py#L171) | 171 | `"        ),"` | — |
-| [SRC-6BF96689A8-L000172](../../tests/test_research.py#L172) | 172 | `"    ]"` | — |
-| [SRC-6BF96689A8-L000173](../../tests/test_research.py#L173) | 173 | `"    for question, required_terms, removed_terms in cases:"` | — |
-| [SRC-6BF96689A8-L000174](../../tests/test_research.py#L174) | 174 | `"        query = compact_search_query(question)"` | — |
-| [SRC-6BF96689A8-L000175](../../tests/test_research.py#L175) | 175 | `"        assert 2 <= len(query) <= 240"` | — |
-| [SRC-6BF96689A8-L000176](../../tests/test_research.py#L176) | 176 | `"        for term in required_terms:"` | — |
-| [SRC-6BF96689A8-L000177](../../tests/test_research.py#L177) | 177 | `"            assert term in query, f\"topic term was lost: {term!r} in {query!r}\""` | — |
-| [SRC-6BF96689A8-L000178](../../tests/test_research.py#L178) | 178 | `"        for term in removed_terms:"` | — |

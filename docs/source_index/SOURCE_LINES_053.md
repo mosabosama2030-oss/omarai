@@ -4,7 +4,7 @@
 
 - الصفحة: **053**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1521F490CA-L000264 إلى SRC-851E7A87D6-L000101
+- النطاق: SRC-1521F490CA-L000172 إلى SRC-851E7A87D6-L000009
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,98 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1521F490CA-L000172](../../tests/test_multitenant.py#L172) | 172 | `"        }"` | — |
+| [SRC-1521F490CA-L000173](../../tests/test_multitenant.py#L173) | 173 | `"        original = db.execute("` | — |
+| [SRC-1521F490CA-L000174](../../tests/test_multitenant.py#L174) | 174 | `"            \"SELECT id, fingerprint, text FROM leads\""` | — |
+| [SRC-1521F490CA-L000175](../../tests/test_multitenant.py#L175) | 175 | `"        ).fetchone()"` | — |
+| [SRC-1521F490CA-L000176](../../tests/test_multitenant.py#L176) | 176 | `"    assert \"leads\" in tables"` | — |
+| [SRC-1521F490CA-L000177](../../tests/test_multitenant.py#L177) | 177 | `"    assert \"leads_legacy_migration\" not in tables"` | — |
+| [SRC-1521F490CA-L000178](../../tests/test_multitenant.py#L178) | 178 | `"    assert original == (\"legacy-1\", \"fingerprint-1\", \"preserve me\")"` | — |
+| [SRC-1521F490CA-L000179](../../tests/test_multitenant.py#L179) | 179 | `""` | — |
+| [SRC-1521F490CA-L000180](../../tests/test_multitenant.py#L180) | 180 | `""` | — |
+| [SRC-1521F490CA-L000181](../../tests/test_multitenant.py#L181) | 181 | `"def test_api_token_expiry_is_normalized_to_utc(tmp_path):"` | — |
+| [SRC-1521F490CA-L000182](../../tests/test_multitenant.py#L182) | 182 | `"    store = LeadStore(tmp_path / \"token-expiry.sqlite3\")"` | — |
+| [SRC-1521F490CA-L000183](../../tests/test_multitenant.py#L183) | 183 | `"    tenant_id, user_id = _tenant_member("` | — |
+| [SRC-1521F490CA-L000184](../../tests/test_multitenant.py#L184) | 184 | `"        store, \"Expiry Company\", \"expiry@example.test\", \"E\" * 40"` | — |
+| [SRC-1521F490CA-L000185](../../tests/test_multitenant.py#L185) | 185 | `"    )"` | — |
+| [SRC-1521F490CA-L000186](../../tests/test_multitenant.py#L186) | 186 | `"    token = \"F\" * 40"` | — |
+| [SRC-1521F490CA-L000187](../../tests/test_multitenant.py#L187) | 187 | `"    store.create_api_token("` | — |
+| [SRC-1521F490CA-L000188](../../tests/test_multitenant.py#L188) | 188 | `"        token,"` | — |
+| [SRC-1521F490CA-L000189](../../tests/test_multitenant.py#L189) | 189 | `"        tenant_id,"` | — |
+| [SRC-1521F490CA-L000190](../../tests/test_multitenant.py#L190) | 190 | `"        user_id,"` | — |
+| [SRC-1521F490CA-L000191](../../tests/test_multitenant.py#L191) | 191 | `"        expires_at=\"2099-01-01T03:00:00+03:00\","` | — |
+| [SRC-1521F490CA-L000192](../../tests/test_multitenant.py#L192) | 192 | `"    )"` | — |
+| [SRC-1521F490CA-L000193](../../tests/test_multitenant.py#L193) | 193 | `"    with store.connect() as db:"` | — |
+| [SRC-1521F490CA-L000194](../../tests/test_multitenant.py#L194) | 194 | `"        row = db.execute("` | — |
+| [SRC-1521F490CA-L000195](../../tests/test_multitenant.py#L195) | 195 | `"            \"SELECT expires_at FROM api_tokens WHERE token_hash=?\","` | — |
+| [SRC-1521F490CA-L000196](../../tests/test_multitenant.py#L196) | 196 | `"            (store._token_hash(token),),"` | — |
+| [SRC-1521F490CA-L000197](../../tests/test_multitenant.py#L197) | 197 | `"        ).fetchone()"` | — |
+| [SRC-1521F490CA-L000198](../../tests/test_multitenant.py#L198) | 198 | `"    assert row[\"expires_at\"] == \"2099-01-01T00:00:00Z\""` | — |
+| [SRC-1521F490CA-L000199](../../tests/test_multitenant.py#L199) | 199 | `"    assert store.resolve_api_token(token) is not None"` | — |
+| [SRC-1521F490CA-L000200](../../tests/test_multitenant.py#L200) | 200 | `""` | — |
+| [SRC-1521F490CA-L000201](../../tests/test_multitenant.py#L201) | 201 | `"    # Expired tokens must stop resolving even when their membership stays active."` | — |
+| [SRC-1521F490CA-L000202](../../tests/test_multitenant.py#L202) | 202 | `"    with store.connect() as db:"` | — |
+| [SRC-1521F490CA-L000203](../../tests/test_multitenant.py#L203) | 203 | `"        db.execute("` | — |
+| [SRC-1521F490CA-L000204](../../tests/test_multitenant.py#L204) | 204 | `"            \"UPDATE api_tokens SET expires_at=? WHERE token_hash=?\","` | — |
+| [SRC-1521F490CA-L000205](../../tests/test_multitenant.py#L205) | 205 | `"            (\"2000-01-01T00:00:00Z\", store._token_hash(token)),"` | — |
+| [SRC-1521F490CA-L000206](../../tests/test_multitenant.py#L206) | 206 | `"        )"` | — |
+| [SRC-1521F490CA-L000207](../../tests/test_multitenant.py#L207) | 207 | `"    assert store.resolve_api_token(token) is None"` | — |
+| [SRC-1521F490CA-L000208](../../tests/test_multitenant.py#L208) | 208 | `""` | — |
+| [SRC-1521F490CA-L000209](../../tests/test_multitenant.py#L209) | 209 | `"    utc_token = \"J\" * 40"` | — |
+| [SRC-1521F490CA-L000210](../../tests/test_multitenant.py#L210) | 210 | `"    store.create_api_token("` | — |
+| [SRC-1521F490CA-L000211](../../tests/test_multitenant.py#L211) | 211 | `"        utc_token, tenant_id, user_id, expires_at=\"2099-01-01T00:00:00Z\""` | — |
+| [SRC-1521F490CA-L000212](../../tests/test_multitenant.py#L212) | 212 | `"    )"` | — |
+| [SRC-1521F490CA-L000213](../../tests/test_multitenant.py#L213) | 213 | `"    assert store.resolve_api_token(utc_token) is not None"` | — |
+| [SRC-1521F490CA-L000214](../../tests/test_multitenant.py#L214) | 214 | `""` | — |
+| [SRC-1521F490CA-L000215](../../tests/test_multitenant.py#L215) | 215 | `""` | — |
+| [SRC-1521F490CA-L000216](../../tests/test_multitenant.py#L216) | 216 | `"def test_api_token_expiry_rejects_naive_malformed_and_past_values(tmp_path):"` | — |
+| [SRC-1521F490CA-L000217](../../tests/test_multitenant.py#L217) | 217 | `"    store = LeadStore(tmp_path / \"invalid-token-expiry.sqlite3\")"` | — |
+| [SRC-1521F490CA-L000218](../../tests/test_multitenant.py#L218) | 218 | `"    tenant_id, user_id = _tenant_member("` | — |
+| [SRC-1521F490CA-L000219](../../tests/test_multitenant.py#L219) | 219 | `"        store, \"Expiry Validation Company\", \"expiry-validation@example.test\", \"G\" * 40"` | — |
+| [SRC-1521F490CA-L000220](../../tests/test_multitenant.py#L220) | 220 | `"    )"` | — |
+| [SRC-1521F490CA-L000221](../../tests/test_multitenant.py#L221) | 221 | `"    invalid_values = ("` | — |
+| [SRC-1521F490CA-L000222](../../tests/test_multitenant.py#L222) | 222 | `"        \"2099-01-01T00:00:00\","` | — |
+| [SRC-1521F490CA-L000223](../../tests/test_multitenant.py#L223) | 223 | `"        \"not-a-timestamp\","` | — |
+| [SRC-1521F490CA-L000224](../../tests/test_multitenant.py#L224) | 224 | `"        \"2000-01-01T00:00:00Z\","` | — |
+| [SRC-1521F490CA-L000225](../../tests/test_multitenant.py#L225) | 225 | `"        \"\","` | — |
+| [SRC-1521F490CA-L000226](../../tests/test_multitenant.py#L226) | 226 | `"    )"` | — |
+| [SRC-1521F490CA-L000227](../../tests/test_multitenant.py#L227) | 227 | `"    for index, expiry in enumerate(invalid_values):"` | — |
+| [SRC-1521F490CA-L000228](../../tests/test_multitenant.py#L228) | 228 | `"        with pytest.raises(ValueError, match=\"expires_at\"):"` | — |
+| [SRC-1521F490CA-L000229](../../tests/test_multitenant.py#L229) | 229 | `"            store.create_api_token("` | — |
+| [SRC-1521F490CA-L000230](../../tests/test_multitenant.py#L230) | 230 | `"                (\"H\" * 39) + str(index),"` | — |
+| [SRC-1521F490CA-L000231](../../tests/test_multitenant.py#L231) | 231 | `"                tenant_id,"` | — |
+| [SRC-1521F490CA-L000232](../../tests/test_multitenant.py#L232) | 232 | `"                user_id,"` | — |
+| [SRC-1521F490CA-L000233](../../tests/test_multitenant.py#L233) | 233 | `"                expires_at=expiry,"` | — |
+| [SRC-1521F490CA-L000234](../../tests/test_multitenant.py#L234) | 234 | `"            )"` | — |
+| [SRC-1521F490CA-L000235](../../tests/test_multitenant.py#L235) | 235 | `""` | — |
+| [SRC-1521F490CA-L000236](../../tests/test_multitenant.py#L236) | 236 | `""` | — |
+| [SRC-1521F490CA-L000237](../../tests/test_multitenant.py#L237) | 237 | `""` | — |
+| [SRC-1521F490CA-L000238](../../tests/test_multitenant.py#L238) | 238 | `"def test_api_token_revocation_is_scoped_to_the_owning_user_and_tenant(tmp_path):"` | — |
+| [SRC-1521F490CA-L000239](../../tests/test_multitenant.py#L239) | 239 | `"    store = LeadStore(tmp_path / \"revoke-token.sqlite3\")"` | — |
+| [SRC-1521F490CA-L000240](../../tests/test_multitenant.py#L240) | 240 | `"    tenant_id, user_id = _tenant_member("` | — |
+| [SRC-1521F490CA-L000241](../../tests/test_multitenant.py#L241) | 241 | `"        store, \"Revocation Company\", \"owner@example.test\", \"K\" * 40"` | — |
+| [SRC-1521F490CA-L000242](../../tests/test_multitenant.py#L242) | 242 | `"    )"` | — |
+| [SRC-1521F490CA-L000243](../../tests/test_multitenant.py#L243) | 243 | `"    other_tenant_id, other_user_id = _tenant_member("` | — |
+| [SRC-1521F490CA-L000244](../../tests/test_multitenant.py#L244) | 244 | `"        store, \"Other Revocation Company\", \"other@example.test\", \"L\" * 40"` | — |
+| [SRC-1521F490CA-L000245](../../tests/test_multitenant.py#L245) | 245 | `"    )"` | — |
+| [SRC-1521F490CA-L000246](../../tests/test_multitenant.py#L246) | 246 | `"    token = \"M\" * 40"` | — |
+| [SRC-1521F490CA-L000247](../../tests/test_multitenant.py#L247) | 247 | `"    store.create_api_token(token, tenant_id, user_id)"` | — |
+| [SRC-1521F490CA-L000248](../../tests/test_multitenant.py#L248) | 248 | `""` | — |
+| [SRC-1521F490CA-L000249](../../tests/test_multitenant.py#L249) | 249 | `"    assert store.resolve_api_token(token)[\"tenant_id\"] == tenant_id"` | — |
+| [SRC-1521F490CA-L000250](../../tests/test_multitenant.py#L250) | 250 | `"    assert store.revoke_api_token("` | — |
+| [SRC-1521F490CA-L000251](../../tests/test_multitenant.py#L251) | 251 | `"        token, tenant_id=other_tenant_id, user_id=other_user_id"` | — |
+| [SRC-1521F490CA-L000252](../../tests/test_multitenant.py#L252) | 252 | `"    ) is False"` | — |
+| [SRC-1521F490CA-L000253](../../tests/test_multitenant.py#L253) | 253 | `"    assert store.resolve_api_token(token)[\"tenant_id\"] == tenant_id"` | — |
+| [SRC-1521F490CA-L000254](../../tests/test_multitenant.py#L254) | 254 | `"    assert store.revoke_api_token("` | — |
+| [SRC-1521F490CA-L000255](../../tests/test_multitenant.py#L255) | 255 | `"        token, tenant_id=tenant_id, user_id=other_user_id"` | — |
+| [SRC-1521F490CA-L000256](../../tests/test_multitenant.py#L256) | 256 | `"    ) is False"` | — |
+| [SRC-1521F490CA-L000257](../../tests/test_multitenant.py#L257) | 257 | `"    assert store.resolve_api_token(token)[\"tenant_id\"] == tenant_id"` | — |
+| [SRC-1521F490CA-L000258](../../tests/test_multitenant.py#L258) | 258 | `""` | — |
+| [SRC-1521F490CA-L000259](../../tests/test_multitenant.py#L259) | 259 | `"    assert store.revoke_api_token("` | — |
+| [SRC-1521F490CA-L000260](../../tests/test_multitenant.py#L260) | 260 | `"        token, tenant_id=tenant_id, user_id=user_id"` | — |
+| [SRC-1521F490CA-L000261](../../tests/test_multitenant.py#L261) | 261 | `"    ) is True"` | — |
+| [SRC-1521F490CA-L000262](../../tests/test_multitenant.py#L262) | 262 | `"    assert store.resolve_api_token(token) is None"` | — |
+| [SRC-1521F490CA-L000263](../../tests/test_multitenant.py#L263) | 263 | `"    assert store.revoke_api_token("` | — |
 | [SRC-1521F490CA-L000264](../../tests/test_multitenant.py#L264) | 264 | `"        token, tenant_id=tenant_id, user_id=user_id"` | — |
 | [SRC-1521F490CA-L000265](../../tests/test_multitenant.py#L265) | 265 | `"    ) is False"` | — |
 | [SRC-1521F490CA-L000266](../../tests/test_multitenant.py#L266) | 266 | `""` | — |
@@ -751,95 +843,3 @@
 | [SRC-851E7A87D6-L000007](../../tests/test_postgres_store.py#L7) | 7 | `""` | — |
 | [SRC-851E7A87D6-L000008](../../tests/test_postgres_store.py#L8) | 8 | `"import os"` | — |
 | [SRC-851E7A87D6-L000009](../../tests/test_postgres_store.py#L9) | 9 | `"import uuid"` | — |
-| [SRC-851E7A87D6-L000010](../../tests/test_postgres_store.py#L10) | 10 | `""` | — |
-| [SRC-851E7A87D6-L000011](../../tests/test_postgres_store.py#L11) | 11 | `"import pytest"` | — |
-| [SRC-851E7A87D6-L000012](../../tests/test_postgres_store.py#L12) | 12 | `""` | — |
-| [SRC-851E7A87D6-L000013](../../tests/test_postgres_store.py#L13) | 13 | `"from agents.omarai import LeadStore, _PostgresConnection, _qmark_to_psycopg"` | — |
-| [SRC-851E7A87D6-L000014](../../tests/test_postgres_store.py#L14) | 14 | `""` | — |
-| [SRC-851E7A87D6-L000015](../../tests/test_postgres_store.py#L15) | 15 | `""` | — |
-| [SRC-851E7A87D6-L000016](../../tests/test_postgres_store.py#L16) | 16 | `"@pytest.fixture"` | — |
-| [SRC-851E7A87D6-L000017](../../tests/test_postgres_store.py#L17) | 17 | `"def postgres_store():"` | — |
-| [SRC-851E7A87D6-L000018](../../tests/test_postgres_store.py#L18) | 18 | `"    database_url = os.getenv(\"OMARAI_TEST_DATABASE_URL\", \"\").strip()"` | — |
-| [SRC-851E7A87D6-L000019](../../tests/test_postgres_store.py#L19) | 19 | `"    if not database_url:"` | — |
-| [SRC-851E7A87D6-L000020](../../tests/test_postgres_store.py#L20) | 20 | `"        pytest.skip(\"OMARAI_TEST_DATABASE_URL is not configured\")"` | — |
-| [SRC-851E7A87D6-L000021](../../tests/test_postgres_store.py#L21) | 21 | `"    return LeadStore(database_url=database_url)"` | — |
-| [SRC-851E7A87D6-L000022](../../tests/test_postgres_store.py#L22) | 22 | `""` | — |
-| [SRC-851E7A87D6-L000023](../../tests/test_postgres_store.py#L23) | 23 | `""` | — |
-| [SRC-851E7A87D6-L000024](../../tests/test_postgres_store.py#L24) | 24 | `"def _tenant_user(store: LeadStore, marker: str) -> tuple[str, str]:"` | — |
-| [SRC-851E7A87D6-L000025](../../tests/test_postgres_store.py#L25) | 25 | `"    tenant_id = store.create_tenant(f\"PostgreSQL test {marker}\", f\"pg-{marker}\")"` | — |
-| [SRC-851E7A87D6-L000026](../../tests/test_postgres_store.py#L26) | 26 | `"    user_id = store.create_user(f\"{marker}@example.invalid\", f\"PostgreSQL {marker}\")"` | — |
-| [SRC-851E7A87D6-L000027](../../tests/test_postgres_store.py#L27) | 27 | `"    store.add_membership(tenant_id, user_id, \"owner\")"` | — |
-| [SRC-851E7A87D6-L000028](../../tests/test_postgres_store.py#L28) | 28 | `"    return tenant_id, user_id"` | — |
-| [SRC-851E7A87D6-L000029](../../tests/test_postgres_store.py#L29) | 29 | `""` | — |
-| [SRC-851E7A87D6-L000030](../../tests/test_postgres_store.py#L30) | 30 | `""` | — |
-| [SRC-851E7A87D6-L000031](../../tests/test_postgres_store.py#L31) | 31 | `"def test_postgres_leads_preserve_tenant_scoping_and_duplicate_semantics(postgres_store):"` | — |
-| [SRC-851E7A87D6-L000032](../../tests/test_postgres_store.py#L32) | 32 | `"    marker = uuid.uuid4().hex"` | — |
-| [SRC-851E7A87D6-L000033](../../tests/test_postgres_store.py#L33) | 33 | `"    tenant_a, _ = _tenant_user(postgres_store, f\"a-{marker}\")"` | — |
-| [SRC-851E7A87D6-L000034](../../tests/test_postgres_store.py#L34) | 34 | `"    tenant_b, _ = _tenant_user(postgres_store, f\"b-{marker}\")"` | — |
-| [SRC-851E7A87D6-L000035](../../tests/test_postgres_store.py#L35) | 35 | `"    text = f\"نبحث عن مورد لتجهيزات اختبار PostgreSQL {marker}\""` | — |
-| [SRC-851E7A87D6-L000036](../../tests/test_postgres_store.py#L36) | 36 | `"    source_url = f\"https://example.com/postgres/{marker}\""` | — |
-| [SRC-851E7A87D6-L000037](../../tests/test_postgres_store.py#L37) | 37 | `""` | — |
-| [SRC-851E7A87D6-L000038](../../tests/test_postgres_store.py#L38) | 38 | `"    lead_a, created_a = postgres_store.add(text, source_url, tenant_id=tenant_a)"` | — |
-| [SRC-851E7A87D6-L000039](../../tests/test_postgres_store.py#L39) | 39 | `"    lead_b, created_b = postgres_store.add(text, source_url, tenant_id=tenant_b)"` | — |
-| [SRC-851E7A87D6-L000040](../../tests/test_postgres_store.py#L40) | 40 | `""` | — |
-| [SRC-851E7A87D6-L000041](../../tests/test_postgres_store.py#L41) | 41 | `"    assert created_a is True"` | — |
-| [SRC-851E7A87D6-L000042](../../tests/test_postgres_store.py#L42) | 42 | `"    assert created_b is True"` | — |
-| [SRC-851E7A87D6-L000043](../../tests/test_postgres_store.py#L43) | 43 | `"    assert lead_a[\"id\"] != lead_b[\"id\"]"` | — |
-| [SRC-851E7A87D6-L000044](../../tests/test_postgres_store.py#L44) | 44 | `"    assert [row[\"id\"] for row in postgres_store.list(tenant_id=tenant_a)] == [lead_a[\"id\"]]"` | — |
-| [SRC-851E7A87D6-L000045](../../tests/test_postgres_store.py#L45) | 45 | `"    assert [row[\"id\"] for row in postgres_store.list(tenant_id=tenant_b)] == [lead_b[\"id\"]]"` | — |
-| [SRC-851E7A87D6-L000046](../../tests/test_postgres_store.py#L46) | 46 | `""` | — |
-| [SRC-851E7A87D6-L000047](../../tests/test_postgres_store.py#L47) | 47 | `"    duplicate, created_again = postgres_store.add("` | — |
-| [SRC-851E7A87D6-L000048](../../tests/test_postgres_store.py#L48) | 48 | `"        text, source_url, tenant_id=tenant_a"` | — |
-| [SRC-851E7A87D6-L000049](../../tests/test_postgres_store.py#L49) | 49 | `"    )"` | — |
-| [SRC-851E7A87D6-L000050](../../tests/test_postgres_store.py#L50) | 50 | `"    assert created_again is False"` | — |
-| [SRC-851E7A87D6-L000051](../../tests/test_postgres_store.py#L51) | 51 | `"    assert duplicate[\"id\"] == lead_a[\"id\"]"` | — |
-| [SRC-851E7A87D6-L000052](../../tests/test_postgres_store.py#L52) | 52 | `""` | — |
-| [SRC-851E7A87D6-L000053](../../tests/test_postgres_store.py#L53) | 53 | `"    assert postgres_store.update_status("` | — |
-| [SRC-851E7A87D6-L000054](../../tests/test_postgres_store.py#L54) | 54 | `"        lead_a[\"id\"], \"qualified\", tenant_id=tenant_b"` | — |
-| [SRC-851E7A87D6-L000055](../../tests/test_postgres_store.py#L55) | 55 | `"    ) is None"` | — |
-| [SRC-851E7A87D6-L000056](../../tests/test_postgres_store.py#L56) | 56 | `"    updated = postgres_store.update_status("` | — |
-| [SRC-851E7A87D6-L000057](../../tests/test_postgres_store.py#L57) | 57 | `"        lead_a[\"id\"], \"qualified\", tenant_id=tenant_a"` | — |
-| [SRC-851E7A87D6-L000058](../../tests/test_postgres_store.py#L58) | 58 | `"    )"` | — |
-| [SRC-851E7A87D6-L000059](../../tests/test_postgres_store.py#L59) | 59 | `"    assert updated[\"status\"] == \"qualified\""` | — |
-| [SRC-851E7A87D6-L000060](../../tests/test_postgres_store.py#L60) | 60 | `"    assert postgres_store.list(\"qualified\", tenant_id=tenant_a)[0][\"id\"] == lead_a[\"id\"]"` | — |
-| [SRC-851E7A87D6-L000061](../../tests/test_postgres_store.py#L61) | 61 | `"    assert postgres_store.list(tenant_id=tenant_b)[0][\"status\"] == \"new\""` | — |
-| [SRC-851E7A87D6-L000062](../../tests/test_postgres_store.py#L62) | 62 | `""` | — |
-| [SRC-851E7A87D6-L000063](../../tests/test_postgres_store.py#L63) | 63 | `""` | — |
-| [SRC-851E7A87D6-L000064](../../tests/test_postgres_store.py#L64) | 64 | `"def test_postgres_tokens_sessions_and_reusable_workspace_records(postgres_store):"` | — |
-| [SRC-851E7A87D6-L000065](../../tests/test_postgres_store.py#L65) | 65 | `"    marker = uuid.uuid4().hex"` | — |
-| [SRC-851E7A87D6-L000066](../../tests/test_postgres_store.py#L66) | 66 | `"    tenant_id, user_id = _tenant_user(postgres_store, marker)"` | — |
-| [SRC-851E7A87D6-L000067](../../tests/test_postgres_store.py#L67) | 67 | `"    token = f\"postgres-test-{marker}-\" + (\"T\" * 40)"` | — |
-| [SRC-851E7A87D6-L000068](../../tests/test_postgres_store.py#L68) | 68 | `""` | — |
-| [SRC-851E7A87D6-L000069](../../tests/test_postgres_store.py#L69) | 69 | `"    postgres_store.create_api_token(token, tenant_id, user_id, label=\"integration\")"` | — |
-| [SRC-851E7A87D6-L000070](../../tests/test_postgres_store.py#L70) | 70 | `"    principal = postgres_store.resolve_api_token(token)"` | — |
-| [SRC-851E7A87D6-L000071](../../tests/test_postgres_store.py#L71) | 71 | `"    assert principal == {\"tenant_id\": tenant_id, \"user_id\": user_id, \"role\": \"owner\"}"` | — |
-| [SRC-851E7A87D6-L000072](../../tests/test_postgres_store.py#L72) | 72 | `""` | — |
-| [SRC-851E7A87D6-L000073](../../tests/test_postgres_store.py#L73) | 73 | `"    created_session = postgres_store.create_web_session(token)"` | — |
-| [SRC-851E7A87D6-L000074](../../tests/test_postgres_store.py#L74) | 74 | `"    assert created_session is not None"` | — |
-| [SRC-851E7A87D6-L000075](../../tests/test_postgres_store.py#L75) | 75 | `"    session_id, session_principal = created_session"` | — |
-| [SRC-851E7A87D6-L000076](../../tests/test_postgres_store.py#L76) | 76 | `"    assert session_principal == principal"` | — |
-| [SRC-851E7A87D6-L000077](../../tests/test_postgres_store.py#L77) | 77 | `"    assert postgres_store.resolve_web_session(session_id) == principal"` | — |
-| [SRC-851E7A87D6-L000078](../../tests/test_postgres_store.py#L78) | 78 | `"    assert postgres_store.revoke_web_session(session_id) is True"` | — |
-| [SRC-851E7A87D6-L000079](../../tests/test_postgres_store.py#L79) | 79 | `"    assert postgres_store.resolve_web_session(session_id) is None"` | — |
-| [SRC-851E7A87D6-L000080](../../tests/test_postgres_store.py#L80) | 80 | `""` | — |
-| [SRC-851E7A87D6-L000081](../../tests/test_postgres_store.py#L81) | 81 | `"    profile_input = {"` | — |
-| [SRC-851E7A87D6-L000082](../../tests/test_postgres_store.py#L82) | 82 | `"        \"product\": {\"name\": f\"PostgreSQL Widget {marker}\", \"aliases\": [\"Widget\"]},"` | — |
-| [SRC-851E7A87D6-L000083](../../tests/test_postgres_store.py#L83) | 83 | `"        \"market\": {\"locations\": [\"Cairo\"], \"industries\": [\"Testing\"]},"` | — |
-| [SRC-851E7A87D6-L000084](../../tests/test_postgres_store.py#L84) | 84 | `"    }"` | — |
-| [SRC-851E7A87D6-L000085](../../tests/test_postgres_store.py#L85) | 85 | `"    profile = postgres_store.save_product_profile(profile_input, tenant_id=tenant_id)"` | — |
-| [SRC-851E7A87D6-L000086](../../tests/test_postgres_store.py#L86) | 86 | `"    assert profile[\"name\"] == profile_input[\"product\"][\"name\"]"` | — |
-| [SRC-851E7A87D6-L000087](../../tests/test_postgres_store.py#L87) | 87 | `"    assert postgres_store.get_product_profile("` | — |
-| [SRC-851E7A87D6-L000088](../../tests/test_postgres_store.py#L88) | 88 | `"        profile[\"id\"], tenant_id=tenant_id"` | — |
-| [SRC-851E7A87D6-L000089](../../tests/test_postgres_store.py#L89) | 89 | `"    )[\"profile\"] == profile_input"` | — |
-| [SRC-851E7A87D6-L000090](../../tests/test_postgres_store.py#L90) | 90 | `"    assert postgres_store.list_product_profiles(tenant_id=tenant_id)[0][\"id\"] == profile[\"id\"]"` | — |
-| [SRC-851E7A87D6-L000091](../../tests/test_postgres_store.py#L91) | 91 | `""` | — |
-| [SRC-851E7A87D6-L000092](../../tests/test_postgres_store.py#L92) | 92 | `"    run = postgres_store.save_discovery_run("` | — |
-| [SRC-851E7A87D6-L000093](../../tests/test_postgres_store.py#L93) | 93 | `"        profile[\"id\"],"` | — |
-| [SRC-851E7A87D6-L000094](../../tests/test_postgres_store.py#L94) | 94 | `"        {"` | — |
-| [SRC-851E7A87D6-L000095](../../tests/test_postgres_store.py#L95) | 95 | `"            \"answer\": \"تم العثور على طلب توريد معلن.\","` | — |
-| [SRC-851E7A87D6-L000096](../../tests/test_postgres_store.py#L96) | 96 | `"            \"kind\": \"lead_discovery\","` | — |
-| [SRC-851E7A87D6-L000097](../../tests/test_postgres_store.py#L97) | 97 | `"            \"search_queries\": [\"نبحث عن مورد\"],"` | — |
-| [SRC-851E7A87D6-L000098](../../tests/test_postgres_store.py#L98) | 98 | `"            \"sources\": [{"` | — |
-| [SRC-851E7A87D6-L000099](../../tests/test_postgres_store.py#L99) | 99 | `"                \"title\": \"طلب مورد تجريبي\","` | — |
-| [SRC-851E7A87D6-L000100](../../tests/test_postgres_store.py#L100) | 100 | `"                \"url\": f\"https://example.com/demand/{marker}\","` | — |
-| [SRC-851E7A87D6-L000101](../../tests/test_postgres_store.py#L101) | 101 | `"                \"snippet\": \"نبحث عن مورد لتوريد المنتج\","` | — |

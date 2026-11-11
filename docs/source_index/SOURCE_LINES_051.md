@@ -4,7 +4,7 @@
 
 - الصفحة: **051**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1A176AD4F0-L000592 إلى SRC-4397BC2CD2-L000233
+- النطاق: SRC-1A176AD4F0-L000500 إلى SRC-4397BC2CD2-L000141
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,98 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1A176AD4F0-L000500](../../tests/test_hosted_smoke.py#L500) | 500 | `"                    \"insufficient_evidence\": False,"` | — |
+| [SRC-1A176AD4F0-L000501](../../tests/test_hosted_smoke.py#L501) | 501 | `"                    \"claim_audit_semantics\": \"distinct_model_assessed_source_support_not_ground_truth\","` | — |
+| [SRC-1A176AD4F0-L000502](../../tests/test_hosted_smoke.py#L502) | 502 | `"                },"` | — |
+| [SRC-1A176AD4F0-L000503](../../tests/test_hosted_smoke.py#L503) | 503 | `"            }"` | — |
+| [SRC-1A176AD4F0-L000504](../../tests/test_hosted_smoke.py#L504) | 504 | `"        return original(url, **kwargs)"` | — |
+| [SRC-1A176AD4F0-L000505](../../tests/test_hosted_smoke.py#L505) | 505 | `""` | — |
+| [SRC-1A176AD4F0-L000506](../../tests/test_hosted_smoke.py#L506) | 506 | `"    monkeypatch.setattr(hosted_smoke_test, \"request_json\", non_string_answer)"` | — |
+| [SRC-1A176AD4F0-L000507](../../tests/test_hosted_smoke.py#L507) | 507 | `"    with pytest.raises(SmokeError, match=\"empty or whitespace-only answer\"):"` | — |
+| [SRC-1A176AD4F0-L000508](../../tests/test_hosted_smoke.py#L508) | 508 | `"        run_smoke(hosted_server, TOKEN, allow_http=True, allow_provider_usage=True, timeout=5)"` | — |
+| [SRC-1A176AD4F0-L000509](../../tests/test_hosted_smoke.py#L509) | 509 | `""` | — |
+| [SRC-1A176AD4F0-L000510](../../tests/test_hosted_smoke.py#L510) | 510 | `""` | — |
+| [SRC-1A176AD4F0-L000511](../../tests/test_hosted_smoke.py#L511) | 511 | `"def test_smoke_rejects_partial_pipeline_even_with_sources(hosted_server, monkeypatch):"` | — |
+| [SRC-1A176AD4F0-L000512](../../tests/test_hosted_smoke.py#L512) | 512 | `"    original = hosted_smoke_test.request_json"` | — |
+| [SRC-1A176AD4F0-L000513](../../tests/test_hosted_smoke.py#L513) | 513 | `""` | — |
+| [SRC-1A176AD4F0-L000514](../../tests/test_hosted_smoke.py#L514) | 514 | `"    def partial_pipeline(url: str, **kwargs):"` | — |
+| [SRC-1A176AD4F0-L000515](../../tests/test_hosted_smoke.py#L515) | 515 | `"        if urlsplit(url).path == \"/api/agent\" and kwargs.get(\"token\") == TOKEN:"` | — |
+| [SRC-1A176AD4F0-L000516](../../tests/test_hosted_smoke.py#L516) | 516 | `"            return 200, {"` | — |
+| [SRC-1A176AD4F0-L000517](../../tests/test_hosted_smoke.py#L517) | 517 | `"                \"answer\": \"إجابة جزئية [المصدر 1]\", \"used_web_search\": True,"` | — |
+| [SRC-1A176AD4F0-L000518](../../tests/test_hosted_smoke.py#L518) | 518 | `"                \"used_language_model\": True,"` | — |
+| [SRC-1A176AD4F0-L000519](../../tests/test_hosted_smoke.py#L519) | 519 | `"                \"answer_evidence_status\": \"citation_indices_validated_only\","` | — |
+| [SRC-1A176AD4F0-L000520](../../tests/test_hosted_smoke.py#L520) | 520 | `"                \"sources\": [{\"url\": \"https://example.com/source\"}],"` | — |
+| [SRC-1A176AD4F0-L000521](../../tests/test_hosted_smoke.py#L521) | 521 | `"                \"request_budget\": {\"profile\": \"hosted_smoke\", \"timeout_seconds\": 75, \"budget_exhausted\": False, \"deadline_exceeded\": False, \"limits\": {\"search_queries\": 3, \"search_calls\": 12, \"model_calls\": 6, \"page_fetches\": 4, \"tool_calls\": 0}, \"counts\": {\"search_queries\": 2, \"search_calls\": 4, \"model_calls\": 4, \"page_fetches\": 1, \"tool_calls\": 0}},"` | — |
+| [SRC-1A176AD4F0-L000522](../../tests/test_hosted_smoke.py#L522) | 522 | `"                \"search_report\": {"` | — |
+| [SRC-1A176AD4F0-L000523](../../tests/test_hosted_smoke.py#L523) | 523 | `"                    \"pipeline_completion_status\": \"partial\","` | — |
+| [SRC-1A176AD4F0-L000524](../../tests/test_hosted_smoke.py#L524) | 524 | `"                    \"semantic_claim_verification\": {\"status\": \"completed_all_claims_supported\"},"` | — |
+| [SRC-1A176AD4F0-L000525](../../tests/test_hosted_smoke.py#L525) | 525 | `"                    \"insufficient_evidence\": False,"` | — |
+| [SRC-1A176AD4F0-L000526](../../tests/test_hosted_smoke.py#L526) | 526 | `"                    \"claim_audit_semantics\": \"distinct_model_assessed_source_support_not_ground_truth\","` | — |
+| [SRC-1A176AD4F0-L000527](../../tests/test_hosted_smoke.py#L527) | 527 | `"                },"` | — |
+| [SRC-1A176AD4F0-L000528](../../tests/test_hosted_smoke.py#L528) | 528 | `"            }"` | — |
+| [SRC-1A176AD4F0-L000529](../../tests/test_hosted_smoke.py#L529) | 529 | `"        return original(url, **kwargs)"` | — |
+| [SRC-1A176AD4F0-L000530](../../tests/test_hosted_smoke.py#L530) | 530 | `""` | — |
+| [SRC-1A176AD4F0-L000531](../../tests/test_hosted_smoke.py#L531) | 531 | `"    monkeypatch.setattr(hosted_smoke_test, \"request_json\", partial_pipeline)"` | — |
+| [SRC-1A176AD4F0-L000532](../../tests/test_hosted_smoke.py#L532) | 532 | `"    with pytest.raises(SmokeError, match=\"pipeline did not complete\"):"` | — |
+| [SRC-1A176AD4F0-L000533](../../tests/test_hosted_smoke.py#L533) | 533 | `"        run_smoke(hosted_server, TOKEN, allow_http=True, allow_provider_usage=True, timeout=5)"` | — |
+| [SRC-1A176AD4F0-L000534](../../tests/test_hosted_smoke.py#L534) | 534 | `""` | — |
+| [SRC-1A176AD4F0-L000535](../../tests/test_hosted_smoke.py#L535) | 535 | `""` | — |
+| [SRC-1A176AD4F0-L000536](../../tests/test_hosted_smoke.py#L536) | 536 | `"def test_smoke_rejects_unvalidated_answer_evidence(hosted_server, monkeypatch):"` | — |
+| [SRC-1A176AD4F0-L000537](../../tests/test_hosted_smoke.py#L537) | 537 | `"    original = hosted_smoke_test.request_json"` | — |
+| [SRC-1A176AD4F0-L000538](../../tests/test_hosted_smoke.py#L538) | 538 | `""` | — |
+| [SRC-1A176AD4F0-L000539](../../tests/test_hosted_smoke.py#L539) | 539 | `"    def invalid_evidence(url: str, **kwargs):"` | — |
+| [SRC-1A176AD4F0-L000540](../../tests/test_hosted_smoke.py#L540) | 540 | `"        if urlsplit(url).path == \"/api/agent\" and kwargs.get(\"token\") == TOKEN:"` | — |
+| [SRC-1A176AD4F0-L000541](../../tests/test_hosted_smoke.py#L541) | 541 | `"            return 200, {"` | — |
+| [SRC-1A176AD4F0-L000542](../../tests/test_hosted_smoke.py#L542) | 542 | `"                \"answer\": \"إجابة بلا إحالات صالحة\", \"used_web_search\": True,"` | — |
+| [SRC-1A176AD4F0-L000543](../../tests/test_hosted_smoke.py#L543) | 543 | `"                \"used_language_model\": True, \"answer_evidence_status\": \"not_assessed\","` | — |
+| [SRC-1A176AD4F0-L000544](../../tests/test_hosted_smoke.py#L544) | 544 | `"                \"sources\": [{\"url\": \"https://example.com/source\"}],"` | — |
+| [SRC-1A176AD4F0-L000545](../../tests/test_hosted_smoke.py#L545) | 545 | `"                \"request_budget\": {\"profile\": \"hosted_smoke\", \"timeout_seconds\": 75, \"budget_exhausted\": False, \"deadline_exceeded\": False, \"limits\": {\"search_queries\": 3, \"search_calls\": 12, \"model_calls\": 6, \"page_fetches\": 4, \"tool_calls\": 0}, \"counts\": {\"search_queries\": 2, \"search_calls\": 4, \"model_calls\": 4, \"page_fetches\": 1, \"tool_calls\": 0}},"` | — |
+| [SRC-1A176AD4F0-L000546](../../tests/test_hosted_smoke.py#L546) | 546 | `"                \"search_report\": {"` | — |
+| [SRC-1A176AD4F0-L000547](../../tests/test_hosted_smoke.py#L547) | 547 | `"                    \"pipeline_completion_status\": \"completed\","` | — |
+| [SRC-1A176AD4F0-L000548](../../tests/test_hosted_smoke.py#L548) | 548 | `"                    \"semantic_claim_verification\": {\"status\": \"completed_all_claims_supported\"},"` | — |
+| [SRC-1A176AD4F0-L000549](../../tests/test_hosted_smoke.py#L549) | 549 | `"                    \"insufficient_evidence\": False,"` | — |
+| [SRC-1A176AD4F0-L000550](../../tests/test_hosted_smoke.py#L550) | 550 | `"                    \"claim_audit_semantics\": \"distinct_model_assessed_source_support_not_ground_truth\","` | — |
+| [SRC-1A176AD4F0-L000551](../../tests/test_hosted_smoke.py#L551) | 551 | `"                },"` | — |
+| [SRC-1A176AD4F0-L000552](../../tests/test_hosted_smoke.py#L552) | 552 | `"            }"` | — |
+| [SRC-1A176AD4F0-L000553](../../tests/test_hosted_smoke.py#L553) | 553 | `"        return original(url, **kwargs)"` | — |
+| [SRC-1A176AD4F0-L000554](../../tests/test_hosted_smoke.py#L554) | 554 | `""` | — |
+| [SRC-1A176AD4F0-L000555](../../tests/test_hosted_smoke.py#L555) | 555 | `"    monkeypatch.setattr(hosted_smoke_test, \"request_json\", invalid_evidence)"` | — |
+| [SRC-1A176AD4F0-L000556](../../tests/test_hosted_smoke.py#L556) | 556 | `"    with pytest.raises(SmokeError, match=\"evidence status\"):"` | — |
+| [SRC-1A176AD4F0-L000557](../../tests/test_hosted_smoke.py#L557) | 557 | `"        run_smoke(hosted_server, TOKEN, allow_http=True, allow_provider_usage=True, timeout=5)"` | — |
+| [SRC-1A176AD4F0-L000558](../../tests/test_hosted_smoke.py#L558) | 558 | `""` | — |
+| [SRC-1A176AD4F0-L000559](../../tests/test_hosted_smoke.py#L559) | 559 | `""` | — |
+| [SRC-1A176AD4F0-L000560](../../tests/test_hosted_smoke.py#L560) | 560 | `""` | — |
+| [SRC-1A176AD4F0-L000561](../../tests/test_hosted_smoke.py#L561) | 561 | `""` | — |
+| [SRC-1A176AD4F0-L000562](../../tests/test_hosted_smoke.py#L562) | 562 | `"def test_smoke_rejects_missing_or_exceeded_server_budget_profile(hosted_server, monkeypatch):"` | — |
+| [SRC-1A176AD4F0-L000563](../../tests/test_hosted_smoke.py#L563) | 563 | `"    original = hosted_smoke_test.request_json"` | — |
+| [SRC-1A176AD4F0-L000564](../../tests/test_hosted_smoke.py#L564) | 564 | `""` | — |
+| [SRC-1A176AD4F0-L000565](../../tests/test_hosted_smoke.py#L565) | 565 | `"    def unbounded_budget(url: str, **kwargs):"` | — |
+| [SRC-1A176AD4F0-L000566](../../tests/test_hosted_smoke.py#L566) | 566 | `"        if urlsplit(url).path == \"/api/agent\" and kwargs.get(\"token\") == TOKEN:"` | — |
+| [SRC-1A176AD4F0-L000567](../../tests/test_hosted_smoke.py#L567) | 567 | `"            status, payload = original(url, **kwargs)"` | — |
+| [SRC-1A176AD4F0-L000568](../../tests/test_hosted_smoke.py#L568) | 568 | `"            payload[\"request_budget\"] = {"` | — |
+| [SRC-1A176AD4F0-L000569](../../tests/test_hosted_smoke.py#L569) | 569 | `"                \"profile\": \"default\","` | — |
+| [SRC-1A176AD4F0-L000570](../../tests/test_hosted_smoke.py#L570) | 570 | `"                \"budget_exhausted\": False,"` | — |
+| [SRC-1A176AD4F0-L000571](../../tests/test_hosted_smoke.py#L571) | 571 | `"                \"deadline_exceeded\": False,"` | — |
+| [SRC-1A176AD4F0-L000572](../../tests/test_hosted_smoke.py#L572) | 572 | `"                \"limits\": {\"search_queries\": 8, \"search_calls\": 32, \"model_calls\": 8, \"page_fetches\": 8, \"tool_calls\": 3},"` | — |
+| [SRC-1A176AD4F0-L000573](../../tests/test_hosted_smoke.py#L573) | 573 | `"                \"counts\": {\"search_queries\": 1, \"search_calls\": 2, \"model_calls\": 2, \"page_fetches\": 1, \"tool_calls\": 0},"` | — |
+| [SRC-1A176AD4F0-L000574](../../tests/test_hosted_smoke.py#L574) | 574 | `"            }"` | — |
+| [SRC-1A176AD4F0-L000575](../../tests/test_hosted_smoke.py#L575) | 575 | `"            return status, payload"` | — |
+| [SRC-1A176AD4F0-L000576](../../tests/test_hosted_smoke.py#L576) | 576 | `"        return original(url, **kwargs)"` | — |
+| [SRC-1A176AD4F0-L000577](../../tests/test_hosted_smoke.py#L577) | 577 | `""` | — |
+| [SRC-1A176AD4F0-L000578](../../tests/test_hosted_smoke.py#L578) | 578 | `"    monkeypatch.setattr(hosted_smoke_test, \"request_json\", unbounded_budget)"` | — |
+| [SRC-1A176AD4F0-L000579](../../tests/test_hosted_smoke.py#L579) | 579 | `"    with pytest.raises(SmokeError, match=\"hosted_smoke request budget\"):"` | — |
+| [SRC-1A176AD4F0-L000580](../../tests/test_hosted_smoke.py#L580) | 580 | `"        run_smoke(hosted_server, TOKEN, allow_http=True, allow_provider_usage=True, timeout=5)"` | — |
+| [SRC-1A176AD4F0-L000581](../../tests/test_hosted_smoke.py#L581) | 581 | `""` | — |
+| [SRC-1A176AD4F0-L000582](../../tests/test_hosted_smoke.py#L582) | 582 | `""` | — |
+| [SRC-1A176AD4F0-L000583](../../tests/test_hosted_smoke.py#L583) | 583 | `""` | — |
+| [SRC-1A176AD4F0-L000584](../../tests/test_hosted_smoke.py#L584) | 584 | `"def test_smoke_rejects_pipeline_complete_without_semantic_claim_support(hosted_server, monkeypatch):"` | — |
+| [SRC-1A176AD4F0-L000585](../../tests/test_hosted_smoke.py#L585) | 585 | `"    original = hosted_smoke_test.request_json"` | — |
+| [SRC-1A176AD4F0-L000586](../../tests/test_hosted_smoke.py#L586) | 586 | `""` | — |
+| [SRC-1A176AD4F0-L000587](../../tests/test_hosted_smoke.py#L587) | 587 | `"    def unverified_claims(url: str, **kwargs):"` | — |
+| [SRC-1A176AD4F0-L000588](../../tests/test_hosted_smoke.py#L588) | 588 | `"        if urlsplit(url).path == \"/api/agent\" and kwargs.get(\"token\") == TOKEN:"` | — |
+| [SRC-1A176AD4F0-L000589](../../tests/test_hosted_smoke.py#L589) | 589 | `"            return 200, {"` | — |
+| [SRC-1A176AD4F0-L000590](../../tests/test_hosted_smoke.py#L590) | 590 | `"                \"answer\": \"ادعاء غير متحقق [المصدر 1]\", \"used_web_search\": True,"` | — |
+| [SRC-1A176AD4F0-L000591](../../tests/test_hosted_smoke.py#L591) | 591 | `"                \"used_language_model\": True,"` | — |
 | [SRC-1A176AD4F0-L000592](../../tests/test_hosted_smoke.py#L592) | 592 | `"                \"answer_evidence_status\": \"citation_indices_validated_only\","` | — |
 | [SRC-1A176AD4F0-L000593](../../tests/test_hosted_smoke.py#L593) | 593 | `"                \"sources\": [{\"url\": \"https://example.com/source\"}],"` | — |
 | [SRC-1A176AD4F0-L000594](../../tests/test_hosted_smoke.py#L594) | 594 | `"                \"request_budget\": {\"profile\": \"hosted_smoke\", \"timeout_seconds\": 75, \"budget_exhausted\": False, \"deadline_exceeded\": False, \"limits\": {\"search_queries\": 3, \"search_calls\": 12, \"model_calls\": 6, \"page_fetches\": 4, \"tool_calls\": 0}, \"counts\": {\"search_queries\": 2, \"search_calls\": 4, \"model_calls\": 4, \"page_fetches\": 1, \"tool_calls\": 0}},"` | — |
@@ -751,95 +843,3 @@
 | [SRC-4397BC2CD2-L000139](../../tests/test_intent_router_integration.py#L139) | 139 | `"            \"freshness\": \"any\","` | — |
 | [SRC-4397BC2CD2-L000140](../../tests/test_intent_router_integration.py#L140) | 140 | `"            \"depth\": \"standard\","` | — |
 | [SRC-4397BC2CD2-L000141](../../tests/test_intent_router_integration.py#L141) | 141 | `"            \"platforms\": [],"` | — |
-| [SRC-4397BC2CD2-L000142](../../tests/test_intent_router_integration.py#L142) | 142 | `"            \"planning_method\": \"test_single_query\","` | — |
-| [SRC-4397BC2CD2-L000143](../../tests/test_intent_router_integration.py#L143) | 143 | `"        }"` | — |
-| [SRC-4397BC2CD2-L000144](../../tests/test_intent_router_integration.py#L144) | 144 | `""` | — |
-| [SRC-4397BC2CD2-L000145](../../tests/test_intent_router_integration.py#L145) | 145 | `"    def collect(research_plan):"` | — |
-| [SRC-4397BC2CD2-L000146](../../tests/test_intent_router_integration.py#L146) | 146 | `"        seen[\"plans\"].append(dict(research_plan))"` | — |
-| [SRC-4397BC2CD2-L000147](../../tests/test_intent_router_integration.py#L147) | 147 | `"        sources = ["` | — |
-| [SRC-4397BC2CD2-L000148](../../tests/test_intent_router_integration.py#L148) | 148 | `"            _evidence(\"example.com\", research_plan[\"queries\"]),"` | — |
-| [SRC-4397BC2CD2-L000149](../../tests/test_intent_router_integration.py#L149) | 149 | `"            _evidence(\"example.net\", research_plan[\"queries\"]),"` | — |
-| [SRC-4397BC2CD2-L000150](../../tests/test_intent_router_integration.py#L150) | 150 | `"        ]"` | — |
-| [SRC-4397BC2CD2-L000151](../../tests/test_intent_router_integration.py#L151) | 151 | `"        return sources, [], _report(research_plan, sources)"` | — |
-| [SRC-4397BC2CD2-L000152](../../tests/test_intent_router_integration.py#L152) | 152 | `""` | — |
-| [SRC-4397BC2CD2-L000153](../../tests/test_intent_router_integration.py#L153) | 153 | `"    monkeypatch.setattr(agent, \"_plan_search\", plan)"` | — |
-| [SRC-4397BC2CD2-L000154](../../tests/test_intent_router_integration.py#L154) | 154 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
-| [SRC-4397BC2CD2-L000155](../../tests/test_intent_router_integration.py#L155) | 155 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", lambda query, source: True)"` | — |
-| [SRC-4397BC2CD2-L000156](../../tests/test_intent_router_integration.py#L156) | 156 | `"    monkeypatch.setattr(agent, \"_generate\", lambda *args, **kwargs: \"مقارنة أولية [المصدر 1].\")"` | — |
-| [SRC-4397BC2CD2-L000157](../../tests/test_intent_router_integration.py#L157) | 157 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda question, answer, sources: answer)"` | — |
-| [SRC-4397BC2CD2-L000158](../../tests/test_intent_router_integration.py#L158) | 158 | `"    monkeypatch.setattr(agent, \"_repair_answer_coverage\", lambda _q, answer, _s, _m: answer)"` | — |
-| [SRC-4397BC2CD2-L000159](../../tests/test_intent_router_integration.py#L159) | 159 | `"    monkeypatch.setattr(agent, \"_verify_semantic_claims\", lambda *args, **kwargs: {"` | — |
-| [SRC-4397BC2CD2-L000160](../../tests/test_intent_router_integration.py#L160) | 160 | `"        \"status\": \"completed_all_claims_supported\","` | — |
-| [SRC-4397BC2CD2-L000161](../../tests/test_intent_router_integration.py#L161) | 161 | `"        \"withhold_answer\": False,"` | — |
-| [SRC-4397BC2CD2-L000162](../../tests/test_intent_router_integration.py#L162) | 162 | `"        \"semantic_verification\": \"model_assessed_source_support\","` | — |
-| [SRC-4397BC2CD2-L000163](../../tests/test_intent_router_integration.py#L163) | 163 | `"        \"fact_correctness\": \"not_verified\","` | — |
-| [SRC-4397BC2CD2-L000164](../../tests/test_intent_router_integration.py#L164) | 164 | `"    })"` | — |
-| [SRC-4397BC2CD2-L000165](../../tests/test_intent_router_integration.py#L165) | 165 | `""` | — |
-| [SRC-4397BC2CD2-L000166](../../tests/test_intent_router_integration.py#L166) | 166 | `"    result = agent.answer("` | — |
-| [SRC-4397BC2CD2-L000167](../../tests/test_intent_router_integration.py#L167) | 167 | `"        \"قارن بين iPhone 17 وSamsung S26 من حيث السعر والبطارية والكاميرا\","` | — |
-| [SRC-4397BC2CD2-L000168](../../tests/test_intent_router_integration.py#L168) | 168 | `"        history=history,"` | — |
-| [SRC-4397BC2CD2-L000169](../../tests/test_intent_router_integration.py#L169) | 169 | `"    )"` | — |
-| [SRC-4397BC2CD2-L000170](../../tests/test_intent_router_integration.py#L170) | 170 | `""` | — |
-| [SRC-4397BC2CD2-L000171](../../tests/test_intent_router_integration.py#L171) | 171 | `"    assert result[\"intent_route\"] == \"WEB_DEEP\""` | — |
-| [SRC-4397BC2CD2-L000172](../../tests/test_intent_router_integration.py#L172) | 172 | `"    assert result[\"research_plan\"][\"intent_route\"] == \"WEB_DEEP\""` | — |
-| [SRC-4397BC2CD2-L000173](../../tests/test_intent_router_integration.py#L173) | 173 | `"    assert result[\"research_plan\"][\"depth\"] == \"deep\""` | — |
-| [SRC-4397BC2CD2-L000174](../../tests/test_intent_router_integration.py#L174) | 174 | `"    initial_plan = seen[\"plans\"][0]"` | — |
-| [SRC-4397BC2CD2-L000175](../../tests/test_intent_router_integration.py#L175) | 175 | `"    assert len(initial_plan[\"queries\"]) > 1"` | — |
-| [SRC-4397BC2CD2-L000176](../../tests/test_intent_router_integration.py#L176) | 176 | `"    assert initial_plan[\"coverage_gap_repair_slot_reserved\"] is True"` | — |
-| [SRC-4397BC2CD2-L000177](../../tests/test_intent_router_integration.py#L177) | 177 | `"    assert initial_plan[\"query_limit\"] == 7"` | — |
-| [SRC-4397BC2CD2-L000178](../../tests/test_intent_router_integration.py#L178) | 178 | `"    # Each requested criterion gets a distinct search angle before generic deep"` | — |
-| [SRC-4397BC2CD2-L000179](../../tests/test_intent_router_integration.py#L179) | 179 | `"    # modifiers consume the bounded query budget."` | — |
-| [SRC-4397BC2CD2-L000180](../../tests/test_intent_router_integration.py#L180) | 180 | `"    planned_queries = \" \".join(initial_plan[\"queries\"]).casefold()"` | — |
-| [SRC-4397BC2CD2-L000181](../../tests/test_intent_router_integration.py#L181) | 181 | `"    assert \"السعر\" in planned_queries"` | — |
-| [SRC-4397BC2CD2-L000182](../../tests/test_intent_router_integration.py#L182) | 182 | `"    assert \"البطارية\" in planned_queries"` | — |
-| [SRC-4397BC2CD2-L000183](../../tests/test_intent_router_integration.py#L183) | 183 | `"    assert \"الكاميرا\" in planned_queries"` | — |
-| [SRC-4397BC2CD2-L000184](../../tests/test_intent_router_integration.py#L184) | 184 | `"    assert len(initial_plan[\"queries\"]) <= 7"` | — |
-| [SRC-4397BC2CD2-L000185](../../tests/test_intent_router_integration.py#L185) | 185 | `"    assert result[\"used_web_search\"] is True"` | — |
-| [SRC-4397BC2CD2-L000186](../../tests/test_intent_router_integration.py#L186) | 186 | `"    coverage = result[\"answer_coverage\"]"` | — |
-| [SRC-4397BC2CD2-L000187](../../tests/test_intent_router_integration.py#L187) | 187 | `"    assert coverage[\"method\"] == \"explicit_criteria_heuristic\""` | — |
-| [SRC-4397BC2CD2-L000188](../../tests/test_intent_router_integration.py#L188) | 188 | `"    assert coverage[\"targets\"] == [\"السعر\", \"البطارية\", \"الكاميرا\"]"` | — |
-| [SRC-4397BC2CD2-L000189](../../tests/test_intent_router_integration.py#L189) | 189 | `"    assert coverage[\"status\"] == \"model_review_requested_not_machine_verified\""` | — |
-| [SRC-4397BC2CD2-L000190](../../tests/test_intent_router_integration.py#L190) | 190 | `"    assert coverage[\"automatically_graded\"] is False"` | — |
-| [SRC-4397BC2CD2-L000191](../../tests/test_intent_router_integration.py#L191) | 191 | `"    # The mocked sources do not contain battery/camera evidence. The task must"` | — |
-| [SRC-4397BC2CD2-L000192](../../tests/test_intent_router_integration.py#L192) | 192 | `"    # remain visibly incomplete even if the planner generated multiple queries."` | — |
-| [SRC-4397BC2CD2-L000193](../../tests/test_intent_router_integration.py#L193) | 193 | `"    assert coverage[\"source_evidence_gap_count\"] == 2"` | — |
-| [SRC-4397BC2CD2-L000194](../../tests/test_intent_router_integration.py#L194) | 194 | `"    assert result[\"task_fulfillment_status\"] == \"possible_gap_detected\""` | — |
-| [SRC-4397BC2CD2-L000195](../../tests/test_intent_router_integration.py#L195) | 195 | `"    assert len(seen[\"plans\"]) == 2"` | — |
-| [SRC-4397BC2CD2-L000196](../../tests/test_intent_router_integration.py#L196) | 196 | `"    assert \"البطارية\" in \" \".join(seen[\"plans\"][1][\"queries\"])"` | — |
-| [SRC-4397BC2CD2-L000197](../../tests/test_intent_router_integration.py#L197) | 197 | `"    assert result[\"search_report\"][\"criterion_gap_research\"][\"attempted\"] is True"` | — |
-| [SRC-4397BC2CD2-L000198](../../tests/test_intent_router_integration.py#L198) | 198 | `"    assert result[\"search_report\"][\"criterion_gap_research\"][\"status\"] == \"search_completed_no_new_criterion_evidence\""` | — |
-| [SRC-4397BC2CD2-L000199](../../tests/test_intent_router_integration.py#L199) | 199 | `""` | — |
-| [SRC-4397BC2CD2-L000200](../../tests/test_intent_router_integration.py#L200) | 200 | `"def test_deep_plan_preserves_all_eight_explicit_criteria_within_query_budget(monkeypatch) -> None:"` | — |
-| [SRC-4397BC2CD2-L000201](../../tests/test_intent_router_integration.py#L201) | 201 | `"    agent = WebAgent()"` | — |
-| [SRC-4397BC2CD2-L000202](../../tests/test_intent_router_integration.py#L202) | 202 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-4397BC2CD2-L000203](../../tests/test_intent_router_integration.py#L203) | 203 | `"    seen: dict = {\"plans\": []}"` | — |
-| [SRC-4397BC2CD2-L000204](../../tests/test_intent_router_integration.py#L204) | 204 | `"    question = ("` | — |
-| [SRC-4397BC2CD2-L000205](../../tests/test_intent_router_integration.py#L205) | 205 | `"        \"قارن بين خدمات من حيث السعر، الخصوصية، الاعتمادية، الدعم، \""` | — |
-| [SRC-4397BC2CD2-L000206](../../tests/test_intent_router_integration.py#L206) | 206 | `"        \"الأمان، السرعة، الجودة، والتوفر\""` | — |
-| [SRC-4397BC2CD2-L000207](../../tests/test_intent_router_integration.py#L207) | 207 | `"    )"` | — |
-| [SRC-4397BC2CD2-L000208](../../tests/test_intent_router_integration.py#L208) | 208 | `""` | — |
-| [SRC-4397BC2CD2-L000209](../../tests/test_intent_router_integration.py#L209) | 209 | `"    def plan(_question, _history):"` | — |
-| [SRC-4397BC2CD2-L000210](../../tests/test_intent_router_integration.py#L210) | 210 | `"        return {"` | — |
-| [SRC-4397BC2CD2-L000211](../../tests/test_intent_router_integration.py#L211) | 211 | `"            \"queries\": [\"مقارنة الخدمات\"],"` | — |
-| [SRC-4397BC2CD2-L000212](../../tests/test_intent_router_integration.py#L212) | 212 | `"            \"direct_urls\": [],"` | — |
-| [SRC-4397BC2CD2-L000213](../../tests/test_intent_router_integration.py#L213) | 213 | `"            \"social_focus\": False,"` | — |
-| [SRC-4397BC2CD2-L000214](../../tests/test_intent_router_integration.py#L214) | 214 | `"            \"freshness\": \"any\","` | — |
-| [SRC-4397BC2CD2-L000215](../../tests/test_intent_router_integration.py#L215) | 215 | `"            \"depth\": \"standard\","` | — |
-| [SRC-4397BC2CD2-L000216](../../tests/test_intent_router_integration.py#L216) | 216 | `"            \"platforms\": [],"` | — |
-| [SRC-4397BC2CD2-L000217](../../tests/test_intent_router_integration.py#L217) | 217 | `"            \"planning_method\": \"test_single_query\","` | — |
-| [SRC-4397BC2CD2-L000218](../../tests/test_intent_router_integration.py#L218) | 218 | `"        }"` | — |
-| [SRC-4397BC2CD2-L000219](../../tests/test_intent_router_integration.py#L219) | 219 | `""` | — |
-| [SRC-4397BC2CD2-L000220](../../tests/test_intent_router_integration.py#L220) | 220 | `"    def collect(research_plan):"` | — |
-| [SRC-4397BC2CD2-L000221](../../tests/test_intent_router_integration.py#L221) | 221 | `"        seen[\"plans\"].append(dict(research_plan))"` | — |
-| [SRC-4397BC2CD2-L000222](../../tests/test_intent_router_integration.py#L222) | 222 | `"        sources = ["` | — |
-| [SRC-4397BC2CD2-L000223](../../tests/test_intent_router_integration.py#L223) | 223 | `"            _evidence(\"example.com\", research_plan[\"queries\"]),"` | — |
-| [SRC-4397BC2CD2-L000224](../../tests/test_intent_router_integration.py#L224) | 224 | `"            _evidence(\"example.net\", research_plan[\"queries\"]),"` | — |
-| [SRC-4397BC2CD2-L000225](../../tests/test_intent_router_integration.py#L225) | 225 | `"        ]"` | — |
-| [SRC-4397BC2CD2-L000226](../../tests/test_intent_router_integration.py#L226) | 226 | `"        return sources, [], _report(research_plan, sources)"` | — |
-| [SRC-4397BC2CD2-L000227](../../tests/test_intent_router_integration.py#L227) | 227 | `""` | — |
-| [SRC-4397BC2CD2-L000228](../../tests/test_intent_router_integration.py#L228) | 228 | `"    monkeypatch.setattr(agent, \"_plan_search\", plan)"` | — |
-| [SRC-4397BC2CD2-L000229](../../tests/test_intent_router_integration.py#L229) | 229 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
-| [SRC-4397BC2CD2-L000230](../../tests/test_intent_router_integration.py#L230) | 230 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", lambda _query, _source: True)"` | — |
-| [SRC-4397BC2CD2-L000231](../../tests/test_intent_router_integration.py#L231) | 231 | `"    monkeypatch.setattr(agent, \"_generate\", lambda *args, **kwargs: \"مقارنة أولية [المصدر 1].\")"` | — |
-| [SRC-4397BC2CD2-L000232](../../tests/test_intent_router_integration.py#L232) | 232 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda _question, answer, _sources: answer)"` | — |
-| [SRC-4397BC2CD2-L000233](../../tests/test_intent_router_integration.py#L233) | 233 | `"    monkeypatch.setattr(agent, \"_repair_answer_coverage\", lambda _q, answer, _s, _m: answer)"` | — |

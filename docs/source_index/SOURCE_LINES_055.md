@@ -4,7 +4,7 @@
 
 - الصفحة: **055**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6BF96689A8-L000179 إلى SRC-01E35ABC46-L000268
+- النطاق: SRC-6BF96689A8-L000087 إلى SRC-01E35ABC46-L000176
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,98 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6BF96689A8-L000087](../../tests/test_research.py#L87) | 87 | `"    assert plan[\"direct_urls\"] == [\"https://example.com/a?utm_source=chat#section\"]"` | — |
+| [SRC-6BF96689A8-L000088](../../tests/test_research.py#L88) | 88 | `"    assert \"https://\" not in plan[\"queries\"][0]"` | — |
+| [SRC-6BF96689A8-L000089](../../tests/test_research.py#L89) | 89 | `""` | — |
+| [SRC-6BF96689A8-L000090](../../tests/test_research.py#L90) | 90 | `"def test_registrable_domain_groups_subdomains_and_respects_public_suffixes():"` | — |
+| [SRC-6BF96689A8-L000091](../../tests/test_research.py#L91) | 91 | `"    assert registrable_domain(\"news.example.com\") == \"example.com\""` | — |
+| [SRC-6BF96689A8-L000092](../../tests/test_research.py#L92) | 92 | `"    assert registrable_domain(\"offers.example.com\") == \"example.com\""` | — |
+| [SRC-6BF96689A8-L000093](../../tests/test_research.py#L93) | 93 | `"    assert registrable_domain(\"news.example.co.uk\") == \"example.co.uk\""` | — |
+| [SRC-6BF96689A8-L000094](../../tests/test_research.py#L94) | 94 | `"    assert registrable_domain(\"other.co.uk\") == \"other.co.uk\""` | — |
+| [SRC-6BF96689A8-L000095](../../tests/test_research.py#L95) | 95 | `"    assert registrable_domain(\"alice.github.io\") == \"alice.github.io\""` | — |
+| [SRC-6BF96689A8-L000096](../../tests/test_research.py#L96) | 96 | `"    assert registrable_domain(\"https://www.example.com/path\") == \"example.com\""` | — |
+| [SRC-6BF96689A8-L000097](../../tests/test_research.py#L97) | 97 | `""` | — |
+| [SRC-6BF96689A8-L000098](../../tests/test_research.py#L98) | 98 | `""` | — |
+| [SRC-6BF96689A8-L000099](../../tests/test_research.py#L99) | 99 | `"def test_evidence_coverage_does_not_count_sibling_subdomains_as_independent():"` | — |
+| [SRC-6BF96689A8-L000100](../../tests/test_research.py#L100) | 100 | `"    report = evidence_signal_report(["` | — |
+| [SRC-6BF96689A8-L000101](../../tests/test_research.py#L101) | 101 | `"        {"` | — |
+| [SRC-6BF96689A8-L000102](../../tests/test_research.py#L102) | 102 | `"            \"url\": \"https://news.example.com/story\","` | — |
+| [SRC-6BF96689A8-L000103](../../tests/test_research.py#L103) | 103 | `"            \"domain\": \"news.example.com\","` | — |
+| [SRC-6BF96689A8-L000104](../../tests/test_research.py#L104) | 104 | `"            \"providers\": [\"search_a\"],"` | — |
+| [SRC-6BF96689A8-L000105](../../tests/test_research.py#L105) | 105 | `"        },"` | — |
+| [SRC-6BF96689A8-L000106](../../tests/test_research.py#L106) | 106 | `"        {"` | — |
+| [SRC-6BF96689A8-L000107](../../tests/test_research.py#L107) | 107 | `"            \"url\": \"https://offers.example.com/second-story\","` | — |
+| [SRC-6BF96689A8-L000108](../../tests/test_research.py#L108) | 108 | `"            \"domain\": \"offers.example.com\","` | — |
+| [SRC-6BF96689A8-L000109](../../tests/test_research.py#L109) | 109 | `"            \"providers\": [\"search_b\"],"` | — |
+| [SRC-6BF96689A8-L000110](../../tests/test_research.py#L110) | 110 | `"        },"` | — |
+| [SRC-6BF96689A8-L000111](../../tests/test_research.py#L111) | 111 | `"    ])"` | — |
+| [SRC-6BF96689A8-L000112](../../tests/test_research.py#L112) | 112 | `"    assert report[\"unique_domains\"] == 1"` | — |
+| [SRC-6BF96689A8-L000113](../../tests/test_research.py#L113) | 113 | `"    assert report[\"coverage_level\"] == \"محدود\""` | — |
+| [SRC-6BF96689A8-L000114](../../tests/test_research.py#L114) | 114 | `""` | — |
+| [SRC-6BF96689A8-L000115](../../tests/test_research.py#L115) | 115 | `""` | — |
+| [SRC-6BF96689A8-L000116](../../tests/test_research.py#L116) | 116 | `""` | — |
+| [SRC-6BF96689A8-L000117](../../tests/test_research.py#L117) | 117 | `"def test_standard_fallback_plan_does_not_add_deep_research_query():"` | — |
+| [SRC-6BF96689A8-L000118](../../tests/test_research.py#L118) | 118 | `"    plan = fallback_plan(\"اشرح طريقة عمل المحرك الكهربائي\")"` | — |
+| [SRC-6BF96689A8-L000119](../../tests/test_research.py#L119) | 119 | `"    assert plan[\"depth\"] == \"standard\""` | — |
+| [SRC-6BF96689A8-L000120](../../tests/test_research.py#L120) | 120 | `"    assert not any(\"مصادر موثوقة تقارير إحصاءات\" in query for query in plan[\"queries\"])"` | — |
+| [SRC-6BF96689A8-L000121](../../tests/test_research.py#L121) | 121 | `""` | — |
+| [SRC-6BF96689A8-L000122](../../tests/test_research.py#L122) | 122 | `""` | — |
+| [SRC-6BF96689A8-L000123](../../tests/test_research.py#L123) | 123 | `"def test_deep_fallback_plan_adds_deep_research_query_for_explicit_comparison():"` | — |
+| [SRC-6BF96689A8-L000124](../../tests/test_research.py#L124) | 124 | `"    plan = fallback_plan(\"قارن مميزات وعيوب المحرك الكهربائي\")"` | — |
+| [SRC-6BF96689A8-L000125](../../tests/test_research.py#L125) | 125 | `"    assert plan[\"depth\"] == \"deep\""` | — |
+| [SRC-6BF96689A8-L000126](../../tests/test_research.py#L126) | 126 | `"    assert any(\"مصادر موثوقة تقارير إحصاءات\" in query for query in plan[\"queries\"])"` | — |
+| [SRC-6BF96689A8-L000127](../../tests/test_research.py#L127) | 127 | `""` | — |
+| [SRC-6BF96689A8-L000128](../../tests/test_research.py#L128) | 128 | `""` | — |
+| [SRC-6BF96689A8-L000129](../../tests/test_research.py#L129) | 129 | `"def test_fallback_plan_expands_warranty_followup_with_previous_topic():"` | — |
+| [SRC-6BF96689A8-L000130](../../tests/test_research.py#L130) | 130 | `"    history = ["` | — |
+| [SRC-6BF96689A8-L000131](../../tests/test_research.py#L131) | 131 | `"        {\"role\": \"user\", \"content\": \"سعر آيفون 16 في مصر\"},"` | — |
+| [SRC-6BF96689A8-L000132](../../tests/test_research.py#L132) | 132 | `"        {\"role\": \"assistant\", \"content\": \"سأبحث عن معلومات حديثة.\"},"` | — |
+| [SRC-6BF96689A8-L000133](../../tests/test_research.py#L133) | 133 | `"    ]"` | — |
+| [SRC-6BF96689A8-L000134](../../tests/test_research.py#L134) | 134 | `"    plan = fallback_plan(\"هل فيه ضمان؟\", history)"` | — |
+| [SRC-6BF96689A8-L000135](../../tests/test_research.py#L135) | 135 | `"    assert \"آيفون 16\" in plan[\"queries\"][0]"` | — |
+| [SRC-6BF96689A8-L000136](../../tests/test_research.py#L136) | 136 | `"    assert \"ضمان\" in plan[\"queries\"][0]"` | — |
+| [SRC-6BF96689A8-L000137](../../tests/test_research.py#L137) | 137 | `""` | — |
+| [SRC-6BF96689A8-L000138](../../tests/test_research.py#L138) | 138 | `""` | — |
+| [SRC-6BF96689A8-L000139](../../tests/test_research.py#L139) | 139 | `"def test_fallback_plan_does_not_reuse_topic_after_acknowledgment():"` | — |
+| [SRC-6BF96689A8-L000140](../../tests/test_research.py#L140) | 140 | `"    history = ["` | — |
+| [SRC-6BF96689A8-L000141](../../tests/test_research.py#L141) | 141 | `"        {\"role\": \"user\", \"content\": \"سعر آيفون 16 في مصر\"},"` | — |
+| [SRC-6BF96689A8-L000142](../../tests/test_research.py#L142) | 142 | `"        {\"role\": \"assistant\", \"content\": \"سأبحث عن معلومات حديثة.\"},"` | — |
+| [SRC-6BF96689A8-L000143](../../tests/test_research.py#L143) | 143 | `"        {\"role\": \"user\", \"content\": \"شكرًا\"},"` | — |
+| [SRC-6BF96689A8-L000144](../../tests/test_research.py#L144) | 144 | `"        {\"role\": \"assistant\", \"content\": \"العفو.\"},"` | — |
+| [SRC-6BF96689A8-L000145](../../tests/test_research.py#L145) | 145 | `"    ]"` | — |
+| [SRC-6BF96689A8-L000146](../../tests/test_research.py#L146) | 146 | `"    plan = fallback_plan(\"فين؟\", history)"` | — |
+| [SRC-6BF96689A8-L000147](../../tests/test_research.py#L147) | 147 | `"    assert \"آيفون 16\" not in plan[\"queries\"][0]"` | — |
+| [SRC-6BF96689A8-L000148](../../tests/test_research.py#L148) | 148 | `""` | — |
+| [SRC-6BF96689A8-L000149](../../tests/test_research.py#L149) | 149 | `""` | — |
+| [SRC-6BF96689A8-L000150](../../tests/test_research.py#L150) | 150 | `"def test_compact_search_query_keeps_subject_and_removes_answer_format_instructions():"` | — |
+| [SRC-6BF96689A8-L000151](../../tests/test_research.py#L151) | 151 | `"    cases = ["` | — |
+| [SRC-6BF96689A8-L000152](../../tests/test_research.py#L152) | 152 | `"        ("` | — |
+| [SRC-6BF96689A8-L000153](../../tests/test_research.py#L153) | 153 | `"            \"ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر، وأجب بالعربية بإيجاز.\","` | — |
+| [SRC-6BF96689A8-L000154](../../tests/test_research.py#L154) | 154 | `"            (\"عاصمة مصر\",),"` | — |
+| [SRC-6BF96689A8-L000155](../../tests/test_research.py#L155) | 155 | `"            (\"اذكر مصدرًا موثوقًا\", \"رابط مباشر\", \"بالعربية بإيجاز\"),"` | — |
+| [SRC-6BF96689A8-L000156](../../tests/test_research.py#L156) | 156 | `"        ),"` | — |
+| [SRC-6BF96689A8-L000157](../../tests/test_research.py#L157) | 157 | `"        ("` | — |
+| [SRC-6BF96689A8-L000158](../../tests/test_research.py#L158) | 158 | `"            \"حلل أهم التحديات التي تواجه السيارات الكهربائية في مصر، وقارن بين التكلفة والبنية التحتية والشحن. استخدم مصادر متعددة، وميز بين الحقائق والاستنتاجات، واذكر روابط المصادر.\","` | — |
+| [SRC-6BF96689A8-L000159](../../tests/test_research.py#L159) | 159 | `"            (\"السيارات الكهربائية\", \"مصر\", \"التكلفة\", \"البنية التحتية\", \"الشحن\"),"` | — |
+| [SRC-6BF96689A8-L000160](../../tests/test_research.py#L160) | 160 | `"            (\"استخدم مصادر متعددة\", \"الحقائق والاستنتاجات\", \"روابط المصادر\"),"` | — |
+| [SRC-6BF96689A8-L000161](../../tests/test_research.py#L161) | 161 | `"        ),"` | — |
+| [SRC-6BF96689A8-L000162](../../tests/test_research.py#L162) | 162 | `"        ("` | — |
+| [SRC-6BF96689A8-L000163](../../tests/test_research.py#L163) | 163 | `"            \"ما أحدث التطورات في وكلاء الذكاء الاصطناعي خلال الأيام السبعة الماضية؟ اذكر تواريخ الأخبار وروابط المصادر، ولا تعرض معلومات قديمة باعتبارها جديدة.\","` | — |
+| [SRC-6BF96689A8-L000164](../../tests/test_research.py#L164) | 164 | `"            (\"وكلاء الذكاء الاصطناعي\", \"الأيام السبعة الماضية\"),"` | — |
+| [SRC-6BF96689A8-L000165](../../tests/test_research.py#L165) | 165 | `"            (\"تواريخ الأخبار\", \"روابط المصادر\", \"معلومات قديمة\"),"` | — |
+| [SRC-6BF96689A8-L000166](../../tests/test_research.py#L166) | 166 | `"        ),"` | — |
+| [SRC-6BF96689A8-L000167](../../tests/test_research.py#L167) | 167 | `"        ("` | — |
+| [SRC-6BF96689A8-L000168](../../tests/test_research.py#L168) | 168 | `"            \"اجمع آراء وتجارب المستخدمين العامة حول السيارات الكهربائية في مصر. اعرض الآراء الإيجابية والسلبية، واذكر روابط المنشورات أو المصادر المتاحة. وضح إذا كانت النتائج غير كافية لتمثيل آراء المستخدمين عمومًا.\","` | — |
+| [SRC-6BF96689A8-L000169](../../tests/test_research.py#L169) | 169 | `"            (\"آراء وتجارب المستخدمين\", \"السيارات الكهربائية في مصر\", \"الإيجابية والسلبية\"),"` | — |
+| [SRC-6BF96689A8-L000170](../../tests/test_research.py#L170) | 170 | `"            (\"روابط المنشورات\", \"النتائج غير كافية\", \"تمثيل آراء المستخدمين عمومًا\"),"` | — |
+| [SRC-6BF96689A8-L000171](../../tests/test_research.py#L171) | 171 | `"        ),"` | — |
+| [SRC-6BF96689A8-L000172](../../tests/test_research.py#L172) | 172 | `"    ]"` | — |
+| [SRC-6BF96689A8-L000173](../../tests/test_research.py#L173) | 173 | `"    for question, required_terms, removed_terms in cases:"` | — |
+| [SRC-6BF96689A8-L000174](../../tests/test_research.py#L174) | 174 | `"        query = compact_search_query(question)"` | — |
+| [SRC-6BF96689A8-L000175](../../tests/test_research.py#L175) | 175 | `"        assert 2 <= len(query) <= 240"` | — |
+| [SRC-6BF96689A8-L000176](../../tests/test_research.py#L176) | 176 | `"        for term in required_terms:"` | — |
+| [SRC-6BF96689A8-L000177](../../tests/test_research.py#L177) | 177 | `"            assert term in query, f\"topic term was lost: {term!r} in {query!r}\""` | — |
+| [SRC-6BF96689A8-L000178](../../tests/test_research.py#L178) | 178 | `"        for term in removed_terms:"` | — |
 | [SRC-6BF96689A8-L000179](../../tests/test_research.py#L179) | 179 | `"            assert term not in query, f\"format instruction remains: {term!r} in {query!r}\""` | — |
 | [SRC-6BF96689A8-L000180](../../tests/test_research.py#L180) | 180 | `""` | — |
 | [SRC-6BF96689A8-L000181](../../tests/test_research.py#L181) | 181 | `""` | — |
@@ -742,95 +834,3 @@
 | [SRC-01E35ABC46-L000174](../../tests/test_research_guardrails.py#L174) | 174 | `"    sources = ["` | — |
 | [SRC-01E35ABC46-L000175](../../tests/test_research_guardrails.py#L175) | 175 | `"        {\"url\": f\"https://a{i}.example/p\", \"domain\": f\"a{i}.example\","` | — |
 | [SRC-01E35ABC46-L000176](../../tests/test_research_guardrails.py#L176) | 176 | `"         \"snippet\": \"content\", \"page_fetched\": True, \"source_class\": \"general\"}"` | — |
-| [SRC-01E35ABC46-L000177](../../tests/test_research_guardrails.py#L177) | 177 | `"        for i in range(4)"` | — |
-| [SRC-01E35ABC46-L000178](../../tests/test_research_guardrails.py#L178) | 178 | `"    ]"` | — |
-| [SRC-01E35ABC46-L000179](../../tests/test_research_guardrails.py#L179) | 179 | `"    sources[0][\"source_class\"] = \"government\""` | — |
-| [SRC-01E35ABC46-L000180](../../tests/test_research_guardrails.py#L180) | 180 | `"    decision = decide_evidence_status(sources, pages_read=2)"` | — |
-| [SRC-01E35ABC46-L000181](../../tests/test_research_guardrails.py#L181) | 181 | `"    assert decision[\"evidence_status\"] == \"adequate\""` | — |
-| [SRC-01E35ABC46-L000182](../../tests/test_research_guardrails.py#L182) | 182 | `"    assert decision[\"should_abstain\"] is False"` | — |
-| [SRC-01E35ABC46-L000183](../../tests/test_research_guardrails.py#L183) | 183 | `""` | — |
-| [SRC-01E35ABC46-L000184](../../tests/test_research_guardrails.py#L184) | 184 | `""` | — |
-| [SRC-01E35ABC46-L000185](../../tests/test_research_guardrails.py#L185) | 185 | `"def test_evidence_insufficient_empty():"` | — |
-| [SRC-01E35ABC46-L000186](../../tests/test_research_guardrails.py#L186) | 186 | `"    decision = decide_evidence_status([], search_attempted=True)"` | — |
-| [SRC-01E35ABC46-L000187](../../tests/test_research_guardrails.py#L187) | 187 | `"    assert decision[\"evidence_status\"] == \"insufficient\""` | — |
-| [SRC-01E35ABC46-L000188](../../tests/test_research_guardrails.py#L188) | 188 | `"    assert decision[\"should_abstain\"] is True"` | — |
-| [SRC-01E35ABC46-L000189](../../tests/test_research_guardrails.py#L189) | 189 | `""` | — |
-| [SRC-01E35ABC46-L000190](../../tests/test_research_guardrails.py#L190) | 190 | `""` | — |
-| [SRC-01E35ABC46-L000191](../../tests/test_research_guardrails.py#L191) | 191 | `"def test_evidence_failed_provider():"` | — |
-| [SRC-01E35ABC46-L000192](../../tests/test_research_guardrails.py#L192) | 192 | `"    decision = decide_evidence_status([], provider_failures=2, search_attempted=True)"` | — |
-| [SRC-01E35ABC46-L000193](../../tests/test_research_guardrails.py#L193) | 193 | `"    assert decision[\"evidence_status\"] == \"failed\""` | — |
-| [SRC-01E35ABC46-L000194](../../tests/test_research_guardrails.py#L194) | 194 | `"    assert decision[\"should_abstain\"] is True"` | — |
-| [SRC-01E35ABC46-L000195](../../tests/test_research_guardrails.py#L195) | 195 | `""` | — |
-| [SRC-01E35ABC46-L000196](../../tests/test_research_guardrails.py#L196) | 196 | `""` | — |
-| [SRC-01E35ABC46-L000197](../../tests/test_research_guardrails.py#L197) | 197 | `"def test_evidence_partial_single_source():"` | — |
-| [SRC-01E35ABC46-L000198](../../tests/test_research_guardrails.py#L198) | 198 | `"    sources = ["` | — |
-| [SRC-01E35ABC46-L000199](../../tests/test_research_guardrails.py#L199) | 199 | `"        {\"url\": \"https://a.example/p\", \"domain\": \"a.example\","` | — |
-| [SRC-01E35ABC46-L000200](../../tests/test_research_guardrails.py#L200) | 200 | `"         \"snippet\": \"some text\", \"page_fetched\": True, \"source_class\": \"general\"}"` | — |
-| [SRC-01E35ABC46-L000201](../../tests/test_research_guardrails.py#L201) | 201 | `"    ]"` | — |
-| [SRC-01E35ABC46-L000202](../../tests/test_research_guardrails.py#L202) | 202 | `"    decision = decide_evidence_status(sources, pages_read=1)"` | — |
-| [SRC-01E35ABC46-L000203](../../tests/test_research_guardrails.py#L203) | 203 | `"    assert decision[\"evidence_status\"] == \"partial\""` | — |
-| [SRC-01E35ABC46-L000204](../../tests/test_research_guardrails.py#L204) | 204 | `"    assert decision[\"should_abstain\"] is False"` | — |
-| [SRC-01E35ABC46-L000205](../../tests/test_research_guardrails.py#L205) | 205 | `""` | — |
-| [SRC-01E35ABC46-L000206](../../tests/test_research_guardrails.py#L206) | 206 | `""` | — |
-| [SRC-01E35ABC46-L000207](../../tests/test_research_guardrails.py#L207) | 207 | `""` | — |
-| [SRC-01E35ABC46-L000208](../../tests/test_research_guardrails.py#L208) | 208 | `"# --- task-specific evidence guardrails ---------------------------------------"` | — |
-| [SRC-01E35ABC46-L000209](../../tests/test_research_guardrails.py#L209) | 209 | `""` | — |
-| [SRC-01E35ABC46-L000210](../../tests/test_research_guardrails.py#L210) | 210 | `"_GUARDRAIL_NOW = datetime(2026, 10, 28, 12, 0, tzinfo=UTC)"` | — |
-| [SRC-01E35ABC46-L000211](../../tests/test_research_guardrails.py#L211) | 211 | `""` | — |
-| [SRC-01E35ABC46-L000212](../../tests/test_research_guardrails.py#L212) | 212 | `""` | — |
-| [SRC-01E35ABC46-L000213](../../tests/test_research_guardrails.py#L213) | 213 | `"def _guardrail_source("` | — |
-| [SRC-01E35ABC46-L000214](../../tests/test_research_guardrails.py#L214) | 214 | `"    url: str,"` | — |
-| [SRC-01E35ABC46-L000215](../../tests/test_research_guardrails.py#L215) | 215 | `"    *,"` | — |
-| [SRC-01E35ABC46-L000216](../../tests/test_research_guardrails.py#L216) | 216 | `"    title: str = \"معلومات عن وزارة الاتصالات\","` | — |
-| [SRC-01E35ABC46-L000217](../../tests/test_research_guardrails.py#L217) | 217 | `"    snippet: str = \"معلومات عن وزارة الاتصالات وتكنولوجيا المعلومات في مصر\","` | — |
-| [SRC-01E35ABC46-L000218](../../tests/test_research_guardrails.py#L218) | 218 | `"    published_at: str = \"2026-10-27T10:00:00Z\","` | — |
-| [SRC-01E35ABC46-L000219](../../tests/test_research_guardrails.py#L219) | 219 | `"    page_fetched: bool = True,"` | — |
-| [SRC-01E35ABC46-L000220](../../tests/test_research_guardrails.py#L220) | 220 | `"    page_text: str = \"نص مقروء من الصفحة عن وزارة الاتصالات\","` | — |
-| [SRC-01E35ABC46-L000221](../../tests/test_research_guardrails.py#L221) | 221 | `") -> dict:"` | — |
-| [SRC-01E35ABC46-L000222](../../tests/test_research_guardrails.py#L222) | 222 | `"    return {"` | — |
-| [SRC-01E35ABC46-L000223](../../tests/test_research_guardrails.py#L223) | 223 | `"        \"title\": title,"` | — |
-| [SRC-01E35ABC46-L000224](../../tests/test_research_guardrails.py#L224) | 224 | `"        \"url\": url,"` | — |
-| [SRC-01E35ABC46-L000225](../../tests/test_research_guardrails.py#L225) | 225 | `"        \"snippet\": snippet,"` | — |
-| [SRC-01E35ABC46-L000226](../../tests/test_research_guardrails.py#L226) | 226 | `"        \"published_at\": published_at,"` | — |
-| [SRC-01E35ABC46-L000227](../../tests/test_research_guardrails.py#L227) | 227 | `"        \"page_fetched\": page_fetched,"` | — |
-| [SRC-01E35ABC46-L000228](../../tests/test_research_guardrails.py#L228) | 228 | `"        \"page_text\": page_text,"` | — |
-| [SRC-01E35ABC46-L000229](../../tests/test_research_guardrails.py#L229) | 229 | `"    }"` | — |
-| [SRC-01E35ABC46-L000230](../../tests/test_research_guardrails.py#L230) | 230 | `""` | — |
-| [SRC-01E35ABC46-L000231](../../tests/test_research_guardrails.py#L231) | 231 | `""` | — |
-| [SRC-01E35ABC46-L000232](../../tests/test_research_guardrails.py#L232) | 232 | `"def test_official_government_website_request_rejects_tourism_domain() -> None:"` | — |
-| [SRC-01E35ABC46-L000233](../../tests/test_research_guardrails.py#L233) | 233 | `"    question = \"ابحث عن الموقع الرسمي لوزارة الاتصالات وتكنولوجيا المعلومات المصرية\""` | — |
-| [SRC-01E35ABC46-L000234](../../tests/test_research_guardrails.py#L234) | 234 | `"    assert requires_official_government_domain(question)"` | — |
-| [SRC-01E35ABC46-L000235](../../tests/test_research_guardrails.py#L235) | 235 | `"    candidates = ["` | — |
-| [SRC-01E35ABC46-L000236](../../tests/test_research_guardrails.py#L236) | 236 | `"        _guardrail_source("` | — |
-| [SRC-01E35ABC46-L000237](../../tests/test_research_guardrails.py#L237) | 237 | `"            \"https://visitegypt.com/\","` | — |
-| [SRC-01E35ABC46-L000238](../../tests/test_research_guardrails.py#L238) | 238 | `"            title=\"وزارة الاتصالات في مصر ومعلومات سياحية\","` | — |
-| [SRC-01E35ABC46-L000239](../../tests/test_research_guardrails.py#L239) | 239 | `"        ),"` | — |
-| [SRC-01E35ABC46-L000240](../../tests/test_research_guardrails.py#L240) | 240 | `"        _guardrail_source("` | — |
-| [SRC-01E35ABC46-L000241](../../tests/test_research_guardrails.py#L241) | 241 | `"            \"https://mcit.gov.eg/\","` | — |
-| [SRC-01E35ABC46-L000242](../../tests/test_research_guardrails.py#L242) | 242 | `"            title=\"وزارة الاتصالات وتكنولوجيا المعلومات - الموقع الرسمي\","` | — |
-| [SRC-01E35ABC46-L000243](../../tests/test_research_guardrails.py#L243) | 243 | `"        ),"` | — |
-| [SRC-01E35ABC46-L000244](../../tests/test_research_guardrails.py#L244) | 244 | `"    ]"` | — |
-| [SRC-01E35ABC46-L000245](../../tests/test_research_guardrails.py#L245) | 245 | `""` | — |
-| [SRC-01E35ABC46-L000246](../../tests/test_research_guardrails.py#L246) | 246 | `"    accepted, report = apply_source_guardrails("` | — |
-| [SRC-01E35ABC46-L000247](../../tests/test_research_guardrails.py#L247) | 247 | `"        question, \"auto\", {\"freshness\": \"any\"}, candidates, now=_GUARDRAIL_NOW"` | — |
-| [SRC-01E35ABC46-L000248](../../tests/test_research_guardrails.py#L248) | 248 | `"    )"` | — |
-| [SRC-01E35ABC46-L000249](../../tests/test_research_guardrails.py#L249) | 249 | `""` | — |
-| [SRC-01E35ABC46-L000250](../../tests/test_research_guardrails.py#L250) | 250 | `"    assert [item[\"url\"] for item in accepted] == [\"https://mcit.gov.eg/\"]"` | — |
-| [SRC-01E35ABC46-L000251](../../tests/test_research_guardrails.py#L251) | 251 | `"    assert report[\"official_government_domain_required\"] is True"` | — |
-| [SRC-01E35ABC46-L000252](../../tests/test_research_guardrails.py#L252) | 252 | `"    assert report[\"rejection_counts\"] == {\"not_an_official_government_domain\": 1}"` | — |
-| [SRC-01E35ABC46-L000253](../../tests/test_research_guardrails.py#L253) | 253 | `"    assert \"not independently verified\" in report[\"official_domain_policy\"]"` | — |
-| [SRC-01E35ABC46-L000254](../../tests/test_research_guardrails.py#L254) | 254 | `""` | — |
-| [SRC-01E35ABC46-L000255](../../tests/test_research_guardrails.py#L255) | 255 | `""` | — |
-| [SRC-01E35ABC46-L000256](../../tests/test_research_guardrails.py#L256) | 256 | `"def test_official_request_fails_closed_when_only_non_government_result_exists() -> None:"` | — |
-| [SRC-01E35ABC46-L000257](../../tests/test_research_guardrails.py#L257) | 257 | `"    accepted, report = apply_source_guardrails("` | — |
-| [SRC-01E35ABC46-L000258](../../tests/test_research_guardrails.py#L258) | 258 | `"        \"الموقع الرسمي لوزارة الاتصالات المصرية\","` | — |
-| [SRC-01E35ABC46-L000259](../../tests/test_research_guardrails.py#L259) | 259 | `"        \"auto\","` | — |
-| [SRC-01E35ABC46-L000260](../../tests/test_research_guardrails.py#L260) | 260 | `"        {\"freshness\": \"any\"},"` | — |
-| [SRC-01E35ABC46-L000261](../../tests/test_research_guardrails.py#L261) | 261 | `"        [_guardrail_source(\"https://visitegypt.com/\")],"` | — |
-| [SRC-01E35ABC46-L000262](../../tests/test_research_guardrails.py#L262) | 262 | `"        now=_GUARDRAIL_NOW,"` | — |
-| [SRC-01E35ABC46-L000263](../../tests/test_research_guardrails.py#L263) | 263 | `"    )"` | — |
-| [SRC-01E35ABC46-L000264](../../tests/test_research_guardrails.py#L264) | 264 | `""` | — |
-| [SRC-01E35ABC46-L000265](../../tests/test_research_guardrails.py#L265) | 265 | `"    assert accepted == []"` | — |
-| [SRC-01E35ABC46-L000266](../../tests/test_research_guardrails.py#L266) | 266 | `"    assert report[\"accepted_sources\"] == 0"` | — |
-| [SRC-01E35ABC46-L000267](../../tests/test_research_guardrails.py#L267) | 267 | `"    assert report[\"current_evidence_status\"] == \"not_required\""` | — |
-| [SRC-01E35ABC46-L000268](../../tests/test_research_guardrails.py#L268) | 268 | `""` | — |

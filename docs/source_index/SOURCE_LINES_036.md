@@ -4,7 +4,7 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-676B69CB6C-L000062 إلى SRC-70795F4B61-L000244
+- النطاق: SRC-676B69CB6C-L000062 إلى SRC-70795F4B61-L000152
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -116,6 +116,85 @@
 | [SRC-676B69CB6C-L000159](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L159) | 159 | ``"- Successful CI [42190782142](https://github.com/mosabosama2030-oss/omarai/actions/runs/42190782142) on `1f30370a0808d9ac52b75f630544c1041d5d5fca`: **867 passed on Python 3.11 (45.17s)**, **867 passed on Python 3.12 (43.61s)**, Ruff passed on both, generated-index checks passed, Docker build passed, public-container credential gate passed, and protected API smoke passed."`` | — |
 | [SRC-676B69CB6C-L000160](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L160) | 160 | `"- No local pytest command, live search/model call, paid provider usage, SnapDeploy deployment, browser E2E, or hosted acceptance was run."` | — |
 | [SRC-676B69CB6C-L000161](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L161) | 161 | `"- PR: [#155 — feat(workspace): connect product profiles and buyer-intent discovery](https://github.com/mosabosama2030-oss/omarai/pull/155). Open for Human Director review; not merged."` | — |
+## وثائق وفهرسة
+
+### FILE-F3C55C04AB — [docs/superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L1)
+
+- النوع: **Markdown**
+- نطاق الفهرسة: جرد الملف + عناوين Markdown
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-F3C55C04AB-L000001](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L1) | 1 | `"# Omarai UI Recovery and Request Timeout Implementation Plan"` | — |
+| [SRC-F3C55C04AB-L000002](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L2) | 2 | `""` | — |
+| [SRC-F3C55C04AB-L000003](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L3) | 3 | `"> **For agentic workers:** Use the approved native execution path in this session. Steps use checkbox syntax for tracking."` | — |
+| [SRC-F3C55C04AB-L000004](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L4) | 4 | `""` | — |
+| [SRC-F3C55C04AB-L000005](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L5) | 5 | `"**Goal:** Add bounded client-side request waiting and make workspace save/refresh failures independently visible."` | — |
+| [SRC-F3C55C04AB-L000006](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L6) | 6 | `""` | — |
+| [SRC-F3C55C04AB-L000007](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L7) | 7 | `"**Architecture:** Keep the existing static HTML/JavaScript architecture. Extend the shared workspace API wrapper with an optional AbortSignal, apply the same bounded client deadline to both chat surfaces, and isolate secondary refresh failures from successful writes."` | — |
+| [SRC-F3C55C04AB-L000008](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L8) | 8 | `""` | — |
+| [SRC-F3C55C04AB-L000009](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L9) | 9 | `"**Tech Stack:** Existing HTML, browser Fetch API, AbortController, Python pytest contract tests."` | — |
+| [SRC-F3C55C04AB-L000010](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L10) | 10 | `""` | — |
+| [SRC-F3C55C04AB-L000011](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L11) | 11 | ``"**Spec:** `docs/superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md`"`` | — |
+| [SRC-F3C55C04AB-L000012](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L12) | 12 | `""` | — |
+| [SRC-F3C55C04AB-L000013](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L13) | 13 | `"## Global Constraints"` | — |
+| [SRC-F3C55C04AB-L000014](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L14) | 14 | `"- Client deadline: 135 seconds."` | — |
+| [SRC-F3C55C04AB-L000015](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L15) | 15 | `"- Client abort does not claim server cancellation."` | — |
+| [SRC-F3C55C04AB-L000016](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L16) | 16 | `"- Preserve existing auth-session version guards and duplicate-submit guards."` | — |
+| [SRC-F3C55C04AB-L000017](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L17) | 17 | `"- No new dependencies, credentials, paid provider calls, database changes, merge, or deploy."` | — |
+| [SRC-F3C55C04AB-L000018](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L18) | 18 | `""` | — |
+| [SRC-F3C55C04AB-L000019](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L19) | 19 | `"## Review Focus"` | — |
+| [SRC-F3C55C04AB-L000020](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L20) | 20 | `"- Timeout versus ordinary network error must produce distinct, accurate status."` | — |
+| [SRC-F3C55C04AB-L000021](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L21) | 21 | `"- A late response after logout/session replacement must not mutate the new session."` | — |
+| [SRC-F3C55C04AB-L000022](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L22) | 22 | `"- A second submit while the first request is active must remain blocked."` | — |
+| [SRC-F3C55C04AB-L000023](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L23) | 23 | `"- A successful save followed by failed refresh must not be reported as a failed save."` | — |
+| [SRC-F3C55C04AB-L000024](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L24) | 24 | `"- Failed refresh must preserve the last successful data and restore the refresh control."` | — |
+| [SRC-F3C55C04AB-L000025](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L25) | 25 | `""` | — |
+| [SRC-F3C55C04AB-L000026](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L26) | 26 | `"---"` | — |
+| [SRC-F3C55C04AB-L000027](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L27) | 27 | `""` | — |
+| [SRC-F3C55C04AB-L000028](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L28) | 28 | `"### Task 1: Add failing UI contract tests"` | — |
+| [SRC-F3C55C04AB-L000029](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L29) | 29 | `""` | — |
+| [SRC-F3C55C04AB-L000030](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L30) | 30 | `"**Files:**"` | — |
+| [SRC-F3C55C04AB-L000031](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L31) | 31 | ``"- Create: `tests/test_workspace_ui_regressions.py`"`` | — |
+| [SRC-F3C55C04AB-L000032](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L32) | 32 | ``"- Test: extracted application functions from `web/workspace.html` and `web/agent.html`"`` | — |
+| [SRC-F3C55C04AB-L000033](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L33) | 33 | `""` | — |
+| [SRC-F3C55C04AB-L000034](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L34) | 34 | `"- [ ] Add tests for signal forwarding, workspace-chat timeout, legacy-agent timeout, duplicate-submit guard, signal inbox refresh recovery, and successful-save/failed-refresh distinctions."` | — |
+| [SRC-F3C55C04AB-L000035](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L35) | 35 | `"- [ ] Run the full CI test workflow and confirm the new assertions fail on the current implementation for the expected missing behaviors."` | — |
+| [SRC-F3C55C04AB-L000036](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L36) | 36 | `""` | — |
+| [SRC-F3C55C04AB-L000037](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L37) | 37 | `"### Task 2: Implement request deadlines"` | — |
+| [SRC-F3C55C04AB-L000038](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L38) | 38 | `""` | — |
+| [SRC-F3C55C04AB-L000039](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L39) | 39 | `"**Files:**"` | — |
+| [SRC-F3C55C04AB-L000040](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L40) | 40 | ``"- Modify: `web/workspace.html`"`` | — |
+| [SRC-F3C55C04AB-L000041](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L41) | 41 | ``"- Modify: `web/agent.html`"`` | — |
+| [SRC-F3C55C04AB-L000042](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L42) | 42 | `""` | — |
+| [SRC-F3C55C04AB-L000043](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L43) | 43 | ``"- [ ] Forward `opts.signal` from the workspace API wrapper to Fetch."`` | — |
+| [SRC-F3C55C04AB-L000044](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L44) | 44 | ``"- [ ] Add a 135-second AbortController deadline to `sendChat()` and `ask()`."`` | — |
+| [SRC-F3C55C04AB-L000045](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L45) | 45 | ``"- [ ] Clear timeout handles in `finally`; restore controls and preserve existing session guards."`` | — |
+| [SRC-F3C55C04AB-L000046](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L46) | 46 | `"- [ ] Distinguish timeout from network failure and state that the server may continue processing."` | — |
+| [SRC-F3C55C04AB-L000047](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L47) | 47 | `""` | — |
+| [SRC-F3C55C04AB-L000048](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L48) | 48 | `"### Task 3: Make save and refresh outcomes independent"` | — |
+| [SRC-F3C55C04AB-L000049](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L49) | 49 | `""` | — |
+| [SRC-F3C55C04AB-L000050](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L50) | 50 | `"**Files:**"` | — |
+| [SRC-F3C55C04AB-L000051](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L51) | 51 | ``"- Modify: `web/workspace.html`"`` | — |
+| [SRC-F3C55C04AB-L000052](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L52) | 52 | `""` | — |
+| [SRC-F3C55C04AB-L000053](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L53) | 53 | `"- [ ] Catch signal-inbox refresh errors and restore the refresh button."` | — |
+| [SRC-F3C55C04AB-L000054](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L54) | 54 | `"- [ ] Preserve successful manual-signal, product-profile, and discovery-signal writes when their subsequent list refresh fails."` | — |
+| [SRC-F3C55C04AB-L000055](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L55) | 55 | `"- [ ] Keep the existing discovery-run partial-success behavior."` | — |
+| [SRC-F3C55C04AB-L000056](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L56) | 56 | `""` | — |
+| [SRC-F3C55C04AB-L000057](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L57) | 57 | `"### Task 4: Link inline citations in workspace chat"` | — |
+| [SRC-F3C55C04AB-L000058](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L58) | 58 | `""` | — |
+| [SRC-F3C55C04AB-L000059](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L59) | 59 | `"**Files:**"` | — |
+| [SRC-F3C55C04AB-L000060](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L60) | 60 | ``"- Modify: `web/workspace.html`"`` | — |
+| [SRC-F3C55C04AB-L000061](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L61) | 61 | ``"- Test: `tests/test_workspace_ui_regressions.py`"`` | — |
+| [SRC-F3C55C04AB-L000062](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L62) | 62 | `""` | — |
+| [SRC-F3C55C04AB-L000063](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L63) | 63 | ``"- [ ] Render `[المصدر N]` and `[source N]` markers as safe links to `sources[N-1]` only when the indexed source has a valid HTTP(S) URL."`` | — |
+| [SRC-F3C55C04AB-L000064](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L64) | 64 | `"- [ ] Keep invalid/out-of-range markers as plain text; never infer or shift source indexes."` | — |
+| [SRC-F3C55C04AB-L000065](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L65) | 65 | `""` | — |
+| [SRC-F3C55C04AB-L000066](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L66) | 66 | `"### Task 5: Verify"` | — |
+| [SRC-F3C55C04AB-L000067](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L67) | 67 | `""` | — |
+| [SRC-F3C55C04AB-L000068](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L68) | 68 | `"- [ ] Run targeted UI contract tests."` | — |
+| [SRC-F3C55C04AB-L000069](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L69) | 69 | `"- [ ] Run full pytest and Ruff on Python 3.11 and 3.12 through GitHub Actions."` | — |
+| [SRC-F3C55C04AB-L000070](../superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L70) | 70 | `"- [ ] Report hosted runtime, browser-level behavior, server cancellation, and volume durability as unverified unless separately tested."` | — |
 ## وثائق وفهرسة
 
 ### FILE-8524B08F5D — [docs/superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md](../superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L1)
@@ -254,6 +333,37 @@
 | [SRC-BFCEEA0374-L000071](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L71) | 71 | ``"- تخزين ملفات المنتج وتشغيلات الاكتشاف في SQLite مع migration آمن عبر `CREATE TABLE IF NOT EXISTS` وفهارس tenant-scoped."`` | — |
 | [SRC-BFCEEA0374-L000072](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L72) | 72 | `"- عدم تغيير أي مفتاح أو إعداد استضافة."` | — |
 | [SRC-BFCEEA0374-L000073](../superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L73) | 73 | `"- لا دمج ولا نشر ضمن هذا العمل."` | — |
+## وثائق وفهرسة
+
+### FILE-B3659C383F — [docs/superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md](../superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md#L1)
+
+- النوع: **Markdown**
+- نطاق الفهرسة: جرد الملف + عناوين Markdown
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-B3659C383F-L000001](../superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md#L1) | 1 | `"# Omarai UI Recovery and Request Timeout Specification"` | — |
+| [SRC-B3659C383F-L000002](../superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md#L2) | 2 | `""` | — |
+| [SRC-B3659C383F-L000003](../superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md#L3) | 3 | `"**Status:** Approved for implementation by the Human Director's request to execute the previously defined task list."` | — |
+| [SRC-B3659C383F-L000004](../superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md#L4) | 4 | `""` | — |
+| [SRC-B3659C383F-L000005](../superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md#L5) | 5 | `"## Goal"` | — |
+| [SRC-B3659C383F-L000006](../superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md#L6) | 6 | `"Make the main workspace chat and legacy agent search recover predictably from long-running browser requests, and prevent successful writes from being reported as failures when a follow-up list refresh fails."` | — |
+| [SRC-B3659C383F-L000007](../superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md#L7) | 7 | `""` | — |
+| [SRC-B3659C383F-L000008](../superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md#L8) | 8 | `"## Required behavior"` | — |
+| [SRC-B3659C383F-L000009](../superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md#L9) | 9 | ``"1. The browser applies a 135-second client-side deadline to `/api/agent` requests in both `web/workspace.html` and `web/agent.html`."`` | — |
+| [SRC-B3659C383F-L000010](../superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md#L10) | 10 | `"2. Aborting the browser request is not represented as server-side cancellation. The timeout message explicitly says the server may continue within its own request budget."` | — |
+| [SRC-B3659C383F-L000011](../superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md#L11) | 11 | ``"3. Chat/search controls are restored in `finally`; duplicate submissions remain blocked while a request is active."`` | — |
+| [SRC-B3659C383F-L000012](../superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md#L12) | 12 | `"4. The workspace API helper forwards an optional AbortSignal without changing callers that do not provide one."` | — |
+| [SRC-B3659C383F-L000013](../superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md#L13) | 13 | `"5. Refresh failures preserve the last successfully loaded data and display an actionable error."` | — |
+| [SRC-B3659C383F-L000014](../superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md#L14) | 14 | `"6. After a successful save, a later list-refresh failure is reported separately; it must not imply that the save failed or encourage duplicate writes."` | — |
+| [SRC-B3659C383F-L000015](../superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md#L15) | 15 | `"7. Inline citation markers in workspace chat resolve only to the same 1-based source-list entry used by the answer; invalid or missing indexes remain plain text."` | — |
+| [SRC-B3659C383F-L000016](../superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md#L16) | 16 | `"8. No connector credentials, provider calls, database schema, deployment settings, or production deployment are changed."` | — |
+| [SRC-B3659C383F-L000017](../superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md#L17) | 17 | `""` | — |
+| [SRC-B3659C383F-L000018](../superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md#L18) | 18 | `"## Non-goals"` | — |
+| [SRC-B3659C383F-L000019](../superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md#L19) | 19 | `"- No claim of hard server cancellation."` | — |
+| [SRC-B3659C383F-L000020](../superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md#L20) | 20 | `"- No automatic retry."` | — |
+| [SRC-B3659C383F-L000021](../superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md#L21) | 21 | `"- No production-host restart or hosted-volume durability claim."` | — |
+| [SRC-B3659C383F-L000022](../superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md#L22) | 22 | `"- No new JavaScript or Python dependencies."` | — |
 ## وثائق وفهرسة
 
 ### FILE-6B9B9ABE27 — [docs/ui-directions/README.md](../ui-directions/README.md#L1)
@@ -841,95 +951,3 @@
 | [SRC-70795F4B61-L000150](../../scripts/compare_answer_quality_runs.py#L150) | 150 | `"            \"sample_count\": len(elapsed),"` | — |
 | [SRC-70795F4B61-L000151](../../scripts/compare_answer_quality_runs.py#L151) | 151 | `"            \"mean\": round(sum(elapsed) / len(elapsed), 2) if elapsed else None,"` | — |
 | [SRC-70795F4B61-L000152](../../scripts/compare_answer_quality_runs.py#L152) | 152 | `"            \"p50\": _percentile_nearest_rank(elapsed, 0.50),"` | — |
-| [SRC-70795F4B61-L000153](../../scripts/compare_answer_quality_runs.py#L153) | 153 | `"            \"p95\": _percentile_nearest_rank(elapsed, 0.95),"` | — |
-| [SRC-70795F4B61-L000154](../../scripts/compare_answer_quality_runs.py#L154) | 154 | `"            \"max\": round(max(elapsed), 2) if elapsed else None,"` | — |
-| [SRC-70795F4B61-L000155](../../scripts/compare_answer_quality_runs.py#L155) | 155 | `"            \"status\": \"SCORED\" if elapsed else \"NOT_MEASURED\","` | — |
-| [SRC-70795F4B61-L000156](../../scripts/compare_answer_quality_runs.py#L156) | 156 | `"            \"semantics\": \"Sequential end-to-end HTTP request time; not a concurrency/load test.\","` | — |
-| [SRC-70795F4B61-L000157](../../scripts/compare_answer_quality_runs.py#L157) | 157 | `"        },"` | — |
-| [SRC-70795F4B61-L000158](../../scripts/compare_answer_quality_runs.py#L158) | 158 | `"        \"tool_usage\": {"` | — |
-| [SRC-70795F4B61-L000159](../../scripts/compare_answer_quality_runs.py#L159) | 159 | `"            \"web_search_case_count\": len(search_cases),"` | — |
-| [SRC-70795F4B61-L000160](../../scripts/compare_answer_quality_runs.py#L160) | 160 | `"            \"search_attempt_rate\": _rate(len(search_attempted), len(search_cases)),"` | — |
-| [SRC-70795F4B61-L000161](../../scripts/compare_answer_quality_runs.py#L161) | 161 | `"            \"usable_result_rate\": _rate(len(usable), len(search_cases)),"` | — |
-| [SRC-70795F4B61-L000162](../../scripts/compare_answer_quality_runs.py#L162) | 162 | `"            \"tool_error_rate_among_search_cases\": _rate(len(tool_failed), len(search_cases)),"` | — |
-| [SRC-70795F4B61-L000163](../../scripts/compare_answer_quality_runs.py#L163) | 163 | `"            \"attempted_without_usable_results\": len(no_usable),"` | — |
-| [SRC-70795F4B61-L000164](../../scripts/compare_answer_quality_runs.py#L164) | 164 | `"            \"unknown_tool_outcome_count\": sum("` | — |
-| [SRC-70795F4B61-L000165](../../scripts/compare_answer_quality_runs.py#L165) | 165 | `"                1 for r in search_cases"` | — |
-| [SRC-70795F4B61-L000166](../../scripts/compare_answer_quality_runs.py#L166) | 166 | `"                if r.get(\"tool_status\") in (None, \"\", \"UNKNOWN\")"` | — |
-| [SRC-70795F4B61-L000167](../../scripts/compare_answer_quality_runs.py#L167) | 167 | `"            ),"` | — |
-| [SRC-70795F4B61-L000168](../../scripts/compare_answer_quality_runs.py#L168) | 168 | `"            \"required_tool_observation_count\": len(required_tool_rows),"` | — |
-| [SRC-70795F4B61-L000169](../../scripts/compare_answer_quality_runs.py#L169) | 169 | `"            \"required_tool_success_count\": required_tool_successes,"` | — |
-| [SRC-70795F4B61-L000170](../../scripts/compare_answer_quality_runs.py#L170) | 170 | `"            \"required_tool_success_rate\": _rate(required_tool_successes, len(required_tool_rows)),"` | — |
-| [SRC-70795F4B61-L000171](../../scripts/compare_answer_quality_runs.py#L171) | 171 | `"            \"required_tool_status_counts\": tool_status_counts,"` | — |
-| [SRC-70795F4B61-L000172](../../scripts/compare_answer_quality_runs.py#L172) | 172 | `"            \"required_tool_status_case_count\": sum("` | — |
-| [SRC-70795F4B61-L000173](../../scripts/compare_answer_quality_runs.py#L173) | 173 | `"                1 for r in results"` | — |
-| [SRC-70795F4B61-L000174](../../scripts/compare_answer_quality_runs.py#L174) | 174 | `"                if isinstance(r.get(\"required_tool_statuses\"), list)"` | — |
-| [SRC-70795F4B61-L000175](../../scripts/compare_answer_quality_runs.py#L175) | 175 | `"                and r.get(\"required_tool_statuses\")"` | — |
-| [SRC-70795F4B61-L000176](../../scripts/compare_answer_quality_runs.py#L176) | 176 | `"            ),"` | — |
-| [SRC-70795F4B61-L000177](../../scripts/compare_answer_quality_runs.py#L177) | 177 | `"            \"required_tool_matrix_coverage\": {"` | — |
-| [SRC-70795F4B61-L000178](../../scripts/compare_answer_quality_runs.py#L178) | 178 | `"                \"score\": ("` | — |
-| [SRC-70795F4B61-L000179](../../scripts/compare_answer_quality_runs.py#L179) | 179 | `"                    round(required_tool_matrix_complete_count / len(results), 4)"` | — |
-| [SRC-70795F4B61-L000180](../../scripts/compare_answer_quality_runs.py#L180) | 180 | `"                    if results and required_tool_matrix_telemetry_known"` | — |
-| [SRC-70795F4B61-L000181](../../scripts/compare_answer_quality_runs.py#L181) | 181 | `"                    else None"` | — |
-| [SRC-70795F4B61-L000182](../../scripts/compare_answer_quality_runs.py#L182) | 182 | `"                ),"` | — |
-| [SRC-70795F4B61-L000183](../../scripts/compare_answer_quality_runs.py#L183) | 183 | `"                \"complete_case_count\": required_tool_matrix_complete_count,"` | — |
-| [SRC-70795F4B61-L000184](../../scripts/compare_answer_quality_runs.py#L184) | 184 | `"                \"case_count\": len(results),"` | — |
-| [SRC-70795F4B61-L000185](../../scripts/compare_answer_quality_runs.py#L185) | 185 | `"                \"incomplete_case_ids\": required_tool_matrix_incomplete_case_ids,"` | — |
-| [SRC-70795F4B61-L000186](../../scripts/compare_answer_quality_runs.py#L186) | 186 | `"                \"status\": ("` | — |
-| [SRC-70795F4B61-L000187](../../scripts/compare_answer_quality_runs.py#L187) | 187 | `"                    \"SCORED_FROM_EXPLICIT_TOOL_MATRIX\""` | — |
-| [SRC-70795F4B61-L000188](../../scripts/compare_answer_quality_runs.py#L188) | 188 | `"                    if required_tool_matrix_telemetry_known"` | — |
-| [SRC-70795F4B61-L000189](../../scripts/compare_answer_quality_runs.py#L189) | 189 | `"                    else \"NOT_MEASURED_REQUIRED_TOOL_MATRIX_TELEMETRY_MISSING\""` | — |
-| [SRC-70795F4B61-L000190](../../scripts/compare_answer_quality_runs.py#L190) | 190 | `"                ),"` | — |
-| [SRC-70795F4B61-L000191](../../scripts/compare_answer_quality_runs.py#L191) | 191 | `"            },"` | — |
-| [SRC-70795F4B61-L000192](../../scripts/compare_answer_quality_runs.py#L192) | 192 | `"            \"required_tool_success_semantics\": ("` | — |
-| [SRC-70795F4B61-L000193](../../scripts/compare_answer_quality_runs.py#L193) | 193 | `"                \"Only tool-specific completed-with-usable-output states count as success; \""` | — |
-| [SRC-70795F4B61-L000194](../../scripts/compare_answer_quality_runs.py#L194) | 194 | `"                \"HTTP success and no-result attempts do not.\""` | — |
-| [SRC-70795F4B61-L000195](../../scripts/compare_answer_quality_runs.py#L195) | 195 | `"            ),"` | — |
-| [SRC-70795F4B61-L000196](../../scripts/compare_answer_quality_runs.py#L196) | 196 | `"        },"` | — |
-| [SRC-70795F4B61-L000197](../../scripts/compare_answer_quality_runs.py#L197) | 197 | `"        \"provider_reported_model_cost\": {"` | — |
-| [SRC-70795F4B61-L000198](../../scripts/compare_answer_quality_runs.py#L198) | 198 | `"            \"reported_sum_usd\": round(sum(costs), 10) if costs else None,"` | — |
-| [SRC-70795F4B61-L000199](../../scripts/compare_answer_quality_runs.py#L199) | 199 | `"            \"cases_with_any_reported_cost\": len(costs),"` | — |
-| [SRC-70795F4B61-L000200](../../scripts/compare_answer_quality_runs.py#L200) | 200 | `"            \"cases_complete_for_returned_model_calls\": complete_cost_cases,"` | — |
-| [SRC-70795F4B61-L000201](../../scripts/compare_answer_quality_runs.py#L201) | 201 | `"            \"status\": ("` | — |
-| [SRC-70795F4B61-L000202](../../scripts/compare_answer_quality_runs.py#L202) | 202 | `"                \"PARTIAL_OR_PROVIDER_REPORTED_ONLY\""` | — |
-| [SRC-70795F4B61-L000203](../../scripts/compare_answer_quality_runs.py#L203) | 203 | `"                if costs"` | — |
-| [SRC-70795F4B61-L000204](../../scripts/compare_answer_quality_runs.py#L204) | 204 | `"                else \"NOT_MEASURED_NO_PROVIDER_COST_REPORTED\""` | — |
-| [SRC-70795F4B61-L000205](../../scripts/compare_answer_quality_runs.py#L205) | 205 | `"            ),"` | — |
-| [SRC-70795F4B61-L000206](../../scripts/compare_answer_quality_runs.py#L206) | 206 | `"            \"complete_request_cost_usd\": ("` | — |
-| [SRC-70795F4B61-L000207](../../scripts/compare_answer_quality_runs.py#L207) | 207 | `"                round(sum(reconciled_request_costs), 10) if request_cost_complete else None"` | — |
-| [SRC-70795F4B61-L000208](../../scripts/compare_answer_quality_runs.py#L208) | 208 | `"            ),"` | — |
-| [SRC-70795F4B61-L000209](../../scripts/compare_answer_quality_runs.py#L209) | 209 | `"            \"complete_request_cost_status\": ("` | — |
-| [SRC-70795F4B61-L000210](../../scripts/compare_answer_quality_runs.py#L210) | 210 | `"                \"RECONCILED_COMPLETE_REQUEST_COST\""` | — |
-| [SRC-70795F4B61-L000211](../../scripts/compare_answer_quality_runs.py#L211) | 211 | `"                if request_cost_complete"` | — |
-| [SRC-70795F4B61-L000212](../../scripts/compare_answer_quality_runs.py#L212) | 212 | `"                else ("` | — |
-| [SRC-70795F4B61-L000213](../../scripts/compare_answer_quality_runs.py#L213) | 213 | `"                    \"PARTIAL_EXTERNAL_COST_RECONCILIATION\""` | — |
-| [SRC-70795F4B61-L000214](../../scripts/compare_answer_quality_runs.py#L214) | 214 | `"                    if complete_request_cost_count"` | — |
-| [SRC-70795F4B61-L000215](../../scripts/compare_answer_quality_runs.py#L215) | 215 | `"                    else \"NOT_MEASURED_TOTAL_CONNECTOR_COSTS_NOT_EXPOSED\""` | — |
-| [SRC-70795F4B61-L000216](../../scripts/compare_answer_quality_runs.py#L216) | 216 | `"                )"` | — |
-| [SRC-70795F4B61-L000217](../../scripts/compare_answer_quality_runs.py#L217) | 217 | `"            ),"` | — |
-| [SRC-70795F4B61-L000218](../../scripts/compare_answer_quality_runs.py#L218) | 218 | `"            \"complete_request_cost_case_count\": complete_request_cost_count,"` | — |
-| [SRC-70795F4B61-L000219](../../scripts/compare_answer_quality_runs.py#L219) | 219 | `"        },"` | — |
-| [SRC-70795F4B61-L000220](../../scripts/compare_answer_quality_runs.py#L220) | 220 | `"    }"` | — |
-| [SRC-70795F4B61-L000221](../../scripts/compare_answer_quality_runs.py#L221) | 221 | `""` | — |
-| [SRC-70795F4B61-L000222](../../scripts/compare_answer_quality_runs.py#L222) | 222 | `""` | — |
-| [SRC-70795F4B61-L000223](../../scripts/compare_answer_quality_runs.py#L223) | 223 | `"def _load_review_scorer():"` | — |
-| [SRC-70795F4B61-L000224](../../scripts/compare_answer_quality_runs.py#L224) | 224 | `"    path = ROOT / \"scripts\" / \"score_answer_quality_reviews.py\""` | — |
-| [SRC-70795F4B61-L000225](../../scripts/compare_answer_quality_runs.py#L225) | 225 | `"    spec = importlib.util.spec_from_file_location(\"omarai_review_scorecard\", path)"` | — |
-| [SRC-70795F4B61-L000226](../../scripts/compare_answer_quality_runs.py#L226) | 226 | `"    if spec is None or spec.loader is None:"` | — |
-| [SRC-70795F4B61-L000227](../../scripts/compare_answer_quality_runs.py#L227) | 227 | `"        raise RuntimeError(\"Unable to load existing review scorecard: \" + str(path))"` | — |
-| [SRC-70795F4B61-L000228](../../scripts/compare_answer_quality_runs.py#L228) | 228 | `"    module = importlib.util.module_from_spec(spec)"` | — |
-| [SRC-70795F4B61-L000229](../../scripts/compare_answer_quality_runs.py#L229) | 229 | `"    spec.loader.exec_module(module)"` | — |
-| [SRC-70795F4B61-L000230](../../scripts/compare_answer_quality_runs.py#L230) | 230 | `"    return module"` | — |
-| [SRC-70795F4B61-L000231](../../scripts/compare_answer_quality_runs.py#L231) | 231 | `""` | — |
-| [SRC-70795F4B61-L000232](../../scripts/compare_answer_quality_runs.py#L232) | 232 | `""` | — |
-| [SRC-70795F4B61-L000233](../../scripts/compare_answer_quality_runs.py#L233) | 233 | `"def _reviewed_case_ids(review_data: dict[str, Any]) -> set[str]:"` | — |
-| [SRC-70795F4B61-L000234](../../scripts/compare_answer_quality_runs.py#L234) | 234 | `"    reviews = review_data.get(\"reviews\")"` | — |
-| [SRC-70795F4B61-L000235](../../scripts/compare_answer_quality_runs.py#L235) | 235 | `"    if not isinstance(reviews, list):"` | — |
-| [SRC-70795F4B61-L000236](../../scripts/compare_answer_quality_runs.py#L236) | 236 | `"        raise ValueError(\"review file must contain a reviews array\")"` | — |
-| [SRC-70795F4B61-L000237](../../scripts/compare_answer_quality_runs.py#L237) | 237 | `"    return {"` | — |
-| [SRC-70795F4B61-L000238](../../scripts/compare_answer_quality_runs.py#L238) | 238 | `"        item[\"case_id\"]"` | — |
-| [SRC-70795F4B61-L000239](../../scripts/compare_answer_quality_runs.py#L239) | 239 | `"        for item in reviews"` | — |
-| [SRC-70795F4B61-L000240](../../scripts/compare_answer_quality_runs.py#L240) | 240 | `"        if isinstance(item, dict) and item.get(\"status\") == \"REVIEWED\""` | — |
-| [SRC-70795F4B61-L000241](../../scripts/compare_answer_quality_runs.py#L241) | 241 | `"        and isinstance(item.get(\"case_id\"), str)"` | — |
-| [SRC-70795F4B61-L000242](../../scripts/compare_answer_quality_runs.py#L242) | 242 | `"    }"` | — |
-| [SRC-70795F4B61-L000243](../../scripts/compare_answer_quality_runs.py#L243) | 243 | `""` | — |
-| [SRC-70795F4B61-L000244](../../scripts/compare_answer_quality_runs.py#L244) | 244 | `""` | — |

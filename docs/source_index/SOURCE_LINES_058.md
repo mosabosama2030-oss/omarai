@@ -4,9 +4,71 @@
 
 - الصفحة: **058**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1C0D3D1206-L000040 إلى SRC-F725E90B2A-L000046
+- النطاق: SRC-D033B34F41-L000037 إلى SRC-FBDC61DA0B-L000103
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-D033B34F41 — [tests/test_source_metadata_audit.py](../../tests/test_source_metadata_audit.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-D033B34F41-L000037](../../tests/test_source_metadata_audit.py#L37) | 37 | `"            \"published_at\": \"2025-06-01\","` | — |
+| [SRC-D033B34F41-L000038](../../tests/test_source_metadata_audit.py#L38) | 38 | `"            \"data_reference_period\": \"2025 estimate\","` | — |
+| [SRC-D033B34F41-L000039](../../tests/test_source_metadata_audit.py#L39) | 39 | `"            \"geographic_scope\": \"Cairo Governorate administrative boundary\","` | — |
+| [SRC-D033B34F41-L000040](../../tests/test_source_metadata_audit.py#L40) | 40 | `"            \"snippet\": \"Population estimate for Cairo Governorate.\","` | — |
+| [SRC-D033B34F41-L000041](../../tests/test_source_metadata_audit.py#L41) | 41 | `"            \"page_fetched\": False,"` | — |
+| [SRC-D033B34F41-L000042](../../tests/test_source_metadata_audit.py#L42) | 42 | `"        }],"` | — |
+| [SRC-D033B34F41-L000043](../../tests/test_source_metadata_audit.py#L43) | 43 | `"    )"` | — |
+| [SRC-D033B34F41-L000044](../../tests/test_source_metadata_audit.py#L44) | 44 | `""` | — |
+| [SRC-D033B34F41-L000045](../../tests/test_source_metadata_audit.py#L45) | 45 | `"    audit = result[\"source_metadata_audit\"]"` | — |
+| [SRC-D033B34F41-L000046](../../tests/test_source_metadata_audit.py#L46) | 46 | `"    assert audit[\"status\"] == \"minimum_metadata_present\""` | — |
+| [SRC-D033B34F41-L000047](../../tests/test_source_metadata_audit.py#L47) | 47 | `"    assert audit[\"sources_missing_or_invalid_url_count\"] == 0"` | — |
+| [SRC-D033B34F41-L000048](../../tests/test_source_metadata_audit.py#L48) | 48 | `"    assert audit[\"sources_missing_publisher_identity_count\"] == 0"` | — |
+| [SRC-D033B34F41-L000049](../../tests/test_source_metadata_audit.py#L49) | 49 | `"    assert audit[\"sources_missing_publication_date_count\"] == 0"` | — |
+| [SRC-D033B34F41-L000050](../../tests/test_source_metadata_audit.py#L50) | 50 | `"    assert audit[\"sources_missing_data_reference_period_count\"] == 0"` | — |
+| [SRC-D033B34F41-L000051](../../tests/test_source_metadata_audit.py#L51) | 51 | `"    assert audit[\"sources_missing_publication_or_data_date_count\"] == 0"` | — |
+| [SRC-D033B34F41-L000052](../../tests/test_source_metadata_audit.py#L52) | 52 | `"    assert audit[\"sources_missing_geographic_scope_count\"] == 0"` | — |
+| [SRC-D033B34F41-L000053](../../tests/test_source_metadata_audit.py#L53) | 53 | `"    assert audit[\"semantic_verification\"] is False"` | — |
+| [SRC-D033B34F41-L000054](../../tests/test_source_metadata_audit.py#L54) | 54 | `"    assert audit[\"source_entailment_verified\"] is False"` | — |
+| [SRC-D033B34F41-L000055](../../tests/test_source_metadata_audit.py#L55) | 55 | `""` | — |
+| [SRC-D033B34F41-L000056](../../tests/test_source_metadata_audit.py#L56) | 56 | `""` | — |
+| [SRC-D033B34F41-L000057](../../tests/test_source_metadata_audit.py#L57) | 57 | `"def test_zero_sources_are_not_reported_as_metadata_complete():"` | — |
+| [SRC-D033B34F41-L000058](../../tests/test_source_metadata_audit.py#L58) | 58 | `"    result = audit_answer_integrity("` | — |
+| [SRC-D033B34F41-L000059](../../tests/test_source_metadata_audit.py#L59) | 59 | `"        \"ما عدد سكان القاهرة؟\","` | — |
+| [SRC-D033B34F41-L000060](../../tests/test_source_metadata_audit.py#L60) | 60 | `"        \"لا تتوفر لدي مصادر قابلة للمراجعة.\","` | — |
+| [SRC-D033B34F41-L000061](../../tests/test_source_metadata_audit.py#L61) | 61 | `"        [],"` | — |
+| [SRC-D033B34F41-L000062](../../tests/test_source_metadata_audit.py#L62) | 62 | `"    )"` | — |
+| [SRC-D033B34F41-L000063](../../tests/test_source_metadata_audit.py#L63) | 63 | `""` | — |
+| [SRC-D033B34F41-L000064](../../tests/test_source_metadata_audit.py#L64) | 64 | `"    audit = result[\"source_metadata_audit\"]"` | — |
+| [SRC-D033B34F41-L000065](../../tests/test_source_metadata_audit.py#L65) | 65 | `"    assert audit[\"status\"] == \"no_sources_to_audit\""` | — |
+| [SRC-D033B34F41-L000066](../../tests/test_source_metadata_audit.py#L66) | 66 | `"    assert audit[\"source_count_checked\"] == 0"` | — |
+| [SRC-D033B34F41-L000067](../../tests/test_source_metadata_audit.py#L67) | 67 | `"    assert audit[\"semantic_verification\"] is False"` | — |
+| [SRC-D033B34F41-L000068](../../tests/test_source_metadata_audit.py#L68) | 68 | `"    assert audit[\"source_entailment_verified\"] is False"` | — |
+| [SRC-D033B34F41-L000069](../../tests/test_source_metadata_audit.py#L69) | 69 | `""` | — |
+| [SRC-D033B34F41-L000070](../../tests/test_source_metadata_audit.py#L70) | 70 | `""` | — |
+| [SRC-D033B34F41-L000071](../../tests/test_source_metadata_audit.py#L71) | 71 | `"def test_population_scope_is_required_even_when_answer_uses_only_a_number():"` | — |
+| [SRC-D033B34F41-L000072](../../tests/test_source_metadata_audit.py#L72) | 72 | `"    result = audit_answer_integrity("` | — |
+| [SRC-D033B34F41-L000073](../../tests/test_source_metadata_audit.py#L73) | 73 | `"        \"How many people live in Cairo?\","` | — |
+| [SRC-D033B34F41-L000074](../../tests/test_source_metadata_audit.py#L74) | 74 | `"        \"The estimate is 9.7 million.\","` | — |
+| [SRC-D033B34F41-L000075](../../tests/test_source_metadata_audit.py#L75) | 75 | `"        [{"` | — |
+| [SRC-D033B34F41-L000076](../../tests/test_source_metadata_audit.py#L76) | 76 | `"            \"title\": \"Population estimate\","` | — |
+| [SRC-D033B34F41-L000077](../../tests/test_source_metadata_audit.py#L77) | 77 | `"            \"publisher\": \"Example Statistics Office\","` | — |
+| [SRC-D033B34F41-L000078](../../tests/test_source_metadata_audit.py#L78) | 78 | `"            \"url\": \"https://example.org/cairo\","` | — |
+| [SRC-D033B34F41-L000079](../../tests/test_source_metadata_audit.py#L79) | 79 | `"            \"published_at\": \"2025-06-01\","` | — |
+| [SRC-D033B34F41-L000080](../../tests/test_source_metadata_audit.py#L80) | 80 | `"            \"data_year\": 2025,"` | — |
+| [SRC-D033B34F41-L000081](../../tests/test_source_metadata_audit.py#L81) | 81 | `"            \"snippet\": \"An estimate for Cairo.\","` | — |
+| [SRC-D033B34F41-L000082](../../tests/test_source_metadata_audit.py#L82) | 82 | `"            \"page_fetched\": False,"` | — |
+| [SRC-D033B34F41-L000083](../../tests/test_source_metadata_audit.py#L83) | 83 | `"        }],"` | — |
+| [SRC-D033B34F41-L000084](../../tests/test_source_metadata_audit.py#L84) | 84 | `"    )"` | — |
+| [SRC-D033B34F41-L000085](../../tests/test_source_metadata_audit.py#L85) | 85 | `""` | — |
+| [SRC-D033B34F41-L000086](../../tests/test_source_metadata_audit.py#L86) | 86 | `"    audit = result[\"source_metadata_audit\"]"` | — |
+| [SRC-D033B34F41-L000087](../../tests/test_source_metadata_audit.py#L87) | 87 | `"    assert audit[\"population_claim_context_detected\"] is True"` | — |
+| [SRC-D033B34F41-L000088](../../tests/test_source_metadata_audit.py#L88) | 88 | `"    assert audit[\"sources_missing_geographic_scope_count\"] == 1"` | — |
+| [SRC-D033B34F41-L000089](../../tests/test_source_metadata_audit.py#L89) | 89 | `"    assert \"geographic_scope_for_population_claim\" in audit[\"sources\"][0][\"missing_fields\"]"` | — |
 ## اختبارات
 
 ### FILE-1C0D3D1206 — [tests/test_sqlite_backup_restore.py](../../tests/test_sqlite_backup_restore.py#L1)
@@ -16,6 +78,45 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1C0D3D1206-L000001](../../tests/test_sqlite_backup_restore.py#L1) | 1 | `"from __future__ import annotations"` | — |
+| [SRC-1C0D3D1206-L000002](../../tests/test_sqlite_backup_restore.py#L2) | 2 | `""` | — |
+| [SRC-1C0D3D1206-L000003](../../tests/test_sqlite_backup_restore.py#L3) | 3 | `"import sqlite3"` | — |
+| [SRC-1C0D3D1206-L000004](../../tests/test_sqlite_backup_restore.py#L4) | 4 | `""` | — |
+| [SRC-1C0D3D1206-L000005](../../tests/test_sqlite_backup_restore.py#L5) | 5 | `"import pytest"` | — |
+| [SRC-1C0D3D1206-L000006](../../tests/test_sqlite_backup_restore.py#L6) | 6 | `""` | — |
+| [SRC-1C0D3D1206-L000007](../../tests/test_sqlite_backup_restore.py#L7) | 7 | `"from agents.omarai import LeadStore"` | — |
+| [SRC-1C0D3D1206-L000008](../../tests/test_sqlite_backup_restore.py#L8) | 8 | `"from scripts.sqlite_backup_restore import BackupError, backup_database, restore_database"` | — |
+| [SRC-1C0D3D1206-L000009](../../tests/test_sqlite_backup_restore.py#L9) | 9 | `""` | — |
+| [SRC-1C0D3D1206-L000010](../../tests/test_sqlite_backup_restore.py#L10) | 10 | `""` | — |
+| [SRC-1C0D3D1206-L000011](../../tests/test_sqlite_backup_restore.py#L11) | 11 | `"def test_backup_and_restore_preserve_omarai_leads(tmp_path):"` | — |
+| [SRC-1C0D3D1206-L000012](../../tests/test_sqlite_backup_restore.py#L12) | 12 | `"    source_path = tmp_path / \"live.sqlite3\""` | — |
+| [SRC-1C0D3D1206-L000013](../../tests/test_sqlite_backup_restore.py#L13) | 13 | `"    source = LeadStore(source_path)"` | — |
+| [SRC-1C0D3D1206-L000014](../../tests/test_sqlite_backup_restore.py#L14) | 14 | `"    first, created_first = source.add("` | — |
+| [SRC-1C0D3D1206-L000015](../../tests/test_sqlite_backup_restore.py#L15) | 15 | `"        \"بدور على شقة في التجمع وممكن معاينة\","` | — |
+| [SRC-1C0D3D1206-L000016](../../tests/test_sqlite_backup_restore.py#L16) | 16 | `"        \"https://example.com/posts/1\","` | — |
+| [SRC-1C0D3D1206-L000017](../../tests/test_sqlite_backup_restore.py#L17) | 17 | `"        platform=\"manual\","` | — |
+| [SRC-1C0D3D1206-L000018](../../tests/test_sqlite_backup_restore.py#L18) | 18 | `"        note=\"سجل اختبار أول\","` | — |
+| [SRC-1C0D3D1206-L000019](../../tests/test_sqlite_backup_restore.py#L19) | 19 | `"    )"` | — |
+| [SRC-1C0D3D1206-L000020](../../tests/test_sqlite_backup_restore.py#L20) | 20 | `"    second, created_second = source.add("` | — |
+| [SRC-1C0D3D1206-L000021](../../tests/test_sqlite_backup_restore.py#L21) | 21 | `"        \"محتاج شقة للإيجار الشهر القادم\","` | — |
+| [SRC-1C0D3D1206-L000022](../../tests/test_sqlite_backup_restore.py#L22) | 22 | `"        \"https://example.com/posts/2\","` | — |
+| [SRC-1C0D3D1206-L000023](../../tests/test_sqlite_backup_restore.py#L23) | 23 | `"        platform=\"manual\","` | — |
+| [SRC-1C0D3D1206-L000024](../../tests/test_sqlite_backup_restore.py#L24) | 24 | `"        note=\"سجل اختبار ثان\","` | — |
+| [SRC-1C0D3D1206-L000025](../../tests/test_sqlite_backup_restore.py#L25) | 25 | `"    )"` | — |
+| [SRC-1C0D3D1206-L000026](../../tests/test_sqlite_backup_restore.py#L26) | 26 | `"    assert created_first and created_second"` | — |
+| [SRC-1C0D3D1206-L000027](../../tests/test_sqlite_backup_restore.py#L27) | 27 | `"    source.update_status(first[\"id\"], \"qualified\")"` | — |
+| [SRC-1C0D3D1206-L000028](../../tests/test_sqlite_backup_restore.py#L28) | 28 | `""` | — |
+| [SRC-1C0D3D1206-L000029](../../tests/test_sqlite_backup_restore.py#L29) | 29 | `"    snapshot_path = tmp_path / \"backups\" / \"snapshot.sqlite3\""` | — |
+| [SRC-1C0D3D1206-L000030](../../tests/test_sqlite_backup_restore.py#L30) | 30 | `"    backup_report = backup_database(source_path, snapshot_path)"` | — |
+| [SRC-1C0D3D1206-L000031](../../tests/test_sqlite_backup_restore.py#L31) | 31 | `"    assert backup_report[\"result\"] == \"passed\""` | — |
+| [SRC-1C0D3D1206-L000032](../../tests/test_sqlite_backup_restore.py#L32) | 32 | `"    assert backup_report[\"integrity_check\"] == \"ok\""` | — |
+| [SRC-1C0D3D1206-L000033](../../tests/test_sqlite_backup_restore.py#L33) | 33 | `"    assert backup_report[\"lead_count\"] == 2"` | — |
+| [SRC-1C0D3D1206-L000034](../../tests/test_sqlite_backup_restore.py#L34) | 34 | `"    assert backup_report[\"overwrite\"] is False"` | — |
+| [SRC-1C0D3D1206-L000035](../../tests/test_sqlite_backup_restore.py#L35) | 35 | `""` | — |
+| [SRC-1C0D3D1206-L000036](../../tests/test_sqlite_backup_restore.py#L36) | 36 | `"    restored_path = tmp_path / \"restored\" / \"restored.sqlite3\""` | — |
+| [SRC-1C0D3D1206-L000037](../../tests/test_sqlite_backup_restore.py#L37) | 37 | `"    restore_report = restore_database(snapshot_path, restored_path)"` | — |
+| [SRC-1C0D3D1206-L000038](../../tests/test_sqlite_backup_restore.py#L38) | 38 | `"    assert restore_report[\"result\"] == \"passed\""` | — |
+| [SRC-1C0D3D1206-L000039](../../tests/test_sqlite_backup_restore.py#L39) | 39 | `"    assert restore_report[\"integrity_check\"] == \"ok\""` | — |
 | [SRC-1C0D3D1206-L000040](../../tests/test_sqlite_backup_restore.py#L40) | 40 | `"    assert restore_report[\"lead_count\"] == 2"` | — |
 | [SRC-1C0D3D1206-L000041](../../tests/test_sqlite_backup_restore.py#L41) | 41 | `""` | — |
 | [SRC-1C0D3D1206-L000042](../../tests/test_sqlite_backup_restore.py#L42) | 42 | `"    restored = LeadStore(restored_path)"` | — |
@@ -742,104 +843,3 @@
 | [SRC-FBDC61DA0B-L000101](../../tests/test_tool_execution_status.py#L101) | 101 | `"    rows = build_tool_execution_matrix("` | — |
 | [SRC-FBDC61DA0B-L000102](../../tests/test_tool_execution_status.py#L102) | 102 | `"        {\"tool_requirements\": [\"web_search\", \"page_fetch\"]},"` | — |
 | [SRC-FBDC61DA0B-L000103](../../tests/test_tool_execution_status.py#L103) | 103 | `"        {"` | — |
-| [SRC-FBDC61DA0B-L000104](../../tests/test_tool_execution_status.py#L104) | 104 | `"            \"search_attempted\": True,"` | — |
-| [SRC-FBDC61DA0B-L000105](../../tests/test_tool_execution_status.py#L105) | 105 | `"            \"sources\": ["` | — |
-| [SRC-FBDC61DA0B-L000106](../../tests/test_tool_execution_status.py#L106) | 106 | `"                {\"url\": \"https://example.org/read\", \"page_fetched\": True, \"page_text\": \"text\"}"` | — |
-| [SRC-FBDC61DA0B-L000107](../../tests/test_tool_execution_status.py#L107) | 107 | `"            ],"` | — |
-| [SRC-FBDC61DA0B-L000108](../../tests/test_tool_execution_status.py#L108) | 108 | `"        },"` | — |
-| [SRC-FBDC61DA0B-L000109](../../tests/test_tool_execution_status.py#L109) | 109 | `"        {"` | — |
-| [SRC-FBDC61DA0B-L000110](../../tests/test_tool_execution_status.py#L110) | 110 | `"            \"search_attempted\": True,"` | — |
-| [SRC-FBDC61DA0B-L000111](../../tests/test_tool_execution_status.py#L111) | 111 | `"            \"search_outcome\": \"attempted_no_usable_sources\","` | — |
-| [SRC-FBDC61DA0B-L000112](../../tests/test_tool_execution_status.py#L112) | 112 | `"            \"usable_sources_after_filtering\": 0,"` | — |
-| [SRC-FBDC61DA0B-L000113](../../tests/test_tool_execution_status.py#L113) | 113 | `"            \"pages_fetch_attempted\": 1,"` | — |
-| [SRC-FBDC61DA0B-L000114](../../tests/test_tool_execution_status.py#L114) | 114 | `"            \"pages_fetched\": 0,"` | — |
-| [SRC-FBDC61DA0B-L000115](../../tests/test_tool_execution_status.py#L115) | 115 | `"        },"` | — |
-| [SRC-FBDC61DA0B-L000116](../../tests/test_tool_execution_status.py#L116) | 116 | `"    )"` | — |
-| [SRC-FBDC61DA0B-L000117](../../tests/test_tool_execution_status.py#L117) | 117 | `"    by_tool = {row[\"tool\"]: row for row in rows}"` | — |
-| [SRC-FBDC61DA0B-L000118](../../tests/test_tool_execution_status.py#L118) | 118 | `""` | — |
-| [SRC-FBDC61DA0B-L000119](../../tests/test_tool_execution_status.py#L119) | 119 | `"    assert by_tool[\"web_search\"][\"status\"] == \"counter_mismatch\""` | — |
-| [SRC-FBDC61DA0B-L000120](../../tests/test_tool_execution_status.py#L120) | 120 | `"    assert by_tool[\"web_search\"][\"basis\"][\"counter_consistency\"] == \"mismatch\""` | — |
-| [SRC-FBDC61DA0B-L000121](../../tests/test_tool_execution_status.py#L121) | 121 | `"    assert by_tool[\"web_search\"][\"basis\"][\"reported_accepted_source_count\"] == 0"` | — |
-| [SRC-FBDC61DA0B-L000122](../../tests/test_tool_execution_status.py#L122) | 122 | `"    assert by_tool[\"web_search\"][\"basis\"][\"accepted_source_count\"] == 1"` | — |
-| [SRC-FBDC61DA0B-L000123](../../tests/test_tool_execution_status.py#L123) | 123 | `"    assert by_tool[\"page_fetch\"][\"status\"] == \"counter_mismatch\""` | — |
-| [SRC-FBDC61DA0B-L000124](../../tests/test_tool_execution_status.py#L124) | 124 | `"    assert by_tool[\"page_fetch\"][\"basis\"][\"counter_consistency\"] == \"mismatch\""` | — |
-| [SRC-FBDC61DA0B-L000125](../../tests/test_tool_execution_status.py#L125) | 125 | `"    assert by_tool[\"page_fetch\"][\"basis\"][\"pages_read_from_returned_sources\"] == 1"` | — |
-| [SRC-FBDC61DA0B-L000126](../../tests/test_tool_execution_status.py#L126) | 126 | `"    assert by_tool[\"page_fetch\"][\"basis\"][\"reported_pages_fetched\"] == 0"` | — |
-| [SRC-FBDC61DA0B-L000127](../../tests/test_tool_execution_status.py#L127) | 127 | `""` | — |
-| [SRC-FBDC61DA0B-L000128](../../tests/test_tool_execution_status.py#L128) | 128 | `""` | — |
-| [SRC-FBDC61DA0B-L000129](../../tests/test_tool_execution_status.py#L129) | 129 | `"def test_social_search_is_only_called_completed_when_connector_attempt_is_observed():"` | — |
-| [SRC-FBDC61DA0B-L000130](../../tests/test_tool_execution_status.py#L130) | 130 | `"    rows = build_tool_execution_matrix("` | — |
-| [SRC-FBDC61DA0B-L000131](../../tests/test_tool_execution_status.py#L131) | 131 | `"        {\"tool_requirements\": [\"public_social_search_if_configured\"]},"` | — |
-| [SRC-FBDC61DA0B-L000132](../../tests/test_tool_execution_status.py#L132) | 132 | `"        {\"search_attempted\": True, \"sources\": []},"` | — |
-| [SRC-FBDC61DA0B-L000133](../../tests/test_tool_execution_status.py#L133) | 133 | `"        {"` | — |
-| [SRC-FBDC61DA0B-L000134](../../tests/test_tool_execution_status.py#L134) | 134 | `"            \"search_outcome\": \"attempted_no_usable_sources\","` | — |
-| [SRC-FBDC61DA0B-L000135](../../tests/test_tool_execution_status.py#L135) | 135 | `"            \"social_direct_results\": 0,"` | — |
-| [SRC-FBDC61DA0B-L000136](../../tests/test_tool_execution_status.py#L136) | 136 | `"            \"connector_summary\": {"` | — |
-| [SRC-FBDC61DA0B-L000137](../../tests/test_tool_execution_status.py#L137) | 137 | `"                \"connectors\": ["` | — |
-| [SRC-FBDC61DA0B-L000138](../../tests/test_tool_execution_status.py#L138) | 138 | `"                    {"` | — |
-| [SRC-FBDC61DA0B-L000139](../../tests/test_tool_execution_status.py#L139) | 139 | `"                        \"name\": \"reddit_public_rss\","` | — |
-| [SRC-FBDC61DA0B-L000140](../../tests/test_tool_execution_status.py#L140) | 140 | `"                        \"configured\": True,"` | — |
-| [SRC-FBDC61DA0B-L000141](../../tests/test_tool_execution_status.py#L141) | 141 | `"                        \"attempted\": True,"` | — |
-| [SRC-FBDC61DA0B-L000142](../../tests/test_tool_execution_status.py#L142) | 142 | `"                        \"status\": \"no_results\","` | — |
-| [SRC-FBDC61DA0B-L000143](../../tests/test_tool_execution_status.py#L143) | 143 | `"                    }"` | — |
-| [SRC-FBDC61DA0B-L000144](../../tests/test_tool_execution_status.py#L144) | 144 | `"                ]"` | — |
-| [SRC-FBDC61DA0B-L000145](../../tests/test_tool_execution_status.py#L145) | 145 | `"            },"` | — |
-| [SRC-FBDC61DA0B-L000146](../../tests/test_tool_execution_status.py#L146) | 146 | `"        },"` | — |
-| [SRC-FBDC61DA0B-L000147](../../tests/test_tool_execution_status.py#L147) | 147 | `"    )"` | — |
-| [SRC-FBDC61DA0B-L000148](../../tests/test_tool_execution_status.py#L148) | 148 | `"    social = next(row for row in rows if row[\"tool\"] == \"public_social_search_if_configured\")"` | — |
-| [SRC-FBDC61DA0B-L000149](../../tests/test_tool_execution_status.py#L149) | 149 | `"    assert social[\"status\"] == \"completed_no_usable_results\""` | — |
-## اختبارات
-
-### FILE-F725E90B2A — [tests/test_web_agent.py](../../tests/test_web_agent.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-F725E90B2A-L000001](../../tests/test_web_agent.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-F725E90B2A-L000002](../../tests/test_web_agent.py#L2) | 2 | `""` | — |
-| [SRC-F725E90B2A-L000003](../../tests/test_web_agent.py#L3) | 3 | `"from pathlib import Path"` | — |
-| [SRC-F725E90B2A-L000004](../../tests/test_web_agent.py#L4) | 4 | `""` | — |
-| [SRC-F725E90B2A-L000005](../../tests/test_web_agent.py#L5) | 5 | `"import pytest"` | — |
-| [SRC-F725E90B2A-L000006](../../tests/test_web_agent.py#L6) | 6 | `""` | — |
-| [SRC-F725E90B2A-L000007](../../tests/test_web_agent.py#L7) | 7 | `"from agents.research import compact_search_query"` | — |
-| [SRC-F725E90B2A-L000008](../../tests/test_web_agent.py#L8) | 8 | `"from agents.request_budget import RequestBudgetExceeded"` | — |
-| [SRC-F725E90B2A-L000009](../../tests/test_web_agent.py#L9) | 9 | `"from agents.web_agent import ("` | — |
-| [SRC-F725E90B2A-L000010](../../tests/test_web_agent.py#L10) | 10 | `"    WebAgent,"` | — |
-| [SRC-F725E90B2A-L000011](../../tests/test_web_agent.py#L11) | 11 | `"    _fallback_lead_answer,"` | — |
-| [SRC-F725E90B2A-L000012](../../tests/test_web_agent.py#L12) | 12 | `"    _minimum_relevance_ratio,"` | — |
-| [SRC-F725E90B2A-L000013](../../tests/test_web_agent.py#L13) | 13 | `"    _normalize_search_query,"` | — |
-| [SRC-F725E90B2A-L000014](../../tests/test_web_agent.py#L14) | 14 | `"    _public_http_url,"` | — |
-| [SRC-F725E90B2A-L000015](../../tests/test_web_agent.py#L15) | 15 | `"    _relevance_query_tokens,"` | — |
-| [SRC-F725E90B2A-L000016](../../tests/test_web_agent.py#L16) | 16 | `"    _relevance_ratio,"` | — |
-| [SRC-F725E90B2A-L000017](../../tests/test_web_agent.py#L17) | 17 | `")"` | — |
-| [SRC-F725E90B2A-L000018](../../tests/test_web_agent.py#L18) | 18 | `""` | — |
-| [SRC-F725E90B2A-L000019](../../tests/test_web_agent.py#L19) | 19 | `""` | — |
-| [SRC-F725E90B2A-L000020](../../tests/test_web_agent.py#L20) | 20 | `"def sample_source(index=0):"` | — |
-| [SRC-F725E90B2A-L000021](../../tests/test_web_agent.py#L21) | 21 | `"    domain = \"example.com\" if index == 0 else \"example.net\""` | — |
-| [SRC-F725E90B2A-L000022](../../tests/test_web_agent.py#L22) | 22 | `"    return {"` | — |
-| [SRC-F725E90B2A-L000023](../../tests/test_web_agent.py#L23) | 23 | `"        \"title\": \"مقالة عن التقنية\","` | — |
-| [SRC-F725E90B2A-L000024](../../tests/test_web_agent.py#L24) | 24 | `"        \"url\": f\"https://{domain}/research\","` | — |
-| [SRC-F725E90B2A-L000025](../../tests/test_web_agent.py#L25) | 25 | `"        \"snippet\": \"يشرح هذا المصدر التقنية وسبب المقارنة.\","` | — |
-| [SRC-F725E90B2A-L000026](../../tests/test_web_agent.py#L26) | 26 | `"        \"page_text\": \"نص مستخرج من الصفحة يشرح التقنية وأسباب المقارنة.\","` | — |
-| [SRC-F725E90B2A-L000027](../../tests/test_web_agent.py#L27) | 27 | `"        \"page_fetched\": True,"` | — |
-| [SRC-F725E90B2A-L000028](../../tests/test_web_agent.py#L28) | 28 | `"        \"providers\": [\"test_provider\"],"` | — |
-| [SRC-F725E90B2A-L000029](../../tests/test_web_agent.py#L29) | 29 | `"        \"queries\": [\"قارن هذه التقنية\"],"` | — |
-| [SRC-F725E90B2A-L000030](../../tests/test_web_agent.py#L30) | 30 | `"        \"domain\": domain,"` | — |
-| [SRC-F725E90B2A-L000031](../../tests/test_web_agent.py#L31) | 31 | `"        \"source_class\": \"general\","` | — |
-| [SRC-F725E90B2A-L000032](../../tests/test_web_agent.py#L32) | 32 | `"        \"platform\": \"web\","` | — |
-| [SRC-F725E90B2A-L000033](../../tests/test_web_agent.py#L33) | 33 | `"    }"` | — |
-| [SRC-F725E90B2A-L000034](../../tests/test_web_agent.py#L34) | 34 | `""` | — |
-| [SRC-F725E90B2A-L000035](../../tests/test_web_agent.py#L35) | 35 | `""` | — |
-| [SRC-F725E90B2A-L000036](../../tests/test_web_agent.py#L36) | 36 | `"@pytest.fixture(autouse=True)"` | — |
-| [SRC-F725E90B2A-L000037](../../tests/test_web_agent.py#L37) | 37 | `"def mock_semantic_verifier_for_web_agent_unit_tests(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L000038](../../tests/test_web_agent.py#L38) | 38 | `"    \"\"\"Never make real model/provider calls from unit tests.\"\"\""` | — |
-| [SRC-F725E90B2A-L000039](../../tests/test_web_agent.py#L39) | 39 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L000040](../../tests/test_web_agent.py#L40) | 40 | `"        WebAgent,"` | — |
-| [SRC-F725E90B2A-L000041](../../tests/test_web_agent.py#L41) | 41 | `"        \"_verify_semantic_claims\","` | — |
-| [SRC-F725E90B2A-L000042](../../tests/test_web_agent.py#L42) | 42 | `"        lambda self, question, answer, sources, answer_integrity=None: {"` | — |
-| [SRC-F725E90B2A-L000043](../../tests/test_web_agent.py#L43) | 43 | `"            \"status\": \"completed_all_claims_supported\","` | — |
-| [SRC-F725E90B2A-L000044](../../tests/test_web_agent.py#L44) | 44 | `"            \"withhold_answer\": False,"` | — |
-| [SRC-F725E90B2A-L000045](../../tests/test_web_agent.py#L45) | 45 | `"            \"semantic_verification\": \"model_assessed_source_support\","` | — |
-| [SRC-F725E90B2A-L000046](../../tests/test_web_agent.py#L46) | 46 | `"            \"fact_correctness\": \"not_verified\","` | — |

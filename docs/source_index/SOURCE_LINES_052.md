@@ -4,7 +4,7 @@
 
 - الصفحة: **052**
 - سجلات الأسطر: **800**
-- النطاق: SRC-4397BC2CD2-L000234 إلى SRC-1521F490CA-L000263
+- النطاق: SRC-4397BC2CD2-L000142 إلى SRC-1521F490CA-L000171
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,98 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-4397BC2CD2-L000142](../../tests/test_intent_router_integration.py#L142) | 142 | `"            \"planning_method\": \"test_single_query\","` | — |
+| [SRC-4397BC2CD2-L000143](../../tests/test_intent_router_integration.py#L143) | 143 | `"        }"` | — |
+| [SRC-4397BC2CD2-L000144](../../tests/test_intent_router_integration.py#L144) | 144 | `""` | — |
+| [SRC-4397BC2CD2-L000145](../../tests/test_intent_router_integration.py#L145) | 145 | `"    def collect(research_plan):"` | — |
+| [SRC-4397BC2CD2-L000146](../../tests/test_intent_router_integration.py#L146) | 146 | `"        seen[\"plans\"].append(dict(research_plan))"` | — |
+| [SRC-4397BC2CD2-L000147](../../tests/test_intent_router_integration.py#L147) | 147 | `"        sources = ["` | — |
+| [SRC-4397BC2CD2-L000148](../../tests/test_intent_router_integration.py#L148) | 148 | `"            _evidence(\"example.com\", research_plan[\"queries\"]),"` | — |
+| [SRC-4397BC2CD2-L000149](../../tests/test_intent_router_integration.py#L149) | 149 | `"            _evidence(\"example.net\", research_plan[\"queries\"]),"` | — |
+| [SRC-4397BC2CD2-L000150](../../tests/test_intent_router_integration.py#L150) | 150 | `"        ]"` | — |
+| [SRC-4397BC2CD2-L000151](../../tests/test_intent_router_integration.py#L151) | 151 | `"        return sources, [], _report(research_plan, sources)"` | — |
+| [SRC-4397BC2CD2-L000152](../../tests/test_intent_router_integration.py#L152) | 152 | `""` | — |
+| [SRC-4397BC2CD2-L000153](../../tests/test_intent_router_integration.py#L153) | 153 | `"    monkeypatch.setattr(agent, \"_plan_search\", plan)"` | — |
+| [SRC-4397BC2CD2-L000154](../../tests/test_intent_router_integration.py#L154) | 154 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
+| [SRC-4397BC2CD2-L000155](../../tests/test_intent_router_integration.py#L155) | 155 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", lambda query, source: True)"` | — |
+| [SRC-4397BC2CD2-L000156](../../tests/test_intent_router_integration.py#L156) | 156 | `"    monkeypatch.setattr(agent, \"_generate\", lambda *args, **kwargs: \"مقارنة أولية [المصدر 1].\")"` | — |
+| [SRC-4397BC2CD2-L000157](../../tests/test_intent_router_integration.py#L157) | 157 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda question, answer, sources: answer)"` | — |
+| [SRC-4397BC2CD2-L000158](../../tests/test_intent_router_integration.py#L158) | 158 | `"    monkeypatch.setattr(agent, \"_repair_answer_coverage\", lambda _q, answer, _s, _m: answer)"` | — |
+| [SRC-4397BC2CD2-L000159](../../tests/test_intent_router_integration.py#L159) | 159 | `"    monkeypatch.setattr(agent, \"_verify_semantic_claims\", lambda *args, **kwargs: {"` | — |
+| [SRC-4397BC2CD2-L000160](../../tests/test_intent_router_integration.py#L160) | 160 | `"        \"status\": \"completed_all_claims_supported\","` | — |
+| [SRC-4397BC2CD2-L000161](../../tests/test_intent_router_integration.py#L161) | 161 | `"        \"withhold_answer\": False,"` | — |
+| [SRC-4397BC2CD2-L000162](../../tests/test_intent_router_integration.py#L162) | 162 | `"        \"semantic_verification\": \"model_assessed_source_support\","` | — |
+| [SRC-4397BC2CD2-L000163](../../tests/test_intent_router_integration.py#L163) | 163 | `"        \"fact_correctness\": \"not_verified\","` | — |
+| [SRC-4397BC2CD2-L000164](../../tests/test_intent_router_integration.py#L164) | 164 | `"    })"` | — |
+| [SRC-4397BC2CD2-L000165](../../tests/test_intent_router_integration.py#L165) | 165 | `""` | — |
+| [SRC-4397BC2CD2-L000166](../../tests/test_intent_router_integration.py#L166) | 166 | `"    result = agent.answer("` | — |
+| [SRC-4397BC2CD2-L000167](../../tests/test_intent_router_integration.py#L167) | 167 | `"        \"قارن بين iPhone 17 وSamsung S26 من حيث السعر والبطارية والكاميرا\","` | — |
+| [SRC-4397BC2CD2-L000168](../../tests/test_intent_router_integration.py#L168) | 168 | `"        history=history,"` | — |
+| [SRC-4397BC2CD2-L000169](../../tests/test_intent_router_integration.py#L169) | 169 | `"    )"` | — |
+| [SRC-4397BC2CD2-L000170](../../tests/test_intent_router_integration.py#L170) | 170 | `""` | — |
+| [SRC-4397BC2CD2-L000171](../../tests/test_intent_router_integration.py#L171) | 171 | `"    assert result[\"intent_route\"] == \"WEB_DEEP\""` | — |
+| [SRC-4397BC2CD2-L000172](../../tests/test_intent_router_integration.py#L172) | 172 | `"    assert result[\"research_plan\"][\"intent_route\"] == \"WEB_DEEP\""` | — |
+| [SRC-4397BC2CD2-L000173](../../tests/test_intent_router_integration.py#L173) | 173 | `"    assert result[\"research_plan\"][\"depth\"] == \"deep\""` | — |
+| [SRC-4397BC2CD2-L000174](../../tests/test_intent_router_integration.py#L174) | 174 | `"    initial_plan = seen[\"plans\"][0]"` | — |
+| [SRC-4397BC2CD2-L000175](../../tests/test_intent_router_integration.py#L175) | 175 | `"    assert len(initial_plan[\"queries\"]) > 1"` | — |
+| [SRC-4397BC2CD2-L000176](../../tests/test_intent_router_integration.py#L176) | 176 | `"    assert initial_plan[\"coverage_gap_repair_slot_reserved\"] is True"` | — |
+| [SRC-4397BC2CD2-L000177](../../tests/test_intent_router_integration.py#L177) | 177 | `"    assert initial_plan[\"query_limit\"] == 7"` | — |
+| [SRC-4397BC2CD2-L000178](../../tests/test_intent_router_integration.py#L178) | 178 | `"    # Each requested criterion gets a distinct search angle before generic deep"` | — |
+| [SRC-4397BC2CD2-L000179](../../tests/test_intent_router_integration.py#L179) | 179 | `"    # modifiers consume the bounded query budget."` | — |
+| [SRC-4397BC2CD2-L000180](../../tests/test_intent_router_integration.py#L180) | 180 | `"    planned_queries = \" \".join(initial_plan[\"queries\"]).casefold()"` | — |
+| [SRC-4397BC2CD2-L000181](../../tests/test_intent_router_integration.py#L181) | 181 | `"    assert \"السعر\" in planned_queries"` | — |
+| [SRC-4397BC2CD2-L000182](../../tests/test_intent_router_integration.py#L182) | 182 | `"    assert \"البطارية\" in planned_queries"` | — |
+| [SRC-4397BC2CD2-L000183](../../tests/test_intent_router_integration.py#L183) | 183 | `"    assert \"الكاميرا\" in planned_queries"` | — |
+| [SRC-4397BC2CD2-L000184](../../tests/test_intent_router_integration.py#L184) | 184 | `"    assert len(initial_plan[\"queries\"]) <= 7"` | — |
+| [SRC-4397BC2CD2-L000185](../../tests/test_intent_router_integration.py#L185) | 185 | `"    assert result[\"used_web_search\"] is True"` | — |
+| [SRC-4397BC2CD2-L000186](../../tests/test_intent_router_integration.py#L186) | 186 | `"    coverage = result[\"answer_coverage\"]"` | — |
+| [SRC-4397BC2CD2-L000187](../../tests/test_intent_router_integration.py#L187) | 187 | `"    assert coverage[\"method\"] == \"explicit_criteria_heuristic\""` | — |
+| [SRC-4397BC2CD2-L000188](../../tests/test_intent_router_integration.py#L188) | 188 | `"    assert coverage[\"targets\"] == [\"السعر\", \"البطارية\", \"الكاميرا\"]"` | — |
+| [SRC-4397BC2CD2-L000189](../../tests/test_intent_router_integration.py#L189) | 189 | `"    assert coverage[\"status\"] == \"model_review_requested_not_machine_verified\""` | — |
+| [SRC-4397BC2CD2-L000190](../../tests/test_intent_router_integration.py#L190) | 190 | `"    assert coverage[\"automatically_graded\"] is False"` | — |
+| [SRC-4397BC2CD2-L000191](../../tests/test_intent_router_integration.py#L191) | 191 | `"    # The mocked sources do not contain battery/camera evidence. The task must"` | — |
+| [SRC-4397BC2CD2-L000192](../../tests/test_intent_router_integration.py#L192) | 192 | `"    # remain visibly incomplete even if the planner generated multiple queries."` | — |
+| [SRC-4397BC2CD2-L000193](../../tests/test_intent_router_integration.py#L193) | 193 | `"    assert coverage[\"source_evidence_gap_count\"] == 2"` | — |
+| [SRC-4397BC2CD2-L000194](../../tests/test_intent_router_integration.py#L194) | 194 | `"    assert result[\"task_fulfillment_status\"] == \"possible_gap_detected\""` | — |
+| [SRC-4397BC2CD2-L000195](../../tests/test_intent_router_integration.py#L195) | 195 | `"    assert len(seen[\"plans\"]) == 2"` | — |
+| [SRC-4397BC2CD2-L000196](../../tests/test_intent_router_integration.py#L196) | 196 | `"    assert \"البطارية\" in \" \".join(seen[\"plans\"][1][\"queries\"])"` | — |
+| [SRC-4397BC2CD2-L000197](../../tests/test_intent_router_integration.py#L197) | 197 | `"    assert result[\"search_report\"][\"criterion_gap_research\"][\"attempted\"] is True"` | — |
+| [SRC-4397BC2CD2-L000198](../../tests/test_intent_router_integration.py#L198) | 198 | `"    assert result[\"search_report\"][\"criterion_gap_research\"][\"status\"] == \"search_completed_no_new_criterion_evidence\""` | — |
+| [SRC-4397BC2CD2-L000199](../../tests/test_intent_router_integration.py#L199) | 199 | `""` | — |
+| [SRC-4397BC2CD2-L000200](../../tests/test_intent_router_integration.py#L200) | 200 | `"def test_deep_plan_preserves_all_eight_explicit_criteria_within_query_budget(monkeypatch) -> None:"` | — |
+| [SRC-4397BC2CD2-L000201](../../tests/test_intent_router_integration.py#L201) | 201 | `"    agent = WebAgent()"` | — |
+| [SRC-4397BC2CD2-L000202](../../tests/test_intent_router_integration.py#L202) | 202 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-4397BC2CD2-L000203](../../tests/test_intent_router_integration.py#L203) | 203 | `"    seen: dict = {\"plans\": []}"` | — |
+| [SRC-4397BC2CD2-L000204](../../tests/test_intent_router_integration.py#L204) | 204 | `"    question = ("` | — |
+| [SRC-4397BC2CD2-L000205](../../tests/test_intent_router_integration.py#L205) | 205 | `"        \"قارن بين خدمات من حيث السعر، الخصوصية، الاعتمادية، الدعم، \""` | — |
+| [SRC-4397BC2CD2-L000206](../../tests/test_intent_router_integration.py#L206) | 206 | `"        \"الأمان، السرعة، الجودة، والتوفر\""` | — |
+| [SRC-4397BC2CD2-L000207](../../tests/test_intent_router_integration.py#L207) | 207 | `"    )"` | — |
+| [SRC-4397BC2CD2-L000208](../../tests/test_intent_router_integration.py#L208) | 208 | `""` | — |
+| [SRC-4397BC2CD2-L000209](../../tests/test_intent_router_integration.py#L209) | 209 | `"    def plan(_question, _history):"` | — |
+| [SRC-4397BC2CD2-L000210](../../tests/test_intent_router_integration.py#L210) | 210 | `"        return {"` | — |
+| [SRC-4397BC2CD2-L000211](../../tests/test_intent_router_integration.py#L211) | 211 | `"            \"queries\": [\"مقارنة الخدمات\"],"` | — |
+| [SRC-4397BC2CD2-L000212](../../tests/test_intent_router_integration.py#L212) | 212 | `"            \"direct_urls\": [],"` | — |
+| [SRC-4397BC2CD2-L000213](../../tests/test_intent_router_integration.py#L213) | 213 | `"            \"social_focus\": False,"` | — |
+| [SRC-4397BC2CD2-L000214](../../tests/test_intent_router_integration.py#L214) | 214 | `"            \"freshness\": \"any\","` | — |
+| [SRC-4397BC2CD2-L000215](../../tests/test_intent_router_integration.py#L215) | 215 | `"            \"depth\": \"standard\","` | — |
+| [SRC-4397BC2CD2-L000216](../../tests/test_intent_router_integration.py#L216) | 216 | `"            \"platforms\": [],"` | — |
+| [SRC-4397BC2CD2-L000217](../../tests/test_intent_router_integration.py#L217) | 217 | `"            \"planning_method\": \"test_single_query\","` | — |
+| [SRC-4397BC2CD2-L000218](../../tests/test_intent_router_integration.py#L218) | 218 | `"        }"` | — |
+| [SRC-4397BC2CD2-L000219](../../tests/test_intent_router_integration.py#L219) | 219 | `""` | — |
+| [SRC-4397BC2CD2-L000220](../../tests/test_intent_router_integration.py#L220) | 220 | `"    def collect(research_plan):"` | — |
+| [SRC-4397BC2CD2-L000221](../../tests/test_intent_router_integration.py#L221) | 221 | `"        seen[\"plans\"].append(dict(research_plan))"` | — |
+| [SRC-4397BC2CD2-L000222](../../tests/test_intent_router_integration.py#L222) | 222 | `"        sources = ["` | — |
+| [SRC-4397BC2CD2-L000223](../../tests/test_intent_router_integration.py#L223) | 223 | `"            _evidence(\"example.com\", research_plan[\"queries\"]),"` | — |
+| [SRC-4397BC2CD2-L000224](../../tests/test_intent_router_integration.py#L224) | 224 | `"            _evidence(\"example.net\", research_plan[\"queries\"]),"` | — |
+| [SRC-4397BC2CD2-L000225](../../tests/test_intent_router_integration.py#L225) | 225 | `"        ]"` | — |
+| [SRC-4397BC2CD2-L000226](../../tests/test_intent_router_integration.py#L226) | 226 | `"        return sources, [], _report(research_plan, sources)"` | — |
+| [SRC-4397BC2CD2-L000227](../../tests/test_intent_router_integration.py#L227) | 227 | `""` | — |
+| [SRC-4397BC2CD2-L000228](../../tests/test_intent_router_integration.py#L228) | 228 | `"    monkeypatch.setattr(agent, \"_plan_search\", plan)"` | — |
+| [SRC-4397BC2CD2-L000229](../../tests/test_intent_router_integration.py#L229) | 229 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
+| [SRC-4397BC2CD2-L000230](../../tests/test_intent_router_integration.py#L230) | 230 | `"    monkeypatch.setattr(agent, \"_source_matches_query\", lambda _query, _source: True)"` | — |
+| [SRC-4397BC2CD2-L000231](../../tests/test_intent_router_integration.py#L231) | 231 | `"    monkeypatch.setattr(agent, \"_generate\", lambda *args, **kwargs: \"مقارنة أولية [المصدر 1].\")"` | — |
+| [SRC-4397BC2CD2-L000232](../../tests/test_intent_router_integration.py#L232) | 232 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda _question, answer, _sources: answer)"` | — |
+| [SRC-4397BC2CD2-L000233](../../tests/test_intent_router_integration.py#L233) | 233 | `"    monkeypatch.setattr(agent, \"_repair_answer_coverage\", lambda _q, answer, _s, _m: answer)"` | — |
 | [SRC-4397BC2CD2-L000234](../../tests/test_intent_router_integration.py#L234) | 234 | `""` | — |
 | [SRC-4397BC2CD2-L000235](../../tests/test_intent_router_integration.py#L235) | 235 | `"    agent.answer(question, history=[])"` | — |
 | [SRC-4397BC2CD2-L000236](../../tests/test_intent_router_integration.py#L236) | 236 | `""` | — |
@@ -751,95 +843,3 @@
 | [SRC-1521F490CA-L000169](../../tests/test_multitenant.py#L169) | 169 | `"            for row in db.execute("` | — |
 | [SRC-1521F490CA-L000170](../../tests/test_multitenant.py#L170) | 170 | `"                \"SELECT name FROM sqlite_master WHERE type='table'\""` | — |
 | [SRC-1521F490CA-L000171](../../tests/test_multitenant.py#L171) | 171 | `"            )"` | — |
-| [SRC-1521F490CA-L000172](../../tests/test_multitenant.py#L172) | 172 | `"        }"` | — |
-| [SRC-1521F490CA-L000173](../../tests/test_multitenant.py#L173) | 173 | `"        original = db.execute("` | — |
-| [SRC-1521F490CA-L000174](../../tests/test_multitenant.py#L174) | 174 | `"            \"SELECT id, fingerprint, text FROM leads\""` | — |
-| [SRC-1521F490CA-L000175](../../tests/test_multitenant.py#L175) | 175 | `"        ).fetchone()"` | — |
-| [SRC-1521F490CA-L000176](../../tests/test_multitenant.py#L176) | 176 | `"    assert \"leads\" in tables"` | — |
-| [SRC-1521F490CA-L000177](../../tests/test_multitenant.py#L177) | 177 | `"    assert \"leads_legacy_migration\" not in tables"` | — |
-| [SRC-1521F490CA-L000178](../../tests/test_multitenant.py#L178) | 178 | `"    assert original == (\"legacy-1\", \"fingerprint-1\", \"preserve me\")"` | — |
-| [SRC-1521F490CA-L000179](../../tests/test_multitenant.py#L179) | 179 | `""` | — |
-| [SRC-1521F490CA-L000180](../../tests/test_multitenant.py#L180) | 180 | `""` | — |
-| [SRC-1521F490CA-L000181](../../tests/test_multitenant.py#L181) | 181 | `"def test_api_token_expiry_is_normalized_to_utc(tmp_path):"` | — |
-| [SRC-1521F490CA-L000182](../../tests/test_multitenant.py#L182) | 182 | `"    store = LeadStore(tmp_path / \"token-expiry.sqlite3\")"` | — |
-| [SRC-1521F490CA-L000183](../../tests/test_multitenant.py#L183) | 183 | `"    tenant_id, user_id = _tenant_member("` | — |
-| [SRC-1521F490CA-L000184](../../tests/test_multitenant.py#L184) | 184 | `"        store, \"Expiry Company\", \"expiry@example.test\", \"E\" * 40"` | — |
-| [SRC-1521F490CA-L000185](../../tests/test_multitenant.py#L185) | 185 | `"    )"` | — |
-| [SRC-1521F490CA-L000186](../../tests/test_multitenant.py#L186) | 186 | `"    token = \"F\" * 40"` | — |
-| [SRC-1521F490CA-L000187](../../tests/test_multitenant.py#L187) | 187 | `"    store.create_api_token("` | — |
-| [SRC-1521F490CA-L000188](../../tests/test_multitenant.py#L188) | 188 | `"        token,"` | — |
-| [SRC-1521F490CA-L000189](../../tests/test_multitenant.py#L189) | 189 | `"        tenant_id,"` | — |
-| [SRC-1521F490CA-L000190](../../tests/test_multitenant.py#L190) | 190 | `"        user_id,"` | — |
-| [SRC-1521F490CA-L000191](../../tests/test_multitenant.py#L191) | 191 | `"        expires_at=\"2099-01-01T03:00:00+03:00\","` | — |
-| [SRC-1521F490CA-L000192](../../tests/test_multitenant.py#L192) | 192 | `"    )"` | — |
-| [SRC-1521F490CA-L000193](../../tests/test_multitenant.py#L193) | 193 | `"    with store.connect() as db:"` | — |
-| [SRC-1521F490CA-L000194](../../tests/test_multitenant.py#L194) | 194 | `"        row = db.execute("` | — |
-| [SRC-1521F490CA-L000195](../../tests/test_multitenant.py#L195) | 195 | `"            \"SELECT expires_at FROM api_tokens WHERE token_hash=?\","` | — |
-| [SRC-1521F490CA-L000196](../../tests/test_multitenant.py#L196) | 196 | `"            (store._token_hash(token),),"` | — |
-| [SRC-1521F490CA-L000197](../../tests/test_multitenant.py#L197) | 197 | `"        ).fetchone()"` | — |
-| [SRC-1521F490CA-L000198](../../tests/test_multitenant.py#L198) | 198 | `"    assert row[\"expires_at\"] == \"2099-01-01T00:00:00Z\""` | — |
-| [SRC-1521F490CA-L000199](../../tests/test_multitenant.py#L199) | 199 | `"    assert store.resolve_api_token(token) is not None"` | — |
-| [SRC-1521F490CA-L000200](../../tests/test_multitenant.py#L200) | 200 | `""` | — |
-| [SRC-1521F490CA-L000201](../../tests/test_multitenant.py#L201) | 201 | `"    # Expired tokens must stop resolving even when their membership stays active."` | — |
-| [SRC-1521F490CA-L000202](../../tests/test_multitenant.py#L202) | 202 | `"    with store.connect() as db:"` | — |
-| [SRC-1521F490CA-L000203](../../tests/test_multitenant.py#L203) | 203 | `"        db.execute("` | — |
-| [SRC-1521F490CA-L000204](../../tests/test_multitenant.py#L204) | 204 | `"            \"UPDATE api_tokens SET expires_at=? WHERE token_hash=?\","` | — |
-| [SRC-1521F490CA-L000205](../../tests/test_multitenant.py#L205) | 205 | `"            (\"2000-01-01T00:00:00Z\", store._token_hash(token)),"` | — |
-| [SRC-1521F490CA-L000206](../../tests/test_multitenant.py#L206) | 206 | `"        )"` | — |
-| [SRC-1521F490CA-L000207](../../tests/test_multitenant.py#L207) | 207 | `"    assert store.resolve_api_token(token) is None"` | — |
-| [SRC-1521F490CA-L000208](../../tests/test_multitenant.py#L208) | 208 | `""` | — |
-| [SRC-1521F490CA-L000209](../../tests/test_multitenant.py#L209) | 209 | `"    utc_token = \"J\" * 40"` | — |
-| [SRC-1521F490CA-L000210](../../tests/test_multitenant.py#L210) | 210 | `"    store.create_api_token("` | — |
-| [SRC-1521F490CA-L000211](../../tests/test_multitenant.py#L211) | 211 | `"        utc_token, tenant_id, user_id, expires_at=\"2099-01-01T00:00:00Z\""` | — |
-| [SRC-1521F490CA-L000212](../../tests/test_multitenant.py#L212) | 212 | `"    )"` | — |
-| [SRC-1521F490CA-L000213](../../tests/test_multitenant.py#L213) | 213 | `"    assert store.resolve_api_token(utc_token) is not None"` | — |
-| [SRC-1521F490CA-L000214](../../tests/test_multitenant.py#L214) | 214 | `""` | — |
-| [SRC-1521F490CA-L000215](../../tests/test_multitenant.py#L215) | 215 | `""` | — |
-| [SRC-1521F490CA-L000216](../../tests/test_multitenant.py#L216) | 216 | `"def test_api_token_expiry_rejects_naive_malformed_and_past_values(tmp_path):"` | — |
-| [SRC-1521F490CA-L000217](../../tests/test_multitenant.py#L217) | 217 | `"    store = LeadStore(tmp_path / \"invalid-token-expiry.sqlite3\")"` | — |
-| [SRC-1521F490CA-L000218](../../tests/test_multitenant.py#L218) | 218 | `"    tenant_id, user_id = _tenant_member("` | — |
-| [SRC-1521F490CA-L000219](../../tests/test_multitenant.py#L219) | 219 | `"        store, \"Expiry Validation Company\", \"expiry-validation@example.test\", \"G\" * 40"` | — |
-| [SRC-1521F490CA-L000220](../../tests/test_multitenant.py#L220) | 220 | `"    )"` | — |
-| [SRC-1521F490CA-L000221](../../tests/test_multitenant.py#L221) | 221 | `"    invalid_values = ("` | — |
-| [SRC-1521F490CA-L000222](../../tests/test_multitenant.py#L222) | 222 | `"        \"2099-01-01T00:00:00\","` | — |
-| [SRC-1521F490CA-L000223](../../tests/test_multitenant.py#L223) | 223 | `"        \"not-a-timestamp\","` | — |
-| [SRC-1521F490CA-L000224](../../tests/test_multitenant.py#L224) | 224 | `"        \"2000-01-01T00:00:00Z\","` | — |
-| [SRC-1521F490CA-L000225](../../tests/test_multitenant.py#L225) | 225 | `"        \"\","` | — |
-| [SRC-1521F490CA-L000226](../../tests/test_multitenant.py#L226) | 226 | `"    )"` | — |
-| [SRC-1521F490CA-L000227](../../tests/test_multitenant.py#L227) | 227 | `"    for index, expiry in enumerate(invalid_values):"` | — |
-| [SRC-1521F490CA-L000228](../../tests/test_multitenant.py#L228) | 228 | `"        with pytest.raises(ValueError, match=\"expires_at\"):"` | — |
-| [SRC-1521F490CA-L000229](../../tests/test_multitenant.py#L229) | 229 | `"            store.create_api_token("` | — |
-| [SRC-1521F490CA-L000230](../../tests/test_multitenant.py#L230) | 230 | `"                (\"H\" * 39) + str(index),"` | — |
-| [SRC-1521F490CA-L000231](../../tests/test_multitenant.py#L231) | 231 | `"                tenant_id,"` | — |
-| [SRC-1521F490CA-L000232](../../tests/test_multitenant.py#L232) | 232 | `"                user_id,"` | — |
-| [SRC-1521F490CA-L000233](../../tests/test_multitenant.py#L233) | 233 | `"                expires_at=expiry,"` | — |
-| [SRC-1521F490CA-L000234](../../tests/test_multitenant.py#L234) | 234 | `"            )"` | — |
-| [SRC-1521F490CA-L000235](../../tests/test_multitenant.py#L235) | 235 | `""` | — |
-| [SRC-1521F490CA-L000236](../../tests/test_multitenant.py#L236) | 236 | `""` | — |
-| [SRC-1521F490CA-L000237](../../tests/test_multitenant.py#L237) | 237 | `""` | — |
-| [SRC-1521F490CA-L000238](../../tests/test_multitenant.py#L238) | 238 | `"def test_api_token_revocation_is_scoped_to_the_owning_user_and_tenant(tmp_path):"` | — |
-| [SRC-1521F490CA-L000239](../../tests/test_multitenant.py#L239) | 239 | `"    store = LeadStore(tmp_path / \"revoke-token.sqlite3\")"` | — |
-| [SRC-1521F490CA-L000240](../../tests/test_multitenant.py#L240) | 240 | `"    tenant_id, user_id = _tenant_member("` | — |
-| [SRC-1521F490CA-L000241](../../tests/test_multitenant.py#L241) | 241 | `"        store, \"Revocation Company\", \"owner@example.test\", \"K\" * 40"` | — |
-| [SRC-1521F490CA-L000242](../../tests/test_multitenant.py#L242) | 242 | `"    )"` | — |
-| [SRC-1521F490CA-L000243](../../tests/test_multitenant.py#L243) | 243 | `"    other_tenant_id, other_user_id = _tenant_member("` | — |
-| [SRC-1521F490CA-L000244](../../tests/test_multitenant.py#L244) | 244 | `"        store, \"Other Revocation Company\", \"other@example.test\", \"L\" * 40"` | — |
-| [SRC-1521F490CA-L000245](../../tests/test_multitenant.py#L245) | 245 | `"    )"` | — |
-| [SRC-1521F490CA-L000246](../../tests/test_multitenant.py#L246) | 246 | `"    token = \"M\" * 40"` | — |
-| [SRC-1521F490CA-L000247](../../tests/test_multitenant.py#L247) | 247 | `"    store.create_api_token(token, tenant_id, user_id)"` | — |
-| [SRC-1521F490CA-L000248](../../tests/test_multitenant.py#L248) | 248 | `""` | — |
-| [SRC-1521F490CA-L000249](../../tests/test_multitenant.py#L249) | 249 | `"    assert store.resolve_api_token(token)[\"tenant_id\"] == tenant_id"` | — |
-| [SRC-1521F490CA-L000250](../../tests/test_multitenant.py#L250) | 250 | `"    assert store.revoke_api_token("` | — |
-| [SRC-1521F490CA-L000251](../../tests/test_multitenant.py#L251) | 251 | `"        token, tenant_id=other_tenant_id, user_id=other_user_id"` | — |
-| [SRC-1521F490CA-L000252](../../tests/test_multitenant.py#L252) | 252 | `"    ) is False"` | — |
-| [SRC-1521F490CA-L000253](../../tests/test_multitenant.py#L253) | 253 | `"    assert store.resolve_api_token(token)[\"tenant_id\"] == tenant_id"` | — |
-| [SRC-1521F490CA-L000254](../../tests/test_multitenant.py#L254) | 254 | `"    assert store.revoke_api_token("` | — |
-| [SRC-1521F490CA-L000255](../../tests/test_multitenant.py#L255) | 255 | `"        token, tenant_id=tenant_id, user_id=other_user_id"` | — |
-| [SRC-1521F490CA-L000256](../../tests/test_multitenant.py#L256) | 256 | `"    ) is False"` | — |
-| [SRC-1521F490CA-L000257](../../tests/test_multitenant.py#L257) | 257 | `"    assert store.resolve_api_token(token)[\"tenant_id\"] == tenant_id"` | — |
-| [SRC-1521F490CA-L000258](../../tests/test_multitenant.py#L258) | 258 | `""` | — |
-| [SRC-1521F490CA-L000259](../../tests/test_multitenant.py#L259) | 259 | `"    assert store.revoke_api_token("` | — |
-| [SRC-1521F490CA-L000260](../../tests/test_multitenant.py#L260) | 260 | `"        token, tenant_id=tenant_id, user_id=user_id"` | — |
-| [SRC-1521F490CA-L000261](../../tests/test_multitenant.py#L261) | 261 | `"    ) is True"` | — |
-| [SRC-1521F490CA-L000262](../../tests/test_multitenant.py#L262) | 262 | `"    assert store.resolve_api_token(token) is None"` | — |
-| [SRC-1521F490CA-L000263](../../tests/test_multitenant.py#L263) | 263 | `"    assert store.revoke_api_token("` | — |

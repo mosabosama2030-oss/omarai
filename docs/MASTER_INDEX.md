@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **144**
-- ملفات Python المحللة: **85**
-- تعريفات Python المفهرسة: **2115**
+- ملفات المستودع في الجرد: **147**
+- ملفات Python المحللة: **86**
+- تعريفات Python المفهرسة: **2127**
 - تعريفات Python موثقة بوجود Docstring: **308**
-- تعريفات Python بلا Docstring: **1392**
-- تعريفات لا ينطبق عليها Docstring: **415**
-- الرموز الساكنة الإضافية: **2942**
-- الأسطر النصية المفهرسة حرفيًا: **52843**
+- تعريفات Python بلا Docstring: **1403**
+- تعريفات لا ينطبق عليها Docstring: **416**
+- الرموز الساكنة الإضافية: **2969**
+- الأسطر النصية المفهرسة حرفيًا: **53114**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -97,8 +97,10 @@
 | FILE-BBB7222984 | وثائق وفهرسة | [docs/superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md](superpowers/plans/2026-10-30-unified-hybrid-research-pipeline.md#L1) | Markdown | 11339 | 130 | جرد الملف + عناوين Markdown |
 | FILE-002F33CFDC | وثائق وفهرسة | [docs/superpowers/plans/2026-11-05-default-workspace-home.md](superpowers/plans/2026-11-05-default-workspace-home.md#L1) | Markdown | 3207 | 66 | جرد الملف + عناوين Markdown |
 | FILE-676B69CB6C | وثائق وفهرسة | [docs/superpowers/plans/2026-11-06-workspace-demand-discovery.md](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L1) | Markdown | 10372 | 161 | جرد الملف + عناوين Markdown |
+| FILE-F3C55C04AB | وثائق وفهرسة | [docs/superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md](superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L1) | Markdown | 3447 | 70 | جرد الملف + عناوين Markdown |
 | FILE-8524B08F5D | وثائق وفهرسة | [docs/superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L1) | Markdown | 5319 | 47 | جرد الملف + عناوين Markdown |
 | FILE-BFCEEA0374 | وثائق وفهرسة | [docs/superpowers/specs/2026-11-06-workspace-demand-discovery-design.md](superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L1) | Markdown | 7425 | 73 | جرد الملف + عناوين Markdown |
+| FILE-B3659C383F | وثائق وفهرسة | [docs/superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md](superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md#L1) | Markdown | 1656 | 22 | جرد الملف + عناوين Markdown |
 | FILE-6B9B9ABE27 | وثائق وفهرسة | [docs/ui-directions/README.md](ui-directions/README.md#L1) | Markdown | 2400 | 42 | جرد الملف + عناوين Markdown |
 | FILE-7EB8FCD215 | وثائق وفهرسة | [docs/ui-directions/variant-01-aurora-glass.html](ui-directions/variant-01-aurora-glass.html#L1) | HTML | 7302 | 1 | جرد الملف + معرفات HTML والرموز داخل script/style |
 | FILE-2A9FC16EBA | وثائق وفهرسة | [docs/ui-directions/variant-02-precision-glass.html](ui-directions/variant-02-precision-glass.html#L1) | HTML | 6763 | 1 | جرد الملف + معرفات HTML والرموز داخل script/style |
@@ -169,9 +171,10 @@
 | FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 174975 | 4491 | جرد الملف + AST Python |
 | FILE-8C13B81AB4 | اختبارات | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L1) | Python | 6092 | 143 | جرد الملف + AST Python |
 | FILE-E3EEC2014A | اختبارات | [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L1) | Python | 9761 | 238 | جرد الملف + AST Python |
-| FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 71437 | 521 | جرد الملف + معرفات HTML والرموز داخل script/style |
+| FILE-F7BF7F2B46 | اختبارات | [tests/test_workspace_ui_regressions.py](../tests/test_workspace_ui_regressions.py#L1) | Python | 4375 | 100 | جرد الملف + AST Python |
+| FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 72004 | 529 | جرد الملف + معرفات HTML والرموز داخل script/style |
 | FILE-A16FA6D4B5 | واجهة الويب | [web/dashboard.html](../web/dashboard.html#L1) | HTML | 17812 | 74 | جرد الملف + معرفات HTML والرموز داخل script/style |
-| FILE-2C8F288796 | واجهة الويب | [web/workspace.html](../web/workspace.html#L1) | HTML | 82376 | 1022 | جرد الملف + معرفات HTML والرموز داخل script/style |
+| FILE-2C8F288796 | واجهة الويب | [web/workspace.html](../web/workspace.html#L1) | HTML | 85449 | 1093 | جرد الملف + معرفات HTML والرموز داخل script/style |
 
 ## تعريفات Python من AST
 
@@ -2294,6 +2297,18 @@
 | [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L191) | دالة | test_discovery_without_optional_approval_skips_reddit_oauth_but_keeps_public_rss.fake_request | لا توجد Docstring. | ناقص | 191 | [SRC-E3EEC2014A-L000191](../tests/test_workspace_discovery.py#L191) |
 | [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L217) | دالة | test_discovery_source_storage_rejects_non_public_hosts | لا توجد Docstring. | ناقص | 217 | [SRC-E3EEC2014A-L000217](../tests/test_workspace_discovery.py#L217) |
 | [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L229) | دالة | test_discovery_source_storage_accepts_public_http_source | لا توجد Docstring. | ناقص | 229 | [SRC-E3EEC2014A-L000229](../tests/test_workspace_discovery.py#L229) |
+| [tests/test_workspace_ui_regressions.py](../tests/test_workspace_ui_regressions.py#L7) | متغير/ثابت Python | ROOT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 7 | [SRC-F7BF7F2B46-L000007](../tests/test_workspace_ui_regressions.py#L7) |
+| [tests/test_workspace_ui_regressions.py](../tests/test_workspace_ui_regressions.py#L10) | دالة | inline_script | لا توجد Docstring. | ناقص | 10 | [SRC-F7BF7F2B46-L000010](../tests/test_workspace_ui_regressions.py#L10) |
+| [tests/test_workspace_ui_regressions.py](../tests/test_workspace_ui_regressions.py#L17) | دالة | function_source | لا توجد Docstring. | ناقص | 17 | [SRC-F7BF7F2B46-L000017](../tests/test_workspace_ui_regressions.py#L17) |
+| [tests/test_workspace_ui_regressions.py](../tests/test_workspace_ui_regressions.py#L30) | دالة | test_workspace_api_forwards_optional_abort_signal_to_fetch | لا توجد Docstring. | ناقص | 30 | [SRC-F7BF7F2B46-L000030](../tests/test_workspace_ui_regressions.py#L30) |
+| [tests/test_workspace_ui_regressions.py](../tests/test_workspace_ui_regressions.py#L35) | دالة | test_workspace_chat_uses_bounded_abort_and_restores_chat_state | لا توجد Docstring. | ناقص | 35 | [SRC-F7BF7F2B46-L000035](../tests/test_workspace_ui_regressions.py#L35) |
+| [tests/test_workspace_ui_regressions.py](../tests/test_workspace_ui_regressions.py#L47) | دالة | test_legacy_agent_search_uses_bounded_abort_and_restores_controls | لا توجد Docstring. | ناقص | 47 | [SRC-F7BF7F2B46-L000047](../tests/test_workspace_ui_regressions.py#L47) |
+| [tests/test_workspace_ui_regressions.py](../tests/test_workspace_ui_regressions.py#L58) | دالة | test_signal_inbox_refresh_surfaces_errors_and_restores_button | لا توجد Docstring. | ناقص | 58 | [SRC-F7BF7F2B46-L000058](../tests/test_workspace_ui_regressions.py#L58) |
+| [tests/test_workspace_ui_regressions.py](../tests/test_workspace_ui_regressions.py#L67) | دالة | test_manual_signal_save_distinguishes_saved_from_refresh_failure | لا توجد Docstring. | ناقص | 67 | [SRC-F7BF7F2B46-L000067](../tests/test_workspace_ui_regressions.py#L67) |
+| [tests/test_workspace_ui_regressions.py](../tests/test_workspace_ui_regressions.py#L73) | دالة | test_product_profile_save_distinguishes_saved_from_refresh_failure | لا توجد Docstring. | ناقص | 73 | [SRC-F7BF7F2B46-L000073](../tests/test_workspace_ui_regressions.py#L73) |
+| [tests/test_workspace_ui_regressions.py](../tests/test_workspace_ui_regressions.py#L79) | دالة | test_discovery_signal_save_distinguishes_saved_from_refresh_failure | لا توجد Docstring. | ناقص | 79 | [SRC-F7BF7F2B46-L000079](../tests/test_workspace_ui_regressions.py#L79) |
+| [tests/test_workspace_ui_regressions.py](../tests/test_workspace_ui_regressions.py#L85) | دالة | test_discovery_history_refresh_failure_keeps_the_saved_run_visible | لا توجد Docstring. | ناقص | 85 | [SRC-F7BF7F2B46-L000085](../tests/test_workspace_ui_regressions.py#L85) |
+| [tests/test_workspace_ui_regressions.py](../tests/test_workspace_ui_regressions.py#L92) | دالة | test_workspace_chat_links_each_inline_citation_to_its_exact_source_index | لا توجد Docstring. | ناقص | 92 | [SRC-F7BF7F2B46-L000092](../tests/test_workspace_ui_regressions.py#L92) |
 
 ## الرموز الساكنة الإضافية
 
@@ -3722,6 +3737,14 @@
 | [docs/superpowers/plans/2026-11-06-workspace-demand-discovery.md](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L146) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | NOT_RUN | 146 | [SRC-676B69CB6C-L000146](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L146) |
 | [docs/superpowers/plans/2026-11-06-workspace-demand-discovery.md](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L148) | عنوان Markdown (H2) | Expected delivery boundary | 148 | [SRC-676B69CB6C-L000148](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L148) |
 | [docs/superpowers/plans/2026-11-06-workspace-demand-discovery.md](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L152) | عنوان Markdown (H2) | Final execution and verification note | 152 | [SRC-676B69CB6C-L000152](superpowers/plans/2026-11-06-workspace-demand-discovery.md#L152) |
+| [docs/superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md](superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L1) | عنوان Markdown (H1) | Omarai UI Recovery and Request Timeout Implementation Plan | 1 | [SRC-F3C55C04AB-L000001](superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L1) |
+| [docs/superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md](superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L12) | عنوان Markdown (H2) | Global Constraints | 12 | [SRC-F3C55C04AB-L000012](superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L12) |
+| [docs/superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md](superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L18) | عنوان Markdown (H2) | Review Focus | 18 | [SRC-F3C55C04AB-L000018](superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L18) |
+| [docs/superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md](superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L27) | عنوان Markdown (H3) | Task 1: Add failing UI contract tests | 27 | [SRC-F3C55C04AB-L000027](superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L27) |
+| [docs/superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md](superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L36) | عنوان Markdown (H3) | Task 2: Implement request deadlines | 36 | [SRC-F3C55C04AB-L000036](superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L36) |
+| [docs/superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md](superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L47) | عنوان Markdown (H3) | Task 3: Make save and refresh outcomes independent | 47 | [SRC-F3C55C04AB-L000047](superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L47) |
+| [docs/superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md](superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L56) | عنوان Markdown (H3) | Task 4: Link inline citations in workspace chat | 56 | [SRC-F3C55C04AB-L000056](superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L56) |
+| [docs/superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md](superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L65) | عنوان Markdown (H3) | Task 5: Verify | 65 | [SRC-F3C55C04AB-L000065](superpowers/plans/2026-11-11-omarai-ui-recovery-timeout.md#L65) |
 | [docs/superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L1) | عنوان Markdown (H1) | تصميم خط المعالجة الهجين الموحد للبحث والفهم | 1 | [SRC-8524B08F5D-L000001](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L1) |
 | [docs/superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L5) | عنوان Markdown (H2) | الهدف | 5 | [SRC-8524B08F5D-L000005](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L5) |
 | [docs/superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L8) | عنوان Markdown (H2) | الحالة الحالية المثبتة | 8 | [SRC-8524B08F5D-L000008](superpowers/specs/2026-10-30-unified-hybrid-research-pipeline-design.md#L8) |
@@ -3740,6 +3763,10 @@
 | [docs/superpowers/specs/2026-11-06-workspace-demand-discovery-design.md](superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L44) | عنوان Markdown (H2) | البيانات والأمان | 44 | [SRC-BFCEEA0374-L000044](superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L44) |
 | [docs/superpowers/specs/2026-11-06-workspace-demand-discovery-design.md](superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L55) | عنوان Markdown (H2) | معيار القبول | 55 | [SRC-BFCEEA0374-L000055](superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L55) |
 | [docs/superpowers/specs/2026-11-06-workspace-demand-discovery-design.md](superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L67) | عنوان Markdown (H2) | القرارات التنفيذية | 67 | [SRC-BFCEEA0374-L000067](superpowers/specs/2026-11-06-workspace-demand-discovery-design.md#L67) |
+| [docs/superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md](superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md#L1) | عنوان Markdown (H1) | Omarai UI Recovery and Request Timeout Specification | 1 | [SRC-B3659C383F-L000001](superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md#L1) |
+| [docs/superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md](superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md#L4) | عنوان Markdown (H2) | Goal | 4 | [SRC-B3659C383F-L000004](superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md#L4) |
+| [docs/superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md](superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md#L7) | عنوان Markdown (H2) | Required behavior | 7 | [SRC-B3659C383F-L000007](superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md#L7) |
+| [docs/superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md](superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md#L17) | عنوان Markdown (H2) | Non-goals | 17 | [SRC-B3659C383F-L000017](superpowers/specs/2026-11-11-omarai-ui-recovery-timeout.md#L17) |
 | [docs/ui-directions/README.md](ui-directions/README.md#L1) | عنوان Markdown (H1) | Omarai — Three Glass UI Directions | 1 | [SRC-6B9B9ABE27-L000001](ui-directions/README.md#L1) |
 | [docs/ui-directions/README.md](ui-directions/README.md#L6) | عنوان Markdown (H2) | Option 01 — Aurora Glass | 6 | [SRC-6B9B9ABE27-L000006](ui-directions/README.md#L6) |
 | [docs/ui-directions/README.md](ui-directions/README.md#L12) | عنوان Markdown (H2) | Option 02 — Precision Glass | 12 | [SRC-6B9B9ABE27-L000012](ui-directions/README.md#L12) |
@@ -4739,31 +4766,35 @@
 | [web/agent.html](../web/agent.html#L396) | دالة JavaScript/TypeScript | ask | 396 | [SRC-DE7EABE998-L000396](../web/agent.html#L396) |
 | [web/agent.html](../web/agent.html#L397) | متغير JavaScript/TypeScript | q | 397 | [SRC-DE7EABE998-L000397](../web/agent.html#L397) |
 | [web/agent.html](../web/agent.html#L400) | متغير JavaScript/TypeScript | pending | 400 | [SRC-DE7EABE998-L000400](../web/agent.html#L400) |
-| [web/agent.html](../web/agent.html#L404) | متغير JavaScript/TypeScript | response | 404 | [SRC-DE7EABE998-L000404](../web/agent.html#L404) |
-| [web/agent.html](../web/agent.html#L404) | مسار API/واجهة محتمل | /api/agent | 404 | [SRC-DE7EABE998-L000404](../web/agent.html#L404) |
-| [web/agent.html](../web/agent.html#L405) | متغير JavaScript/TypeScript | data | 405 | [SRC-DE7EABE998-L000405](../web/agent.html#L405) |
-| [web/agent.html](../web/agent.html#L428) | متغير JavaScript/TypeScript | safeMessage | 428 | [SRC-DE7EABE998-L000428](../web/agent.html#L428) |
-| [web/agent.html](../web/agent.html#L430) | متغير JavaScript/TypeScript | actions | 430 | [SRC-DE7EABE998-L000430](../web/agent.html#L430) |
-| [web/agent.html](../web/agent.html#L431) | متغير JavaScript/TypeScript | retry | 431 | [SRC-DE7EABE998-L000431](../web/agent.html#L431) |
-| [web/agent.html](../web/agent.html#L439) | دالة JavaScript/TypeScript | runDiagnostics | 439 | [SRC-DE7EABE998-L000439](../web/agent.html#L439) |
-| [web/agent.html](../web/agent.html#L440) | متغير JavaScript/TypeScript | button | 440 | [SRC-DE7EABE998-L000440](../web/agent.html#L440) |
-| [web/agent.html](../web/agent.html#L444) | مسار API/واجهة محتمل | /api/diagnostics | 444 | [SRC-DE7EABE998-L000444](../web/agent.html#L444) |
-| [web/agent.html](../web/agent.html#L446) | متغير JavaScript/TypeScript | labels | 446 | [SRC-DE7EABE998-L000446](../web/agent.html#L446) |
-| [web/agent.html](../web/agent.html#L447) | متغير JavaScript/TypeScript | lines | 447 | [SRC-DE7EABE998-L000447](../web/agent.html#L447) |
-| [web/agent.html](../web/agent.html#L449) | متغير JavaScript/TypeScript | item | 449 | [SRC-DE7EABE998-L000449](../web/agent.html#L449) |
-| [web/agent.html](../web/agent.html#L461) | دالة JavaScript/TypeScript | checkHealth | 461 | [SRC-DE7EABE998-L000461](../web/agent.html#L461) |
-| [web/agent.html](../web/agent.html#L463) | متغير JavaScript/TypeScript | a | 463 | [SRC-DE7EABE998-L000463](../web/agent.html#L463) |
-| [web/agent.html](../web/agent.html#L463) | متغير JavaScript/TypeScript | d | 463 | [SRC-DE7EABE998-L000463](../web/agent.html#L463) |
-| [web/agent.html](../web/agent.html#L463) | مسار API/واجهة محتمل | /api/health | 463 | [SRC-DE7EABE998-L000463](../web/agent.html#L463) |
-| [web/agent.html](../web/agent.html#L464) | متغير JavaScript/TypeScript | configured | 464 | [SRC-DE7EABE998-L000464](../web/agent.html#L464) |
-| [web/agent.html](../web/agent.html#L472) | متغير JavaScript/TypeScript | model | 472 | [SRC-DE7EABE998-L000472](../web/agent.html#L472) |
-| [web/agent.html](../web/agent.html#L480) | متغير JavaScript/TypeScript | active | 480 | [SRC-DE7EABE998-L000480](../web/agent.html#L480) |
-| [web/agent.html](../web/agent.html#L486) | دالة JavaScript/TypeScript | loginBrowserSession | 486 | [SRC-DE7EABE998-L000486](../web/agent.html#L486) |
-| [web/agent.html](../web/agent.html#L487) | متغير JavaScript/TypeScript | token | 487 | [SRC-DE7EABE998-L000487](../web/agent.html#L487) |
-| [web/agent.html](../web/agent.html#L490) | مسار API/واجهة محتمل | /api/session | 490 | [SRC-DE7EABE998-L000490](../web/agent.html#L490) |
-| [web/agent.html](../web/agent.html#L498) | دالة JavaScript/TypeScript | logoutBrowserSession | 498 | [SRC-DE7EABE998-L000498](../web/agent.html#L498) |
-| [web/agent.html](../web/agent.html#L500) | مسار API/واجهة محتمل | /api/session/logout | 500 | [SRC-DE7EABE998-L000500](../web/agent.html#L500) |
-| [web/agent.html](../web/agent.html#L507) | دالة JavaScript/TypeScript | checkBrowserSession | 507 | [SRC-DE7EABE998-L000507](../web/agent.html#L507) |
+| [web/agent.html](../web/agent.html#L403) | متغير JavaScript/TypeScript | controller | 403 | [SRC-DE7EABE998-L000403](../web/agent.html#L403) |
+| [web/agent.html](../web/agent.html#L404) | متغير JavaScript/TypeScript | requestTimedOut | 404 | [SRC-DE7EABE998-L000404](../web/agent.html#L404) |
+| [web/agent.html](../web/agent.html#L405) | متغير JavaScript/TypeScript | timeoutId | 405 | [SRC-DE7EABE998-L000405](../web/agent.html#L405) |
+| [web/agent.html](../web/agent.html#L407) | متغير JavaScript/TypeScript | response | 407 | [SRC-DE7EABE998-L000407](../web/agent.html#L407) |
+| [web/agent.html](../web/agent.html#L407) | مسار API/واجهة محتمل | /api/agent | 407 | [SRC-DE7EABE998-L000407](../web/agent.html#L407) |
+| [web/agent.html](../web/agent.html#L408) | متغير JavaScript/TypeScript | data | 408 | [SRC-DE7EABE998-L000408](../web/agent.html#L408) |
+| [web/agent.html](../web/agent.html#L431) | متغير JavaScript/TypeScript | timedOut | 431 | [SRC-DE7EABE998-L000431](../web/agent.html#L431) |
+| [web/agent.html](../web/agent.html#L432) | متغير JavaScript/TypeScript | safeMessage | 432 | [SRC-DE7EABE998-L000432](../web/agent.html#L432) |
+| [web/agent.html](../web/agent.html#L436) | متغير JavaScript/TypeScript | actions | 436 | [SRC-DE7EABE998-L000436](../web/agent.html#L436) |
+| [web/agent.html](../web/agent.html#L437) | متغير JavaScript/TypeScript | retry | 437 | [SRC-DE7EABE998-L000437](../web/agent.html#L437) |
+| [web/agent.html](../web/agent.html#L447) | دالة JavaScript/TypeScript | runDiagnostics | 447 | [SRC-DE7EABE998-L000447](../web/agent.html#L447) |
+| [web/agent.html](../web/agent.html#L448) | متغير JavaScript/TypeScript | button | 448 | [SRC-DE7EABE998-L000448](../web/agent.html#L448) |
+| [web/agent.html](../web/agent.html#L452) | مسار API/واجهة محتمل | /api/diagnostics | 452 | [SRC-DE7EABE998-L000452](../web/agent.html#L452) |
+| [web/agent.html](../web/agent.html#L454) | متغير JavaScript/TypeScript | labels | 454 | [SRC-DE7EABE998-L000454](../web/agent.html#L454) |
+| [web/agent.html](../web/agent.html#L455) | متغير JavaScript/TypeScript | lines | 455 | [SRC-DE7EABE998-L000455](../web/agent.html#L455) |
+| [web/agent.html](../web/agent.html#L457) | متغير JavaScript/TypeScript | item | 457 | [SRC-DE7EABE998-L000457](../web/agent.html#L457) |
+| [web/agent.html](../web/agent.html#L469) | دالة JavaScript/TypeScript | checkHealth | 469 | [SRC-DE7EABE998-L000469](../web/agent.html#L469) |
+| [web/agent.html](../web/agent.html#L471) | متغير JavaScript/TypeScript | a | 471 | [SRC-DE7EABE998-L000471](../web/agent.html#L471) |
+| [web/agent.html](../web/agent.html#L471) | متغير JavaScript/TypeScript | d | 471 | [SRC-DE7EABE998-L000471](../web/agent.html#L471) |
+| [web/agent.html](../web/agent.html#L471) | مسار API/واجهة محتمل | /api/health | 471 | [SRC-DE7EABE998-L000471](../web/agent.html#L471) |
+| [web/agent.html](../web/agent.html#L472) | متغير JavaScript/TypeScript | configured | 472 | [SRC-DE7EABE998-L000472](../web/agent.html#L472) |
+| [web/agent.html](../web/agent.html#L480) | متغير JavaScript/TypeScript | model | 480 | [SRC-DE7EABE998-L000480](../web/agent.html#L480) |
+| [web/agent.html](../web/agent.html#L488) | متغير JavaScript/TypeScript | active | 488 | [SRC-DE7EABE998-L000488](../web/agent.html#L488) |
+| [web/agent.html](../web/agent.html#L494) | دالة JavaScript/TypeScript | loginBrowserSession | 494 | [SRC-DE7EABE998-L000494](../web/agent.html#L494) |
+| [web/agent.html](../web/agent.html#L495) | متغير JavaScript/TypeScript | token | 495 | [SRC-DE7EABE998-L000495](../web/agent.html#L495) |
+| [web/agent.html](../web/agent.html#L498) | مسار API/واجهة محتمل | /api/session | 498 | [SRC-DE7EABE998-L000498](../web/agent.html#L498) |
+| [web/agent.html](../web/agent.html#L506) | دالة JavaScript/TypeScript | logoutBrowserSession | 506 | [SRC-DE7EABE998-L000506](../web/agent.html#L506) |
+| [web/agent.html](../web/agent.html#L508) | مسار API/واجهة محتمل | /api/session/logout | 508 | [SRC-DE7EABE998-L000508](../web/agent.html#L508) |
+| [web/agent.html](../web/agent.html#L515) | دالة JavaScript/TypeScript | checkBrowserSession | 515 | [SRC-DE7EABE998-L000515](../web/agent.html#L515) |
 | [web/dashboard.html](../web/dashboard.html#L4) | قيمة سمة HTML (name) | viewport | 4 | [SRC-A16FA6D4B5-L000004](../web/dashboard.html#L4) |
 | [web/dashboard.html](../web/dashboard.html#L5) | قيمة سمة HTML (name) | theme-color | 5 | [SRC-A16FA6D4B5-L000005](../web/dashboard.html#L5) |
 | [web/dashboard.html](../web/dashboard.html#L7) | متغير CSS مخصص | amber | 7 | [SRC-A16FA6D4B5-L000007](../web/dashboard.html#L7) |
@@ -5020,6 +5051,7 @@
 | [web/workspace.html](../web/workspace.html#L243) | محدد class في CSS | chat-user | 243 | [SRC-2C8F288796-L000243](../web/workspace.html#L243) |
 | [web/workspace.html](../web/workspace.html#L244) | محدد class في CSS | chat-text | 244 | [SRC-2C8F288796-L000244](../web/workspace.html#L244) |
 | [web/workspace.html](../web/workspace.html#L244) | محدد class في CSS | chat-who | 244 | [SRC-2C8F288796-L000244](../web/workspace.html#L244) |
+| [web/workspace.html](../web/workspace.html#L245) | محدد class في CSS | chat-citation | 245 | [SRC-2C8F288796-L000245](../web/workspace.html#L245) |
 | [web/workspace.html](../web/workspace.html#L245) | محدد class في CSS | chat-note | 245 | [SRC-2C8F288796-L000245](../web/workspace.html#L245) |
 | [web/workspace.html](../web/workspace.html#L245) | محدد class في CSS | chat-sources | 245 | [SRC-2C8F288796-L000245](../web/workspace.html#L245) |
 | [web/workspace.html](../web/workspace.html#L246) | محدد class في CSS | chat-form | 246 | [SRC-2C8F288796-L000246](../web/workspace.html#L246) |
@@ -5125,124 +5157,134 @@
 | [web/workspace.html](../web/workspace.html#L471) | متغير JavaScript/TypeScript | panel | 471 | [SRC-2C8F288796-L000471](../web/workspace.html#L471) |
 | [web/workspace.html](../web/workspace.html#L471) | متغير JavaScript/TypeScript | ph | 471 | [SRC-2C8F288796-L000471](../web/workspace.html#L471) |
 | [web/workspace.html](../web/workspace.html#L471) | متغير JavaScript/TypeScript | ptitle | 471 | [SRC-2C8F288796-L000471](../web/workspace.html#L471) |
-| [web/workspace.html](../web/workspace.html#L473) | متغير JavaScript/TypeScript | search | 473 | [SRC-2C8F288796-L000473](../web/workspace.html#L473) |
-| [web/workspace.html](../web/workspace.html#L473) | متغير JavaScript/TypeScript | toolbar | 473 | [SRC-2C8F288796-L000473](../web/workspace.html#L473) |
-| [web/workspace.html](../web/workspace.html#L475) | متغير JavaScript/TypeScript | all | 475 | [SRC-2C8F288796-L000475](../web/workspace.html#L475) |
-| [web/workspace.html](../web/workspace.html#L475) | متغير JavaScript/TypeScript | filter | 475 | [SRC-2C8F288796-L000475](../web/workspace.html#L475) |
-| [web/workspace.html](../web/workspace.html#L483) | دالة JavaScript/TypeScript | drawSignalRows | 483 | [SRC-2C8F288796-L000483](../web/workspace.html#L483) |
-| [web/workspace.html](../web/workspace.html#L485) | متغير JavaScript/TypeScript | query | 485 | [SRC-2C8F288796-L000485](../web/workspace.html#L485) |
-| [web/workspace.html](../web/workspace.html#L490) | دالة JavaScript/TypeScript | createSignalForm | 490 | [SRC-2C8F288796-L000490](../web/workspace.html#L490) |
-| [web/workspace.html](../web/workspace.html#L491) | متغير JavaScript/TypeScript | title | 491 | [SRC-2C8F288796-L000491](../web/workspace.html#L491) |
-| [web/workspace.html](../web/workspace.html#L491) | متغير JavaScript/TypeScript | wrapper | 491 | [SRC-2C8F288796-L000491](../web/workspace.html#L491) |
-| [web/workspace.html](../web/workspace.html#L492) | قيمة سمة HTML (id) | newSignalText | 492 | [SRC-2C8F288796-L000492](../web/workspace.html#L492) |
-| [web/workspace.html](../web/workspace.html#L493) | قيمة سمة HTML (id) | newSignalUrl | 493 | [SRC-2C8F288796-L000493](../web/workspace.html#L493) |
-| [web/workspace.html](../web/workspace.html#L495) | قيمة سمة HTML (id) | newSignalPlatform | 495 | [SRC-2C8F288796-L000495](../web/workspace.html#L495) |
-| [web/workspace.html](../web/workspace.html#L495) | متغير JavaScript/TypeScript | platform | 495 | [SRC-2C8F288796-L000495](../web/workspace.html#L495) |
-| [web/workspace.html](../web/workspace.html#L496) | قيمة سمة HTML (id) | newSignalProduct | 496 | [SRC-2C8F288796-L000496](../web/workspace.html#L496) |
-| [web/workspace.html](../web/workspace.html#L496) | متغير JavaScript/TypeScript | product | 496 | [SRC-2C8F288796-L000496](../web/workspace.html#L496) |
-| [web/workspace.html](../web/workspace.html#L497) | قيمة سمة HTML (id) | newSignalLocation | 497 | [SRC-2C8F288796-L000497](../web/workspace.html#L497) |
-| [web/workspace.html](../web/workspace.html#L497) | متغير JavaScript/TypeScript | location | 497 | [SRC-2C8F288796-L000497](../web/workspace.html#L497) |
-| [web/workspace.html](../web/workspace.html#L498) | قيمة سمة HTML (id) | newSignalNote | 498 | [SRC-2C8F288796-L000498](../web/workspace.html#L498) |
-| [web/workspace.html](../web/workspace.html#L498) | متغير JavaScript/TypeScript | note | 498 | [SRC-2C8F288796-L000498](../web/workspace.html#L498) |
-| [web/workspace.html](../web/workspace.html#L499) | متغير JavaScript/TypeScript | fields | 499 | [SRC-2C8F288796-L000499](../web/workspace.html#L499) |
-| [web/workspace.html](../web/workspace.html#L500) | متغير JavaScript/TypeScript | field | 500 | [SRC-2C8F288796-L000500](../web/workspace.html#L500) |
-| [web/workspace.html](../web/workspace.html#L502) | قيمة سمة HTML (id) | analysisResult | 502 | [SRC-2C8F288796-L000502](../web/workspace.html#L502) |
-| [web/workspace.html](../web/workspace.html#L502) | متغير JavaScript/TypeScript | result | 502 | [SRC-2C8F288796-L000502](../web/workspace.html#L502) |
-| [web/workspace.html](../web/workspace.html#L503) | متغير JavaScript/TypeScript | buttons | 503 | [SRC-2C8F288796-L000503](../web/workspace.html#L503) |
-| [web/workspace.html](../web/workspace.html#L504) | متغير JavaScript/TypeScript | analyze | 504 | [SRC-2C8F288796-L000504](../web/workspace.html#L504) |
-| [web/workspace.html](../web/workspace.html#L509) | متغير JavaScript/TypeScript | product_terms | 509 | [SRC-2C8F288796-L000509](../web/workspace.html#L509) |
-| [web/workspace.html](../web/workspace.html#L510) | متغير JavaScript/TypeScript | location_terms | 510 | [SRC-2C8F288796-L000510](../web/workspace.html#L510) |
-| [web/workspace.html](../web/workspace.html#L511) | مسار API/واجهة محتمل | /api/analyze | 511 | [SRC-2C8F288796-L000511](../web/workspace.html#L511) |
-| [web/workspace.html](../web/workspace.html#L529) | مسار API/واجهة محتمل | /api/leads | 529 | [SRC-2C8F288796-L000529](../web/workspace.html#L529) |
-| [web/workspace.html](../web/workspace.html#L537) | دالة JavaScript/TypeScript | renderPipeline | 537 | [SRC-2C8F288796-L000537](../web/workspace.html#L537) |
-| [web/workspace.html](../web/workspace.html#L541) | متغير JavaScript/TypeScript | board | 541 | [SRC-2C8F288796-L000541](../web/workspace.html#L541) |
-| [web/workspace.html](../web/workspace.html#L541) | متغير JavaScript/TypeScript | groups | 541 | [SRC-2C8F288796-L000541](../web/workspace.html#L541) |
-| [web/workspace.html](../web/workspace.html#L542) | متغير JavaScript/TypeScript | col | 542 | [SRC-2C8F288796-L000542](../web/workspace.html#L542) |
-| [web/workspace.html](../web/workspace.html#L545) | دالة JavaScript/TypeScript | renderSystem | 545 | [SRC-2C8F288796-L000545](../web/workspace.html#L545) |
-| [web/workspace.html](../web/workspace.html#L549) | مسار API/واجهة محتمل | /api/health | 549 | [SRC-2C8F288796-L000549](../web/workspace.html#L549) |
-| [web/workspace.html](../web/workspace.html#L550) | متغير JavaScript/TypeScript | agent | 550 | [SRC-2C8F288796-L000550](../web/workspace.html#L550) |
-| [web/workspace.html](../web/workspace.html#L550) | متغير JavaScript/TypeScript | build | 550 | [SRC-2C8F288796-L000550](../web/workspace.html#L550) |
-| [web/workspace.html](../web/workspace.html#L561) | متغير JavaScript/TypeScript | mh | 561 | [SRC-2C8F288796-L000561](../web/workspace.html#L561) |
-| [web/workspace.html](../web/workspace.html#L561) | متغير JavaScript/TypeScript | models | 561 | [SRC-2C8F288796-L000561](../web/workspace.html#L561) |
-| [web/workspace.html](../web/workspace.html#L561) | متغير JavaScript/TypeScript | mt | 561 | [SRC-2C8F288796-L000561](../web/workspace.html#L561) |
-| [web/workspace.html](../web/workspace.html#L565) | متغير JavaScript/TypeScript | providers | 565 | [SRC-2C8F288796-L000565](../web/workspace.html#L565) |
-| [web/workspace.html](../web/workspace.html#L569) | متغير JavaScript/TypeScript | row | 569 | [SRC-2C8F288796-L000569](../web/workspace.html#L569) |
-| [web/workspace.html](../web/workspace.html#L580) | متغير JavaScript/TypeScript | flags | 580 | [SRC-2C8F288796-L000580](../web/workspace.html#L580) |
-| [web/workspace.html](../web/workspace.html#L591) | دالة JavaScript/TypeScript | renderIndicators | 591 | [SRC-2C8F288796-L000591](../web/workspace.html#L591) |
-| [web/workspace.html](../web/workspace.html#L594) | متغير JavaScript/TypeScript | total | 594 | [SRC-2C8F288796-L000594](../web/workspace.html#L594) |
-| [web/workspace.html](../web/workspace.html#L597) | متغير JavaScript/TypeScript | converted | 597 | [SRC-2C8F288796-L000597](../web/workspace.html#L597) |
-| [web/workspace.html](../web/workspace.html#L598) | متغير JavaScript/TypeScript | withSource | 598 | [SRC-2C8F288796-L000598](../web/workspace.html#L598) |
-| [web/workspace.html](../web/workspace.html#L599) | متغير JavaScript/TypeScript | hero | 599 | [SRC-2C8F288796-L000599](../web/workspace.html#L599) |
-| [web/workspace.html](../web/workspace.html#L600) | متغير JavaScript/TypeScript | ring | 600 | [SRC-2C8F288796-L000600](../web/workspace.html#L600) |
-| [web/workspace.html](../web/workspace.html#L604) | متغير JavaScript/TypeScript | ringInner | 604 | [SRC-2C8F288796-L000604](../web/workspace.html#L604) |
-| [web/workspace.html](../web/workspace.html#L607) | متغير JavaScript/TypeScript | heroCopy | 607 | [SRC-2C8F288796-L000607](../web/workspace.html#L607) |
-| [web/workspace.html](../web/workspace.html#L610) | متغير JavaScript/TypeScript | cards | 610 | [SRC-2C8F288796-L000610](../web/workspace.html#L610) |
-| [web/workspace.html](../web/workspace.html#L618) | متغير JavaScript/TypeScript | layout | 618 | [SRC-2C8F288796-L000618](../web/workspace.html#L618) |
-| [web/workspace.html](../web/workspace.html#L619) | متغير JavaScript/TypeScript | statusPanel | 619 | [SRC-2C8F288796-L000619](../web/workspace.html#L619) |
-| [web/workspace.html](../web/workspace.html#L624) | متغير JavaScript/TypeScript | bars | 624 | [SRC-2C8F288796-L000624](../web/workspace.html#L624) |
-| [web/workspace.html](../web/workspace.html#L630) | متغير JavaScript/TypeScript | count | 630 | [SRC-2C8F288796-L000630](../web/workspace.html#L630) |
-| [web/workspace.html](../web/workspace.html#L632) | متغير JavaScript/TypeScript | track | 632 | [SRC-2C8F288796-L000632](../web/workspace.html#L632) |
-| [web/workspace.html](../web/workspace.html#L639) | متغير JavaScript/TypeScript | quality | 639 | [SRC-2C8F288796-L000639](../web/workspace.html#L639) |
-| [web/workspace.html](../web/workspace.html#L640) | متغير JavaScript/TypeScript | qhead | 640 | [SRC-2C8F288796-L000640](../web/workspace.html#L640) |
-| [web/workspace.html](../web/workspace.html#L643) | متغير JavaScript/TypeScript | summary | 643 | [SRC-2C8F288796-L000643](../web/workspace.html#L643) |
-| [web/workspace.html](../web/workspace.html#L656) | متغير JavaScript/TypeScript | rh | 656 | [SRC-2C8F288796-L000656](../web/workspace.html#L656) |
-| [web/workspace.html](../web/workspace.html#L665) | دالة JavaScript/TypeScript | renderPlaceholder | 665 | [SRC-2C8F288796-L000665](../web/workspace.html#L665) |
-| [web/workspace.html](../web/workspace.html#L675) | متغير JavaScript/TypeScript | links | 675 | [SRC-2C8F288796-L000675](../web/workspace.html#L675) |
-| [web/workspace.html](../web/workspace.html#L678) | دالة JavaScript/TypeScript | csvValues | 678 | [SRC-2C8F288796-L000678](../web/workspace.html#L678) |
-| [web/workspace.html](../web/workspace.html#L679) | دالة JavaScript/TypeScript | textField | 679 | [SRC-2C8F288796-L000679](../web/workspace.html#L679) |
-| [web/workspace.html](../web/workspace.html#L682) | متغير JavaScript/TypeScript | caption | 682 | [SRC-2C8F288796-L000682](../web/workspace.html#L682) |
-| [web/workspace.html](../web/workspace.html#L685) | دالة JavaScript/TypeScript | renderProductProfile | 685 | [SRC-2C8F288796-L000685](../web/workspace.html#L685) |
-| [web/workspace.html](../web/workspace.html#L708) | متغير JavaScript/TypeScript | localeField | 708 | [SRC-2C8F288796-L000708](../web/workspace.html#L708) |
-| [web/workspace.html](../web/workspace.html#L716) | متغير JavaScript/TypeScript | payload | 716 | [SRC-2C8F288796-L000716](../web/workspace.html#L716) |
-| [web/workspace.html](../web/workspace.html#L721) | مسار API/واجهة محتمل | /api/product-profiles | 721 | [SRC-2C8F288796-L000721](../web/workspace.html#L721) |
-| [web/workspace.html](../web/workspace.html#L727) | متغير JavaScript/TypeScript | listPanel | 727 | [SRC-2C8F288796-L000727](../web/workspace.html#L727) |
-| [web/workspace.html](../web/workspace.html#L743) | دالة JavaScript/TypeScript | renderDiscoveryRun | 743 | [SRC-2C8F288796-L000743](../web/workspace.html#L743) |
-| [web/workspace.html](../web/workspace.html#L745) | متغير JavaScript/TypeScript | report | 745 | [SRC-2C8F288796-L000745](../web/workspace.html#L745) |
-| [web/workspace.html](../web/workspace.html#L755) | متغير JavaScript/TypeScript | qs | 755 | [SRC-2C8F288796-L000755](../web/workspace.html#L755) |
-| [web/workspace.html](../web/workspace.html#L766) | متغير JavaScript/TypeScript | evidence | 766 | [SRC-2C8F288796-L000766](../web/workspace.html#L766) |
-| [web/workspace.html](../web/workspace.html#L779) | مسار API/واجهة محتمل | /api/discoveries/ | 779 | [SRC-2C8F288796-L000779](../web/workspace.html#L779) |
-| [web/workspace.html](../web/workspace.html#L791) | دالة JavaScript/TypeScript | renderDiscovery | 791 | [SRC-2C8F288796-L000791](../web/workspace.html#L791) |
-| [web/workspace.html](../web/workspace.html#L794) | متغير JavaScript/TypeScript | controls | 794 | [SRC-2C8F288796-L000794](../web/workspace.html#L794) |
-| [web/workspace.html](../web/workspace.html#L802) | متغير JavaScript/TypeScript | option | 802 | [SRC-2C8F288796-L000802](../web/workspace.html#L802) |
-| [web/workspace.html](../web/workspace.html#L804) | متغير JavaScript/TypeScript | consent | 804 | [SRC-2C8F288796-L000804](../web/workspace.html#L804) |
-| [web/workspace.html](../web/workspace.html#L808) | متغير JavaScript/TypeScript | status | 808 | [SRC-2C8F288796-L000808](../web/workspace.html#L808) |
-| [web/workspace.html](../web/workspace.html#L809) | متغير JavaScript/TypeScript | run | 809 | [SRC-2C8F288796-L000809](../web/workspace.html#L809) |
-| [web/workspace.html](../web/workspace.html#L813) | متغير JavaScript/TypeScript | savedRun | 813 | [SRC-2C8F288796-L000813](../web/workspace.html#L813) |
-| [web/workspace.html](../web/workspace.html#L813) | مسار API/واجهة محتمل | /api/discoveries | 813 | [SRC-2C8F288796-L000813](../web/workspace.html#L813) |
-| [web/workspace.html](../web/workspace.html#L815) | متغير JavaScript/TypeScript | refreshWarning | 815 | [SRC-2C8F288796-L000815](../web/workspace.html#L815) |
-| [web/workspace.html](../web/workspace.html#L818) | متغير JavaScript/TypeScript | warning | 818 | [SRC-2C8F288796-L000818](../web/workspace.html#L818) |
-| [web/workspace.html](../web/workspace.html#L831) | متغير JavaScript/TypeScript | history | 831 | [SRC-2C8F288796-L000831](../web/workspace.html#L831) |
-| [web/workspace.html](../web/workspace.html#L837) | متغير JavaScript/TypeScript | message | 837 | [SRC-2C8F288796-L000837](../web/workspace.html#L837) |
-| [web/workspace.html](../web/workspace.html#L844) | متغير JavaScript/TypeScript | chatModes | 844 | [SRC-2C8F288796-L000844](../web/workspace.html#L844) |
-| [web/workspace.html](../web/workspace.html#L850) | دالة JavaScript/TypeScript | chatMessageNode | 850 | [SRC-2C8F288796-L000850](../web/workspace.html#L850) |
-| [web/workspace.html](../web/workspace.html#L857) | متغير JavaScript/TypeScript | href | 857 | [SRC-2C8F288796-L000857](../web/workspace.html#L857) |
-| [web/workspace.html](../web/workspace.html#L858) | متغير JavaScript/TypeScript | li | 858 | [SRC-2C8F288796-L000858](../web/workspace.html#L858) |
-| [web/workspace.html](../web/workspace.html#L866) | دالة JavaScript/TypeScript | renderChat | 866 | [SRC-2C8F288796-L000866](../web/workspace.html#L866) |
-| [web/workspace.html](../web/workspace.html#L871) | متغير JavaScript/TypeScript | pt | 871 | [SRC-2C8F288796-L000871](../web/workspace.html#L871) |
-| [web/workspace.html](../web/workspace.html#L873) | متغير JavaScript/TypeScript | clear | 873 | [SRC-2C8F288796-L000873](../web/workspace.html#L873) |
-| [web/workspace.html](../web/workspace.html#L876) | متغير JavaScript/TypeScript | modeBar | 876 | [SRC-2C8F288796-L000876](../web/workspace.html#L876) |
-| [web/workspace.html](../web/workspace.html#L884) | قيمة سمة HTML (id) | chatList | 884 | [SRC-2C8F288796-L000884](../web/workspace.html#L884) |
-| [web/workspace.html](../web/workspace.html#L890) | متغير JavaScript/TypeScript | form | 890 | [SRC-2C8F288796-L000890](../web/workspace.html#L890) |
-| [web/workspace.html](../web/workspace.html#L891) | قيمة سمة HTML (id) | chatInput | 891 | [SRC-2C8F288796-L000891](../web/workspace.html#L891) |
-| [web/workspace.html](../web/workspace.html#L891) | متغير JavaScript/TypeScript | input | 891 | [SRC-2C8F288796-L000891](../web/workspace.html#L891) |
-| [web/workspace.html](../web/workspace.html#L892) | قيمة سمة HTML (id) | chatSend | 892 | [SRC-2C8F288796-L000892](../web/workspace.html#L892) |
-| [web/workspace.html](../web/workspace.html#L892) | متغير JavaScript/TypeScript | send | 892 | [SRC-2C8F288796-L000892](../web/workspace.html#L892) |
-| [web/workspace.html](../web/workspace.html#L899) | دالة JavaScript/TypeScript | sendChat | 899 | [SRC-2C8F288796-L000899](../web/workspace.html#L899) |
-| [web/workspace.html](../web/workspace.html#L902) | متغير JavaScript/TypeScript | question | 902 | [SRC-2C8F288796-L000902](../web/workspace.html#L902) |
-| [web/workspace.html](../web/workspace.html#L906) | مسار API/واجهة محتمل | /api/agent | 906 | [SRC-2C8F288796-L000906](../web/workspace.html#L906) |
-| [web/workspace.html](../web/workspace.html#L908) | متغير JavaScript/TypeScript | answer | 908 | [SRC-2C8F288796-L000908](../web/workspace.html#L908) |
-| [web/workspace.html](../web/workspace.html#L924) | دالة JavaScript/TypeScript | renderCurrent | 924 | [SRC-2C8F288796-L000924](../web/workspace.html#L924) |
-| [web/workspace.html](../web/workspace.html#L939) | دالة JavaScript/TypeScript | navigate | 939 | [SRC-2C8F288796-L000939](../web/workspace.html#L939) |
-| [web/workspace.html](../web/workspace.html#L942) | دالة JavaScript/TypeScript | loadProductProfiles | 942 | [SRC-2C8F288796-L000942](../web/workspace.html#L942) |
-| [web/workspace.html](../web/workspace.html#L947) | دالة JavaScript/TypeScript | loadDiscoveryRuns | 947 | [SRC-2C8F288796-L000947](../web/workspace.html#L947) |
-| [web/workspace.html](../web/workspace.html#L951) | دالة JavaScript/TypeScript | loadLeads | 951 | [SRC-2C8F288796-L000951](../web/workspace.html#L951) |
-| [web/workspace.html](../web/workspace.html#L955) | دالة JavaScript/TypeScript | bootstrap | 955 | [SRC-2C8F288796-L000955](../web/workspace.html#L955) |
-| [web/workspace.html](../web/workspace.html#L956) | متغير JavaScript/TypeScript | session | 956 | [SRC-2C8F288796-L000956](../web/workspace.html#L956) |
-| [web/workspace.html](../web/workspace.html#L958) | مسار API/واجهة محتمل | /api/session | 958 | [SRC-2C8F288796-L000958](../web/workspace.html#L958) |
-| [web/workspace.html](../web/workspace.html#L969) | متغير JavaScript/TypeScript | results | 969 | [SRC-2C8F288796-L000969](../web/workspace.html#L969) |
-| [web/workspace.html](../web/workspace.html#L995) | متغير JavaScript/TypeScript | button | 995 | [SRC-2C8F288796-L000995](../web/workspace.html#L995) |
-| [web/workspace.html](../web/workspace.html#L995) | متغير JavaScript/TypeScript | token | 995 | [SRC-2C8F288796-L000995](../web/workspace.html#L995) |
-| [web/workspace.html](../web/workspace.html#L1005) | مسار API/واجهة محتمل | /api/session/logout | 1005 | [SRC-2C8F288796-L001005](../web/workspace.html#L1005) |
+| [web/workspace.html](../web/workspace.html#L471) | متغير JavaScript/TypeScript | refresh | 471 | [SRC-2C8F288796-L000471](../web/workspace.html#L471) |
+| [web/workspace.html](../web/workspace.html#L484) | متغير JavaScript/TypeScript | search | 484 | [SRC-2C8F288796-L000484](../web/workspace.html#L484) |
+| [web/workspace.html](../web/workspace.html#L484) | متغير JavaScript/TypeScript | toolbar | 484 | [SRC-2C8F288796-L000484](../web/workspace.html#L484) |
+| [web/workspace.html](../web/workspace.html#L486) | متغير JavaScript/TypeScript | all | 486 | [SRC-2C8F288796-L000486](../web/workspace.html#L486) |
+| [web/workspace.html](../web/workspace.html#L486) | متغير JavaScript/TypeScript | filter | 486 | [SRC-2C8F288796-L000486](../web/workspace.html#L486) |
+| [web/workspace.html](../web/workspace.html#L494) | دالة JavaScript/TypeScript | drawSignalRows | 494 | [SRC-2C8F288796-L000494](../web/workspace.html#L494) |
+| [web/workspace.html](../web/workspace.html#L496) | متغير JavaScript/TypeScript | query | 496 | [SRC-2C8F288796-L000496](../web/workspace.html#L496) |
+| [web/workspace.html](../web/workspace.html#L501) | دالة JavaScript/TypeScript | createSignalForm | 501 | [SRC-2C8F288796-L000501](../web/workspace.html#L501) |
+| [web/workspace.html](../web/workspace.html#L502) | متغير JavaScript/TypeScript | title | 502 | [SRC-2C8F288796-L000502](../web/workspace.html#L502) |
+| [web/workspace.html](../web/workspace.html#L502) | متغير JavaScript/TypeScript | wrapper | 502 | [SRC-2C8F288796-L000502](../web/workspace.html#L502) |
+| [web/workspace.html](../web/workspace.html#L503) | قيمة سمة HTML (id) | newSignalText | 503 | [SRC-2C8F288796-L000503](../web/workspace.html#L503) |
+| [web/workspace.html](../web/workspace.html#L504) | قيمة سمة HTML (id) | newSignalUrl | 504 | [SRC-2C8F288796-L000504](../web/workspace.html#L504) |
+| [web/workspace.html](../web/workspace.html#L506) | قيمة سمة HTML (id) | newSignalPlatform | 506 | [SRC-2C8F288796-L000506](../web/workspace.html#L506) |
+| [web/workspace.html](../web/workspace.html#L506) | متغير JavaScript/TypeScript | platform | 506 | [SRC-2C8F288796-L000506](../web/workspace.html#L506) |
+| [web/workspace.html](../web/workspace.html#L507) | قيمة سمة HTML (id) | newSignalProduct | 507 | [SRC-2C8F288796-L000507](../web/workspace.html#L507) |
+| [web/workspace.html](../web/workspace.html#L507) | متغير JavaScript/TypeScript | product | 507 | [SRC-2C8F288796-L000507](../web/workspace.html#L507) |
+| [web/workspace.html](../web/workspace.html#L508) | قيمة سمة HTML (id) | newSignalLocation | 508 | [SRC-2C8F288796-L000508](../web/workspace.html#L508) |
+| [web/workspace.html](../web/workspace.html#L508) | متغير JavaScript/TypeScript | location | 508 | [SRC-2C8F288796-L000508](../web/workspace.html#L508) |
+| [web/workspace.html](../web/workspace.html#L509) | قيمة سمة HTML (id) | newSignalNote | 509 | [SRC-2C8F288796-L000509](../web/workspace.html#L509) |
+| [web/workspace.html](../web/workspace.html#L509) | متغير JavaScript/TypeScript | note | 509 | [SRC-2C8F288796-L000509](../web/workspace.html#L509) |
+| [web/workspace.html](../web/workspace.html#L510) | متغير JavaScript/TypeScript | fields | 510 | [SRC-2C8F288796-L000510](../web/workspace.html#L510) |
+| [web/workspace.html](../web/workspace.html#L511) | متغير JavaScript/TypeScript | field | 511 | [SRC-2C8F288796-L000511](../web/workspace.html#L511) |
+| [web/workspace.html](../web/workspace.html#L513) | قيمة سمة HTML (id) | analysisResult | 513 | [SRC-2C8F288796-L000513](../web/workspace.html#L513) |
+| [web/workspace.html](../web/workspace.html#L513) | متغير JavaScript/TypeScript | result | 513 | [SRC-2C8F288796-L000513](../web/workspace.html#L513) |
+| [web/workspace.html](../web/workspace.html#L514) | متغير JavaScript/TypeScript | buttons | 514 | [SRC-2C8F288796-L000514](../web/workspace.html#L514) |
+| [web/workspace.html](../web/workspace.html#L515) | متغير JavaScript/TypeScript | analyze | 515 | [SRC-2C8F288796-L000515](../web/workspace.html#L515) |
+| [web/workspace.html](../web/workspace.html#L520) | متغير JavaScript/TypeScript | product_terms | 520 | [SRC-2C8F288796-L000520](../web/workspace.html#L520) |
+| [web/workspace.html](../web/workspace.html#L521) | متغير JavaScript/TypeScript | location_terms | 521 | [SRC-2C8F288796-L000521](../web/workspace.html#L521) |
+| [web/workspace.html](../web/workspace.html#L522) | مسار API/واجهة محتمل | /api/analyze | 522 | [SRC-2C8F288796-L000522](../web/workspace.html#L522) |
+| [web/workspace.html](../web/workspace.html#L540) | مسار API/واجهة محتمل | /api/leads | 540 | [SRC-2C8F288796-L000540](../web/workspace.html#L540) |
+| [web/workspace.html](../web/workspace.html#L543) | متغير JavaScript/TypeScript | refreshWarning | 543 | [SRC-2C8F288796-L000543](../web/workspace.html#L543) |
+| [web/workspace.html](../web/workspace.html#L559) | دالة JavaScript/TypeScript | renderPipeline | 559 | [SRC-2C8F288796-L000559](../web/workspace.html#L559) |
+| [web/workspace.html](../web/workspace.html#L563) | متغير JavaScript/TypeScript | board | 563 | [SRC-2C8F288796-L000563](../web/workspace.html#L563) |
+| [web/workspace.html](../web/workspace.html#L563) | متغير JavaScript/TypeScript | groups | 563 | [SRC-2C8F288796-L000563](../web/workspace.html#L563) |
+| [web/workspace.html](../web/workspace.html#L564) | متغير JavaScript/TypeScript | col | 564 | [SRC-2C8F288796-L000564](../web/workspace.html#L564) |
+| [web/workspace.html](../web/workspace.html#L567) | دالة JavaScript/TypeScript | renderSystem | 567 | [SRC-2C8F288796-L000567](../web/workspace.html#L567) |
+| [web/workspace.html](../web/workspace.html#L571) | مسار API/واجهة محتمل | /api/health | 571 | [SRC-2C8F288796-L000571](../web/workspace.html#L571) |
+| [web/workspace.html](../web/workspace.html#L572) | متغير JavaScript/TypeScript | agent | 572 | [SRC-2C8F288796-L000572](../web/workspace.html#L572) |
+| [web/workspace.html](../web/workspace.html#L572) | متغير JavaScript/TypeScript | build | 572 | [SRC-2C8F288796-L000572](../web/workspace.html#L572) |
+| [web/workspace.html](../web/workspace.html#L583) | متغير JavaScript/TypeScript | mh | 583 | [SRC-2C8F288796-L000583](../web/workspace.html#L583) |
+| [web/workspace.html](../web/workspace.html#L583) | متغير JavaScript/TypeScript | models | 583 | [SRC-2C8F288796-L000583](../web/workspace.html#L583) |
+| [web/workspace.html](../web/workspace.html#L583) | متغير JavaScript/TypeScript | mt | 583 | [SRC-2C8F288796-L000583](../web/workspace.html#L583) |
+| [web/workspace.html](../web/workspace.html#L587) | متغير JavaScript/TypeScript | providers | 587 | [SRC-2C8F288796-L000587](../web/workspace.html#L587) |
+| [web/workspace.html](../web/workspace.html#L591) | متغير JavaScript/TypeScript | row | 591 | [SRC-2C8F288796-L000591](../web/workspace.html#L591) |
+| [web/workspace.html](../web/workspace.html#L602) | متغير JavaScript/TypeScript | flags | 602 | [SRC-2C8F288796-L000602](../web/workspace.html#L602) |
+| [web/workspace.html](../web/workspace.html#L613) | دالة JavaScript/TypeScript | renderIndicators | 613 | [SRC-2C8F288796-L000613](../web/workspace.html#L613) |
+| [web/workspace.html](../web/workspace.html#L616) | متغير JavaScript/TypeScript | total | 616 | [SRC-2C8F288796-L000616](../web/workspace.html#L616) |
+| [web/workspace.html](../web/workspace.html#L619) | متغير JavaScript/TypeScript | converted | 619 | [SRC-2C8F288796-L000619](../web/workspace.html#L619) |
+| [web/workspace.html](../web/workspace.html#L620) | متغير JavaScript/TypeScript | withSource | 620 | [SRC-2C8F288796-L000620](../web/workspace.html#L620) |
+| [web/workspace.html](../web/workspace.html#L621) | متغير JavaScript/TypeScript | hero | 621 | [SRC-2C8F288796-L000621](../web/workspace.html#L621) |
+| [web/workspace.html](../web/workspace.html#L622) | متغير JavaScript/TypeScript | ring | 622 | [SRC-2C8F288796-L000622](../web/workspace.html#L622) |
+| [web/workspace.html](../web/workspace.html#L626) | متغير JavaScript/TypeScript | ringInner | 626 | [SRC-2C8F288796-L000626](../web/workspace.html#L626) |
+| [web/workspace.html](../web/workspace.html#L629) | متغير JavaScript/TypeScript | heroCopy | 629 | [SRC-2C8F288796-L000629](../web/workspace.html#L629) |
+| [web/workspace.html](../web/workspace.html#L632) | متغير JavaScript/TypeScript | cards | 632 | [SRC-2C8F288796-L000632](../web/workspace.html#L632) |
+| [web/workspace.html](../web/workspace.html#L640) | متغير JavaScript/TypeScript | layout | 640 | [SRC-2C8F288796-L000640](../web/workspace.html#L640) |
+| [web/workspace.html](../web/workspace.html#L641) | متغير JavaScript/TypeScript | statusPanel | 641 | [SRC-2C8F288796-L000641](../web/workspace.html#L641) |
+| [web/workspace.html](../web/workspace.html#L646) | متغير JavaScript/TypeScript | bars | 646 | [SRC-2C8F288796-L000646](../web/workspace.html#L646) |
+| [web/workspace.html](../web/workspace.html#L652) | متغير JavaScript/TypeScript | count | 652 | [SRC-2C8F288796-L000652](../web/workspace.html#L652) |
+| [web/workspace.html](../web/workspace.html#L654) | متغير JavaScript/TypeScript | track | 654 | [SRC-2C8F288796-L000654](../web/workspace.html#L654) |
+| [web/workspace.html](../web/workspace.html#L661) | متغير JavaScript/TypeScript | quality | 661 | [SRC-2C8F288796-L000661](../web/workspace.html#L661) |
+| [web/workspace.html](../web/workspace.html#L662) | متغير JavaScript/TypeScript | qhead | 662 | [SRC-2C8F288796-L000662](../web/workspace.html#L662) |
+| [web/workspace.html](../web/workspace.html#L665) | متغير JavaScript/TypeScript | summary | 665 | [SRC-2C8F288796-L000665](../web/workspace.html#L665) |
+| [web/workspace.html](../web/workspace.html#L678) | متغير JavaScript/TypeScript | rh | 678 | [SRC-2C8F288796-L000678](../web/workspace.html#L678) |
+| [web/workspace.html](../web/workspace.html#L687) | دالة JavaScript/TypeScript | renderPlaceholder | 687 | [SRC-2C8F288796-L000687](../web/workspace.html#L687) |
+| [web/workspace.html](../web/workspace.html#L697) | متغير JavaScript/TypeScript | links | 697 | [SRC-2C8F288796-L000697](../web/workspace.html#L697) |
+| [web/workspace.html](../web/workspace.html#L700) | دالة JavaScript/TypeScript | csvValues | 700 | [SRC-2C8F288796-L000700](../web/workspace.html#L700) |
+| [web/workspace.html](../web/workspace.html#L701) | دالة JavaScript/TypeScript | textField | 701 | [SRC-2C8F288796-L000701](../web/workspace.html#L701) |
+| [web/workspace.html](../web/workspace.html#L704) | متغير JavaScript/TypeScript | caption | 704 | [SRC-2C8F288796-L000704](../web/workspace.html#L704) |
+| [web/workspace.html](../web/workspace.html#L707) | دالة JavaScript/TypeScript | renderProductProfile | 707 | [SRC-2C8F288796-L000707](../web/workspace.html#L707) |
+| [web/workspace.html](../web/workspace.html#L730) | متغير JavaScript/TypeScript | localeField | 730 | [SRC-2C8F288796-L000730](../web/workspace.html#L730) |
+| [web/workspace.html](../web/workspace.html#L738) | متغير JavaScript/TypeScript | payload | 738 | [SRC-2C8F288796-L000738](../web/workspace.html#L738) |
+| [web/workspace.html](../web/workspace.html#L743) | مسار API/واجهة محتمل | /api/product-profiles | 743 | [SRC-2C8F288796-L000743](../web/workspace.html#L743) |
+| [web/workspace.html](../web/workspace.html#L760) | متغير JavaScript/TypeScript | listPanel | 760 | [SRC-2C8F288796-L000760](../web/workspace.html#L760) |
+| [web/workspace.html](../web/workspace.html#L776) | دالة JavaScript/TypeScript | renderDiscoveryRun | 776 | [SRC-2C8F288796-L000776](../web/workspace.html#L776) |
+| [web/workspace.html](../web/workspace.html#L778) | متغير JavaScript/TypeScript | report | 778 | [SRC-2C8F288796-L000778](../web/workspace.html#L778) |
+| [web/workspace.html](../web/workspace.html#L788) | متغير JavaScript/TypeScript | qs | 788 | [SRC-2C8F288796-L000788](../web/workspace.html#L788) |
+| [web/workspace.html](../web/workspace.html#L799) | متغير JavaScript/TypeScript | evidence | 799 | [SRC-2C8F288796-L000799](../web/workspace.html#L799) |
+| [web/workspace.html](../web/workspace.html#L812) | مسار API/واجهة محتمل | /api/discoveries/ | 812 | [SRC-2C8F288796-L000812](../web/workspace.html#L812) |
+| [web/workspace.html](../web/workspace.html#L830) | دالة JavaScript/TypeScript | renderDiscovery | 830 | [SRC-2C8F288796-L000830](../web/workspace.html#L830) |
+| [web/workspace.html](../web/workspace.html#L833) | متغير JavaScript/TypeScript | controls | 833 | [SRC-2C8F288796-L000833](../web/workspace.html#L833) |
+| [web/workspace.html](../web/workspace.html#L841) | متغير JavaScript/TypeScript | option | 841 | [SRC-2C8F288796-L000841](../web/workspace.html#L841) |
+| [web/workspace.html](../web/workspace.html#L843) | متغير JavaScript/TypeScript | consent | 843 | [SRC-2C8F288796-L000843](../web/workspace.html#L843) |
+| [web/workspace.html](../web/workspace.html#L847) | متغير JavaScript/TypeScript | status | 847 | [SRC-2C8F288796-L000847](../web/workspace.html#L847) |
+| [web/workspace.html](../web/workspace.html#L848) | متغير JavaScript/TypeScript | run | 848 | [SRC-2C8F288796-L000848](../web/workspace.html#L848) |
+| [web/workspace.html](../web/workspace.html#L852) | متغير JavaScript/TypeScript | savedRun | 852 | [SRC-2C8F288796-L000852](../web/workspace.html#L852) |
+| [web/workspace.html](../web/workspace.html#L852) | مسار API/واجهة محتمل | /api/discoveries | 852 | [SRC-2C8F288796-L000852](../web/workspace.html#L852) |
+| [web/workspace.html](../web/workspace.html#L857) | متغير JavaScript/TypeScript | warning | 857 | [SRC-2C8F288796-L000857](../web/workspace.html#L857) |
+| [web/workspace.html](../web/workspace.html#L870) | متغير JavaScript/TypeScript | history | 870 | [SRC-2C8F288796-L000870](../web/workspace.html#L870) |
+| [web/workspace.html](../web/workspace.html#L876) | متغير JavaScript/TypeScript | message | 876 | [SRC-2C8F288796-L000876](../web/workspace.html#L876) |
+| [web/workspace.html](../web/workspace.html#L883) | متغير JavaScript/TypeScript | chatModes | 883 | [SRC-2C8F288796-L000883](../web/workspace.html#L883) |
+| [web/workspace.html](../web/workspace.html#L889) | دالة JavaScript/TypeScript | appendCitedAnswer | 889 | [SRC-2C8F288796-L000889](../web/workspace.html#L889) |
+| [web/workspace.html](../web/workspace.html#L890) | متغير JavaScript/TypeScript | value | 890 | [SRC-2C8F288796-L000890](../web/workspace.html#L890) |
+| [web/workspace.html](../web/workspace.html#L891) | متغير JavaScript/TypeScript | marker | 891 | [SRC-2C8F288796-L000891](../web/workspace.html#L891) |
+| [web/workspace.html](../web/workspace.html#L892) | متغير JavaScript/TypeScript | cursor | 892 | [SRC-2C8F288796-L000892](../web/workspace.html#L892) |
+| [web/workspace.html](../web/workspace.html#L895) | متغير JavaScript/TypeScript | index | 895 | [SRC-2C8F288796-L000895](../web/workspace.html#L895) |
+| [web/workspace.html](../web/workspace.html#L897) | متغير JavaScript/TypeScript | href | 897 | [SRC-2C8F288796-L000897](../web/workspace.html#L897) |
+| [web/workspace.html](../web/workspace.html#L912) | دالة JavaScript/TypeScript | chatMessageNode | 912 | [SRC-2C8F288796-L000912](../web/workspace.html#L912) |
+| [web/workspace.html](../web/workspace.html#L915) | متغير JavaScript/TypeScript | answer | 915 | [SRC-2C8F288796-L000915](../web/workspace.html#L915) |
+| [web/workspace.html](../web/workspace.html#L920) | متغير JavaScript/TypeScript | li | 920 | [SRC-2C8F288796-L000920](../web/workspace.html#L920) |
+| [web/workspace.html](../web/workspace.html#L928) | دالة JavaScript/TypeScript | renderChat | 928 | [SRC-2C8F288796-L000928](../web/workspace.html#L928) |
+| [web/workspace.html](../web/workspace.html#L933) | متغير JavaScript/TypeScript | pt | 933 | [SRC-2C8F288796-L000933](../web/workspace.html#L933) |
+| [web/workspace.html](../web/workspace.html#L935) | متغير JavaScript/TypeScript | clear | 935 | [SRC-2C8F288796-L000935](../web/workspace.html#L935) |
+| [web/workspace.html](../web/workspace.html#L938) | متغير JavaScript/TypeScript | modeBar | 938 | [SRC-2C8F288796-L000938](../web/workspace.html#L938) |
+| [web/workspace.html](../web/workspace.html#L946) | قيمة سمة HTML (id) | chatList | 946 | [SRC-2C8F288796-L000946](../web/workspace.html#L946) |
+| [web/workspace.html](../web/workspace.html#L952) | متغير JavaScript/TypeScript | form | 952 | [SRC-2C8F288796-L000952](../web/workspace.html#L952) |
+| [web/workspace.html](../web/workspace.html#L953) | قيمة سمة HTML (id) | chatInput | 953 | [SRC-2C8F288796-L000953](../web/workspace.html#L953) |
+| [web/workspace.html](../web/workspace.html#L953) | متغير JavaScript/TypeScript | input | 953 | [SRC-2C8F288796-L000953](../web/workspace.html#L953) |
+| [web/workspace.html](../web/workspace.html#L954) | قيمة سمة HTML (id) | chatSend | 954 | [SRC-2C8F288796-L000954](../web/workspace.html#L954) |
+| [web/workspace.html](../web/workspace.html#L954) | متغير JavaScript/TypeScript | send | 954 | [SRC-2C8F288796-L000954](../web/workspace.html#L954) |
+| [web/workspace.html](../web/workspace.html#L961) | دالة JavaScript/TypeScript | sendChat | 961 | [SRC-2C8F288796-L000961](../web/workspace.html#L961) |
+| [web/workspace.html](../web/workspace.html#L964) | متغير JavaScript/TypeScript | question | 964 | [SRC-2C8F288796-L000964](../web/workspace.html#L964) |
+| [web/workspace.html](../web/workspace.html#L967) | متغير JavaScript/TypeScript | controller | 967 | [SRC-2C8F288796-L000967](../web/workspace.html#L967) |
+| [web/workspace.html](../web/workspace.html#L968) | متغير JavaScript/TypeScript | requestTimedOut | 968 | [SRC-2C8F288796-L000968](../web/workspace.html#L968) |
+| [web/workspace.html](../web/workspace.html#L969) | متغير JavaScript/TypeScript | timeoutId | 969 | [SRC-2C8F288796-L000969](../web/workspace.html#L969) |
+| [web/workspace.html](../web/workspace.html#L971) | مسار API/واجهة محتمل | /api/agent | 971 | [SRC-2C8F288796-L000971](../web/workspace.html#L971) |
+| [web/workspace.html](../web/workspace.html#L980) | متغير JavaScript/TypeScript | timedOut | 980 | [SRC-2C8F288796-L000980](../web/workspace.html#L980) |
+| [web/workspace.html](../web/workspace.html#L995) | دالة JavaScript/TypeScript | renderCurrent | 995 | [SRC-2C8F288796-L000995](../web/workspace.html#L995) |
+| [web/workspace.html](../web/workspace.html#L1010) | دالة JavaScript/TypeScript | navigate | 1010 | [SRC-2C8F288796-L001010](../web/workspace.html#L1010) |
+| [web/workspace.html](../web/workspace.html#L1013) | دالة JavaScript/TypeScript | loadProductProfiles | 1013 | [SRC-2C8F288796-L001013](../web/workspace.html#L1013) |
+| [web/workspace.html](../web/workspace.html#L1018) | دالة JavaScript/TypeScript | loadDiscoveryRuns | 1018 | [SRC-2C8F288796-L001018](../web/workspace.html#L1018) |
+| [web/workspace.html](../web/workspace.html#L1022) | دالة JavaScript/TypeScript | loadLeads | 1022 | [SRC-2C8F288796-L001022](../web/workspace.html#L1022) |
+| [web/workspace.html](../web/workspace.html#L1026) | دالة JavaScript/TypeScript | bootstrap | 1026 | [SRC-2C8F288796-L001026](../web/workspace.html#L1026) |
+| [web/workspace.html](../web/workspace.html#L1027) | متغير JavaScript/TypeScript | session | 1027 | [SRC-2C8F288796-L001027](../web/workspace.html#L1027) |
+| [web/workspace.html](../web/workspace.html#L1029) | مسار API/واجهة محتمل | /api/session | 1029 | [SRC-2C8F288796-L001029](../web/workspace.html#L1029) |
+| [web/workspace.html](../web/workspace.html#L1040) | متغير JavaScript/TypeScript | results | 1040 | [SRC-2C8F288796-L001040](../web/workspace.html#L1040) |
+| [web/workspace.html](../web/workspace.html#L1066) | متغير JavaScript/TypeScript | button | 1066 | [SRC-2C8F288796-L001066](../web/workspace.html#L1066) |
+| [web/workspace.html](../web/workspace.html#L1066) | متغير JavaScript/TypeScript | token | 1066 | [SRC-2C8F288796-L001066](../web/workspace.html#L1066) |
+| [web/workspace.html](../web/workspace.html#L1076) | مسار API/واجهة محتمل | /api/session/logout | 1076 | [SRC-2C8F288796-L001076](../web/workspace.html#L1076) |
 
 ## سجل وسوم المراجعة والإصلاح
 

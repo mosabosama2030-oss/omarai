@@ -4,9 +4,91 @@
 
 - الصفحة: **048**
 - سجلات الأسطر: **800**
-- النطاق: SRC-8455F405B6-L000020 إلى SRC-FA4E1423C3-L000465
+- النطاق: SRC-6BCB799CEC-L000234 إلى SRC-FA4E1423C3-L000373
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-6BCB799CEC — [tests/test_evidence_provenance.py](../../tests/test_evidence_provenance.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-6BCB799CEC-L000234](../../tests/test_evidence_provenance.py#L234) | 234 | `""` | — |
+| [SRC-6BCB799CEC-L000235](../../tests/test_evidence_provenance.py#L235) | 235 | `""` | — |
+| [SRC-6BCB799CEC-L000236](../../tests/test_evidence_provenance.py#L236) | 236 | `"def test_private_redirect_target_is_rejected_before_a_second_connection(monkeypatch):"` | — |
+| [SRC-6BCB799CEC-L000237](../../tests/test_evidence_provenance.py#L237) | 237 | `"    \"\"\"Every redirect is validated independently, even after a pinned public request.\"\"\""` | — |
+| [SRC-6BCB799CEC-L000238](../../tests/test_evidence_provenance.py#L238) | 238 | `"    resolutions = []"` | — |
+| [SRC-6BCB799CEC-L000239](../../tests/test_evidence_provenance.py#L239) | 239 | `"    connections = []"` | — |
+| [SRC-6BCB799CEC-L000240](../../tests/test_evidence_provenance.py#L240) | 240 | `""` | — |
+| [SRC-6BCB799CEC-L000241](../../tests/test_evidence_provenance.py#L241) | 241 | `"    def fake_getaddrinfo(host, port, *args, **kwargs):"` | — |
+| [SRC-6BCB799CEC-L000242](../../tests/test_evidence_provenance.py#L242) | 242 | `"        resolutions.append(host)"` | — |
+| [SRC-6BCB799CEC-L000243](../../tests/test_evidence_provenance.py#L243) | 243 | `"        assert host == \"example.com\""` | — |
+| [SRC-6BCB799CEC-L000244](../../tests/test_evidence_provenance.py#L244) | 244 | `"        return _addrinfo(\"1.1.1.1\")"` | — |
+| [SRC-6BCB799CEC-L000245](../../tests/test_evidence_provenance.py#L245) | 245 | `""` | — |
+| [SRC-6BCB799CEC-L000246](../../tests/test_evidence_provenance.py#L246) | 246 | `"    class FakeResponse:"` | — |
+| [SRC-6BCB799CEC-L000247](../../tests/test_evidence_provenance.py#L247) | 247 | `"        status_code = 302"` | — |
+| [SRC-6BCB799CEC-L000248](../../tests/test_evidence_provenance.py#L248) | 248 | `""` | — |
+| [SRC-6BCB799CEC-L000249](../../tests/test_evidence_provenance.py#L249) | 249 | `"        def __init__(self):"` | — |
+| [SRC-6BCB799CEC-L000250](../../tests/test_evidence_provenance.py#L250) | 250 | `"            self.headers = {\"location\": \"http://127.0.0.1/latest/meta-data/\"}"` | — |
+| [SRC-6BCB799CEC-L000251](../../tests/test_evidence_provenance.py#L251) | 251 | `""` | — |
+| [SRC-6BCB799CEC-L000252](../../tests/test_evidence_provenance.py#L252) | 252 | `"        def __enter__(self):"` | — |
+| [SRC-6BCB799CEC-L000253](../../tests/test_evidence_provenance.py#L253) | 253 | `"            return self"` | — |
+| [SRC-6BCB799CEC-L000254](../../tests/test_evidence_provenance.py#L254) | 254 | `""` | — |
+| [SRC-6BCB799CEC-L000255](../../tests/test_evidence_provenance.py#L255) | 255 | `"        def __exit__(self, *args):"` | — |
+| [SRC-6BCB799CEC-L000256](../../tests/test_evidence_provenance.py#L256) | 256 | `"            return False"` | — |
+| [SRC-6BCB799CEC-L000257](../../tests/test_evidence_provenance.py#L257) | 257 | `""` | — |
+| [SRC-6BCB799CEC-L000258](../../tests/test_evidence_provenance.py#L258) | 258 | `"    class FakeClient:"` | — |
+| [SRC-6BCB799CEC-L000259](../../tests/test_evidence_provenance.py#L259) | 259 | `"        def __init__(self, *args, **kwargs):"` | — |
+| [SRC-6BCB799CEC-L000260](../../tests/test_evidence_provenance.py#L260) | 260 | `"            assert kwargs.get(\"trust_env\") is False"` | — |
+| [SRC-6BCB799CEC-L000261](../../tests/test_evidence_provenance.py#L261) | 261 | `"            assert kwargs.get(\"follow_redirects\") is False"` | — |
+| [SRC-6BCB799CEC-L000262](../../tests/test_evidence_provenance.py#L262) | 262 | `""` | — |
+| [SRC-6BCB799CEC-L000263](../../tests/test_evidence_provenance.py#L263) | 263 | `"        def __enter__(self):"` | — |
+| [SRC-6BCB799CEC-L000264](../../tests/test_evidence_provenance.py#L264) | 264 | `"            return self"` | — |
+| [SRC-6BCB799CEC-L000265](../../tests/test_evidence_provenance.py#L265) | 265 | `""` | — |
+| [SRC-6BCB799CEC-L000266](../../tests/test_evidence_provenance.py#L266) | 266 | `"        def __exit__(self, *args):"` | — |
+| [SRC-6BCB799CEC-L000267](../../tests/test_evidence_provenance.py#L267) | 267 | `"            return False"` | — |
+| [SRC-6BCB799CEC-L000268](../../tests/test_evidence_provenance.py#L268) | 268 | `""` | — |
+| [SRC-6BCB799CEC-L000269](../../tests/test_evidence_provenance.py#L269) | 269 | `"        def stream(self, method, url, **kwargs):"` | — |
+| [SRC-6BCB799CEC-L000270](../../tests/test_evidence_provenance.py#L270) | 270 | `"            connections.append(url)"` | — |
+| [SRC-6BCB799CEC-L000271](../../tests/test_evidence_provenance.py#L271) | 271 | `"            return FakeResponse()"` | — |
+| [SRC-6BCB799CEC-L000272](../../tests/test_evidence_provenance.py#L272) | 272 | `""` | — |
+| [SRC-6BCB799CEC-L000273](../../tests/test_evidence_provenance.py#L273) | 273 | `"    monkeypatch.setattr(socket, \"getaddrinfo\", fake_getaddrinfo)"` | — |
+| [SRC-6BCB799CEC-L000274](../../tests/test_evidence_provenance.py#L274) | 274 | `"    monkeypatch.setattr(\"httpx.Client\", FakeClient)"` | — |
+| [SRC-6BCB799CEC-L000275](../../tests/test_evidence_provenance.py#L275) | 275 | `"    assert WebAgent()._fetch_page(\"https://example.com/article\") == (\"\", \"\")"` | — |
+| [SRC-6BCB799CEC-L000276](../../tests/test_evidence_provenance.py#L276) | 276 | `"    assert len(connections) == 1"` | — |
+| [SRC-6BCB799CEC-L000277](../../tests/test_evidence_provenance.py#L277) | 277 | `"    assert connections[0].startswith(\"https://1.1.1.1/\")"` | — |
+| [SRC-6BCB799CEC-L000278](../../tests/test_evidence_provenance.py#L278) | 278 | `"    assert resolutions == [\"example.com\"]"` | — |
+| [SRC-6BCB799CEC-L000279](../../tests/test_evidence_provenance.py#L279) | 279 | `""` | — |
+| [SRC-6BCB799CEC-L000280](../../tests/test_evidence_provenance.py#L280) | 280 | `""` | — |
+| [SRC-6BCB799CEC-L000281](../../tests/test_evidence_provenance.py#L281) | 281 | `""` | — |
+| [SRC-6BCB799CEC-L000282](../../tests/test_evidence_provenance.py#L282) | 282 | `"@pytest.mark.parametrize("` | — |
+| [SRC-6BCB799CEC-L000283](../../tests/test_evidence_provenance.py#L283) | 283 | `"    \"address\","` | — |
+| [SRC-6BCB799CEC-L000284](../../tests/test_evidence_provenance.py#L284) | 284 | `"    ["` | — |
+| [SRC-6BCB799CEC-L000285](../../tests/test_evidence_provenance.py#L285) | 285 | `"        \"0.0.0.0\",          # unspecified IPv4"` | — |
+| [SRC-6BCB799CEC-L000286](../../tests/test_evidence_provenance.py#L286) | 286 | `"        \"127.0.0.1\",        # loopback IPv4"` | — |
+| [SRC-6BCB799CEC-L000287](../../tests/test_evidence_provenance.py#L287) | 287 | `"        \"10.0.0.1\",         # private IPv4"` | — |
+| [SRC-6BCB799CEC-L000288](../../tests/test_evidence_provenance.py#L288) | 288 | `"        \"172.16.0.1\",       # private IPv4"` | — |
+| [SRC-6BCB799CEC-L000289](../../tests/test_evidence_provenance.py#L289) | 289 | `"        \"192.168.1.1\",      # private IPv4"` | — |
+| [SRC-6BCB799CEC-L000290](../../tests/test_evidence_provenance.py#L290) | 290 | `"        \"169.254.169.254\",  # link-local / common metadata endpoint"` | — |
+| [SRC-6BCB799CEC-L000291](../../tests/test_evidence_provenance.py#L291) | 291 | `"        \"100.64.0.1\",       # shared address space"` | — |
+| [SRC-6BCB799CEC-L000292](../../tests/test_evidence_provenance.py#L292) | 292 | `"        \"::\",                # unspecified IPv6"` | — |
+| [SRC-6BCB799CEC-L000293](../../tests/test_evidence_provenance.py#L293) | 293 | `"        \"::1\",               # loopback IPv6"` | — |
+| [SRC-6BCB799CEC-L000294](../../tests/test_evidence_provenance.py#L294) | 294 | `"        \"fc00::1\",           # unique-local IPv6"` | — |
+| [SRC-6BCB799CEC-L000295](../../tests/test_evidence_provenance.py#L295) | 295 | `"        \"fe80::1\",           # link-local IPv6"` | — |
+| [SRC-6BCB799CEC-L000296](../../tests/test_evidence_provenance.py#L296) | 296 | `"    ],"` | — |
+| [SRC-6BCB799CEC-L000297](../../tests/test_evidence_provenance.py#L297) | 297 | `")"` | — |
+| [SRC-6BCB799CEC-L000298](../../tests/test_evidence_provenance.py#L298) | 298 | `"def test_non_global_ipv4_and_ipv6_dns_answers_are_rejected(address, monkeypatch):"` | — |
+| [SRC-6BCB799CEC-L000299](../../tests/test_evidence_provenance.py#L299) | 299 | `"    \"\"\"No DNS answer from a non-global range may pass the page-fetch gate.\"\"\""` | — |
+| [SRC-6BCB799CEC-L000300](../../tests/test_evidence_provenance.py#L300) | 300 | `"    monkeypatch.setattr("` | — |
+| [SRC-6BCB799CEC-L000301](../../tests/test_evidence_provenance.py#L301) | 301 | `"        socket,"` | — |
+| [SRC-6BCB799CEC-L000302](../../tests/test_evidence_provenance.py#L302) | 302 | `"        \"getaddrinfo\","` | — |
+| [SRC-6BCB799CEC-L000303](../../tests/test_evidence_provenance.py#L303) | 303 | `"        lambda host, port, *args, **kwargs: _addrinfo(address),"` | — |
+| [SRC-6BCB799CEC-L000304](../../tests/test_evidence_provenance.py#L304) | 304 | `"    )"` | — |
+| [SRC-6BCB799CEC-L000305](../../tests/test_evidence_provenance.py#L305) | 305 | `""` | — |
+| [SRC-6BCB799CEC-L000306](../../tests/test_evidence_provenance.py#L306) | 306 | `"    assert _public_ip_literals(\"public.example\") is None"` | — |
 ## اختبارات
 
 ### FILE-8455F405B6 — [tests/test_evidence_signals.py](../../tests/test_evidence_signals.py#L1)
@@ -16,6 +98,25 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-8455F405B6-L000001](../../tests/test_evidence_signals.py#L1) | 1 | `"from __future__ import annotations"` | — |
+| [SRC-8455F405B6-L000002](../../tests/test_evidence_signals.py#L2) | 2 | `""` | — |
+| [SRC-8455F405B6-L000003](../../tests/test_evidence_signals.py#L3) | 3 | `"from datetime import UTC, datetime"` | — |
+| [SRC-8455F405B6-L000004](../../tests/test_evidence_signals.py#L4) | 4 | `""` | — |
+| [SRC-8455F405B6-L000005](../../tests/test_evidence_signals.py#L5) | 5 | `"from agents.research import _parse_publication_date, evidence_signal_report"` | — |
+| [SRC-8455F405B6-L000006](../../tests/test_evidence_signals.py#L6) | 6 | `""` | — |
+| [SRC-8455F405B6-L000007](../../tests/test_evidence_signals.py#L7) | 7 | `""` | — |
+| [SRC-8455F405B6-L000008](../../tests/test_evidence_signals.py#L8) | 8 | `"def test_evidence_signal_report_uses_domain_provider_page_and_date_coverage():"` | — |
+| [SRC-8455F405B6-L000009](../../tests/test_evidence_signals.py#L9) | 9 | `"    now = datetime(2026, 10, 12, 12, 0, tzinfo=UTC)"` | — |
+| [SRC-8455F405B6-L000010](../../tests/test_evidence_signals.py#L10) | 10 | `"    sources = []"` | — |
+| [SRC-8455F405B6-L000011](../../tests/test_evidence_signals.py#L11) | 11 | `"    domains = ["` | — |
+| [SRC-8455F405B6-L000012](../../tests/test_evidence_signals.py#L12) | 12 | `"        \"agency.gov.eg\", \"university.edu.eg\", \"reuters.com\", \"apnews.com\","` | — |
+| [SRC-8455F405B6-L000013](../../tests/test_evidence_signals.py#L13) | 13 | `"        \"example.org\", \"example.net\", \"bbc.com\", \"sample.com\","` | — |
+| [SRC-8455F405B6-L000014](../../tests/test_evidence_signals.py#L14) | 14 | `"    ]"` | — |
+| [SRC-8455F405B6-L000015](../../tests/test_evidence_signals.py#L15) | 15 | `"    classes = ["` | — |
+| [SRC-8455F405B6-L000016](../../tests/test_evidence_signals.py#L16) | 16 | `"        \"government\", \"academic\", \"news\", \"news\","` | — |
+| [SRC-8455F405B6-L000017](../../tests/test_evidence_signals.py#L17) | 17 | `"        \"general\", \"general\", \"news\", \"general\","` | — |
+| [SRC-8455F405B6-L000018](../../tests/test_evidence_signals.py#L18) | 18 | `"    ]"` | — |
+| [SRC-8455F405B6-L000019](../../tests/test_evidence_signals.py#L19) | 19 | `"    for index, (domain, source_class) in enumerate(zip(domains, classes)):"` | — |
 | [SRC-8455F405B6-L000020](../../tests/test_evidence_signals.py#L20) | 20 | `"        sources.append({"` | — |
 | [SRC-8455F405B6-L000021](../../tests/test_evidence_signals.py#L21) | 21 | `"            \"url\": f\"https://{domain}/article-{index}\","` | — |
 | [SRC-8455F405B6-L000022](../../tests/test_evidence_signals.py#L22) | 22 | `"            \"domain\": domain,"` | — |
@@ -742,95 +843,3 @@
 | [SRC-FA4E1423C3-L000371](../../tests/test_generate_index.py#L371) | 371 | `"    \"\"\"Coverage report states exact skipped-file reasons without exposing secret contents.\"\"\""` | — |
 | [SRC-FA4E1423C3-L000372](../../tests/test_generate_index.py#L372) | 372 | `"    (tmp_path / \"source.py\").write_text(\"VALUE = 7\\n\", encoding=\"utf-8\")"` | — |
 | [SRC-FA4E1423C3-L000373](../../tests/test_generate_index.py#L373) | 373 | `"    (tmp_path / \".env\").write_text(\"PRIVATE_API_TOKEN=never-print-this-secret\\n\", encoding=\"utf-8\")"` | — |
-| [SRC-FA4E1423C3-L000374](../../tests/test_generate_index.py#L374) | 374 | `"    (tmp_path / \"large.txt\").write_bytes(b\"x\" * (INDEXER.MAX_INDEXED_TEXT_BYTES + 1))"` | — |
-| [SRC-FA4E1423C3-L000375](../../tests/test_generate_index.py#L375) | 375 | `"    (tmp_path / \".venv\" / \"lib\").mkdir(parents=True)"` | — |
-| [SRC-FA4E1423C3-L000376](../../tests/test_generate_index.py#L376) | 376 | `"    (tmp_path / \".venv\" / \"lib\" / \"hidden.py\").write_text(\"PRIVATE = True\\n\", encoding=\"utf-8\")"` | — |
-| [SRC-FA4E1423C3-L000377](../../tests/test_generate_index.py#L377) | 377 | `""` | — |
-| [SRC-FA4E1423C3-L000378](../../tests/test_generate_index.py#L378) | 378 | `"    inventory = INDEXER.build_file_inventory(tmp_path)"` | — |
-| [SRC-FA4E1423C3-L000379](../../tests/test_generate_index.py#L379) | 379 | `"    lines = INDEXER.scan_source_lines(tmp_path, inventory)"` | — |
-| [SRC-FA4E1423C3-L000380](../../tests/test_generate_index.py#L380) | 380 | `"    INDEXER.validate_source_line_coverage(tmp_path, inventory, lines)"` | — |
-| [SRC-FA4E1423C3-L000381](../../tests/test_generate_index.py#L381) | 381 | `"    exclusions = INDEXER.discover_excluded_paths(tmp_path)"` | — |
-| [SRC-FA4E1423C3-L000382](../../tests/test_generate_index.py#L382) | 382 | `"    report = INDEXER.render_coverage_audit_markdown(tmp_path, inventory, lines, exclusions)"` | — |
-| [SRC-FA4E1423C3-L000383](../../tests/test_generate_index.py#L383) | 383 | `""` | — |
-| [SRC-FA4E1423C3-L000384](../../tests/test_generate_index.py#L384) | 384 | `"    assert \"100.00%\" in report"` | — |
-| [SRC-FA4E1423C3-L000385](../../tests/test_generate_index.py#L385) | 385 | `"    assert \"large.txt\" in report"` | — |
-| [SRC-FA4E1423C3-L000386](../../tests/test_generate_index.py#L386) | 386 | `"    assert f\"يتجاوز حد الفهرسة ({INDEXER.MAX_INDEXED_TEXT_BYTES} بايت)\" in report"` | — |
-| [SRC-FA4E1423C3-L000387](../../tests/test_generate_index.py#L387) | 387 | `"    assert \".env\" in report"` | — |
-| [SRC-FA4E1423C3-L000388](../../tests/test_generate_index.py#L388) | 388 | `"    assert \".venv/\" in report"` | — |
-| [SRC-FA4E1423C3-L000389](../../tests/test_generate_index.py#L389) | 389 | `"    assert \"لم تُقرأ محتوياته\" in report"` | — |
-| [SRC-FA4E1423C3-L000390](../../tests/test_generate_index.py#L390) | 390 | `"    assert \"never-print-this-secret\" not in report"` | — |
-| [SRC-FA4E1423C3-L000391](../../tests/test_generate_index.py#L391) | 391 | `"    assert \"PRIVATE_API_TOKEN\" not in report"` | — |
-| [SRC-FA4E1423C3-L000392](../../tests/test_generate_index.py#L392) | 392 | `"    assert \"PRIVATE = True\" not in report"` | — |
-| [SRC-FA4E1423C3-L000393](../../tests/test_generate_index.py#L393) | 393 | `""` | — |
-| [SRC-FA4E1423C3-L000394](../../tests/test_generate_index.py#L394) | 394 | `""` | — |
-| [SRC-FA4E1423C3-L000395](../../tests/test_generate_index.py#L395) | 395 | `"def test_multiple_review_markers_on_one_line_each_get_a_unique_finding_code("` | — |
-| [SRC-FA4E1423C3-L000396](../../tests/test_generate_index.py#L396) | 396 | `"    tmp_path: Path,"` | — |
-| [SRC-FA4E1423C3-L000397](../../tests/test_generate_index.py#L397) | 397 | `") -> None:"` | — |
-| [SRC-FA4E1423C3-L000398](../../tests/test_generate_index.py#L398) | 398 | `"    \"\"\"Different and repeated review tags on a single line must not overwrite each other.\"\"\""` | — |
-| [SRC-FA4E1423C3-L000399](../../tests/test_generate_index.py#L399) | 399 | `"    source_file = tmp_path / \"module.py\""` | — |
-| [SRC-FA4E1423C3-L000400](../../tests/test_generate_index.py#L400) | 400 | `"    source_file.write_text("` | — |
-| [SRC-FA4E1423C3-L000401](../../tests/test_generate_index.py#L401) | 401 | `"        \"# BUG: first defect; FIXME: repair it; BUG: second defect\\n\","` | — |
-| [SRC-FA4E1423C3-L000402](../../tests/test_generate_index.py#L402) | 402 | `"        encoding=\"utf-8\","` | — |
-| [SRC-FA4E1423C3-L000403](../../tests/test_generate_index.py#L403) | 403 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000404](../../tests/test_generate_index.py#L404) | 404 | `""` | — |
-| [SRC-FA4E1423C3-L000405](../../tests/test_generate_index.py#L405) | 405 | `"    inventory = INDEXER.build_file_inventory(tmp_path)"` | — |
-| [SRC-FA4E1423C3-L000406](../../tests/test_generate_index.py#L406) | 406 | `"    source_lines = INDEXER.scan_source_lines(tmp_path, inventory)"` | — |
-| [SRC-FA4E1423C3-L000407](../../tests/test_generate_index.py#L407) | 407 | `"    findings = INDEXER.scan_finding_annotations(source_lines)"` | — |
-| [SRC-FA4E1423C3-L000408](../../tests/test_generate_index.py#L408) | 408 | `"    pages, _ = INDEXER.render_source_line_pages(source_lines, inventory, findings)"` | — |
-| [SRC-FA4E1423C3-L000409](../../tests/test_generate_index.py#L409) | 409 | `""` | — |
-| [SRC-FA4E1423C3-L000410](../../tests/test_generate_index.py#L410) | 410 | `"    assert len(findings) == 3"` | — |
-| [SRC-FA4E1423C3-L000411](../../tests/test_generate_index.py#L411) | 411 | `"    assert {item.marker for item in findings} == {\"BUG\", \"FIXME\"}"` | — |
-| [SRC-FA4E1423C3-L000412](../../tests/test_generate_index.py#L412) | 412 | `"    assert len({item.finding_id for item in findings}) == 3"` | — |
-| [SRC-FA4E1423C3-L000413](../../tests/test_generate_index.py#L413) | 413 | `"    bug_ids = [item.finding_id for item in findings if item.marker == \"BUG\"]"` | — |
-| [SRC-FA4E1423C3-L000414](../../tests/test_generate_index.py#L414) | 414 | `"    assert any(item.endswith(\"-M01\") for item in bug_ids)"` | — |
-| [SRC-FA4E1423C3-L000415](../../tests/test_generate_index.py#L415) | 415 | `"    assert any(item.endswith(\"-M02\") for item in bug_ids)"` | — |
-| [SRC-FA4E1423C3-L000416](../../tests/test_generate_index.py#L416) | 416 | `"    page_content = \"\\n\".join(pages.values())"` | — |
-| [SRC-FA4E1423C3-L000417](../../tests/test_generate_index.py#L417) | 417 | `"    assert all(item.finding_id in page_content for item in findings)"` | — |
-| [SRC-FA4E1423C3-L000418](../../tests/test_generate_index.py#L418) | 418 | `""` | — |
-| [SRC-FA4E1423C3-L000419](../../tests/test_generate_index.py#L419) | 419 | `""` | — |
-| [SRC-FA4E1423C3-L000420](../../tests/test_generate_index.py#L420) | 420 | `"def test_finding_scan_ignores_incidental_words_but_finds_real_annotations("` | — |
-| [SRC-FA4E1423C3-L000421](../../tests/test_generate_index.py#L421) | 421 | `"    tmp_path: Path,"` | — |
-| [SRC-FA4E1423C3-L000422](../../tests/test_generate_index.py#L422) | 422 | `") -> None:"` | — |
-| [SRC-FA4E1423C3-L000423](../../tests/test_generate_index.py#L423) | 423 | `"    \"\"\"Only explicit comment or prose markers become findings, never syntax/URLs/strings.\"\"\""` | — |
-| [SRC-FA4E1423C3-L000424](../../tests/test_generate_index.py#L424) | 424 | `"    (tmp_path / \"sample.py\").write_text("` | — |
-| [SRC-FA4E1423C3-L000425](../../tests/test_generate_index.py#L425) | 425 | `"        'framework_url = \"https://example.org/risk-management-framework\"\\n'"` | — |
-| [SRC-FA4E1423C3-L000426](../../tests/test_generate_index.py#L426) | 426 | `"        'error = \"ordinary error variable\"\\n'"` | — |
-| [SRC-FA4E1423C3-L000427](../../tests/test_generate_index.py#L427) | 427 | `"        'template = \"# BUG: this is inside a string\"\\n'"` | — |
-| [SRC-FA4E1423C3-L000428](../../tests/test_generate_index.py#L428) | 428 | `"        '# BUG: real Python defect\\n',"` | — |
-| [SRC-FA4E1423C3-L000429](../../tests/test_generate_index.py#L429) | 429 | `"        encoding=\"utf-8\","` | — |
-| [SRC-FA4E1423C3-L000430](../../tests/test_generate_index.py#L430) | 430 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000431](../../tests/test_generate_index.py#L431) | 431 | `"    (tmp_path / \"app.js\").write_text("` | — |
-| [SRC-FA4E1423C3-L000432](../../tests/test_generate_index.py#L432) | 432 | `"        'const template = \"// BUG: not a comment\";\\n'"` | — |
-| [SRC-FA4E1423C3-L000433](../../tests/test_generate_index.py#L433) | 433 | `"        'const error = 1;\\n'"` | — |
-| [SRC-FA4E1423C3-L000434](../../tests/test_generate_index.py#L434) | 434 | `"        'const x = 2; // FIXME: actual JS issue\\n'"` | — |
-| [SRC-FA4E1423C3-L000435](../../tests/test_generate_index.py#L435) | 435 | `"        '/* SECURITY: actual CSS/JS comment issue */\\n',"` | — |
-| [SRC-FA4E1423C3-L000436](../../tests/test_generate_index.py#L436) | 436 | `"        encoding=\"utf-8\","` | — |
-| [SRC-FA4E1423C3-L000437](../../tests/test_generate_index.py#L437) | 437 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000438](../../tests/test_generate_index.py#L438) | 438 | `"    (tmp_path / \"styles.css\").write_text("` | — |
-| [SRC-FA4E1423C3-L000439](../../tests/test_generate_index.py#L439) | 439 | `"        \".box{gap:8px;color:red}\\n\""` | — |
-| [SRC-FA4E1423C3-L000440](../../tests/test_generate_index.py#L440) | 440 | `"        \"/* GAP: deliberate comment annotation */\\n\","` | — |
-| [SRC-FA4E1423C3-L000441](../../tests/test_generate_index.py#L441) | 441 | `"        encoding=\"utf-8\","` | — |
-| [SRC-FA4E1423C3-L000442](../../tests/test_generate_index.py#L442) | 442 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000443](../../tests/test_generate_index.py#L443) | 443 | `"    (tmp_path / \"page.html\").write_text("` | — |
-| [SRC-FA4E1423C3-L000444](../../tests/test_generate_index.py#L444) | 444 | `"        '<!-- REVIEW: check the navigation landmark -->\\n'"` | — |
-| [SRC-FA4E1423C3-L000445](../../tests/test_generate_index.py#L445) | 445 | `"        '<script>const template = \"<!-- BUG: not a markup comment -->\";</script>\\n',"` | — |
-| [SRC-FA4E1423C3-L000446](../../tests/test_generate_index.py#L446) | 446 | `"        encoding=\"utf-8\","` | — |
-| [SRC-FA4E1423C3-L000447](../../tests/test_generate_index.py#L447) | 447 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000448](../../tests/test_generate_index.py#L448) | 448 | `"    (tmp_path / \"guide.md\").write_text("` | — |
-| [SRC-FA4E1423C3-L000449](../../tests/test_generate_index.py#L449) | 449 | `"        \"The risk-management framework reports an error.\\n\""` | — |
-| [SRC-FA4E1423C3-L000450](../../tests/test_generate_index.py#L450) | 450 | ````"        \"```text\\n\""```` | — |
-| [SRC-FA4E1423C3-L000451](../../tests/test_generate_index.py#L451) | 451 | `"        \"# BUG: this sample should be ignored\\n\""` | — |
-| [SRC-FA4E1423C3-L000452](../../tests/test_generate_index.py#L452) | 452 | ````"        \"```\\n\""```` | — |
-| [SRC-FA4E1423C3-L000453](../../tests/test_generate_index.py#L453) | 453 | `"        \"- DEFECT: this explicitly documented defect should be indexed\\n\","` | — |
-| [SRC-FA4E1423C3-L000454](../../tests/test_generate_index.py#L454) | 454 | `"        encoding=\"utf-8\","` | — |
-| [SRC-FA4E1423C3-L000455](../../tests/test_generate_index.py#L455) | 455 | `"    )"` | — |
-| [SRC-FA4E1423C3-L000456](../../tests/test_generate_index.py#L456) | 456 | `""` | — |
-| [SRC-FA4E1423C3-L000457](../../tests/test_generate_index.py#L457) | 457 | `"    inventory = INDEXER.build_file_inventory(tmp_path)"` | — |
-| [SRC-FA4E1423C3-L000458](../../tests/test_generate_index.py#L458) | 458 | `"    source_lines = INDEXER.scan_source_lines(tmp_path, inventory)"` | — |
-| [SRC-FA4E1423C3-L000459](../../tests/test_generate_index.py#L459) | 459 | `"    findings = INDEXER.scan_finding_annotations(source_lines)"` | — |
-| [SRC-FA4E1423C3-L000460](../../tests/test_generate_index.py#L460) | 460 | `"    summarized = {(item.file, item.marker, item.description) for item in findings}"` | — |
-| [SRC-FA4E1423C3-L000461](../../tests/test_generate_index.py#L461) | 461 | `""` | — |
-| [SRC-FA4E1423C3-L000462](../../tests/test_generate_index.py#L462) | 462 | `"    assert {item.marker for item in findings} == {"` | — |
-| [SRC-FA4E1423C3-L000463](../../tests/test_generate_index.py#L463) | 463 | `"        \"BUG\", \"FIXME\", \"SECURITY\", \"GAP\", \"REVIEW\", \"DEFECT\""` | — |
-| [SRC-FA4E1423C3-L000464](../../tests/test_generate_index.py#L464) | 464 | `"    }"` | — |
-| [SRC-FA4E1423C3-L000465](../../tests/test_generate_index.py#L465) | 465 | `"    assert any(path == \"sample.py\" and marker == \"BUG\" and \"real Python defect\" in desc"` | — |
