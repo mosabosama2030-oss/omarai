@@ -12,7 +12,8 @@ Make the main workspace chat and legacy agent search recover predictably from lo
 4. The workspace API helper forwards an optional AbortSignal without changing callers that do not provide one.
 5. Refresh failures preserve the last successfully loaded data and display an actionable error.
 6. After a successful save, a later list-refresh failure is reported separately; it must not imply that the save failed or encourage duplicate writes.
-7. No connector credentials, provider calls, database schema, deployment settings, or production deployment are changed.
+7. Inline citation markers in workspace chat resolve only to the same 1-based source-list entry used by the answer; invalid or missing indexes remain plain text.
+8. No connector credentials, provider calls, database schema, deployment settings, or production deployment are changed.
 
 ## Non-goals
 - No claim of hard server cancellation.
