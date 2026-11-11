@@ -15,6 +15,11 @@ MAX_TASK_CHARS = 4000
 MAX_TASK_ASPECTS = 8
 MAX_STRATEGY_QUERIES = 8
 SUPPORTED_MODES = frozenset({"auto", "deep", "latest", "social"})
+TASK_CONTEXT_SLOT_KEYS = frozenset({
+    "aspect", "audience", "budget", "capacity", "country", "currency",
+    "entity", "goal", "language", "location", "model", "platform",
+    "product", "time_range", "variant", "version",
+})
 
 # Closed, code-owned playbooks. The model receives concise task guidance derived
 # from these IDs; arbitrary planner/source text cannot add executable instructions.
@@ -516,6 +521,28 @@ def build_task_spec(
         aspect_values = extract_aspects(raw)[:MAX_TASK_ASPECTS]
     except (ImportError, TypeError, ValueError):
         aspect_values = []
+    context = dialogue_context if isinstance(dialogue_context, dict) else {}
+    confirmed_context = (
+        context.get("is_follow_up") is True
+        and context.get("topic_shift") is not True
+        and context.get("needs_clarification") is not True
+    )
+    if confirmed_context:
+        resolved_context_text = context.get("resolved_question")
+        if isinstance(resolved_context_text, str) and resolved_context_text.strip():
+            try:
+                inherited_aspects = extract_aspects(resolved_context_text)
+            except (ImportError, TypeError, ValueError):
+                inherited_aspects = []
+            for aspect in inherited_aspects:
+                key = normalize_text(aspect)
+                if (
+                    aspect.strip()
+                    and key
+                    and key not in {normalize_text(item) for item in aspect_values}
+                    and len(aspect_values) < MAX_TASK_ASPECTS
+                ):
+                    aspect_values.append(aspect.strip())
 
     official_destination = bool(matches["official_site_lookup"])
     government_official_site = bool(
@@ -721,7 +748,6 @@ def build_task_spec(
         missing_required_inputs.append("official_destination_target_entity")
     if family == "summarize" and not urls and not inline_summary_text:
         missing_required_inputs.append("summary_source_url_or_pasted_text")
-    context = dialogue_context if isinstance(dialogue_context, dict) else {}
     explicit_aspects = list(dict.fromkeys(aspect_values))[:MAX_TASK_ASPECTS]
 
     # Hypotheses are alternatives considered by the deterministic classifier. Counts
@@ -814,8 +840,13 @@ def build_task_spec(
     context_slots: dict[str, str] = {}
     if isinstance(raw_context_slots, dict):
         for raw_key, raw_value in list(raw_context_slots.items())[:16]:
-            if isinstance(raw_key, str) and isinstance(raw_value, str) and raw_key.strip() and raw_value.strip():
-                context_slots[raw_key.strip()[:40]] = raw_value.strip()[:180]
+            if (
+                isinstance(raw_key, str)
+                and isinstance(raw_value, str)
+                and raw_key.strip() in TASK_CONTEXT_SLOT_KEYS
+                and raw_value.strip()
+            ):
+                context_slots[raw_key.strip()] = raw_value.strip()[:180]
     raw_changed_slots = context.get("changed_slots")
     context_changed_slots = [
         str(item).strip()[:40]
@@ -843,6 +874,25 @@ def build_task_spec(
         existing_budgets = {normalize_text(item) for item in budgets}
         if inherited_budget and normalized_budget and normalized_budget not in existing_budgets:
             budgets.append(inherited_budget[:100])
+
+        # A confirmed aspect in a short follow-up is still a required task
+        # criterion. Add it to the same evidence-coverage contract as explicit
+        # criteria in the current utterance.
+        inherited_aspect = context_slots.get("aspect", "").strip()
+        normalized_aspect = normalize_text(inherited_aspect)
+        existing_aspects = {normalize_text(item) for item in explicit_aspects}
+        if (
+            inherited_aspect
+            and normalized_aspect
+            and normalized_aspect not in existing_aspects
+            and len(explicit_aspects) < MAX_TASK_ASPECTS
+        ):
+            explicit_aspects.append(inherited_aspect[:120])
+        if inherited_aspect or len(explicit_aspects) > 1:
+            if "track_evidence_coverage_per_explicit_aspect" not in evidence_requirements:
+                evidence_requirements.append("track_evidence_coverage_per_explicit_aspect")
+            if "one_query_per_criterion" not in query_strategies:
+                query_strategies.append("one_query_per_criterion")
 
     context_resolution = {
         "method": str(context.get("method") or "not_provided")[:80],
@@ -964,6 +1014,32 @@ def build_task_spec(
     return spec
 
 
+def _collapse_repeated_query_phrases(value: str, *, max_phrase_tokens: int = 16) -> str:
+    """Collapse immediately repeated word groups while retaining distinct criteria."""
+    words = (value or "").split()
+    if len(words) < 4:
+        return value
+    max_width = min(max_phrase_tokens, len(words) // 2)
+    for width in range(max_width, 1, -1):
+        compacted: list[str] = []
+        index = 0
+        while index < len(words):
+            phrase = words[index:index + width]
+            if len(phrase) < width:
+                compacted.extend(phrase)
+                break
+            repeats = 1
+            while (
+                index + (repeats + 1) * width <= len(words)
+                and words[index + repeats * width:index + (repeats + 1) * width] == phrase
+            ):
+                repeats += 1
+            compacted.extend(phrase)
+            index += repeats * width
+        words = compacted
+    return " ".join(words)
+
+
 def _query_key(value: str) -> str:
     return normalize_text(value)
 
@@ -983,6 +1059,46 @@ def _generated_strategy_candidates(topic: str, spec: dict[str, Any]) -> list[tup
         for item in hypotheses
         if isinstance(item, dict) and item.get("family")
     } if isinstance(hypotheses, list) else set()
+
+    context_resolution = (
+        spec.get("context_resolution")
+        if isinstance(spec.get("context_resolution"), dict) else {}
+    )
+    context_slots = (
+        context_resolution.get("slots")
+        if isinstance(context_resolution.get("slots"), dict) else {}
+    )
+    if (
+        context_resolution.get("is_follow_up") is True
+        and context_resolution.get("topic_shift") is not True
+        and context_resolution.get("needs_clarification") is not True
+    ):
+        aspect = context_slots.get("aspect")
+        if isinstance(aspect, str) and aspect.strip():
+            normalized_topic = normalize_text(topic)
+            aspect_aliases = {
+                normalize_text("الضمان"): ("الضمان", "ضمان", "warranty", "guarantee"),
+                normalize_text("التقييمات"): ("التقييمات", "التقييم", "reviews", "ratings", "review"),
+                normalize_text("المراجعات"): ("المراجعات", "مراجعات", "reviews", "ratings"),
+                normalize_text("الصيانة"): ("الصيانة", "الصيانه", "maintenance", "repair", "service"),
+                normalize_text("السعر"): ("السعر", "سعر", "price", "pricing", "cost"),
+            }
+            aliases = aspect_aliases.get(normalize_text(aspect), (aspect,))
+            aspect_already_present = any(
+                re.search(
+                    rf"(?<!\\w){re.escape(normalize_text(alias))}(?!\\w)",
+                    normalized_topic,
+                )
+                for alias in aliases
+                if normalize_text(alias)
+            )
+            if not aspect_already_present:
+                candidates.append((
+                    f"{topic} {aspect}",
+                    "contextual_aspect",
+                    f"preserve the aspect resolved from the current dialogue turn: {aspect}",
+                ))
+
     if family == "official_site_lookup" or constraints.get("official_destination_required"):
         candidates.extend([
             (f"{topic} الموقع الرسمي", "official_destination", "exact official-site discovery"),
@@ -1134,6 +1250,191 @@ def build_query_strategy_matrix(
     queries = existing_queries if isinstance(existing_queries, list) else []
     rows: list[dict[str, str]] = []
     seen: set[str] = set()
+    initial_context = (
+        spec.get("context_resolution")
+        if isinstance(spec.get("context_resolution"), dict) else {}
+    )
+    if (
+        spec.get("intent_route") == "CLARIFY"
+        or spec.get("ambiguity_status") == "needs_clarification"
+        or initial_context.get("needs_clarification") is True
+    ):
+        return rows
+    context_resolution = (
+        spec.get("context_resolution")
+        if isinstance(spec.get("context_resolution"), dict) else {}
+    )
+    inherit_context = (
+        context_resolution.get("is_follow_up") is True
+        and context_resolution.get("topic_shift") is not True
+        and context_resolution.get("needs_clarification") is not True
+    )
+    context_anchor_parts: list[str] = []
+    if inherit_context:
+        topic = context_resolution.get("topic")
+        if isinstance(topic, str) and topic.strip():
+            context_anchor_parts.append(topic.strip())
+        entities = context_resolution.get("entities")
+        if isinstance(entities, list):
+            for entity in entities[:5]:
+                if (
+                    isinstance(entity, str)
+                    and entity.strip()
+                    and normalize_text(entity) not in normalize_text(" ".join(context_anchor_parts))
+                ):
+                    context_anchor_parts.append(entity.strip())
+    context_anchor = _SPACE.sub(" ", " ".join(context_anchor_parts)).strip()
+    raw_changed_slots = context_resolution.get("changed_slots")
+    changed_slot_names = (
+        set(raw_changed_slots)
+        if isinstance(raw_changed_slots, list)
+        else set()
+    )
+    context_slots_for_identity = (
+        context_resolution.get("slots")
+        if isinstance(context_resolution.get("slots"), dict) else {}
+    )
+    entity_replacement = inherit_context and bool(
+        changed_slot_names & {"entity", "product", "model", "variant"}
+    )
+    # A changed commercial/geographic/aspect slot also invalidates an old planner
+    # seed: appending "Alexandria" to a Cairo query or EUR to a USD query is not a
+    # refinement. Rebuild from the resolved turn and regenerate task-aware angles.
+    scope_replacement = inherit_context and bool(
+        changed_slot_names
+        & {"location", "country", "budget", "currency", "time_range", "capacity", "aspect", "version"}
+    )
+    replace_stale_planner_queries = entity_replacement or scope_replacement
+    entity_replacement_terms = [
+        value.strip()
+        for value in (
+            context_slots_for_identity.get("model"),
+            context_slots_for_identity.get("product"),
+            *(
+                context_resolution.get("entities", [])[:5]
+                if isinstance(context_resolution.get("entities"), list) else []
+            ),
+        )
+        if isinstance(value, str) and value.strip()
+    ]
+    resolved_context_seed = str(context_resolution.get("resolved_question") or "").strip()
+    planner_seed = (
+        str(queries[0]).strip()
+        if queries and isinstance(queries[0], str) else ""
+    )
+
+    def planner_seed_has_current_changed_slots(seed: str) -> bool:
+        if not replace_stale_planner_queries or not seed:
+            return False
+        normalized_seed = normalize_text(seed)
+        aliases = {
+            "location": {
+                normalize_text("مصر"): ("مصر", "egypt", "egyptian"),
+                normalize_text("القاهرة"): ("القاهرة", "القاهره", "cairo"),
+                normalize_text("الإسكندرية"): ("الإسكندرية", "الاسكندرية", "الاسكندريه", "alexandria"),
+                normalize_text("الجيزة"): ("الجيزة", "الجيزه", "giza"),
+                normalize_text("السعودية"): ("السعودية", "السعوديه", "saudi arabia", "ksa"),
+                normalize_text("الإمارات"): ("الإمارات", "الامارات", "uae", "united arab emirates"),
+            },
+            "country": {
+                normalize_text("مصر"): ("مصر", "egypt"),
+                normalize_text("السعودية"): ("السعودية", "السعوديه", "saudi arabia", "ksa"),
+                normalize_text("الإمارات"): ("الإمارات", "الامارات", "uae", "united arab emirates"),
+            },
+            "currency": {
+                normalize_text("اليورو"): ("اليورو", "يورو", "eur", "euro", "euros"),
+                normalize_text("الدولار"): ("الدولار", "دولار", "usd", "us dollar", "dollar", "dollars"),
+                normalize_text("الجنيه المصري"): ("الجنيه المصري", "جنيه مصري", "egp", "egyptian pound", "egyptian pounds"),
+                normalize_text("الريال السعودي"): ("الريال السعودي", "ريال سعودي", "sar", "saudi riyal"),
+                normalize_text("الدرهم الإماراتي"): ("الدرهم الإماراتي", "درهم إماراتي", "aed", "uae dirham"),
+            },
+            "aspect": {
+                normalize_text("الضمان"): ("الضمان", "ضمان", "warranty", "guarantee"),
+                normalize_text("التقييمات"): ("التقييمات", "التقييم", "reviews", "ratings", "review"),
+                normalize_text("المراجعات"): ("المراجعات", "مراجعات", "reviews", "ratings"),
+                normalize_text("الصيانة"): ("الصيانة", "الصيانه", "maintenance", "repair", "service"),
+                normalize_text("السعر"): ("السعر", "سعر", "price", "pricing", "cost"),
+            },
+            "capacity": {
+                normalize_text("256 جيجابايت"): ("256 جيجابايت", "256gb", "256 gb"),
+                normalize_text("512 جيجابايت"): ("512 جيجابايت", "512gb", "512 gb"),
+                normalize_text("1 تيرابايت"): ("1 تيرابايت", "1tb", "1 tb", "1024gb"),
+            },
+        }
+        changed = (
+            context_resolution.get("changed_slots")
+            if isinstance(context_resolution.get("changed_slots"), list) else []
+        )
+        slots = (
+            context_resolution.get("slots")
+            if isinstance(context_resolution.get("slots"), dict) else {}
+        )
+        relevant = [
+            slot for slot in changed
+            if slot in {
+                "location", "country", "budget", "currency", "time_range",
+                "capacity", "aspect", "version", "entity", "product", "model", "variant",
+            }
+        ]
+        if not relevant:
+            return False
+        for slot in relevant:
+            value = slots.get(slot)
+            if not isinstance(value, str) or not value.strip():
+                return False
+            normalized_value = normalize_text(value)
+            candidates = aliases.get(slot, {}).get(normalized_value, (value,))
+            if slot == "budget":
+                numbers = {
+                    item.replace(",", "").replace(".", "")
+                    for item in re.findall(r"\d+(?:[,.]\d+)*", normalized_value)
+                }
+                seed_numbers = {
+                    item.replace(",", "").replace(".", "")
+                    for item in re.findall(r"\d+(?:[,.]\d+)*", normalized_seed)
+                }
+                if not numbers or not numbers.issubset(seed_numbers):
+                    return False
+                continue
+            if slot == "capacity":
+                numbers = {
+                    item.replace(",", "").replace(".", "")
+                    for item in re.findall(r"\d+(?:[,.]\d+)*", normalized_value)
+                }
+                seed_numbers = {
+                    item.replace(",", "").replace(".", "")
+                    for item in re.findall(r"\d+(?:[,.]\d+)*", normalized_seed)
+                }
+                if numbers and numbers.issubset(seed_numbers):
+                    continue
+            if not any(normalize_text(alias) in normalized_seed for alias in candidates):
+                return False
+        return True
+
+    planner_seed_is_current = planner_seed_has_current_changed_slots(planner_seed)
+    primary_seed = (
+        planner_seed
+        if planner_seed_is_current
+        else (resolved_context_seed or context_anchor)
+        if replace_stale_planner_queries
+        else (planner_seed or str(question or ""))
+    )
+    # When the planner seed already contains the updated slots, use that seed
+    # as the subject anchor too. A different-language context label must not
+    # reject relevant strategy variants written in the seed's language.
+    topic_anchor_query = (
+        planner_seed
+        if planner_seed_is_current
+        else (context_anchor or planner_seed or str(question or ""))
+    )
+    if not context_anchor:
+        topic_anchor_query = re.sub(
+            r"^(?:من فضلك|لو سمحت|ابحث لي|ابحث|دورلي|دور|اعثر على|رشح لي|رشح|"
+            r"please|search for|find|look up|recommend)\s*",
+            "",
+            topic_anchor_query,
+            flags=re.IGNORECASE,
+        )
 
     def add(query: Any, strategy: str, rationale: str, *, enforce_topic: bool = True) -> None:
         if not isinstance(query, str) or not query.strip() or len(rows) >= maximum:
@@ -1144,59 +1445,188 @@ def build_query_strategy_matrix(
                 candidate = compact_fn(candidate) or ""
             except (TypeError, ValueError):
                 candidate = ""
-        candidate = _SPACE.sub(" ", candidate).strip()
-        # Carry explicit/inherited geography into every search candidate. Budgets
-        # constrain commercial discovery/recommendation tasks, not unrelated topics.
-        scope_terms: list[str] = []
+        candidate = _collapse_repeated_query_phrases(
+            _SPACE.sub(" ", candidate).strip()
+        )
+        # Preserve explicit geography, commercial bounds, and material semantic slots
+        # from a validated follow-up. Never inherit them after a topic shift or clarification.
+        scope_terms: list[tuple[str, str]] = []
         raw_locations = constraints.get("explicit_locations")
         if isinstance(raw_locations, list):
             scope_terms.extend(
-                item.strip() for item in raw_locations[:5]
+                (item.strip(), "location") for item in raw_locations[:5]
                 if isinstance(item, str) and item.strip()
             )
-        budget_scoped_families = {
-            "recommendation", "compare", "lead_generation", "find_or_discover"
-        }
         raw_budgets = constraints.get("explicit_budgets")
-        if (
-            spec.get("task_family") in budget_scoped_families
-            and isinstance(raw_budgets, list)
-        ):
+        if isinstance(raw_budgets, list):
             scope_terms.extend(
-                item.strip() for item in raw_budgets[:3]
+                (item.strip(), "budget") for item in raw_budgets[:3]
                 if isinstance(item, str) and item.strip()
             )
+
+        context_resolution = (
+            spec.get("context_resolution")
+            if isinstance(spec.get("context_resolution"), dict) else {}
+        )
+        context_slots = (
+            context_resolution.get("slots")
+            if isinstance(context_resolution.get("slots"), dict) else {}
+        )
+        if (
+            context_resolution.get("is_follow_up") is True
+            and context_resolution.get("topic_shift") is not True
+            and context_resolution.get("needs_clarification") is not True
+        ):
+            for slot_key in ("product", "model", "version", "variant", "capacity", "aspect"):
+                slot_value = context_slots.get(slot_key)
+                if isinstance(slot_value, str) and slot_value.strip():
+                    scope_terms.append((slot_value.strip(), slot_key))
+            changed_slots = set(context_resolution.get("changed_slots") or [])
+            resolved_context_question = str(context_resolution.get("resolved_question") or "")
+            price_context = bool(re.search(
+                r"(?:سعر|اسعار|ثمن|تكلفه|price|pricing|cost)",
+                normalize_text(resolved_context_question),
+            ))
+            if "currency" in changed_slots or price_context or spec.get("task_family") in {
+                "compare", "recommendation", "find_or_discover"
+            }:
+                currency = context_slots.get("currency")
+                if isinstance(currency, str) and currency.strip():
+                    scope_terms.append((currency.strip(), "currency"))
+            if "time_range" in changed_slots or constraints.get("time_sensitive_request"):
+                time_range = context_slots.get("time_range")
+                if isinstance(time_range, str) and time_range.strip():
+                    scope_terms.append((time_range.strip(), "time_range"))
+
+        # Bound the seed before matching aliases; otherwise a scope term beyond the
+        # provider query limit could be mistaken for a retained constraint.
+        candidate = candidate[:240]
         normalized_candidate = normalize_text(candidate)
         location_aliases = {
             normalize_text("مصر"): ("مصر", "egypt", "egyptian"),
             normalize_text("القاهرة"): ("القاهرة", "القاهره", "cairo"),
             normalize_text("الإسكندرية"): ("الإسكندرية", "الاسكندرية", "الاسكندريه", "alexandria"),
             normalize_text("الجيزة"): ("الجيزة", "الجيزه", "giza"),
+            normalize_text("العاصمة الإدارية"): ("العاصمة الإدارية", "العاصمه الاداريه", "new administrative capital"),
+            normalize_text("القاهرة الجديدة"): ("القاهرة الجديدة", "القاهره الجديده", "new cairo"),
             normalize_text("السعودية"): ("السعودية", "السعوديه", "saudi arabia", "ksa"),
             normalize_text("الإمارات"): ("الإمارات", "الامارات", "uae", "united arab emirates"),
+            normalize_text("المملكة المتحدة"): ("المملكة المتحدة", "united kingdom", "the uk"),
+            normalize_text("الولايات المتحدة"): ("الولايات المتحدة", "united states", "the us"),
         }
-        for scope_term in scope_terms:
-            normalized_scope = normalize_text(scope_term)
-            aliases = location_aliases.get(normalized_scope, (scope_term,))
-            already_present = any(
+        slot_aliases = {
+            "currency": {
+                normalize_text("اليورو"): ("اليورو", "يورو", "eur", "euro", "euros"),
+                normalize_text("الدولار"): ("الدولار", "دولار", "usd", "us dollar", "dollar", "dollars"),
+                normalize_text("الجنيه المصري"): ("الجنيه المصري", "جنيه مصري", "egp", "egyptian pound", "egyptian pounds"),
+                normalize_text("الريال السعودي"): ("الريال السعودي", "ريال سعودي", "sar", "saudi riyal"),
+                normalize_text("الدرهم الإماراتي"): ("الدرهم الإماراتي", "درهم إماراتي", "aed", "uae dirham"),
+            },
+            "aspect": {
+                normalize_text("الضمان"): ("الضمان", "ضمان", "warranty", "guarantee"),
+                normalize_text("التقييمات"): ("التقييمات", "التقييم", "reviews", "ratings", "review"),
+                normalize_text("المراجعات"): ("المراجعات", "مراجعات", "reviews", "ratings"),
+                normalize_text("الصيانة"): ("الصيانة", "الصيانه", "maintenance", "repair", "service"),
+                normalize_text("السعر"): ("السعر", "سعر", "price", "pricing", "cost"),
+            },
+            "capacity": {
+                normalize_text("256 جيجابايت"): ("256 جيجابايت", "256gb", "256 gb"),
+                normalize_text("512 جيجابايت"): ("512 جيجابايت", "512gb", "512 gb"),
+                normalize_text("1 تيرابايت"): ("1 تيرابايت", "1tb", "1 tb", "1024gb"),
+            },
+        }
+        normalized_planner_seed = normalize_text(planner_seed)
+
+        def _scope_aliases(term: str, slot_key: str) -> tuple[str, ...]:
+            normalized_scope = normalize_text(term)
+            if slot_key == "location":
+                return location_aliases.get(normalized_scope, (term,))
+            return slot_aliases.get(slot_key, {}).get(normalized_scope, (term,))
+
+        def _preferred_planner_alias(term: str, slot_key: str) -> str:
+            # Reuse the language/token already present in the planner seed so that
+            # all strategy variants keep one consistent country/currency/capacity
+            # representation instead of appending a duplicate in another language.
+            for alias in _scope_aliases(term, slot_key):
+                normalized_alias = normalize_text(alias)
+                if normalized_alias and re.search(
+                    rf"(?<!\w){re.escape(normalized_alias)}(?!\w)",
+                    normalized_planner_seed,
+                ):
+                    return alias
+            return term
+
+        def scope_already_present(term: str, slot_key: str) -> bool:
+            normalized_scope = normalize_text(term)
+            if not normalized_scope:
+                return True
+            aliases = (
+                location_aliases.get(normalized_scope, (term,))
+                if slot_key == "location"
+                else slot_aliases.get(slot_key, {}).get(normalized_scope, (term,))
+            )
+            if any(
                 re.search(
                     rf"(?<!\w){re.escape(normalize_text(alias))}(?!\w)",
                     normalized_candidate,
                 )
                 for alias in aliases
                 if normalize_text(alias)
-            )
-            if normalized_scope and not already_present:
-                candidate = _SPACE.sub(" ", f"{candidate} {scope_term}").strip()
-                normalized_candidate = normalize_text(candidate)
+            ):
+                return True
+            if slot_key == "capacity":
+                scope_numbers = {
+                    item.replace(",", "").replace(".", "")
+                    for item in re.findall(r"\d+(?:[,.]\d+)*", normalize_text(term))
+                }
+                query_numbers = {
+                    item.replace(",", "").replace(".", "")
+                    for item in re.findall(r"\d+(?:[,.]\d+)*", normalized_candidate)
+                }
+                if scope_numbers & query_numbers:
+                    capacity_units = (
+                        "gb", "gigabyte", "gigabytes", "جيجا", "جيجابايت",
+                        "tb", "terabyte", "terabytes", "تيرا", "تيرابايت",
+                    )
+                    if any(normalize_text(unit) in normalized_candidate for unit in capacity_units):
+                        return True
+            return False
+
+        missing_scope_terms: list[str] = []
+        seen_scope_terms: set[str] = set()
+        for raw_scope_term, slot_key in scope_terms:
+            scope_term = _preferred_planner_alias(raw_scope_term, slot_key)
+            normalized_scope = normalize_text(raw_scope_term)
+            if not normalized_scope or normalized_scope in seen_scope_terms:
+                continue
+            seen_scope_terms.add(normalized_scope)
+            if not scope_already_present(scope_term, slot_key):
+                missing_scope_terms.append(scope_term)
+
+        if missing_scope_terms:
+            # Reserve room for the constraint suffix. Keep the query's topic and
+            # strategy angle instead of blindly cutting its final words.
+            selected_scope_terms: list[str] = []
+            for term in missing_scope_terms:
+                candidate_terms = [*selected_scope_terms, term]
+                if len(" ".join(candidate_terms)) <= 150:
+                    selected_scope_terms.append(term)
+            scope_suffix = " ".join(selected_scope_terms)
+            max_topic_chars = max(60, 239 - len(scope_suffix))
+            if len(candidate) > max_topic_chars:
+                tail_chars = min(72, max(24, max_topic_chars // 3))
+                head_chars = max(40, max_topic_chars - tail_chars - 1)
+                head = candidate[:head_chars].rsplit(" ", 1)[0].strip()
+                tail = candidate[-tail_chars:].strip()
+                candidate = _SPACE.sub(" ", f"{head} {tail}").strip()
+            candidate = _SPACE.sub(" ", f"{candidate} {scope_suffix}").strip()
         candidate = candidate[:240]
         key = _query_key(candidate)
         if not candidate or not key or key in seen:
             return
         # Search modifications must preserve a subject anchor. Existing planner
         # queries are retained because they may already contain resolved context.
-        anchor_query = str(queries[0]).strip() if queries and isinstance(queries[0], str) else str(question or "")
-        topic_tokens = _TOKEN_RE.findall(_query_key(anchor_query))
+        topic_tokens = _TOKEN_RE.findall(_query_key(topic_anchor_query))
         query_tokens = _TOKEN_RE.findall(key)
         if enforce_topic and len(topic_tokens) >= 2 and not any(
             token in query_tokens for token in topic_tokens[:3]
@@ -1240,18 +1670,69 @@ def build_query_strategy_matrix(
         spec.get("task_family") == "compare"
         and len(explicit_aspects) >= maximum
     )
+    has_planner_seed = bool(
+        queries and isinstance(queries[0], str) and queries[0].strip()
+    )
+    has_resolved_replacement_seed = (
+        replace_stale_planner_queries and bool(resolved_context_seed)
+    )
     if (
-        queries
+        (has_planner_seed or has_resolved_replacement_seed)
         and spec.get("task_family") != "lead_generation"
         and not reserve_all_slots_for_criteria
     ):
-        seed = queries[0]
+        seed = primary_seed
         strategy, rationale = (
-            _label_existing_query(seed, 0, spec)
-            if isinstance(seed, str)
-            else ("malformed", "planner seed is not a string")
+            (
+                "context_entity_replacement",
+                "replace a stale planner seed with the newly resolved product/entity",
+            )
+            if entity_replacement
+            else (
+                "context_slot_replacement",
+                "replace stale planner constraints with the resolved location, budget, currency, or aspect",
+            )
+            if scope_replacement
+            else (
+                _label_existing_query(seed, 0, spec)
+                if isinstance(seed, str)
+                else ("malformed", "planner seed is not a string")
+            )
         )
         add(seed, strategy, rationale, enforce_topic=False)
+
+    # A contextual follow-up can introduce a material slot change without
+    # creating a new lexical task family (for example "سعره؟" after a product
+    # comparison). Preserve the planner seed, then add one complementary source
+    # angle so the changed slots are not trapped in a single broad query.
+    raw_changed_slots = context_resolution.get("changed_slots")
+    context_slots = (
+        context_resolution.get("slots")
+        if isinstance(context_resolution.get("slots"), dict) else {}
+    )
+    if (
+        rows
+        and inherit_context
+        and isinstance(raw_changed_slots, list)
+        and any(
+            slot in {"currency", "capacity", "aspect", "location", "budget", "time_range"}
+            and isinstance(context_slots.get(slot), str)
+            and context_slots.get(slot, "").strip()
+            for slot in raw_changed_slots
+        )
+    ):
+        context_seed = primary_seed or topic_anchor_query
+        source_angle = (
+            "مصدر رسمي"
+            if re.search(r"[\u0600-\u06FF]", context_seed)
+            else "official source"
+        )
+        add(
+            f"{context_seed} {source_angle}",
+            "context_slot_refinement",
+            "complement the planner seed with a source-focused query while retaining confirmed dialogue slots",
+            enforce_topic=False,
+        )
 
     if not rows and (
         spec.get("ambiguity_status") == "needs_clarification"
@@ -1259,12 +1740,22 @@ def build_query_strategy_matrix(
     ):
         return rows
 
-    base = str(queries[0]).strip() if queries and isinstance(queries[0], str) else ""
+    base = _collapse_repeated_query_phrases(primary_seed) if primary_seed else ""
     if not base:
         base = re.sub(
             r"^(?:من فضلك|لو سمحت|ابحث لي|ابحث|دورلي|دور|اعثر على|please|search for|find|look up)\s*",
             "", str(question or "").strip(), flags=re.IGNORECASE,
         )
+    if (
+        context_anchor
+        and re.search(r"[\u0600-\u06FF]", primary_seed)
+    ):
+        # For Arabic planner seeds, prefer the resolved topic/entities to remove
+        # imperative prefixes. For English seeds, keep the seed language so
+        # location/currency aliases are not re-appended in Arabic.
+        base = context_anchor[:180]
+    elif not base and context_anchor:
+        base = context_anchor[:180]
     base = _QUERY_STOP.sub("", base).strip(" \t\r\n-،,؛;")
     if not base:
         return rows
@@ -1273,6 +1764,26 @@ def build_query_strategy_matrix(
     # in purchaser language. General research angles (reports, risks, listings)
     # are not substitutes for direct buyer-intent discovery.
     if spec.get("task_family") == "lead_generation":
+        if replace_stale_planner_queries:
+            # Preserve purchaser language, but rebuild from the corrected product
+            # and slots rather than combining a superseded city/budget with the new one.
+            buyer_seed = context_anchor or primary_seed or base
+            buyer_queries = (
+                f'"مطلوب شراء" {buyer_seed}',
+                f'"طلب عرض سعر" {buyer_seed}',
+                f'"looking to buy" {buyer_seed}',
+                f'"request for quotation" {buyer_seed}',
+            )
+            for query in buyer_queries:
+                add(
+                    query,
+                    "buyer_intent",
+                    "rebuild purchaser-language query from the resolved buyer need and current constraints",
+                    enforce_topic=False,
+                )
+                if len(rows) >= maximum:
+                    break
+            return rows
         for query in queries:
             add(
                 query,
@@ -1293,10 +1804,44 @@ def build_query_strategy_matrix(
         if len(rows) >= maximum:
             break
 
+    # A brief confirmed follow-up can be fully understood yet produce no
+    # family-specific candidate (for example "سعره؟"). Add one primary-source
+    # alternative using the planner seed's language so alias checks prevent
+    # duplicating EUR/256GB/warranty as Arabic-only terms.
+    if (
+        len(rows) == 1
+        and inherit_context
+        and context_anchor
+        and queries
+        and isinstance(queries[0], str)
+    ):
+        source_language_seed = planner_seed or primary_seed
+        seed_language_is_arabic = bool(re.search(r"[\u0600-\u06FF]", source_language_seed))
+        source_phrase = "مصدر رسمي" if seed_language_is_arabic else "official source"
+        add(
+            f"{primary_seed} {source_phrase}",
+            "dialogue_followup_primary_source",
+            "retrieve primary evidence for a confirmed contextual follow-up",
+            enforce_topic=False,
+        )
+
     # Preserve other planner alternatives only after task-targeted candidates.
     for index, query in enumerate(queries[1:], start=1):
         if len(rows) >= maximum:
             break
+        # Once a contextual slot has been corrected, old alternatives are not
+        # safe to reuse: they may preserve the superseded city, currency, or budget.
+        if scope_replacement:
+            continue
+        if (
+            entity_replacement
+            and entity_replacement_terms
+            and not any(
+                normalize_text(term) in normalize_text(query)
+                for term in entity_replacement_terms
+            )
+        ):
+            continue
         if isinstance(query, str):
             strategy, rationale = _label_existing_query(query, index, spec)
         else:
@@ -1439,11 +1984,7 @@ def validate_task_spec(value: Any) -> dict[str, Any]:
         "web_search", "page_fetch", "public_social_search_if_configured",
         "language_model_generation_if_configured", "claim_review_if_configured",
     }
-    allowed_slots = {
-        "aspect", "audience", "budget", "capacity", "country", "currency",
-        "entity", "goal", "language", "location", "model", "platform",
-        "product", "time_range", "variant", "version",
-    }
+    allowed_slots = TASK_CONTEXT_SLOT_KEYS
     context_resolution["slots"] = {
         key: item for key, item in context_resolution["slots"].items()
         if key in allowed_slots
