@@ -305,3 +305,46 @@ def test_location_refinement_overrides_model_topic_shift_flag():
     assert context["resolved_question"] == "مراكز صيانة لابتوب في الإسكندرية فقط"
     assert context["slots"]["location"] == "الإسكندرية"
     assert context["changed_slots"] == ["location"]
+
+
+def test_named_product_substitution_updates_entity_without_dropping_task_context():
+    question = "طب وسامسونج S24"
+    history = [
+        {"role": "user", "content": "قارن بين iPhone 15 وiPhone 16 من حيث السعر والضمان في مصر"},
+        {"role": "assistant", "content": "سنقارن السعر والضمان في السوق المصري."},
+    ]
+    proposed = {
+        "resolved_question": "قارن بين iPhone 15 وiPhone 16 وSamsung S24 من حيث السعر والضمان في مصر",
+        "topic": "مقارنة الهواتف",
+        "entities": ["iPhone 15", "iPhone 16", "Samsung S24"],
+        "slots": {
+            "product": "Samsung S24",
+            "aspect": "السعر والضمان",
+            "country": "مصر",
+        },
+        "changed_slots": ["product"],
+        "is_follow_up": False,
+        "topic_shift": True,
+        "intent": "compare",
+        "needs_web": True,
+        "needs_clarification": False,
+    }
+
+    context = validate_dialogue_context(proposed, question, history)
+
+    assert context["topic_shift"] is False
+    assert context["is_follow_up"] is True
+    assert "Samsung S24" in context["resolved_question"]
+    assert context["slots"]["product"] == "Samsung S24"
+    assert context["slots"]["aspect"] == "السعر والضمان"
+    assert context["slots"]["country"] == "مصر"
+    assert context["changed_slots"] == ["product"]
+
+
+def test_independent_complete_product_query_is_not_classified_as_entity_substitution():
+    from agents.dialogue_state import _has_explicit_context_refinement
+
+    assert not _has_explicit_context_refinement("أسعار الذهب اليوم")
+    assert not _has_explicit_context_refinement("مواصفات Samsung S24 Ultra")
+    assert _has_explicit_context_refinement("طب وسامسونج S24 Pro Max")
+    assert _has_explicit_context_refinement("وبالنسبة لسامسونج S24")

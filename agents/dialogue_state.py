@@ -258,7 +258,18 @@ def _has_explicit_context_refinement(question: str) -> bool:
         r"(?:\s+(?:only|just))?$",
         current,
     )
-    return bool(correction or location_refinement)
+    # A named replacement product after a contextual lead-in updates the entity
+    # slot while keeping the original task and its dimensions (e.g. "طب وسامسونج S24").
+    # Keep this list bounded; a complete new question such as "أسعار الذهب اليوم"
+    # must remain a topic shift.
+    entity_substitution = re.search(
+        r"^(?:و?طب|و?طيب|و?كمان|و?(?:بالنسبه|بالنسبة)(?:\s*ل)?)\s*"
+        r"(?:و\s*)?(?:سامسونج|ايفون|آيفون|شاومي|هواوي|ديل|لينوفو|ابل|أبل|"
+        r"byd|samsung|iphone|apple|xiaomi|huawei|dell|lenovo|hp)\s+"
+        r"(?:[a-z]{1,8}\s*)?\d{1,4}(?:\s+[a-z0-9+.-]{1,12}){0,2}$",
+        current,
+    )
+    return bool(correction or location_refinement or entity_substitution)
 
 
 def _has_implicit_context_reference(question: str) -> bool:
