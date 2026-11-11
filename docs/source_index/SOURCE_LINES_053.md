@@ -4,7 +4,7 @@
 
 - الصفحة: **053**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1521F490CA-L000172 إلى SRC-851E7A87D6-L000009
+- النطاق: SRC-1521F490CA-L000161 إلى SRC-44CDA52D01-L000170
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1521F490CA-L000161](../../tests/test_multitenant.py#L161) | 161 | `"    import pytest"` | — |
+| [SRC-1521F490CA-L000162](../../tests/test_multitenant.py#L162) | 162 | `""` | — |
+| [SRC-1521F490CA-L000163](../../tests/test_multitenant.py#L163) | 163 | `"    with pytest.raises(sqlite3.OperationalError):"` | — |
+| [SRC-1521F490CA-L000164](../../tests/test_multitenant.py#L164) | 164 | `"        LeadStore(path)"` | — |
+| [SRC-1521F490CA-L000165](../../tests/test_multitenant.py#L165) | 165 | `""` | — |
+| [SRC-1521F490CA-L000166](../../tests/test_multitenant.py#L166) | 166 | `"    with sqlite3.connect(path) as db:"` | — |
+| [SRC-1521F490CA-L000167](../../tests/test_multitenant.py#L167) | 167 | `"        tables = {"` | — |
+| [SRC-1521F490CA-L000168](../../tests/test_multitenant.py#L168) | 168 | `"            row[0]"` | — |
+| [SRC-1521F490CA-L000169](../../tests/test_multitenant.py#L169) | 169 | `"            for row in db.execute("` | — |
+| [SRC-1521F490CA-L000170](../../tests/test_multitenant.py#L170) | 170 | `"                \"SELECT name FROM sqlite_master WHERE type='table'\""` | — |
+| [SRC-1521F490CA-L000171](../../tests/test_multitenant.py#L171) | 171 | `"            )"` | — |
 | [SRC-1521F490CA-L000172](../../tests/test_multitenant.py#L172) | 172 | `"        }"` | — |
 | [SRC-1521F490CA-L000173](../../tests/test_multitenant.py#L173) | 173 | `"        original = db.execute("` | — |
 | [SRC-1521F490CA-L000174](../../tests/test_multitenant.py#L174) | 174 | `"            \"SELECT id, fingerprint, text FROM leads\""` | — |
@@ -823,23 +834,3 @@
 | [SRC-44CDA52D01-L000168](../../tests/test_omarai.py#L168) | 168 | `"    quote = analyze(\"نحتاج عرض سعر لنظام إنذار حريق\")"` | — |
 | [SRC-44CDA52D01-L000169](../../tests/test_omarai.py#L169) | 169 | `"    product_only = analyze(\"نظام إنذار حريق\")"` | — |
 | [SRC-44CDA52D01-L000170](../../tests/test_omarai.py#L170) | 170 | `"    assert direct[\"signal_type\"] == \"direct_purchase_request\""` | — |
-| [SRC-44CDA52D01-L000171](../../tests/test_omarai.py#L171) | 171 | `"    assert quote[\"signal_type\"] == \"request_for_quotation\""` | — |
-| [SRC-44CDA52D01-L000172](../../tests/test_omarai.py#L172) | 172 | `"    assert product_only[\"signal_type\"] == \"unknown\""` | — |
-## اختبارات
-
-### FILE-851E7A87D6 — [tests/test_postgres_store.py](../../tests/test_postgres_store.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-851E7A87D6-L000001](../../tests/test_postgres_store.py#L1) | 1 | `"\"\"\"PostgreSQL integration tests for the Neon-backed LeadStore."` | — |
-| [SRC-851E7A87D6-L000002](../../tests/test_postgres_store.py#L2) | 2 | `""` | — |
-| [SRC-851E7A87D6-L000003](../../tests/test_postgres_store.py#L3) | 3 | `"These tests run only when OMARAI_TEST_DATABASE_URL points at an isolated test database."` | — |
-| [SRC-851E7A87D6-L000004](../../tests/test_postgres_store.py#L4) | 4 | `"The CI workflow supplies an ephemeral PostgreSQL service; production credentials are never used."` | — |
-| [SRC-851E7A87D6-L000005](../../tests/test_postgres_store.py#L5) | 5 | `"\"\"\""` | — |
-| [SRC-851E7A87D6-L000006](../../tests/test_postgres_store.py#L6) | 6 | `"from __future__ import annotations"` | — |
-| [SRC-851E7A87D6-L000007](../../tests/test_postgres_store.py#L7) | 7 | `""` | — |
-| [SRC-851E7A87D6-L000008](../../tests/test_postgres_store.py#L8) | 8 | `"import os"` | — |
-| [SRC-851E7A87D6-L000009](../../tests/test_postgres_store.py#L9) | 9 | `"import uuid"` | — |

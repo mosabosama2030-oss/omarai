@@ -4,7 +4,7 @@
 
 - الصفحة: **036**
 - سجلات الأسطر: **800**
-- النطاق: SRC-676B69CB6C-L000062 إلى SRC-70795F4B61-L000152
+- النطاق: SRC-676B69CB6C-L000060 إلى SRC-70795F4B61-L000150
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-676B69CB6C-L000060](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L60) | 60 | ``"- `LeadStore.get_product_profile(profile_id: str, *, tenant_id: str) -> dict \| None`"`` | — |
+| [SRC-676B69CB6C-L000061](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L61) | 61 | ``"- `LeadStore.save_discovery_run(profile_id: str, run: dict, *, tenant_id: str) -> dict`"`` | — |
 | [SRC-676B69CB6C-L000062](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L62) | 62 | ``"- `LeadStore.list_discovery_runs(*, tenant_id: str, limit: int = 50) -> list[dict]`"`` | — |
 | [SRC-676B69CB6C-L000063](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L63) | 63 | ``"- `LeadStore.get_discovery_run(run_id: str, *, tenant_id: str) -> dict \| None`"`` | — |
 | [SRC-676B69CB6C-L000064](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L64) | 64 | ``"- `LeadStore.save_discovery_signal(run_id: str, source_index: int, *, tenant_id: str) -> tuple[dict, bool] \| None`"`` | — |
@@ -949,5 +951,3 @@
 | [SRC-70795F4B61-L000148](../../scripts/compare_answer_quality_runs.py#L148) | 148 | `"        \"transport_success_rate\": _rate(len(transport_ok), len(results)),"` | — |
 | [SRC-70795F4B61-L000149](../../scripts/compare_answer_quality_runs.py#L149) | 149 | `"        \"latency_ms\": {"` | — |
 | [SRC-70795F4B61-L000150](../../scripts/compare_answer_quality_runs.py#L150) | 150 | `"            \"sample_count\": len(elapsed),"` | — |
-| [SRC-70795F4B61-L000151](../../scripts/compare_answer_quality_runs.py#L151) | 151 | `"            \"mean\": round(sum(elapsed) / len(elapsed), 2) if elapsed else None,"` | — |
-| [SRC-70795F4B61-L000152](../../scripts/compare_answer_quality_runs.py#L152) | 152 | `"            \"p50\": _percentile_nearest_rank(elapsed, 0.50),"` | — |

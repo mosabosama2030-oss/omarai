@@ -4,7 +4,7 @@
 
 - الصفحة: **044**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000136 إلى SRC-3451CC474D-L000935
+- النطاق: SRC-3451CC474D-L000134 إلى SRC-3451CC474D-L000933
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000134](../../tests/test_api.py#L134) | 134 | `"        local_api,"` | — |
+| [SRC-3451CC474D-L000135](../../tests/test_api.py#L135) | 135 | `"        f\"/api/leads/{lead_id}/status\","` | — |
 | [SRC-3451CC474D-L000136](../../tests/test_api.py#L136) | 136 | `"        method=\"POST\","` | — |
 | [SRC-3451CC474D-L000137](../../tests/test_api.py#L137) | 137 | `"        payload={\"status\": \"qualified\"},"` | — |
 | [SRC-3451CC474D-L000138](../../tests/test_api.py#L138) | 138 | `"    )"` | — |
@@ -814,5 +816,3 @@
 | [SRC-3451CC474D-L000931](../../tests/test_api.py#L931) | 931 | `"    monkeypatch.setenv(\"RAILWAY_GIT_COMMIT_SHA\", \"not-a-sha\")"` | — |
 | [SRC-3451CC474D-L000932](../../tests/test_api.py#L932) | 932 | `"    monkeypatch.setenv(\"RENDER_GIT_COMMIT\", \"also-not-a-sha\")"` | — |
 | [SRC-3451CC474D-L000933](../../tests/test_api.py#L933) | 933 | `""` | — |
-| [SRC-3451CC474D-L000934](../../tests/test_api.py#L934) | 934 | `"    assert api_module._build_identity() == (\"unknown\", \"unknown\")"` | — |
-| [SRC-3451CC474D-L000935](../../tests/test_api.py#L935) | 935 | `""` | — |

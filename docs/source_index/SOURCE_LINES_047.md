@@ -4,7 +4,7 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-29A9CD43D1-L000042 إلى SRC-6BCB799CEC-L000233
+- النطاق: SRC-29A9CD43D1-L000040 إلى SRC-6BCB799CEC-L000222
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-29A9CD43D1-L000040](../../tests/test_dialogue_context_pipeline.py#L40) | 40 | `"        \"providers_used\": [\"test_search\"],"` | — |
+| [SRC-29A9CD43D1-L000041](../../tests/test_dialogue_context_pipeline.py#L41) | 41 | `"        \"provider_counts\": {\"test_search\": len(sources)},"` | — |
 | [SRC-29A9CD43D1-L000042](../../tests/test_dialogue_context_pipeline.py#L42) | 42 | `"        \"platform_counts\": {\"web\": len(sources)},"` | — |
 | [SRC-29A9CD43D1-L000043](../../tests/test_dialogue_context_pipeline.py#L43) | 43 | `"        \"social_direct_results\": 0,"` | — |
 | [SRC-29A9CD43D1-L000044](../../tests/test_dialogue_context_pipeline.py#L44) | 44 | `"        \"depth\": plan.get(\"depth\", \"standard\"),"` | — |
@@ -594,6 +596,24 @@
 | [SRC-DA139AC9D0-L000307](../../tests/test_dialogue_state.py#L307) | 307 | `"    assert context[\"changed_slots\"] == [\"location\"]"` | — |
 ## اختبارات
 
+### FILE-CBDF826324 — [tests/test_dockerfile.py](../../tests/test_dockerfile.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-CBDF826324-L000001](../../tests/test_dockerfile.py#L1) | 1 | `"from pathlib import Path"` | — |
+| [SRC-CBDF826324-L000002](../../tests/test_dockerfile.py#L2) | 2 | `""` | — |
+| [SRC-CBDF826324-L000003](../../tests/test_dockerfile.py#L3) | 3 | `"DOCKERFILE = (Path(__file__).resolve().parents[1] / \"Dockerfile\").read_text(encoding=\"utf-8\")"` | — |
+| [SRC-CBDF826324-L000004](../../tests/test_dockerfile.py#L4) | 4 | `""` | — |
+| [SRC-CBDF826324-L000005](../../tests/test_dockerfile.py#L5) | 5 | `""` | — |
+| [SRC-CBDF826324-L000006](../../tests/test_dockerfile.py#L6) | 6 | `"def test_dockerfile_declares_healthcheck_on_public_health_endpoint():"` | — |
+| [SRC-CBDF826324-L000007](../../tests/test_dockerfile.py#L7) | 7 | `"    assert \"HEALTHCHECK\" in DOCKERFILE"` | — |
+| [SRC-CBDF826324-L000008](../../tests/test_dockerfile.py#L8) | 8 | `"    assert \"/api/health\" in DOCKERFILE.split(\"HEALTHCHECK\", 1)[1]"` | — |
+| [SRC-CBDF826324-L000009](../../tests/test_dockerfile.py#L9) | 9 | `"    assert \"PORT\" in DOCKERFILE.split(\"HEALTHCHECK\", 1)[1].split(\"CMD [\\\"sh\\\", \\\"-c\\\", \\\"python -m\", 1)[0]"` | — |
+## اختبارات
+
 ### FILE-6BCB799CEC — [tests/test_evidence_provenance.py](../../tests/test_evidence_provenance.py#L1)
 
 - النوع: **Python**
@@ -823,14 +843,3 @@
 | [SRC-6BCB799CEC-L000220](../../tests/test_evidence_provenance.py#L220) | 220 | `"    title, text = WebAgent()._fetch_page(\"https://example.com/article\")"` | — |
 | [SRC-6BCB799CEC-L000221](../../tests/test_evidence_provenance.py#L221) | 221 | `"    assert title == \"\""` | — |
 | [SRC-6BCB799CEC-L000222](../../tests/test_evidence_provenance.py#L222) | 222 | `"    assert \"نص عام\" in text"` | — |
-| [SRC-6BCB799CEC-L000223](../../tests/test_evidence_provenance.py#L223) | 223 | `"    assert seen[\"url\"].startswith(\"https://1.1.1.1/\")"` | — |
-| [SRC-6BCB799CEC-L000224](../../tests/test_evidence_provenance.py#L224) | 224 | `"    assert seen[\"headers\"][\"Host\"] == \"example.com\""` | — |
-| [SRC-6BCB799CEC-L000225](../../tests/test_evidence_provenance.py#L225) | 225 | `"    assert seen[\"extensions\"][\"sni_hostname\"] == \"example.com\""` | — |
-| [SRC-6BCB799CEC-L000226](../../tests/test_evidence_provenance.py#L226) | 226 | `""` | — |
-| [SRC-6BCB799CEC-L000227](../../tests/test_evidence_provenance.py#L227) | 227 | `"def test_mixed_public_and_private_dns_answers_block_page_fetch(monkeypatch):"` | — |
-| [SRC-6BCB799CEC-L000228](../../tests/test_evidence_provenance.py#L228) | 228 | `"    \"\"\"A hostname is rejected when even one DNS answer is non-global.\"\"\""` | — |
-| [SRC-6BCB799CEC-L000229](../../tests/test_evidence_provenance.py#L229) | 229 | `"    def fake_getaddrinfo(host, port, *args, **kwargs):"` | — |
-| [SRC-6BCB799CEC-L000230](../../tests/test_evidence_provenance.py#L230) | 230 | `"        return _addrinfo(\"1.1.1.1\") + _addrinfo(\"127.0.0.1\")"` | — |
-| [SRC-6BCB799CEC-L000231](../../tests/test_evidence_provenance.py#L231) | 231 | `""` | — |
-| [SRC-6BCB799CEC-L000232](../../tests/test_evidence_provenance.py#L232) | 232 | `"    monkeypatch.setattr(socket, \"getaddrinfo\", fake_getaddrinfo)"` | — |
-| [SRC-6BCB799CEC-L000233](../../tests/test_evidence_provenance.py#L233) | 233 | `"    assert _public_ip_literals(\"example.com\") is None"` | — |

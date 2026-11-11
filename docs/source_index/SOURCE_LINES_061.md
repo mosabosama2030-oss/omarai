@@ -4,7 +4,7 @@
 
 - الصفحة: **061**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L001555 إلى SRC-F725E90B2A-L002354
+- النطاق: SRC-F725E90B2A-L001544 إلى SRC-F725E90B2A-L002343
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L001544](../../tests/test_web_agent.py#L1544) | 1544 | `"        \"title\": \"موقع مصر الرقمية والخدمات الحكومية\","` | — |
+| [SRC-F725E90B2A-L001545](../../tests/test_web_agent.py#L1545) | 1545 | `"        \"url\": \"https://digital.gov.eg/\","` | — |
+| [SRC-F725E90B2A-L001546](../../tests/test_web_agent.py#L1546) | 1546 | `"        \"snippet\": \"بوابة مصر الرقمية للخدمات الحكومية الإلكترونية.\","` | — |
+| [SRC-F725E90B2A-L001547](../../tests/test_web_agent.py#L1547) | 1547 | `"        \"page_text\": \"بوابة مصر الرقمية للخدمات الحكومية الإلكترونية.\","` | — |
+| [SRC-F725E90B2A-L001548](../../tests/test_web_agent.py#L1548) | 1548 | `"        \"page_fetched\": True,"` | — |
+| [SRC-F725E90B2A-L001549](../../tests/test_web_agent.py#L1549) | 1549 | `"        \"providers\": [\"test_provider\"],"` | — |
+| [SRC-F725E90B2A-L001550](../../tests/test_web_agent.py#L1550) | 1550 | `"        \"queries\": [\"ابحث عن موقع مصر الرقمية\"],"` | — |
+| [SRC-F725E90B2A-L001551](../../tests/test_web_agent.py#L1551) | 1551 | `"        \"domain\": \"digital.gov.eg\","` | — |
+| [SRC-F725E90B2A-L001552](../../tests/test_web_agent.py#L1552) | 1552 | `"        \"source_class\": \"government\","` | — |
+| [SRC-F725E90B2A-L001553](../../tests/test_web_agent.py#L1553) | 1553 | `"        \"platform\": \"web\","` | — |
+| [SRC-F725E90B2A-L001554](../../tests/test_web_agent.py#L1554) | 1554 | `"    }"` | — |
 | [SRC-F725E90B2A-L001555](../../tests/test_web_agent.py#L1555) | 1555 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L001556](../../tests/test_web_agent.py#L1556) | 1556 | `"        agent, \"_plan_search\","` | — |
 | [SRC-F725E90B2A-L001557](../../tests/test_web_agent.py#L1557) | 1557 | `"        lambda question, history: {"` | — |
@@ -805,14 +816,3 @@
 | [SRC-F725E90B2A-L002341](../../tests/test_web_agent.py#L2341) | 2341 | `"    source = {"` | — |
 | [SRC-F725E90B2A-L002342](../../tests/test_web_agent.py#L2342) | 2342 | `"        \"title\": \"طلب عرض سعر لتوريد معدات\","` | — |
 | [SRC-F725E90B2A-L002343](../../tests/test_web_agent.py#L2343) | 2343 | `"        \"snippet\": \"نرجو تقديم عرض سعر للمواصفات المرفقة.\","` | — |
-| [SRC-F725E90B2A-L002344](../../tests/test_web_agent.py#L2344) | 2344 | `"        \"page_text\": \"طلب عرض سعر لتوريد معدات للمشروع.\","` | — |
-| [SRC-F725E90B2A-L002345](../../tests/test_web_agent.py#L2345) | 2345 | `"    }"` | — |
-| [SRC-F725E90B2A-L002346](../../tests/test_web_agent.py#L2346) | 2346 | `"    signal = WebAgent._lead_intent_evidence(source)"` | — |
-| [SRC-F725E90B2A-L002347](../../tests/test_web_agent.py#L2347) | 2347 | `"    assert signal is not None"` | — |
-| [SRC-F725E90B2A-L002348](../../tests/test_web_agent.py#L2348) | 2348 | `"    assert signal[\"signal_type\"] == \"request_for_quotation\""` | — |
-| [SRC-F725E90B2A-L002349](../../tests/test_web_agent.py#L2349) | 2349 | `"    assert signal[\"product_fit\"] == \"unassessed\""` | — |
-| [SRC-F725E90B2A-L002350](../../tests/test_web_agent.py#L2350) | 2350 | `""` | — |
-| [SRC-F725E90B2A-L002351](../../tests/test_web_agent.py#L2351) | 2351 | `""` | — |
-| [SRC-F725E90B2A-L002352](../../tests/test_web_agent.py#L2352) | 2352 | `"def test_buyer_intent_evidence_distinguishes_stated_need_from_purchase():"` | — |
-| [SRC-F725E90B2A-L002353](../../tests/test_web_agent.py#L2353) | 2353 | `"    source = {"` | — |
-| [SRC-F725E90B2A-L002354](../../tests/test_web_agent.py#L2354) | 2354 | `"        \"title\": \"بدور على مورد صيانة\","` | — |

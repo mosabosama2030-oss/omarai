@@ -4,7 +4,7 @@
 
 - الصفحة: **051**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1A176AD4F0-L000500 إلى SRC-4397BC2CD2-L000141
+- النطاق: SRC-1A176AD4F0-L000489 إلى SRC-4397BC2CD2-L000130
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1A176AD4F0-L000489](../../tests/test_hosted_smoke.py#L489) | 489 | `"    original = hosted_smoke_test.request_json"` | — |
+| [SRC-1A176AD4F0-L000490](../../tests/test_hosted_smoke.py#L490) | 490 | `""` | — |
+| [SRC-1A176AD4F0-L000491](../../tests/test_hosted_smoke.py#L491) | 491 | `"    def non_string_answer(url: str, **kwargs):"` | — |
+| [SRC-1A176AD4F0-L000492](../../tests/test_hosted_smoke.py#L492) | 492 | `"        if urlsplit(url).path == \"/api/agent\" and kwargs.get(\"token\") == TOKEN:"` | — |
+| [SRC-1A176AD4F0-L000493](../../tests/test_hosted_smoke.py#L493) | 493 | `"            return 200, {"` | — |
+| [SRC-1A176AD4F0-L000494](../../tests/test_hosted_smoke.py#L494) | 494 | `"                \"answer\": None, \"used_web_search\": True, \"used_language_model\": True,"` | — |
+| [SRC-1A176AD4F0-L000495](../../tests/test_hosted_smoke.py#L495) | 495 | `"                \"answer_evidence_status\": \"citation_indices_validated_only\","` | — |
+| [SRC-1A176AD4F0-L000496](../../tests/test_hosted_smoke.py#L496) | 496 | `"                \"sources\": [{\"url\": \"https://example.com/source\"}],"` | — |
+| [SRC-1A176AD4F0-L000497](../../tests/test_hosted_smoke.py#L497) | 497 | `"                \"search_report\": {"` | — |
+| [SRC-1A176AD4F0-L000498](../../tests/test_hosted_smoke.py#L498) | 498 | `"                    \"pipeline_completion_status\": \"completed\","` | — |
+| [SRC-1A176AD4F0-L000499](../../tests/test_hosted_smoke.py#L499) | 499 | `"                    \"semantic_claim_verification\": {\"status\": \"completed_all_claims_supported\"},"` | — |
 | [SRC-1A176AD4F0-L000500](../../tests/test_hosted_smoke.py#L500) | 500 | `"                    \"insufficient_evidence\": False,"` | — |
 | [SRC-1A176AD4F0-L000501](../../tests/test_hosted_smoke.py#L501) | 501 | `"                    \"claim_audit_semantics\": \"distinct_model_assessed_source_support_not_ground_truth\","` | — |
 | [SRC-1A176AD4F0-L000502](../../tests/test_hosted_smoke.py#L502) | 502 | `"                },"` | — |
@@ -832,14 +843,3 @@
 | [SRC-4397BC2CD2-L000128](../../tests/test_intent_router_integration.py#L128) | 128 | `"def test_multi_part_comparison_forces_deep_plan_and_multiple_angles(monkeypatch) -> None:"` | — |
 | [SRC-4397BC2CD2-L000129](../../tests/test_intent_router_integration.py#L129) | 129 | `"    agent = WebAgent()"` | — |
 | [SRC-4397BC2CD2-L000130](../../tests/test_intent_router_integration.py#L130) | 130 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-4397BC2CD2-L000131](../../tests/test_intent_router_integration.py#L131) | 131 | `"    seen: dict = {\"plans\": []}"` | — |
-| [SRC-4397BC2CD2-L000132](../../tests/test_intent_router_integration.py#L132) | 132 | `"    history = []"` | — |
-| [SRC-4397BC2CD2-L000133](../../tests/test_intent_router_integration.py#L133) | 133 | `""` | — |
-| [SRC-4397BC2CD2-L000134](../../tests/test_intent_router_integration.py#L134) | 134 | `"    def plan(question, prior_history):"` | — |
-| [SRC-4397BC2CD2-L000135](../../tests/test_intent_router_integration.py#L135) | 135 | `"        return {"` | — |
-| [SRC-4397BC2CD2-L000136](../../tests/test_intent_router_integration.py#L136) | 136 | `"            \"queries\": [\"iPhone 17 versus Samsung S26\"],"` | — |
-| [SRC-4397BC2CD2-L000137](../../tests/test_intent_router_integration.py#L137) | 137 | `"            \"direct_urls\": [],"` | — |
-| [SRC-4397BC2CD2-L000138](../../tests/test_intent_router_integration.py#L138) | 138 | `"            \"social_focus\": False,"` | — |
-| [SRC-4397BC2CD2-L000139](../../tests/test_intent_router_integration.py#L139) | 139 | `"            \"freshness\": \"any\","` | — |
-| [SRC-4397BC2CD2-L000140](../../tests/test_intent_router_integration.py#L140) | 140 | `"            \"depth\": \"standard\","` | — |
-| [SRC-4397BC2CD2-L000141](../../tests/test_intent_router_integration.py#L141) | 141 | `"            \"platforms\": [],"` | — |

@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **147**
-- ملفات Python المحللة: **86**
-- تعريفات Python المفهرسة: **2128**
+- ملفات المستودع في الجرد: **148**
+- ملفات Python المحللة: **87**
+- تعريفات Python المفهرسة: **2130**
 - تعريفات Python موثقة بوجود Docstring: **308**
-- تعريفات Python بلا Docstring: **1404**
-- تعريفات لا ينطبق عليها Docstring: **416**
-- الرموز الساكنة الإضافية: **2969**
-- الأسطر النصية المفهرسة حرفيًا: **53127**
+- تعريفات Python بلا Docstring: **1405**
+- تعريفات لا ينطبق عليها Docstring: **417**
+- الرموز الساكنة الإضافية: **2970**
+- الأسطر النصية المفهرسة حرفيًا: **53138**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -61,7 +61,7 @@
 | FILE-65AAF94960 | وثائق ونصوص | [artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md](../artifacts/OMARAI-HOSTED-ACCEPTANCE-2026-10-27-AR.md#L1) | Markdown | 5586 | 41 | جرد الملف + عناوين Markdown |
 | FILE-14C6359E27 | واجهة سطر الأوامر | [cli/__init__.py](../cli/__init__.py#L1) | Python | 35 | 1 | جرد الملف + AST Python |
 | FILE-9C97DF51AC | واجهة سطر الأوامر | [cli/omarai.py](../cli/omarai.py#L1) | Python | 1635 | 41 | جرد الملف + AST Python |
-| FILE-DD2C0EB6EA | إعدادات وتشغيل | [Dockerfile](../Dockerfile#L1) | Dockerfile | 889 | 20 | جرد الملف + أسماء إعدادات عامة إن وجدت |
+| FILE-DD2C0EB6EA | إعدادات وتشغيل | [Dockerfile](../Dockerfile#L1) | Dockerfile | 1118 | 22 | جرد الملف + أسماء إعدادات عامة إن وجدت |
 | FILE-792A9A235D | وثائق وفهرسة | [docs/ANSWER_QUALITY_BENCHMARK_AR.md](ANSWER_QUALITY_BENCHMARK_AR.md#L1) | Markdown | 23262 | 230 | جرد الملف + عناوين Markdown |
 | FILE-C4C6C55E1A | وثائق وفهرسة | [docs/archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md](archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L1) | Markdown | 35501 | 191 | جرد الملف + عناوين Markdown |
 | FILE-26428BDA96 | وثائق وفهرسة | [docs/archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md](archive/OMARAI_P0_CODING_AUDIT_2026-10-19_AR.md#L1) | Markdown | 50328 | 262 | جرد الملف + عناوين Markdown |
@@ -135,6 +135,7 @@
 | FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | Python | 12768 | 268 | جرد الملف + AST Python |
 | FILE-29A9CD43D1 | اختبارات | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L1) | Python | 12625 | 301 | جرد الملف + AST Python |
 | FILE-DA139AC9D0 | اختبارات | [tests/test_dialogue_state.py](../tests/test_dialogue_state.py#L1) | Python | 12569 | 307 | جرد الملف + AST Python |
+| FILE-CBDF826324 | اختبارات | [tests/test_dockerfile.py](../tests/test_dockerfile.py#L1) | Python | 404 | 9 | جرد الملف + AST Python |
 | FILE-6BCB799CEC | اختبارات | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L1) | Python | 10934 | 306 | جرد الملف + AST Python |
 | FILE-8455F405B6 | اختبارات | [tests/test_evidence_signals.py](../tests/test_evidence_signals.py#L1) | Python | 2372 | 58 | جرد الملف + AST Python |
 | FILE-1A17F27323 | اختبارات | [tests/test_firecrawl_connector.py](../tests/test_firecrawl_connector.py#L1) | Python | 12137 | 296 | جرد الملف + AST Python |
@@ -1345,6 +1346,8 @@
 | [tests/test_dialogue_state.py](../tests/test_dialogue_state.py#L227) | دالة | test_location_refinement_keeps_topic_and_updates_location_slot | لا توجد Docstring. | ناقص | 227 | [SRC-DA139AC9D0-L000227](../tests/test_dialogue_state.py#L227) |
 | [tests/test_dialogue_state.py](../tests/test_dialogue_state.py#L254) | دالة | test_explicit_entity_correction_overrides_model_topic_shift_flag | لا توجد Docstring. | ناقص | 254 | [SRC-DA139AC9D0-L000254](../tests/test_dialogue_state.py#L254) |
 | [tests/test_dialogue_state.py](../tests/test_dialogue_state.py#L282) | دالة | test_location_refinement_overrides_model_topic_shift_flag | لا توجد Docstring. | ناقص | 282 | [SRC-DA139AC9D0-L000282](../tests/test_dialogue_state.py#L282) |
+| [tests/test_dockerfile.py](../tests/test_dockerfile.py#L3) | متغير/ثابت Python | DOCKERFILE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 3 | [SRC-CBDF826324-L000003](../tests/test_dockerfile.py#L3) |
+| [tests/test_dockerfile.py](../tests/test_dockerfile.py#L6) | دالة | test_dockerfile_declares_healthcheck_on_public_health_endpoint | لا توجد Docstring. | ناقص | 6 | [SRC-CBDF826324-L000006](../tests/test_dockerfile.py#L6) |
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L11) | دالة | _addrinfo | لا توجد Docstring. | ناقص | 11 | [SRC-6BCB799CEC-L000011](../tests/test_evidence_provenance.py#L11) |
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L16) | دالة | test_failed_page_read_is_not_reported_as_fetched | An empty extraction must not set page_fetched through the real collector. | موثق | 16 | [SRC-6BCB799CEC-L000016](../tests/test_evidence_provenance.py#L16) |
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L20) | دالة | test_failed_page_read_is_not_reported_as_fetched.search | لا توجد Docstring. | ناقص | 20 | [SRC-6BCB799CEC-L000020](../tests/test_evidence_provenance.py#L20) |
@@ -4377,6 +4380,7 @@
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L178) | مسار API/واجهة محتمل | /api/discoveries/ | 178 | [SRC-3D0A619359-L000178](../tests/test_dashboard_security.py#L178) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L225) | مسار API/واجهة محتمل | /api/agent | 225 | [SRC-3D0A619359-L000225](../tests/test_dashboard_security.py#L225) |
 | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L148) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 148 | [SRC-29A9CD43D1-L000148](../tests/test_dialogue_context_pipeline.py#L148) |
+| [tests/test_dockerfile.py](../tests/test_dockerfile.py#L8) | مسار API/واجهة محتمل | /api/health | 8 | [SRC-CBDF826324-L000008](../tests/test_dockerfile.py#L8) |
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET | 12 | [SRC-6BCB799CEC-L000012](../tests/test_evidence_provenance.py#L12) |
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET6 | 12 | [SRC-6BCB799CEC-L000012](../tests/test_evidence_provenance.py#L12) |
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L13) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SOCK_STREAM | 13 | [SRC-6BCB799CEC-L000013](../tests/test_evidence_provenance.py#L13) |

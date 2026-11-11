@@ -4,7 +4,7 @@
 
 - الصفحة: **045**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3451CC474D-L000936 إلى SRC-6B37B7D6D3-L000078
+- النطاق: SRC-3451CC474D-L000934 إلى SRC-6B37B7D6D3-L000076
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3451CC474D-L000934](../../tests/test_api.py#L934) | 934 | `"    assert api_module._build_identity() == (\"unknown\", \"unknown\")"` | — |
+| [SRC-3451CC474D-L000935](../../tests/test_api.py#L935) | 935 | `""` | — |
 | [SRC-3451CC474D-L000936](../../tests/test_api.py#L936) | 936 | `""` | — |
 | [SRC-3451CC474D-L000937](../../tests/test_api.py#L937) | 937 | `""` | — |
 | [SRC-3451CC474D-L000938](../../tests/test_api.py#L938) | 938 | `"def test_lead_store_uses_configured_database_path(monkeypatch, tmp_path):"` | — |
@@ -832,5 +834,3 @@
 | [SRC-6B37B7D6D3-L000074](../../tests/test_claim_evidence_metadata.py#L74) | 74 | `"    )"` | — |
 | [SRC-6B37B7D6D3-L000075](../../tests/test_claim_evidence_metadata.py#L75) | 75 | `""` | — |
 | [SRC-6B37B7D6D3-L000076](../../tests/test_claim_evidence_metadata.py#L76) | 76 | `"    audit = ledger[\"segments\"][0][\"sources\"][0][\"metadata_audit\"]"` | — |
-| [SRC-6B37B7D6D3-L000077](../../tests/test_claim_evidence_metadata.py#L77) | 77 | `"    assert audit[\"population_scope_required\"] is True"` | — |
-| [SRC-6B37B7D6D3-L000078](../../tests/test_claim_evidence_metadata.py#L78) | 78 | `"    assert \"data_reference_period_for_population_claim\" in audit[\"required_fields_missing\"]"` | — |

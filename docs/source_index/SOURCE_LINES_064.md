@@ -4,7 +4,7 @@
 
 - الصفحة: **064**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L003955 إلى SRC-E3EEC2014A-L000107
+- النطاق: SRC-F725E90B2A-L003944 إلى SRC-E3EEC2014A-L000096
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L003944](../../tests/test_web_agent.py#L3944) | 3944 | `"    assert task_understanding[\"actual_queries\"] == []"` | — |
+| [SRC-F725E90B2A-L003945](../../tests/test_web_agent.py#L3945) | 3945 | `"    assert task_understanding[\"query_strategy_matrix\"] == []"` | — |
+| [SRC-F725E90B2A-L003946](../../tests/test_web_agent.py#L3946) | 3946 | `"    assert task_understanding[\"search_was_attempted\"] is False"` | — |
+| [SRC-F725E90B2A-L003947](../../tests/test_web_agent.py#L3947) | 3947 | `""` | — |
+| [SRC-F725E90B2A-L003948](../../tests/test_web_agent.py#L3948) | 3948 | `"def test_official_site_without_target_clarifies_before_planning_or_search(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L003949](../../tests/test_web_agent.py#L3949) | 3949 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L003950](../../tests/test_web_agent.py#L3950) | 3950 | `""` | — |
+| [SRC-F725E90B2A-L003951](../../tests/test_web_agent.py#L3951) | 3951 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L003952](../../tests/test_web_agent.py#L3952) | 3952 | `"        agent,"` | — |
+| [SRC-F725E90B2A-L003953](../../tests/test_web_agent.py#L3953) | 3953 | `"        \"_plan_search\","` | — |
+| [SRC-F725E90B2A-L003954](../../tests/test_web_agent.py#L3954) | 3954 | `"        lambda *args, **kwargs: pytest.fail(\"Missing official-site target must be clarified before planning\"),"` | — |
 | [SRC-F725E90B2A-L003955](../../tests/test_web_agent.py#L3955) | 3955 | `"    )"` | — |
 | [SRC-F725E90B2A-L003956](../../tests/test_web_agent.py#L3956) | 3956 | `"    monkeypatch.setattr("` | — |
 | [SRC-F725E90B2A-L003957](../../tests/test_web_agent.py#L3957) | 3957 | `"        agent,"` | — |
@@ -823,14 +834,3 @@
 | [SRC-E3EEC2014A-L000094](../../tests/test_workspace_discovery.py#L94) | 94 | `"    store = LeadStore(tmp_path / \"workspace-profiles.sqlite3\")"` | — |
 | [SRC-E3EEC2014A-L000095](../../tests/test_workspace_discovery.py#L95) | 95 | `"    tenant = store.create_tenant(\"Workspace\", \"workspace\")"` | — |
 | [SRC-E3EEC2014A-L000096](../../tests/test_workspace_discovery.py#L96) | 96 | `"    first = store.save_product_profile(product_profile(), tenant_id=tenant)"` | — |
-| [SRC-E3EEC2014A-L000097](../../tests/test_workspace_discovery.py#L97) | 97 | `"    updated = store.save_product_profile("` | — |
-| [SRC-E3EEC2014A-L000098](../../tests/test_workspace_discovery.py#L98) | 98 | `"        product_profile(aliases=[\"FACP\", \"لوحة إنذار\"]), tenant_id=tenant"` | — |
-| [SRC-E3EEC2014A-L000099](../../tests/test_workspace_discovery.py#L99) | 99 | `"    )"` | — |
-| [SRC-E3EEC2014A-L000100](../../tests/test_workspace_discovery.py#L100) | 100 | `""` | — |
-| [SRC-E3EEC2014A-L000101](../../tests/test_workspace_discovery.py#L101) | 101 | `"    assert updated[\"id\"] == first[\"id\"]"` | — |
-| [SRC-E3EEC2014A-L000102](../../tests/test_workspace_discovery.py#L102) | 102 | `"    assert updated[\"profile\"][\"product\"][\"aliases\"] == [\"FACP\", \"لوحة إنذار\"]"` | — |
-| [SRC-E3EEC2014A-L000103](../../tests/test_workspace_discovery.py#L103) | 103 | `"    assert len(store.list_product_profiles(tenant_id=tenant)) == 1"` | — |
-| [SRC-E3EEC2014A-L000104](../../tests/test_workspace_discovery.py#L104) | 104 | `""` | — |
-| [SRC-E3EEC2014A-L000105](../../tests/test_workspace_discovery.py#L105) | 105 | `""` | — |
-| [SRC-E3EEC2014A-L000106](../../tests/test_workspace_discovery.py#L106) | 106 | `"def test_discovery_signal_save_uses_server_stored_qualification_and_evidence(tmp_path):"` | — |
-| [SRC-E3EEC2014A-L000107](../../tests/test_workspace_discovery.py#L107) | 107 | `"    store = LeadStore(tmp_path / \"workspace-signals.sqlite3\")"` | — |

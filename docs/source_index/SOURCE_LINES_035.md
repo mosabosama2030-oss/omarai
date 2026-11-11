@@ -4,7 +4,7 @@
 
 - الصفحة: **035**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B6BD2CE1A8-L000011 إلى SRC-676B69CB6C-L000061
+- النطاق: SRC-B6BD2CE1A8-L000009 إلى SRC-676B69CB6C-L000059
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B6BD2CE1A8-L000009](../OPERATIONS_AR.md#L9) | 9 | `""` | — |
+| [SRC-B6BD2CE1A8-L000010](../OPERATIONS_AR.md#L10) | 10 | `"## سير العمل"` | — |
 | [SRC-B6BD2CE1A8-L000011](../OPERATIONS_AR.md#L11) | 11 | `""` | — |
 | [SRC-B6BD2CE1A8-L000012](../OPERATIONS_AR.md#L12) | 12 | `"يمكنك كذلك استخدام مربع «اسأل Omarai» لطلب إحصائيات السجل المحلي أو ترشيح إشارة للمراجعة أو تفسير الدرجة أو صياغة مسودة تواصل. الإجابات مبنية على قواعد محلية وسجلات محفوظة فقط؛ لا يوجد نموذج سحابي ولا تُرسل أي رسالة تلقائيًا."` | — |
 | [SRC-B6BD2CE1A8-L000013](../OPERATIONS_AR.md#L13) | 13 | `""` | — |
@@ -868,5 +870,3 @@
 | [SRC-676B69CB6C-L000057](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L57) | 57 | `"**Interfaces:**"` | — |
 | [SRC-676B69CB6C-L000058](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L58) | 58 | ``"- `LeadStore.save_product_profile(profile: dict, *, tenant_id: str) -> dict`"`` | — |
 | [SRC-676B69CB6C-L000059](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L59) | 59 | ``"- `LeadStore.list_product_profiles(*, tenant_id: str) -> list[dict]`"`` | — |
-| [SRC-676B69CB6C-L000060](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L60) | 60 | ``"- `LeadStore.get_product_profile(profile_id: str, *, tenant_id: str) -> dict \| None`"`` | — |
-| [SRC-676B69CB6C-L000061](../superpowers/plans/2026-11-06-workspace-demand-discovery.md#L61) | 61 | ``"- `LeadStore.save_discovery_run(profile_id: str, run: dict, *, tenant_id: str) -> dict`"`` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **050**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AAA21D04E8-L000077 إلى SRC-1A176AD4F0-L000499
+- النطاق: SRC-AAA21D04E8-L000066 إلى SRC-1A176AD4F0-L000488
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AAA21D04E8-L000066](../../tests/test_generation_capabilities.py#L66) | 66 | `""` | — |
+| [SRC-AAA21D04E8-L000067](../../tests/test_generation_capabilities.py#L67) | 67 | `"    def fake_urlopen(request, timeout):"` | — |
+| [SRC-AAA21D04E8-L000068](../../tests/test_generation_capabilities.py#L68) | 68 | `"        model = json.loads(request.data.decode(\"utf-8\"))[\"model\"]"` | — |
+| [SRC-AAA21D04E8-L000069](../../tests/test_generation_capabilities.py#L69) | 69 | `"        calls.append(model)"` | — |
+| [SRC-AAA21D04E8-L000070](../../tests/test_generation_capabilities.py#L70) | 70 | `"        if model == \"primary/model\":"` | — |
+| [SRC-AAA21D04E8-L000071](../../tests/test_generation_capabilities.py#L71) | 71 | `"            return FakeResponse(\"response with unrecognized termination\", \"vendor_specific_done\")"` | — |
+| [SRC-AAA21D04E8-L000072](../../tests/test_generation_capabilities.py#L72) | 72 | `"        return FakeResponse(\"إجابة مكتملة\", \"stop\")"` | — |
+| [SRC-AAA21D04E8-L000073](../../tests/test_generation_capabilities.py#L73) | 73 | `""` | — |
+| [SRC-AAA21D04E8-L000074](../../tests/test_generation_capabilities.py#L74) | 74 | `"    monkeypatch.setattr(\"agents.web_agent._open_model_request\", fake_urlopen)"` | — |
+| [SRC-AAA21D04E8-L000075](../../tests/test_generation_capabilities.py#L75) | 75 | `""` | — |
+| [SRC-AAA21D04E8-L000076](../../tests/test_generation_capabilities.py#L76) | 76 | `"    answer = agent._request_completion("` | — |
 | [SRC-AAA21D04E8-L000077](../../tests/test_generation_capabilities.py#L77) | 77 | `"        [{\"role\": \"user\", \"content\": \"اختبار\"}],"` | — |
 | [SRC-AAA21D04E8-L000078](../../tests/test_generation_capabilities.py#L78) | 78 | `"        model=\"primary/model\","` | — |
 | [SRC-AAA21D04E8-L000079](../../tests/test_generation_capabilities.py#L79) | 79 | `"    )"` | — |
@@ -814,14 +825,3 @@
 | [SRC-1A176AD4F0-L000486](../../tests/test_hosted_smoke.py#L486) | 486 | `""` | — |
 | [SRC-1A176AD4F0-L000487](../../tests/test_hosted_smoke.py#L487) | 487 | `""` | — |
 | [SRC-1A176AD4F0-L000488](../../tests/test_hosted_smoke.py#L488) | 488 | `"def test_smoke_rejects_non_string_agent_answer(hosted_server, monkeypatch):"` | — |
-| [SRC-1A176AD4F0-L000489](../../tests/test_hosted_smoke.py#L489) | 489 | `"    original = hosted_smoke_test.request_json"` | — |
-| [SRC-1A176AD4F0-L000490](../../tests/test_hosted_smoke.py#L490) | 490 | `""` | — |
-| [SRC-1A176AD4F0-L000491](../../tests/test_hosted_smoke.py#L491) | 491 | `"    def non_string_answer(url: str, **kwargs):"` | — |
-| [SRC-1A176AD4F0-L000492](../../tests/test_hosted_smoke.py#L492) | 492 | `"        if urlsplit(url).path == \"/api/agent\" and kwargs.get(\"token\") == TOKEN:"` | — |
-| [SRC-1A176AD4F0-L000493](../../tests/test_hosted_smoke.py#L493) | 493 | `"            return 200, {"` | — |
-| [SRC-1A176AD4F0-L000494](../../tests/test_hosted_smoke.py#L494) | 494 | `"                \"answer\": None, \"used_web_search\": True, \"used_language_model\": True,"` | — |
-| [SRC-1A176AD4F0-L000495](../../tests/test_hosted_smoke.py#L495) | 495 | `"                \"answer_evidence_status\": \"citation_indices_validated_only\","` | — |
-| [SRC-1A176AD4F0-L000496](../../tests/test_hosted_smoke.py#L496) | 496 | `"                \"sources\": [{\"url\": \"https://example.com/source\"}],"` | — |
-| [SRC-1A176AD4F0-L000497](../../tests/test_hosted_smoke.py#L497) | 497 | `"                \"search_report\": {"` | — |
-| [SRC-1A176AD4F0-L000498](../../tests/test_hosted_smoke.py#L498) | 498 | `"                    \"pipeline_completion_status\": \"completed\","` | — |
-| [SRC-1A176AD4F0-L000499](../../tests/test_hosted_smoke.py#L499) | 499 | `"                    \"semantic_claim_verification\": {\"status\": \"completed_all_claims_supported\"},"` | — |

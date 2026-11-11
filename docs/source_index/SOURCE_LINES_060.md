@@ -4,7 +4,7 @@
 
 - الصفحة: **060**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L000755 إلى SRC-F725E90B2A-L001554
+- النطاق: SRC-F725E90B2A-L000744 إلى SRC-F725E90B2A-L001543
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L000744](../../tests/test_web_agent.py#L744) | 744 | `"            return False"` | — |
+| [SRC-F725E90B2A-L000745](../../tests/test_web_agent.py#L745) | 745 | `""` | — |
+| [SRC-F725E90B2A-L000746](../../tests/test_web_agent.py#L746) | 746 | `"        def read(self, limit):"` | — |
+| [SRC-F725E90B2A-L000747](../../tests/test_web_agent.py#L747) | 747 | `"            return json.dumps({"` | — |
+| [SRC-F725E90B2A-L000748](../../tests/test_web_agent.py#L748) | 748 | `"                \"choices\": [{"` | — |
+| [SRC-F725E90B2A-L000749](../../tests/test_web_agent.py#L749) | 749 | `"                    \"message\": {\"content\": \"إجابة من النموذج الاحتياطي\"},"` | — |
+| [SRC-F725E90B2A-L000750](../../tests/test_web_agent.py#L750) | 750 | `"                    \"finish_reason\": \"stop\","` | — |
+| [SRC-F725E90B2A-L000751](../../tests/test_web_agent.py#L751) | 751 | `"                }]"` | — |
+| [SRC-F725E90B2A-L000752](../../tests/test_web_agent.py#L752) | 752 | `"            }).encode(\"utf-8\")"` | — |
+| [SRC-F725E90B2A-L000753](../../tests/test_web_agent.py#L753) | 753 | `""` | — |
+| [SRC-F725E90B2A-L000754](../../tests/test_web_agent.py#L754) | 754 | `"    def fake_urlopen(request, timeout):"` | — |
 | [SRC-F725E90B2A-L000755](../../tests/test_web_agent.py#L755) | 755 | `"        payload = json.loads(request.data.decode(\"utf-8\"))"` | — |
 | [SRC-F725E90B2A-L000756](../../tests/test_web_agent.py#L756) | 756 | `"        called.append(payload[\"model\"])"` | — |
 | [SRC-F725E90B2A-L000757](../../tests/test_web_agent.py#L757) | 757 | `"        if payload[\"model\"] == \"broken/primary\":"` | — |
@@ -805,14 +816,3 @@
 | [SRC-F725E90B2A-L001541](../../tests/test_web_agent.py#L1541) | 1541 | `"    agent = WebAgent()"` | — |
 | [SRC-F725E90B2A-L001542](../../tests/test_web_agent.py#L1542) | 1542 | `"    agent.api_key = \"test-key\""` | — |
 | [SRC-F725E90B2A-L001543](../../tests/test_web_agent.py#L1543) | 1543 | `"    source = {"` | — |
-| [SRC-F725E90B2A-L001544](../../tests/test_web_agent.py#L1544) | 1544 | `"        \"title\": \"موقع مصر الرقمية والخدمات الحكومية\","` | — |
-| [SRC-F725E90B2A-L001545](../../tests/test_web_agent.py#L1545) | 1545 | `"        \"url\": \"https://digital.gov.eg/\","` | — |
-| [SRC-F725E90B2A-L001546](../../tests/test_web_agent.py#L1546) | 1546 | `"        \"snippet\": \"بوابة مصر الرقمية للخدمات الحكومية الإلكترونية.\","` | — |
-| [SRC-F725E90B2A-L001547](../../tests/test_web_agent.py#L1547) | 1547 | `"        \"page_text\": \"بوابة مصر الرقمية للخدمات الحكومية الإلكترونية.\","` | — |
-| [SRC-F725E90B2A-L001548](../../tests/test_web_agent.py#L1548) | 1548 | `"        \"page_fetched\": True,"` | — |
-| [SRC-F725E90B2A-L001549](../../tests/test_web_agent.py#L1549) | 1549 | `"        \"providers\": [\"test_provider\"],"` | — |
-| [SRC-F725E90B2A-L001550](../../tests/test_web_agent.py#L1550) | 1550 | `"        \"queries\": [\"ابحث عن موقع مصر الرقمية\"],"` | — |
-| [SRC-F725E90B2A-L001551](../../tests/test_web_agent.py#L1551) | 1551 | `"        \"domain\": \"digital.gov.eg\","` | — |
-| [SRC-F725E90B2A-L001552](../../tests/test_web_agent.py#L1552) | 1552 | `"        \"source_class\": \"government\","` | — |
-| [SRC-F725E90B2A-L001553](../../tests/test_web_agent.py#L1553) | 1553 | `"        \"platform\": \"web\","` | — |
-| [SRC-F725E90B2A-L001554](../../tests/test_web_agent.py#L1554) | 1554 | `"    }"` | — |

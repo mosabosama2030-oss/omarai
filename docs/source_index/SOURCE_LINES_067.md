@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **067**
-- سجلات الأسطر: **327**
-- النطاق: SRC-2C8F288796-L000767 إلى SRC-2C8F288796-L001093
+- سجلات الأسطر: **338**
+- النطاق: SRC-2C8F288796-L000756 إلى SRC-2C8F288796-L001093
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-2C8F288796-L000756](../../web/workspace.html#L756) | 756 | `"  }catch(error){panel.append(make(\"p\",\"auth-error\",escapeMessage(error.message)))}"` | — |
+| [SRC-2C8F288796-L000757](../../web/workspace.html#L757) | 757 | `"  finally{save.disabled=false}"` | — |
+| [SRC-2C8F288796-L000758](../../web/workspace.html#L758) | 758 | `" });"` | — |
+| [SRC-2C8F288796-L000759](../../web/workspace.html#L759) | 759 | `" save.disabled=!canWrite();actions.append(save);panel.append(actions);root.append(panel);"` | — |
+| [SRC-2C8F288796-L000760](../../web/workspace.html#L760) | 760 | `" const listPanel=make(\"section\",\"glass panel profile-panel\"),lh=make(\"div\",\"panel-head\"),lt=make(\"div\");"` | — |
+| [SRC-2C8F288796-L000761](../../web/workspace.html#L761) | 761 | `" lt.append(make(\"h2\",\"\",\"ملفات المنتجات المحفوظة\"),make(\"p\",\"\",\"اختر ملفًا محفوظًا للانتقال إلى تشغيل الاكتشاف.\"));"` | — |
+| [SRC-2C8F288796-L000762](../../web/workspace.html#L762) | 762 | `" lh.append(lt);listPanel.append(lh);"` | — |
+| [SRC-2C8F288796-L000763](../../web/workspace.html#L763) | 763 | `" if(!state.profiles.length)listPanel.append(emptyState(\"لا توجد ملفات بعد\",\"أنشئ ملف المنتج والسوق ثم احفظه.\"));"` | — |
+| [SRC-2C8F288796-L000764](../../web/workspace.html#L764) | 764 | `" else{"` | — |
+| [SRC-2C8F288796-L000765](../../web/workspace.html#L765) | 765 | `"  const list=make(\"div\",\"signal-list\");"` | — |
+| [SRC-2C8F288796-L000766](../../web/workspace.html#L766) | 766 | `"  state.profiles.forEach(profile=>{"` | — |
 | [SRC-2C8F288796-L000767](../../web/workspace.html#L767) | 767 | `"   const card=make(\"article\",\"signal-card\"),p=profile.profile\|\|{},m=p.market\|\|{};"` | — |
 | [SRC-2C8F288796-L000768](../../web/workspace.html#L768) | 768 | `"   card.append(make(\"strong\",\"\",profile.name\|\|\"منتج\"));"` | — |
 | [SRC-2C8F288796-L000769](../../web/workspace.html#L769) | 769 | `"   card.append(make(\"p\",\"subtle\",\"المناطق: \"+((m.locations\|\|[]).join(\"، \")\|\|\"غير محددة\")));"` | — |

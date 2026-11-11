@@ -4,7 +4,7 @@
 
 - الصفحة: **041**
 - سجلات الأسطر: **800**
-- النطاق: SRC-90FAA34ADE-L001059 إلى SRC-6A7519AC10-L000072
+- النطاق: SRC-90FAA34ADE-L001057 إلى SRC-6A7519AC10-L000070
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-90FAA34ADE-L001057](../../tests/fixtures/answer_quality_cases.json#L1057) | 1057 | `"      \"failure_conditions\": ["` | — |
+| [SRC-90FAA34ADE-L001058](../../tests/fixtures/answer_quality_cases.json#L1058) | 1058 | `"        \"تأكيد التوقف نهائيًا من هذه النتائج فقط\","` | — |
 | [SRC-90FAA34ADE-L001059](../../tests/fixtures/answer_quality_cases.json#L1059) | 1059 | `"        \"وصف النتائج بأنها مصادر مستقلة مؤكدة\""` | — |
 | [SRC-90FAA34ADE-L001060](../../tests/fixtures/answer_quality_cases.json#L1060) | 1060 | `"      ],"` | — |
 | [SRC-90FAA34ADE-L001061](../../tests/fixtures/answer_quality_cases.json#L1061) | 1061 | `"      \"evaluation_mode\": \"fixture_assisted\""` | — |
@@ -850,5 +852,3 @@
 | [SRC-6A7519AC10-L000068](../../tests/test_answer_quality_comparison.py#L68) | 68 | `"                \"case_id\": case[\"case_id\"],"` | — |
 | [SRC-6A7519AC10-L000069](../../tests/test_answer_quality_comparison.py#L69) | 69 | `"                \"status\": \"REVIEWED\","` | — |
 | [SRC-6A7519AC10-L000070](../../tests/test_answer_quality_comparison.py#L70) | 70 | `"                \"retrieval\": {"` | — |
-| [SRC-6A7519AC10-L000071](../../tests/test_answer_quality_comparison.py#L71) | 71 | `"                    \"relevant_retrieved\": 2 if case[\"case_id\"] == \"AQ-007\" else 1,"` | — |
-| [SRC-6A7519AC10-L000072](../../tests/test_answer_quality_comparison.py#L72) | 72 | `"                    \"retrieved_count\": 3,"` | — |

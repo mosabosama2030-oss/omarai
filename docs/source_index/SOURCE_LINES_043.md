@@ -4,7 +4,7 @@
 
 - الصفحة: **043**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B3062EB677-L000155 إلى SRC-3451CC474D-L000135
+- النطاق: SRC-B3062EB677-L000153 إلى SRC-3451CC474D-L000133
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,8 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B3062EB677-L000153](../../tests/test_answer_quality_runner.py#L153) | 153 | `")"` | — |
+| [SRC-B3062EB677-L000154](../../tests/test_answer_quality_runner.py#L154) | 154 | `"def test_validate_base_url_rejects_ambiguous_or_credential_bearing_urls(url):"` | — |
 | [SRC-B3062EB677-L000155](../../tests/test_answer_quality_runner.py#L155) | 155 | `"    mod = _load_runner()"` | — |
 | [SRC-B3062EB677-L000156](../../tests/test_answer_quality_runner.py#L156) | 156 | `"    with pytest.raises(ValueError):"` | — |
 | [SRC-B3062EB677-L000157](../../tests/test_answer_quality_runner.py#L157) | 157 | `"        mod.validate_base_url(url)"` | — |
@@ -841,5 +843,3 @@
 | [SRC-3451CC474D-L000131](../../tests/test_api.py#L131) | 131 | `"    lead_id = listing[\"leads\"][0][\"id\"]"` | — |
 | [SRC-3451CC474D-L000132](../../tests/test_api.py#L132) | 132 | `""` | — |
 | [SRC-3451CC474D-L000133](../../tests/test_api.py#L133) | 133 | `"    status, changed = request_json("` | — |
-| [SRC-3451CC474D-L000134](../../tests/test_api.py#L134) | 134 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L000135](../../tests/test_api.py#L135) | 135 | `"        f\"/api/leads/{lead_id}/status\","` | — |

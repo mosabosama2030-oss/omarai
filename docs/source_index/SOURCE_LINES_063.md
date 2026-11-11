@@ -4,7 +4,7 @@
 
 - الصفحة: **063**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L003155 إلى SRC-F725E90B2A-L003954
+- النطاق: SRC-F725E90B2A-L003144 إلى SRC-F725E90B2A-L003943
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L003144](../../tests/test_web_agent.py#L3144) | 3144 | `""` | — |
+| [SRC-F725E90B2A-L003145](../../tests/test_web_agent.py#L3145) | 3145 | `"def test_frontend_labels_answer_integrity_screen_as_non_semantic():"` | — |
+| [SRC-F725E90B2A-L003146](../../tests/test_web_agent.py#L3146) | 3146 | `"    html = ("` | — |
+| [SRC-F725E90B2A-L003147](../../tests/test_web_agent.py#L3147) | 3147 | `"        Path(__file__).resolve().parents[1] / \"web\" / \"agent.html\""` | — |
+| [SRC-F725E90B2A-L003148](../../tests/test_web_agent.py#L3148) | 3148 | `"    ).read_text(encoding=\"utf-8\")"` | — |
+| [SRC-F725E90B2A-L003149](../../tests/test_web_agent.py#L3149) | 3149 | `"    assert \"فحص لفظي أولي:\" in html"` | — |
+| [SRC-F725E90B2A-L003150](../../tests/test_web_agent.py#L3150) | 3150 | `"    assert \"لا يثبت هذا الفحص صحة الوقائع أو دلالة الاستشهاد\" in html"` | — |
+| [SRC-F725E90B2A-L003151](../../tests/test_web_agent.py#L3151) | 3151 | `"    assert \"potentially_unsupported_numeric_by_citation_count\" in html"` | — |
+| [SRC-F725E90B2A-L003152](../../tests/test_web_agent.py#L3152) | 3152 | `"    assert \"potential_value_discrepancy_count\" in html"` | — |
+| [SRC-F725E90B2A-L003153](../../tests/test_web_agent.py#L3153) | 3153 | `""` | — |
+| [SRC-F725E90B2A-L003154](../../tests/test_web_agent.py#L3154) | 3154 | `""` | — |
 | [SRC-F725E90B2A-L003155](../../tests/test_web_agent.py#L3155) | 3155 | `"def test_search_web_keeps_arabic_topic_matches_in_english_indexed_results(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L003156](../../tests/test_web_agent.py#L3156) | 3156 | `"    cases = ["` | — |
 | [SRC-F725E90B2A-L003157](../../tests/test_web_agent.py#L3157) | 3157 | `"        ("` | — |
@@ -805,14 +816,3 @@
 | [SRC-F725E90B2A-L003941](../../tests/test_web_agent.py#L3941) | 3941 | `"        row[\"status\"] == \"not_required\""` | — |
 | [SRC-F725E90B2A-L003942](../../tests/test_web_agent.py#L3942) | 3942 | `"        for row in task_understanding[\"tool_execution\"][\"tool_status_matrix\"]"` | — |
 | [SRC-F725E90B2A-L003943](../../tests/test_web_agent.py#L3943) | 3943 | `"    )"` | — |
-| [SRC-F725E90B2A-L003944](../../tests/test_web_agent.py#L3944) | 3944 | `"    assert task_understanding[\"actual_queries\"] == []"` | — |
-| [SRC-F725E90B2A-L003945](../../tests/test_web_agent.py#L3945) | 3945 | `"    assert task_understanding[\"query_strategy_matrix\"] == []"` | — |
-| [SRC-F725E90B2A-L003946](../../tests/test_web_agent.py#L3946) | 3946 | `"    assert task_understanding[\"search_was_attempted\"] is False"` | — |
-| [SRC-F725E90B2A-L003947](../../tests/test_web_agent.py#L3947) | 3947 | `""` | — |
-| [SRC-F725E90B2A-L003948](../../tests/test_web_agent.py#L3948) | 3948 | `"def test_official_site_without_target_clarifies_before_planning_or_search(monkeypatch):"` | — |
-| [SRC-F725E90B2A-L003949](../../tests/test_web_agent.py#L3949) | 3949 | `"    agent = WebAgent()"` | — |
-| [SRC-F725E90B2A-L003950](../../tests/test_web_agent.py#L3950) | 3950 | `""` | — |
-| [SRC-F725E90B2A-L003951](../../tests/test_web_agent.py#L3951) | 3951 | `"    monkeypatch.setattr("` | — |
-| [SRC-F725E90B2A-L003952](../../tests/test_web_agent.py#L3952) | 3952 | `"        agent,"` | — |
-| [SRC-F725E90B2A-L003953](../../tests/test_web_agent.py#L3953) | 3953 | `"        \"_plan_search\","` | — |
-| [SRC-F725E90B2A-L003954](../../tests/test_web_agent.py#L3954) | 3954 | `"        lambda *args, **kwargs: pytest.fail(\"Missing official-site target must be clarified before planning\"),"` | — |

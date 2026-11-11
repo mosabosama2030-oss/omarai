@@ -4,9 +4,20 @@
 
 - الصفحة: **054**
 - سجلات الأسطر: **800**
-- النطاق: SRC-851E7A87D6-L000010 إلى SRC-6BF96689A8-L000086
+- النطاق: SRC-44CDA52D01-L000171 إلى SRC-6BF96689A8-L000075
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-44CDA52D01 — [tests/test_omarai.py](../../tests/test_omarai.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-44CDA52D01-L000171](../../tests/test_omarai.py#L171) | 171 | `"    assert quote[\"signal_type\"] == \"request_for_quotation\""` | — |
+| [SRC-44CDA52D01-L000172](../../tests/test_omarai.py#L172) | 172 | `"    assert product_only[\"signal_type\"] == \"unknown\""` | — |
 ## اختبارات
 
 ### FILE-851E7A87D6 — [tests/test_postgres_store.py](../../tests/test_postgres_store.py#L1)
@@ -16,6 +27,15 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-851E7A87D6-L000001](../../tests/test_postgres_store.py#L1) | 1 | `"\"\"\"PostgreSQL integration tests for the Neon-backed LeadStore."` | — |
+| [SRC-851E7A87D6-L000002](../../tests/test_postgres_store.py#L2) | 2 | `""` | — |
+| [SRC-851E7A87D6-L000003](../../tests/test_postgres_store.py#L3) | 3 | `"These tests run only when OMARAI_TEST_DATABASE_URL points at an isolated test database."` | — |
+| [SRC-851E7A87D6-L000004](../../tests/test_postgres_store.py#L4) | 4 | `"The CI workflow supplies an ephemeral PostgreSQL service; production credentials are never used."` | — |
+| [SRC-851E7A87D6-L000005](../../tests/test_postgres_store.py#L5) | 5 | `"\"\"\""` | — |
+| [SRC-851E7A87D6-L000006](../../tests/test_postgres_store.py#L6) | 6 | `"from __future__ import annotations"` | — |
+| [SRC-851E7A87D6-L000007](../../tests/test_postgres_store.py#L7) | 7 | `""` | — |
+| [SRC-851E7A87D6-L000008](../../tests/test_postgres_store.py#L8) | 8 | `"import os"` | — |
+| [SRC-851E7A87D6-L000009](../../tests/test_postgres_store.py#L9) | 9 | `"import uuid"` | — |
 | [SRC-851E7A87D6-L000010](../../tests/test_postgres_store.py#L10) | 10 | `""` | — |
 | [SRC-851E7A87D6-L000011](../../tests/test_postgres_store.py#L11) | 11 | `"import pytest"` | — |
 | [SRC-851E7A87D6-L000012](../../tests/test_postgres_store.py#L12) | 12 | `""` | — |
@@ -850,14 +870,3 @@
 | [SRC-6BF96689A8-L000073](../../tests/test_research.py#L73) | 73 | `""` | — |
 | [SRC-6BF96689A8-L000074](../../tests/test_research.py#L74) | 74 | `"def test_source_classification_distinguishes_social_and_government():"` | — |
 | [SRC-6BF96689A8-L000075](../../tests/test_research.py#L75) | 75 | `"    from agents.research import classify_source"` | — |
-| [SRC-6BF96689A8-L000076](../../tests/test_research.py#L76) | 76 | `""` | — |
-| [SRC-6BF96689A8-L000077](../../tests/test_research.py#L77) | 77 | `"    assert classify_source(\"https://www.reddit.com/r/example/comments/1\")[\"platform\"] == \"reddit\""` | — |
-| [SRC-6BF96689A8-L000078](../../tests/test_research.py#L78) | 78 | `"    assert classify_source(\"https://example.gov.eg/page\")[\"source_class\"] == \"government\""` | — |
-| [SRC-6BF96689A8-L000079](../../tests/test_research.py#L79) | 79 | `""` | — |
-| [SRC-6BF96689A8-L000080](../../tests/test_research.py#L80) | 80 | `""` | — |
-| [SRC-6BF96689A8-L000081](../../tests/test_research.py#L81) | 81 | `"def test_explicit_page_urls_are_extracted_and_not_left_in_search_terms():"` | — |
-| [SRC-6BF96689A8-L000082](../../tests/test_research.py#L82) | 82 | `"    from agents.research import extract_urls"` | — |
-| [SRC-6BF96689A8-L000083](../../tests/test_research.py#L83) | 83 | `""` | — |
-| [SRC-6BF96689A8-L000084](../../tests/test_research.py#L84) | 84 | `"    question = \"حلل هذه الصفحة بالتفصيل https://example.com/a?utm_source=chat#section.\""` | — |
-| [SRC-6BF96689A8-L000085](../../tests/test_research.py#L85) | 85 | `"    plan = fallback_plan(question)"` | — |
-| [SRC-6BF96689A8-L000086](../../tests/test_research.py#L86) | 86 | `"    assert extract_urls(question) == [\"https://example.com/a?utm_source=chat#section\"]"` | — |

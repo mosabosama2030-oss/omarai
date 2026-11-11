@@ -4,7 +4,7 @@
 
 - الصفحة: **062**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L002355 إلى SRC-F725E90B2A-L003154
+- النطاق: SRC-F725E90B2A-L002344 إلى SRC-F725E90B2A-L003143
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,17 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L002344](../../tests/test_web_agent.py#L2344) | 2344 | `"        \"page_text\": \"طلب عرض سعر لتوريد معدات للمشروع.\","` | — |
+| [SRC-F725E90B2A-L002345](../../tests/test_web_agent.py#L2345) | 2345 | `"    }"` | — |
+| [SRC-F725E90B2A-L002346](../../tests/test_web_agent.py#L2346) | 2346 | `"    signal = WebAgent._lead_intent_evidence(source)"` | — |
+| [SRC-F725E90B2A-L002347](../../tests/test_web_agent.py#L2347) | 2347 | `"    assert signal is not None"` | — |
+| [SRC-F725E90B2A-L002348](../../tests/test_web_agent.py#L2348) | 2348 | `"    assert signal[\"signal_type\"] == \"request_for_quotation\""` | — |
+| [SRC-F725E90B2A-L002349](../../tests/test_web_agent.py#L2349) | 2349 | `"    assert signal[\"product_fit\"] == \"unassessed\""` | — |
+| [SRC-F725E90B2A-L002350](../../tests/test_web_agent.py#L2350) | 2350 | `""` | — |
+| [SRC-F725E90B2A-L002351](../../tests/test_web_agent.py#L2351) | 2351 | `""` | — |
+| [SRC-F725E90B2A-L002352](../../tests/test_web_agent.py#L2352) | 2352 | `"def test_buyer_intent_evidence_distinguishes_stated_need_from_purchase():"` | — |
+| [SRC-F725E90B2A-L002353](../../tests/test_web_agent.py#L2353) | 2353 | `"    source = {"` | — |
+| [SRC-F725E90B2A-L002354](../../tests/test_web_agent.py#L2354) | 2354 | `"        \"title\": \"بدور على مورد صيانة\","` | — |
 | [SRC-F725E90B2A-L002355](../../tests/test_web_agent.py#L2355) | 2355 | `"        \"snippet\": \"نحتاج إلى مورد صيانة موثوق.\","` | — |
 | [SRC-F725E90B2A-L002356](../../tests/test_web_agent.py#L2356) | 2356 | `"        \"page_text\": \"نبحث عن مورد صيانة للمصنع.\","` | — |
 | [SRC-F725E90B2A-L002357](../../tests/test_web_agent.py#L2357) | 2357 | `"    }"` | — |
@@ -805,14 +816,3 @@
 | [SRC-F725E90B2A-L003141](../../tests/test_web_agent.py#L3141) | 3141 | `"        \"deterministic_lexical_screen_only_not_semantic_grading\""` | — |
 | [SRC-F725E90B2A-L003142](../../tests/test_web_agent.py#L3142) | 3142 | `"    )"` | — |
 | [SRC-F725E90B2A-L003143](../../tests/test_web_agent.py#L3143) | 3143 | `""` | — |
-| [SRC-F725E90B2A-L003144](../../tests/test_web_agent.py#L3144) | 3144 | `""` | — |
-| [SRC-F725E90B2A-L003145](../../tests/test_web_agent.py#L3145) | 3145 | `"def test_frontend_labels_answer_integrity_screen_as_non_semantic():"` | — |
-| [SRC-F725E90B2A-L003146](../../tests/test_web_agent.py#L3146) | 3146 | `"    html = ("` | — |
-| [SRC-F725E90B2A-L003147](../../tests/test_web_agent.py#L3147) | 3147 | `"        Path(__file__).resolve().parents[1] / \"web\" / \"agent.html\""` | — |
-| [SRC-F725E90B2A-L003148](../../tests/test_web_agent.py#L3148) | 3148 | `"    ).read_text(encoding=\"utf-8\")"` | — |
-| [SRC-F725E90B2A-L003149](../../tests/test_web_agent.py#L3149) | 3149 | `"    assert \"فحص لفظي أولي:\" in html"` | — |
-| [SRC-F725E90B2A-L003150](../../tests/test_web_agent.py#L3150) | 3150 | `"    assert \"لا يثبت هذا الفحص صحة الوقائع أو دلالة الاستشهاد\" in html"` | — |
-| [SRC-F725E90B2A-L003151](../../tests/test_web_agent.py#L3151) | 3151 | `"    assert \"potentially_unsupported_numeric_by_citation_count\" in html"` | — |
-| [SRC-F725E90B2A-L003152](../../tests/test_web_agent.py#L3152) | 3152 | `"    assert \"potential_value_discrepancy_count\" in html"` | — |
-| [SRC-F725E90B2A-L003153](../../tests/test_web_agent.py#L3153) | 3153 | `""` | — |
-| [SRC-F725E90B2A-L003154](../../tests/test_web_agent.py#L3154) | 3154 | `""` | — |
