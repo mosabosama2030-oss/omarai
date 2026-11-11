@@ -400,8 +400,11 @@ async function ask(value){
  const pending=document.createElement("div");pending.className="message assistant";
  pending.innerHTML='<div class="who">Omarai · '+escapeHtml(modeName(activeMode))+'</div><div class="bubble"><div class="pending"><span class="spinner"></span><span>يبحث الآن ويجمع المصادر. ستظهر نتيجة هذه الجولة مرتبطة بسؤالك أدناه.</span></div></div>';
  $("messages").appendChild(pending);pending.scrollIntoView({behavior:"smooth",block:"end"});
+ const controller=new AbortController();
+ let requestTimedOut=false;
+ const timeoutId=window.setTimeout(()=>{requestTimedOut=true;controller.abort();},135000);
  try{
-  const response=await fetch("/api/agent",{method:"POST",credentials:"same-origin",headers:apiHeaders(),body:JSON.stringify({question:q,history:history.slice(-8),mode:activeMode})});
+  const response=await fetch("/api/agent",{method:"POST",credentials:"same-origin",headers:apiHeaders(),signal:controller.signal,body:JSON.stringify({question:q,history:history.slice(-8),mode:activeMode})});
   const data=await response.json().catch(()=>({}));
   pending.remove();
   if(!response.ok){
@@ -425,17 +428,22 @@ async function ask(value){
   }
  }catch(error){
   pending.remove();
-  const safeMessage=error&&error.message?error.message:"تعذر إكمال الطلب.";
+  const timedOut=requestTimedOut||(error&&error.name==="AbortError");
+  const safeMessage=timedOut
+   ?"انتهى وقت انتظار الواجهة بعد 135 ثانية. قد يواصل الخادم إنهاء العملية ضمن ميزانية موارده."
+   :(error&&error.message?error.message:"تعذر إكمال الطلب.");
   const box=addMessage("assistant",safeMessage,null,{question:q});
   const actions=document.createElement("div");actions.className="retry-row";
   const retry=document.createElement("button");retry.type="button";retry.className="retry-button";
   retry.textContent="إعادة محاولة هذا السؤال";
   retry.addEventListener("click",()=>ask(q));actions.appendChild(retry);box.appendChild(actions);
-  setStatus("لم يكتمل الطلب؛ يمكنك إعادة محاولة السؤال نفسه","bad");
+  setStatus(timedOut?"انتهى وقت الانتظار؛ يمكنك إعادة محاولة السؤال":"لم يكتمل الطلب؛ يمكنك إعادة محاولة السؤال نفسه","bad");
  }finally{
+  window.clearTimeout(timeoutId);
   setBusy(false);$("question").focus();
  }
 }
+
 async function runDiagnostics(){
  const button=$("runDiagnostics"),output=$("diagnosticsResult");if(button.disabled)return;
  if(!window.confirm("سيجري هذا الاختبار اتصالات فعلية بمحركات البحث والنموذج، وقد يستهلك حصص الموفّرين أو يترتب عليه رسوم. هل توافق على تنفيذ هذه الاتصالات الآن؟"))return;
