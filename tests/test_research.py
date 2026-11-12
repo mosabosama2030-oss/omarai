@@ -84,7 +84,7 @@ def test_explicit_page_urls_are_extracted_and_not_left_in_search_terms():
     question = "حلل هذه الصفحة بالتفصيل https://example.com/a?utm_source=chat#section."
     plan = fallback_plan(question)
     assert extract_urls(question) == ["https://example.com/a?utm_source=chat#section"]
-    assert plan["direct_urls"] == [https://example.com/a?utm_source=chat#section"]
+    assert plan["direct_urls"] == ["https://example.com/a?utm_source=chat#section"]
     assert "https://" not in plan["queries"][0]
 
 
