@@ -266,3 +266,62 @@ def test_workspace_clears_chat_at_auth_boundaries_and_ignores_stale_responses():
     assert "const requestSessionVersion=chat.sessionVersion" in chat
     assert "if(state.chat.sessionVersion!==requestSessionVersion)return;" in chat
     assert "if(state.chat.sessionVersion===requestSessionVersion)" in chat
+
+
+def test_ai_chat_frontends_abort_stalled_requests_with_bounded_timeout():
+    root = Path(__file__).resolve().parents[1]
+    agent = (root / "web" / "agent.html").read_text(encoding="utf-8")
+    agent_script = agent.split("<script>", 1)[1].split("</script>", 1)[0]
+    agent_ask = agent_script.split("async function ask(value){", 1)[1].split(
+        "async function runDiagnostics()", 1
+    )[0]
+
+    workspace = (root / "web" / "workspace.html").read_text(encoding="utf-8")
+    workspace_script = workspace.split("<script>", 1)[1].split("</script>", 1)[0]
+    api = workspace_script.split("async function api(", 1)[1].split(
+        "function clearChatSession(", 1
+    )[0]
+    chat = workspace_script.split("async function sendChat(){", 1)[1].split(
+        "function renderCurrent(){", 1
+    )[0]
+
+    assert "signal:opts.signal" in api
+    for request in (agent_ask, chat):
+        assert "new AbortController()" in request
+        assert "window.setTimeout" in request
+        assert "135000" in request
+        assert "requestTimedOut" in request
+        assert "controller.abort()" in request
+        assert "window.clearTimeout(timeoutId)" in request
+        assert "انتهى وقت انتظار الواجهة بعد 135 ثانية" in request
+
+
+def test_workspace_distinguishes_saved_records_from_refresh_failures():
+    workspace = Path(__file__).resolve().parents[1] / "web" / "workspace.html"
+    script = workspace.read_text(encoding="utf-8").split("<script>", 1)[1].split(
+        "</script>", 1
+    )[0]
+
+    signals = script.split("function renderSignals(){", 1)[1].split(
+        "function drawSignalRows(", 1
+    )[0]
+    signal_form = script.split("function createSignalForm(){", 1)[1].split(
+        "function renderPipeline(){", 1
+    )[0]
+    profile = script.split("function renderProductProfile(){", 1)[1].split(
+        "function renderDiscoveryRun(", 1
+    )[0]
+    discovery_result = script.split("function renderDiscoveryRun(run){", 1)[1].split(
+        "function renderDiscovery(){", 1
+    )[0]
+
+    assert "تعذر تحديث إشارات الطلب. البيانات المعروضة هي آخر نسخة تم تحميلها." in signals
+    assert "تم حفظ الإشارة، لكن تعذر تحديث صندوق الإشارات." in signal_form
+    assert "تم حفظ ملف المنتج والسوق، لكن تعذر تحديث قائمة الملفات المحفوظة." in profile
+    assert "تم حفظ الإشارة، لكن تعذر تحديث صندوق الإشارات." in discovery_result
+    assert "let refreshWarning=\"\"" in signal_form
+    assert "let refreshWarning=\"\"" in profile
+    assert "let refreshWarning=\"\"" in discovery_result
+    assert 'const response=await api("/api/leads"' in signal_form
+    assert 'const result=await api("/api/product-profiles"' in profile
+    assert 'api("/api/discoveries/"+encodeURIComponent(run.id)+"/signals/"' in discovery_result
