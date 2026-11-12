@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **151**
 - ملفات Python المحللة: **90**
-- تعريفات Python المفهرسة: **2185**
+- تعريفات Python المفهرسة: **2187**
 - تعريفات Python موثقة بوجود Docstring: **312**
-- تعريفات Python بلا Docstring: **1450**
+- تعريفات Python بلا Docstring: **1452**
 - تعريفات لا ينطبق عليها Docstring: **423**
-- الرموز الساكنة الإضافية: **2976**
-- الأسطر النصية المفهرسة حرفيًا: **55140**
+- الرموز الساكنة الإضافية: **2977**
+- الأسطر النصية المفهرسة حرفيًا: **55199**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -133,7 +133,7 @@
 | FILE-6B37B7D6D3 | اختبارات | [tests/test_claim_evidence_metadata.py](../tests/test_claim_evidence_metadata.py#L1) | Python | 3242 | 80 | جرد الملف + AST Python |
 | FILE-DA61479D59 | اختبارات | [tests/test_connector_summary_counters.py](../tests/test_connector_summary_counters.py#L1) | Python | 11930 | 304 | جرد الملف + AST Python |
 | FILE-6BECF5AD00 | اختبارات | [tests/test_connectors_mocked.py](../tests/test_connectors_mocked.py#L1) | Python | 6411 | 185 | جرد الملف + AST Python |
-| FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | Python | 12768 | 268 | جرد الملف + AST Python |
+| FILE-3D0A619359 | اختبارات | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L1) | Python | 15707 | 327 | جرد الملف + AST Python |
 | FILE-29A9CD43D1 | اختبارات | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L1) | Python | 12807 | 303 | جرد الملف + AST Python |
 | FILE-DA139AC9D0 | اختبارات | [tests/test_dialogue_state.py](../tests/test_dialogue_state.py#L1) | Python | 14511 | 350 | جرد الملف + AST Python |
 | FILE-CBDF826324 | اختبارات | [tests/test_dockerfile.py](../tests/test_dockerfile.py#L1) | Python | 404 | 9 | جرد الملف + AST Python |
@@ -1339,6 +1339,8 @@
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L204) | دالة | test_workspace_discovery_result_survives_history_refresh_failure | لا توجد Docstring. | ناقص | 204 | [SRC-3D0A619359-L000204](../tests/test_dashboard_security.py#L204) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L217) | دالة | test_workspace_exposes_ai_chat_as_secondary_entry_using_agent_api_safely | لا توجد Docstring. | ناقص | 217 | [SRC-3D0A619359-L000217](../tests/test_dashboard_security.py#L217) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L233) | دالة | test_workspace_clears_chat_at_auth_boundaries_and_ignores_stale_responses | لا توجد Docstring. | ناقص | 233 | [SRC-3D0A619359-L000233](../tests/test_dashboard_security.py#L233) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L271) | دالة | test_ai_chat_frontends_abort_stalled_requests_with_bounded_timeout | لا توجد Docstring. | ناقص | 271 | [SRC-3D0A619359-L000271](../tests/test_dashboard_security.py#L271) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L299) | دالة | test_workspace_distinguishes_saved_records_from_refresh_failures | لا توجد Docstring. | ناقص | 299 | [SRC-3D0A619359-L000299](../tests/test_dashboard_security.py#L299) |
 | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L13) | دالة | _source | لا توجد Docstring. | ناقص | 13 | [SRC-29A9CD43D1-L000013](../tests/test_dialogue_context_pipeline.py#L13) |
 | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L30) | دالة | _report | لا توجد Docstring. | ناقص | 30 | [SRC-29A9CD43D1-L000030](../tests/test_dialogue_context_pipeline.py#L30) |
 | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L50) | دالة | _semantic_context | لا توجد Docstring. | ناقص | 50 | [SRC-29A9CD43D1-L000050](../tests/test_dialogue_context_pipeline.py#L50) |
@@ -4443,6 +4445,7 @@
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L177) | مسار API/واجهة محتمل | /api/discoveries | 177 | [SRC-3D0A619359-L000177](../tests/test_dashboard_security.py#L177) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L178) | مسار API/واجهة محتمل | /api/discoveries/ | 178 | [SRC-3D0A619359-L000178](../tests/test_dashboard_security.py#L178) |
 | [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L225) | مسار API/واجهة محتمل | /api/agent | 225 | [SRC-3D0A619359-L000225](../tests/test_dashboard_security.py#L225) |
+| [tests/test_dashboard_security.py](../tests/test_dashboard_security.py#L325) | مسار API/واجهة محتمل | /api/leads | 325 | [SRC-3D0A619359-L000325](../tests/test_dashboard_security.py#L325) |
 | [tests/test_dialogue_context_pipeline.py](../tests/test_dialogue_context_pipeline.py#L150) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | WEB_SIMPLE | 150 | [SRC-29A9CD43D1-L000150](../tests/test_dialogue_context_pipeline.py#L150) |
 | [tests/test_dockerfile.py](../tests/test_dockerfile.py#L8) | مسار API/واجهة محتمل | /api/health | 8 | [SRC-CBDF826324-L000008](../tests/test_dockerfile.py#L8) |
 | [tests/test_evidence_provenance.py](../tests/test_evidence_provenance.py#L12) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | AF_INET | 12 | [SRC-6BCB799CEC-L000012](../tests/test_evidence_provenance.py#L12) |

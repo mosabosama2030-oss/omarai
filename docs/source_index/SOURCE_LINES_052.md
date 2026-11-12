@@ -4,7 +4,7 @@
 
 - الصفحة: **052**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1A176AD4F0-L000389 إلى SRC-4397BC2CD2-L000019
+- النطاق: SRC-1A176AD4F0-L000330 إلى SRC-EA6EC52573-L000351
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,65 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1A176AD4F0-L000330](../../tests/test_hosted_smoke.py#L330) | 330 | `"        run_smoke(\"https://omarai.example.test\", \"\", preflight_only=True)"` | — |
+| [SRC-1A176AD4F0-L000331](../../tests/test_hosted_smoke.py#L331) | 331 | `"    assert calls == [(\"/\", \"\", None), (\"/api/health\", \"\", None), (\"/api/agent\", \"\", {\"question\": \"\"})]"` | — |
+| [SRC-1A176AD4F0-L000332](../../tests/test_hosted_smoke.py#L332) | 332 | `"    assert failure.value.report[\"endpoint_diagnostics\"][\"unauthenticated_agent\"][\"http_status\"] == 400"` | — |
+| [SRC-1A176AD4F0-L000333](../../tests/test_hosted_smoke.py#L333) | 333 | `""` | — |
+| [SRC-1A176AD4F0-L000334](../../tests/test_hosted_smoke.py#L334) | 334 | `""` | — |
+| [SRC-1A176AD4F0-L000335](../../tests/test_hosted_smoke.py#L335) | 335 | `""` | — |
+| [SRC-1A176AD4F0-L000336](../../tests/test_hosted_smoke.py#L336) | 336 | `""` | — |
+| [SRC-1A176AD4F0-L000337](../../tests/test_hosted_smoke.py#L337) | 337 | `"def test_no_cost_preflight_rejects_a_mismatched_expected_build_sha(monkeypatch):"` | — |
+| [SRC-1A176AD4F0-L000338](../../tests/test_hosted_smoke.py#L338) | 338 | `"    def request_with_wrong_sha(url: str, *, token=\"\", payload=None, timeout=90):"` | — |
+| [SRC-1A176AD4F0-L000339](../../tests/test_hosted_smoke.py#L339) | 339 | `"        path = urlsplit(url).path"` | — |
+| [SRC-1A176AD4F0-L000340](../../tests/test_hosted_smoke.py#L340) | 340 | `"        if path == \"/\":"` | — |
+| [SRC-1A176AD4F0-L000341](../../tests/test_hosted_smoke.py#L341) | 341 | `"            return 200, None"` | — |
+| [SRC-1A176AD4F0-L000342](../../tests/test_hosted_smoke.py#L342) | 342 | `"        if path == \"/api/health\":"` | — |
+| [SRC-1A176AD4F0-L000343](../../tests/test_hosted_smoke.py#L343) | 343 | `"            return 200, {\"ok\": True, \"build\": {\"sha\": \"b\" * 40}}"` | — |
+| [SRC-1A176AD4F0-L000344](../../tests/test_hosted_smoke.py#L344) | 344 | `"        if path == \"/api/agent\":"` | — |
+| [SRC-1A176AD4F0-L000345](../../tests/test_hosted_smoke.py#L345) | 345 | `"            assert payload == {\"question\": \"\"}"` | — |
+| [SRC-1A176AD4F0-L000346](../../tests/test_hosted_smoke.py#L346) | 346 | `"            return 401, None"` | — |
+| [SRC-1A176AD4F0-L000347](../../tests/test_hosted_smoke.py#L347) | 347 | `"        raise AssertionError(path)"` | — |
+| [SRC-1A176AD4F0-L000348](../../tests/test_hosted_smoke.py#L348) | 348 | `""` | — |
+| [SRC-1A176AD4F0-L000349](../../tests/test_hosted_smoke.py#L349) | 349 | `"    monkeypatch.setattr(hosted_smoke_test, \"request_json\", request_with_wrong_sha)"` | — |
+| [SRC-1A176AD4F0-L000350](../../tests/test_hosted_smoke.py#L350) | 350 | `"    with pytest.raises(SmokeError, match=\"per-endpoint HTTP diagnostics\") as failure:"` | — |
+| [SRC-1A176AD4F0-L000351](../../tests/test_hosted_smoke.py#L351) | 351 | `"        run_smoke("` | — |
+| [SRC-1A176AD4F0-L000352](../../tests/test_hosted_smoke.py#L352) | 352 | `"            \"https://omarai.example.test\", \"\","` | — |
+| [SRC-1A176AD4F0-L000353](../../tests/test_hosted_smoke.py#L353) | 353 | `"            expected_sha=\"a\" * 40, preflight_only=True,"` | — |
+| [SRC-1A176AD4F0-L000354](../../tests/test_hosted_smoke.py#L354) | 354 | `"        )"` | — |
+| [SRC-1A176AD4F0-L000355](../../tests/test_hosted_smoke.py#L355) | 355 | `"    assert failure.value.report[\"checks\"][\"build_identity\"][\"status\"] == \"failed\""` | — |
+| [SRC-1A176AD4F0-L000356](../../tests/test_hosted_smoke.py#L356) | 356 | `""` | — |
+| [SRC-1A176AD4F0-L000357](../../tests/test_hosted_smoke.py#L357) | 357 | `""` | — |
+| [SRC-1A176AD4F0-L000358](../../tests/test_hosted_smoke.py#L358) | 358 | `"def test_no_cost_preflight_collects_all_endpoint_failures_without_request_bodies(monkeypatch):"` | — |
+| [SRC-1A176AD4F0-L000359](../../tests/test_hosted_smoke.py#L359) | 359 | `"    calls = []"` | — |
+| [SRC-1A176AD4F0-L000360](../../tests/test_hosted_smoke.py#L360) | 360 | `"    body_digest = \"b\" * 64"` | — |
+| [SRC-1A176AD4F0-L000361](../../tests/test_hosted_smoke.py#L361) | 361 | `"    metadata = {"` | — |
+| [SRC-1A176AD4F0-L000362](../../tests/test_hosted_smoke.py#L362) | 362 | `"        \"status\": 403,"` | — |
+| [SRC-1A176AD4F0-L000363](../../tests/test_hosted_smoke.py#L363) | 363 | `"        \"content_type\": \"application/json\","` | — |
+| [SRC-1A176AD4F0-L000364](../../tests/test_hosted_smoke.py#L364) | 364 | `"        \"server\": \"cloudflare\","` | — |
+| [SRC-1A176AD4F0-L000365](../../tests/test_hosted_smoke.py#L365) | 365 | `"        \"request_id\": \"\","` | — |
+| [SRC-1A176AD4F0-L000366](../../tests/test_hosted_smoke.py#L366) | 366 | `"        \"correlation_id\": \"\","` | — |
+| [SRC-1A176AD4F0-L000367](../../tests/test_hosted_smoke.py#L367) | 367 | `"        \"cf_ray\": \"ray-example-403\","` | — |
+| [SRC-1A176AD4F0-L000368](../../tests/test_hosted_smoke.py#L368) | 368 | `"        \"via\": \"\","` | — |
+| [SRC-1A176AD4F0-L000369](../../tests/test_hosted_smoke.py#L369) | 369 | `"        \"body_bytes_sampled\": 128,"` | — |
+| [SRC-1A176AD4F0-L000370](../../tests/test_hosted_smoke.py#L370) | 370 | `"        \"body_sha256\": body_digest,"` | — |
+| [SRC-1A176AD4F0-L000371](../../tests/test_hosted_smoke.py#L371) | 371 | `"    }"` | — |
+| [SRC-1A176AD4F0-L000372](../../tests/test_hosted_smoke.py#L372) | 372 | `""` | — |
+| [SRC-1A176AD4F0-L000373](../../tests/test_hosted_smoke.py#L373) | 373 | `"    def blocked_request(url: str, *, token=\"\", payload=None, timeout=90):"` | — |
+| [SRC-1A176AD4F0-L000374](../../tests/test_hosted_smoke.py#L374) | 374 | `"        path = urlsplit(url).path"` | — |
+| [SRC-1A176AD4F0-L000375](../../tests/test_hosted_smoke.py#L375) | 375 | `"        calls.append((path, token, payload))"` | — |
+| [SRC-1A176AD4F0-L000376](../../tests/test_hosted_smoke.py#L376) | 376 | `"        if path in {\"/\", \"/api/health\"}:"` | — |
+| [SRC-1A176AD4F0-L000377](../../tests/test_hosted_smoke.py#L377) | 377 | `"            return 403, {\"_smoke_http\": metadata}"` | — |
+| [SRC-1A176AD4F0-L000378](../../tests/test_hosted_smoke.py#L378) | 378 | `"        if path == \"/api/agent\":"` | — |
+| [SRC-1A176AD4F0-L000379](../../tests/test_hosted_smoke.py#L379) | 379 | `"            assert payload == {\"question\": \"\"}"` | — |
+| [SRC-1A176AD4F0-L000380](../../tests/test_hosted_smoke.py#L380) | 380 | `"            return 403, {\"_smoke_http\": {**metadata, \"cf_ray\": \"ray-example-agent\"}}"` | — |
+| [SRC-1A176AD4F0-L000381](../../tests/test_hosted_smoke.py#L381) | 381 | `"        raise AssertionError(f\"unexpected preflight request: {path}\")"` | — |
+| [SRC-1A176AD4F0-L000382](../../tests/test_hosted_smoke.py#L382) | 382 | `""` | — |
+| [SRC-1A176AD4F0-L000383](../../tests/test_hosted_smoke.py#L383) | 383 | `"    monkeypatch.setattr(hosted_smoke_test, \"request_json\", blocked_request)"` | — |
+| [SRC-1A176AD4F0-L000384](../../tests/test_hosted_smoke.py#L384) | 384 | `"    with pytest.raises(SmokeError, match=\"per-endpoint HTTP diagnostics\") as failure:"` | — |
+| [SRC-1A176AD4F0-L000385](../../tests/test_hosted_smoke.py#L385) | 385 | `"        run_smoke(\"https://omarai.example.test\", \"\", preflight_only=True)"` | — |
+| [SRC-1A176AD4F0-L000386](../../tests/test_hosted_smoke.py#L386) | 386 | `""` | — |
+| [SRC-1A176AD4F0-L000387](../../tests/test_hosted_smoke.py#L387) | 387 | `"    report = failure.value.report"` | — |
+| [SRC-1A176AD4F0-L000388](../../tests/test_hosted_smoke.py#L388) | 388 | `"    assert calls == ["` | — |
 | [SRC-1A176AD4F0-L000389](../../tests/test_hosted_smoke.py#L389) | 389 | `"        (\"/\", \"\", None),"` | — |
 | [SRC-1A176AD4F0-L000390](../../tests/test_hosted_smoke.py#L390) | 390 | `"        (\"/api/health\", \"\", None),"` | — |
 | [SRC-1A176AD4F0-L000391](../../tests/test_hosted_smoke.py#L391) | 391 | `"        (\"/api/agent\", \"\", {\"question\": \"\"}),"` | — |
@@ -775,71 +834,3 @@
 | [SRC-EA6EC52573-L000349](../../tests/test_intent_router.py#L349) | 349 | `"    history = ["` | — |
 | [SRC-EA6EC52573-L000350](../../tests/test_intent_router.py#L350) | 350 | `"        {\"role\": \"user\", \"content\": \"ايه سعر ايفون 15 في مصر\"},"` | — |
 | [SRC-EA6EC52573-L000351](../../tests/test_intent_router.py#L351) | 351 | `"        {\"role\": \"assistant\", \"content\": \"السعر حوالي 45 الف جنيه\"},"` | — |
-| [SRC-EA6EC52573-L000352](../../tests/test_intent_router.py#L352) | 352 | `"    ]"` | — |
-| [SRC-EA6EC52573-L000353](../../tests/test_intent_router.py#L353) | 353 | `"    assert resolve_followup_query(standalone, history) == standalone"` | — |
-| [SRC-EA6EC52573-L000354](../../tests/test_intent_router.py#L354) | 354 | `""` | — |
-| [SRC-EA6EC52573-L000355](../../tests/test_intent_router.py#L355) | 355 | `""` | — |
-| [SRC-EA6EC52573-L000356](../../tests/test_intent_router.py#L356) | 356 | `"@pytest.mark.parametrize("` | — |
-| [SRC-EA6EC52573-L000357](../../tests/test_intent_router.py#L357) | 357 | `"    \"standalone\","` | — |
-| [SRC-EA6EC52573-L000358](../../tests/test_intent_router.py#L358) | 358 | `"    ["` | — |
-| [SRC-EA6EC52573-L000359](../../tests/test_intent_router.py#L359) | 359 | `"        \"عايز اعرف عنوان الشركة بتاعها في القاهرة\","` | — |
-| [SRC-EA6EC52573-L000360](../../tests/test_intent_router.py#L360) | 360 | `"        \"فين فرع الشركة بتاعته في اسكندرية؟\","` | — |
-| [SRC-EA6EC52573-L000361](../../tests/test_intent_router.py#L361) | 361 | `"    ],"` | — |
-| [SRC-EA6EC52573-L000362](../../tests/test_intent_router.py#L362) | 362 | `")"` | — |
-| [SRC-EA6EC52573-L000363](../../tests/test_intent_router.py#L363) | 363 | `"def test_standalone_arabic_questions_with_beta3_possessives_do_not_reuse_old_topic("` | — |
-| [SRC-EA6EC52573-L000364](../../tests/test_intent_router.py#L364) | 364 | `"    standalone,"` | — |
-| [SRC-EA6EC52573-L000365](../../tests/test_intent_router.py#L365) | 365 | `"):"` | — |
-| [SRC-EA6EC52573-L000366](../../tests/test_intent_router.py#L366) | 366 | `"    history = ["` | — |
-| [SRC-EA6EC52573-L000367](../../tests/test_intent_router.py#L367) | 367 | `"        {\"role\": \"user\", \"content\": \"ايه سعر ايفون 15 في مصر\"},"` | — |
-| [SRC-EA6EC52573-L000368](../../tests/test_intent_router.py#L368) | 368 | `"        {\"role\": \"assistant\", \"content\": \"السعر حوالي 45 الف جنيه\"},"` | — |
-| [SRC-EA6EC52573-L000369](../../tests/test_intent_router.py#L369) | 369 | `"    ]"` | — |
-| [SRC-EA6EC52573-L000370](../../tests/test_intent_router.py#L370) | 370 | `"    assert resolve_followup_query(standalone, history) == standalone"` | — |
-| [SRC-EA6EC52573-L000371](../../tests/test_intent_router.py#L371) | 371 | `""` | — |
-| [SRC-EA6EC52573-L000372](../../tests/test_intent_router.py#L372) | 372 | `""` | — |
-| [SRC-EA6EC52573-L000373](../../tests/test_intent_router.py#L373) | 373 | `"def test_aspect_plus_beta3_possessive_remains_a_contextual_followup():"` | — |
-| [SRC-EA6EC52573-L000374](../../tests/test_intent_router.py#L374) | 374 | `"    history = ["` | — |
-| [SRC-EA6EC52573-L000375](../../tests/test_intent_router.py#L375) | 375 | `"        {\"role\": \"user\", \"content\": \"ايه سعر ايفون 15 في مصر\"},"` | — |
-| [SRC-EA6EC52573-L000376](../../tests/test_intent_router.py#L376) | 376 | `"        {\"role\": \"assistant\", \"content\": \"السعر حوالي 45 الف جنيه\"},"` | — |
-| [SRC-EA6EC52573-L000377](../../tests/test_intent_router.py#L377) | 377 | `"    ]"` | — |
-| [SRC-EA6EC52573-L000378](../../tests/test_intent_router.py#L378) | 378 | `"    resolved = resolve_followup_query(\"السعر بتاعه كام؟\", history)"` | — |
-| [SRC-EA6EC52573-L000379](../../tests/test_intent_router.py#L379) | 379 | `"    assert resolved.startswith(\"ايه سعر ايفون 15 في مصر\")"` | — |
-| [SRC-EA6EC52573-L000380](../../tests/test_intent_router.py#L380) | 380 | `"    assert \"السعر بتاعه كام\" in resolved"` | — |
-| [SRC-EA6EC52573-L000381](../../tests/test_intent_router.py#L381) | 381 | `""` | — |
-| [SRC-EA6EC52573-L000382](../../tests/test_intent_router.py#L382) | 382 | `"def test_explicit_company_purchase_need_search_routes_to_buyer_discovery():"` | — |
-| [SRC-EA6EC52573-L000383](../../tests/test_intent_router.py#L383) | 383 | `"    question = ("` | — |
-| [SRC-EA6EC52573-L000384](../../tests/test_intent_router.py#L384) | 384 | `"        \"ابحث عن شركات ومصانع ومشروعات في مصر لديها طلب معلن أو احتياج حقيقي \""` | — |
-| [SRC-EA6EC52573-L000385](../../tests/test_intent_router.py#L385) | 385 | `"        \"لشراء نظام إنذار حريق صناعي، وأعطني الأدلة وروابط الطلبات وتاريخها\""` | — |
-| [SRC-EA6EC52573-L000386](../../tests/test_intent_router.py#L386) | 386 | `"    )"` | — |
-| [SRC-EA6EC52573-L000387](../../tests/test_intent_router.py#L387) | 387 | `"    for mode in (\"auto\", \"deep\"):"` | — |
-| [SRC-EA6EC52573-L000388](../../tests/test_intent_router.py#L388) | 388 | `"        assert route_intent(question, mode=mode)[\"route\"] == \"LEAD_GENERATION\""` | — |
-| [SRC-EA6EC52573-L000389](../../tests/test_intent_router.py#L389) | 389 | `""` | — |
-| [SRC-EA6EC52573-L000390](../../tests/test_intent_router.py#L390) | 390 | `"    seller_search = \"ابحث عن شركات ومصانع تبيع أنظمة إنذار حريق صناعي في مصر\""` | — |
-| [SRC-EA6EC52573-L000391](../../tests/test_intent_router.py#L391) | 391 | `"    assert route_intent(seller_search)[\"route\"] != \"LEAD_GENERATION\""` | — |
-## اختبارات
-
-### FILE-4397BC2CD2 — [tests/test_intent_router_integration.py](../../tests/test_intent_router_integration.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-4397BC2CD2-L000001](../../tests/test_intent_router_integration.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-4397BC2CD2-L000002](../../tests/test_intent_router_integration.py#L2) | 2 | `""` | — |
-| [SRC-4397BC2CD2-L000003](../../tests/test_intent_router_integration.py#L3) | 3 | `"import pytest"` | — |
-| [SRC-4397BC2CD2-L000004](../../tests/test_intent_router_integration.py#L4) | 4 | `""` | — |
-| [SRC-4397BC2CD2-L000005](../../tests/test_intent_router_integration.py#L5) | 5 | `"from agents.research import evidence_signal_report"` | — |
-| [SRC-4397BC2CD2-L000006](../../tests/test_intent_router_integration.py#L6) | 6 | `"from agents.web_agent import WebAgent"` | — |
-| [SRC-4397BC2CD2-L000007](../../tests/test_intent_router_integration.py#L7) | 7 | `""` | — |
-| [SRC-4397BC2CD2-L000008](../../tests/test_intent_router_integration.py#L8) | 8 | `""` | — |
-| [SRC-4397BC2CD2-L000009](../../tests/test_intent_router_integration.py#L9) | 9 | `"def _evidence(domain: str, queries: list[str]) -> dict:"` | — |
-| [SRC-4397BC2CD2-L000010](../../tests/test_intent_router_integration.py#L10) | 10 | `"    return {"` | — |
-| [SRC-4397BC2CD2-L000011](../../tests/test_intent_router_integration.py#L11) | 11 | `"        \"title\": \"iPhone 17 price information in Egypt\","` | — |
-| [SRC-4397BC2CD2-L000012](../../tests/test_intent_router_integration.py#L12) | 12 | `"        \"url\": f\"https://{domain}/iphone-17-price\","` | — |
-| [SRC-4397BC2CD2-L000013](../../tests/test_intent_router_integration.py#L13) | 13 | `"        \"snippet\": \"Published price information for iPhone 17 in Egypt.\","` | — |
-| [SRC-4397BC2CD2-L000014](../../tests/test_intent_router_integration.py#L14) | 14 | `"        \"page_text\": \"Price information for iPhone 17 in Egypt.\","` | — |
-| [SRC-4397BC2CD2-L000015](../../tests/test_intent_router_integration.py#L15) | 15 | `"        \"page_fetched\": True,"` | — |
-| [SRC-4397BC2CD2-L000016](../../tests/test_intent_router_integration.py#L16) | 16 | `"        \"providers\": [\"test_search\"],"` | — |
-| [SRC-4397BC2CD2-L000017](../../tests/test_intent_router_integration.py#L17) | 17 | `"        \"queries\": list(queries),"` | — |
-| [SRC-4397BC2CD2-L000018](../../tests/test_intent_router_integration.py#L18) | 18 | `"        \"domain\": domain,"` | — |
-| [SRC-4397BC2CD2-L000019](../../tests/test_intent_router_integration.py#L19) | 19 | `"        \"source_class\": \"general\","` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **056**
 - سجلات الأسطر: **800**
-- النطاق: SRC-C353AAAC10-L000110 إلى SRC-AFFCF23BD4-L000297
+- النطاق: SRC-C353AAAC10-L000051 إلى SRC-AFFCF23BD4-L000238
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,65 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-C353AAAC10-L000051](../../tests/test_request_budget.py#L51) | 51 | `"def test_environment_overrides_are_clamped(monkeypatch):"` | — |
+| [SRC-C353AAAC10-L000052](../../tests/test_request_budget.py#L52) | 52 | `"    monkeypatch.setenv(\"OMARAI_REQUEST_BUDGET_SECONDS\", \"999\")"` | — |
+| [SRC-C353AAAC10-L000053](../../tests/test_request_budget.py#L53) | 53 | `"    monkeypatch.setenv(\"OMARAI_REQUEST_MAX_SEARCH_CALLS\", \"999\")"` | — |
+| [SRC-C353AAAC10-L000054](../../tests/test_request_budget.py#L54) | 54 | `"    monkeypatch.setenv(\"OMARAI_REQUEST_MAX_MODEL_CALLS\", \"-1\")"` | — |
+| [SRC-C353AAAC10-L000055](../../tests/test_request_budget.py#L55) | 55 | `"    monkeypatch.setenv(\"OMARAI_REQUEST_MAX_TOOL_CALLS\", \"-1\")"` | — |
+| [SRC-C353AAAC10-L000056](../../tests/test_request_budget.py#L56) | 56 | `""` | — |
+| [SRC-C353AAAC10-L000057](../../tests/test_request_budget.py#L57) | 57 | `"    snapshot = RequestBudget.from_environment().snapshot()"` | — |
+| [SRC-C353AAAC10-L000058](../../tests/test_request_budget.py#L58) | 58 | `""` | — |
+| [SRC-C353AAAC10-L000059](../../tests/test_request_budget.py#L59) | 59 | `"    assert snapshot[\"timeout_seconds\"] == 120"` | — |
+| [SRC-C353AAAC10-L000060](../../tests/test_request_budget.py#L60) | 60 | `"    assert snapshot[\"limits\"][\"search_calls\"] == 40"` | — |
+| [SRC-C353AAAC10-L000061](../../tests/test_request_budget.py#L61) | 61 | `"    assert snapshot[\"limits\"][\"model_calls\"] == 1"` | — |
+| [SRC-C353AAAC10-L000062](../../tests/test_request_budget.py#L62) | 62 | `"    assert snapshot[\"limits\"][\"tool_calls\"] == 0"` | — |
+| [SRC-C353AAAC10-L000063](../../tests/test_request_budget.py#L63) | 63 | `""` | — |
+| [SRC-C353AAAC10-L000064](../../tests/test_request_budget.py#L64) | 64 | `""` | — |
+| [SRC-C353AAAC10-L000065](../../tests/test_request_budget.py#L65) | 65 | `"def test_web_agent_reserves_search_model_and_page_work_before_io(monkeypatch):"` | — |
+| [SRC-C353AAAC10-L000066](../../tests/test_request_budget.py#L66) | 66 | `"    from agents.web_agent import WebAgent"` | — |
+| [SRC-C353AAAC10-L000067](../../tests/test_request_budget.py#L67) | 67 | `""` | — |
+| [SRC-C353AAAC10-L000068](../../tests/test_request_budget.py#L68) | 68 | `"    agent = WebAgent()"` | — |
+| [SRC-C353AAAC10-L000069](../../tests/test_request_budget.py#L69) | 69 | `"    agent.api_key = \"test-key\""` | — |
+| [SRC-C353AAAC10-L000070](../../tests/test_request_budget.py#L70) | 70 | `""` | — |
+| [SRC-C353AAAC10-L000071](../../tests/test_request_budget.py#L71) | 71 | `"    agent._request_budget = RequestBudget(limits={\"search_queries\": 0})"` | — |
+| [SRC-C353AAAC10-L000072](../../tests/test_request_budget.py#L72) | 72 | `"    with pytest.raises(RequestBudgetExceeded, match=\"search_queries\"):"` | — |
+| [SRC-C353AAAC10-L000073](../../tests/test_request_budget.py#L73) | 73 | `"        agent._search_web(\"budget test\")"` | — |
+| [SRC-C353AAAC10-L000074](../../tests/test_request_budget.py#L74) | 74 | `""` | — |
+| [SRC-C353AAAC10-L000075](../../tests/test_request_budget.py#L75) | 75 | `"    agent._request_budget = RequestBudget(limits={\"model_calls\": 0})"` | — |
+| [SRC-C353AAAC10-L000076](../../tests/test_request_budget.py#L76) | 76 | `"    monkeypatch.setattr("` | — |
+| [SRC-C353AAAC10-L000077](../../tests/test_request_budget.py#L77) | 77 | `"        \"agents.web_agent._open_model_request\","` | — |
+| [SRC-C353AAAC10-L000078](../../tests/test_request_budget.py#L78) | 78 | `"        lambda *args, **kwargs: pytest.fail(\"model HTTP request must not start\"),"` | — |
+| [SRC-C353AAAC10-L000079](../../tests/test_request_budget.py#L79) | 79 | `"    )"` | — |
+| [SRC-C353AAAC10-L000080](../../tests/test_request_budget.py#L80) | 80 | `"    with pytest.raises(RequestBudgetExceeded, match=\"model_calls\"):"` | — |
+| [SRC-C353AAAC10-L000081](../../tests/test_request_budget.py#L81) | 81 | `"        agent._request_completion([{\"role\": \"user\", \"content\": \"test\"}])"` | — |
+| [SRC-C353AAAC10-L000082](../../tests/test_request_budget.py#L82) | 82 | `""` | — |
+| [SRC-C353AAAC10-L000083](../../tests/test_request_budget.py#L83) | 83 | `"    agent._request_budget = RequestBudget(limits={\"page_fetches\": 0})"` | — |
+| [SRC-C353AAAC10-L000084](../../tests/test_request_budget.py#L84) | 84 | `"    with pytest.raises(RequestBudgetExceeded, match=\"page_fetches\"):"` | — |
+| [SRC-C353AAAC10-L000085](../../tests/test_request_budget.py#L85) | 85 | `"        agent._fetch_page(\"https://example.com/\")"` | — |
+| [SRC-C353AAAC10-L000086](../../tests/test_request_budget.py#L86) | 86 | `""` | — |
+| [SRC-C353AAAC10-L000087](../../tests/test_request_budget.py#L87) | 87 | `""` | — |
+| [SRC-C353AAAC10-L000088](../../tests/test_request_budget.py#L88) | 88 | `"def test_social_provider_reserves_budget_before_network_io(monkeypatch):"` | — |
+| [SRC-C353AAAC10-L000089](../../tests/test_request_budget.py#L89) | 89 | `"    from agents.web_agent import WebAgent"` | — |
+| [SRC-C353AAAC10-L000090](../../tests/test_request_budget.py#L90) | 90 | `""` | — |
+| [SRC-C353AAAC10-L000091](../../tests/test_request_budget.py#L91) | 91 | `"    monkeypatch.setenv(\"REDDIT_CLIENT_ID\", \"test-client\")"` | — |
+| [SRC-C353AAAC10-L000092](../../tests/test_request_budget.py#L92) | 92 | `"    monkeypatch.setenv(\"REDDIT_CLIENT_SECRET\", \"test-secret\")"` | — |
+| [SRC-C353AAAC10-L000093](../../tests/test_request_budget.py#L93) | 93 | `"    agent = WebAgent()"` | — |
+| [SRC-C353AAAC10-L000094](../../tests/test_request_budget.py#L94) | 94 | `"    agent._request_budget = RequestBudget(limits={\"search_calls\": 0})"` | — |
+| [SRC-C353AAAC10-L000095](../../tests/test_request_budget.py#L95) | 95 | `""` | — |
+| [SRC-C353AAAC10-L000096](../../tests/test_request_budget.py#L96) | 96 | `"    monkeypatch.setattr("` | — |
+| [SRC-C353AAAC10-L000097](../../tests/test_request_budget.py#L97) | 97 | `"        \"httpx.post\","` | — |
+| [SRC-C353AAAC10-L000098](../../tests/test_request_budget.py#L98) | 98 | `"        lambda *args, **kwargs: pytest.fail(\"social HTTP request must not start\"),"` | — |
+| [SRC-C353AAAC10-L000099](../../tests/test_request_budget.py#L99) | 99 | `"    )"` | — |
+| [SRC-C353AAAC10-L000100](../../tests/test_request_budget.py#L100) | 100 | `"    with pytest.raises(RequestBudgetExceeded, match=\"search_calls\"):"` | — |
+| [SRC-C353AAAC10-L000101](../../tests/test_request_budget.py#L101) | 101 | `"        agent._search_social(\"budget test\", [\"reddit\"])"` | — |
+| [SRC-C353AAAC10-L000102](../../tests/test_request_budget.py#L102) | 102 | `""` | — |
+| [SRC-C353AAAC10-L000103](../../tests/test_request_budget.py#L103) | 103 | `""` | — |
+| [SRC-C353AAAC10-L000104](../../tests/test_request_budget.py#L104) | 104 | `"@pytest.mark.parametrize("` | — |
+| [SRC-C353AAAC10-L000105](../../tests/test_request_budget.py#L105) | 105 | `"    (\"resource\", \"limit\"),"` | — |
+| [SRC-C353AAAC10-L000106](../../tests/test_request_budget.py#L106) | 106 | `"    ["` | — |
+| [SRC-C353AAAC10-L000107](../../tests/test_request_budget.py#L107) | 107 | `"        (\"search_queries\", 8),"` | — |
+| [SRC-C353AAAC10-L000108](../../tests/test_request_budget.py#L108) | 108 | `"        (\"search_calls\", 32),"` | — |
+| [SRC-C353AAAC10-L000109](../../tests/test_request_budget.py#L109) | 109 | `"        (\"model_calls\", 8),"` | — |
 | [SRC-C353AAAC10-L000110](../../tests/test_request_budget.py#L110) | 110 | `"        (\"page_fetches\", 8),"` | — |
 | [SRC-C353AAAC10-L000111](../../tests/test_request_budget.py#L111) | 111 | `"        (\"tool_calls\", 3),"` | — |
 | [SRC-C353AAAC10-L000112](../../tests/test_request_budget.py#L112) | 112 | `"    ],"` | — |
@@ -784,62 +843,3 @@
 | [SRC-AFFCF23BD4-L000236](../../tests/test_research_completion.py#L236) | 236 | `""` | — |
 | [SRC-AFFCF23BD4-L000237](../../tests/test_research_completion.py#L237) | 237 | `"def test_semantic_verifier_failure_is_preserved_in_completion_diagnostics():"` | — |
 | [SRC-AFFCF23BD4-L000238](../../tests/test_research_completion.py#L238) | 238 | `"    result = build_research_completion({"` | — |
-| [SRC-AFFCF23BD4-L000239](../../tests/test_research_completion.py#L239) | 239 | `"        \"kind\": \"web_research\","` | — |
-| [SRC-AFFCF23BD4-L000240](../../tests/test_research_completion.py#L240) | 240 | `"        \"search_attempted\": True,"` | — |
-| [SRC-AFFCF23BD4-L000241](../../tests/test_research_completion.py#L241) | 241 | `"        \"used_language_model\": True,"` | — |
-| [SRC-AFFCF23BD4-L000242](../../tests/test_research_completion.py#L242) | 242 | `"        \"final_answer_status\": \"semantic_verification_failed_with_source_fallback\","` | — |
-| [SRC-AFFCF23BD4-L000243](../../tests/test_research_completion.py#L243) | 243 | `"        \"citation_validation\": {\"status\": \"no_citation_markers_present\", \"valid_citation_count\": 0},"` | — |
-| [SRC-AFFCF23BD4-L000244](../../tests/test_research_completion.py#L244) | 244 | `"        \"claim_evidence_ledger\": _VALID_CLAIM_LEDGER,"` | — |
-| [SRC-AFFCF23BD4-L000245](../../tests/test_research_completion.py#L245) | 245 | `"        \"sources\": [{"` | — |
-| [SRC-AFFCF23BD4-L000246](../../tests/test_research_completion.py#L246) | 246 | `"            \"url\": \"https://example.org/report\","` | — |
-| [SRC-AFFCF23BD4-L000247](../../tests/test_research_completion.py#L247) | 247 | `"            \"snippet\": \"Source excerpt\","` | — |
-| [SRC-AFFCF23BD4-L000248](../../tests/test_research_completion.py#L248) | 248 | `"            \"page_fetched\": True,"` | — |
-| [SRC-AFFCF23BD4-L000249](../../tests/test_research_completion.py#L249) | 249 | `"            \"page_text\": \"Source excerpt\","` | — |
-| [SRC-AFFCF23BD4-L000250](../../tests/test_research_completion.py#L250) | 250 | `"        }],"` | — |
-| [SRC-AFFCF23BD4-L000251](../../tests/test_research_completion.py#L251) | 251 | `"        \"search_report\": {"` | — |
-| [SRC-AFFCF23BD4-L000252](../../tests/test_research_completion.py#L252) | 252 | `"            \"unique_sources\": 1,"` | — |
-| [SRC-AFFCF23BD4-L000253](../../tests/test_research_completion.py#L253) | 253 | `"            \"pages_fetched\": 1,"` | — |
-| [SRC-AFFCF23BD4-L000254](../../tests/test_research_completion.py#L254) | 254 | `"            \"answer_was_withheld\": True,"` | — |
-| [SRC-AFFCF23BD4-L000255](../../tests/test_research_completion.py#L255) | 255 | `"            \"semantic_claim_verification\": {"` | — |
-| [SRC-AFFCF23BD4-L000256](../../tests/test_research_completion.py#L256) | 256 | `"                \"status\": \"unsupported_claims_detected\","` | — |
-| [SRC-AFFCF23BD4-L000257](../../tests/test_research_completion.py#L257) | 257 | `"                \"withhold_answer\": True,"` | — |
-| [SRC-AFFCF23BD4-L000258](../../tests/test_research_completion.py#L258) | 258 | `"            },"` | — |
-| [SRC-AFFCF23BD4-L000259](../../tests/test_research_completion.py#L259) | 259 | `"        },"` | — |
-| [SRC-AFFCF23BD4-L000260](../../tests/test_research_completion.py#L260) | 260 | `"    })"` | — |
-| [SRC-AFFCF23BD4-L000261](../../tests/test_research_completion.py#L261) | 261 | `"    assert result[\"status\"] == \"answer_withheld_semantic_support_unverified\""` | — |
-| [SRC-AFFCF23BD4-L000262](../../tests/test_research_completion.py#L262) | 262 | `"    assert result[\"phases\"][\"semantic_verification\"] == \"unsupported_claims_detected\""` | — |
-| [SRC-AFFCF23BD4-L000263](../../tests/test_research_completion.py#L263) | 263 | `"    assert result[\"phases\"][\"answer_generation\"] == \"generated_then_withheld_by_semantic_gate\""` | — |
-| [SRC-AFFCF23BD4-L000264](../../tests/test_research_completion.py#L264) | 264 | `"    assert result[\"counters\"][\"semantic_verification_failure_count\"] == 1"` | — |
-| [SRC-AFFCF23BD4-L000265](../../tests/test_research_completion.py#L265) | 265 | `""` | — |
-| [SRC-AFFCF23BD4-L000266](../../tests/test_research_completion.py#L266) | 266 | `""` | — |
-| [SRC-AFFCF23BD4-L000267](../../tests/test_research_completion.py#L267) | 267 | `"def test_semantic_pass_is_labeled_as_model_assessed_support_not_fact_truth():"` | — |
-| [SRC-AFFCF23BD4-L000268](../../tests/test_research_completion.py#L268) | 268 | `"    result = build_research_completion({"` | — |
-| [SRC-AFFCF23BD4-L000269](../../tests/test_research_completion.py#L269) | 269 | `"        \"kind\": \"web_research\","` | — |
-| [SRC-AFFCF23BD4-L000270](../../tests/test_research_completion.py#L270) | 270 | `"        \"search_attempted\": True,"` | — |
-| [SRC-AFFCF23BD4-L000271](../../tests/test_research_completion.py#L271) | 271 | `"        \"used_language_model\": True,"` | — |
-| [SRC-AFFCF23BD4-L000272](../../tests/test_research_completion.py#L272) | 272 | `"        \"final_answer_status\": \"model_answer_generated\","` | — |
-| [SRC-AFFCF23BD4-L000273](../../tests/test_research_completion.py#L273) | 273 | `"        \"citation_validation\": {\"status\": \"index_range_check_passed\", \"valid_citation_count\": 1},"` | — |
-| [SRC-AFFCF23BD4-L000274](../../tests/test_research_completion.py#L274) | 274 | `"        \"claim_evidence_ledger\": _VALID_CLAIM_LEDGER,"` | — |
-| [SRC-AFFCF23BD4-L000275](../../tests/test_research_completion.py#L275) | 275 | `"        \"sources\": [{"` | — |
-| [SRC-AFFCF23BD4-L000276](../../tests/test_research_completion.py#L276) | 276 | `"            \"url\": \"https://example.org/report\","` | — |
-| [SRC-AFFCF23BD4-L000277](../../tests/test_research_completion.py#L277) | 277 | `"            \"snippet\": \"Source excerpt\","` | — |
-| [SRC-AFFCF23BD4-L000278](../../tests/test_research_completion.py#L278) | 278 | `"            \"page_fetched\": True,"` | — |
-| [SRC-AFFCF23BD4-L000279](../../tests/test_research_completion.py#L279) | 279 | `"            \"page_text\": \"Source excerpt\","` | — |
-| [SRC-AFFCF23BD4-L000280](../../tests/test_research_completion.py#L280) | 280 | `"        }],"` | — |
-| [SRC-AFFCF23BD4-L000281](../../tests/test_research_completion.py#L281) | 281 | `"        \"search_report\": {"` | — |
-| [SRC-AFFCF23BD4-L000282](../../tests/test_research_completion.py#L282) | 282 | `"            \"unique_sources\": 1,"` | — |
-| [SRC-AFFCF23BD4-L000283](../../tests/test_research_completion.py#L283) | 283 | `"            \"pages_fetched\": 1,"` | — |
-| [SRC-AFFCF23BD4-L000284](../../tests/test_research_completion.py#L284) | 284 | `"            \"semantic_claim_verification\": {"` | — |
-| [SRC-AFFCF23BD4-L000285](../../tests/test_research_completion.py#L285) | 285 | `"                \"status\": \"completed_all_claims_supported\","` | — |
-| [SRC-AFFCF23BD4-L000286](../../tests/test_research_completion.py#L286) | 286 | `"                \"withhold_answer\": False,"` | — |
-| [SRC-AFFCF23BD4-L000287](../../tests/test_research_completion.py#L287) | 287 | `"            },"` | — |
-| [SRC-AFFCF23BD4-L000288](../../tests/test_research_completion.py#L288) | 288 | `"        },"` | — |
-| [SRC-AFFCF23BD4-L000289](../../tests/test_research_completion.py#L289) | 289 | `"    })"` | — |
-| [SRC-AFFCF23BD4-L000290](../../tests/test_research_completion.py#L290) | 290 | `"    assert result[\"phases\"][\"semantic_verification\"] == ("` | — |
-| [SRC-AFFCF23BD4-L000291](../../tests/test_research_completion.py#L291) | 291 | `"        \"model_assessed_source_support_not_fact_truth\""` | — |
-| [SRC-AFFCF23BD4-L000292](../../tests/test_research_completion.py#L292) | 292 | `"    )"` | — |
-| [SRC-AFFCF23BD4-L000293](../../tests/test_research_completion.py#L293) | 293 | `"    assert result[\"semantic_verification\"] == ("` | — |
-| [SRC-AFFCF23BD4-L000294](../../tests/test_research_completion.py#L294) | 294 | `"        \"model_assessed_source_support_not_fact_truth\""` | — |
-| [SRC-AFFCF23BD4-L000295](../../tests/test_research_completion.py#L295) | 295 | `"    )"` | — |
-| [SRC-AFFCF23BD4-L000296](../../tests/test_research_completion.py#L296) | 296 | `""` | — |
-| [SRC-AFFCF23BD4-L000297](../../tests/test_research_completion.py#L297) | 297 | `""` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **060**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AFEDC2645A-L000067 إلى SRC-AFEDC2645A-L000866
+- النطاق: SRC-AFEDC2645A-L000008 إلى SRC-AFEDC2645A-L000807
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,65 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AFEDC2645A-L000008](../../tests/test_task_understanding.py#L8) | 8 | `"@pytest.mark.parametrize("` | — |
+| [SRC-AFEDC2645A-L000009](../../tests/test_task_understanding.py#L9) | 9 | `"    (\"question\", \"family\"),"` | — |
+| [SRC-AFEDC2645A-L000010](../../tests/test_task_understanding.py#L10) | 10 | `"    ["` | — |
+| [SRC-AFEDC2645A-L000011](../../tests/test_task_understanding.py#L11) | 11 | `"        (\"ابحث عن الموقع الرسمي لوزارة الاتصالات في مصر\", \"official_site_lookup\"),"` | — |
+| [SRC-AFEDC2645A-L000012](../../tests/test_task_understanding.py#L12) | 12 | `"        (\"مواعيد عمل مكتب الجوازات اليوم في العباسية\", \"current_information\"),"` | — |
+| [SRC-AFEDC2645A-L000013](../../tests/test_task_understanding.py#L13) | 13 | `"        (\"قارن نيسان صني 2022 وهيونداي أكسنت من حيث السعر والصيانة\", \"compare\"),"` | — |
+| [SRC-AFEDC2645A-L000014](../../tests/test_task_understanding.py#L14) | 14 | `"        (\"عايز تجارب ملاك BYD Dolphin في مصر\", \"social_opinions\"),"` | — |
+| [SRC-AFEDC2645A-L000015](../../tests/test_task_understanding.py#L15) | 15 | `"        (\"ازاي أصلح خطأ الشبكة في لوحة إنذار الحريق؟\", \"troubleshoot\"),"` | — |
+| [SRC-AFEDC2645A-L000016](../../tests/test_task_understanding.py#L16) | 16 | `"        (\"اشرح خطوات صيانة حساس الدخان\", \"how_to\"),"` | — |
+| [SRC-AFEDC2645A-L000017](../../tests/test_task_understanding.py#L17) | 17 | `"        (\"لخص الصفحة https://example.com/article\", \"summarize\"),"` | — |
+| [SRC-AFEDC2645A-L000018](../../tests/test_task_understanding.py#L18) | 18 | `"        (\"ابحث عن مشترين يريدون شراء شقة في القاهرة\", \"lead_generation\"),"` | — |
+| [SRC-AFEDC2645A-L000019](../../tests/test_task_understanding.py#L19) | 19 | `"        (\"رشح لي أفضل سيارة بميزانية أقل من 500000 جنيه\", \"recommendation\"),"` | — |
+| [SRC-AFEDC2645A-L000020](../../tests/test_task_understanding.py#L20) | 20 | `"        (\"ما معنى نظام الإنذار المعنون؟\", \"explain_or_define\"),"` | — |
+| [SRC-AFEDC2645A-L000021](../../tests/test_task_understanding.py#L21) | 21 | `"    ],"` | — |
+| [SRC-AFEDC2645A-L000022](../../tests/test_task_understanding.py#L22) | 22 | `")"` | — |
+| [SRC-AFEDC2645A-L000023](../../tests/test_task_understanding.py#L23) | 23 | `"def test_task_family_covers_diverse_natural_language_patterns(question, family):"` | — |
+| [SRC-AFEDC2645A-L000024](../../tests/test_task_understanding.py#L24) | 24 | `"    spec = build_task_spec(question, mode=\"auto\", intent_route=\"WEB_SIMPLE\")"` | — |
+| [SRC-AFEDC2645A-L000025](../../tests/test_task_understanding.py#L25) | 25 | `"    assert spec[\"task_family\"] == family"` | — |
+| [SRC-AFEDC2645A-L000026](../../tests/test_task_understanding.py#L26) | 26 | `"    assert spec[\"classification_is_probability\"] is False"` | — |
+| [SRC-AFEDC2645A-L000027](../../tests/test_task_understanding.py#L27) | 27 | `"    assert spec[\"decision_checks\"]"` | — |
+| [SRC-AFEDC2645A-L000028](../../tests/test_task_understanding.py#L28) | 28 | `""` | — |
+| [SRC-AFEDC2645A-L000029](../../tests/test_task_understanding.py#L29) | 29 | `""` | — |
+| [SRC-AFEDC2645A-L000030](../../tests/test_task_understanding.py#L30) | 30 | `"def test_lead_generation_task_separates_demand_signal_from_product_fit():"` | — |
+| [SRC-AFEDC2645A-L000031](../../tests/test_task_understanding.py#L31) | 31 | `"    spec = build_task_spec("` | — |
+| [SRC-AFEDC2645A-L000032](../../tests/test_task_understanding.py#L32) | 32 | `"        \"ابحث عن مشترين يريدون شراء نظام إنذار حريق صناعي في مصر\","` | — |
+| [SRC-AFEDC2645A-L000033](../../tests/test_task_understanding.py#L33) | 33 | `"        mode=\"auto\","` | — |
+| [SRC-AFEDC2645A-L000034](../../tests/test_task_understanding.py#L34) | 34 | `"        intent_route=\"LEAD_GENERATION\","` | — |
+| [SRC-AFEDC2645A-L000035](../../tests/test_task_understanding.py#L35) | 35 | `"    )"` | — |
+| [SRC-AFEDC2645A-L000036](../../tests/test_task_understanding.py#L36) | 36 | `"    requirements = set(spec[\"evidence_requirements\"])"` | — |
+| [SRC-AFEDC2645A-L000037](../../tests/test_task_understanding.py#L37) | 37 | `"    strategies = set(spec[\"query_strategies\"])"` | — |
+| [SRC-AFEDC2645A-L000038](../../tests/test_task_understanding.py#L38) | 38 | `"    assert \"classify_public_demand_signal_by_type\" in requirements"` | — |
+| [SRC-AFEDC2645A-L000039](../../tests/test_task_understanding.py#L39) | 39 | `"    assert \"distinguish_direct_purchase_from_rfq_and_stated_need\" in requirements"` | — |
+| [SRC-AFEDC2645A-L000040](../../tests/test_task_understanding.py#L40) | 40 | `"    assert \"keep_product_fit_unassessed_until_separately_supported\" in requirements"` | — |
+| [SRC-AFEDC2645A-L000041](../../tests/test_task_understanding.py#L41) | 41 | `"    assert \"do_not_treat_product_mention_or_icp_match_as_demand\" in requirements"` | — |
+| [SRC-AFEDC2645A-L000042](../../tests/test_task_understanding.py#L42) | 42 | `"    assert \"product_anchored_rfq\" in strategies"` | — |
+| [SRC-AFEDC2645A-L000043](../../tests/test_task_understanding.py#L43) | 43 | `"    assert \"product_anchored_stated_need\" in strategies"` | — |
+| [SRC-AFEDC2645A-L000044](../../tests/test_task_understanding.py#L44) | 44 | `""` | — |
+| [SRC-AFEDC2645A-L000045](../../tests/test_task_understanding.py#L45) | 45 | `""` | — |
+| [SRC-AFEDC2645A-L000046](../../tests/test_task_understanding.py#L46) | 46 | `"def test_lead_generation_query_matrix_preserves_only_buyer_language_queries():"` | — |
+| [SRC-AFEDC2645A-L000047](../../tests/test_task_understanding.py#L47) | 47 | `"    # Structured product profiles can arrive without buyer wording in the original prompt."` | — |
+| [SRC-AFEDC2645A-L000048](../../tests/test_task_understanding.py#L48) | 48 | `"    question = \"نظام إنذار حريق صناعي في مصر\""` | — |
+| [SRC-AFEDC2645A-L000049](../../tests/test_task_understanding.py#L49) | 49 | `"    buyer_queries = ["` | — |
+| [SRC-AFEDC2645A-L000050](../../tests/test_task_understanding.py#L50) | 50 | `"        '\"مطلوب شراء\" \"نظام إنذار حريق صناعي\" مصر',"` | — |
+| [SRC-AFEDC2645A-L000051](../../tests/test_task_understanding.py#L51) | 51 | `"        '\"طلب عرض سعر\" \"نظام إنذار حريق صناعي\" مصر',"` | — |
+| [SRC-AFEDC2645A-L000052](../../tests/test_task_understanding.py#L52) | 52 | `"        '\"looking to buy\" \"industrial fire alarm system\" Egypt',"` | — |
+| [SRC-AFEDC2645A-L000053](../../tests/test_task_understanding.py#L53) | 53 | `"    ]"` | — |
+| [SRC-AFEDC2645A-L000054](../../tests/test_task_understanding.py#L54) | 54 | `"    spec = build_task_spec("` | — |
+| [SRC-AFEDC2645A-L000055](../../tests/test_task_understanding.py#L55) | 55 | `"        question,"` | — |
+| [SRC-AFEDC2645A-L000056](../../tests/test_task_understanding.py#L56) | 56 | `"        mode=\"deep\","` | — |
+| [SRC-AFEDC2645A-L000057](../../tests/test_task_understanding.py#L57) | 57 | `"        intent_route=\"LEAD_GENERATION\","` | — |
+| [SRC-AFEDC2645A-L000058](../../tests/test_task_understanding.py#L58) | 58 | `"    )"` | — |
+| [SRC-AFEDC2645A-L000059](../../tests/test_task_understanding.py#L59) | 59 | `""` | — |
+| [SRC-AFEDC2645A-L000060](../../tests/test_task_understanding.py#L60) | 60 | `"    rows = build_query_strategy_matrix(question, spec, buyer_queries, limit=8)"` | — |
+| [SRC-AFEDC2645A-L000061](../../tests/test_task_understanding.py#L61) | 61 | `""` | — |
+| [SRC-AFEDC2645A-L000062](../../tests/test_task_understanding.py#L62) | 62 | `"    assert spec[\"task_family\"] == \"lead_generation\""` | — |
+| [SRC-AFEDC2645A-L000063](../../tests/test_task_understanding.py#L63) | 63 | `"    assert [row[\"query\"] for row in rows] == buyer_queries"` | — |
+| [SRC-AFEDC2645A-L000064](../../tests/test_task_understanding.py#L64) | 64 | `"    assert all(row[\"strategy\"] == \"buyer_intent\" for row in rows)"` | — |
+| [SRC-AFEDC2645A-L000065](../../tests/test_task_understanding.py#L65) | 65 | `"    assert all(row[\"rationale\"] for row in rows)"` | — |
+| [SRC-AFEDC2645A-L000066](../../tests/test_task_understanding.py#L66) | 66 | `"    assert not any("` | — |
 | [SRC-AFEDC2645A-L000067](../../tests/test_task_understanding.py#L67) | 67 | `"        marker in row[\"query\"].casefold()"` | — |
 | [SRC-AFEDC2645A-L000068](../../tests/test_task_understanding.py#L68) | 68 | `"        for row in rows"` | — |
 | [SRC-AFEDC2645A-L000069](../../tests/test_task_understanding.py#L69) | 69 | `"        for marker in (\"risk\", \"risks\", \"report\", \"reports\", \"مخاطر\", \"تقارير\")"` | — |
@@ -757,62 +816,3 @@
 | [SRC-AFEDC2645A-L000805](../../tests/test_task_understanding.py#L805) | 805 | `"        \"changed_slots\": [\"currency\"],"` | — |
 | [SRC-AFEDC2645A-L000806](../../tests/test_task_understanding.py#L806) | 806 | `"        \"is_follow_up\": True,"` | — |
 | [SRC-AFEDC2645A-L000807](../../tests/test_task_understanding.py#L807) | 807 | `"        \"topic_shift\": False,"` | — |
-| [SRC-AFEDC2645A-L000808](../../tests/test_task_understanding.py#L808) | 808 | `"        \"needs_clarification\": False,"` | — |
-| [SRC-AFEDC2645A-L000809](../../tests/test_task_understanding.py#L809) | 809 | `"    }"` | — |
-| [SRC-AFEDC2645A-L000810](../../tests/test_task_understanding.py#L810) | 810 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000811](../../tests/test_task_understanding.py#L811) | 811 | `"        question,"` | — |
-| [SRC-AFEDC2645A-L000812](../../tests/test_task_understanding.py#L812) | 812 | `"        mode=\"auto\","` | — |
-| [SRC-AFEDC2645A-L000813](../../tests/test_task_understanding.py#L813) | 813 | `"        intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-AFEDC2645A-L000814](../../tests/test_task_understanding.py#L814) | 814 | `"        dialogue_context=context,"` | — |
-| [SRC-AFEDC2645A-L000815](../../tests/test_task_understanding.py#L815) | 815 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000816](../../tests/test_task_understanding.py#L816) | 816 | `""` | — |
-| [SRC-AFEDC2645A-L000817](../../tests/test_task_understanding.py#L817) | 817 | `"    rows = build_query_strategy_matrix("` | — |
-| [SRC-AFEDC2645A-L000818](../../tests/test_task_understanding.py#L818) | 818 | `"        question,"` | — |
-| [SRC-AFEDC2645A-L000819](../../tests/test_task_understanding.py#L819) | 819 | `"        spec,"` | — |
-| [SRC-AFEDC2645A-L000820](../../tests/test_task_understanding.py#L820) | 820 | `"        [seed_query],"` | — |
-| [SRC-AFEDC2645A-L000821](../../tests/test_task_understanding.py#L821) | 821 | `"        limit=8,"` | — |
-| [SRC-AFEDC2645A-L000822](../../tests/test_task_understanding.py#L822) | 822 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000823](../../tests/test_task_understanding.py#L823) | 823 | `""` | — |
-| [SRC-AFEDC2645A-L000824](../../tests/test_task_understanding.py#L824) | 824 | `"    refinement = next("` | — |
-| [SRC-AFEDC2645A-L000825](../../tests/test_task_understanding.py#L825) | 825 | `"        row for row in rows"` | — |
-| [SRC-AFEDC2645A-L000826](../../tests/test_task_understanding.py#L826) | 826 | `"        if row[\"strategy\"] == \"context_slot_refinement\""` | — |
-| [SRC-AFEDC2645A-L000827](../../tests/test_task_understanding.py#L827) | 827 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000828](../../tests/test_task_understanding.py#L828) | 828 | `"    assert expected_source_phrase in refinement[\"query\"]"` | — |
-| [SRC-AFEDC2645A-L000829](../../tests/test_task_understanding.py#L829) | 829 | `""` | — |
-| [SRC-AFEDC2645A-L000830](../../tests/test_task_understanding.py#L830) | 830 | `""` | — |
-| [SRC-AFEDC2645A-L000831](../../tests/test_task_understanding.py#L831) | 831 | `"def test_query_strategy_matrix_rejects_stale_planner_seed_after_context_entity_correction():"` | — |
-| [SRC-AFEDC2645A-L000832](../../tests/test_task_understanding.py#L832) | 832 | `"    spec = {"` | — |
-| [SRC-AFEDC2645A-L000833](../../tests/test_task_understanding.py#L833) | 833 | `"        \"task_family\": \"recommendation\","` | — |
-| [SRC-AFEDC2645A-L000834](../../tests/test_task_understanding.py#L834) | 834 | `"        \"mode\": \"deep\","` | — |
-| [SRC-AFEDC2645A-L000835](../../tests/test_task_understanding.py#L835) | 835 | `"        \"intent_route\": \"WEB_DEEP\","` | — |
-| [SRC-AFEDC2645A-L000836](../../tests/test_task_understanding.py#L836) | 836 | `"        \"hypothesis_interpretations\": [],"` | — |
-| [SRC-AFEDC2645A-L000837](../../tests/test_task_understanding.py#L837) | 837 | `"        \"constraints\": {"` | — |
-| [SRC-AFEDC2645A-L000838](../../tests/test_task_understanding.py#L838) | 838 | `"            \"explicit_aspects\": [],"` | — |
-| [SRC-AFEDC2645A-L000839](../../tests/test_task_understanding.py#L839) | 839 | `"            \"explicit_locations\": [],"` | — |
-| [SRC-AFEDC2645A-L000840](../../tests/test_task_understanding.py#L840) | 840 | `"            \"explicit_budgets\": [],"` | — |
-| [SRC-AFEDC2645A-L000841](../../tests/test_task_understanding.py#L841) | 841 | `"        },"` | — |
-| [SRC-AFEDC2645A-L000842](../../tests/test_task_understanding.py#L842) | 842 | `"        \"context_resolution\": {"` | — |
-| [SRC-AFEDC2645A-L000843](../../tests/test_task_understanding.py#L843) | 843 | `"            \"resolved_question\": \"ما سعر Samsung Galaxy S24 في مصر باليورو؟\","` | — |
-| [SRC-AFEDC2645A-L000844](../../tests/test_task_understanding.py#L844) | 844 | `"            \"topic\": \"سعر الهاتف\","` | — |
-| [SRC-AFEDC2645A-L000845](../../tests/test_task_understanding.py#L845) | 845 | `"            \"entities\": [\"Samsung Galaxy S24\"],"` | — |
-| [SRC-AFEDC2645A-L000846](../../tests/test_task_understanding.py#L846) | 846 | `"            \"slots\": {"` | — |
-| [SRC-AFEDC2645A-L000847](../../tests/test_task_understanding.py#L847) | 847 | `"                \"product\": \"هاتف سامسونج\","` | — |
-| [SRC-AFEDC2645A-L000848](../../tests/test_task_understanding.py#L848) | 848 | `"                \"model\": \"Samsung Galaxy S24\","` | — |
-| [SRC-AFEDC2645A-L000849](../../tests/test_task_understanding.py#L849) | 849 | `"                \"currency\": \"اليورو\","` | — |
-| [SRC-AFEDC2645A-L000850](../../tests/test_task_understanding.py#L850) | 850 | `"                \"location\": \"مصر\","` | — |
-| [SRC-AFEDC2645A-L000851](../../tests/test_task_understanding.py#L851) | 851 | `"            },"` | — |
-| [SRC-AFEDC2645A-L000852](../../tests/test_task_understanding.py#L852) | 852 | `"            \"changed_slots\": [\"product\", \"model\"],"` | — |
-| [SRC-AFEDC2645A-L000853](../../tests/test_task_understanding.py#L853) | 853 | `"            \"is_follow_up\": True,"` | — |
-| [SRC-AFEDC2645A-L000854](../../tests/test_task_understanding.py#L854) | 854 | `"            \"topic_shift\": False,"` | — |
-| [SRC-AFEDC2645A-L000855](../../tests/test_task_understanding.py#L855) | 855 | `"            \"needs_clarification\": False,"` | — |
-| [SRC-AFEDC2645A-L000856](../../tests/test_task_understanding.py#L856) | 856 | `"        },"` | — |
-| [SRC-AFEDC2645A-L000857](../../tests/test_task_understanding.py#L857) | 857 | `"    }"` | — |
-| [SRC-AFEDC2645A-L000858](../../tests/test_task_understanding.py#L858) | 858 | `""` | — |
-| [SRC-AFEDC2645A-L000859](../../tests/test_task_understanding.py#L859) | 859 | `"    rows = build_query_strategy_matrix("` | — |
-| [SRC-AFEDC2645A-L000860](../../tests/test_task_understanding.py#L860) | 860 | `"        \"طب وسامسونج S24؟\","` | — |
-| [SRC-AFEDC2645A-L000861](../../tests/test_task_understanding.py#L861) | 861 | `"        spec,"` | — |
-| [SRC-AFEDC2645A-L000862](../../tests/test_task_understanding.py#L862) | 862 | `"        [\"ما سعر iPhone 17 باليورو في مصر؟\"],"` | — |
-| [SRC-AFEDC2645A-L000863](../../tests/test_task_understanding.py#L863) | 863 | `"        limit=8,"` | — |
-| [SRC-AFEDC2645A-L000864](../../tests/test_task_understanding.py#L864) | 864 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000865](../../tests/test_task_understanding.py#L865) | 865 | `""` | — |
-| [SRC-AFEDC2645A-L000866](../../tests/test_task_understanding.py#L866) | 866 | `"    assert rows"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **057**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AFFCF23BD4-L000298 إلى SRC-2822F30DAD-L000019
+- النطاق: SRC-AFFCF23BD4-L000239 إلى SRC-96F6863E3C-L000201
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,65 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AFFCF23BD4-L000239](../../tests/test_research_completion.py#L239) | 239 | `"        \"kind\": \"web_research\","` | — |
+| [SRC-AFFCF23BD4-L000240](../../tests/test_research_completion.py#L240) | 240 | `"        \"search_attempted\": True,"` | — |
+| [SRC-AFFCF23BD4-L000241](../../tests/test_research_completion.py#L241) | 241 | `"        \"used_language_model\": True,"` | — |
+| [SRC-AFFCF23BD4-L000242](../../tests/test_research_completion.py#L242) | 242 | `"        \"final_answer_status\": \"semantic_verification_failed_with_source_fallback\","` | — |
+| [SRC-AFFCF23BD4-L000243](../../tests/test_research_completion.py#L243) | 243 | `"        \"citation_validation\": {\"status\": \"no_citation_markers_present\", \"valid_citation_count\": 0},"` | — |
+| [SRC-AFFCF23BD4-L000244](../../tests/test_research_completion.py#L244) | 244 | `"        \"claim_evidence_ledger\": _VALID_CLAIM_LEDGER,"` | — |
+| [SRC-AFFCF23BD4-L000245](../../tests/test_research_completion.py#L245) | 245 | `"        \"sources\": [{"` | — |
+| [SRC-AFFCF23BD4-L000246](../../tests/test_research_completion.py#L246) | 246 | `"            \"url\": \"https://example.org/report\","` | — |
+| [SRC-AFFCF23BD4-L000247](../../tests/test_research_completion.py#L247) | 247 | `"            \"snippet\": \"Source excerpt\","` | — |
+| [SRC-AFFCF23BD4-L000248](../../tests/test_research_completion.py#L248) | 248 | `"            \"page_fetched\": True,"` | — |
+| [SRC-AFFCF23BD4-L000249](../../tests/test_research_completion.py#L249) | 249 | `"            \"page_text\": \"Source excerpt\","` | — |
+| [SRC-AFFCF23BD4-L000250](../../tests/test_research_completion.py#L250) | 250 | `"        }],"` | — |
+| [SRC-AFFCF23BD4-L000251](../../tests/test_research_completion.py#L251) | 251 | `"        \"search_report\": {"` | — |
+| [SRC-AFFCF23BD4-L000252](../../tests/test_research_completion.py#L252) | 252 | `"            \"unique_sources\": 1,"` | — |
+| [SRC-AFFCF23BD4-L000253](../../tests/test_research_completion.py#L253) | 253 | `"            \"pages_fetched\": 1,"` | — |
+| [SRC-AFFCF23BD4-L000254](../../tests/test_research_completion.py#L254) | 254 | `"            \"answer_was_withheld\": True,"` | — |
+| [SRC-AFFCF23BD4-L000255](../../tests/test_research_completion.py#L255) | 255 | `"            \"semantic_claim_verification\": {"` | — |
+| [SRC-AFFCF23BD4-L000256](../../tests/test_research_completion.py#L256) | 256 | `"                \"status\": \"unsupported_claims_detected\","` | — |
+| [SRC-AFFCF23BD4-L000257](../../tests/test_research_completion.py#L257) | 257 | `"                \"withhold_answer\": True,"` | — |
+| [SRC-AFFCF23BD4-L000258](../../tests/test_research_completion.py#L258) | 258 | `"            },"` | — |
+| [SRC-AFFCF23BD4-L000259](../../tests/test_research_completion.py#L259) | 259 | `"        },"` | — |
+| [SRC-AFFCF23BD4-L000260](../../tests/test_research_completion.py#L260) | 260 | `"    })"` | — |
+| [SRC-AFFCF23BD4-L000261](../../tests/test_research_completion.py#L261) | 261 | `"    assert result[\"status\"] == \"answer_withheld_semantic_support_unverified\""` | — |
+| [SRC-AFFCF23BD4-L000262](../../tests/test_research_completion.py#L262) | 262 | `"    assert result[\"phases\"][\"semantic_verification\"] == \"unsupported_claims_detected\""` | — |
+| [SRC-AFFCF23BD4-L000263](../../tests/test_research_completion.py#L263) | 263 | `"    assert result[\"phases\"][\"answer_generation\"] == \"generated_then_withheld_by_semantic_gate\""` | — |
+| [SRC-AFFCF23BD4-L000264](../../tests/test_research_completion.py#L264) | 264 | `"    assert result[\"counters\"][\"semantic_verification_failure_count\"] == 1"` | — |
+| [SRC-AFFCF23BD4-L000265](../../tests/test_research_completion.py#L265) | 265 | `""` | — |
+| [SRC-AFFCF23BD4-L000266](../../tests/test_research_completion.py#L266) | 266 | `""` | — |
+| [SRC-AFFCF23BD4-L000267](../../tests/test_research_completion.py#L267) | 267 | `"def test_semantic_pass_is_labeled_as_model_assessed_support_not_fact_truth():"` | — |
+| [SRC-AFFCF23BD4-L000268](../../tests/test_research_completion.py#L268) | 268 | `"    result = build_research_completion({"` | — |
+| [SRC-AFFCF23BD4-L000269](../../tests/test_research_completion.py#L269) | 269 | `"        \"kind\": \"web_research\","` | — |
+| [SRC-AFFCF23BD4-L000270](../../tests/test_research_completion.py#L270) | 270 | `"        \"search_attempted\": True,"` | — |
+| [SRC-AFFCF23BD4-L000271](../../tests/test_research_completion.py#L271) | 271 | `"        \"used_language_model\": True,"` | — |
+| [SRC-AFFCF23BD4-L000272](../../tests/test_research_completion.py#L272) | 272 | `"        \"final_answer_status\": \"model_answer_generated\","` | — |
+| [SRC-AFFCF23BD4-L000273](../../tests/test_research_completion.py#L273) | 273 | `"        \"citation_validation\": {\"status\": \"index_range_check_passed\", \"valid_citation_count\": 1},"` | — |
+| [SRC-AFFCF23BD4-L000274](../../tests/test_research_completion.py#L274) | 274 | `"        \"claim_evidence_ledger\": _VALID_CLAIM_LEDGER,"` | — |
+| [SRC-AFFCF23BD4-L000275](../../tests/test_research_completion.py#L275) | 275 | `"        \"sources\": [{"` | — |
+| [SRC-AFFCF23BD4-L000276](../../tests/test_research_completion.py#L276) | 276 | `"            \"url\": \"https://example.org/report\","` | — |
+| [SRC-AFFCF23BD4-L000277](../../tests/test_research_completion.py#L277) | 277 | `"            \"snippet\": \"Source excerpt\","` | — |
+| [SRC-AFFCF23BD4-L000278](../../tests/test_research_completion.py#L278) | 278 | `"            \"page_fetched\": True,"` | — |
+| [SRC-AFFCF23BD4-L000279](../../tests/test_research_completion.py#L279) | 279 | `"            \"page_text\": \"Source excerpt\","` | — |
+| [SRC-AFFCF23BD4-L000280](../../tests/test_research_completion.py#L280) | 280 | `"        }],"` | — |
+| [SRC-AFFCF23BD4-L000281](../../tests/test_research_completion.py#L281) | 281 | `"        \"search_report\": {"` | — |
+| [SRC-AFFCF23BD4-L000282](../../tests/test_research_completion.py#L282) | 282 | `"            \"unique_sources\": 1,"` | — |
+| [SRC-AFFCF23BD4-L000283](../../tests/test_research_completion.py#L283) | 283 | `"            \"pages_fetched\": 1,"` | — |
+| [SRC-AFFCF23BD4-L000284](../../tests/test_research_completion.py#L284) | 284 | `"            \"semantic_claim_verification\": {"` | — |
+| [SRC-AFFCF23BD4-L000285](../../tests/test_research_completion.py#L285) | 285 | `"                \"status\": \"completed_all_claims_supported\","` | — |
+| [SRC-AFFCF23BD4-L000286](../../tests/test_research_completion.py#L286) | 286 | `"                \"withhold_answer\": False,"` | — |
+| [SRC-AFFCF23BD4-L000287](../../tests/test_research_completion.py#L287) | 287 | `"            },"` | — |
+| [SRC-AFFCF23BD4-L000288](../../tests/test_research_completion.py#L288) | 288 | `"        },"` | — |
+| [SRC-AFFCF23BD4-L000289](../../tests/test_research_completion.py#L289) | 289 | `"    })"` | — |
+| [SRC-AFFCF23BD4-L000290](../../tests/test_research_completion.py#L290) | 290 | `"    assert result[\"phases\"][\"semantic_verification\"] == ("` | — |
+| [SRC-AFFCF23BD4-L000291](../../tests/test_research_completion.py#L291) | 291 | `"        \"model_assessed_source_support_not_fact_truth\""` | — |
+| [SRC-AFFCF23BD4-L000292](../../tests/test_research_completion.py#L292) | 292 | `"    )"` | — |
+| [SRC-AFFCF23BD4-L000293](../../tests/test_research_completion.py#L293) | 293 | `"    assert result[\"semantic_verification\"] == ("` | — |
+| [SRC-AFFCF23BD4-L000294](../../tests/test_research_completion.py#L294) | 294 | `"        \"model_assessed_source_support_not_fact_truth\""` | — |
+| [SRC-AFFCF23BD4-L000295](../../tests/test_research_completion.py#L295) | 295 | `"    )"` | — |
+| [SRC-AFFCF23BD4-L000296](../../tests/test_research_completion.py#L296) | 296 | `""` | — |
+| [SRC-AFFCF23BD4-L000297](../../tests/test_research_completion.py#L297) | 297 | `""` | — |
 | [SRC-AFFCF23BD4-L000298](../../tests/test_research_completion.py#L298) | 298 | `"def test_removed_invalid_citation_survives_sanitization_in_completion_gate() -> None:"` | — |
 | [SRC-AFFCF23BD4-L000299](../../tests/test_research_completion.py#L299) | 299 | `"    # Exercise the same ordering as production: sanitize first, then build the ledger."` | — |
 | [SRC-AFFCF23BD4-L000300](../../tests/test_research_completion.py#L300) | 300 | `"    from agents.web_agent import WebAgent"` | — |
@@ -775,80 +834,3 @@
 | [SRC-96F6863E3C-L000199](../../tests/test_research_pipeline.py#L199) | 199 | `"    for sources in ("` | — |
 | [SRC-96F6863E3C-L000200](../../tests/test_research_pipeline.py#L200) | 200 | `"        [None, \"not-a-source\", {}],"` | — |
 | [SRC-96F6863E3C-L000201](../../tests/test_research_pipeline.py#L201) | 201 | `"        [{\"url\": \"https://example.com/no-text\"}],"` | — |
-| [SRC-96F6863E3C-L000202](../../tests/test_research_pipeline.py#L202) | 202 | `"        [],"` | — |
-| [SRC-96F6863E3C-L000203](../../tests/test_research_pipeline.py#L203) | 203 | `"    ):"` | — |
-| [SRC-96F6863E3C-L000204](../../tests/test_research_pipeline.py#L204) | 204 | `"        result = build_research_pipeline("` | — |
-| [SRC-96F6863E3C-L000205](../../tests/test_research_pipeline.py#L205) | 205 | `"            \"ما سعر الهاتف والضمان؟\","` | — |
-| [SRC-96F6863E3C-L000206](../../tests/test_research_pipeline.py#L206) | 206 | `"            {\"queries\": [\"سعر الهاتف والضمان\"]},"` | — |
-| [SRC-96F6863E3C-L000207](../../tests/test_research_pipeline.py#L207) | 207 | `"            intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-96F6863E3C-L000208](../../tests/test_research_pipeline.py#L208) | 208 | `"            sources=sources,"` | — |
-| [SRC-96F6863E3C-L000209](../../tests/test_research_pipeline.py#L209) | 209 | `"        )"` | — |
-| [SRC-96F6863E3C-L000210](../../tests/test_research_pipeline.py#L210) | 210 | `""` | — |
-| [SRC-96F6863E3C-L000211](../../tests/test_research_pipeline.py#L211) | 211 | `"        assert result[\"stages\"][\"lexical_matching\"] == \"not_assessed\""` | — |
-| [SRC-96F6863E3C-L000212](../../tests/test_research_pipeline.py#L212) | 212 | `"        assert result[\"evidence_ledger\"][\"covered\"] == []"` | — |
-## اختبارات
-
-### FILE-35B5619B4F — [tests/test_safe_xml.py](../../tests/test_safe_xml.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-35B5619B4F-L000001](../../tests/test_safe_xml.py#L1) | 1 | `"import pytest"` | — |
-| [SRC-35B5619B4F-L000002](../../tests/test_safe_xml.py#L2) | 2 | `""` | — |
-| [SRC-35B5619B4F-L000003](../../tests/test_safe_xml.py#L3) | 3 | `"from agents.safe_xml import ParseError, fromstring"` | — |
-| [SRC-35B5619B4F-L000004](../../tests/test_safe_xml.py#L4) | 4 | `""` | — |
-| [SRC-35B5619B4F-L000005](../../tests/test_safe_xml.py#L5) | 5 | `""` | — |
-| [SRC-35B5619B4F-L000006](../../tests/test_safe_xml.py#L6) | 6 | `"def test_parses_normal_rss_and_atom():"` | — |
-| [SRC-35B5619B4F-L000007](../../tests/test_safe_xml.py#L7) | 7 | `"    root = fromstring(b\"<rss><channel><item><title>x</title></item></channel></rss>\")"` | — |
-| [SRC-35B5619B4F-L000008](../../tests/test_safe_xml.py#L8) | 8 | `"    assert root.tag == \"rss\""` | — |
-| [SRC-35B5619B4F-L000009](../../tests/test_safe_xml.py#L9) | 9 | `"    assert fromstring(\"<feed><entry/></feed>\").tag == \"feed\""` | — |
-| [SRC-35B5619B4F-L000010](../../tests/test_safe_xml.py#L10) | 10 | `""` | — |
-| [SRC-35B5619B4F-L000011](../../tests/test_safe_xml.py#L11) | 11 | `""` | — |
-| [SRC-35B5619B4F-L000012](../../tests/test_safe_xml.py#L12) | 12 | `"@pytest.mark.parametrize("` | — |
-| [SRC-35B5619B4F-L000013](../../tests/test_safe_xml.py#L13) | 13 | `"    \"payload\","` | — |
-| [SRC-35B5619B4F-L000014](../../tests/test_safe_xml.py#L14) | 14 | `"    ["` | — |
-| [SRC-35B5619B4F-L000015](../../tests/test_safe_xml.py#L15) | 15 | `"        b'<?xml version=\"1.0\"?><!DOCTYPE a [<!ENTITY x \"y\">]><a>&x;</a>',"` | — |
-| [SRC-35B5619B4F-L000016](../../tests/test_safe_xml.py#L16) | 16 | `"        b'<!doctype a><a/>',"` | — |
-| [SRC-35B5619B4F-L000017](../../tests/test_safe_xml.py#L17) | 17 | `"        '<!DOCTYPE a SYSTEM \"http://evil/x.dtd\"><a/>',"` | — |
-| [SRC-35B5619B4F-L000018](../../tests/test_safe_xml.py#L18) | 18 | `"        '<!ENTITY lol \"lol\"><a/>',"` | — |
-| [SRC-35B5619B4F-L000019](../../tests/test_safe_xml.py#L19) | 19 | `"        '<?xml version=\"1.0\" encoding=\"utf-16\"?><!DOCTYPE a><a/>'.encode(\"utf-16\"),"` | — |
-| [SRC-35B5619B4F-L000020](../../tests/test_safe_xml.py#L20) | 20 | `"    ],"` | — |
-| [SRC-35B5619B4F-L000021](../../tests/test_safe_xml.py#L21) | 21 | `")"` | — |
-| [SRC-35B5619B4F-L000022](../../tests/test_safe_xml.py#L22) | 22 | `"def test_rejects_doctype_and_entities(payload):"` | — |
-| [SRC-35B5619B4F-L000023](../../tests/test_safe_xml.py#L23) | 23 | `"    with pytest.raises(ParseError):"` | — |
-| [SRC-35B5619B4F-L000024](../../tests/test_safe_xml.py#L24) | 24 | `"        fromstring(payload)"` | — |
-| [SRC-35B5619B4F-L000025](../../tests/test_safe_xml.py#L25) | 25 | `""` | — |
-| [SRC-35B5619B4F-L000026](../../tests/test_safe_xml.py#L26) | 26 | `""` | — |
-| [SRC-35B5619B4F-L000027](../../tests/test_safe_xml.py#L27) | 27 | `"def test_malformed_xml_still_raises_parse_error():"` | — |
-| [SRC-35B5619B4F-L000028](../../tests/test_safe_xml.py#L28) | 28 | `"    with pytest.raises(ParseError):"` | — |
-| [SRC-35B5619B4F-L000029](../../tests/test_safe_xml.py#L29) | 29 | `"        fromstring(b\"<a><b></a>\")"` | — |
-## اختبارات
-
-### FILE-2822F30DAD — [tests/test_sales_domain.py](../../tests/test_sales_domain.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-2822F30DAD-L000001](../../tests/test_sales_domain.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-2822F30DAD-L000002](../../tests/test_sales_domain.py#L2) | 2 | `""` | — |
-| [SRC-2822F30DAD-L000003](../../tests/test_sales_domain.py#L3) | 3 | `"import pytest"` | — |
-| [SRC-2822F30DAD-L000004](../../tests/test_sales_domain.py#L4) | 4 | `""` | — |
-| [SRC-2822F30DAD-L000005](../../tests/test_sales_domain.py#L5) | 5 | `"from agents.sales_domain import ("` | — |
-| [SRC-2822F30DAD-L000006](../../tests/test_sales_domain.py#L6) | 6 | `"    ContactabilityStatus,"` | — |
-| [SRC-2822F30DAD-L000007](../../tests/test_sales_domain.py#L7) | 7 | `"    DemandEvidence,"` | — |
-| [SRC-2822F30DAD-L000008](../../tests/test_sales_domain.py#L8) | 8 | `"    DemandSignal,"` | — |
-| [SRC-2822F30DAD-L000009](../../tests/test_sales_domain.py#L9) | 9 | `"    DemandSignalType,"` | — |
-| [SRC-2822F30DAD-L000010](../../tests/test_sales_domain.py#L10) | 10 | `"    EvidenceBasis,"` | — |
-| [SRC-2822F30DAD-L000011](../../tests/test_sales_domain.py#L11) | 11 | `"    FactOrigin,"` | — |
-| [SRC-2822F30DAD-L000012](../../tests/test_sales_domain.py#L12) | 12 | `"    FreshnessStatus,"` | — |
-| [SRC-2822F30DAD-L000013](../../tests/test_sales_domain.py#L13) | 13 | `"    IdentityStatus,"` | — |
-| [SRC-2822F30DAD-L000014](../../tests/test_sales_domain.py#L14) | 14 | `"    LeadQualification,"` | — |
-| [SRC-2822F30DAD-L000015](../../tests/test_sales_domain.py#L15) | 15 | `"    MarketProfile,"` | — |
-| [SRC-2822F30DAD-L000016](../../tests/test_sales_domain.py#L16) | 16 | `"    ProductFact,"` | — |
-| [SRC-2822F30DAD-L000017](../../tests/test_sales_domain.py#L17) | 17 | `"    ProductFit,"` | — |
-| [SRC-2822F30DAD-L000018](../../tests/test_sales_domain.py#L18) | 18 | `"    ProductProfile,"` | — |
-| [SRC-2822F30DAD-L000019](../../tests/test_sales_domain.py#L19) | 19 | `"    ProductTaxonomy,"` | — |

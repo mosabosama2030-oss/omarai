@@ -4,9 +4,67 @@
 
 - الصفحة: **058**
 - سجلات الأسطر: **800**
-- النطاق: SRC-2822F30DAD-L000020 إلى SRC-86913A3106-L000171
+- النطاق: SRC-96F6863E3C-L000202 إلى SRC-86913A3106-L000112
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-96F6863E3C — [tests/test_research_pipeline.py](../../tests/test_research_pipeline.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-96F6863E3C-L000202](../../tests/test_research_pipeline.py#L202) | 202 | `"        [],"` | — |
+| [SRC-96F6863E3C-L000203](../../tests/test_research_pipeline.py#L203) | 203 | `"    ):"` | — |
+| [SRC-96F6863E3C-L000204](../../tests/test_research_pipeline.py#L204) | 204 | `"        result = build_research_pipeline("` | — |
+| [SRC-96F6863E3C-L000205](../../tests/test_research_pipeline.py#L205) | 205 | `"            \"ما سعر الهاتف والضمان؟\","` | — |
+| [SRC-96F6863E3C-L000206](../../tests/test_research_pipeline.py#L206) | 206 | `"            {\"queries\": [\"سعر الهاتف والضمان\"]},"` | — |
+| [SRC-96F6863E3C-L000207](../../tests/test_research_pipeline.py#L207) | 207 | `"            intent_route=\"WEB_SIMPLE\","` | — |
+| [SRC-96F6863E3C-L000208](../../tests/test_research_pipeline.py#L208) | 208 | `"            sources=sources,"` | — |
+| [SRC-96F6863E3C-L000209](../../tests/test_research_pipeline.py#L209) | 209 | `"        )"` | — |
+| [SRC-96F6863E3C-L000210](../../tests/test_research_pipeline.py#L210) | 210 | `""` | — |
+| [SRC-96F6863E3C-L000211](../../tests/test_research_pipeline.py#L211) | 211 | `"        assert result[\"stages\"][\"lexical_matching\"] == \"not_assessed\""` | — |
+| [SRC-96F6863E3C-L000212](../../tests/test_research_pipeline.py#L212) | 212 | `"        assert result[\"evidence_ledger\"][\"covered\"] == []"` | — |
+## اختبارات
+
+### FILE-35B5619B4F — [tests/test_safe_xml.py](../../tests/test_safe_xml.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-35B5619B4F-L000001](../../tests/test_safe_xml.py#L1) | 1 | `"import pytest"` | — |
+| [SRC-35B5619B4F-L000002](../../tests/test_safe_xml.py#L2) | 2 | `""` | — |
+| [SRC-35B5619B4F-L000003](../../tests/test_safe_xml.py#L3) | 3 | `"from agents.safe_xml import ParseError, fromstring"` | — |
+| [SRC-35B5619B4F-L000004](../../tests/test_safe_xml.py#L4) | 4 | `""` | — |
+| [SRC-35B5619B4F-L000005](../../tests/test_safe_xml.py#L5) | 5 | `""` | — |
+| [SRC-35B5619B4F-L000006](../../tests/test_safe_xml.py#L6) | 6 | `"def test_parses_normal_rss_and_atom():"` | — |
+| [SRC-35B5619B4F-L000007](../../tests/test_safe_xml.py#L7) | 7 | `"    root = fromstring(b\"<rss><channel><item><title>x</title></item></channel></rss>\")"` | — |
+| [SRC-35B5619B4F-L000008](../../tests/test_safe_xml.py#L8) | 8 | `"    assert root.tag == \"rss\""` | — |
+| [SRC-35B5619B4F-L000009](../../tests/test_safe_xml.py#L9) | 9 | `"    assert fromstring(\"<feed><entry/></feed>\").tag == \"feed\""` | — |
+| [SRC-35B5619B4F-L000010](../../tests/test_safe_xml.py#L10) | 10 | `""` | — |
+| [SRC-35B5619B4F-L000011](../../tests/test_safe_xml.py#L11) | 11 | `""` | — |
+| [SRC-35B5619B4F-L000012](../../tests/test_safe_xml.py#L12) | 12 | `"@pytest.mark.parametrize("` | — |
+| [SRC-35B5619B4F-L000013](../../tests/test_safe_xml.py#L13) | 13 | `"    \"payload\","` | — |
+| [SRC-35B5619B4F-L000014](../../tests/test_safe_xml.py#L14) | 14 | `"    ["` | — |
+| [SRC-35B5619B4F-L000015](../../tests/test_safe_xml.py#L15) | 15 | `"        b'<?xml version=\"1.0\"?><!DOCTYPE a [<!ENTITY x \"y\">]><a>&x;</a>',"` | — |
+| [SRC-35B5619B4F-L000016](../../tests/test_safe_xml.py#L16) | 16 | `"        b'<!doctype a><a/>',"` | — |
+| [SRC-35B5619B4F-L000017](../../tests/test_safe_xml.py#L17) | 17 | `"        '<!DOCTYPE a SYSTEM \"http://evil/x.dtd\"><a/>',"` | — |
+| [SRC-35B5619B4F-L000018](../../tests/test_safe_xml.py#L18) | 18 | `"        '<!ENTITY lol \"lol\"><a/>',"` | — |
+| [SRC-35B5619B4F-L000019](../../tests/test_safe_xml.py#L19) | 19 | `"        '<?xml version=\"1.0\" encoding=\"utf-16\"?><!DOCTYPE a><a/>'.encode(\"utf-16\"),"` | — |
+| [SRC-35B5619B4F-L000020](../../tests/test_safe_xml.py#L20) | 20 | `"    ],"` | — |
+| [SRC-35B5619B4F-L000021](../../tests/test_safe_xml.py#L21) | 21 | `")"` | — |
+| [SRC-35B5619B4F-L000022](../../tests/test_safe_xml.py#L22) | 22 | `"def test_rejects_doctype_and_entities(payload):"` | — |
+| [SRC-35B5619B4F-L000023](../../tests/test_safe_xml.py#L23) | 23 | `"    with pytest.raises(ParseError):"` | — |
+| [SRC-35B5619B4F-L000024](../../tests/test_safe_xml.py#L24) | 24 | `"        fromstring(payload)"` | — |
+| [SRC-35B5619B4F-L000025](../../tests/test_safe_xml.py#L25) | 25 | `""` | — |
+| [SRC-35B5619B4F-L000026](../../tests/test_safe_xml.py#L26) | 26 | `""` | — |
+| [SRC-35B5619B4F-L000027](../../tests/test_safe_xml.py#L27) | 27 | `"def test_malformed_xml_still_raises_parse_error():"` | — |
+| [SRC-35B5619B4F-L000028](../../tests/test_safe_xml.py#L28) | 28 | `"    with pytest.raises(ParseError):"` | — |
+| [SRC-35B5619B4F-L000029](../../tests/test_safe_xml.py#L29) | 29 | `"        fromstring(b\"<a><b></a>\")"` | — |
 ## اختبارات
 
 ### FILE-2822F30DAD — [tests/test_sales_domain.py](../../tests/test_sales_domain.py#L1)
@@ -16,6 +74,25 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-2822F30DAD-L000001](../../tests/test_sales_domain.py#L1) | 1 | `"from __future__ import annotations"` | — |
+| [SRC-2822F30DAD-L000002](../../tests/test_sales_domain.py#L2) | 2 | `""` | — |
+| [SRC-2822F30DAD-L000003](../../tests/test_sales_domain.py#L3) | 3 | `"import pytest"` | — |
+| [SRC-2822F30DAD-L000004](../../tests/test_sales_domain.py#L4) | 4 | `""` | — |
+| [SRC-2822F30DAD-L000005](../../tests/test_sales_domain.py#L5) | 5 | `"from agents.sales_domain import ("` | — |
+| [SRC-2822F30DAD-L000006](../../tests/test_sales_domain.py#L6) | 6 | `"    ContactabilityStatus,"` | — |
+| [SRC-2822F30DAD-L000007](../../tests/test_sales_domain.py#L7) | 7 | `"    DemandEvidence,"` | — |
+| [SRC-2822F30DAD-L000008](../../tests/test_sales_domain.py#L8) | 8 | `"    DemandSignal,"` | — |
+| [SRC-2822F30DAD-L000009](../../tests/test_sales_domain.py#L9) | 9 | `"    DemandSignalType,"` | — |
+| [SRC-2822F30DAD-L000010](../../tests/test_sales_domain.py#L10) | 10 | `"    EvidenceBasis,"` | — |
+| [SRC-2822F30DAD-L000011](../../tests/test_sales_domain.py#L11) | 11 | `"    FactOrigin,"` | — |
+| [SRC-2822F30DAD-L000012](../../tests/test_sales_domain.py#L12) | 12 | `"    FreshnessStatus,"` | — |
+| [SRC-2822F30DAD-L000013](../../tests/test_sales_domain.py#L13) | 13 | `"    IdentityStatus,"` | — |
+| [SRC-2822F30DAD-L000014](../../tests/test_sales_domain.py#L14) | 14 | `"    LeadQualification,"` | — |
+| [SRC-2822F30DAD-L000015](../../tests/test_sales_domain.py#L15) | 15 | `"    MarketProfile,"` | — |
+| [SRC-2822F30DAD-L000016](../../tests/test_sales_domain.py#L16) | 16 | `"    ProductFact,"` | — |
+| [SRC-2822F30DAD-L000017](../../tests/test_sales_domain.py#L17) | 17 | `"    ProductFit,"` | — |
+| [SRC-2822F30DAD-L000018](../../tests/test_sales_domain.py#L18) | 18 | `"    ProductProfile,"` | — |
+| [SRC-2822F30DAD-L000019](../../tests/test_sales_domain.py#L19) | 19 | `"    ProductTaxonomy,"` | — |
 | [SRC-2822F30DAD-L000020](../../tests/test_sales_domain.py#L20) | 20 | `"    SourceQuality,"` | — |
 | [SRC-2822F30DAD-L000021](../../tests/test_sales_domain.py#L21) | 21 | `"    TaxonomyCategory,"` | — |
 | [SRC-2822F30DAD-L000022](../../tests/test_sales_domain.py#L22) | 22 | `"    normalize_text,"` | — |
@@ -784,62 +861,3 @@
 | [SRC-86913A3106-L000110](../../tests/test_search_relevance_mixed_results.py#L110) | 110 | `"    short = {"` | — |
 | [SRC-86913A3106-L000111](../../tests/test_search_relevance_mixed_results.py#L111) | 111 | `"        \"title\": \"Central Bank of Egypt official website\","` | — |
 | [SRC-86913A3106-L000112](../../tests/test_search_relevance_mixed_results.py#L112) | 112 | `"        \"url\": \"https://example.com/cbe\","` | — |
-| [SRC-86913A3106-L000113](../../tests/test_search_relevance_mixed_results.py#L113) | 113 | `"        \"snippet\": \"Central Bank of Egypt.\","` | — |
-| [SRC-86913A3106-L000114](../../tests/test_search_relevance_mixed_results.py#L114) | 114 | `"    }"` | — |
-| [SRC-86913A3106-L000115](../../tests/test_search_relevance_mixed_results.py#L115) | 115 | `"    longer = {"` | — |
-| [SRC-86913A3106-L000116](../../tests/test_search_relevance_mixed_results.py#L116) | 116 | `"        **short,"` | — |
-| [SRC-86913A3106-L000117](../../tests/test_search_relevance_mixed_results.py#L117) | 117 | `"        \"url\": \"https://example.com/cbe?utm_source=ddg\","` | — |
-| [SRC-86913A3106-L000118](../../tests/test_search_relevance_mixed_results.py#L118) | 118 | `"        \"snippet\": \"Official Central Bank of Egypt website and monetary policy decisions.\","` | — |
-| [SRC-86913A3106-L000119](../../tests/test_search_relevance_mixed_results.py#L119) | 119 | `"    }"` | — |
-| [SRC-86913A3106-L000120](../../tests/test_search_relevance_mixed_results.py#L120) | 120 | `"    for env_name in ("` | — |
-| [SRC-86913A3106-L000121](../../tests/test_search_relevance_mixed_results.py#L121) | 121 | `"        \"DEEPSEEK_SEARCH_API_KEY\","` | — |
-| [SRC-86913A3106-L000122](../../tests/test_search_relevance_mixed_results.py#L122) | 122 | `"        \"BRAVE_SEARCH_API_KEY\","` | — |
-| [SRC-86913A3106-L000123](../../tests/test_search_relevance_mixed_results.py#L123) | 123 | `"        \"TAVILY_API_KEY\","` | — |
-| [SRC-86913A3106-L000124](../../tests/test_search_relevance_mixed_results.py#L124) | 124 | `"    ):"` | — |
-| [SRC-86913A3106-L000125](../../tests/test_search_relevance_mixed_results.py#L125) | 125 | `"        monkeypatch.delenv(env_name, raising=False)"` | — |
-| [SRC-86913A3106-L000126](../../tests/test_search_relevance_mixed_results.py#L126) | 126 | `""` | — |
-| [SRC-86913A3106-L000127](../../tests/test_search_relevance_mixed_results.py#L127) | 127 | `"    monkeypatch.setattr("` | — |
-| [SRC-86913A3106-L000128](../../tests/test_search_relevance_mixed_results.py#L128) | 128 | `"        agent, \"_search_duckduckgo_html\","` | — |
-| [SRC-86913A3106-L000129](../../tests/test_search_relevance_mixed_results.py#L129) | 129 | `"        lambda _query: [dict(short), dict(longer)],"` | — |
-| [SRC-86913A3106-L000130](../../tests/test_search_relevance_mixed_results.py#L130) | 130 | `"    )"` | — |
-| [SRC-86913A3106-L000131](../../tests/test_search_relevance_mixed_results.py#L131) | 131 | `"    monkeypatch.setattr("` | — |
-| [SRC-86913A3106-L000132](../../tests/test_search_relevance_mixed_results.py#L132) | 132 | `"        agent, \"_search_bing_rss\","` | — |
-| [SRC-86913A3106-L000133](../../tests/test_search_relevance_mixed_results.py#L133) | 133 | `"        lambda _query: [{"` | — |
-| [SRC-86913A3106-L000134](../../tests/test_search_relevance_mixed_results.py#L134) | 134 | `"            **short,"` | — |
-| [SRC-86913A3106-L000135](../../tests/test_search_relevance_mixed_results.py#L135) | 135 | `"            \"provider\": \"forged_provider\","` | — |
-| [SRC-86913A3106-L000136](../../tests/test_search_relevance_mixed_results.py#L136) | 136 | `"            \"search_query\": \"forged search query\","` | — |
-| [SRC-86913A3106-L000137](../../tests/test_search_relevance_mixed_results.py#L137) | 137 | `"        }],"` | — |
-| [SRC-86913A3106-L000138](../../tests/test_search_relevance_mixed_results.py#L138) | 138 | `"    )"` | — |
-| [SRC-86913A3106-L000139](../../tests/test_search_relevance_mixed_results.py#L139) | 139 | `"    monkeypatch.setattr(agent, \"_search_news\", lambda _query: [])"` | — |
-| [SRC-86913A3106-L000140](../../tests/test_search_relevance_mixed_results.py#L140) | 140 | `""` | — |
-| [SRC-86913A3106-L000141](../../tests/test_search_relevance_mixed_results.py#L141) | 141 | `"    results = agent._search_web(query)"` | — |
-| [SRC-86913A3106-L000142](../../tests/test_search_relevance_mixed_results.py#L142) | 142 | `""` | — |
-| [SRC-86913A3106-L000143](../../tests/test_search_relevance_mixed_results.py#L143) | 143 | `"    assert len(results) == 2"` | — |
-| [SRC-86913A3106-L000144](../../tests/test_search_relevance_mixed_results.py#L144) | 144 | `"    ddg = next(item for item in results if item[\"provider\"] == \"duckduckgo_html\")"` | — |
-| [SRC-86913A3106-L000145](../../tests/test_search_relevance_mixed_results.py#L145) | 145 | `"    assert ddg[\"snippet\"] == longer[\"snippet\"]"` | — |
-| [SRC-86913A3106-L000146](../../tests/test_search_relevance_mixed_results.py#L146) | 146 | `"    assert {item[\"provider\"] for item in results} == {"` | — |
-| [SRC-86913A3106-L000147](../../tests/test_search_relevance_mixed_results.py#L147) | 147 | `"        \"duckduckgo_html\","` | — |
-| [SRC-86913A3106-L000148](../../tests/test_search_relevance_mixed_results.py#L148) | 148 | `"        \"bing_rss\","` | — |
-| [SRC-86913A3106-L000149](../../tests/test_search_relevance_mixed_results.py#L149) | 149 | `"    }"` | — |
-| [SRC-86913A3106-L000150](../../tests/test_search_relevance_mixed_results.py#L150) | 150 | `"    bing = next(item for item in results if item[\"provider\"] == \"bing_rss\")"` | — |
-| [SRC-86913A3106-L000151](../../tests/test_search_relevance_mixed_results.py#L151) | 151 | `"    assert bing[\"search_query\"] == query"` | — |
-| [SRC-86913A3106-L000152](../../tests/test_search_relevance_mixed_results.py#L152) | 152 | `""` | — |
-| [SRC-86913A3106-L000153](../../tests/test_search_relevance_mixed_results.py#L153) | 153 | `""` | — |
-| [SRC-86913A3106-L000154](../../tests/test_search_relevance_mixed_results.py#L154) | 154 | `"def test_search_web_stores_normalized_retrieval_relevance_for_fusion(monkeypatch):"` | — |
-| [SRC-86913A3106-L000155](../../tests/test_search_relevance_mixed_results.py#L155) | 155 | `"    agent = WebAgent()"` | — |
-| [SRC-86913A3106-L000156](../../tests/test_search_relevance_mixed_results.py#L156) | 156 | `"    query = \"Central Bank of Egypt official website\""` | — |
-| [SRC-86913A3106-L000157](../../tests/test_search_relevance_mixed_results.py#L157) | 157 | `"    candidate = {"` | — |
-| [SRC-86913A3106-L000158](../../tests/test_search_relevance_mixed_results.py#L158) | 158 | `"        \"title\": \"Central Bank of Egypt official website\","` | — |
-| [SRC-86913A3106-L000159](../../tests/test_search_relevance_mixed_results.py#L159) | 159 | `"        \"url\": \"https://example.com/cbe\","` | — |
-| [SRC-86913A3106-L000160](../../tests/test_search_relevance_mixed_results.py#L160) | 160 | `"        \"snippet\": \"Official Central Bank of Egypt website and monetary policy decisions.\","` | — |
-| [SRC-86913A3106-L000161](../../tests/test_search_relevance_mixed_results.py#L161) | 161 | `"    }"` | — |
-| [SRC-86913A3106-L000162](../../tests/test_search_relevance_mixed_results.py#L162) | 162 | `"    for env_name in ("` | — |
-| [SRC-86913A3106-L000163](../../tests/test_search_relevance_mixed_results.py#L163) | 163 | `"        \"DEEPSEEK_SEARCH_API_KEY\","` | — |
-| [SRC-86913A3106-L000164](../../tests/test_search_relevance_mixed_results.py#L164) | 164 | `"        \"BRAVE_SEARCH_API_KEY\","` | — |
-| [SRC-86913A3106-L000165](../../tests/test_search_relevance_mixed_results.py#L165) | 165 | `"        \"TAVILY_API_KEY\","` | — |
-| [SRC-86913A3106-L000166](../../tests/test_search_relevance_mixed_results.py#L166) | 166 | `"    ):"` | — |
-| [SRC-86913A3106-L000167](../../tests/test_search_relevance_mixed_results.py#L167) | 167 | `"        monkeypatch.delenv(env_name, raising=False)"` | — |
-| [SRC-86913A3106-L000168](../../tests/test_search_relevance_mixed_results.py#L168) | 168 | `"    monkeypatch.setattr(agent, \"_search_duckduckgo_html\", lambda _query: [dict(candidate)])"` | — |
-| [SRC-86913A3106-L000169](../../tests/test_search_relevance_mixed_results.py#L169) | 169 | `"    monkeypatch.setattr(agent, \"_search_bing_rss\", lambda _query: [])"` | — |
-| [SRC-86913A3106-L000170](../../tests/test_search_relevance_mixed_results.py#L170) | 170 | `"    monkeypatch.setattr(agent, \"_search_news\", lambda _query: [])"` | — |
-| [SRC-86913A3106-L000171](../../tests/test_search_relevance_mixed_results.py#L171) | 171 | `""` | — |

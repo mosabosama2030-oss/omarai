@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **069**
-- سجلات الأسطر: **740**
-- النطاق: SRC-2C8F288796-L000354 إلى SRC-2C8F288796-L001093
+- سجلات الأسطر: **799**
+- النطاق: SRC-2C8F288796-L000295 إلى SRC-2C8F288796-L001093
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,65 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-2C8F288796-L000295](../../web/workspace.html#L295) | 295 | `"const statuses=["` | — |
+| [SRC-2C8F288796-L000296](../../web/workspace.html#L296) | 296 | `" {id:\"new\",label:\"جديد\"},"` | — |
+| [SRC-2C8F288796-L000297](../../web/workspace.html#L297) | 297 | `" {id:\"needs_review\",label:\"يحتاج مراجعة\"},"` | — |
+| [SRC-2C8F288796-L000298](../../web/workspace.html#L298) | 298 | `" {id:\"qualified\",label:\"مؤهل\"},"` | — |
+| [SRC-2C8F288796-L000299](../../web/workspace.html#L299) | 299 | `" {id:\"contacted\",label:\"تم التواصل\"},"` | — |
+| [SRC-2C8F288796-L000300](../../web/workspace.html#L300) | 300 | `" {id:\"converted\",label:\"تحول لعميل\"},"` | — |
+| [SRC-2C8F288796-L000301](../../web/workspace.html#L301) | 301 | `" {id:\"rejected\",label:\"مرفوض\"}"` | — |
+| [SRC-2C8F288796-L000302](../../web/workspace.html#L302) | 302 | `"];"` | — |
+| [SRC-2C8F288796-L000303](../../web/workspace.html#L303) | 303 | `"const labels={high_intent:\"إشارة قوية نسبيًا\",medium_intent:\"إشارة متوسطة\",early_research:\"استكشاف مبكر\",unclear:\"غير واضحة\",not_buyer_signal:\"ليست إشارة شراء مباشرة\"};"` | — |
+| [SRC-2C8F288796-L000304](../../web/workspace.html#L304) | 304 | `"const menu=["` | — |
+| [SRC-2C8F288796-L000305](../../web/workspace.html#L305) | 305 | `" {id:\"overview\",label:\"نظرة عامة\",icon:\"⌂\",enabled:true},"` | — |
+| [SRC-2C8F288796-L000306](../../web/workspace.html#L306) | 306 | `" {id:\"offer\",label:\"ملف المنتج\",icon:\"◇\",enabled:true},"` | — |
+| [SRC-2C8F288796-L000307](../../web/workspace.html#L307) | 307 | `" {id:\"campaign\",label:\"حملات الاكتشاف\",icon:\"⌕\",enabled:true},"` | — |
+| [SRC-2C8F288796-L000308](../../web/workspace.html#L308) | 308 | `" {id:\"signals\",label:\"إشارات الطلب\",icon:\"▤\",enabled:true},"` | — |
+| [SRC-2C8F288796-L000309](../../web/workspace.html#L309) | 309 | `" {id:\"pipeline\",label:\"مسار التأهيل\",icon:\"⇢\",enabled:true},"` | — |
+| [SRC-2C8F288796-L000310](../../web/workspace.html#L310) | 310 | `" {id:\"indicators\",label:\"مؤشرات الأداء\",icon:\"▥\",enabled:true}"` | — |
+| [SRC-2C8F288796-L000311](../../web/workspace.html#L311) | 311 | `"];"` | — |
+| [SRC-2C8F288796-L000312](../../web/workspace.html#L312) | 312 | `"function make(tag,cls,text){"` | — |
+| [SRC-2C8F288796-L000313](../../web/workspace.html#L313) | 313 | `" const node=document.createElement(tag);"` | — |
+| [SRC-2C8F288796-L000314](../../web/workspace.html#L314) | 314 | `" if(cls)node.className=cls;"` | — |
+| [SRC-2C8F288796-L000315](../../web/workspace.html#L315) | 315 | `" if(text!==undefined&&text!==null)node.textContent=String(text);"` | — |
+| [SRC-2C8F288796-L000316](../../web/workspace.html#L316) | 316 | `" return node;"` | — |
+| [SRC-2C8F288796-L000317](../../web/workspace.html#L317) | 317 | `"}"` | — |
+| [SRC-2C8F288796-L000318](../../web/workspace.html#L318) | 318 | `"function action(label,cls,handler){"` | — |
+| [SRC-2C8F288796-L000319](../../web/workspace.html#L319) | 319 | `" const b=make(\"button\",\"button \"+(cls\|\|\"\"),label);"` | — |
+| [SRC-2C8F288796-L000320](../../web/workspace.html#L320) | 320 | `" b.type=\"button\";b.addEventListener(\"click\",handler);return b;"` | — |
+| [SRC-2C8F288796-L000321](../../web/workspace.html#L321) | 321 | `"}"` | — |
+| [SRC-2C8F288796-L000322](../../web/workspace.html#L322) | 322 | `"function safeHttp(value){"` | — |
+| [SRC-2C8F288796-L000323](../../web/workspace.html#L323) | 323 | `" try{const u=new URL(String(value\|\|\"\"));if((u.protocol!==\"http:\"&&u.protocol!==\"https:\")\|\|!u.hostname\|\|u.username\|\|u.password)return null;return u.href}catch(_e){return null}"` | — |
+| [SRC-2C8F288796-L000324](../../web/workspace.html#L324) | 324 | `"}"` | — |
+| [SRC-2C8F288796-L000325](../../web/workspace.html#L325) | 325 | `"function escapeMessage(message){return String(message\|\|\"حدث خطأ غير متوقع\").slice(0,500)}"` | — |
+| [SRC-2C8F288796-L000326](../../web/workspace.html#L326) | 326 | `"async function api(path,options){"` | — |
+| [SRC-2C8F288796-L000327](../../web/workspace.html#L327) | 327 | `" const opts=options\|\|{};"` | — |
+| [SRC-2C8F288796-L000328](../../web/workspace.html#L328) | 328 | `" const requestSessionVersion=state.authSessionVersion;"` | — |
+| [SRC-2C8F288796-L000329](../../web/workspace.html#L329) | 329 | `" const headers={};"` | — |
+| [SRC-2C8F288796-L000330](../../web/workspace.html#L330) | 330 | `" if(opts.body!==undefined)headers[\"Content-Type\"]=\"application/json\";"` | — |
+| [SRC-2C8F288796-L000331](../../web/workspace.html#L331) | 331 | `" const response=await fetch(path,{method:opts.method\|\|\"GET\",credentials:\"same-origin\",headers:headers,signal:opts.signal,body:opts.body===undefined?undefined:JSON.stringify(opts.body)});"` | — |
+| [SRC-2C8F288796-L000332](../../web/workspace.html#L332) | 332 | `" let data={};"` | — |
+| [SRC-2C8F288796-L000333](../../web/workspace.html#L333) | 333 | `" try{data=await response.json()}catch(_e){data={error:\"تعذر قراءة استجابة الخادم\"}}"` | — |
+| [SRC-2C8F288796-L000334](../../web/workspace.html#L334) | 334 | `" if(response.status===401){showAuth(\"انتهت الجلسة أو لم يتم تسجيل الدخول. أدخل رمز الوصول للمتابعة.\");throw new Error(\"يلزم تسجيل الدخول مجددًا.\")}"` | — |
+| [SRC-2C8F288796-L000335](../../web/workspace.html#L335) | 335 | `" if(state.authSessionVersion!==requestSessionVersion)throw new Error(\"انتهت الجلسة أثناء الطلب؛ أعد تسجيل الدخول.\");"` | — |
+| [SRC-2C8F288796-L000336](../../web/workspace.html#L336) | 336 | `" if(!response.ok)throw new Error(data.error\|\|(\"فشل الطلب (\"+response.status+\")\"));"` | — |
+| [SRC-2C8F288796-L000337](../../web/workspace.html#L337) | 337 | `" return data;"` | — |
+| [SRC-2C8F288796-L000338](../../web/workspace.html#L338) | 338 | `"}"` | — |
+| [SRC-2C8F288796-L000339](../../web/workspace.html#L339) | 339 | `"function clearChatSession(){"` | — |
+| [SRC-2C8F288796-L000340](../../web/workspace.html#L340) | 340 | `" const chat=state.chat;"` | — |
+| [SRC-2C8F288796-L000341](../../web/workspace.html#L341) | 341 | `" chat.messages=[];chat.history=[];chat.busy=false;chat.mode=\"deep\";"` | — |
+| [SRC-2C8F288796-L000342](../../web/workspace.html#L342) | 342 | `" chat.sessionVersion=(chat.sessionVersion\|\|0)+1;"` | — |
+| [SRC-2C8F288796-L000343](../../web/workspace.html#L343) | 343 | `"}"` | — |
+| [SRC-2C8F288796-L000344](../../web/workspace.html#L344) | 344 | `"function advanceWorkspaceSessionVersion(){"` | — |
+| [SRC-2C8F288796-L000345](../../web/workspace.html#L345) | 345 | `" state.authSessionVersion=(state.authSessionVersion\|\|0)+1;"` | — |
+| [SRC-2C8F288796-L000346](../../web/workspace.html#L346) | 346 | `"}"` | — |
+| [SRC-2C8F288796-L000347](../../web/workspace.html#L347) | 347 | `"function clearWorkspaceSession(){"` | — |
+| [SRC-2C8F288796-L000348](../../web/workspace.html#L348) | 348 | `" advanceWorkspaceSessionVersion();"` | — |
+| [SRC-2C8F288796-L000349](../../web/workspace.html#L349) | 349 | `" state.role=null;state.leads=[];state.profiles=[];state.discoveryRuns=[];state.loadWarnings=[];"` | — |
+| [SRC-2C8F288796-L000350](../../web/workspace.html#L350) | 350 | `" state.activeDiscovery=null;state.activeProfileId=null;state.activeView=\"overview\";"` | — |
+| [SRC-2C8F288796-L000351](../../web/workspace.html#L351) | 351 | `" state.analysis=null;state.filtered=[];state.search=\"\";state.filter=\"all\";"` | — |
+| [SRC-2C8F288796-L000352](../../web/workspace.html#L352) | 352 | `" clearChatSession();"` | — |
+| [SRC-2C8F288796-L000353](../../web/workspace.html#L353) | 353 | `" closeDetails();$(\"detailBody\").replaceChildren();"` | — |
 | [SRC-2C8F288796-L000354](../../web/workspace.html#L354) | 354 | `" $(\"viewRoot\").replaceChildren(emptyState(\"مساحة العمل مقفلة\",\"سجّل الدخول لقراءة البيانات المرتبطة بمساحة العمل.\"));"` | — |
 | [SRC-2C8F288796-L000355](../../web/workspace.html#L355) | 355 | `" $(\"rolePill\").textContent=\"غير مسجل\";"` | — |
 | [SRC-2C8F288796-L000356](../../web/workspace.html#L356) | 356 | `" $(\"roleSummary\").textContent=\"لم يتم التحقق من جلسة مستخدم.\";"` | — |

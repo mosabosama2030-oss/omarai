@@ -4,7 +4,7 @@
 
 - الصفحة: **048**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3D0A619359-L000253 إلى SRC-6BCB799CEC-L000122
+- النطاق: SRC-3D0A619359-L000253 إلى SRC-6BCB799CEC-L000063
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -32,6 +32,65 @@
 | [SRC-3D0A619359-L000266](../../tests/test_dashboard_security.py#L266) | 266 | `"    assert \"const requestSessionVersion=chat.sessionVersion\" in chat"` | — |
 | [SRC-3D0A619359-L000267](../../tests/test_dashboard_security.py#L267) | 267 | `"    assert \"if(state.chat.sessionVersion!==requestSessionVersion)return;\" in chat"` | — |
 | [SRC-3D0A619359-L000268](../../tests/test_dashboard_security.py#L268) | 268 | `"    assert \"if(state.chat.sessionVersion===requestSessionVersion)\" in chat"` | — |
+| [SRC-3D0A619359-L000269](../../tests/test_dashboard_security.py#L269) | 269 | `""` | — |
+| [SRC-3D0A619359-L000270](../../tests/test_dashboard_security.py#L270) | 270 | `""` | — |
+| [SRC-3D0A619359-L000271](../../tests/test_dashboard_security.py#L271) | 271 | `"def test_ai_chat_frontends_abort_stalled_requests_with_bounded_timeout():"` | — |
+| [SRC-3D0A619359-L000272](../../tests/test_dashboard_security.py#L272) | 272 | `"    root = Path(__file__).resolve().parents[1]"` | — |
+| [SRC-3D0A619359-L000273](../../tests/test_dashboard_security.py#L273) | 273 | `"    agent = (root / \"web\" / \"agent.html\").read_text(encoding=\"utf-8\")"` | — |
+| [SRC-3D0A619359-L000274](../../tests/test_dashboard_security.py#L274) | 274 | `"    agent_script = agent.split(\"<script>\", 1)[1].split(\"</script>\", 1)[0]"` | — |
+| [SRC-3D0A619359-L000275](../../tests/test_dashboard_security.py#L275) | 275 | `"    agent_ask = agent_script.split(\"async function ask(value){\", 1)[1].split("` | — |
+| [SRC-3D0A619359-L000276](../../tests/test_dashboard_security.py#L276) | 276 | `"        \"async function runDiagnostics()\", 1"` | — |
+| [SRC-3D0A619359-L000277](../../tests/test_dashboard_security.py#L277) | 277 | `"    )[0]"` | — |
+| [SRC-3D0A619359-L000278](../../tests/test_dashboard_security.py#L278) | 278 | `""` | — |
+| [SRC-3D0A619359-L000279](../../tests/test_dashboard_security.py#L279) | 279 | `"    workspace = (root / \"web\" / \"workspace.html\").read_text(encoding=\"utf-8\")"` | — |
+| [SRC-3D0A619359-L000280](../../tests/test_dashboard_security.py#L280) | 280 | `"    workspace_script = workspace.split(\"<script>\", 1)[1].split(\"</script>\", 1)[0]"` | — |
+| [SRC-3D0A619359-L000281](../../tests/test_dashboard_security.py#L281) | 281 | `"    api = workspace_script.split(\"async function api(\", 1)[1].split("` | — |
+| [SRC-3D0A619359-L000282](../../tests/test_dashboard_security.py#L282) | 282 | `"        \"function clearChatSession(\", 1"` | — |
+| [SRC-3D0A619359-L000283](../../tests/test_dashboard_security.py#L283) | 283 | `"    )[0]"` | — |
+| [SRC-3D0A619359-L000284](../../tests/test_dashboard_security.py#L284) | 284 | `"    chat = workspace_script.split(\"async function sendChat(){\", 1)[1].split("` | — |
+| [SRC-3D0A619359-L000285](../../tests/test_dashboard_security.py#L285) | 285 | `"        \"function renderCurrent(){\", 1"` | — |
+| [SRC-3D0A619359-L000286](../../tests/test_dashboard_security.py#L286) | 286 | `"    )[0]"` | — |
+| [SRC-3D0A619359-L000287](../../tests/test_dashboard_security.py#L287) | 287 | `""` | — |
+| [SRC-3D0A619359-L000288](../../tests/test_dashboard_security.py#L288) | 288 | `"    assert \"signal:opts.signal\" in api"` | — |
+| [SRC-3D0A619359-L000289](../../tests/test_dashboard_security.py#L289) | 289 | `"    for request in (agent_ask, chat):"` | — |
+| [SRC-3D0A619359-L000290](../../tests/test_dashboard_security.py#L290) | 290 | `"        assert \"new AbortController()\" in request"` | — |
+| [SRC-3D0A619359-L000291](../../tests/test_dashboard_security.py#L291) | 291 | `"        assert \"window.setTimeout\" in request"` | — |
+| [SRC-3D0A619359-L000292](../../tests/test_dashboard_security.py#L292) | 292 | `"        assert \"135000\" in request"` | — |
+| [SRC-3D0A619359-L000293](../../tests/test_dashboard_security.py#L293) | 293 | `"        assert \"requestTimedOut\" in request"` | — |
+| [SRC-3D0A619359-L000294](../../tests/test_dashboard_security.py#L294) | 294 | `"        assert \"controller.abort()\" in request"` | — |
+| [SRC-3D0A619359-L000295](../../tests/test_dashboard_security.py#L295) | 295 | `"        assert \"window.clearTimeout(timeoutId)\" in request"` | — |
+| [SRC-3D0A619359-L000296](../../tests/test_dashboard_security.py#L296) | 296 | `"        assert \"انتهى وقت انتظار الواجهة بعد 135 ثانية\" in request"` | — |
+| [SRC-3D0A619359-L000297](../../tests/test_dashboard_security.py#L297) | 297 | `""` | — |
+| [SRC-3D0A619359-L000298](../../tests/test_dashboard_security.py#L298) | 298 | `""` | — |
+| [SRC-3D0A619359-L000299](../../tests/test_dashboard_security.py#L299) | 299 | `"def test_workspace_distinguishes_saved_records_from_refresh_failures():"` | — |
+| [SRC-3D0A619359-L000300](../../tests/test_dashboard_security.py#L300) | 300 | `"    workspace = Path(__file__).resolve().parents[1] / \"web\" / \"workspace.html\""` | — |
+| [SRC-3D0A619359-L000301](../../tests/test_dashboard_security.py#L301) | 301 | `"    script = workspace.read_text(encoding=\"utf-8\").split(\"<script>\", 1)[1].split("` | — |
+| [SRC-3D0A619359-L000302](../../tests/test_dashboard_security.py#L302) | 302 | `"        \"</script>\", 1"` | — |
+| [SRC-3D0A619359-L000303](../../tests/test_dashboard_security.py#L303) | 303 | `"    )[0]"` | — |
+| [SRC-3D0A619359-L000304](../../tests/test_dashboard_security.py#L304) | 304 | `""` | — |
+| [SRC-3D0A619359-L000305](../../tests/test_dashboard_security.py#L305) | 305 | `"    signals = script.split(\"function renderSignals(){\", 1)[1].split("` | — |
+| [SRC-3D0A619359-L000306](../../tests/test_dashboard_security.py#L306) | 306 | `"        \"function drawSignalRows(\", 1"` | — |
+| [SRC-3D0A619359-L000307](../../tests/test_dashboard_security.py#L307) | 307 | `"    )[0]"` | — |
+| [SRC-3D0A619359-L000308](../../tests/test_dashboard_security.py#L308) | 308 | `"    signal_form = script.split(\"function createSignalForm(){\", 1)[1].split("` | — |
+| [SRC-3D0A619359-L000309](../../tests/test_dashboard_security.py#L309) | 309 | `"        \"function renderPipeline(){\", 1"` | — |
+| [SRC-3D0A619359-L000310](../../tests/test_dashboard_security.py#L310) | 310 | `"    )[0]"` | — |
+| [SRC-3D0A619359-L000311](../../tests/test_dashboard_security.py#L311) | 311 | `"    profile = script.split(\"function renderProductProfile(){\", 1)[1].split("` | — |
+| [SRC-3D0A619359-L000312](../../tests/test_dashboard_security.py#L312) | 312 | `"        \"function renderDiscoveryRun(\", 1"` | — |
+| [SRC-3D0A619359-L000313](../../tests/test_dashboard_security.py#L313) | 313 | `"    )[0]"` | — |
+| [SRC-3D0A619359-L000314](../../tests/test_dashboard_security.py#L314) | 314 | `"    discovery_result = script.split(\"function renderDiscoveryRun(run){\", 1)[1].split("` | — |
+| [SRC-3D0A619359-L000315](../../tests/test_dashboard_security.py#L315) | 315 | `"        \"function renderDiscovery(){\", 1"` | — |
+| [SRC-3D0A619359-L000316](../../tests/test_dashboard_security.py#L316) | 316 | `"    )[0]"` | — |
+| [SRC-3D0A619359-L000317](../../tests/test_dashboard_security.py#L317) | 317 | `""` | — |
+| [SRC-3D0A619359-L000318](../../tests/test_dashboard_security.py#L318) | 318 | `"    assert \"تعذر تحديث إشارات الطلب. البيانات المعروضة هي آخر نسخة تم تحميلها.\" in signals"` | — |
+| [SRC-3D0A619359-L000319](../../tests/test_dashboard_security.py#L319) | 319 | `"    assert \"تم حفظ الإشارة، لكن تعذر تحديث صندوق الإشارات.\" in signal_form"` | — |
+| [SRC-3D0A619359-L000320](../../tests/test_dashboard_security.py#L320) | 320 | `"    assert \"تم حفظ ملف المنتج والسوق، لكن تعذر تحديث قائمة الملفات المحفوظة.\" in profile"` | — |
+| [SRC-3D0A619359-L000321](../../tests/test_dashboard_security.py#L321) | 321 | `"    assert \"تم حفظ الإشارة، لكن تعذر تحديث صندوق الإشارات.\" in discovery_result"` | — |
+| [SRC-3D0A619359-L000322](../../tests/test_dashboard_security.py#L322) | 322 | `"    assert \"let refreshWarning=\\\"\\\"\" in signal_form"` | — |
+| [SRC-3D0A619359-L000323](../../tests/test_dashboard_security.py#L323) | 323 | `"    assert \"let refreshWarning=\\\"\\\"\" in profile"` | — |
+| [SRC-3D0A619359-L000324](../../tests/test_dashboard_security.py#L324) | 324 | `"    assert \"let refreshWarning=\\\"\\\"\" in discovery_result"` | — |
+| [SRC-3D0A619359-L000325](../../tests/test_dashboard_security.py#L325) | 325 | `"    assert 'const response=await api(\"/api/leads\"' in signal_form"` | — |
+| [SRC-3D0A619359-L000326](../../tests/test_dashboard_security.py#L326) | 326 | `"    assert 'const result=await api(\"/api/product-profiles\"' in profile"` | — |
+| [SRC-3D0A619359-L000327](../../tests/test_dashboard_security.py#L327) | 327 | `"    assert 'api(\"/api/discoveries/\"+encodeURIComponent(run.id)+\"/signals/\"' in discovery_result"` | — |
 ## اختبارات
 
 ### FILE-29A9CD43D1 — [tests/test_dialogue_context_pipeline.py](../../tests/test_dialogue_context_pipeline.py#L1)
@@ -793,62 +852,3 @@
 | [SRC-6BCB799CEC-L000061](../../tests/test_evidence_provenance.py#L61) | 61 | `"    def collect(plan):"` | — |
 | [SRC-6BCB799CEC-L000062](../../tests/test_evidence_provenance.py#L62) | 62 | `"        sources = ["` | — |
 | [SRC-6BCB799CEC-L000063](../../tests/test_evidence_provenance.py#L63) | 63 | `"            {"` | — |
-| [SRC-6BCB799CEC-L000064](../../tests/test_evidence_provenance.py#L64) | 64 | `"                \"title\": \"آخر المعلومات عن التقنية\","` | — |
-| [SRC-6BCB799CEC-L000065](../../tests/test_evidence_provenance.py#L65) | 65 | `"                \"url\": \"https://alpha.example.com/report\","` | — |
-| [SRC-6BCB799CEC-L000066](../../tests/test_evidence_provenance.py#L66) | 66 | `"                \"snippet\": \"معلومات حديثة عن الموضوع\","` | — |
-| [SRC-6BCB799CEC-L000067](../../tests/test_evidence_provenance.py#L67) | 67 | `"                \"page_text\": \"\","` | — |
-| [SRC-6BCB799CEC-L000068](../../tests/test_evidence_provenance.py#L68) | 68 | `"                \"page_fetched\": False,"` | — |
-| [SRC-6BCB799CEC-L000069](../../tests/test_evidence_provenance.py#L69) | 69 | `"                \"provider\": \"bing_rss\","` | — |
-| [SRC-6BCB799CEC-L000070](../../tests/test_evidence_provenance.py#L70) | 70 | `"                \"providers\": [\"bing_rss\"],"` | — |
-| [SRC-6BCB799CEC-L000071](../../tests/test_evidence_provenance.py#L71) | 71 | `"                \"queries\": [question],"` | — |
-| [SRC-6BCB799CEC-L000072](../../tests/test_evidence_provenance.py#L72) | 72 | `"                \"domain\": \"alpha.example.com\","` | — |
-| [SRC-6BCB799CEC-L000073](../../tests/test_evidence_provenance.py#L73) | 73 | `"                \"source_class\": \"general\","` | — |
-| [SRC-6BCB799CEC-L000074](../../tests/test_evidence_provenance.py#L74) | 74 | `"                \"platform\": \"web\","` | — |
-| [SRC-6BCB799CEC-L000075](../../tests/test_evidence_provenance.py#L75) | 75 | `"                \"published_at\": \"\","` | — |
-| [SRC-6BCB799CEC-L000076](../../tests/test_evidence_provenance.py#L76) | 76 | `"                \"rank_score\": 0.8,"` | — |
-| [SRC-6BCB799CEC-L000077](../../tests/test_evidence_provenance.py#L77) | 77 | `"            },"` | — |
-| [SRC-6BCB799CEC-L000078](../../tests/test_evidence_provenance.py#L78) | 78 | `"            {"` | — |
-| [SRC-6BCB799CEC-L000079](../../tests/test_evidence_provenance.py#L79) | 79 | `"                \"title\": \"آخر المعلومات من مصدر مستقل\","` | — |
-| [SRC-6BCB799CEC-L000080](../../tests/test_evidence_provenance.py#L80) | 80 | `"                \"url\": \"https://beta.example.org/report\","` | — |
-| [SRC-6BCB799CEC-L000081](../../tests/test_evidence_provenance.py#L81) | 81 | `"                \"snippet\": \"معلومات موثقة عن الموضوع\","` | — |
-| [SRC-6BCB799CEC-L000082](../../tests/test_evidence_provenance.py#L82) | 82 | `"                \"page_text\": \"\","` | — |
-| [SRC-6BCB799CEC-L000083](../../tests/test_evidence_provenance.py#L83) | 83 | `"                \"page_fetched\": False,"` | — |
-| [SRC-6BCB799CEC-L000084](../../tests/test_evidence_provenance.py#L84) | 84 | `"                \"provider\": \"duckduckgo_html\","` | — |
-| [SRC-6BCB799CEC-L000085](../../tests/test_evidence_provenance.py#L85) | 85 | `"                \"providers\": [\"duckduckgo_html\"],"` | — |
-| [SRC-6BCB799CEC-L000086](../../tests/test_evidence_provenance.py#L86) | 86 | `"                \"queries\": [question],"` | — |
-| [SRC-6BCB799CEC-L000087](../../tests/test_evidence_provenance.py#L87) | 87 | `"                \"domain\": \"beta.example.org\","` | — |
-| [SRC-6BCB799CEC-L000088](../../tests/test_evidence_provenance.py#L88) | 88 | `"                \"source_class\": \"general\","` | — |
-| [SRC-6BCB799CEC-L000089](../../tests/test_evidence_provenance.py#L89) | 89 | `"                \"platform\": \"web\","` | — |
-| [SRC-6BCB799CEC-L000090](../../tests/test_evidence_provenance.py#L90) | 90 | `"                \"published_at\": \"\","` | — |
-| [SRC-6BCB799CEC-L000091](../../tests/test_evidence_provenance.py#L91) | 91 | `"                \"rank_score\": 0.7,"` | — |
-| [SRC-6BCB799CEC-L000092](../../tests/test_evidence_provenance.py#L92) | 92 | `"            },"` | — |
-| [SRC-6BCB799CEC-L000093](../../tests/test_evidence_provenance.py#L93) | 93 | `"        ]"` | — |
-| [SRC-6BCB799CEC-L000094](../../tests/test_evidence_provenance.py#L94) | 94 | `"        return sources, [], {"` | — |
-| [SRC-6BCB799CEC-L000095](../../tests/test_evidence_provenance.py#L95) | 95 | `"            \"queries_planned\": 1,"` | — |
-| [SRC-6BCB799CEC-L000096](../../tests/test_evidence_provenance.py#L96) | 96 | `"            \"queries_attempted\": 1,"` | — |
-| [SRC-6BCB799CEC-L000097](../../tests/test_evidence_provenance.py#L97) | 97 | `"            \"query_results\": [{\"query\": question, \"results\": 2}],"` | — |
-| [SRC-6BCB799CEC-L000098](../../tests/test_evidence_provenance.py#L98) | 98 | `"            \"unique_sources\": 2,"` | — |
-| [SRC-6BCB799CEC-L000099](../../tests/test_evidence_provenance.py#L99) | 99 | `"            \"pages_fetched\": 0,"` | — |
-| [SRC-6BCB799CEC-L000100](../../tests/test_evidence_provenance.py#L100) | 100 | `"            \"providers_used\": [\"bing_rss\", \"duckduckgo_html\"],"` | — |
-| [SRC-6BCB799CEC-L000101](../../tests/test_evidence_provenance.py#L101) | 101 | `"            \"provider_counts\": {\"bing_rss\": 1, \"duckduckgo_html\": 1},"` | — |
-| [SRC-6BCB799CEC-L000102](../../tests/test_evidence_provenance.py#L102) | 102 | `"            \"platform_counts\": {\"web\": 2},"` | — |
-| [SRC-6BCB799CEC-L000103](../../tests/test_evidence_provenance.py#L103) | 103 | `"            \"social_direct_results\": 0,"` | — |
-| [SRC-6BCB799CEC-L000104](../../tests/test_evidence_provenance.py#L104) | 104 | `"            \"expansion_queries\": [],"` | — |
-| [SRC-6BCB799CEC-L000105](../../tests/test_evidence_provenance.py#L105) | 105 | `"            \"evidence_signals\": {},"` | — |
-| [SRC-6BCB799CEC-L000106](../../tests/test_evidence_provenance.py#L106) | 106 | `"            \"depth\": \"standard\","` | — |
-| [SRC-6BCB799CEC-L000107](../../tests/test_evidence_provenance.py#L107) | 107 | `"            \"planning_method\": \"test\","` | — |
-| [SRC-6BCB799CEC-L000108](../../tests/test_evidence_provenance.py#L108) | 108 | `"        }"` | — |
-| [SRC-6BCB799CEC-L000109](../../tests/test_evidence_provenance.py#L109) | 109 | `""` | — |
-| [SRC-6BCB799CEC-L000110](../../tests/test_evidence_provenance.py#L110) | 110 | `"    def generate(*args, **kwargs):"` | — |
-| [SRC-6BCB799CEC-L000111](../../tests/test_evidence_provenance.py#L111) | 111 | `"        agent.server_search_sources.append({"` | — |
-| [SRC-6BCB799CEC-L000112](../../tests/test_evidence_provenance.py#L112) | 112 | `"            \"title\": \"آخر المعلومات - نتيجة بحث مباشر\","` | — |
-| [SRC-6BCB799CEC-L000113](../../tests/test_evidence_provenance.py#L113) | 113 | `"            \"url\": \"https://research.example.net/live-result\","` | — |
-| [SRC-6BCB799CEC-L000114](../../tests/test_evidence_provenance.py#L114) | 114 | `"            \"snippet\": \"معلومات حديثة إضافية عن الموضوع\","` | — |
-| [SRC-6BCB799CEC-L000115](../../tests/test_evidence_provenance.py#L115) | 115 | `"            \"page_text\": \"مقتطف أعاده مزود البحث\","` | — |
-| [SRC-6BCB799CEC-L000116](../../tests/test_evidence_provenance.py#L116) | 116 | `"            \"page_fetched\": False,"` | — |
-| [SRC-6BCB799CEC-L000117](../../tests/test_evidence_provenance.py#L117) | 117 | `"            \"provider\": \"openrouter_web_search\","` | — |
-| [SRC-6BCB799CEC-L000118](../../tests/test_evidence_provenance.py#L118) | 118 | `"            \"providers\": [\"openrouter_web_search\"],"` | — |
-| [SRC-6BCB799CEC-L000119](../../tests/test_evidence_provenance.py#L119) | 119 | `"            \"queries\": [question],"` | — |
-| [SRC-6BCB799CEC-L000120](../../tests/test_evidence_provenance.py#L120) | 120 | `"            \"domain\": \"research.example.net\","` | — |
-| [SRC-6BCB799CEC-L000121](../../tests/test_evidence_provenance.py#L121) | 121 | `"            \"source_class\": \"general\","` | — |
-| [SRC-6BCB799CEC-L000122](../../tests/test_evidence_provenance.py#L122) | 122 | `"            \"platform\": \"web\","` | — |
