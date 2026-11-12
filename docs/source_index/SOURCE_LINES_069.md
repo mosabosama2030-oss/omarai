@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **069**
-- سجلات الأسطر: **559**
-- النطاق: SRC-2C8F288796-L000535 إلى SRC-2C8F288796-L001093
+- سجلات الأسطر: **591**
+- النطاق: SRC-2C8F288796-L000503 إلى SRC-2C8F288796-L001093
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,38 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-2C8F288796-L000503](../../web/workspace.html#L503) | 503 | `" const text=make(\"textarea\",\"\");text.id=\"newSignalText\";text.placeholder=\"انسخ نص الطلب أو الاحتياج المعلن من المصدر المسموح…\";text.maxLength=20000;text.required=true;"` | — |
+| [SRC-2C8F288796-L000504](../../web/workspace.html#L504) | 504 | `" const url=make(\"input\",\"\");url.type=\"url\";url.id=\"newSignalUrl\";url.placeholder=\"https://رابط-المصدر\";url.required=true;"` | — |
+| [SRC-2C8F288796-L000505](../../web/workspace.html#L505) | 505 | `" const grid=make(\"div\",\"form-grid\");"` | — |
+| [SRC-2C8F288796-L000506](../../web/workspace.html#L506) | 506 | `" const platform=make(\"select\",\"\");platform.id=\"newSignalPlatform\";[\"manual\",\"Facebook\",\"Website\",\"OLX\",\"Other\"].forEach(value=>{const o=make(\"option\",\"\",value===\"manual\"?\"إدخال يدوي\":value);o.value=value;platform.append(o)});"` | — |
+| [SRC-2C8F288796-L000507](../../web/workspace.html#L507) | 507 | `" const product=make(\"input\",\"\");product.id=\"newSignalProduct\";product.placeholder=\"مثال: أنظمة إنذار، عقارات\";"` | — |
+| [SRC-2C8F288796-L000508](../../web/workspace.html#L508) | 508 | `" const location=make(\"input\",\"\");location.id=\"newSignalLocation\";location.placeholder=\"مثال: القاهرة، التجمع الخامس\";"` | — |
+| [SRC-2C8F288796-L000509](../../web/workspace.html#L509) | 509 | `" const note=make(\"input\",\"\");note.id=\"newSignalNote\";note.placeholder=\"ملاحظاتك (اختياري)\";"` | — |
+| [SRC-2C8F288796-L000510](../../web/workspace.html#L510) | 510 | `" const fields=[[\"النص\",text],[\"رابط المصدر\",url],[\"المنصة\",platform],[\"مصطلحات المنتج (افصل بفاصلة)\",product],[\"السوق أو المنطقة\",location],[\"ملاحظة\",note]];"` | — |
+| [SRC-2C8F288796-L000511](../../web/workspace.html#L511) | 511 | `" fields.forEach(([label,input])=>{const field=make(\"div\",\"field\");field.append(make(\"label\",\"\",label));field.lastChild.htmlFor=input.id;field.append(input);grid.append(field)});"` | — |
+| [SRC-2C8F288796-L000512](../../web/workspace.html#L512) | 512 | `" wrapper.append(grid);"` | — |
+| [SRC-2C8F288796-L000513](../../web/workspace.html#L513) | 513 | `" const result=make(\"div\",\"\");result.id=\"analysisResult\";"` | — |
+| [SRC-2C8F288796-L000514](../../web/workspace.html#L514) | 514 | `" const buttons=make(\"div\",\"form-actions\");"` | — |
+| [SRC-2C8F288796-L000515](../../web/workspace.html#L515) | 515 | `" const analyze=action(\"١. حلّل الإشارة\",\"primary\",async()=>{"` | — |
+| [SRC-2C8F288796-L000516](../../web/workspace.html#L516) | 516 | `"  analyze.disabled=true;"` | — |
+| [SRC-2C8F288796-L000517](../../web/workspace.html#L517) | 517 | `"  try{"` | — |
+| [SRC-2C8F288796-L000518](../../web/workspace.html#L518) | 518 | `"   if(!text.value.trim())throw new Error(\"أدخل نص الإشارة أولًا.\");"` | — |
+| [SRC-2C8F288796-L000519](../../web/workspace.html#L519) | 519 | `"   if(!safeHttp(url.value))throw new Error(\"أدخل رابط مصدر عام صالحًا يبدأ بـ HTTP أو HTTPS.\");"` | — |
+| [SRC-2C8F288796-L000520](../../web/workspace.html#L520) | 520 | `"   const product_terms=product.value.split(\",\").map(x=>x.trim()).filter(Boolean);"` | — |
+| [SRC-2C8F288796-L000521](../../web/workspace.html#L521) | 521 | `"   const location_terms=location.value.split(\",\").map(x=>x.trim()).filter(Boolean);"` | — |
+| [SRC-2C8F288796-L000522](../../web/workspace.html#L522) | 522 | `"   const data=await api(\"/api/analyze\",{method:\"POST\",body:{text:text.value,product_terms:product_terms,location_terms:location_terms}});"` | — |
+| [SRC-2C8F288796-L000523](../../web/workspace.html#L523) | 523 | `"   state.analysis={text:text.value,url:url.value,product_terms:product_terms,location_terms:location_terms,assessment:data};"` | — |
+| [SRC-2C8F288796-L000524](../../web/workspace.html#L524) | 524 | `"   result.replaceChildren();"` | — |
+| [SRC-2C8F288796-L000525](../../web/workspace.html#L525) | 525 | `"   const box=make(\"div\",\"analysis-result\");box.append(make(\"div\",\"analysis-score\",String(data.score??\"—\")+\"/100\"),make(\"div\",\"\",labels[data.label]\|\|data.label\|\|\"غير مصنفة\"),make(\"p\",\"\",data.summary\|\|\"لا يوجد ملخص.\"));"` | — |
+| [SRC-2C8F288796-L000526](../../web/workspace.html#L526) | 526 | `"   box.append(make(\"p\",\"disclaimer\",\"هذه درجة قواعد إرشادية لا تمثل احتمال شراء. راجع النص والمصدر قبل اعتماد الإشارة.\"));"` | — |
+| [SRC-2C8F288796-L000527](../../web/workspace.html#L527) | 527 | `"   result.append(box);"` | — |
+| [SRC-2C8F288796-L000528](../../web/workspace.html#L528) | 528 | `"  }catch(e){result.replaceChildren(make(\"p\",\"auth-error\",escapeMessage(e.message)))}"` | — |
+| [SRC-2C8F288796-L000529](../../web/workspace.html#L529) | 529 | `"  finally{analyze.disabled=false}"` | — |
+| [SRC-2C8F288796-L000530](../../web/workspace.html#L530) | 530 | `" });"` | — |
+| [SRC-2C8F288796-L000531](../../web/workspace.html#L531) | 531 | `" const save=action(\"٢. احفظ الإشارة\",\"\",async()=>{"` | — |
+| [SRC-2C8F288796-L000532](../../web/workspace.html#L532) | 532 | `"  save.disabled=true;"` | — |
+| [SRC-2C8F288796-L000533](../../web/workspace.html#L533) | 533 | `"  try{"` | — |
+| [SRC-2C8F288796-L000534](../../web/workspace.html#L534) | 534 | `"   const item=state.analysis;"` | — |
 | [SRC-2C8F288796-L000535](../../web/workspace.html#L535) | 535 | `"   if(!item\|\|item.text!==text.value\|\|item.url!==url.value)throw new Error(\"أعد التحليل بعد أي تغيير في النص أو رابط المصدر.\");"` | — |
 | [SRC-2C8F288796-L000536](../../web/workspace.html#L536) | 536 | `"   if(!safeHttp(url.value))throw new Error(\"رابط المصدر غير صالح.\");"` | — |
 | [SRC-2C8F288796-L000537](../../web/workspace.html#L537) | 537 | `"   const product_terms=product.value.split(\",\").map(x=>x.trim()).filter(Boolean);"` | — |
@@ -331,7 +363,7 @@
 | [SRC-2C8F288796-L000847](../../web/workspace.html#L847) | 847 | `"  const status=make(\"p\",\"profile-note\");status.setAttribute(\"role\",\"status\");status.setAttribute(\"aria-live\",\"polite\");"` | — |
 | [SRC-2C8F288796-L000848](../../web/workspace.html#L848) | 848 | `"  const run=action(\"بدء اكتشاف الطلب\",\"primary\",async()=>{"` | — |
 | [SRC-2C8F288796-L000849](../../web/workspace.html#L849) | 849 | `"   run.disabled=true;run.setAttribute(\"aria-busy\",\"true\");state.activeProfileId=profileSelect.value;"` | — |
-| [SRC-2C8F288796-L000850](../../web/workspace.html#L850) | 850 | `"   status.className=\"profile-note\";status.textContent=\"جارٍ البحث عن إشارات الطلب؛ ستظل النتائج السابقة متاحة حتى تكتمل الجولة الجديدة.\";"` | — |
+| [SRC-2C8F288796-L000850](../../web/workspace.html#L850) | 850 | `"   status.setAttribute(\"role\",\"status\");status.setAttribute(\"aria-live\",\"polite\");status.className=\"profile-note\";status.textContent=\"جارٍ البحث عن إشارات الطلب؛ ستظل النتائج السابقة متاحة حتى تكتمل الجولة الجديدة.\";"` | — |
 | [SRC-2C8F288796-L000851](../../web/workspace.html#L851) | 851 | `"   try{"` | — |
 | [SRC-2C8F288796-L000852](../../web/workspace.html#L852) | 852 | `"    const savedRun=await api(\"/api/discoveries\",{method:\"POST\",body:{profile_id:profileSelect.value,allow_optional_providers:optional.checked}});"` | — |
 | [SRC-2C8F288796-L000853](../../web/workspace.html#L853) | 853 | `"    state.activeDiscovery=savedRun;"` | — |
@@ -340,7 +372,7 @@
 | [SRC-2C8F288796-L000856](../../web/workspace.html#L856) | 856 | `"    renderDiscovery();"` | — |
 | [SRC-2C8F288796-L000857](../../web/workspace.html#L857) | 857 | `"    if(refreshWarning){const warning=make(\"p\",\"auth-error\",refreshWarning);warning.setAttribute(\"role\",\"alert\");$(\"viewRoot\").append(warning)}"` | — |
 | [SRC-2C8F288796-L000858](../../web/workspace.html#L858) | 858 | `"   }catch(error){"` | — |
-| [SRC-2C8F288796-L000859](../../web/workspace.html#L859) | 859 | `"    status.className=\"auth-error\";status.textContent=\"تعذر تشغيل الاكتشاف: \"+escapeMessage(error.message)+\" يمكنك المحاولة مجددًا. لم تُحذف النتائج السابقة.\";"` | — |
+| [SRC-2C8F288796-L000859](../../web/workspace.html#L859) | 859 | `"    status.setAttribute(\"role\",\"alert\");status.setAttribute(\"aria-live\",\"assertive\");status.className=\"auth-error\";status.textContent=\"تعذر تشغيل الاكتشاف: \"+escapeMessage(error.message)+\" يمكنك المحاولة مجددًا. لم تُحذف النتائج السابقة.\";"` | — |
 | [SRC-2C8F288796-L000860](../../web/workspace.html#L860) | 860 | `"   }finally{"` | — |
 | [SRC-2C8F288796-L000861](../../web/workspace.html#L861) | 861 | `"    run.disabled=false;run.removeAttribute(\"aria-busy\");"` | — |
 | [SRC-2C8F288796-L000862](../../web/workspace.html#L862) | 862 | `"   }"` | — |

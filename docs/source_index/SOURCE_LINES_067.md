@@ -4,7 +4,7 @@
 
 - الصفحة: **067**
 - سجلات الأسطر: **800**
-- النطاق: SRC-8C13B81AB4-L000019 إلى SRC-DE7EABE998-L000337
+- النطاق: SRC-8C13B81AB4-L000019 إلى SRC-DE7EABE998-L000305
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -388,6 +388,38 @@
 | [SRC-E3EEC2014A-L000236](../../tests/test_workspace_discovery.py#L236) | 236 | `"        }"` | — |
 | [SRC-E3EEC2014A-L000237](../../tests/test_workspace_discovery.py#L237) | 237 | `"    )"` | — |
 | [SRC-E3EEC2014A-L000238](../../tests/test_workspace_discovery.py#L238) | 238 | `"    assert source[\"url\"] == \"https://example.org/request\""` | — |
+| [SRC-E3EEC2014A-L000239](../../tests/test_workspace_discovery.py#L239) | 239 | `""` | — |
+| [SRC-E3EEC2014A-L000240](../../tests/test_workspace_discovery.py#L240) | 240 | `""` | — |
+| [SRC-E3EEC2014A-L000241](../../tests/test_workspace_discovery.py#L241) | 241 | `"def _discovery_action_handler():"` | — |
+| [SRC-E3EEC2014A-L000242](../../tests/test_workspace_discovery.py#L242) | 242 | `"    from pathlib import Path"` | — |
+| [SRC-E3EEC2014A-L000243](../../tests/test_workspace_discovery.py#L243) | 243 | `""` | — |
+| [SRC-E3EEC2014A-L000244](../../tests/test_workspace_discovery.py#L244) | 244 | `"    workspace = Path(__file__).resolve().parents[1] / \"web\" / \"workspace.html\""` | — |
+| [SRC-E3EEC2014A-L000245](../../tests/test_workspace_discovery.py#L245) | 245 | `"    html = workspace.read_text(encoding=\"utf-8\")"` | — |
+| [SRC-E3EEC2014A-L000246](../../tests/test_workspace_discovery.py#L246) | 246 | `"    start = html.index('const run=action(\"بدء اكتشاف الطلب\"')"` | — |
+| [SRC-E3EEC2014A-L000247](../../tests/test_workspace_discovery.py#L247) | 247 | `"    end = html.index('controls.append(make(\"p\",\"profile-note\"', start)"` | — |
+| [SRC-E3EEC2014A-L000248](../../tests/test_workspace_discovery.py#L248) | 248 | `"    return html[start:end]"` | — |
+| [SRC-E3EEC2014A-L000249](../../tests/test_workspace_discovery.py#L249) | 249 | `""` | — |
+| [SRC-E3EEC2014A-L000250](../../tests/test_workspace_discovery.py#L250) | 250 | `""` | — |
+| [SRC-E3EEC2014A-L000251](../../tests/test_workspace_discovery.py#L251) | 251 | `"def test_discovery_search_failure_restores_action_and_announces_an_error():"` | — |
+| [SRC-E3EEC2014A-L000252](../../tests/test_workspace_discovery.py#L252) | 252 | `"    handler = _discovery_action_handler()"` | — |
+| [SRC-E3EEC2014A-L000253](../../tests/test_workspace_discovery.py#L253) | 253 | `""` | — |
+| [SRC-E3EEC2014A-L000254](../../tests/test_workspace_discovery.py#L254) | 254 | `"    assert \"run.disabled=true\" in handler"` | — |
+| [SRC-E3EEC2014A-L000255](../../tests/test_workspace_discovery.py#L255) | 255 | `"    assert 'run.setAttribute(\"aria-busy\",\"true\")' in handler"` | — |
+| [SRC-E3EEC2014A-L000256](../../tests/test_workspace_discovery.py#L256) | 256 | `"    assert 'status.setAttribute(\"role\",\"alert\")' in handler"` | — |
+| [SRC-E3EEC2014A-L000257](../../tests/test_workspace_discovery.py#L257) | 257 | `"    assert 'status.setAttribute(\"aria-live\",\"assertive\")' in handler"` | — |
+| [SRC-E3EEC2014A-L000258](../../tests/test_workspace_discovery.py#L258) | 258 | `"    assert \"run.disabled=false\" in handler"` | — |
+| [SRC-E3EEC2014A-L000259](../../tests/test_workspace_discovery.py#L259) | 259 | `"    assert 'run.removeAttribute(\"aria-busy\")' in handler"` | — |
+| [SRC-E3EEC2014A-L000260](../../tests/test_workspace_discovery.py#L260) | 260 | `""` | — |
+| [SRC-E3EEC2014A-L000261](../../tests/test_workspace_discovery.py#L261) | 261 | `""` | — |
+| [SRC-E3EEC2014A-L000262](../../tests/test_workspace_discovery.py#L262) | 262 | `"def test_discovery_result_survives_history_refresh_failure():"` | — |
+| [SRC-E3EEC2014A-L000263](../../tests/test_workspace_discovery.py#L263) | 263 | `"    handler = _discovery_action_handler()"` | — |
+| [SRC-E3EEC2014A-L000264](../../tests/test_workspace_discovery.py#L264) | 264 | `""` | — |
+| [SRC-E3EEC2014A-L000265](../../tests/test_workspace_discovery.py#L265) | 265 | `"    assert \"state.activeDiscovery=savedRun\" in handler"` | — |
+| [SRC-E3EEC2014A-L000266](../../tests/test_workspace_discovery.py#L266) | 266 | `"    assert 'let refreshWarning=\"\"' in handler"` | — |
+| [SRC-E3EEC2014A-L000267](../../tests/test_workspace_discovery.py#L267) | 267 | `"    assert \"try{await loadDiscoveryRuns()}catch(refreshError)\" in handler"` | — |
+| [SRC-E3EEC2014A-L000268](../../tests/test_workspace_discovery.py#L268) | 268 | `"    assert handler.index(\"state.activeDiscovery=savedRun\") < handler.index(\"renderDiscovery()\")"` | — |
+| [SRC-E3EEC2014A-L000269](../../tests/test_workspace_discovery.py#L269) | 269 | `"    assert \"حُفظت نتيجة البحث، لكن تعذر تحديث سجل العمليات\" in handler"` | — |
+| [SRC-E3EEC2014A-L000270](../../tests/test_workspace_discovery.py#L270) | 270 | `"    assert \"warning.setAttribute(\\\"role\\\",\\\"alert\\\")\" in handler"` | — |
 ## اختبارات
 
 ### FILE-F7BF7F2B46 — [tests/test_workspace_ui_regressions.py](../../tests/test_workspace_ui_regressions.py#L1)
@@ -811,35 +843,3 @@
 | [SRC-DE7EABE998-L000303](../../web/agent.html#L303) | 303 | `" const criterionGapResearchStatus=criterionGapResearch.status\|\|\"\";"` | — |
 | [SRC-DE7EABE998-L000304](../../web/agent.html#L304) | 304 | `" const criterionGapResearchMessages={"` | — |
 | [SRC-DE7EABE998-L000305](../../web/agent.html#L305) | 305 | `"  not_needed:\"لم يرصد الفحص فجوة مصدر تستدعي بحثًا إضافيًا.\","` | — |
-| [SRC-DE7EABE998-L000306](../../web/agent.html#L306) | 306 | `"  evidence_added_and_answer_regenerated:\"أضاف البحث الإضافي نص مصدر جديدًا؛ ثم أُعيد توليد الإجابة ومراجعتها.\","` | — |
-| [SRC-DE7EABE998-L000307](../../web/agent.html#L307) | 307 | `"  search_completed_no_new_criterion_evidence:\"أُجري بحث إضافي للمحاور الناقصة، لكنه لم يضف نص مصدر جديدًا يمكن تمييزه.\","` | — |
-| [SRC-DE7EABE998-L000308](../../web/agent.html#L308) | 308 | `"  skipped_no_reserved_search_slot:\"لم يُخصّص استعلام إضافي لهذه المهمة؛ ظلت المحاور بلا إشارة مصدر غير محسومة.\","` | — |
-| [SRC-DE7EABE998-L000309](../../web/agent.html#L309) | 309 | `"  skipped_search_budget_exhausted:\"انتهت ميزانية البحث قبل إعادة البحث عن المحاور الناقصة؛ لا تُعدّ التغطية مكتملة.\","` | — |
-| [SRC-DE7EABE998-L000310](../../web/agent.html#L310) | 310 | `"  search_failed:\"تعذر إكمال البحث الإضافي عن الأدلة المفقودة.\","` | — |
-| [SRC-DE7EABE998-L000311](../../web/agent.html#L311) | 311 | `"  skipped_no_request_budget:\"تعذر فحص ميزانية البحث؛ لم يُنفذ بحث إضافي.\","` | — |
-| [SRC-DE7EABE998-L000312](../../web/agent.html#L312) | 312 | `"  skipped_query_not_distinct:\"لم يُنفذ بحث إضافي لأن الاستعلام المقترح لم يكن مختلفًا بما يكفي.\","` | — |
-| [SRC-DE7EABE998-L000313](../../web/agent.html#L313) | 313 | `"  skipped_no_valid_query:\"لم يتوفر استعلام إضافي صالح للمحاور الناقصة.\","` | — |
-| [SRC-DE7EABE998-L000314](../../web/agent.html#L314) | 314 | `"  evidence_added_but_regeneration_unavailable:\"وصل نص مصدر إضافي، لكن تعذرت إعادة توليد الإجابة ومراجعتها؛ يلزم التحقق من المحاور يدويًا.\""` | — |
-| [SRC-DE7EABE998-L000315](../../web/agent.html#L315) | 315 | `" };"` | — |
-| [SRC-DE7EABE998-L000316](../../web/agent.html#L316) | 316 | `" const criterionGapResearchHtml=criterionGapResearchMessages[criterionGapResearchStatus]?'<p class=\"'+(criterionGapResearchStatus===\"evidence_added_and_answer_regenerated\"?\"report-note\":\"warning\")+'\">بحث فجوة الأدلة: '+escapeHtml(criterionGapResearchMessages[criterionGapResearchStatus])+'</p>':\"\";"` | — |
-| [SRC-DE7EABE998-L000317](../../web/agent.html#L317) | 317 | `" const claimLedger=r.claim_evidence_ledger&&typeof r.claim_evidence_ledger===\"object\"?r.claim_evidence_ledger:null;"` | — |
-| [SRC-DE7EABE998-L000318](../../web/agent.html#L318) | 318 | `" const claimSegments=claimLedger&&Array.isArray(claimLedger.segments)?claimLedger.segments:[];"` | — |
-| [SRC-DE7EABE998-L000319](../../web/agent.html#L319) | 319 | `" const claimSummary=claimLedger&&claimLedger.summary&&typeof claimLedger.summary===\"object\"?claimLedger.summary:{};"` | — |
-| [SRC-DE7EABE998-L000320](../../web/agent.html#L320) | 320 | `" const claimEvidenceHtml=claimLedger?'<p class=\"report-note\">سجل تتبع الاستشهادات (لا يثبت صحة الادعاء): '+escapeHtml(claimSummary.segments_with_citations??0)+' مقطعًا يحمل استشهادًا، '+escapeHtml(claimSummary.segments_without_citation_markers??0)+' بلا علامة استشهاد، '+escapeHtml(claimSummary.out_of_range_reference_count??0)+' مرجعًا خارج نطاق المصادر، '+escapeHtml(claimSummary.cited_segments_with_readable_source_evidence??0)+' مقطعًا مستشهدًا به له نص دليل قابل للقراءة.</p>'+(claimSegments.length?'<details class=\"details\"><summary>عرض سجل المقاطع والاستشهادات المرتبطة</summary><ol>'+claimSegments.map(item=>'<li><p>'+escapeHtml(item.text\|\|\"\")+'</p><p class=\"report-note\">الحالة: '+escapeHtml(item.citation_status\|\|\"غير محدد\")+' · الفحص اللفظي: '+escapeHtml(item.lexical_audit_status\|\|\"غير منفذ\")+'</p>'+(Array.isArray(item.sources)&&item.sources.length?'<ul>'+item.sources.map(source=>'<li>المصدر '+escapeHtml(source.source_index)+' · '+escapeHtml(source.title\|\|\"دون عنوان\")+' · '+escapeHtml(source.evidence_basis\|\|\"غير معروف\")+(source.url?' · <a href=\"'+escapeHtml(source.url)+'\" target=\"_blank\" rel=\"noopener noreferrer\">فتح المصدر</a>':\"\")+'</li>').join(\"\")+'</ul>':\"\")+'</li>').join(\"\")+'</ol><p class=\"report-note\">السجل يربط علامات الاستشهاد بقائمة المصادر المتاحة فقط؛ لا يُجري تحققًا دلاليًا أو مستقلًا من الحقيقة.</p></details>':\"\"):\"\";"` | — |
-| [SRC-DE7EABE998-L000321](../../web/agent.html#L321) | 321 | `" const integrityHtml=integrity?'<details class=\"details\"><summary>فحص لفظي أولي: اتساق الإجابة مع الأدلة — ليس تحققًا من الحقيقة</summary><p class=\"report-note\">لا يثبت هذا الفحص صحة الوقائع أو دلالة الاستشهاد. نطاق الأدلة النصية: '+escapeHtml(integrityScope)+'.</p>'+integritySummary+taskFulfillmentHtml+claimEvidenceHtml+coverageRepairHtml+requirementEvidenceHtml+criterionGapResearchHtml+'<p class=\"report-note\">'+(integrityNumbers.length?'أرقام أو تواريخ تحتاج مراجعة لأنها لم تظهر نصيًا في المواد المتاحة: '+integrityNumbers.map(escapeHtml).join(\"، \")+'.':'لم يرصد الفحص أرقامًا محددة غائبة عن النصوص التي جمعها. هذا لا يثبت أن كل رقم صحيح أو أن المصدر يدعم الادعاء المرتبط به.')+'</p>'+citedNumberHtml+valueDiscrepancyHtml+citationAlignmentHtml+(integrityTargets.length?'<p class=\"report-note\">إشارات التغطية اللفظية لمحاور السؤال:</p><ul>'+integrityTargets.map(t=>'<li>'+escapeHtml(t.target\|\|\"محور\")+' — '+escapeHtml(t.status===\"lexical_signal_found\"?\"وُجد تطابق لفظي في الإجابة؛ ليس إثباتًا لاكتمالها\":\"قد يكون هذا المحور ناقصًا؛ لم يظهر تطابق لفظي كافٍ في الإجابة\")+' · '+escapeHtml(t.source_evidence_status===\"source_lexical_signal_found\"?\"توجد إشارة لفظية في المصادر\":\"لا توجد إشارة لفظية في المصادر\")+(Array.isArray(t.source_evidence_checks)&&t.source_evidence_checks.length?' ('+t.source_evidence_checks.map(item=>'المصدر '+escapeHtml(item.source_index)).join('، ')+')':'')+'</li>').join(\"\")+'</ul>':\"\")+'<p class=\"report-note\">المنهج: فحص لفظي حتمي محدود. لا يتحقق من معنى الادعاء أو صلة الاستشهاد به أو استقلال المصادر؛ راجع الأدلة الأصلية قبل الاعتماد.</p></details>':\"\";"` | — |
-| [SRC-DE7EABE998-L000322](../../web/agent.html#L322) | 322 | `" const providerCounts=r.provider_counts&&typeof r.provider_counts===\"object\"&&!Array.isArray(r.provider_counts)?r.provider_counts:{};"` | — |
-| [SRC-DE7EABE998-L000323](../../web/agent.html#L323) | 323 | `" const providerHtml=Object.entries(providerCounts).map(([p,n])=>'<span class=\"provider\">'+escapeHtml(p)+' · '+escapeHtml(n)+'</span>').join(\"\");"` | — |
-| [SRC-DE7EABE998-L000324](../../web/agent.html#L324) | 324 | `" const notes=Array.isArray(e.warnings)?e.warnings:[];"` | — |
-| [SRC-DE7EABE998-L000325](../../web/agent.html#L325) | 325 | `" const queryList=Array.isArray(result.search_queries)?result.search_queries:[];"` | — |
-| [SRC-DE7EABE998-L000326](../../web/agent.html#L326) | 326 | `" const details=queryList.length?'<details class=\"details\"><summary>زوايا البحث المستخدمة ('+queryList.length+')</summary><ol>'+queryList.map(q=>'<li>'+escapeHtml(q)+'</li>').join(\"\")+'</ol></details>':\"\";"` | — |
-| [SRC-DE7EABE998-L000327](../../web/agent.html#L327) | 327 | `" const coverageText=lead"` | — |
-| [SRC-DE7EABE998-L000328](../../web/agent.html#L328) | 328 | `"  ? (leadResearchIncomplete"` | — |
-| [SRC-DE7EABE998-L000329](../../web/agent.html#L329) | 329 | `"     ? \"تعطل البحث أو لم يكتمل التقرير؛ الأعداد غير المتاحة ليست صفرًا، ولا يمكن استنتاج عدم وجود عملاء.\""` | — |
-| [SRC-DE7EABE998-L000330](../../web/agent.html#L330) | 330 | `"     : noQualifiedLeads"` | — |
-| [SRC-DE7EABE998-L000331](../../web/agent.html#L331) | 331 | `"      ? \"لم تثبت النتائج وجود أي عميل محتمل. عدد صفحات العقارات أو النطاقات ليس عدد المشترين.\""` | — |
-| [SRC-DE7EABE998-L000332](../../web/agent.html#L332) | 332 | `"      : \"الإشارات العلنية لا تثبت هوية الشخص أو استمرار رغبته في الشراء؛ راجع نص المصدر وتاريخه يدويًا.\")"` | — |
-| [SRC-DE7EABE998-L000333](../../web/agent.html#L333) | 333 | `"  : researchErrorOutcome"` | — |
-| [SRC-DE7EABE998-L000334](../../web/agent.html#L334) | 334 | `"   ? \"تعذر تحديد تغطية البحث لأن مسار تجميع الأدلة لم يكتمل؛ الأرقام غير المتاحة ليست صفرًا.\""` | — |
-| [SRC-DE7EABE998-L000335](../../web/agent.html#L335) | 335 | `"   : \"تغطية الأدلة: \"+scoreLabel+\" — يصف هذا الوصف اتساع الأدلة المتاحة ولا يمثل احتمال صحة الإجابة.\";"` | — |
-| [SRC-DE7EABE998-L000336](../../web/agent.html#L336) | 336 | `" const usableSourceCount=researchErrorOutcome?null:(r.usable_sources_after_filtering??sources.length);"` | — |
-| [SRC-DE7EABE998-L000337](../../web/agent.html#L337) | 337 | `" const attemptText=result&&result.search_attempted===true"` | — |

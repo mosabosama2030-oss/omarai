@@ -10,12 +10,12 @@
 
 - ملفات المستودع في الجرد: **150**
 - ملفات Python المحللة: **89**
-- تعريفات Python المفهرسة: **2180**
+- تعريفات Python المفهرسة: **2183**
 - تعريفات Python موثقة بوجود Docstring: **312**
-- تعريفات Python بلا Docstring: **1445**
+- تعريفات Python بلا Docstring: **1448**
 - تعريفات لا ينطبق عليها Docstring: **423**
 - الرموز الساكنة الإضافية: **2976**
-- الأسطر النصية المفهرسة حرفيًا: **54959**
+- الأسطر النصية المفهرسة حرفيًا: **54991**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -173,11 +173,11 @@
 | FILE-FBDC61DA0B | اختبارات | [tests/test_tool_execution_status.py](../tests/test_tool_execution_status.py#L1) | Python | 5490 | 149 | جرد الملف + AST Python |
 | FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 180243 | 4599 | جرد الملف + AST Python |
 | FILE-8C13B81AB4 | اختبارات | [tests/test_web_agent_nlu_integration.py](../tests/test_web_agent_nlu_integration.py#L1) | Python | 6092 | 143 | جرد الملف + AST Python |
-| FILE-E3EEC2014A | اختبارات | [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L1) | Python | 9761 | 238 | جرد الملف + AST Python |
+| FILE-E3EEC2014A | اختبارات | [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L1) | Python | 11134 | 270 | جرد الملف + AST Python |
 | FILE-F7BF7F2B46 | اختبارات | [tests/test_workspace_ui_regressions.py](../tests/test_workspace_ui_regressions.py#L1) | Python | 4375 | 100 | جرد الملف + AST Python |
 | FILE-DE7EABE998 | واجهة الويب | [web/agent.html](../web/agent.html#L1) | HTML | 72004 | 529 | جرد الملف + معرفات HTML والرموز داخل script/style |
 | FILE-A16FA6D4B5 | واجهة الويب | [web/dashboard.html](../web/dashboard.html#L1) | HTML | 17812 | 74 | جرد الملف + معرفات HTML والرموز داخل script/style |
-| FILE-2C8F288796 | واجهة الويب | [web/workspace.html](../web/workspace.html#L1) | HTML | 85449 | 1093 | جرد الملف + معرفات HTML والرموز داخل script/style |
+| FILE-2C8F288796 | واجهة الويب | [web/workspace.html](../web/workspace.html#L1) | HTML | 85609 | 1093 | جرد الملف + معرفات HTML والرموز داخل script/style |
 
 ## تعريفات Python من AST
 
@@ -2353,6 +2353,9 @@
 | [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L191) | دالة | test_discovery_without_optional_approval_skips_reddit_oauth_but_keeps_public_rss.fake_request | لا توجد Docstring. | ناقص | 191 | [SRC-E3EEC2014A-L000191](../tests/test_workspace_discovery.py#L191) |
 | [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L217) | دالة | test_discovery_source_storage_rejects_non_public_hosts | لا توجد Docstring. | ناقص | 217 | [SRC-E3EEC2014A-L000217](../tests/test_workspace_discovery.py#L217) |
 | [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L229) | دالة | test_discovery_source_storage_accepts_public_http_source | لا توجد Docstring. | ناقص | 229 | [SRC-E3EEC2014A-L000229](../tests/test_workspace_discovery.py#L229) |
+| [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L241) | دالة | _discovery_action_handler | لا توجد Docstring. | ناقص | 241 | [SRC-E3EEC2014A-L000241](../tests/test_workspace_discovery.py#L241) |
+| [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L251) | دالة | test_discovery_search_failure_restores_action_and_announces_an_error | لا توجد Docstring. | ناقص | 251 | [SRC-E3EEC2014A-L000251](../tests/test_workspace_discovery.py#L251) |
+| [tests/test_workspace_discovery.py](../tests/test_workspace_discovery.py#L262) | دالة | test_discovery_result_survives_history_refresh_failure | لا توجد Docstring. | ناقص | 262 | [SRC-E3EEC2014A-L000262](../tests/test_workspace_discovery.py#L262) |
 | [tests/test_workspace_ui_regressions.py](../tests/test_workspace_ui_regressions.py#L7) | متغير/ثابت Python | ROOT | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 7 | [SRC-F7BF7F2B46-L000007](../tests/test_workspace_ui_regressions.py#L7) |
 | [tests/test_workspace_ui_regressions.py](../tests/test_workspace_ui_regressions.py#L10) | دالة | inline_script | لا توجد Docstring. | ناقص | 10 | [SRC-F7BF7F2B46-L000010](../tests/test_workspace_ui_regressions.py#L10) |
 | [tests/test_workspace_ui_regressions.py](../tests/test_workspace_ui_regressions.py#L17) | دالة | function_source | لا توجد Docstring. | ناقص | 17 | [SRC-F7BF7F2B46-L000017](../tests/test_workspace_ui_regressions.py#L17) |
