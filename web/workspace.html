@@ -847,7 +847,7 @@ function renderDiscovery(){
   const status=make("p","profile-note");status.setAttribute("role","status");status.setAttribute("aria-live","polite");
   const run=action("بدء اكتشاف الطلب","primary",async()=>{
    run.disabled=true;run.setAttribute("aria-busy","true");state.activeProfileId=profileSelect.value;
-   status.className="profile-note";status.textContent="جارٍ البحث عن إشارات الطلب؛ ستظل النتائج السابقة متاحة حتى تكتمل الجولة الجديدة.";
+   status.setAttribute("role","status");status.setAttribute("aria-live","polite");status.className="profile-note";status.textContent="جارٍ البحث عن إشارات الطلب؛ ستظل النتائج السابقة متاحة حتى تكتمل الجولة الجديدة.";
    try{
     const savedRun=await api("/api/discoveries",{method:"POST",body:{profile_id:profileSelect.value,allow_optional_providers:optional.checked}});
     state.activeDiscovery=savedRun;
@@ -856,7 +856,7 @@ function renderDiscovery(){
     renderDiscovery();
     if(refreshWarning){const warning=make("p","auth-error",refreshWarning);warning.setAttribute("role","alert");$("viewRoot").append(warning)}
    }catch(error){
-    status.className="auth-error";status.textContent="تعذر تشغيل الاكتشاف: "+escapeMessage(error.message)+" يمكنك المحاولة مجددًا. لم تُحذف النتائج السابقة.";
+    status.setAttribute("role","alert");status.setAttribute("aria-live","assertive");status.className="auth-error";status.textContent="تعذر تشغيل الاكتشاف: "+escapeMessage(error.message)+" يمكنك المحاولة مجددًا. لم تُحذف النتائج السابقة.";
    }finally{
     run.disabled=false;run.removeAttribute("aria-busy");
    }
