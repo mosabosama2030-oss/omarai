@@ -266,5 +266,5 @@ def test_discovery_result_survives_history_refresh_failure():
     assert 'let refreshWarning=""' in handler
     assert "try{await loadDiscoveryRuns()}catch(historyError)" in handler
     assert handler.index("state.activeDiscovery=savedRun") < handler.index("renderDiscovery()")
-    assert "حُفظت نتيجة البحث، لكن تعذر تحديث سجل عمليات الاكتشاف" in handler
+    assert "حُفظت نتيجة البحث، لكن تعذر تحديث سجل العمليات" in handler
     assert "warning.setAttribute(\"role\",\"status\")" in handler
