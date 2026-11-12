@@ -4,7 +4,7 @@
 
 - الصفحة: **031**
 - سجلات الأسطر: **800**
-- النطاق: SRC-D17CE3D12F-L000759 إلى SRC-8872CF2B16-L000122
+- النطاق: SRC-D17CE3D12F-L000688 إلى SRC-8872CF2B16-L000051
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,77 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-D17CE3D12F-L000688](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L688) | 688 | `"2. MUST استخدام إعدادات TLS موثوقة للواجهات العامة، وعدم تجاوز تحقق الشهادة في الإنتاج."` | — |
+| [SRC-D17CE3D12F-L000689](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L689) | 689 | `"3. SHOULD الاستفادة من CDN أو التخزين المؤقت على الحافة للملفات العامة والثابتة فقط عندما تحقق قيمة؛ لا تُخزن ردود خاصة في cache عام."` | — |
+| [SRC-D17CE3D12F-L000690](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L690) | 690 | `"4. MUST تمييز المحتوى العام القابل للتخزين عن ردود المستخدم والجلسات والبيانات الحساسة، مع رؤوس cache ملائمة."` | — |
+| [SRC-D17CE3D12F-L000691](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L691) | 691 | `"5. SHOULD إضافة سياسة Content Security Policy وسياسات متصفح دفاعية مناسبة لطبيعة الواجهة، بعد اختبار عدم كسر الوظائف."` | — |
+| [SRC-D17CE3D12F-L000692](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L692) | 692 | `"6. MUST حماية الطلبات التي تغير الحالة من CSRF عندما تعتمد المصادقة على cookies، مع إعدادات cookie مناسبة مثل Secure وHttpOnly وSameSite وفق الحالة."` | — |
+| [SRC-D17CE3D12F-L000693](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L693) | 693 | `"7. MUST ألا يُعرض HTML أو SVG أو روابط قابلة للتنفيذ من مصدر خارجي دون تعقيم وسياسة آمنة؛ والأفضل إبقاء المحتوى نصًا غير نشط."` | — |
+| [SRC-D17CE3D12F-L000694](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L694) | 694 | `"8. MUST التحقق من نوع المحتوى وطول الرد قبل التحليل، ومعالجة ملفات مضغوطة أو ردود ضخمة بطريقة تمنع استنزاف الموارد."` | — |
+| [SRC-D17CE3D12F-L000695](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L695) | 695 | `"9. SHOULD فرض حدود على اتصالات الشبكة المفتوحة والانتظار وحجم الردود والتحويلات."` | — |
+| [SRC-D17CE3D12F-L000696](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L696) | 696 | `"10. MUST حماية الروابط التي يراها المستخدم من الالتباس بين النص الظاهر والنطاق الحقيقي، خاصة مع أسماء نطاقات متشابهة أو أحرف Unicode المضللة."` | — |
+| [SRC-D17CE3D12F-L000697](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L697) | 697 | `"11. SHOULD اختبار الواجهة على شبكة بطيئة وانقطاع مفاجئ وانتهاء الجلسة ووجود مزود غير متاح."` | — |
+| [SRC-D17CE3D12F-L000698](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L698) | 698 | `"12. MUST ألا يُفسر نجاح TLS أو وصول HTTP على أنه دليل لصحة محتوى المصدر."` | — |
+| [SRC-D17CE3D12F-L000699](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L699) | 699 | `""` | — |
+| [SRC-D17CE3D12F-L000700](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L700) | 700 | `"## 47. مكافحة الإساءة والطلبات المؤتمتة واستنزاف الموارد"` | — |
+| [SRC-D17CE3D12F-L000701](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L701) | 701 | `""` | — |
+| [SRC-D17CE3D12F-L000702](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L702) | 702 | `"1. MUST تحليل طرق إساءة الاستخدام التي قد تستهلك حصص البحث أو النماذج أو التخزين، بما فيها loops الآلية وإعادة الطلب وتعدد الحسابات غير الطبيعي."` | — |
+| [SRC-D17CE3D12F-L000703](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L703) | 703 | `"2. MUST وضع حدود متدرجة للطلبات مرتفعة الكلفة، ورفض أو تخفيض الخدمة بوضوح عند تجاوز الحد."` | — |
+| [SRC-D17CE3D12F-L000704](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L704) | 704 | `"3. SHOULD تمييز الزيارات الطبيعية من الأنماط غير الطبيعية عبر إشارات محدودة ومحترمة للخصوصية، مع تجنب جمع بيانات زائدة."` | — |
+| [SRC-D17CE3D12F-L000705](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L705) | 705 | `"4. MUST ألا يُعتمد على عنوان IP وحده كهوية أو آلية عدالة؛ قد يشترك مستخدمون كثيرون في عنوان واحد أو تتغير العناوين."` | — |
+| [SRC-D17CE3D12F-L000706](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L706) | 706 | `"5. SHOULD توفير حد يومي/فترّي أو ميزانية لكل مستخدم أو جلسة عند انطباقها، مع حماية من إعادة ضبط العدادات بسهولة."` | — |
+| [SRC-D17CE3D12F-L000707](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L707) | 707 | `"6. MUST وجود ضوابط متناسبة لمنع denial of service على المسارات المكلفة: سقف حجم، مهلة، حد تزامن، قائمة انتظار محدودة، وحدود للعمليات الخارجية."` | — |
+| [SRC-D17CE3D12F-L000708](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L708) | 708 | `"7. SHOULD إيقاف القدرة المتضررة أو الموفر المستنزف عبر circuit breaker أو إعداد kill switch."` | — |
+| [SRC-D17CE3D12F-L000709](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L709) | 709 | `"8. MUST ألا تُستخدم CAPTCHA أو المراقبة الشديدة تلقائيًا دون موازنة الوصولية والخصوصية والمخاطر."` | — |
+| [SRC-D17CE3D12F-L000710](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L710) | 710 | `"9. MUST توثيق حدود الحماية التي توفرها منصة الاستضافة نفسها؛ لا يُفترض أن Omarai قادر على امتصاص هجوم حجمي كبير إذا كانت الاستضافة لا توفر ذلك."` | — |
+| [SRC-D17CE3D12F-L000711](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L711) | 711 | `"10. MUST عدم الادعاء بحماية DDoS على مستوى الشبكة دون خدمة وشواهد فعلية؛ الضوابط داخل التطبيق لا تعوض سعة الحافة ومزود الشبكة."` | — |
+| [SRC-D17CE3D12F-L000712](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L712) | 712 | `"11. SHOULD تضمين إساءة استخدام الوكلاء والموفرات ضمن مراقبة الكلفة والحوادث."` | — |
+| [SRC-D17CE3D12F-L000713](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L713) | 713 | `"12. MUST عدم السماح لمستخدم غير موثق بتشغيل أعمال ضخمة أو تكرارية بلا حصص واضحة."` | — |
+| [SRC-D17CE3D12F-L000714](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L714) | 714 | `""` | — |
+| [SRC-D17CE3D12F-L000715](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L715) | 715 | `"## 48. تجربة المطوّر والمسارات القياسية الآمنة (Developer Experience / Paved Roads)"` | — |
+| [SRC-D17CE3D12F-L000716](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L716) | 716 | `""` | — |
+| [SRC-D17CE3D12F-L000717](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L717) | 717 | `"المنصة الناضجة تجعل المسار الصحيح أسهل من المسار الخاطئ، دون إجبار المشروع الصغير على بناء منصة داخلية مستقلة."` | — |
+| [SRC-D17CE3D12F-L000718](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L718) | 718 | `""` | — |
+| [SRC-D17CE3D12F-L000719](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L719) | 719 | `"1. SHOULD توفير مسار موثق من تعديل الكود إلى الاختبار إلى المراجعة إلى النشر، بأوامر ثابتة قدر الإمكان."` | — |
+| [SRC-D17CE3D12F-L000720](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L720) | 720 | `"2. SHOULD وجود ملفات إعداد نموذجية خالية من الأسرار، ورسائل خطأ واضحة عند غياب المتطلبات."` | — |
+| [SRC-D17CE3D12F-L000721](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L721) | 721 | `"3. MUST أن تكون تعليمات إنشاء بيئة التطوير والاختبار قابلة للتكرار، مع تثبيت إصدارات أو حدود متوافقة للاعتماديات الأساسية."` | — |
+| [SRC-D17CE3D12F-L000722](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L722) | 722 | `"4. SHOULD تقديم قوالب للمكونات الجديدة تتضمن الحد الأدنى من العقود والاختبارات والسجلات والصلاحيات."` | — |
+| [SRC-D17CE3D12F-L000723](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L723) | 723 | `"5. MUST أن يكون قالب الأداة/الموصل آمنًا افتراضيًا، ولا يمنح صلاحيات واسعة أو يرسل بيانات خاصة تلقائيًا."` | — |
+| [SRC-D17CE3D12F-L000724](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L724) | 724 | `"6. SHOULD تسهيل التشغيل المحلي دون فرض اتصال بموفر مدفوع أو إنترنت عندما يمكن اختبار المنطق بمعزل عنه."` | — |
+| [SRC-D17CE3D12F-L000725](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L725) | 725 | `"7. MUST فصل الاختبارات الحتمية المحلية عن اختبارات الخدمات الحقيقية، وشرح متطلبات الأخيرة."` | — |
+| [SRC-D17CE3D12F-L000726](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L726) | 726 | `"8. SHOULD تقليل زمن feedback عبر تشغيل lint والاختبارات الصغيرة على كل تغيير، وترك الاختبارات الثقيلة لمسار مناسب."` | — |
+| [SRC-D17CE3D12F-L000727](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L727) | 727 | `"9. MUST ألا يتطلب تشغيل المشروع معرفة خطوات غير موثقة أو تعديل أسرار داخل المصدر."` | — |
+| [SRC-D17CE3D12F-L000728](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L728) | 728 | `"10. SHOULD استخدام توثيق ذاتي للخدمات والواجهات والمقاييس، مع تجنب إنشاء بوابة مطور كاملة قبل أن يكون حجم المكونات يبررها."` | — |
+| [SRC-D17CE3D12F-L000729](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L729) | 729 | `"11. MUST الحفاظ على القدرة على تطوير Omarai من أدوات بسيطة، مع إمكانية ترقية المسار إلى CI/CD أكثر أتمتة دون إعادة كتابة بنية المشروع."` | — |
+| [SRC-D17CE3D12F-L000730](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L730) | 730 | `"12. SHOULD قياس الاحتكاك المتكرر للمطورين وتحويل الخطوات اليدوية المعرضة للخطأ إلى فحوص آلية تدريجيًا."` | — |
+| [SRC-D17CE3D12F-L000731](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L731) | 731 | `""` | — |
+| [SRC-D17CE3D12F-L000732](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L732) | 732 | `"## 49. الحوكمة القانونية والتراخيص وسياسة المصادر المفتوحة"` | — |
+| [SRC-D17CE3D12F-L000733](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L733) | 733 | `""` | — |
+| [SRC-D17CE3D12F-L000734](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L734) | 734 | `"1. MUST مراجعة تراخيص الاعتماديات والمكونات والبيانات التي يُعاد توزيعها أو تضمينها، وفق شروط الاستخدام الفعلية."` | — |
+| [SRC-D17CE3D12F-L000735](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L735) | 735 | `"2. MUST عدم إدراج نصوص أو بيانات أو نماذج أو ملفات ليست حقوق استخدامها واضحة في artifact منشور."` | — |
+| [SRC-D17CE3D12F-L000736](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L736) | 736 | `"3. SHOULD الاحتفاظ بقائمة للاعتماديات المهمة ومصادرها وتراخيصها والتنبيهات المتعلقة بها."` | — |
+| [SRC-D17CE3D12F-L000737](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L737) | 737 | `"4. MUST مراجعة شروط استخدام موفري النماذج والبحث بشأن الاحتفاظ بالبيانات والاستخدام التجاري وحدود الحصص والتوزيع، عند اختيار الموفر وتشغيله."` | — |
+| [SRC-D17CE3D12F-L000738](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L738) | 738 | `"5. MUST عدم افتراض أن المحتوى المتاح عبر الويب خالٍ من حقوق النشر أو أن الوصول إليه يعني السماح بكل إعادة استخدام."` | — |
+| [SRC-D17CE3D12F-L000739](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L739) | 739 | `"6. SHOULD توضيح نطاق مسؤولية Omarai ومحدودية الإجابات وإمكانية الخطأ للمستخدمين بما يناسب المخاطر وطبيعة المنتج."` | — |
+| [SRC-D17CE3D12F-L000740](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L740) | 740 | `"7. MUST عدم تقديم المشورة على أنها بديل مهني مؤهل في المجالات عالية الأثر دون القيود والتحقق المناسبين."` | — |
+| [SRC-D17CE3D12F-L000741](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L741) | 741 | `"8. SHOULD وضع سياسة إفصاح أمني للمشروع إذا أصبح مستعملًا من جمهور خارجي أو توجد بيانات مهمة معرضة."` | — |
+| [SRC-D17CE3D12F-L000742](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L742) | 742 | `"9. MUST تحديد طريقة الإبلاغ عن الثغرات والجهة المسؤولة عن استلامها، ولو كانت قناة واحدة بسيطة في المرحلة الأولى."` | — |
+| [SRC-D17CE3D12F-L000743](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L743) | 743 | `"10. MUST تقييم شروط نقل البيانات عبر الحدود والالتزامات القانونية التي تنطبق فعليًا على السوق والبيانات؛ لا يتم تبني استنتاجات قانونية عامة دون فحص."` | — |
+| [SRC-D17CE3D12F-L000744](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L744) | 744 | `"11. SHOULD حفظ NOTICE/attribution عند الحاجة، وحذف المكونات التي لا تتوافق تراخيصها مع طريقة الاستخدام المقصودة."` | — |
+| [SRC-D17CE3D12F-L000745](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L745) | 745 | `"12. MUST عدم الادعاء بالشهادة أو المطابقة القانونية بناءً على وجود هذه القائمة."` | — |
+| [SRC-D17CE3D12F-L000746](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L746) | 746 | `""` | — |
+| [SRC-D17CE3D12F-L000747](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L747) | 747 | `"## 50. حالة الخدمة والتواصل والثقة مع المستخدم"` | — |
+| [SRC-D17CE3D12F-L000748](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L748) | 748 | `""` | — |
+| [SRC-D17CE3D12F-L000749](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L749) | 749 | `"1. SHOULD أن يكون هناك وصف واضح لما يعمل وما لا يعمل في النسخة الحالية، دون خلط القدرات المخططة بالمثبتة."` | — |
+| [SRC-D17CE3D12F-L000750](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L750) | 750 | `"2. SHOULD توفير رسالة حالة للمشكلات المعروفة أو حالة الطلب في الواجهة، حسب حجم المنتج وطبيعة الاعتمادية."` | — |
+| [SRC-D17CE3D12F-L000751](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L751) | 751 | `"3. MUST أن تخبر رسائل الفشل المستخدم بما يمكنه فعله لاحقًا دون كشف التفاصيل الداخلية أو الأسرار."` | — |
+| [SRC-D17CE3D12F-L000752](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L752) | 752 | `"4. MUST إظهار الفشل الجزئي عندما يؤثر على موثوقية الإجابة؛ لا تعرض إجابة ناقصة وكأن البحث اكتمل."` | — |
+| [SRC-D17CE3D12F-L000753](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L753) | 753 | `"5. SHOULD وجود قناة ملاحظات أو إبلاغ عن الخطأ مع معلومات كافية لتشخيصه، وبأقل قدر من البيانات الخاصة."` | — |
+| [SRC-D17CE3D12F-L000754](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L754) | 754 | `"6. MUST بيان ما إذا كانت المعلومة آنية أم مبنية على مصادر جرى جلبها، متى كان الفرق مهمًا للقرار."` | — |
+| [SRC-D17CE3D12F-L000755](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L755) | 755 | `"7. SHOULD الاحتفاظ بسجل معروف للمشكلات والقيود التي تؤثر في المستخدمين وتحديثه عند إصلاحها."` | — |
+| [SRC-D17CE3D12F-L000756](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L756) | 756 | `"8. MUST عدم وعود الدعم أو التوافر أو حفظ البيانات أو حذفها بأكثر مما توفره البنية فعلًا."` | — |
+| [SRC-D17CE3D12F-L000757](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L757) | 757 | `"9. SHOULD عند وقوع حادث مؤثر، توضيح الأثر المعروف وما تم إصلاحه وما لا يزال مجهولًا."` | — |
+| [SRC-D17CE3D12F-L000758](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L758) | 758 | `"10. MUST عدم إخفاء القيود التشغيلية من خلال لغة تسويقية مبالغ فيها."` | — |
 | [SRC-D17CE3D12F-L000759](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L759) | 759 | `""` | — |
 | [SRC-D17CE3D12F-L000760](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L760) | 760 | `""` | — |
 | [SRC-D17CE3D12F-L000761](../OMARAI_GLOBAL_PLATFORM_ENGINEERING_BASELINE_AR.md#L761) | 761 | `""` | — |
@@ -790,74 +861,3 @@
 | [SRC-8872CF2B16-L000049](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L49) | 49 | ``"- **FIXED_AND_TESTED على رأس PR #154:** تشغيل CI رقم [41957439491](https://github.com/mosabosama2030-oss/omarai/actions/runs/41957439491) سجل 848 اختبارًا ناجحًا على Python 3.11 و848 على Python 3.12، ونجاح Ruff وفحوص الفهرسة وبناء الحاوية وprotected API smoke. لا أملك في هذه اللقطة نتيجة مستقلة مؤكدة لتشغيل push بعد الدمج على `a297...`."`` | — |
 | [SRC-8872CF2B16-L000050](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L50) | 50 | `"- **UNKNOWN / NOT_RUN:** قبول الاستضافة على SnapDeploy وهوية SHA المنشور في 6 نوفمبر؛ لم يُجر فحص حي للمضيف ضمن تحديث الوثائق هذا."` | — |
 | [SRC-8872CF2B16-L000051](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L51) | 51 | `""` | — |
-| [SRC-8872CF2B16-L000052](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L52) | 52 | `"### الدمجات التي أصبحت جزءًا من main"` | — |
-| [SRC-8872CF2B16-L000053](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L53) | 53 | `""` | — |
-| [SRC-8872CF2B16-L000054](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L54) | 54 | `"\| التغيير \| الحالة المثبتة \| ما أصبح موجودًا \| الحدود \|"` | — |
-| [SRC-8872CF2B16-L000055](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L55) | 55 | `"\|---\|---\|---\|---\|"` | — |
-| [SRC-8872CF2B16-L000056](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L56) | 56 | `"\| [PR #145](https://github.com/mosabosama2030-oss/omarai/pull/145) — نواة P0 \| **MERGED — 2 نوفمبر** \| tenant/user/membership، عزل بيانات leads، جلسات متصفح آمنة، تحقق دعم الادعاء بمصدره، حواجز SSRF وRegression Tests \| لا يثبت hosted acceptance أو backup/restore أو multi-replica load أو live provider calls \|"` | — |
-| [SRC-8872CF2B16-L000057](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L57) | 57 | `"\| [PR #151](https://github.com/mosabosama2030-oss/omarai/pull/151) — مساحة العمل \| **MERGED — 4 نوفمبر** \| واجهة عربية RTL وفق Neon Command، مع مسارات وقيود أدوار واضحة \| أربع واجهات تشغيلية فقط؛ الوحدات الأخرى معطلة \|"` | — |
-| [SRC-8872CF2B16-L000058](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L58) | 58 | ``"\| [PR #154](https://github.com/mosabosama2030-oss/omarai/pull/154) — الصفحة الرئيسية \| **MERGED — 5 نوفمبر** \| `/` و`/workspace` لمساحة المبيعات، `/agent` لوكيل البحث، `/leads` للواجهة القديمة \| لم يضف API أو قاعدة بيانات أو موصلات جديدة \|"`` | — |
-| [SRC-8872CF2B16-L000059](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L59) | 59 | `""` | — |
-| [SRC-8872CF2B16-L000060](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L60) | 60 | `"### ما يعمل في مساحة العمل على main"` | — |
-| [SRC-8872CF2B16-L000061](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L61) | 61 | `""` | — |
-| [SRC-8872CF2B16-L000062](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L62) | 62 | `"**VERIFIED بحسب PR #151 و#154 واختبارات CI المرفقة:**"` | — |
-| [SRC-8872CF2B16-L000063](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L63) | 63 | `"- نظرة عامة."` | — |
-| [SRC-8872CF2B16-L000064](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L64) | 64 | `"- صندوق إشارات الطلب الحالي."` | — |
-| [SRC-8872CF2B16-L000065](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L65) | 65 | `"- مسار التأهيل وحالات العملاء/الإشارات."` | — |
-| [SRC-8872CF2B16-L000066](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L66) | 66 | ``"- لقطة حالة النظام من `/api/health` دون probing حي للموصلات."`` | — |
-| [SRC-8872CF2B16-L000067](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L67) | 67 | `""` | — |
-| [SRC-8872CF2B16-L000068](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L68) | 68 | ``"القائمة المرئية تضم 16 وحدة، لكن الوحدات التي لا تملك عقود API خلفية تظل معطلة/قريبًا، ولا يجوز عرضها كأنها مكتملة. مساحة المبيعات هي الصفحة الرئيسية، بينما وكيل البحث العام متاح من `/agent`."`` | — |
-| [SRC-8872CF2B16-L000069](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L69) | 69 | `""` | — |
-| [SRC-8872CF2B16-L000070](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L70) | 70 | `"## 5. عمل قيد المراجعة — لا يُنسب إلى main"` | — |
-| [SRC-8872CF2B16-L000071](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L71) | 71 | `""` | — |
-| [SRC-8872CF2B16-L000072](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L72) | 72 | `"### PR #155 — ملف المنتج واكتشاف نية الشراء"` | — |
-| [SRC-8872CF2B16-L000073](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L73) | 73 | `""` | — |
-| [SRC-8872CF2B16-L000074](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L74) | 74 | `"**الحالة:** OPEN / NOT MERGED عند فحص 6 نوفمبر.  "` | — |
-| [SRC-8872CF2B16-L000075](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L75) | 75 | ``"**الرأس عند آخر تحقق:** `02d2717e05bf053907d3d87dedd166603490df46`.  "`` | — |
-| [SRC-8872CF2B16-L000076](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L76) | 76 | ``"**المقارنة مع `main` عند `a297abd271d48f459effad083a9f424a1499cd39`:** 33 commit ahead و0 behind؛ الفرع مبني مباشرة على خط الأساس المرجعي في هذه اللقطة."`` | — |
-| [SRC-8872CF2B16-L000077](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L77) | 77 | `""` | — |
-| [SRC-8872CF2B16-L000078](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L78) | 78 | `"يتضمن الفرع:"` | — |
-| [SRC-8872CF2B16-L000079](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L79) | 79 | `"- حفظ ملف منتج وسوق مرتبط بالمستأجر."` | — |
-| [SRC-8872CF2B16-L000080](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L80) | 80 | `"- توليد استعلامات طلب شراء من ملف المنتج عبر محرك البحث الحالي."` | — |
-| [SRC-8872CF2B16-L000081](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L81) | 81 | `"- حفظ عمليات اكتشاف محدودة ومصادرها."` | — |
-| [SRC-8872CF2B16-L000082](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L82) | 82 | ``"- فصل `public_demand_signal` عن النتائج المرتبطة فقط."`` | — |
-| [SRC-8872CF2B16-L000083](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L83) | 83 | `"- مراجعة بشرية صريحة قبل حفظ الإشارة في leads."` | — |
-| [SRC-8872CF2B16-L000084](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L84) | 84 | `""` | — |
-| [SRC-8872CF2B16-L000085](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L85) | 85 | ``"**FIXED_AND_TESTED على رأس الفرع فقط:** CI رقم [42191332199](https://github.com/mosabosama2030-oss/omarai/actions/runs/42191332199) سجل 867 اختبارًا ناجحًا على Python 3.11 و867 على Python 3.12، مع Ruff وفحوص الفهرسة وبناء الحاوية وprotected API smoke. اختبارات الموصلات محاكية؛ live search/model acceptance والاختبار البصري بعد النشر = `NOT_RUN`."`` | — |
-| [SRC-8872CF2B16-L000086](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L86) | 86 | `""` | — |
-| [SRC-8872CF2B16-L000087](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L87) | 87 | `"**الحدود المعلنة في PR:** هذا slice أولي، وليس CRM كاملًا أو كل وحدات مساحة العمل. لا يوجد بعد Evidence Ledger مستقل كامل، أو company entity resolution، أو تأهيل شامل للفرص. لا نشر ولا إعداد أسرار ولا مكالمات موفر مدفوعة ضمن الفرع."` | — |
-| [SRC-8872CF2B16-L000088](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L88) | 88 | `""` | — |
-| [SRC-8872CF2B16-L000089](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L89) | 89 | `"### PR #153 — Firecrawl"` | — |
-| [SRC-8872CF2B16-L000090](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L90) | 90 | `""` | — |
-| [SRC-8872CF2B16-L000091](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L91) | 91 | ``"**OPEN / NOT MERGED / DIVERGED:** الفرع `39cccefd142d747d710fc7c96a06d84cbe8e526a` متقدم 3 commits ومتأخر 9 commits عن `main` في المقارنة الحالية. الموصل اختياري ومعطل افتراضيًا، والميزانية الافتراضية صفر وحد الطلب واحد للعملية. لم تُجر مكالمة Firecrawl حية. يجب إعادة مزامنته ومراجعة diff قبل اعتباره مرشحًا للدمج."`` | — |
-| [SRC-8872CF2B16-L000092](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L92) | 92 | `""` | — |
-| [SRC-8872CF2B16-L000093](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L93) | 93 | `"### PR #148 — hosted smoke preflight"` | — |
-| [SRC-8872CF2B16-L000094](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L94) | 94 | `""` | — |
-| [SRC-8872CF2B16-L000095](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L95) | 95 | ``"**OPEN / NOT MERGED / DIVERGED:** الفرع `cf1801771d5cc3dd84081fd5b5d2dedd2fe5c7fd` متقدم 4 commits ومتأخر 56 commit عن `main`. يوثق حاجز preflight آمنًا وتشخيص المسارات، لكنه لا يحل سبب Cloudflare/edge 403؛ السبب الدقيق ما زال `UNKNOWN`. يتطلب إعادة مزامنة ومراجعة قبل أي قرار."`` | — |
-| [SRC-8872CF2B16-L000096](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L96) | 96 | `""` | — |
-| [SRC-8872CF2B16-L000097](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L97) | 97 | `"## 6. المتبقي حسب الأولوية"` | — |
-| [SRC-8872CF2B16-L000098](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L98) | 98 | `""` | — |
-| [SRC-8872CF2B16-L000099](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L99) | 99 | `"### P0 — لا تتجاوزها قبل الاستخدام التجاري الحقيقي"` | — |
-| [SRC-8872CF2B16-L000100](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L100) | 100 | ``"- قبول الاستضافة وإثبات `build.sha` المنشور مقابل SHA المعتمد."`` | — |
-| [SRC-8872CF2B16-L000101](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L101) | 101 | `"- اختبار tenant isolation عمليًا على المضيف، بما فيه رفض cross-tenant، بعد التحقق من هوية البيئة."` | — |
-| [SRC-8872CF2B16-L000102](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L102) | 102 | `"- إثبات دوام SQLite على volume فعلي واختبار backup/restore قبل تخزين بيانات عملاء لا تعوض."` | — |
-| [SRC-8872CF2B16-L000103](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L103) | 103 | `"- اختبار مسارات المصادقة والصلاحيات والإبطال في بيئة مستهدفة، لا CI فقط."` | — |
-| [SRC-8872CF2B16-L000104](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L104) | 104 | `"- الحفاظ على بوابة دعم الادعاء بالمصدر، ورفض ادعاءات لا يدعمها المصدر المحدد."` | — |
-| [SRC-8872CF2B16-L000105](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L105) | 105 | `""` | — |
-| [SRC-8872CF2B16-L000106](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L106) | 106 | `"### P1 — اكتمال الأساس التشغيلي والمنتجي"` | — |
-| [SRC-8872CF2B16-L000107](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L107) | 107 | ``"- تقييم آمن لمعمارية خادم HTTP الحالي `http.server` وخطة انتقال مناسبة عند الحاجة."`` | — |
-| [SRC-8872CF2B16-L000108](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L108) | 108 | `"- إثبات حدود المعدل والمهل والتزامن والفشل على المضيف، لا افتراض سعة إنتاجية."` | — |
-| [SRC-8872CF2B16-L000109](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L109) | 109 | `"- تثبيت مجموعة عربية مرجعية لنية الشراء والاحتياج والنفي والإعلانات المنتهية وتنوع القطاعات، مع مراجعة بشرية."` | — |
-| [SRC-8872CF2B16-L000110](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L110) | 110 | `"- استكمال ملف المنتج/السوق والتصنيف والتأهيل على أساس أدلة، بعد مراجعة ودمج التغيير المناسب."` | — |
-| [SRC-8872CF2B16-L000111](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L111) | 111 | `"- التحقق من تجربة RTL على أجهزة ومتصفحات فعلية ومراجعة WCAG اليدوية."` | — |
-| [SRC-8872CF2B16-L000112](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L112) | 112 | `""` | — |
-| [SRC-8872CF2B16-L000113](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L113) | 113 | `"### P2 — التوسع بعد إثبات الأساس"` | — |
-| [SRC-8872CF2B16-L000114](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L114) | 114 | `"- موصلات اختيارية مثل Firecrawl بعد إعادة مزامنة PR ومراجعة الأمن والتكلفة."` | — |
-| [SRC-8872CF2B16-L000115](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L115) | 115 | `"- توسيع قطاعات ومصادر البحث وفق نتائج عينة تجارية مقاسة، لا بعدد الموصلات."` | — |
-| [SRC-8872CF2B16-L000116](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L116) | 116 | `"- وحدات CRM المتقدمة، Evidence Ledger المستقل، entity resolution، المراقبة المجدولة، والمهام؛ لكل منها عقد وبيانات وصلاحيات واختبارات قبل التفعيل."` | — |
-| [SRC-8872CF2B16-L000117](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L117) | 117 | `""` | — |
-| [SRC-8872CF2B16-L000118](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L118) | 118 | `"## 7. بوابات الإفراج والاختبار"` | — |
-| [SRC-8872CF2B16-L000119](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L119) | 119 | `""` | — |
-| [SRC-8872CF2B16-L000120](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L120) | 120 | ``"- لا تُعتبر `/api/health` أو حالة تكوين المفتاح إثباتًا للاتصال الحي."`` | — |
-| [SRC-8872CF2B16-L000121](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L121) | 121 | `"- لا يُرسل اختبار بحث أو نموذج حي قد يستهلك حصة/رصيدًا إلا بموافقة بشرية صريحة على نطاقه."` | — |
-| [SRC-8872CF2B16-L000122](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L122) | 122 | `"- اختبارات Mock تثبت تعامل الكود مع ردود محاكية، ولا تثبت نجاح الموفر أو جودته الحية."` | — |

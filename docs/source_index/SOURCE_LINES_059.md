@@ -4,9 +4,78 @@
 
 - الصفحة: **059**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AC9D8384E8-L000067 إلى SRC-AFEDC2645A-L000341
+- النطاق: SRC-86913A3106-L000243 إلى SRC-AFEDC2645A-L000215
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-86913A3106 — [tests/test_search_relevance_mixed_results.py](../../tests/test_search_relevance_mixed_results.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-86913A3106-L000243](../../tests/test_search_relevance_mixed_results.py#L243) | 243 | `"    response = httpx.Response(status_code, request=request)"` | — |
+| [SRC-86913A3106-L000244](../../tests/test_search_relevance_mixed_results.py#L244) | 244 | `"    error = httpx.HTTPStatusError("` | — |
+| [SRC-86913A3106-L000245](../../tests/test_search_relevance_mixed_results.py#L245) | 245 | `"        \"provider returned a non-success status\","` | — |
+| [SRC-86913A3106-L000246](../../tests/test_search_relevance_mixed_results.py#L246) | 246 | `"        request=request,"` | — |
+| [SRC-86913A3106-L000247](../../tests/test_search_relevance_mixed_results.py#L247) | 247 | `"        response=response,"` | — |
+| [SRC-86913A3106-L000248](../../tests/test_search_relevance_mixed_results.py#L248) | 248 | `"    )"` | — |
+| [SRC-86913A3106-L000249](../../tests/test_search_relevance_mixed_results.py#L249) | 249 | `""` | — |
+| [SRC-86913A3106-L000250](../../tests/test_search_relevance_mixed_results.py#L250) | 250 | `"    status, detail = WebAgent._classify_provider_exception(error)"` | — |
+| [SRC-86913A3106-L000251](../../tests/test_search_relevance_mixed_results.py#L251) | 251 | `""` | — |
+| [SRC-86913A3106-L000252](../../tests/test_search_relevance_mixed_results.py#L252) | 252 | `"    assert status == expected_status"` | — |
+| [SRC-86913A3106-L000253](../../tests/test_search_relevance_mixed_results.py#L253) | 253 | `"    assert str(status_code) in detail"` | — |
+| [SRC-86913A3106-L000254](../../tests/test_search_relevance_mixed_results.py#L254) | 254 | `"    assert \"provider.example\" not in detail"` | — |
+| [SRC-86913A3106-L000255](../../tests/test_search_relevance_mixed_results.py#L255) | 255 | `""` | — |
+| [SRC-86913A3106-L000256](../../tests/test_search_relevance_mixed_results.py#L256) | 256 | `""` | — |
+| [SRC-86913A3106-L000257](../../tests/test_search_relevance_mixed_results.py#L257) | 257 | `"def test_httpx_timeout_and_decoding_errors_are_not_reported_as_generic_failures():"` | — |
+| [SRC-86913A3106-L000258](../../tests/test_search_relevance_mixed_results.py#L258) | 258 | `"    request = httpx.Request(\"GET\", \"https://provider.example/search\")"` | — |
+| [SRC-86913A3106-L000259](../../tests/test_search_relevance_mixed_results.py#L259) | 259 | `""` | — |
+| [SRC-86913A3106-L000260](../../tests/test_search_relevance_mixed_results.py#L260) | 260 | `"    timeout_status, _ = WebAgent._classify_provider_exception("` | — |
+| [SRC-86913A3106-L000261](../../tests/test_search_relevance_mixed_results.py#L261) | 261 | `"        httpx.ReadTimeout(\"provider timed out\", request=request)"` | — |
+| [SRC-86913A3106-L000262](../../tests/test_search_relevance_mixed_results.py#L262) | 262 | `"    )"` | — |
+| [SRC-86913A3106-L000263](../../tests/test_search_relevance_mixed_results.py#L263) | 263 | `"    decoding_status, _ = WebAgent._classify_provider_exception("` | — |
+| [SRC-86913A3106-L000264](../../tests/test_search_relevance_mixed_results.py#L264) | 264 | `"        httpx.DecodingError(\"invalid compressed response\")"` | — |
+| [SRC-86913A3106-L000265](../../tests/test_search_relevance_mixed_results.py#L265) | 265 | `"    )"` | — |
+| [SRC-86913A3106-L000266](../../tests/test_search_relevance_mixed_results.py#L266) | 266 | `""` | — |
+| [SRC-86913A3106-L000267](../../tests/test_search_relevance_mixed_results.py#L267) | 267 | `"    assert timeout_status == \"timeout\""` | — |
+| [SRC-86913A3106-L000268](../../tests/test_search_relevance_mixed_results.py#L268) | 268 | `"    assert decoding_status == \"invalid_response\""` | — |
+| [SRC-86913A3106-L000269](../../tests/test_search_relevance_mixed_results.py#L269) | 269 | `""` | — |
+| [SRC-86913A3106-L000270](../../tests/test_search_relevance_mixed_results.py#L270) | 270 | `""` | — |
+| [SRC-86913A3106-L000271](../../tests/test_search_relevance_mixed_results.py#L271) | 271 | `"def test_search_web_overwrites_untrusted_provider_and_query_metadata(monkeypatch):"` | — |
+| [SRC-86913A3106-L000272](../../tests/test_search_relevance_mixed_results.py#L272) | 272 | `"    agent = WebAgent()"` | — |
+| [SRC-86913A3106-L000273](../../tests/test_search_relevance_mixed_results.py#L273) | 273 | `"    dispatched_queries = []"` | — |
+| [SRC-86913A3106-L000274](../../tests/test_search_relevance_mixed_results.py#L274) | 274 | `"    candidate = {"` | — |
+| [SRC-86913A3106-L000275](../../tests/test_search_relevance_mixed_results.py#L275) | 275 | `"        \"title\": \"Central Bank of Egypt official website\","` | — |
+| [SRC-86913A3106-L000276](../../tests/test_search_relevance_mixed_results.py#L276) | 276 | `"        \"url\": \"https://example.com/cbe\","` | — |
+| [SRC-86913A3106-L000277](../../tests/test_search_relevance_mixed_results.py#L277) | 277 | `"        \"snippet\": \"Official Central Bank of Egypt website and monetary policy decisions.\","` | — |
+| [SRC-86913A3106-L000278](../../tests/test_search_relevance_mixed_results.py#L278) | 278 | `"        \"provider\": \"brave_search_api\","` | — |
+| [SRC-86913A3106-L000279](../../tests/test_search_relevance_mixed_results.py#L279) | 279 | `"        \"search_query\": \"tampered query from an untrusted result\","` | — |
+| [SRC-86913A3106-L000280](../../tests/test_search_relevance_mixed_results.py#L280) | 280 | `"    }"` | — |
+| [SRC-86913A3106-L000281](../../tests/test_search_relevance_mixed_results.py#L281) | 281 | `"    for env_name in ("` | — |
+| [SRC-86913A3106-L000282](../../tests/test_search_relevance_mixed_results.py#L282) | 282 | `"        \"DEEPSEEK_SEARCH_API_KEY\","` | — |
+| [SRC-86913A3106-L000283](../../tests/test_search_relevance_mixed_results.py#L283) | 283 | `"        \"BRAVE_SEARCH_API_KEY\","` | — |
+| [SRC-86913A3106-L000284](../../tests/test_search_relevance_mixed_results.py#L284) | 284 | `"        \"TAVILY_API_KEY\","` | — |
+| [SRC-86913A3106-L000285](../../tests/test_search_relevance_mixed_results.py#L285) | 285 | `"    ):"` | — |
+| [SRC-86913A3106-L000286](../../tests/test_search_relevance_mixed_results.py#L286) | 286 | `"        monkeypatch.delenv(env_name, raising=False)"` | — |
+| [SRC-86913A3106-L000287](../../tests/test_search_relevance_mixed_results.py#L287) | 287 | `""` | — |
+| [SRC-86913A3106-L000288](../../tests/test_search_relevance_mixed_results.py#L288) | 288 | `"    def spoofing_provider(query):"` | — |
+| [SRC-86913A3106-L000289](../../tests/test_search_relevance_mixed_results.py#L289) | 289 | `"        dispatched_queries.append(query)"` | — |
+| [SRC-86913A3106-L000290](../../tests/test_search_relevance_mixed_results.py#L290) | 290 | `"        return [dict(candidate)]"` | — |
+| [SRC-86913A3106-L000291](../../tests/test_search_relevance_mixed_results.py#L291) | 291 | `""` | — |
+| [SRC-86913A3106-L000292](../../tests/test_search_relevance_mixed_results.py#L292) | 292 | `"    monkeypatch.setattr(agent, \"_search_duckduckgo_html\", spoofing_provider)"` | — |
+| [SRC-86913A3106-L000293](../../tests/test_search_relevance_mixed_results.py#L293) | 293 | `"    monkeypatch.setattr(agent, \"_search_bing_rss\", lambda _query: [])"` | — |
+| [SRC-86913A3106-L000294](../../tests/test_search_relevance_mixed_results.py#L294) | 294 | `"    monkeypatch.setattr(agent, \"_search_news\", lambda _query: [])"` | — |
+| [SRC-86913A3106-L000295](../../tests/test_search_relevance_mixed_results.py#L295) | 295 | `""` | — |
+| [SRC-86913A3106-L000296](../../tests/test_search_relevance_mixed_results.py#L296) | 296 | `"    results = agent._search_web(\"Central Bank of Egypt official website\")"` | — |
+| [SRC-86913A3106-L000297](../../tests/test_search_relevance_mixed_results.py#L297) | 297 | `""` | — |
+| [SRC-86913A3106-L000298](../../tests/test_search_relevance_mixed_results.py#L298) | 298 | `"    assert len(results) == 1"` | — |
+| [SRC-86913A3106-L000299](../../tests/test_search_relevance_mixed_results.py#L299) | 299 | `"    assert results[0][\"provider\"] == \"duckduckgo_html\""` | — |
+| [SRC-86913A3106-L000300](../../tests/test_search_relevance_mixed_results.py#L300) | 300 | `"    assert results[0][\"provider\"] != candidate[\"provider\"]"` | — |
+| [SRC-86913A3106-L000301](../../tests/test_search_relevance_mixed_results.py#L301) | 301 | `"    assert results[0][\"search_query\"] == dispatched_queries[0]"` | — |
+| [SRC-86913A3106-L000302](../../tests/test_search_relevance_mixed_results.py#L302) | 302 | `"    assert results[0][\"search_query\"] != candidate[\"search_query\"]"` | — |
 ## اختبارات
 
 ### FILE-AC9D8384E8 — [tests/test_semantic_claim_verifier.py](../../tests/test_semantic_claim_verifier.py#L1)
@@ -16,6 +85,72 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AC9D8384E8-L000001](../../tests/test_semantic_claim_verifier.py#L1) | 1 | `"from __future__ import annotations"` | — |
+| [SRC-AC9D8384E8-L000002](../../tests/test_semantic_claim_verifier.py#L2) | 2 | `""` | — |
+| [SRC-AC9D8384E8-L000003](../../tests/test_semantic_claim_verifier.py#L3) | 3 | `"import json"` | — |
+| [SRC-AC9D8384E8-L000004](../../tests/test_semantic_claim_verifier.py#L4) | 4 | `""` | — |
+| [SRC-AC9D8384E8-L000005](../../tests/test_semantic_claim_verifier.py#L5) | 5 | `"import pytest"` | — |
+| [SRC-AC9D8384E8-L000006](../../tests/test_semantic_claim_verifier.py#L6) | 6 | `""` | — |
+| [SRC-AC9D8384E8-L000007](../../tests/test_semantic_claim_verifier.py#L7) | 7 | `"from agents.semantic_claim_verifier import ("` | — |
+| [SRC-AC9D8384E8-L000008](../../tests/test_semantic_claim_verifier.py#L8) | 8 | `"    build_semantic_verification_request,"` | — |
+| [SRC-AC9D8384E8-L000009](../../tests/test_semantic_claim_verifier.py#L9) | 9 | `"    parse_semantic_verification_response,"` | — |
+| [SRC-AC9D8384E8-L000010](../../tests/test_semantic_claim_verifier.py#L10) | 10 | `"    deterministic_claim_screen,"` | — |
+| [SRC-AC9D8384E8-L000011](../../tests/test_semantic_claim_verifier.py#L11) | 11 | `")"` | — |
+| [SRC-AC9D8384E8-L000012](../../tests/test_semantic_claim_verifier.py#L12) | 12 | `"from agents.web_agent import WebAgent"` | — |
+| [SRC-AC9D8384E8-L000013](../../tests/test_semantic_claim_verifier.py#L13) | 13 | `""` | — |
+| [SRC-AC9D8384E8-L000014](../../tests/test_semantic_claim_verifier.py#L14) | 14 | `""` | — |
+| [SRC-AC9D8384E8-L000015](../../tests/test_semantic_claim_verifier.py#L15) | 15 | `"def source(**overrides):"` | — |
+| [SRC-AC9D8384E8-L000016](../../tests/test_semantic_claim_verifier.py#L16) | 16 | `"    value = {"` | — |
+| [SRC-AC9D8384E8-L000017](../../tests/test_semantic_claim_verifier.py#L17) | 17 | `"        \"title\": \"Official report\","` | — |
+| [SRC-AC9D8384E8-L000018](../../tests/test_semantic_claim_verifier.py#L18) | 18 | `"        \"url\": \"https://example.org/report\","` | — |
+| [SRC-AC9D8384E8-L000019](../../tests/test_semantic_claim_verifier.py#L19) | 19 | `"        \"publisher\": \"Example Office\","` | — |
+| [SRC-AC9D8384E8-L000020](../../tests/test_semantic_claim_verifier.py#L20) | 20 | `"        \"published_at\": \"2026-10-30\","` | — |
+| [SRC-AC9D8384E8-L000021](../../tests/test_semantic_claim_verifier.py#L21) | 21 | `"        \"page_fetched\": True,"` | — |
+| [SRC-AC9D8384E8-L000022](../../tests/test_semantic_claim_verifier.py#L22) | 22 | `"        \"page_text\": \"The report states that the system serves 12 facilities.\","` | — |
+| [SRC-AC9D8384E8-L000023](../../tests/test_semantic_claim_verifier.py#L23) | 23 | `"        \"snippet\": \"The system serves 12 facilities.\","` | — |
+| [SRC-AC9D8384E8-L000024](../../tests/test_semantic_claim_verifier.py#L24) | 24 | `"    }"` | — |
+| [SRC-AC9D8384E8-L000025](../../tests/test_semantic_claim_verifier.py#L25) | 25 | `"    value.update(overrides)"` | — |
+| [SRC-AC9D8384E8-L000026](../../tests/test_semantic_claim_verifier.py#L26) | 26 | `"    return value"` | — |
+| [SRC-AC9D8384E8-L000027](../../tests/test_semantic_claim_verifier.py#L27) | 27 | `""` | — |
+| [SRC-AC9D8384E8-L000028](../../tests/test_semantic_claim_verifier.py#L28) | 28 | `""` | — |
+| [SRC-AC9D8384E8-L000029](../../tests/test_semantic_claim_verifier.py#L29) | 29 | `"def response(rows):"` | — |
+| [SRC-AC9D8384E8-L000030](../../tests/test_semantic_claim_verifier.py#L30) | 30 | `"    return json.dumps({\"claims\": rows}, ensure_ascii=False)"` | — |
+| [SRC-AC9D8384E8-L000031](../../tests/test_semantic_claim_verifier.py#L31) | 31 | `""` | — |
+| [SRC-AC9D8384E8-L000032](../../tests/test_semantic_claim_verifier.py#L32) | 32 | `""` | — |
+| [SRC-AC9D8384E8-L000033](../../tests/test_semantic_claim_verifier.py#L33) | 33 | `"def row(segment_id=\"S001\", assessment=\"supported\", supporting=None, contradicting=None):"` | — |
+| [SRC-AC9D8384E8-L000034](../../tests/test_semantic_claim_verifier.py#L34) | 34 | `"    return {"` | — |
+| [SRC-AC9D8384E8-L000035](../../tests/test_semantic_claim_verifier.py#L35) | 35 | `"        \"segment_id\": segment_id,"` | — |
+| [SRC-AC9D8384E8-L000036](../../tests/test_semantic_claim_verifier.py#L36) | 36 | `"        \"assessment\": assessment,"` | — |
+| [SRC-AC9D8384E8-L000037](../../tests/test_semantic_claim_verifier.py#L37) | 37 | `"        \"supporting_source_indexes\": [1] if supporting is None and assessment == \"supported\" else (supporting or []),"` | — |
+| [SRC-AC9D8384E8-L000038](../../tests/test_semantic_claim_verifier.py#L38) | 38 | `"        \"contradicting_source_indexes\": contradicting or [],"` | — |
+| [SRC-AC9D8384E8-L000039](../../tests/test_semantic_claim_verifier.py#L39) | 39 | `"    }"` | — |
+| [SRC-AC9D8384E8-L000040](../../tests/test_semantic_claim_verifier.py#L40) | 40 | `""` | — |
+| [SRC-AC9D8384E8-L000041](../../tests/test_semantic_claim_verifier.py#L41) | 41 | `""` | — |
+| [SRC-AC9D8384E8-L000042](../../tests/test_semantic_claim_verifier.py#L42) | 42 | `"def prepared(answer=\"The system serves 12 facilities [source 1].\", sources=None):"` | — |
+| [SRC-AC9D8384E8-L000043](../../tests/test_semantic_claim_verifier.py#L43) | 43 | `"    return build_semantic_verification_request("` | — |
+| [SRC-AC9D8384E8-L000044](../../tests/test_semantic_claim_verifier.py#L44) | 44 | `"        \"How many facilities does the system serve?\","` | — |
+| [SRC-AC9D8384E8-L000045](../../tests/test_semantic_claim_verifier.py#L45) | 45 | `"        answer,"` | — |
+| [SRC-AC9D8384E8-L000046](../../tests/test_semantic_claim_verifier.py#L46) | 46 | `"        sources if sources is not None else [source()],"` | — |
+| [SRC-AC9D8384E8-L000047](../../tests/test_semantic_claim_verifier.py#L47) | 47 | `"    )"` | — |
+| [SRC-AC9D8384E8-L000048](../../tests/test_semantic_claim_verifier.py#L48) | 48 | `""` | — |
+| [SRC-AC9D8384E8-L000049](../../tests/test_semantic_claim_verifier.py#L49) | 49 | `""` | — |
+| [SRC-AC9D8384E8-L000050](../../tests/test_semantic_claim_verifier.py#L50) | 50 | `"def test_semantic_assessment_accepts_direct_support_from_exact_cited_source():"` | — |
+| [SRC-AC9D8384E8-L000051](../../tests/test_semantic_claim_verifier.py#L51) | 51 | `"    request = prepared()"` | — |
+| [SRC-AC9D8384E8-L000052](../../tests/test_semantic_claim_verifier.py#L52) | 52 | `"    result = parse_semantic_verification_response("` | — |
+| [SRC-AC9D8384E8-L000053](../../tests/test_semantic_claim_verifier.py#L53) | 53 | `"        response([row()]), request"` | — |
+| [SRC-AC9D8384E8-L000054](../../tests/test_semantic_claim_verifier.py#L54) | 54 | `"    )"` | — |
+| [SRC-AC9D8384E8-L000055](../../tests/test_semantic_claim_verifier.py#L55) | 55 | `"    assert result[\"status\"] == \"completed_all_claims_supported\""` | — |
+| [SRC-AC9D8384E8-L000056](../../tests/test_semantic_claim_verifier.py#L56) | 56 | `"    assert result[\"withhold_answer\"] is False"` | — |
+| [SRC-AC9D8384E8-L000057](../../tests/test_semantic_claim_verifier.py#L57) | 57 | `"    assert result[\"factual_supported_count\"] == 1"` | — |
+| [SRC-AC9D8384E8-L000058](../../tests/test_semantic_claim_verifier.py#L58) | 58 | `"    assert result[\"fact_correctness\"] == \"not_verified\""` | — |
+| [SRC-AC9D8384E8-L000059](../../tests/test_semantic_claim_verifier.py#L59) | 59 | `""` | — |
+| [SRC-AC9D8384E8-L000060](../../tests/test_semantic_claim_verifier.py#L60) | 60 | `""` | — |
+| [SRC-AC9D8384E8-L000061](../../tests/test_semantic_claim_verifier.py#L61) | 61 | `"def test_support_from_uncited_source_is_rejected_even_when_source_is_readable():"` | — |
+| [SRC-AC9D8384E8-L000062](../../tests/test_semantic_claim_verifier.py#L62) | 62 | `"    request = prepared("` | — |
+| [SRC-AC9D8384E8-L000063](../../tests/test_semantic_claim_verifier.py#L63) | 63 | `"        answer=\"The system serves 12 facilities [source 2].\","` | — |
+| [SRC-AC9D8384E8-L000064](../../tests/test_semantic_claim_verifier.py#L64) | 64 | `"        sources=[source(), source(url=\"https://example.net/report\")],"` | — |
+| [SRC-AC9D8384E8-L000065](../../tests/test_semantic_claim_verifier.py#L65) | 65 | `"    )"` | — |
+| [SRC-AC9D8384E8-L000066](../../tests/test_semantic_claim_verifier.py#L66) | 66 | `"    result = parse_semantic_verification_response(response([row()]), request)"` | — |
 | [SRC-AC9D8384E8-L000067](../../tests/test_semantic_claim_verifier.py#L67) | 67 | `"    assert result[\"status\"] == \"not_verifiable\""` | — |
 | [SRC-AC9D8384E8-L000068](../../tests/test_semantic_claim_verifier.py#L68) | 68 | `"    assert result[\"reason\"] == \"support_must_use_same_segment_citations\""` | — |
 | [SRC-AC9D8384E8-L000069](../../tests/test_semantic_claim_verifier.py#L69) | 69 | `"    assert result[\"withhold_answer\"] is True"` | — |
@@ -717,129 +852,3 @@
 | [SRC-AFEDC2645A-L000213](../../tests/test_task_understanding.py#L213) | 213 | `"def test_summary_text_and_page_link_require_different_tools():"` | — |
 | [SRC-AFEDC2645A-L000214](../../tests/test_task_understanding.py#L214) | 214 | `"    pasted = build_task_spec("` | — |
 | [SRC-AFEDC2645A-L000215](../../tests/test_task_understanding.py#L215) | 215 | `"        \"لخص النص التالي: يتناول النص صيانة أجهزة الإنذار وإجراء الاختبار الدوري.\","` | — |
-| [SRC-AFEDC2645A-L000216](../../tests/test_task_understanding.py#L216) | 216 | `"        mode=\"auto\","` | — |
-| [SRC-AFEDC2645A-L000217](../../tests/test_task_understanding.py#L217) | 217 | `"        intent_route=\"MODEL_ONLY\","` | — |
-| [SRC-AFEDC2645A-L000218](../../tests/test_task_understanding.py#L218) | 218 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000219](../../tests/test_task_understanding.py#L219) | 219 | `"    assert pasted[\"constraints\"][\"inline_text_supplied_for_summary\"] is True"` | — |
-| [SRC-AFEDC2645A-L000220](../../tests/test_task_understanding.py#L220) | 220 | `"    assert \"page_fetch\" not in pasted[\"tool_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000221](../../tests/test_task_understanding.py#L221) | 221 | `"    assert \"web_search\" not in pasted[\"tool_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000222](../../tests/test_task_understanding.py#L222) | 222 | `"    linked = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000223](../../tests/test_task_understanding.py#L223) | 223 | `"        \"لخص الصفحة https://example.com/manual\","` | — |
-| [SRC-AFEDC2645A-L000224](../../tests/test_task_understanding.py#L224) | 224 | `"        mode=\"auto\","` | — |
-| [SRC-AFEDC2645A-L000225](../../tests/test_task_understanding.py#L225) | 225 | `"        intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-AFEDC2645A-L000226](../../tests/test_task_understanding.py#L226) | 226 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000227](../../tests/test_task_understanding.py#L227) | 227 | `"    assert \"page_fetch\" in linked[\"tool_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000228](../../tests/test_task_understanding.py#L228) | 228 | `"    assert \"web_search\" in linked[\"tool_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000229](../../tests/test_task_understanding.py#L229) | 229 | `""` | — |
-| [SRC-AFEDC2645A-L000230](../../tests/test_task_understanding.py#L230) | 230 | `""` | — |
-| [SRC-AFEDC2645A-L000231](../../tests/test_task_understanding.py#L231) | 231 | `"def test_output_format_preferences_are_preserved_separately_from_intent():"` | — |
-| [SRC-AFEDC2645A-L000232](../../tests/test_task_understanding.py#L232) | 232 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000233](../../tests/test_task_understanding.py#L233) | 233 | `"        \"قارن الخيارين في جدول مع أمثلة وبالتفصيل وعلى شكل نقاط\","` | — |
-| [SRC-AFEDC2645A-L000234](../../tests/test_task_understanding.py#L234) | 234 | `"        mode=\"deep\","` | — |
-| [SRC-AFEDC2645A-L000235](../../tests/test_task_understanding.py#L235) | 235 | `"        intent_route=\"WEB_DEEP\","` | — |
-| [SRC-AFEDC2645A-L000236](../../tests/test_task_understanding.py#L236) | 236 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000237](../../tests/test_task_understanding.py#L237) | 237 | `"    preferences = spec[\"output_preferences\"]"` | — |
-| [SRC-AFEDC2645A-L000238](../../tests/test_task_understanding.py#L238) | 238 | `"    assert preferences[\"table_requested\"] is True"` | — |
-| [SRC-AFEDC2645A-L000239](../../tests/test_task_understanding.py#L239) | 239 | `"    assert preferences[\"examples_requested\"] is True"` | — |
-| [SRC-AFEDC2645A-L000240](../../tests/test_task_understanding.py#L240) | 240 | `"    assert preferences[\"detailed\"] is True"` | — |
-| [SRC-AFEDC2645A-L000241](../../tests/test_task_understanding.py#L241) | 241 | `"    assert preferences[\"bullets_or_checklist_requested\"] is True"` | — |
-| [SRC-AFEDC2645A-L000242](../../tests/test_task_understanding.py#L242) | 242 | `""` | — |
-| [SRC-AFEDC2645A-L000243](../../tests/test_task_understanding.py#L243) | 243 | `""` | — |
-| [SRC-AFEDC2645A-L000244](../../tests/test_task_understanding.py#L244) | 244 | `"def test_location_matching_avoids_partial_english_word_collision():"` | — |
-| [SRC-AFEDC2645A-L000245](../../tests/test_task_understanding.py#L245) | 245 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000246](../../tests/test_task_understanding.py#L246) | 246 | `"        \"Explain Egyptology as an academic field\","` | — |
-| [SRC-AFEDC2645A-L000247](../../tests/test_task_understanding.py#L247) | 247 | `"        mode=\"auto\","` | — |
-| [SRC-AFEDC2645A-L000248](../../tests/test_task_understanding.py#L248) | 248 | `"        intent_route=\"MODEL_ONLY\","` | — |
-| [SRC-AFEDC2645A-L000249](../../tests/test_task_understanding.py#L249) | 249 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000250](../../tests/test_task_understanding.py#L250) | 250 | `"    assert \"مصر\" not in spec[\"constraints\"][\"explicit_locations\"]"` | — |
-| [SRC-AFEDC2645A-L000251](../../tests/test_task_understanding.py#L251) | 251 | `""` | — |
-| [SRC-AFEDC2645A-L000252](../../tests/test_task_understanding.py#L252) | 252 | `""` | — |
-| [SRC-AFEDC2645A-L000253](../../tests/test_task_understanding.py#L253) | 253 | `"def test_source_policies_keep_orthogonal_research_constraints():"` | — |
-| [SRC-AFEDC2645A-L000254](../../tests/test_task_understanding.py#L254) | 254 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000255](../../tests/test_task_understanding.py#L255) | 255 | `"        \"قارن تجارب ملاك السيارات الكهربائية في مصر اليوم من حيث السعر والاعتمادية\","` | — |
-| [SRC-AFEDC2645A-L000256](../../tests/test_task_understanding.py#L256) | 256 | `"        mode=\"social\","` | — |
-| [SRC-AFEDC2645A-L000257](../../tests/test_task_understanding.py#L257) | 257 | `"        intent_route=\"WEB_DEEP\","` | — |
-| [SRC-AFEDC2645A-L000258](../../tests/test_task_understanding.py#L258) | 258 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000259](../../tests/test_task_understanding.py#L259) | 259 | `"    policies = spec[\"constraints\"][\"source_policies\"]"` | — |
-| [SRC-AFEDC2645A-L000260](../../tests/test_task_understanding.py#L260) | 260 | `"    assert \"current_read_page\" in policies"` | — |
-| [SRC-AFEDC2645A-L000261](../../tests/test_task_understanding.py#L261) | 261 | `"    assert \"public_social_content\" in policies"` | — |
-| [SRC-AFEDC2645A-L000262](../../tests/test_task_understanding.py#L262) | 262 | `"    assert spec[\"constraints\"][\"time_sensitive_request\"] is True"` | — |
-| [SRC-AFEDC2645A-L000263](../../tests/test_task_understanding.py#L263) | 263 | `"    assert spec[\"constraints\"][\"social_evidence_requested\"] is True"` | — |
-| [SRC-AFEDC2645A-L000264](../../tests/test_task_understanding.py#L264) | 264 | `"    assert \"publication_or_update_date\" in spec[\"evidence_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000265](../../tests/test_task_understanding.py#L265) | 265 | `"    assert \"heuristic_classification_is_not_identity_or_truth_verification\" in spec[\"evidence_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000266](../../tests/test_task_understanding.py#L266) | 266 | `""` | — |
-| [SRC-AFEDC2645A-L000267](../../tests/test_task_understanding.py#L267) | 267 | `""` | — |
-| [SRC-AFEDC2645A-L000268](../../tests/test_task_understanding.py#L268) | 268 | `"def test_official_site_request_without_a_target_marks_required_input():"` | — |
-| [SRC-AFEDC2645A-L000269](../../tests/test_task_understanding.py#L269) | 269 | `"    spec = build_task_spec(\"هات الموقع الرسمي\", mode=\"auto\", intent_route=\"WEB_SIMPLE\")"` | — |
-| [SRC-AFEDC2645A-L000270](../../tests/test_task_understanding.py#L270) | 270 | `"    assert spec[\"task_family\"] == \"official_site_lookup\""` | — |
-| [SRC-AFEDC2645A-L000271](../../tests/test_task_understanding.py#L271) | 271 | `"    assert \"official_destination_target_entity\" in spec[\"missing_required_inputs\"]"` | — |
-| [SRC-AFEDC2645A-L000272](../../tests/test_task_understanding.py#L272) | 272 | `"    assert spec[\"requires_clarification\"] is True"` | — |
-| [SRC-AFEDC2645A-L000273](../../tests/test_task_understanding.py#L273) | 273 | `""` | — |
-| [SRC-AFEDC2645A-L000274](../../tests/test_task_understanding.py#L274) | 274 | `""` | — |
-| [SRC-AFEDC2645A-L000275](../../tests/test_task_understanding.py#L275) | 275 | `"def test_official_site_request_with_a_named_target_does_not_require_subject_clarification():"` | — |
-| [SRC-AFEDC2645A-L000276](../../tests/test_task_understanding.py#L276) | 276 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000277](../../tests/test_task_understanding.py#L277) | 277 | `"        \"هات الموقع الرسمي لوزارة الاتصالات في مصر\","` | — |
-| [SRC-AFEDC2645A-L000278](../../tests/test_task_understanding.py#L278) | 278 | `"        mode=\"auto\","` | — |
-| [SRC-AFEDC2645A-L000279](../../tests/test_task_understanding.py#L279) | 279 | `"        intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-AFEDC2645A-L000280](../../tests/test_task_understanding.py#L280) | 280 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000281](../../tests/test_task_understanding.py#L281) | 281 | `"    assert \"official_destination_target_entity\" not in spec[\"missing_required_inputs\"]"` | — |
-| [SRC-AFEDC2645A-L000282](../../tests/test_task_understanding.py#L282) | 282 | `"    assert spec[\"constraints\"][\"official_destination_required\"] is True"` | — |
-| [SRC-AFEDC2645A-L000283](../../tests/test_task_understanding.py#L283) | 283 | `""` | — |
-| [SRC-AFEDC2645A-L000284](../../tests/test_task_understanding.py#L284) | 284 | `""` | — |
-| [SRC-AFEDC2645A-L000285](../../tests/test_task_understanding.py#L285) | 285 | `"def test_summary_without_url_or_text_marks_required_input():"` | — |
-| [SRC-AFEDC2645A-L000286](../../tests/test_task_understanding.py#L286) | 286 | `"    spec = build_task_spec(\"لخص\", mode=\"auto\", intent_route=\"MODEL_ONLY\")"` | — |
-| [SRC-AFEDC2645A-L000287](../../tests/test_task_understanding.py#L287) | 287 | `"    assert \"summary_source_url_or_pasted_text\" in spec[\"missing_required_inputs\"]"` | — |
-| [SRC-AFEDC2645A-L000288](../../tests/test_task_understanding.py#L288) | 288 | `"    assert spec[\"requires_clarification\"] is True"` | — |
-| [SRC-AFEDC2645A-L000289](../../tests/test_task_understanding.py#L289) | 289 | `""` | — |
-| [SRC-AFEDC2645A-L000290](../../tests/test_task_understanding.py#L290) | 290 | `""` | — |
-| [SRC-AFEDC2645A-L000291](../../tests/test_task_understanding.py#L291) | 291 | `"def test_output_preferences_do_not_count_as_competing_intent_hypotheses():"` | — |
-| [SRC-AFEDC2645A-L000292](../../tests/test_task_understanding.py#L292) | 292 | `"    spec = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000293](../../tests/test_task_understanding.py#L293) | 293 | `"        \"قارن الخيارين في جدول مع أمثلة وبالتفصيل\","` | — |
-| [SRC-AFEDC2645A-L000294](../../tests/test_task_understanding.py#L294) | 294 | `"        mode=\"deep\","` | — |
-| [SRC-AFEDC2645A-L000295](../../tests/test_task_understanding.py#L295) | 295 | `"        intent_route=\"WEB_DEEP\","` | — |
-| [SRC-AFEDC2645A-L000296](../../tests/test_task_understanding.py#L296) | 296 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000297](../../tests/test_task_understanding.py#L297) | 297 | `"    families = {row[\"family\"] for row in spec[\"hypothesis_interpretations\"]}"` | — |
-| [SRC-AFEDC2645A-L000298](../../tests/test_task_understanding.py#L298) | 298 | `"    assert \"compare\" in families"` | — |
-| [SRC-AFEDC2645A-L000299](../../tests/test_task_understanding.py#L299) | 299 | `"    assert not any(family.startswith(\"output_\") for family in families)"` | — |
-| [SRC-AFEDC2645A-L000300](../../tests/test_task_understanding.py#L300) | 300 | `"    assert spec[\"ambiguity_status\"] == \"no_strong_lexical_conflict_detected\""` | — |
-| [SRC-AFEDC2645A-L000301](../../tests/test_task_understanding.py#L301) | 301 | `""` | — |
-| [SRC-AFEDC2645A-L000302](../../tests/test_task_understanding.py#L302) | 302 | `""` | — |
-| [SRC-AFEDC2645A-L000303](../../tests/test_task_understanding.py#L303) | 303 | `"@pytest.mark.parametrize("` | — |
-| [SRC-AFEDC2645A-L000304](../../tests/test_task_understanding.py#L304) | 304 | `"    (\"question\", \"family\"),"` | — |
-| [SRC-AFEDC2645A-L000305](../../tests/test_task_understanding.py#L305) | 305 | `"    ["` | — |
-| [SRC-AFEDC2645A-L000306](../../tests/test_task_understanding.py#L306) | 306 | `"        (\"ترجم هذا النص إلى الإنجليزية: Hello world\", \"translation\"),"` | — |
-| [SRC-AFEDC2645A-L000307](../../tests/test_task_understanding.py#L307) | 307 | `"        (\"اكتب بريد إلكتروني للعميل بنبرة مهنية\", \"writing_or_editing\"),"` | — |
-| [SRC-AFEDC2645A-L000308](../../tests/test_task_understanding.py#L308) | 308 | `"        (\"احسب 17 بالمئة من 500\", \"calculation\"),"` | — |
-| [SRC-AFEDC2645A-L000309](../../tests/test_task_understanding.py#L309) | 309 | `"        (\"حلل البيانات في ملف CSV وحدد القيم الناقصة\", \"data_analysis\"),"` | — |
-| [SRC-AFEDC2645A-L000310](../../tests/test_task_understanding.py#L310) | 310 | `"        (\"راجع كود Python الذي يعرض stack trace\", \"coding_or_technical_design\"),"` | — |
-| [SRC-AFEDC2645A-L000311](../../tests/test_task_understanding.py#L311) | 311 | `"        (\"ضع خطة عمل لافتتاح متجر خلال شهر\", \"planning\"),"` | — |
-| [SRC-AFEDC2645A-L000312](../../tests/test_task_understanding.py#L312) | 312 | `"        (\"ما أعراض الإنفلونزا؟\", \"medical_information\"),"` | — |
-| [SRC-AFEDC2645A-L000313](../../tests/test_task_understanding.py#L313) | 313 | `"        (\"ما شروط العقد وفق القانون المصري؟\", \"legal_information\"),"` | — |
-| [SRC-AFEDC2645A-L000314](../../tests/test_task_understanding.py#L314) | 314 | `"        (\"اكتب قصة قصيرة عن رحلة خيالية\", \"creative_generation\"),"` | — |
-| [SRC-AFEDC2645A-L000315](../../tests/test_task_understanding.py#L315) | 315 | `"    ],"` | — |
-| [SRC-AFEDC2645A-L000316](../../tests/test_task_understanding.py#L316) | 316 | `")"` | — |
-| [SRC-AFEDC2645A-L000317](../../tests/test_task_understanding.py#L317) | 317 | `"def test_extended_task_families_cover_non_search_and_specialized_requests(question, family):"` | — |
-| [SRC-AFEDC2645A-L000318](../../tests/test_task_understanding.py#L318) | 318 | `"    spec = build_task_spec(question, mode=\"auto\", intent_route=\"MODEL_ONLY\")"` | — |
-| [SRC-AFEDC2645A-L000319](../../tests/test_task_understanding.py#L319) | 319 | `"    assert spec[\"task_family\"] == family"` | — |
-| [SRC-AFEDC2645A-L000320](../../tests/test_task_understanding.py#L320) | 320 | `"    assert spec[\"classification_is_probability\"] is False"` | — |
-| [SRC-AFEDC2645A-L000321](../../tests/test_task_understanding.py#L321) | 321 | `"    assert spec[\"evidence_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000322](../../tests/test_task_understanding.py#L322) | 322 | `"    assert spec[\"query_strategies\"]"` | — |
-| [SRC-AFEDC2645A-L000323](../../tests/test_task_understanding.py#L323) | 323 | `""` | — |
-| [SRC-AFEDC2645A-L000324](../../tests/test_task_understanding.py#L324) | 324 | `""` | — |
-| [SRC-AFEDC2645A-L000325](../../tests/test_task_understanding.py#L325) | 325 | `"def test_health_and_legal_tasks_attach_domain_specific_caution():"` | — |
-| [SRC-AFEDC2645A-L000326](../../tests/test_task_understanding.py#L326) | 326 | `"    health = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000327](../../tests/test_task_understanding.py#L327) | 327 | `"        \"ما أعراض الإنفلونزا اليوم؟\","` | — |
-| [SRC-AFEDC2645A-L000328](../../tests/test_task_understanding.py#L328) | 328 | `"        mode=\"latest\","` | — |
-| [SRC-AFEDC2645A-L000329](../../tests/test_task_understanding.py#L329) | 329 | `"        intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-AFEDC2645A-L000330](../../tests/test_task_understanding.py#L330) | 330 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000331](../../tests/test_task_understanding.py#L331) | 331 | `"    assert \"authoritative_health_content\" in health[\"constraints\"][\"source_policies\"]"` | — |
-| [SRC-AFEDC2645A-L000332](../../tests/test_task_understanding.py#L332) | 332 | `"    assert \"distinguish_general_health_information_from_personal_diagnosis\" in health[\"evidence_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000333](../../tests/test_task_understanding.py#L333) | 333 | `"    assert \"page_text_successfully_read\" in health[\"evidence_requirements\"]"` | — |
-| [SRC-AFEDC2645A-L000334](../../tests/test_task_understanding.py#L334) | 334 | `""` | — |
-| [SRC-AFEDC2645A-L000335](../../tests/test_task_understanding.py#L335) | 335 | `"    legal = build_task_spec("` | — |
-| [SRC-AFEDC2645A-L000336](../../tests/test_task_understanding.py#L336) | 336 | `"        \"ما نص القانون الحالي المنظم للإيجار في مصر؟\","` | — |
-| [SRC-AFEDC2645A-L000337](../../tests/test_task_understanding.py#L337) | 337 | `"        mode=\"latest\","` | — |
-| [SRC-AFEDC2645A-L000338](../../tests/test_task_understanding.py#L338) | 338 | `"        intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-AFEDC2645A-L000339](../../tests/test_task_understanding.py#L339) | 339 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000340](../../tests/test_task_understanding.py#L340) | 340 | `"    assert \"official_legal_text\" in legal[\"constraints\"][\"source_policies\"]"` | — |
-| [SRC-AFEDC2645A-L000341](../../tests/test_task_understanding.py#L341) | 341 | `"    assert \"identify_jurisdiction_and_effective_date_if_relevant\" in legal[\"evidence_requirements\"]"` | — |
