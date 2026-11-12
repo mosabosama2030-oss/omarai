@@ -4,7 +4,7 @@
 
 - الصفحة: **058**
 - سجلات الأسطر: **800**
-- النطاق: SRC-2822F30DAD-L000091 إلى SRC-86913A3106-L000242
+- النطاق: SRC-2822F30DAD-L000020 إلى SRC-86913A3106-L000171
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,77 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-2822F30DAD-L000020](../../tests/test_sales_domain.py#L20) | 20 | `"    SourceQuality,"` | — |
+| [SRC-2822F30DAD-L000021](../../tests/test_sales_domain.py#L21) | 21 | `"    TaxonomyCategory,"` | — |
+| [SRC-2822F30DAD-L000022](../../tests/test_sales_domain.py#L22) | 22 | `"    normalize_text,"` | — |
+| [SRC-2822F30DAD-L000023](../../tests/test_sales_domain.py#L23) | 23 | `"    to_json_dict,"` | — |
+| [SRC-2822F30DAD-L000024](../../tests/test_sales_domain.py#L24) | 24 | `")"` | — |
+| [SRC-2822F30DAD-L000025](../../tests/test_sales_domain.py#L25) | 25 | `""` | — |
+| [SRC-2822F30DAD-L000026](../../tests/test_sales_domain.py#L26) | 26 | `""` | — |
+| [SRC-2822F30DAD-L000027](../../tests/test_sales_domain.py#L27) | 27 | `"def page_evidence(**overrides):"` | — |
+| [SRC-2822F30DAD-L000028](../../tests/test_sales_domain.py#L28) | 28 | `"    values = {"` | — |
+| [SRC-2822F30DAD-L000029](../../tests/test_sales_domain.py#L29) | 29 | `"        \"source_id\": \"source-1\","` | — |
+| [SRC-2822F30DAD-L000030](../../tests/test_sales_domain.py#L30) | 30 | `"        \"source_url\": \"https://example.org/public-post/1\","` | — |
+| [SRC-2822F30DAD-L000031](../../tests/test_sales_domain.py#L31) | 31 | `"        \"excerpt\": \"I am looking to buy a commercial fire alarm system.\","` | — |
+| [SRC-2822F30DAD-L000032](../../tests/test_sales_domain.py#L32) | 32 | `"        \"content_basis\": EvidenceBasis.PAGE_TEXT,"` | — |
+| [SRC-2822F30DAD-L000033](../../tests/test_sales_domain.py#L33) | 33 | `"        \"publication_date\": \"2026-10-20\","` | — |
+| [SRC-2822F30DAD-L000034](../../tests/test_sales_domain.py#L34) | 34 | `"        \"event_date\": None,"` | — |
+| [SRC-2822F30DAD-L000035](../../tests/test_sales_domain.py#L35) | 35 | `"        \"observed_at\": \"2026-10-31T08:00:00Z\","` | — |
+| [SRC-2822F30DAD-L000036](../../tests/test_sales_domain.py#L36) | 36 | `"        \"page_read\": True,"` | — |
+| [SRC-2822F30DAD-L000037](../../tests/test_sales_domain.py#L37) | 37 | `"    }"` | — |
+| [SRC-2822F30DAD-L000038](../../tests/test_sales_domain.py#L38) | 38 | `"    values.update(overrides)"` | — |
+| [SRC-2822F30DAD-L000039](../../tests/test_sales_domain.py#L39) | 39 | `"    return DemandEvidence(**values)"` | — |
+| [SRC-2822F30DAD-L000040](../../tests/test_sales_domain.py#L40) | 40 | `""` | — |
+| [SRC-2822F30DAD-L000041](../../tests/test_sales_domain.py#L41) | 41 | `""` | — |
+| [SRC-2822F30DAD-L000042](../../tests/test_sales_domain.py#L42) | 42 | `"def test_normalize_text_handles_arabic_and_latin_without_changing_display_value():"` | — |
+| [SRC-2822F30DAD-L000043](../../tests/test_sales_domain.py#L43) | 43 | `"    assert normalize_text(\"إِنذار الحَرِيق\") == \"انذار الحريق\""` | — |
+| [SRC-2822F30DAD-L000044](../../tests/test_sales_domain.py#L44) | 44 | `"    assert normalize_text(\"Café, FIRE-ALARM\") == \"café fire-alarm\""` | — |
+| [SRC-2822F30DAD-L000045](../../tests/test_sales_domain.py#L45) | 45 | `""` | — |
+| [SRC-2822F30DAD-L000046](../../tests/test_sales_domain.py#L46) | 46 | `""` | — |
+| [SRC-2822F30DAD-L000047](../../tests/test_sales_domain.py#L47) | 47 | `"def test_product_profile_requires_a_name_and_deduplicates_aliases():"` | — |
+| [SRC-2822F30DAD-L000048](../../tests/test_sales_domain.py#L48) | 48 | `"    with pytest.raises(ValueError, match=\"name is required\"):"` | — |
+| [SRC-2822F30DAD-L000049](../../tests/test_sales_domain.py#L49) | 49 | `"        ProductProfile(name=\" \")"` | — |
+| [SRC-2822F30DAD-L000050](../../tests/test_sales_domain.py#L50) | 50 | `""` | — |
+| [SRC-2822F30DAD-L000051](../../tests/test_sales_domain.py#L51) | 51 | `"    profile = ProductProfile("` | — |
+| [SRC-2822F30DAD-L000052](../../tests/test_sales_domain.py#L52) | 52 | `"        name=\"Fire Alarm Panel\","` | — |
+| [SRC-2822F30DAD-L000053](../../tests/test_sales_domain.py#L53) | 53 | `"        aliases=(\"لوحة إنذار\", \"لوحه انذار\", \"FACP\"),"` | — |
+| [SRC-2822F30DAD-L000054](../../tests/test_sales_domain.py#L54) | 54 | `"    )"` | — |
+| [SRC-2822F30DAD-L000055](../../tests/test_sales_domain.py#L55) | 55 | `""` | — |
+| [SRC-2822F30DAD-L000056](../../tests/test_sales_domain.py#L56) | 56 | `"    assert profile.aliases == (\"لوحة إنذار\", \"FACP\")"` | — |
+| [SRC-2822F30DAD-L000057](../../tests/test_sales_domain.py#L57) | 57 | `""` | — |
+| [SRC-2822F30DAD-L000058](../../tests/test_sales_domain.py#L58) | 58 | `""` | — |
+| [SRC-2822F30DAD-L000059](../../tests/test_sales_domain.py#L59) | 59 | `"def test_product_matching_uses_only_explicit_product_terms():"` | — |
+| [SRC-2822F30DAD-L000060](../../tests/test_sales_domain.py#L60) | 60 | `"    profile = ProductProfile("` | — |
+| [SRC-2822F30DAD-L000061](../../tests/test_sales_domain.py#L61) | 61 | `"        name=\"Fire Alarm Panel\","` | — |
+| [SRC-2822F30DAD-L000062](../../tests/test_sales_domain.py#L62) | 62 | `"        aliases=(\"لوحة إنذار الحريق\", \"FACP\"),"` | — |
+| [SRC-2822F30DAD-L000063](../../tests/test_sales_domain.py#L63) | 63 | `"    )"` | — |
+| [SRC-2822F30DAD-L000064](../../tests/test_sales_domain.py#L64) | 64 | `""` | — |
+| [SRC-2822F30DAD-L000065](../../tests/test_sales_domain.py#L65) | 65 | `"    assert profile.matching_terms(\"We need a FACP for a new building.\") == (\"FACP\",)"` | — |
+| [SRC-2822F30DAD-L000066](../../tests/test_sales_domain.py#L66) | 66 | `"    assert profile.matching_terms(\"نحتاج لوحة إنذار الحريق للمشروع\") == (\"لوحة إنذار الحريق\",)"` | — |
+| [SRC-2822F30DAD-L000067](../../tests/test_sales_domain.py#L67) | 67 | `"    assert profile.matching_terms(\"We need a fire alarm system.\") == ()"` | — |
+| [SRC-2822F30DAD-L000068](../../tests/test_sales_domain.py#L68) | 68 | `""` | — |
+| [SRC-2822F30DAD-L000069](../../tests/test_sales_domain.py#L69) | 69 | `""` | — |
+| [SRC-2822F30DAD-L000070](../../tests/test_sales_domain.py#L70) | 70 | `"def test_product_mention_does_not_create_demand_or_product_fit():"` | — |
+| [SRC-2822F30DAD-L000071](../../tests/test_sales_domain.py#L71) | 71 | `"    profile = ProductProfile("` | — |
+| [SRC-2822F30DAD-L000072](../../tests/test_sales_domain.py#L72) | 72 | `"        name=\"Fire Alarm Panel\","` | — |
+| [SRC-2822F30DAD-L000073](../../tests/test_sales_domain.py#L73) | 73 | `"        aliases=(\"Fire Alarm Panels\",),"` | — |
+| [SRC-2822F30DAD-L000074](../../tests/test_sales_domain.py#L74) | 74 | `"    )"` | — |
+| [SRC-2822F30DAD-L000075](../../tests/test_sales_domain.py#L75) | 75 | `"    assert profile.matching_terms(\"The company sells Fire Alarm Panels.\") == (\"Fire Alarm Panels\",)"` | — |
+| [SRC-2822F30DAD-L000076](../../tests/test_sales_domain.py#L76) | 76 | `""` | — |
+| [SRC-2822F30DAD-L000077](../../tests/test_sales_domain.py#L77) | 77 | `"    signal = DemandSignal("` | — |
+| [SRC-2822F30DAD-L000078](../../tests/test_sales_domain.py#L78) | 78 | `"        signal_id=\"signal-1\","` | — |
+| [SRC-2822F30DAD-L000079](../../tests/test_sales_domain.py#L79) | 79 | `"        signal_type=DemandSignalType.UNKNOWN,"` | — |
+| [SRC-2822F30DAD-L000080](../../tests/test_sales_domain.py#L80) | 80 | `"        evidence=page_evidence(),"` | — |
+| [SRC-2822F30DAD-L000081](../../tests/test_sales_domain.py#L81) | 81 | `"    )"` | — |
+| [SRC-2822F30DAD-L000082](../../tests/test_sales_domain.py#L82) | 82 | `""` | — |
+| [SRC-2822F30DAD-L000083](../../tests/test_sales_domain.py#L83) | 83 | `"    assert signal.signal_type == DemandSignalType.UNKNOWN"` | — |
+| [SRC-2822F30DAD-L000084](../../tests/test_sales_domain.py#L84) | 84 | `"    assert signal.product_fit == ProductFit.UNASSESSED"` | — |
+| [SRC-2822F30DAD-L000085](../../tests/test_sales_domain.py#L85) | 85 | `""` | — |
+| [SRC-2822F30DAD-L000086](../../tests/test_sales_domain.py#L86) | 86 | `""` | — |
+| [SRC-2822F30DAD-L000087](../../tests/test_sales_domain.py#L87) | 87 | `"def test_product_taxonomy_is_caller_defined_and_supports_multiple_sectors():"` | — |
+| [SRC-2822F30DAD-L000088](../../tests/test_sales_domain.py#L88) | 88 | `"    taxonomy = ProductTaxonomy("` | — |
+| [SRC-2822F30DAD-L000089](../../tests/test_sales_domain.py#L89) | 89 | `"        categories=("` | — |
+| [SRC-2822F30DAD-L000090](../../tests/test_sales_domain.py#L90) | 90 | `"            TaxonomyCategory("` | — |
 | [SRC-2822F30DAD-L000091](../../tests/test_sales_domain.py#L91) | 91 | `"                path=(\"safety\", \"fire_detection\"),"` | — |
 | [SRC-2822F30DAD-L000092](../../tests/test_sales_domain.py#L92) | 92 | `"                aliases=(\"fire alarm\", \"إنذار حريق\"),"` | — |
 | [SRC-2822F30DAD-L000093](../../tests/test_sales_domain.py#L93) | 93 | `"            ),"` | — |
@@ -772,74 +843,3 @@
 | [SRC-86913A3106-L000169](../../tests/test_search_relevance_mixed_results.py#L169) | 169 | `"    monkeypatch.setattr(agent, \"_search_bing_rss\", lambda _query: [])"` | — |
 | [SRC-86913A3106-L000170](../../tests/test_search_relevance_mixed_results.py#L170) | 170 | `"    monkeypatch.setattr(agent, \"_search_news\", lambda _query: [])"` | — |
 | [SRC-86913A3106-L000171](../../tests/test_search_relevance_mixed_results.py#L171) | 171 | `""` | — |
-| [SRC-86913A3106-L000172](../../tests/test_search_relevance_mixed_results.py#L172) | 172 | `"    results = agent._search_web(query)"` | — |
-| [SRC-86913A3106-L000173](../../tests/test_search_relevance_mixed_results.py#L173) | 173 | `""` | — |
-| [SRC-86913A3106-L000174](../../tests/test_search_relevance_mixed_results.py#L174) | 174 | `"    assert len(results) == 1"` | — |
-| [SRC-86913A3106-L000175](../../tests/test_search_relevance_mixed_results.py#L175) | 175 | `"    assert 0.0 <= results[0][\"retrieval_relevance_score\"] <= 1.0"` | — |
-| [SRC-86913A3106-L000176](../../tests/test_search_relevance_mixed_results.py#L176) | 176 | `""` | — |
-| [SRC-86913A3106-L000177](../../tests/test_search_relevance_mixed_results.py#L177) | 177 | `""` | — |
-| [SRC-86913A3106-L000178](../../tests/test_search_relevance_mixed_results.py#L178) | 178 | `"def test_rank_fusion_uses_retrieval_relevance_only_for_exact_rrf_ties():"` | — |
-| [SRC-86913A3106-L000179](../../tests/test_search_relevance_mixed_results.py#L179) | 179 | `"    from agents.research import fuse_ranked_results"` | — |
-| [SRC-86913A3106-L000180](../../tests/test_search_relevance_mixed_results.py#L180) | 180 | `""` | — |
-| [SRC-86913A3106-L000181](../../tests/test_search_relevance_mixed_results.py#L181) | 181 | `"    weak = {"` | — |
-| [SRC-86913A3106-L000182](../../tests/test_search_relevance_mixed_results.py#L182) | 182 | `"        \"title\": \"Egypt central bank\","` | — |
-| [SRC-86913A3106-L000183](../../tests/test_search_relevance_mixed_results.py#L183) | 183 | `"        \"url\": \"https://example.com/weak\","` | — |
-| [SRC-86913A3106-L000184](../../tests/test_search_relevance_mixed_results.py#L184) | 184 | `"        \"snippet\": \"Egypt central bank\","` | — |
-| [SRC-86913A3106-L000185](../../tests/test_search_relevance_mixed_results.py#L185) | 185 | `"        \"retrieval_relevance_score\": 0.2,"` | — |
-| [SRC-86913A3106-L000186](../../tests/test_search_relevance_mixed_results.py#L186) | 186 | `"    }"` | — |
-| [SRC-86913A3106-L000187](../../tests/test_search_relevance_mixed_results.py#L187) | 187 | `"    strong = {"` | — |
-| [SRC-86913A3106-L000188](../../tests/test_search_relevance_mixed_results.py#L188) | 188 | `"        \"title\": \"Central Bank of Egypt official website\","` | — |
-| [SRC-86913A3106-L000189](../../tests/test_search_relevance_mixed_results.py#L189) | 189 | `"        \"url\": \"https://example.com/strong\","` | — |
-| [SRC-86913A3106-L000190](../../tests/test_search_relevance_mixed_results.py#L190) | 190 | `"        \"snippet\": \"Central Bank of Egypt official website and monetary policy.\","` | — |
-| [SRC-86913A3106-L000191](../../tests/test_search_relevance_mixed_results.py#L191) | 191 | `"        \"retrieval_relevance_score\": 1.0,"` | — |
-| [SRC-86913A3106-L000192](../../tests/test_search_relevance_mixed_results.py#L192) | 192 | `"    }"` | — |
-| [SRC-86913A3106-L000193](../../tests/test_search_relevance_mixed_results.py#L193) | 193 | `"    batches = ["` | — |
-| [SRC-86913A3106-L000194](../../tests/test_search_relevance_mixed_results.py#L194) | 194 | `"        {"` | — |
-| [SRC-86913A3106-L000195](../../tests/test_search_relevance_mixed_results.py#L195) | 195 | `"            \"query\": \"Central Bank of Egypt official website\","` | — |
-| [SRC-86913A3106-L000196](../../tests/test_search_relevance_mixed_results.py#L196) | 196 | `"            \"provider\": \"ddg\","` | — |
-| [SRC-86913A3106-L000197](../../tests/test_search_relevance_mixed_results.py#L197) | 197 | `"            \"results\": [dict(weak), dict(strong)],"` | — |
-| [SRC-86913A3106-L000198](../../tests/test_search_relevance_mixed_results.py#L198) | 198 | `"        },"` | — |
-| [SRC-86913A3106-L000199](../../tests/test_search_relevance_mixed_results.py#L199) | 199 | `"        {"` | — |
-| [SRC-86913A3106-L000200](../../tests/test_search_relevance_mixed_results.py#L200) | 200 | `"            \"query\": \"Central Bank of Egypt official website\","` | — |
-| [SRC-86913A3106-L000201](../../tests/test_search_relevance_mixed_results.py#L201) | 201 | `"            \"provider\": \"bing\","` | — |
-| [SRC-86913A3106-L000202](../../tests/test_search_relevance_mixed_results.py#L202) | 202 | `"            \"results\": [dict(strong), dict(weak)],"` | — |
-| [SRC-86913A3106-L000203](../../tests/test_search_relevance_mixed_results.py#L203) | 203 | `"        },"` | — |
-| [SRC-86913A3106-L000204](../../tests/test_search_relevance_mixed_results.py#L204) | 204 | `"    ]"` | — |
-| [SRC-86913A3106-L000205](../../tests/test_search_relevance_mixed_results.py#L205) | 205 | `""` | — |
-| [SRC-86913A3106-L000206](../../tests/test_search_relevance_mixed_results.py#L206) | 206 | `"    ranked = fuse_ranked_results(batches)"` | — |
-| [SRC-86913A3106-L000207](../../tests/test_search_relevance_mixed_results.py#L207) | 207 | `""` | — |
-| [SRC-86913A3106-L000208](../../tests/test_search_relevance_mixed_results.py#L208) | 208 | `"    assert ranked[0][\"url\"] == \"https://example.com/strong\""` | — |
-| [SRC-86913A3106-L000209](../../tests/test_search_relevance_mixed_results.py#L209) | 209 | `"    assert ranked[0][\"rank_score\"] == ranked[1][\"rank_score\"]"` | — |
-| [SRC-86913A3106-L000210](../../tests/test_search_relevance_mixed_results.py#L210) | 210 | `"    assert ranked[0][\"retrieval_relevance_score\"] == 1.0"` | — |
-| [SRC-86913A3106-L000211](../../tests/test_search_relevance_mixed_results.py#L211) | 211 | `"    assert set(ranked[0][\"providers\"]) == {\"ddg\", \"bing\"}"` | — |
-| [SRC-86913A3106-L000212](../../tests/test_search_relevance_mixed_results.py#L212) | 212 | `""` | — |
-| [SRC-86913A3106-L000213](../../tests/test_search_relevance_mixed_results.py#L213) | 213 | `""` | — |
-| [SRC-86913A3106-L000214](../../tests/test_search_relevance_mixed_results.py#L214) | 214 | `"def test_rank_fusion_ignores_invalid_retrieval_relevance_scores():"` | — |
-| [SRC-86913A3106-L000215](../../tests/test_search_relevance_mixed_results.py#L215) | 215 | `"    from agents.research import fuse_ranked_results"` | — |
-| [SRC-86913A3106-L000216](../../tests/test_search_relevance_mixed_results.py#L216) | 216 | `""` | — |
-| [SRC-86913A3106-L000217](../../tests/test_search_relevance_mixed_results.py#L217) | 217 | `"    for invalid in (True, -0.1, 1.1, float(\"nan\"), float(\"inf\"), \"not-a-score\"):"` | — |
-| [SRC-86913A3106-L000218](../../tests/test_search_relevance_mixed_results.py#L218) | 218 | `"        ranked = fuse_ranked_results([{"` | — |
-| [SRC-86913A3106-L000219](../../tests/test_search_relevance_mixed_results.py#L219) | 219 | `"            \"query\": \"Central Bank of Egypt\","` | — |
-| [SRC-86913A3106-L000220](../../tests/test_search_relevance_mixed_results.py#L220) | 220 | `"            \"provider\": \"ddg\","` | — |
-| [SRC-86913A3106-L000221](../../tests/test_search_relevance_mixed_results.py#L221) | 221 | `"            \"results\": [{"` | — |
-| [SRC-86913A3106-L000222](../../tests/test_search_relevance_mixed_results.py#L222) | 222 | `"                \"title\": \"Central Bank of Egypt\","` | — |
-| [SRC-86913A3106-L000223](../../tests/test_search_relevance_mixed_results.py#L223) | 223 | `"                \"url\": \"https://example.com/cbe\","` | — |
-| [SRC-86913A3106-L000224](../../tests/test_search_relevance_mixed_results.py#L224) | 224 | `"                \"snippet\": \"Central Bank of Egypt official website.\","` | — |
-| [SRC-86913A3106-L000225](../../tests/test_search_relevance_mixed_results.py#L225) | 225 | `"                \"retrieval_relevance_score\": invalid,"` | — |
-| [SRC-86913A3106-L000226](../../tests/test_search_relevance_mixed_results.py#L226) | 226 | `"            }],"` | — |
-| [SRC-86913A3106-L000227](../../tests/test_search_relevance_mixed_results.py#L227) | 227 | `"        }])"` | — |
-| [SRC-86913A3106-L000228](../../tests/test_search_relevance_mixed_results.py#L228) | 228 | `"        assert ranked[0][\"retrieval_relevance_score\"] is None"` | — |
-| [SRC-86913A3106-L000229](../../tests/test_search_relevance_mixed_results.py#L229) | 229 | `""` | — |
-| [SRC-86913A3106-L000230](../../tests/test_search_relevance_mixed_results.py#L230) | 230 | `""` | — |
-| [SRC-86913A3106-L000231](../../tests/test_search_relevance_mixed_results.py#L231) | 231 | `"@pytest.mark.parametrize("` | — |
-| [SRC-86913A3106-L000232](../../tests/test_search_relevance_mixed_results.py#L232) | 232 | `"    (\"status_code\", \"expected_status\"),"` | — |
-| [SRC-86913A3106-L000233](../../tests/test_search_relevance_mixed_results.py#L233) | 233 | `"    ["` | — |
-| [SRC-86913A3106-L000234](../../tests/test_search_relevance_mixed_results.py#L234) | 234 | `"        (202, \"blocked\"),"` | — |
-| [SRC-86913A3106-L000235](../../tests/test_search_relevance_mixed_results.py#L235) | 235 | `"        (301, \"http_error\"),"` | — |
-| [SRC-86913A3106-L000236](../../tests/test_search_relevance_mixed_results.py#L236) | 236 | `"        (403, \"unauthorized\"),"` | — |
-| [SRC-86913A3106-L000237](../../tests/test_search_relevance_mixed_results.py#L237) | 237 | `"        (429, \"rate_limited\"),"` | — |
-| [SRC-86913A3106-L000238](../../tests/test_search_relevance_mixed_results.py#L238) | 238 | `"        (500, \"http_error\"),"` | — |
-| [SRC-86913A3106-L000239](../../tests/test_search_relevance_mixed_results.py#L239) | 239 | `"    ],"` | — |
-| [SRC-86913A3106-L000240](../../tests/test_search_relevance_mixed_results.py#L240) | 240 | `")"` | — |
-| [SRC-86913A3106-L000241](../../tests/test_search_relevance_mixed_results.py#L241) | 241 | `"def test_httpx_status_errors_are_classified_from_response_status(status_code, expected_status):"` | — |
-| [SRC-86913A3106-L000242](../../tests/test_search_relevance_mixed_results.py#L242) | 242 | `"    request = httpx.Request(\"GET\", \"https://provider.example/search\")"` | — |

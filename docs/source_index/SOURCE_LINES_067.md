@@ -4,9 +4,149 @@
 
 - الصفحة: **067**
 - سجلات الأسطر: **800**
-- النطاق: SRC-8C13B81AB4-L000019 إلى SRC-DE7EABE998-L000305
+- النطاق: SRC-F725E90B2A-L004469 إلى SRC-DE7EABE998-L000156
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-F725E90B2A — [tests/test_web_agent.py](../../tests/test_web_agent.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-F725E90B2A-L004469](../../tests/test_web_agent.py#L4469) | 4469 | `"        agent, \"_review_answer\","` | — |
+| [SRC-F725E90B2A-L004470](../../tests/test_web_agent.py#L4470) | 4470 | `"        lambda question, answer, sources: answer,"` | — |
+| [SRC-F725E90B2A-L004471](../../tests/test_web_agent.py#L4471) | 4471 | `"    )"` | — |
+| [SRC-F725E90B2A-L004472](../../tests/test_web_agent.py#L4472) | 4472 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L004473](../../tests/test_web_agent.py#L4473) | 4473 | `"        agent, \"_verify_semantic_claims\","` | — |
+| [SRC-F725E90B2A-L004474](../../tests/test_web_agent.py#L4474) | 4474 | `"        lambda *args, **kwargs: {"` | — |
+| [SRC-F725E90B2A-L004475](../../tests/test_web_agent.py#L4475) | 4475 | `"            \"status\": \"unsupported_claims_detected\","` | — |
+| [SRC-F725E90B2A-L004476](../../tests/test_web_agent.py#L4476) | 4476 | `"            \"withhold_answer\": True,"` | — |
+| [SRC-F725E90B2A-L004477](../../tests/test_web_agent.py#L4477) | 4477 | `"            \"reason\": \"one_or_more_claims_lack_unconflicted_cited_support\","` | — |
+| [SRC-F725E90B2A-L004478](../../tests/test_web_agent.py#L4478) | 4478 | `"        },"` | — |
+| [SRC-F725E90B2A-L004479](../../tests/test_web_agent.py#L4479) | 4479 | `"    )"` | — |
+| [SRC-F725E90B2A-L004480](../../tests/test_web_agent.py#L4480) | 4480 | `""` | — |
+| [SRC-F725E90B2A-L004481](../../tests/test_web_agent.py#L4481) | 4481 | `"    result = agent.answer(\"لخص الصفحة https://example.com/research\")"` | — |
+| [SRC-F725E90B2A-L004482](../../tests/test_web_agent.py#L4482) | 4482 | `""` | — |
+| [SRC-F725E90B2A-L004483](../../tests/test_web_agent.py#L4483) | 4483 | `"    assert result[\"final_answer_status\"] == \"semantic_verification_failed_with_source_fallback\""` | — |
+| [SRC-F725E90B2A-L004484](../../tests/test_web_agent.py#L4484) | 4484 | `"    assert result[\"search_report\"][\"answer_was_withheld\"] is True"` | — |
+| [SRC-F725E90B2A-L004485](../../tests/test_web_agent.py#L4485) | 4485 | `"    assert result[\"search_report\"][\"semantic_claim_verification\"][\"status\"] == ("` | — |
+| [SRC-F725E90B2A-L004486](../../tests/test_web_agent.py#L4486) | 4486 | `"        \"unsupported_claims_detected\""` | — |
+| [SRC-F725E90B2A-L004487](../../tests/test_web_agent.py#L4487) | 4487 | `"    )"` | — |
+| [SRC-F725E90B2A-L004488](../../tests/test_web_agent.py#L4488) | 4488 | `"    assert \"ادعاء واقعي غير مدعوم\" not in result[\"answer\"]"` | — |
+| [SRC-F725E90B2A-L004489](../../tests/test_web_agent.py#L4489) | 4489 | `"    assert \"المقتطفات أدناه مواد مصدرية\" in result[\"answer\"]"` | — |
+| [SRC-F725E90B2A-L004490](../../tests/test_web_agent.py#L4490) | 4490 | `"    assert result[\"search_report\"][\"pipeline_completion_status\"] == \"partial\""` | — |
+| [SRC-F725E90B2A-L004491](../../tests/test_web_agent.py#L4491) | 4491 | `"    assert result[\"citation_validation\"][\"valid_citation_count\"] == 0"` | — |
+| [SRC-F725E90B2A-L004492](../../tests/test_web_agent.py#L4492) | 4492 | `""` | — |
+| [SRC-F725E90B2A-L004493](../../tests/test_web_agent.py#L4493) | 4493 | `"@pytest.mark.parametrize(\"mode\", [\"auto\", \"deep\"])"` | — |
+| [SRC-F725E90B2A-L004494](../../tests/test_web_agent.py#L4494) | 4494 | `"def test_fire_alarm_buyer_discovery_acceptance_keeps_only_public_demand(monkeypatch, mode):"` | — |
+| [SRC-F725E90B2A-L004495](../../tests/test_web_agent.py#L4495) | 4495 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L004496](../../tests/test_web_agent.py#L4496) | 4496 | `"    question = ("` | — |
+| [SRC-F725E90B2A-L004497](../../tests/test_web_agent.py#L4497) | 4497 | `"        \"ابحث عن شركات ومصانع ومشروعات في مصر لديها طلب معلن أو احتياج حقيقي \""` | — |
+| [SRC-F725E90B2A-L004498](../../tests/test_web_agent.py#L4498) | 4498 | `"        \"لشراء نظام إنذار حريق صناعي، وأعطني الأدلة وروابط الطلبات وتاريخها\""` | — |
+| [SRC-F725E90B2A-L004499](../../tests/test_web_agent.py#L4499) | 4499 | `"    )"` | — |
+| [SRC-F725E90B2A-L004500](../../tests/test_web_agent.py#L4500) | 4500 | `"    captured = {}"` | — |
+| [SRC-F725E90B2A-L004501](../../tests/test_web_agent.py#L4501) | 4501 | `"    plan = {"` | — |
+| [SRC-F725E90B2A-L004502](../../tests/test_web_agent.py#L4502) | 4502 | `"        \"queries\": [\"نظام إنذار حريق صناعي مصر\"],"` | — |
+| [SRC-F725E90B2A-L004503](../../tests/test_web_agent.py#L4503) | 4503 | `"        \"direct_urls\": [],"` | — |
+| [SRC-F725E90B2A-L004504](../../tests/test_web_agent.py#L4504) | 4504 | `"        \"social_focus\": False,"` | — |
+| [SRC-F725E90B2A-L004505](../../tests/test_web_agent.py#L4505) | 4505 | `"        \"freshness\": \"any\","` | — |
+| [SRC-F725E90B2A-L004506](../../tests/test_web_agent.py#L4506) | 4506 | `"        \"depth\": \"standard\","` | — |
+| [SRC-F725E90B2A-L004507](../../tests/test_web_agent.py#L4507) | 4507 | `"        \"platforms\": [],"` | — |
+| [SRC-F725E90B2A-L004508](../../tests/test_web_agent.py#L4508) | 4508 | `"        \"planning_method\": \"acceptance-test\","` | — |
+| [SRC-F725E90B2A-L004509](../../tests/test_web_agent.py#L4509) | 4509 | `"    }"` | — |
+| [SRC-F725E90B2A-L004510](../../tests/test_web_agent.py#L4510) | 4510 | `""` | — |
+| [SRC-F725E90B2A-L004511](../../tests/test_web_agent.py#L4511) | 4511 | `"    def collect(research_plan):"` | — |
+| [SRC-F725E90B2A-L004512](../../tests/test_web_agent.py#L4512) | 4512 | `"        captured.update(research_plan)"` | — |
+| [SRC-F725E90B2A-L004513](../../tests/test_web_agent.py#L4513) | 4513 | `"        buyer = sample_source(0)"` | — |
+| [SRC-F725E90B2A-L004514](../../tests/test_web_agent.py#L4514) | 4514 | `"        buyer.update({"` | — |
+| [SRC-F725E90B2A-L004515](../../tests/test_web_agent.py#L4515) | 4515 | `"            \"title\": \"مطلوب توريد نظام إنذار حريق صناعي لمصنع في مصر\","` | — |
+| [SRC-F725E90B2A-L004516](../../tests/test_web_agent.py#L4516) | 4516 | `"            \"snippet\": \"نبحث عن مورد معتمد لتوريد نظام إنذار حريق صناعي.\","` | — |
+| [SRC-F725E90B2A-L004517](../../tests/test_web_agent.py#L4517) | 4517 | `"            \"page_text\": ("` | — |
+| [SRC-F725E90B2A-L004518](../../tests/test_web_agent.py#L4518) | 4518 | `"                \"تعلن إدارة المصنع عن حاجتها إلى شراء نظام إنذار حريق صناعي، \""` | — |
+| [SRC-F725E90B2A-L004519](../../tests/test_web_agent.py#L4519) | 4519 | `"                \"ونطلب عرض سعر من مورد متخصص للتوريد والتركيب.\""` | — |
+| [SRC-F725E90B2A-L004520](../../tests/test_web_agent.py#L4520) | 4520 | `"            ),"` | — |
+| [SRC-F725E90B2A-L004521](../../tests/test_web_agent.py#L4521) | 4521 | `"            \"page_fetched\": True,"` | — |
+| [SRC-F725E90B2A-L004522](../../tests/test_web_agent.py#L4522) | 4522 | `"            \"page_fetch_status\": \"content_extracted\","` | — |
+| [SRC-F725E90B2A-L004523](../../tests/test_web_agent.py#L4523) | 4523 | `"            \"published_at\": \"2026-11-09T09:00:00Z\","` | — |
+| [SRC-F725E90B2A-L004524](../../tests/test_web_agent.py#L4524) | 4524 | `"            \"queries\": list(research_plan[\"queries\"]),"` | — |
+| [SRC-F725E90B2A-L004525](../../tests/test_web_agent.py#L4525) | 4525 | `"        })"` | — |
+| [SRC-F725E90B2A-L004526](../../tests/test_web_agent.py#L4526) | 4526 | `"        seller = sample_source(1)"` | — |
+| [SRC-F725E90B2A-L004527](../../tests/test_web_agent.py#L4527) | 4527 | `"        seller.update({"` | — |
+| [SRC-F725E90B2A-L004528](../../tests/test_web_agent.py#L4528) | 4528 | `"            \"title\": \"شركة تبيع أنظمة إنذار الحريق الصناعية\","` | — |
+| [SRC-F725E90B2A-L004529](../../tests/test_web_agent.py#L4529) | 4529 | `"            \"snippet\": \"منتجات وأنظمة إنذار حريق متاحة للبيع.\","` | — |
+| [SRC-F725E90B2A-L004530](../../tests/test_web_agent.py#L4530) | 4530 | `"            \"page_text\": \"نحن شركة تبيع وتورد أنظمة إنذار الحريق للمصانع.\","` | — |
+| [SRC-F725E90B2A-L004531](../../tests/test_web_agent.py#L4531) | 4531 | `"            \"page_fetched\": True,"` | — |
+| [SRC-F725E90B2A-L004532](../../tests/test_web_agent.py#L4532) | 4532 | `"            \"page_fetch_status\": \"content_extracted\","` | — |
+| [SRC-F725E90B2A-L004533](../../tests/test_web_agent.py#L4533) | 4533 | `"            \"queries\": list(research_plan[\"queries\"]),"` | — |
+| [SRC-F725E90B2A-L004534](../../tests/test_web_agent.py#L4534) | 4534 | `"        })"` | — |
+| [SRC-F725E90B2A-L004535](../../tests/test_web_agent.py#L4535) | 4535 | `"        article = sample_source(2)"` | — |
+| [SRC-F725E90B2A-L004536](../../tests/test_web_agent.py#L4536) | 4536 | `"        article.update({"` | — |
+| [SRC-F725E90B2A-L004537](../../tests/test_web_agent.py#L4537) | 4537 | `"            \"title\": \"دليل أنظمة إنذار الحريق الصناعية\","` | — |
+| [SRC-F725E90B2A-L004538](../../tests/test_web_agent.py#L4538) | 4538 | `"            \"snippet\": \"شرح أنواع الحساسات ولوحات التحكم ومتطلبات التصميم.\","` | — |
+| [SRC-F725E90B2A-L004539](../../tests/test_web_agent.py#L4539) | 4539 | `"            \"page_text\": \"مقال تعريفي عن تصميم أنظمة إنذار الحريق الصناعية.\","` | — |
+| [SRC-F725E90B2A-L004540](../../tests/test_web_agent.py#L4540) | 4540 | `"            \"page_fetched\": True,"` | — |
+| [SRC-F725E90B2A-L004541](../../tests/test_web_agent.py#L4541) | 4541 | `"            \"page_fetch_status\": \"content_extracted\","` | — |
+| [SRC-F725E90B2A-L004542](../../tests/test_web_agent.py#L4542) | 4542 | `"            \"queries\": list(research_plan[\"queries\"]),"` | — |
+| [SRC-F725E90B2A-L004543](../../tests/test_web_agent.py#L4543) | 4543 | `"        })"` | — |
+| [SRC-F725E90B2A-L004544](../../tests/test_web_agent.py#L4544) | 4544 | `"        return [buyer, seller, article], [], {"` | — |
+| [SRC-F725E90B2A-L004545](../../tests/test_web_agent.py#L4545) | 4545 | `"            \"queries_planned\": len(research_plan[\"queries\"]),"` | — |
+| [SRC-F725E90B2A-L004546](../../tests/test_web_agent.py#L4546) | 4546 | `"            \"queries_attempted\": len(research_plan[\"queries\"]),"` | — |
+| [SRC-F725E90B2A-L004547](../../tests/test_web_agent.py#L4547) | 4547 | `"            \"query_results\": [],"` | — |
+| [SRC-F725E90B2A-L004548](../../tests/test_web_agent.py#L4548) | 4548 | `"            \"unique_sources\": 3,"` | — |
+| [SRC-F725E90B2A-L004549](../../tests/test_web_agent.py#L4549) | 4549 | `"            \"pages_fetched\": 3,"` | — |
+| [SRC-F725E90B2A-L004550](../../tests/test_web_agent.py#L4550) | 4550 | `"            \"providers_used\": [\"test_provider\"],"` | — |
+| [SRC-F725E90B2A-L004551](../../tests/test_web_agent.py#L4551) | 4551 | `"            \"provider_counts\": {\"test_provider\": 3},"` | — |
+| [SRC-F725E90B2A-L004552](../../tests/test_web_agent.py#L4552) | 4552 | `"            \"platform_counts\": {\"web\": 3},"` | — |
+| [SRC-F725E90B2A-L004553](../../tests/test_web_agent.py#L4553) | 4553 | `"            \"social_direct_results\": 0,"` | — |
+| [SRC-F725E90B2A-L004554](../../tests/test_web_agent.py#L4554) | 4554 | `"            \"depth\": research_plan[\"depth\"],"` | — |
+| [SRC-F725E90B2A-L004555](../../tests/test_web_agent.py#L4555) | 4555 | `"            \"planning_method\": \"acceptance-test\","` | — |
+| [SRC-F725E90B2A-L004556](../../tests/test_web_agent.py#L4556) | 4556 | `"        }"` | — |
+| [SRC-F725E90B2A-L004557](../../tests/test_web_agent.py#L4557) | 4557 | `""` | — |
+| [SRC-F725E90B2A-L004558](../../tests/test_web_agent.py#L4558) | 4558 | `"    monkeypatch.setattr(agent, \"_plan_search\", lambda q, history: dict(plan))"` | — |
+| [SRC-F725E90B2A-L004559](../../tests/test_web_agent.py#L4559) | 4559 | `"    monkeypatch.setattr(agent, \"_collect_research\", collect)"` | — |
+| [SRC-F725E90B2A-L004560](../../tests/test_web_agent.py#L4560) | 4560 | `"    monkeypatch.setattr("` | — |
+| [SRC-F725E90B2A-L004561](../../tests/test_web_agent.py#L4561) | 4561 | `"        agent,"` | — |
+| [SRC-F725E90B2A-L004562](../../tests/test_web_agent.py#L4562) | 4562 | `"        \"_generate\","` | — |
+| [SRC-F725E90B2A-L004563](../../tests/test_web_agent.py#L4563) | 4563 | `"        lambda *args, **kwargs: \"رصدت طلب توريد معلن لنظام إنذار حريق صناعي [المصدر 1].\","` | — |
+| [SRC-F725E90B2A-L004564](../../tests/test_web_agent.py#L4564) | 4564 | `"    )"` | — |
+| [SRC-F725E90B2A-L004565](../../tests/test_web_agent.py#L4565) | 4565 | `"    monkeypatch.setattr(agent, \"_review_answer\", lambda question, answer, sources: answer)"` | — |
+| [SRC-F725E90B2A-L004566](../../tests/test_web_agent.py#L4566) | 4566 | `""` | — |
+| [SRC-F725E90B2A-L004567](../../tests/test_web_agent.py#L4567) | 4567 | `"    result = agent.answer(question, mode=mode)"` | — |
+| [SRC-F725E90B2A-L004568](../../tests/test_web_agent.py#L4568) | 4568 | `""` | — |
+| [SRC-F725E90B2A-L004569](../../tests/test_web_agent.py#L4569) | 4569 | `"    assert result[\"intent_route\"] == \"LEAD_GENERATION\""` | — |
+| [SRC-F725E90B2A-L004570](../../tests/test_web_agent.py#L4570) | 4570 | `"    assert captured[\"social_focus\"] is True"` | — |
+| [SRC-F725E90B2A-L004571](../../tests/test_web_agent.py#L4571) | 4571 | `"    assert captured[\"depth\"] == (\"deep\" if mode == \"deep\" else \"standard\")"` | — |
+| [SRC-F725E90B2A-L004572](../../tests/test_web_agent.py#L4572) | 4572 | `"    assert len(captured[\"queries\"]) >= 4"` | — |
+| [SRC-F725E90B2A-L004573](../../tests/test_web_agent.py#L4573) | 4573 | `"    assert any("` | — |
+| [SRC-F725E90B2A-L004574](../../tests/test_web_agent.py#L4574) | 4574 | `"        marker in query"` | — |
+| [SRC-F725E90B2A-L004575](../../tests/test_web_agent.py#L4575) | 4575 | `"        for query in captured[\"queries\"]"` | — |
+| [SRC-F725E90B2A-L004576](../../tests/test_web_agent.py#L4576) | 4576 | `"        for marker in (\"مطلوب شراء\", \"طلب عرض سعر\", \"نحتاج مورد\", \"نحتاج توريد\")"` | — |
+| [SRC-F725E90B2A-L004577](../../tests/test_web_agent.py#L4577) | 4577 | `"    )"` | — |
+| [SRC-F725E90B2A-L004578](../../tests/test_web_agent.py#L4578) | 4578 | `"    lead_report = result[\"search_report\"][\"lead_generation\"]"` | — |
+| [SRC-F725E90B2A-L004579](../../tests/test_web_agent.py#L4579) | 4579 | `"    assert lead_report[\"candidate_signal_count\"] == 1"` | — |
+| [SRC-F725E90B2A-L004580](../../tests/test_web_agent.py#L4580) | 4580 | `"    assert lead_report[\"related_results_reviewed\"] == 2"` | — |
+| [SRC-F725E90B2A-L004581](../../tests/test_web_agent.py#L4581) | 4581 | `"    assert result[\"sources\"][0][\"lead_qualification\"] == \"public_demand_signal\""` | — |
+| [SRC-F725E90B2A-L004582](../../tests/test_web_agent.py#L4582) | 4582 | `"    assert result[\"sources\"][0][\"lead_intent_evidence\"][\"basis\"] == \"page_text\""` | — |
+| [SRC-F725E90B2A-L004583](../../tests/test_web_agent.py#L4583) | 4583 | `"    assert all("` | — |
+| [SRC-F725E90B2A-L004584](../../tests/test_web_agent.py#L4584) | 4584 | `"        source[\"lead_qualification\"] == \"related_result_not_lead\""` | — |
+| [SRC-F725E90B2A-L004585](../../tests/test_web_agent.py#L4585) | 4585 | `"        for source in result[\"sources\"][1:]"` | — |
+| [SRC-F725E90B2A-L004586](../../tests/test_web_agent.py#L4586) | 4586 | `"    )"` | — |
+| [SRC-F725E90B2A-L004587](../../tests/test_web_agent.py#L4587) | 4587 | `""` | — |
+| [SRC-F725E90B2A-L004588](../../tests/test_web_agent.py#L4588) | 4588 | `"@pytest.mark.parametrize("` | — |
+| [SRC-F725E90B2A-L004589](../../tests/test_web_agent.py#L4589) | 4589 | `"    (\"query\", \"expected\"),"` | — |
+| [SRC-F725E90B2A-L004590](../../tests/test_web_agent.py#L4590) | 4590 | `"    ["` | — |
+| [SRC-F725E90B2A-L004591](../../tests/test_web_agent.py#L4591) | 4591 | `"        (\"بدور على معلومات عن أحدث أسعار أنظمة إنذار الحريق اليوم\", False),"` | — |
+| [SRC-F725E90B2A-L004592](../../tests/test_web_agent.py#L4592) | 4592 | `"        (\"بدور على مورد لنظام إنذار الحريق الصناعي\", True),"` | — |
+| [SRC-F725E90B2A-L004593](../../tests/test_web_agent.py#L4593) | 4593 | `"        (\"بدور على موردين لنظام إنذار الحريق الصناعي\", True),"` | — |
+| [SRC-F725E90B2A-L004594](../../tests/test_web_agent.py#L4594) | 4594 | `"        (\"looking for information about the latest industrial fire alarm systems\", False),"` | — |
+| [SRC-F725E90B2A-L004595](../../tests/test_web_agent.py#L4595) | 4595 | `"        (\"looking for a supplier of industrial fire alarm systems\", True),"` | — |
+| [SRC-F725E90B2A-L004596](../../tests/test_web_agent.py#L4596) | 4596 | `"    ],"` | — |
+| [SRC-F725E90B2A-L004597](../../tests/test_web_agent.py#L4597) | 4597 | `")"` | — |
+| [SRC-F725E90B2A-L004598](../../tests/test_web_agent.py#L4598) | 4598 | `"def test_buyer_intent_news_exclusion_requires_explicit_procurement_language(query, expected):"` | — |
+| [SRC-F725E90B2A-L004599](../../tests/test_web_agent.py#L4599) | 4599 | `"    assert WebAgent._is_buyer_intent_search_query(query) is expected"` | — |
 ## اختبارات
 
 ### FILE-8C13B81AB4 — [tests/test_web_agent_nlu_integration.py](../../tests/test_web_agent_nlu_integration.py#L1)
@@ -16,6 +156,24 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-8C13B81AB4-L000001](../../tests/test_web_agent_nlu_integration.py#L1) | 1 | `"\"\"\"Integration regressions for budgeted academic fallback and compound facets.\"\"\""` | — |
+| [SRC-8C13B81AB4-L000002](../../tests/test_web_agent_nlu_integration.py#L2) | 2 | `"from __future__ import annotations"` | — |
+| [SRC-8C13B81AB4-L000003](../../tests/test_web_agent_nlu_integration.py#L3) | 3 | `""` | — |
+| [SRC-8C13B81AB4-L000004](../../tests/test_web_agent_nlu_integration.py#L4) | 4 | `"import pytest"` | — |
+| [SRC-8C13B81AB4-L000005](../../tests/test_web_agent_nlu_integration.py#L5) | 5 | `""` | — |
+| [SRC-8C13B81AB4-L000006](../../tests/test_web_agent_nlu_integration.py#L6) | 6 | `"import agents.web_agent as web_module"` | — |
+| [SRC-8C13B81AB4-L000007](../../tests/test_web_agent_nlu_integration.py#L7) | 7 | `"from agents.web_agent import WebAgent"` | — |
+| [SRC-8C13B81AB4-L000008](../../tests/test_web_agent_nlu_integration.py#L8) | 8 | `""` | — |
+| [SRC-8C13B81AB4-L000009](../../tests/test_web_agent_nlu_integration.py#L9) | 9 | `""` | — |
+| [SRC-8C13B81AB4-L000010](../../tests/test_web_agent_nlu_integration.py#L10) | 10 | `"def _academic_result(provider: str, query: str) -> dict:"` | — |
+| [SRC-8C13B81AB4-L000011](../../tests/test_web_agent_nlu_integration.py#L11) | 11 | `"    urls = {"` | — |
+| [SRC-8C13B81AB4-L000012](../../tests/test_web_agent_nlu_integration.py#L12) | 12 | `"        \"openalex\": \"https://openalex.org/W123\","` | — |
+| [SRC-8C13B81AB4-L000013](../../tests/test_web_agent_nlu_integration.py#L13) | 13 | `"        \"arxiv\": \"https://arxiv.org/abs/2401.00001\","` | — |
+| [SRC-8C13B81AB4-L000014](../../tests/test_web_agent_nlu_integration.py#L14) | 14 | `"        \"crossref\": \"https://api.crossref.org/works/10.1000/example\","` | — |
+| [SRC-8C13B81AB4-L000015](../../tests/test_web_agent_nlu_integration.py#L15) | 15 | `"    }"` | — |
+| [SRC-8C13B81AB4-L000016](../../tests/test_web_agent_nlu_integration.py#L16) | 16 | `"    return {"` | — |
+| [SRC-8C13B81AB4-L000017](../../tests/test_web_agent_nlu_integration.py#L17) | 17 | `"        \"title\": \"Peer reviewed research on lithium battery degradation\","` | — |
+| [SRC-8C13B81AB4-L000018](../../tests/test_web_agent_nlu_integration.py#L18) | 18 | `"        \"url\": urls[provider],"` | — |
 | [SRC-8C13B81AB4-L000019](../../tests/test_web_agent_nlu_integration.py#L19) | 19 | `"        \"snippet\": \"Peer reviewed research on lithium battery degradation study.\","` | — |
 | [SRC-8C13B81AB4-L000020](../../tests/test_web_agent_nlu_integration.py#L20) | 20 | `"        \"page_fetched\": False,"` | — |
 | [SRC-8C13B81AB4-L000021](../../tests/test_web_agent_nlu_integration.py#L21) | 21 | `"        \"provider\": provider,"` | — |
@@ -694,152 +852,3 @@
 | [SRC-DE7EABE998-L000154](../../web/agent.html#L154) | 154 | `" if(providers.length)tags.push('<span class=\"tag\">'+providers.join(\" · \")+'</span>');"` | — |
 | [SRC-DE7EABE998-L000155](../../web/agent.html#L155) | 155 | `" if(s.lead_qualification===\"related_result_not_lead\")tags.push('<span class=\"tag social\">نتيجة مرتبطة وليست عميلًا محتملًا</span>');"` | — |
 | [SRC-DE7EABE998-L000156](../../web/agent.html#L156) | 156 | `" if(s.lead_qualification===\"public_demand_signal\"\|\|s.lead_qualification===\"public_buyer_intent_signal\"){"` | — |
-| [SRC-DE7EABE998-L000157](../../web/agent.html#L157) | 157 | `"  const demandType=s.lead_intent_evidence&&s.lead_intent_evidence.signal_type;"` | — |
-| [SRC-DE7EABE998-L000158](../../web/agent.html#L158) | 158 | `"  const demandLabels={direct_purchase_request:\"طلب شراء مباشر\",request_for_quotation:\"طلب عرض سعر\",tender_or_procurement:\"مناقصة أو توريد\",stated_need:\"احتياج معلن\",indirect_indicator:\"مؤشر احتياج غير مباشر\"};"` | — |
-| [SRC-DE7EABE998-L000159](../../web/agent.html#L159) | 159 | `"  const demandLabel=demandLabels[demandType]\|\|\"إشارة طلب غير مكتملة التصنيف\";"` | — |
-| [SRC-DE7EABE998-L000160](../../web/agent.html#L160) | 160 | `"  tags.push('<span class=\"tag read\">'+escapeHtml(demandLabel)+' — ملاءمة المنتج والهوية تحتاج إلى تحقق</span>');"` | — |
-| [SRC-DE7EABE998-L000161](../../web/agent.html#L161) | 161 | `" }"` | — |
-| [SRC-DE7EABE998-L000162](../../web/agent.html#L162) | 162 | `" const heading=url?'<a href=\"'+escapeHtml(url)+'\" target=\"_blank\" rel=\"noopener noreferrer\">['+(index+1)+'] '+title+' ↗</a>':'<strong>['+(index+1)+'] '+title+'</strong><p class=\"warning\">لم يُعرض الرابط لأنه غير صالح.</p>';"` | — |
-| [SRC-DE7EABE998-L000163](../../web/agent.html#L163) | 163 | `" return '<article class=\"source\">'+heading+'<p>'+escapeHtml(s.snippet\|\|\"لا يتوفر مقتطف نصي من هذه النتيجة.\")+'</p><div class=\"source-meta\">'+tags.join(\"\")+'</div></article>';"` | — |
-| [SRC-DE7EABE998-L000164](../../web/agent.html#L164) | 164 | `"}"` | — |
-| [SRC-DE7EABE998-L000165](../../web/agent.html#L165) | 165 | `"function renderReport(result){"` | — |
-| [SRC-DE7EABE998-L000166](../../web/agent.html#L166) | 166 | `" const r=result&&result.search_report&&typeof result.search_report===\"object\"?result.search_report:{};"` | — |
-| [SRC-DE7EABE998-L000167](../../web/agent.html#L167) | 167 | `" const completion=r.research_completion&&typeof r.research_completion===\"object\"?r.research_completion:"` | — |
-| [SRC-DE7EABE998-L000168](../../web/agent.html#L168) | 168 | `"  (result&&result.research_completion&&typeof result.research_completion===\"object\"?result.research_completion:null);"` | — |
-| [SRC-DE7EABE998-L000169](../../web/agent.html#L169) | 169 | `" const completionStatusLabels={"` | — |
-| [SRC-DE7EABE998-L000170](../../web/agent.html#L170) | 170 | `"  execution_stopped_budget:\"توقفت العملية عند حد الميزانية\","` | — |
-| [SRC-DE7EABE998-L000171](../../web/agent.html#L171) | 171 | `"  no_eligible_sources_after_filtering:\"لم يبقَ مصدر مقبول بعد التصفية\","` | — |
-| [SRC-DE7EABE998-L000172](../../web/agent.html#L172) | 172 | `"  search_failed_or_incomplete:\"البحث فشل أو لم يكتمل\","` | — |
-| [SRC-DE7EABE998-L000173](../../web/agent.html#L173) | 173 | `"  no_results_returned:\"اكتمل البحث دون نتائج\","` | — |
-| [SRC-DE7EABE998-L000174](../../web/agent.html#L174) | 174 | `"  search_not_attempted:\"لم تُنفذ محاولة البحث\","` | — |
-| [SRC-DE7EABE998-L000175](../../web/agent.html#L175) | 175 | `"  insufficient_evidence:\"الأدلة غير كافية\","` | — |
-| [SRC-DE7EABE998-L000176](../../web/agent.html#L176) | 176 | `"  source_snippets_only_generation_not_completed:\"مقتطفات فقط؛ لم تكتمل صياغة الإجابة\","` | — |
-| [SRC-DE7EABE998-L000177](../../web/agent.html#L177) | 177 | `"  evidence_collected_generation_not_completed:\"جُمعت أدلة؛ لم تكتمل صياغة الإجابة\","` | — |
-| [SRC-DE7EABE998-L000178](../../web/agent.html#L178) | 178 | `"  answer_generation_or_review_failed:\"تعذر توليد الإجابة أو مراجعتها\","` | — |
-| [SRC-DE7EABE998-L000179](../../web/agent.html#L179) | 179 | `"  partial_answer_evidence_gaps_detected:\"إجابة جزئية مع فجوات أدلة محتملة\","` | — |
-| [SRC-DE7EABE998-L000180](../../web/agent.html#L180) | 180 | `"  answer_generated_citations_range_checked_semantic_support_unverified:\"وُلّدت الإجابة وفُحصت أرقام الإحالات فقط؛ دعم الادعاءات دلاليًا غير متحقق\","` | — |
-| [SRC-DE7EABE998-L000181](../../web/agent.html#L181) | 181 | `"  answer_generated_without_valid_citation_markers:\"وُلّدت الإجابة دون علامات إحالة صالحة\""` | — |
-| [SRC-DE7EABE998-L000182](../../web/agent.html#L182) | 182 | `" };"` | — |
-| [SRC-DE7EABE998-L000183](../../web/agent.html#L183) | 183 | `" const completionPhaseLabels={"` | — |
-| [SRC-DE7EABE998-L000184](../../web/agent.html#L184) | 184 | `"  planning:\"التخطيط\",search:\"البحث\",source_filtering:\"تصفية المصادر\","` | — |
-| [SRC-DE7EABE998-L000185](../../web/agent.html#L185) | 185 | `"  page_reading:\"قراءة الصفحات\",answer_generation:\"توليد الإجابة\","` | — |
-| [SRC-DE7EABE998-L000186](../../web/agent.html#L186) | 186 | `"  citation_validation:\"فحص الإحالات\",semantic_verification:\"التحقق الدلالي\""` | — |
-| [SRC-DE7EABE998-L000187](../../web/agent.html#L187) | 187 | `" };"` | — |
-| [SRC-DE7EABE998-L000188](../../web/agent.html#L188) | 188 | `" const completionStateLabels={"` | — |
-| [SRC-DE7EABE998-L000189](../../web/agent.html#L189) | 189 | `"  completed:\"مكتمل\",unknown:\"غير معلوم\",not_attempted:\"لم يبدأ\","` | — |
-| [SRC-DE7EABE998-L000190](../../web/agent.html#L190) | 190 | `"  failed_or_incomplete:\"فشل أو لم يكتمل\",results_received:\"استُلمت نتائج\","` | — |
-| [SRC-DE7EABE998-L000191](../../web/agent.html#L191) | 191 | `"  completed_no_results:\"اكتمل دون نتائج\",attempted_no_usable_sources:\"محاولة دون مصادر صالحة\","` | — |
-| [SRC-DE7EABE998-L000192](../../web/agent.html#L192) | 192 | `"  not_applicable_no_eligible_sources:\"لا توجد مصادر نهائية\",all_final_sources_read:\"قُرئت كل الصفحات النهائية\","` | — |
-| [SRC-DE7EABE998-L000193](../../web/agent.html#L193) | 193 | `"  some_final_sources_read:\"قُرئ بعض الصفحات\",no_final_source_page_read:\"لم تُقرأ صفحات نهائية\","` | — |
-| [SRC-DE7EABE998-L000194](../../web/agent.html#L194) | 194 | `"  not_attempted_or_withheld:\"لم تُولد الإجابة أو حُجبت\",answer_generated:\"وُلّدت الإجابة\","` | — |
-| [SRC-DE7EABE998-L000195](../../web/agent.html#L195) | 195 | `"  not_completed:\"لم يكتمل\",failed_or_unavailable:\"فشل أو غير متاح\","` | — |
-| [SRC-DE7EABE998-L000196](../../web/agent.html#L196) | 196 | `"  not_run:\"لم يُنفذ\",not_performed:\"لم يُنفذ\",sources_retained:\"احتُفظ بمصادر\","` | — |
-| [SRC-DE7EABE998-L000197](../../web/agent.html#L197) | 197 | `"  rejected_all_candidates:\"رُفضت كل المرشحات\",no_eligible_sources:\"لا توجد مصادر مقبولة\","` | — |
-| [SRC-DE7EABE998-L000198](../../web/agent.html#L198) | 198 | `"  index_range_check_passed:\"فُحص نطاق أرقام الإحالات فقط\","` | — |
-| [SRC-DE7EABE998-L000199](../../web/agent.html#L199) | 199 | `"  invalid_index_references_removed:\"حُذفت إحالات خارج النطاق\","` | — |
-| [SRC-DE7EABE998-L000200](../../web/agent.html#L200) | 200 | `"  no_citation_markers_present:\"لا توجد علامات إحالة\",diagnostics_not_computed:\"تعذر احتساب التشخيص\""` | — |
-| [SRC-DE7EABE998-L000201](../../web/agent.html#L201) | 201 | `" };"` | — |
-| [SRC-DE7EABE998-L000202](../../web/agent.html#L202) | 202 | `" const completionSummary=completion&&completion.status"` | — |
-| [SRC-DE7EABE998-L000203](../../web/agent.html#L203) | 203 | `"  ?'<p class=\"'+([\"search_failed_or_incomplete\",\"execution_stopped_budget\",\"answer_generation_or_review_failed\",\"no_eligible_sources_after_filtering\",\"partial_answer_evidence_gaps_detected\"].includes(completion.status)?\"warning\":\"report-note\")+'\"><b>حالة إكمال البحث:</b> '+escapeHtml(completionStatusLabels[completion.status]\|\|completion.status)+'. هذه حالة تشغيلية وليست احتمالًا لصحة الإجابة.</p>'"` | — |
-| [SRC-DE7EABE998-L000204](../../web/agent.html#L204) | 204 | `"  :\"\";"` | — |
-| [SRC-DE7EABE998-L000205](../../web/agent.html#L205) | 205 | `" const completionPhaseRows=completion&&completion.phases&&typeof completion.phases===\"object\""` | — |
-| [SRC-DE7EABE998-L000206](../../web/agent.html#L206) | 206 | `"  ?Object.entries(completion.phases).map(([phase,state])=>'<li>'+escapeHtml(completionPhaseLabels[phase]\|\|phase)+': '+escapeHtml(completionStateLabels[state]\|\|state\|\|\"غير محدد\")+'</li>').join(\"\")"` | — |
-| [SRC-DE7EABE998-L000207](../../web/agent.html#L207) | 207 | `"  :\"\";"` | — |
-| [SRC-DE7EABE998-L000208](../../web/agent.html#L208) | 208 | `" const completionCounters=completion&&completion.counters&&typeof completion.counters===\"object\"?completion.counters:{};"` | — |
-| [SRC-DE7EABE998-L000209](../../web/agent.html#L209) | 209 | `" const completionCounterRows=["` | — |
-| [SRC-DE7EABE998-L000210](../../web/agent.html#L210) | 210 | `"  [completionCounters.queries_planned,\"استعلامًا مخططًا\"],"` | — |
-| [SRC-DE7EABE998-L000211](../../web/agent.html#L211) | 211 | `"  [completionCounters.queries_attempted,\"استعلامًا تمت محاولته\"],"` | — |
-| [SRC-DE7EABE998-L000212](../../web/agent.html#L212) | 212 | `"  [completionCounters.per_query_result_count_sum,\"مجموع أعداد النتائج المسجلة لكل استعلام، قبل إزالة التكرار\"],"` | — |
-| [SRC-DE7EABE998-L000213](../../web/agent.html#L213) | 213 | `"  [completionCounters.final_source_list_count,\"مصدرًا في القائمة النهائية\"],"` | — |
-| [SRC-DE7EABE998-L000214](../../web/agent.html#L214) | 214 | `"  [completionCounters.unique_normalized_url_count,\"رابطًا فريدًا بعد التطبيع\"],"` | — |
-| [SRC-DE7EABE998-L000215](../../web/agent.html#L215) | 215 | `"  [completionCounters.duplicate_normalized_url_count,\"رابطًا مكررًا وفق التطبيع\"],"` | — |
-| [SRC-DE7EABE998-L000216](../../web/agent.html#L216) | 216 | `"  [completionCounters.distinct_registrable_domain_count,\"نطاقًا مسجلًا مختلفًا\"],"` | — |
-| [SRC-DE7EABE998-L000217](../../web/agent.html#L217) | 217 | `"  [completionCounters.pages_fetched_flag_count,\"صفحة تحمل علامة جلب\"],"` | — |
-| [SRC-DE7EABE998-L000218](../../web/agent.html#L218) | 218 | `"  [completionCounters.pages_read_with_text_count,\"صفحة توفر نصها المقروء\"],"` | — |
-| [SRC-DE7EABE998-L000219](../../web/agent.html#L219) | 219 | `"  [completionCounters.snippet_only_source_count,\"مصدرًا بمقتطف دون صفحة مقروءة\"],"` | — |
-| [SRC-DE7EABE998-L000220](../../web/agent.html#L220) | 220 | `"  [completionCounters.connector_success_count,\"استجابة موصل ناجحة/مكتملة\"],"` | — |
-| [SRC-DE7EABE998-L000221](../../web/agent.html#L221) | 221 | `"  [completionCounters.connector_failure_count,\"حالة إخفاق موصل مسجلة\"],"` | — |
-| [SRC-DE7EABE998-L000222](../../web/agent.html#L222) | 222 | `"  [completionCounters.guardrail_rejected_candidate_count,\"مرشحًا مرفوضًا بحواجز الأدلة\"]"` | — |
-| [SRC-DE7EABE998-L000223](../../web/agent.html#L223) | 223 | `" ];"` | — |
-| [SRC-DE7EABE998-L000224](../../web/agent.html#L224) | 224 | `" const completionCounterHtml=completionCounterRows.map(([value,label])=>'<div class=\"metric\"><strong>'+escapeHtml(value===null\|\|value===undefined?\"غير محدد\":value)+'</strong><span>'+escapeHtml(label)+'</span></div>').join(\"\");"` | — |
-| [SRC-DE7EABE998-L000225](../../web/agent.html#L225) | 225 | `" const consistency=completion&&completion.counter_consistency&&typeof completion.counter_consistency===\"object\"?completion.counter_consistency:null;"` | — |
-| [SRC-DE7EABE998-L000226](../../web/agent.html#L226) | 226 | `" const consistencyLabels={matched:\"العدادات المتاحة متطابقة\",mismatch_detected:\"اختلاف بين بعض العدادات والقائمة النهائية\",not_computable:\"لا توجد عدادات كافية للمقارنة\"};"` | — |
-| [SRC-DE7EABE998-L000227](../../web/agent.html#L227) | 227 | `" const consistencyHtml=consistency?'<p class=\"'+(consistency.status===\"mismatch_detected\"?\"warning\":\"report-note\")+'\">اتساق العدادات: '+escapeHtml(consistencyLabels[consistency.status]\|\|consistency.status\|\|\"غير محدد\")+(Array.isArray(consistency.issues)&&consistency.issues.length?' — '+consistency.issues.map(escapeHtml).join(\"، \"):\"\")+'</p>':\"\";"` | — |
-| [SRC-DE7EABE998-L000228](../../web/agent.html#L228) | 228 | `" const completionDetailsHtml=completion&&completion.status"` | — |
-| [SRC-DE7EABE998-L000229](../../web/agent.html#L229) | 229 | `"  ?'<details class=\"details\"><summary>تفاصيل مراحل إكمال البحث والعدادات</summary>'+(completionPhaseRows?'<p class=\"report-note\">مراحل التنفيذ:</p><ul>'+completionPhaseRows+'</ul>':\"\")+'<div class=\"metrics\">'+completionCounterHtml+'</div>'+consistencyHtml+'<p class=\"warning\">التحقق الدلالي من أن كل ادعاء مسنود فعلًا بالمصدر لم يُنفذ في هذا التشخيص. صلاحية رقم الإحالة أو قراءة الصفحة لا تثبت صحة الادعاء.</p></details>'"` | — |
-| [SRC-DE7EABE998-L000230](../../web/agent.html#L230) | 230 | `"  :\"\";"` | — |
-| [SRC-DE7EABE998-L000231](../../web/agent.html#L231) | 231 | `" const e=r.evidence_signals&&typeof r.evidence_signals===\"object\"?r.evidence_signals:{};"` | — |
-| [SRC-DE7EABE998-L000232](../../web/agent.html#L232) | 232 | `" const sources=Array.isArray(result.sources)?result.sources:[];"` | — |
-| [SRC-DE7EABE998-L000233](../../web/agent.html#L233) | 233 | `" const researchErrorOutcome=[\"attempted_research_error\",\"unknown_after_research_error\"].includes(r.search_outcome);"` | — |
-| [SRC-DE7EABE998-L000234](../../web/agent.html#L234) | 234 | `" const lead=r.lead_generation&&typeof r.lead_generation===\"object\"?r.lead_generation:null;"` | — |
-| [SRC-DE7EABE998-L000235](../../web/agent.html#L235) | 235 | `" const leadResearchIncomplete=!!lead&&lead.status===\"research_incomplete\";"` | — |
-| [SRC-DE7EABE998-L000236](../../web/agent.html#L236) | 236 | `" const leadSignalCount=lead&&lead.candidate_signal_count!==null&&lead.candidate_signal_count!==undefined&&Number.isFinite(Number(lead.candidate_signal_count))?Number(lead.candidate_signal_count):null;"` | — |
-| [SRC-DE7EABE998-L000237](../../web/agent.html#L237) | 237 | `" const noQualifiedLeads=!!lead&&!leadResearchIncomplete&&leadSignalCount===0;"` | — |
-| [SRC-DE7EABE998-L000238](../../web/agent.html#L238) | 238 | `" const scoreLabel=lead?(leadResearchIncomplete?\"تعذر حسم البحث عن العملاء\":noQualifiedLeads?\"لم يُثبت وجود عميل محتمل\":\"إشارات نية شراء مرشحة\"):(researchErrorOutcome?\"تعذر تحديد التغطية\":(e.coverage_level\|\|\"تغطية محدودة\"));"` | — |
-| [SRC-DE7EABE998-L000239](../../web/agent.html#L239) | 239 | `" const metrics=lead?["` | — |
-| [SRC-DE7EABE998-L000240](../../web/agent.html#L240) | 240 | `"  [leadSignalCount??\"غير محدد\",\"إشارة نصية مرشحة لنية شراء\"],"` | — |
-| [SRC-DE7EABE998-L000241](../../web/agent.html#L241) | 241 | `"  [lead.related_results_reviewed??\"غير محدد\",\"نتيجة تمت مراجعتها\"],"` | — |
-| [SRC-DE7EABE998-L000242](../../web/agent.html#L242) | 242 | `"  [r.pages_fetched??(leadResearchIncomplete?\"غير محدد\":0),\"صفحة قُرئت\"],"` | — |
-| [SRC-DE7EABE998-L000243](../../web/agent.html#L243) | 243 | `"  [leadResearchIncomplete?\"غير محدد\":(e.providers_count??(Array.isArray(r.providers_used)?r.providers_used.length:0)),\"واجهة أسهمت بمصدر صالح\"]"` | — |
-| [SRC-DE7EABE998-L000244](../../web/agent.html#L244) | 244 | `" ]:["` | — |
-| [SRC-DE7EABE998-L000245](../../web/agent.html#L245) | 245 | `"  [researchErrorOutcome?(r.unique_sources??\"غير محدد\"):(r.unique_sources??sources.length),\"مصدرًا فريدًا\"],"` | — |
-| [SRC-DE7EABE998-L000246](../../web/agent.html#L246) | 246 | `"  [researchErrorOutcome?\"غير محدد\":(e.unique_domains??\"—\"),\"نطاقًا مختلفًا\"],"` | — |
-| [SRC-DE7EABE998-L000247](../../web/agent.html#L247) | 247 | `"  [researchErrorOutcome?(r.pages_fetched??\"غير محدد\"):(r.pages_fetched??e.pages_read??0),\"صفحة قُرئت\"],"` | — |
-| [SRC-DE7EABE998-L000248](../../web/agent.html#L248) | 248 | `"  [researchErrorOutcome?\"غير محدد\":(e.providers_count??(Array.isArray(r.providers_used)?r.providers_used.length:0)),\"واجهة أسهمت بمصدر صالح\"]"` | — |
-| [SRC-DE7EABE998-L000249](../../web/agent.html#L249) | 249 | `" ];"` | — |
-| [SRC-DE7EABE998-L000250](../../web/agent.html#L250) | 250 | `" const metricHtml=metrics.map(([v,l])=>'<div class=\"metric\"><strong>'+escapeHtml(v)+'</strong><span>'+escapeHtml(l)+'</span></div>').join(\"\");"` | — |
-| [SRC-DE7EABE998-L000251](../../web/agent.html#L251) | 251 | `" const operationalMetrics=["` | — |
-| [SRC-DE7EABE998-L000252](../../web/agent.html#L252) | 252 | `"  [r.provider_candidates_received??\"غير محدد\",\"مرشح أعاده محرك البحث قبل التصفية (قد يتكرر)\"],"` | — |
-| [SRC-DE7EABE998-L000253](../../web/agent.html#L253) | 253 | `"  [r.provider_candidates_accepted??\"غير محدد\",\"مرشح اجتاز فحص الموصل قبل الدمج\"],"` | — |
-| [SRC-DE7EABE998-L000254](../../web/agent.html#L254) | 254 | `"  [r.provider_candidates_rejected??\"غير محدد\",\"مرشح رُفض بفحص الرابط أو الصلة\"],"` | — |
-| [SRC-DE7EABE998-L000255](../../web/agent.html#L255) | 255 | `"  [r.raw_results??\"غير محدد\",\"نتيجة جُمعت قبل دمج التكرارات\"],"` | — |
-| [SRC-DE7EABE998-L000256](../../web/agent.html#L256) | 256 | `"  [r.unique_urls??r.unique_sources??sources.length,\"رابط فريد بعد الدمج\"],"` | — |
-| [SRC-DE7EABE998-L000257](../../web/agent.html#L257) | 257 | `"  [r.pages_fetch_attempted??\"غير محدد\",\"محاولة جلب صفحة\"],"` | — |
-| [SRC-DE7EABE998-L000258](../../web/agent.html#L258) | 258 | `"  [r.pages_content_extracted??r.pages_fetched??\"غير محدد\",\"صفحة استُخرج منها نص\"],"` | — |
-| [SRC-DE7EABE998-L000259](../../web/agent.html#L259) | 259 | `"  [r.pages_partial_extracted??\"غير محدد\",\"صفحة استُخرج جزء من نصها\"],"` | — |
-| [SRC-DE7EABE998-L000260](../../web/agent.html#L260) | 260 | `"  [r.pages_extract_failed??\"غير محدد\",\"صفحة فشل استخراج نصها\"]"` | — |
-| [SRC-DE7EABE998-L000261](../../web/agent.html#L261) | 261 | `" ];"` | — |
-| [SRC-DE7EABE998-L000262](../../web/agent.html#L262) | 262 | `" const operationalHtml='<div class=\"metrics\">'+operationalMetrics.map(([v,l])=>'<div class=\"metric\"><strong>'+escapeHtml(v)+'</strong><span>'+escapeHtml(l)+'</span></div>').join(\"\")+'</div>';"` | — |
-| [SRC-DE7EABE998-L000263](../../web/agent.html#L263) | 263 | `" const connectors=r.connector_summary&&Array.isArray(r.connector_summary.connectors)?r.connector_summary.connectors:[];"` | — |
-| [SRC-DE7EABE998-L000264](../../web/agent.html#L264) | 264 | `" const connectorDetails=connectors.length?'<details class=\"details\"><summary>تشخيص الموصلات في هذا الطلب ('+connectors.length+')</summary><div>'+connectors.map(c=>'<article class=\"source\"><strong>'+escapeHtml(c.name\|\|\"موصل\")+' · '+escapeHtml(c.status\|\|\"unknown\")+'</strong><p>الإعداد: '+escapeHtml(c.configuration_status\|\|\"unknown\")+' · تمت المحاولة: '+escapeHtml(c.attempted===true?\"نعم\":c.attempted===false?\"لا\":\"غير محسوم\")+' · متاح في هذا الطلب: '+escapeHtml(c.available_for_this_request===true?\"نعم\":c.available_for_this_request===false?\"لا\":\"غير محسوم\")+' · استجابة المعالجة مؤكدة: '+escapeHtml(c.verified_for_this_request===true?\"نعم\":c.verified_for_this_request===false?\"لا\":\"غير مختبر/غير محسوم\")+' · إخفاق ملاحظ: '+escapeHtml(c.failure_observed===true?\"نعم\":\"لا\")+' · مرشحون أوليون من الموصل: '+escapeHtml(c.result_count??\"غير محدد\")+' · اجتازوا فحص الموصل: '+escapeHtml(c.accepted_count??\"غير محدد\")+' · مصادر نهائية منسوبة إليه: '+escapeHtml(c.useful_result_count??\"غير محدد\")+' · مرفوض: '+escapeHtml(c.rejected_count??\"غير محدد\")+' · توزيع الرفض: '+escapeHtml(c.rejection_counts_observed===true&&c.rejection_counts?('مرشح مشوّه '+(c.rejection_counts.malformed_candidate??0)+'؛ رابط غير صالح/هدف غير آمن '+(c.rejection_counts.invalid_url_or_unsafe_target??0)+'؛ نطاق محظور '+(c.rejection_counts.blocked_domain??0)+'؛ صلة ضعيفة '+(c.rejection_counts.relevance_below_threshold??0)):'غير مسجل في هذه الجولة')+' · كل المرشحين رُفضوا: '+escapeHtml(c.candidate_rejection_observed===true?\"نعم\":c.candidate_rejection_observed===false?\"لا\":\"غير محسوم\")+'</p>'+((Array.isArray(c.queries)&&c.queries.length)?'<p>استعلامات: '+c.queries.map(escapeHtml).join(\" · \")+'</p>':\"\")+((Array.isArray(c.errors)&&c.errors.length)?'<p class=\"warning\">أخطاء: '+c.errors.map(escapeHtml).join(\" · \")+'</p>':\"\")+'</article>').join(\"\")+'</div></details>':\"\";"` | — |
-| [SRC-DE7EABE998-L000265](../../web/agent.html#L265) | 265 | `" const integrity=r.answer_integrity&&typeof r.answer_integrity===\"object\"?r.answer_integrity:null;"` | — |
-| [SRC-DE7EABE998-L000266](../../web/agent.html#L266) | 266 | `" const integrityNumbers=integrity&&Array.isArray(integrity.potentially_unsupported_numeric_literals)?integrity.potentially_unsupported_numeric_literals:[];"` | — |
-| [SRC-DE7EABE998-L000267](../../web/agent.html#L267) | 267 | `" const integrityTargets=integrity&&Array.isArray(integrity.target_coverage)?integrity.target_coverage:[];"` | — |
-| [SRC-DE7EABE998-L000268](../../web/agent.html#L268) | 268 | `" const requirementEvidence=integrity&&Array.isArray(integrity.requirement_evidence)?integrity.requirement_evidence:[];"` | — |
-| [SRC-DE7EABE998-L000269](../../web/agent.html#L269) | 269 | `" const requirementEvidenceHtml=requirementEvidence.length?'<p class=\"report-note\">سجل الأدلة لكل محور — إشارات لفظية وربط استعلامات، وليست إثباتًا لصحة الادعاءات:</p><ul>'+requirementEvidence.map(item=>{const statusText=({candidate_evidence_found_not_verified:\"وُجد نص مرشح مطابق لفظيًا؛ لم تُتحقق دلالته.\",query_returned_candidates_no_lexical_signal:\"عاد الاستعلام بمصادر، لكن لم يظهر تطابق لفظي كافٍ داخل النص.\",no_candidate_evidence_found:\"لم تُسجل أدلة مرشحة لهذا المحور في النتائج المتاحة.\",query_result_linkage_unavailable:\"تعذر ربط النتائج بالاستعلام المخصص لهذا المحور.\",query_not_available:\"لا يوجد استعلام مخصص مسجل لهذا المحور.\"})[item.status]\|\|\"الحالة غير محسومة.\";const ids=Array.isArray(item.candidate_source_indexes)?item.candidate_source_indexes:[];const qids=Array.isArray(item.query_result_source_indexes)?item.query_result_source_indexes:[];return '<li><strong>'+escapeHtml(item.target\|\|\"محور\")+':</strong> '+escapeHtml(statusText)+(ids.length?' — مرشحو الدليل: '+ids.map(n=>\"المصدر \"+escapeHtml(n)).join(\"، \"):\"\")+(qids.length?' — نتائج الاستعلام: '+qids.map(n=>\"المصدر \"+escapeHtml(n)).join(\"، \"):\"\")+'</li>';}).join(\"\")+'</ul>':\"\";"` | — |
-| [SRC-DE7EABE998-L000270](../../web/agent.html#L270) | 270 | `" const citationNumericSupport=integrity&&Array.isArray(integrity.citation_numeric_support)?integrity.citation_numeric_support:[];"` | — |
-| [SRC-DE7EABE998-L000271](../../web/agent.html#L271) | 271 | `" const citedNumberIssues=citationNumericSupport.filter(item=>item&&Array.isArray(item.potentially_unsupported_numeric_literals)&&item.potentially_unsupported_numeric_literals.length);"` | — |
-| [SRC-DE7EABE998-L000272](../../web/agent.html#L272) | 272 | `" const citedNumberHtml=citedNumberIssues.length?'<p class=\"warning\">وجد الفحص أرقامًا قد لا يسندها المصدر المحدد في الاستشهاد؛ راجع المقتطف أو نص الصفحة الأصلي.</p><ul>'+citedNumberIssues.map(item=>'<li>الجملة '+escapeHtml(item.sentence_number??\"غير محدد\")+' · الرقم: '+item.potentially_unsupported_numeric_literals.map(escapeHtml).join(\"، \")+' · الاستشهادات: '+(Array.isArray(item.cited_source_indexes)?item.cited_source_indexes.map(n=>'المصدر '+escapeHtml(n)).join(\"، \"):\"غير محددة\")+'</li>').join(\"\")+'</ul>':\"\";"` | — |
-| [SRC-DE7EABE998-L000273](../../web/agent.html#L273) | 273 | `" const valueDiscrepancies=integrity&&Array.isArray(integrity.potential_value_discrepancies)?integrity.potential_value_discrepancies:[];"` | — |
-| [SRC-DE7EABE998-L000274](../../web/agent.html#L274) | 274 | `" const valueDimensionLabels={price_or_cost:\"السعر/التكلفة\",area_or_size:\"المساحة/الحجم\",duration:\"المدة\",percentage_or_rate:\"النسبة\",date_or_year:\"التاريخ/السنة\"};"` | — |
-| [SRC-DE7EABE998-L000275](../../web/agent.html#L275) | 275 | `" const valueDiscrepancyHtml=valueDiscrepancies.length?'<p class=\"warning\">رُصدت قيم مختلفة في مصادر متعددة. قد يكون الاختلاف بين منتجات أو فترات أو وحدات مختلفة؛ هذه ليست إثباتًا تلقائيًا لوجود تناقض.</p><ul>'+valueDiscrepancies.map(item=>'<li>'+escapeHtml(valueDimensionLabels[item.dimension]\|\|item.dimension\|\|\"قيمة\")+' — '+(Array.isArray(item.values)?item.values.map(value=>escapeHtml(value.value)+' ('+(Array.isArray(value.source_indexes)?value.source_indexes.map(n=>'المصدر '+escapeHtml(n)).join(\"، \"):\"مصدر غير محدد\")+')').join(' مقابل '):\"قِيَم تحتاج مراجعة\")+'</li>').join(\"\")+'</ul>':\"\";"` | — |
-| [SRC-DE7EABE998-L000276](../../web/agent.html#L276) | 276 | `" const citationAlignment=integrity&&Array.isArray(integrity.citation_lexical_alignment)?integrity.citation_lexical_alignment:[];"` | — |
-| [SRC-DE7EABE998-L000277](../../web/agent.html#L277) | 277 | `" const weakCitationAlignment=citationAlignment.filter(item=>item&&item.status===\"weak_lexical_overlap\");"` | — |
-| [SRC-DE7EABE998-L000278](../../web/agent.html#L278) | 278 | `" const citationAlignmentHtml=citationAlignment.length?'<p class=\"report-note\">'+(weakCitationAlignment.length?'لم يظهر تطابق لفظي كافٍ في '+weakCitationAlignment.length+' جملة/جمل مستشهد بها؛ راجع الاستشهادات يدويًا.':'ظهرت إشارات تطابق لفظي لبعض الجمل المستشهد بها، لكنها لا تثبت أن المصدر يسند الادعاء.')+'</p>':\"\";"` | — |
-| [SRC-DE7EABE998-L000279](../../web/agent.html#L279) | 279 | `" const integrityScope=integrity?({contains_extracted_page_text_and_or_snippets:\"نص صفحات مستخرج مع مقتطفات بحث\",search_snippets_only:\"مقتطفات بحث فقط — لم يؤكد النظام قراءة نص الصفحات\",no_readable_source_text:\"لا يتوفر نص مصدر قابل للفحص\"}[integrity.source_evidence_scope]\|\|integrity.source_evidence_scope\|\|\"غير محدد\"):\"غير محدد\";"` | — |
-| [SRC-DE7EABE998-L000280](../../web/agent.html#L280) | 280 | `" const integritySummary=integrity?'<p class=\"report-note\">عدادات الفحص اللفظي: '+escapeHtml(integrity.potentially_unsupported_numeric_count??0)+' رقم لم يظهر نصيًا في الأدلة؛ '+escapeHtml(integrity.potentially_unsupported_numeric_by_citation_count??0)+' رقم لا يسنده المصدر المشار إليه تحديدًا؛ '+escapeHtml(integrity.potential_value_discrepancy_count??0)+' اختلاف قيمة يحتاج مطابقة؛ '+escapeHtml(integrity.potentially_missing_target_count??0)+' محور محتمل النقص؛ '+escapeHtml(integrity.source_evidence_gap_count??0)+' محور بلا إشارة لفظية في المصادر.</p>':\"\";"` | — |
-| [SRC-DE7EABE998-L000281](../../web/agent.html#L281) | 281 | `" const taskFulfillmentStatus=r.task_fulfillment_status\|\|result.task_fulfillment_status\|\|\"not_machine_assessed_no_explicit_targets_detected\";"` | — |
-| [SRC-DE7EABE998-L000282](../../web/agent.html#L282) | 282 | `" const taskFulfillmentText=({"` | — |
-| [SRC-DE7EABE998-L000283](../../web/agent.html#L283) | 283 | `"  possible_gap_detected:\"قد تكون الإجابة أغفلت محورًا من السؤال؛ هذه إشارة لفظية تحتاج مراجعة وليست حكمًا نهائيًا.\","` | — |
-| [SRC-DE7EABE998-L000284](../../web/agent.html#L284) | 284 | `"  lexical_signals_found_not_semantically_verified:\"ظهرت إشارات لفظية للمحاور المستخرجة، لكن هذا لا يثبت اكتمال المهمة.\","` | — |
-| [SRC-DE7EABE998-L000285](../../web/agent.html#L285) | 285 | `"  candidate_evidence_gaps_or_linkage_unknown:\"لا توجد إشارات نصية كافية لبعض المحاور أو تعذر ربط نتائج البحث بها؛ راجع الاستعلامات والمصادر قبل اعتماد الإجابة.\","` | — |
-| [SRC-DE7EABE998-L000286](../../web/agent.html#L286) | 286 | `"  not_assessed_insufficient_evidence:\"الأدلة غير كافية؛ لم يتم التحقق من اكتمال المهمة.\","` | — |
-| [SRC-DE7EABE998-L000287](../../web/agent.html#L287) | 287 | `"  not_machine_assessed_no_explicit_targets_detected:\"لم تُستخرج محاور صريحة قابلة للفحص؛ اكتمال المهمة لم يُقيّم آليًا.\""` | — |
-| [SRC-DE7EABE998-L000288](../../web/agent.html#L288) | 288 | `" })[taskFulfillmentStatus]\|\|\"حالة اكتمال المهمة غير محسومة آليًا.\";"` | — |
-| [SRC-DE7EABE998-L000289](../../web/agent.html#L289) | 289 | `" const taskFulfillmentHtml='<p class=\"'+([\"possible_gap_detected\",\"candidate_evidence_gaps_or_linkage_unknown\"].includes(taskFulfillmentStatus)?\"warning\":\"report-note\")+'\">حالة تنفيذ المطلوب: '+escapeHtml(taskFulfillmentText)+'</p>';"` | — |
-| [SRC-DE7EABE998-L000290](../../web/agent.html#L290) | 290 | `" const coverageRepairStatus=r.coverage_repair_status\|\|result.coverage_repair_status\|\|\"\";"` | — |
-| [SRC-DE7EABE998-L000291](../../web/agent.html#L291) | 291 | `" const coverageRepairMessages={"` | — |
-| [SRC-DE7EABE998-L000292](../../web/agent.html#L292) | 292 | `"  revised_and_reaudited:\"عُدّلت الإجابة بعد رصد محور محتمل النقص ثم خضعت لمراجعة أدلة ثانية؛ تظل المراجعة بمساعدة نموذج وليست تحققًا مستقلًا.\","` | — |
-| [SRC-DE7EABE998-L000293](../../web/agent.html#L293) | 293 | `"  revised_and_reaudited_remaining_gaps:\"خضعت الإجابة المعدلة لمراجعة ثانية، لكن بقي محور محتمل النقص؛ لا تعتبر المهمة مكتملة قبل مراجعة الأدلة.\","` | — |
-| [SRC-DE7EABE998-L000294](../../web/agent.html#L294) | 294 | `"  reaudit_budget_exhausted:\"انتهت ميزانية النماذج قبل إعادة تدقيق الإجابة المعدلة؛ عُرضت مقتطفات المصادر بدل اعتبار النص المعدل إجابة مكتملة.\","` | — |
-| [SRC-DE7EABE998-L000295](../../web/agent.html#L295) | 295 | `"  reaudit_unavailable:\"تعذرت إعادة تدقيق الإجابة المعدلة؛ عُرضت مقتطفات المصادر بدل اعتبار النص المعدل إجابة مكتملة.\","` | — |
-| [SRC-DE7EABE998-L000296](../../web/agent.html#L296) | 296 | `"  budget_exhausted:\"انتهت ميزانية النماذج قبل استكمال محور محتمل النقص.\","` | — |
-| [SRC-DE7EABE998-L000297](../../web/agent.html#L297) | 297 | `"  unavailable:\"تعذرت محاولة إصلاح محور محتمل النقص.\","` | — |
-| [SRC-DE7EABE998-L000298](../../web/agent.html#L298) | 298 | `"  no_change_gap_unresolved:\"لم تغيّر محاولة الإصلاح الإجابة؛ لا يزال احتمال نقص أحد المحاور قائمًا.\","` | — |
-| [SRC-DE7EABE998-L000299](../../web/agent.html#L299) | 299 | `"  source_evidence_gap_unresolved:\"ذُكرت المحاور في الإجابة، لكن لم تظهر لها إشارات لفظية في المصادر؛ تظل غير محسومة.\""` | — |
-| [SRC-DE7EABE998-L000300](../../web/agent.html#L300) | 300 | `" };"` | — |
-| [SRC-DE7EABE998-L000301](../../web/agent.html#L301) | 301 | `" const coverageRepairHtml=coverageRepairMessages[coverageRepairStatus]?'<p class=\"warning\">حالة إصلاح التغطية: '+escapeHtml(coverageRepairMessages[coverageRepairStatus])+'</p>':\"\";"` | — |
-| [SRC-DE7EABE998-L000302](../../web/agent.html#L302) | 302 | `" const criterionGapResearch=r.criterion_gap_research\|\|(result.search_report&&result.search_report.criterion_gap_research)\|\|{};"` | — |
-| [SRC-DE7EABE998-L000303](../../web/agent.html#L303) | 303 | `" const criterionGapResearchStatus=criterionGapResearch.status\|\|\"\";"` | — |
-| [SRC-DE7EABE998-L000304](../../web/agent.html#L304) | 304 | `" const criterionGapResearchMessages={"` | — |
-| [SRC-DE7EABE998-L000305](../../web/agent.html#L305) | 305 | `"  not_needed:\"لم يرصد الفحص فجوة مصدر تستدعي بحثًا إضافيًا.\","` | — |

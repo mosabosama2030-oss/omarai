@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **150**
-- ملفات Python المحللة: **89**
-- تعريفات Python المفهرسة: **2183**
+- ملفات المستودع في الجرد: **151**
+- ملفات Python المحللة: **90**
+- تعريفات Python المفهرسة: **2185**
 - تعريفات Python موثقة بوجود Docstring: **312**
-- تعريفات Python بلا Docstring: **1448**
+- تعريفات Python بلا Docstring: **1450**
 - تعريفات لا ينطبق عليها Docstring: **423**
 - الرموز الساكنة الإضافية: **2976**
-- الأسطر النصية المفهرسة حرفيًا: **54991**
+- الأسطر النصية المفهرسة حرفيًا: **55140**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -152,7 +152,7 @@
 | FILE-1521F490CA | اختبارات | [tests/test_multitenant.py](../tests/test_multitenant.py#L1) | Python | 14601 | 397 | جرد الملف + AST Python |
 | FILE-4405E7912C | اختبارات | [tests/test_multitenant_api.py](../tests/test_multitenant_api.py#L1) | Python | 13012 | 393 | جرد الملف + AST Python |
 | FILE-44CDA52D01 | اختبارات | [tests/test_omarai.py](../tests/test_omarai.py#L1) | Python | 7479 | 206 | جرد الملف + AST Python |
-| FILE-851E7A87D6 | اختبارات | [tests/test_postgres_store.py](../tests/test_postgres_store.py#L1) | Python | 6883 | 172 | جرد الملف + AST Python |
+| FILE-851E7A87D6 | اختبارات | [tests/test_postgres_store.py](../tests/test_postgres_store.py#L1) | Python | 9537 | 243 | جرد الملف + AST Python |
 | FILE-B106ADC5EF | اختبارات | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L1) | Python | 3600 | 86 | جرد الملف + AST Python |
 | FILE-3D0DE98F65 | اختبارات | [tests/test_question_requirement_loop.py](../tests/test_question_requirement_loop.py#L1) | Python | 8804 | 215 | جرد الملف + AST Python |
 | FILE-C353AAAC10 | اختبارات | [tests/test_request_budget.py](../tests/test_request_budget.py#L1) | Python | 6732 | 191 | جرد الملف + AST Python |
@@ -169,6 +169,7 @@
 | FILE-AC9D8384E8 | اختبارات | [tests/test_semantic_claim_verifier.py](../tests/test_semantic_claim_verifier.py#L1) | Python | 12088 | 331 | جرد الملف + AST Python |
 | FILE-D033B34F41 | اختبارات | [tests/test_source_metadata_audit.py](../tests/test_source_metadata_audit.py#L1) | Python | 3687 | 89 | جرد الملف + AST Python |
 | FILE-1C0D3D1206 | اختبارات | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L1) | Python | 3820 | 105 | جرد الملف + AST Python |
+| FILE-8FDC8527E5 | اختبارات | [tests/test_storage_restart.py](../tests/test_storage_restart.py#L1) | Python | 2830 | 78 | جرد الملف + AST Python |
 | FILE-AFEDC2645A | اختبارات | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L1) | Python | 40811 | 1049 | جرد الملف + AST Python |
 | FILE-FBDC61DA0B | اختبارات | [tests/test_tool_execution_status.py](../tests/test_tool_execution_status.py#L1) | Python | 5490 | 149 | جرد الملف + AST Python |
 | FILE-F725E90B2A | اختبارات | [tests/test_web_agent.py](../tests/test_web_agent.py#L1) | Python | 180243 | 4599 | جرد الملف + AST Python |
@@ -1743,6 +1744,7 @@
 | [tests/test_postgres_store.py](../tests/test_postgres_store.py#L145) | دالة | test_postgres_connection_adapter_converts_insert_or_ignore.FakeConnection.execute | لا توجد Docstring. | ناقص | 145 | [SRC-851E7A87D6-L000145](../tests/test_postgres_store.py#L145) |
 | [tests/test_postgres_store.py](../tests/test_postgres_store.py#L165) | دالة | test_postgres_database_url_rejects_unsupported_scheme | لا توجد Docstring. | ناقص | 165 | [SRC-851E7A87D6-L000165](../tests/test_postgres_store.py#L165) |
 | [tests/test_postgres_store.py](../tests/test_postgres_store.py#L170) | دالة | test_postgres_database_url_cannot_be_combined_with_sqlite_path | لا توجد Docstring. | ناقص | 170 | [SRC-851E7A87D6-L000170](../tests/test_postgres_store.py#L170) |
+| [tests/test_postgres_store.py](../tests/test_postgres_store.py#L174) | دالة | test_postgres_records_survive_a_new_python_process | لا توجد Docstring. | ناقص | 174 | [SRC-851E7A87D6-L000174](../tests/test_postgres_store.py#L174) |
 | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L10) | متغير/ثابت Python | TOKEN | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 10 | [SRC-B106ADC5EF-L000010](../tests/test_proxy_origin.py#L10) |
 | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L11) | متغير/ثابت Python | PUBLIC_NAME | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 11 | [SRC-B106ADC5EF-L000011](../tests/test_proxy_origin.py#L11) |
 | [tests/test_proxy_origin.py](../tests/test_proxy_origin.py#L14) | دالة | port | لا توجد Docstring. | ناقص | 14 | [SRC-B106ADC5EF-L000014](../tests/test_proxy_origin.py#L14) |
@@ -1981,6 +1983,7 @@
 | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L74) | دالة | test_backup_rejects_same_source_and_destination | لا توجد Docstring. | ناقص | 74 | [SRC-1C0D3D1206-L000074](../tests/test_sqlite_backup_restore.py#L74) |
 | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L82) | دالة | test_restore_rejects_corrupt_backup_without_overwriting_source | لا توجد Docstring. | ناقص | 82 | [SRC-1C0D3D1206-L000082](../tests/test_sqlite_backup_restore.py#L82) |
 | [tests/test_sqlite_backup_restore.py](../tests/test_sqlite_backup_restore.py#L93) | دالة | test_backup_rejects_dangling_symlink_destination | لا توجد Docstring. | ناقص | 93 | [SRC-1C0D3D1206-L000093](../tests/test_sqlite_backup_restore.py#L93) |
+| [tests/test_storage_restart.py](../tests/test_storage_restart.py#L11) | دالة | test_sqlite_records_survive_a_new_python_process | لا توجد Docstring. | ناقص | 11 | [SRC-8FDC8527E5-L000011](../tests/test_storage_restart.py#L11) |
 | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L23) | دالة | test_task_family_covers_diverse_natural_language_patterns | لا توجد Docstring. | ناقص | 23 | [SRC-AFEDC2645A-L000023](../tests/test_task_understanding.py#L23) |
 | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L30) | دالة | test_lead_generation_task_separates_demand_signal_from_product_fit | لا توجد Docstring. | ناقص | 30 | [SRC-AFEDC2645A-L000030](../tests/test_task_understanding.py#L30) |
 | [tests/test_task_understanding.py](../tests/test_task_understanding.py#L46) | دالة | test_lead_generation_query_matrix_preserves_only_buyer_language_queries | لا توجد Docstring. | ناقص | 46 | [SRC-AFEDC2645A-L000046](../tests/test_task_understanding.py#L46) |

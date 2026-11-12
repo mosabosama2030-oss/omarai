@@ -4,9 +4,69 @@
 
 - الصفحة: **057**
 - سجلات الأسطر: **800**
-- النطاق: SRC-01E35ABC46-L000021 إلى SRC-2822F30DAD-L000090
+- النطاق: SRC-AFFCF23BD4-L000298 إلى SRC-2822F30DAD-L000019
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-AFFCF23BD4 — [tests/test_research_completion.py](../../tests/test_research_completion.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-AFFCF23BD4-L000298](../../tests/test_research_completion.py#L298) | 298 | `"def test_removed_invalid_citation_survives_sanitization_in_completion_gate() -> None:"` | — |
+| [SRC-AFFCF23BD4-L000299](../../tests/test_research_completion.py#L299) | 299 | `"    # Exercise the same ordering as production: sanitize first, then build the ledger."` | — |
+| [SRC-AFFCF23BD4-L000300](../../tests/test_research_completion.py#L300) | 300 | `"    from agents.web_agent import WebAgent"` | — |
+| [SRC-AFFCF23BD4-L000301](../../tests/test_research_completion.py#L301) | 301 | `""` | — |
+| [SRC-AFFCF23BD4-L000302](../../tests/test_research_completion.py#L302) | 302 | `"    raw_answer = ("` | — |
+| [SRC-AFFCF23BD4-L000303](../../tests/test_research_completion.py#L303) | 303 | `"        \"The report states 100 EGP [المصدر 1], and a second unsupported claim \""` | — |
+| [SRC-AFFCF23BD4-L000304](../../tests/test_research_completion.py#L304) | 304 | `"        \"points to [المصدر 2].\""` | — |
+| [SRC-AFFCF23BD4-L000305](../../tests/test_research_completion.py#L305) | 305 | `"    )"` | — |
+| [SRC-AFFCF23BD4-L000306](../../tests/test_research_completion.py#L306) | 306 | `"    sources = [{"` | — |
+| [SRC-AFFCF23BD4-L000307](../../tests/test_research_completion.py#L307) | 307 | `"        \"url\": \"https://example.com/report\","` | — |
+| [SRC-AFFCF23BD4-L000308](../../tests/test_research_completion.py#L308) | 308 | `"        \"title\": \"Report\","` | — |
+| [SRC-AFFCF23BD4-L000309](../../tests/test_research_completion.py#L309) | 309 | `"        \"snippet\": \"The report states 100 EGP.\","` | — |
+| [SRC-AFFCF23BD4-L000310](../../tests/test_research_completion.py#L310) | 310 | `"        \"page_fetched\": True,"` | — |
+| [SRC-AFFCF23BD4-L000311](../../tests/test_research_completion.py#L311) | 311 | `"        \"page_text\": \"The report states 100 EGP.\","` | — |
+| [SRC-AFFCF23BD4-L000312](../../tests/test_research_completion.py#L312) | 312 | `"    }]"` | — |
+| [SRC-AFFCF23BD4-L000313](../../tests/test_research_completion.py#L313) | 313 | `""` | — |
+| [SRC-AFFCF23BD4-L000314](../../tests/test_research_completion.py#L314) | 314 | `"    sanitized_answer, citation_warnings = WebAgent._remove_invalid_citations("` | — |
+| [SRC-AFFCF23BD4-L000315](../../tests/test_research_completion.py#L315) | 315 | `"        raw_answer, len(sources)"` | — |
+| [SRC-AFFCF23BD4-L000316](../../tests/test_research_completion.py#L316) | 316 | `"    )"` | — |
+| [SRC-AFFCF23BD4-L000317](../../tests/test_research_completion.py#L317) | 317 | `"    citation_validation = WebAgent._citation_validation_metadata("` | — |
+| [SRC-AFFCF23BD4-L000318](../../tests/test_research_completion.py#L318) | 318 | `"        sanitized_answer, len(sources), citation_warnings, \"not_reviewed\""` | — |
+| [SRC-AFFCF23BD4-L000319](../../tests/test_research_completion.py#L319) | 319 | `"    )"` | — |
+| [SRC-AFFCF23BD4-L000320](../../tests/test_research_completion.py#L320) | 320 | `"    assert \"[المصدر 1]\" in sanitized_answer"` | — |
+| [SRC-AFFCF23BD4-L000321](../../tests/test_research_completion.py#L321) | 321 | `"    assert \"[المصدر 2]\" not in sanitized_answer"` | — |
+| [SRC-AFFCF23BD4-L000322](../../tests/test_research_completion.py#L322) | 322 | `"    assert len(citation_warnings) == 1"` | — |
+| [SRC-AFFCF23BD4-L000323](../../tests/test_research_completion.py#L323) | 323 | `"    assert citation_validation[\"invalid_references_removed\"] == 1"` | — |
+| [SRC-AFFCF23BD4-L000324](../../tests/test_research_completion.py#L324) | 324 | `""` | — |
+| [SRC-AFFCF23BD4-L000325](../../tests/test_research_completion.py#L325) | 325 | `"    ledger = build_claim_evidence_ledger(sanitized_answer, sources)"` | — |
+| [SRC-AFFCF23BD4-L000326](../../tests/test_research_completion.py#L326) | 326 | `"    assert ledger[\"summary\"][\"out_of_range_reference_count\"] == 0"` | — |
+| [SRC-AFFCF23BD4-L000327](../../tests/test_research_completion.py#L327) | 327 | `""` | — |
+| [SRC-AFFCF23BD4-L000328](../../tests/test_research_completion.py#L328) | 328 | `"    completion = build_research_completion({"` | — |
+| [SRC-AFFCF23BD4-L000329](../../tests/test_research_completion.py#L329) | 329 | `"        \"kind\": \"web_research\","` | — |
+| [SRC-AFFCF23BD4-L000330](../../tests/test_research_completion.py#L330) | 330 | `"        \"search_attempted\": True,"` | — |
+| [SRC-AFFCF23BD4-L000331](../../tests/test_research_completion.py#L331) | 331 | `"        \"used_language_model\": True,"` | — |
+| [SRC-AFFCF23BD4-L000332](../../tests/test_research_completion.py#L332) | 332 | `"        \"final_answer_status\": \"model_answer_generated\","` | — |
+| [SRC-AFFCF23BD4-L000333](../../tests/test_research_completion.py#L333) | 333 | `"        \"citation_validation\": citation_validation,"` | — |
+| [SRC-AFFCF23BD4-L000334](../../tests/test_research_completion.py#L334) | 334 | `"        \"claim_evidence_ledger\": ledger,"` | — |
+| [SRC-AFFCF23BD4-L000335](../../tests/test_research_completion.py#L335) | 335 | `"        \"sources\": sources,"` | — |
+| [SRC-AFFCF23BD4-L000336](../../tests/test_research_completion.py#L336) | 336 | `"        \"search_report\": {"` | — |
+| [SRC-AFFCF23BD4-L000337](../../tests/test_research_completion.py#L337) | 337 | `"            \"unique_sources\": 1,"` | — |
+| [SRC-AFFCF23BD4-L000338](../../tests/test_research_completion.py#L338) | 338 | `"            \"pages_fetched\": 1,"` | — |
+| [SRC-AFFCF23BD4-L000339](../../tests/test_research_completion.py#L339) | 339 | `"            \"citation_validation\": citation_validation,"` | — |
+| [SRC-AFFCF23BD4-L000340](../../tests/test_research_completion.py#L340) | 340 | `"        },"` | — |
+| [SRC-AFFCF23BD4-L000341](../../tests/test_research_completion.py#L341) | 341 | `"    })"` | — |
+| [SRC-AFFCF23BD4-L000342](../../tests/test_research_completion.py#L342) | 342 | `""` | — |
+| [SRC-AFFCF23BD4-L000343](../../tests/test_research_completion.py#L343) | 343 | `"    assert completion[\"counters\"][\"out_of_range_citation_reference_count\"] == 0"` | — |
+| [SRC-AFFCF23BD4-L000344](../../tests/test_research_completion.py#L344) | 344 | `"    assert completion[\"counters\"][\"invalid_citation_references_removed_count\"] == 1"` | — |
+| [SRC-AFFCF23BD4-L000345](../../tests/test_research_completion.py#L345) | 345 | `"    assert completion[\"counters\"][\"citation_support_warning_count\"] == 1"` | — |
+| [SRC-AFFCF23BD4-L000346](../../tests/test_research_completion.py#L346) | 346 | `"    assert completion[\"status\"] == \"partial_answer_evidence_gaps_detected\""` | — |
+| [SRC-AFFCF23BD4-L000347](../../tests/test_research_completion.py#L347) | 347 | `"    assert completion[\"phases\"][\"citation_support_screen\"] == \"warning_signals_detected\""` | — |
+| [SRC-AFFCF23BD4-L000348](../../tests/test_research_completion.py#L348) | 348 | `"    assert completion[\"phases\"][\"semantic_verification\"] == \"not_performed\""` | — |
 ## اختبارات
 
 ### FILE-01E35ABC46 — [tests/test_research_guardrails.py](../../tests/test_research_guardrails.py#L1)
@@ -16,6 +76,26 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-01E35ABC46-L000001](../../tests/test_research_guardrails.py#L1) | 1 | `"\"\"\"Regression and adversarial tests for depth, freshness, relevance, evidence.\"\"\""` | — |
+| [SRC-01E35ABC46-L000002](../../tests/test_research_guardrails.py#L2) | 2 | `"from __future__ import annotations"` | — |
+| [SRC-01E35ABC46-L000003](../../tests/test_research_guardrails.py#L3) | 3 | `""` | — |
+| [SRC-01E35ABC46-L000004](../../tests/test_research_guardrails.py#L4) | 4 | `"from datetime import UTC, datetime"` | — |
+| [SRC-01E35ABC46-L000005](../../tests/test_research_guardrails.py#L5) | 5 | `""` | — |
+| [SRC-01E35ABC46-L000006](../../tests/test_research_guardrails.py#L6) | 6 | `"from agents.research_guardrails import ("` | — |
+| [SRC-01E35ABC46-L000007](../../tests/test_research_guardrails.py#L7) | 7 | `"    apply_source_guardrails,"` | — |
+| [SRC-01E35ABC46-L000008](../../tests/test_research_guardrails.py#L8) | 8 | `"    assess_current_source,"` | — |
+| [SRC-01E35ABC46-L000009](../../tests/test_research_guardrails.py#L9) | 9 | `"    classify_social_source,"` | — |
+| [SRC-01E35ABC46-L000010](../../tests/test_research_guardrails.py#L10) | 10 | `"    requires_official_government_domain,"` | — |
+| [SRC-01E35ABC46-L000011](../../tests/test_research_guardrails.py#L11) | 11 | `"    requires_official_current_government_source,"` | — |
+| [SRC-01E35ABC46-L000012](../../tests/test_research_guardrails.py#L12) | 12 | `")"` | — |
+| [SRC-01E35ABC46-L000013](../../tests/test_research_guardrails.py#L13) | 13 | `"from agents.research import ("` | — |
+| [SRC-01E35ABC46-L000014](../../tests/test_research_guardrails.py#L14) | 14 | `"    decide_evidence_status,"` | — |
+| [SRC-01E35ABC46-L000015](../../tests/test_research_guardrails.py#L15) | 15 | `"    detect_depth,"` | — |
+| [SRC-01E35ABC46-L000016](../../tests/test_research_guardrails.py#L16) | 16 | `"    detect_freshness,"` | — |
+| [SRC-01E35ABC46-L000017](../../tests/test_research_guardrails.py#L17) | 17 | `"    filter_relevant_sources,"` | — |
+| [SRC-01E35ABC46-L000018](../../tests/test_research_guardrails.py#L18) | 18 | `"    source_relevance_score,"` | — |
+| [SRC-01E35ABC46-L000019](../../tests/test_research_guardrails.py#L19) | 19 | `")"` | — |
+| [SRC-01E35ABC46-L000020](../../tests/test_research_guardrails.py#L20) | 20 | `""` | — |
 | [SRC-01E35ABC46-L000021](../../tests/test_research_guardrails.py#L21) | 21 | `""` | — |
 | [SRC-01E35ABC46-L000022](../../tests/test_research_guardrails.py#L22) | 22 | `"# --- detect_depth -----------------------------------------------------------"` | — |
 | [SRC-01E35ABC46-L000023](../../tests/test_research_guardrails.py#L23) | 23 | `""` | — |
@@ -772,74 +852,3 @@
 | [SRC-2822F30DAD-L000017](../../tests/test_sales_domain.py#L17) | 17 | `"    ProductFit,"` | — |
 | [SRC-2822F30DAD-L000018](../../tests/test_sales_domain.py#L18) | 18 | `"    ProductProfile,"` | — |
 | [SRC-2822F30DAD-L000019](../../tests/test_sales_domain.py#L19) | 19 | `"    ProductTaxonomy,"` | — |
-| [SRC-2822F30DAD-L000020](../../tests/test_sales_domain.py#L20) | 20 | `"    SourceQuality,"` | — |
-| [SRC-2822F30DAD-L000021](../../tests/test_sales_domain.py#L21) | 21 | `"    TaxonomyCategory,"` | — |
-| [SRC-2822F30DAD-L000022](../../tests/test_sales_domain.py#L22) | 22 | `"    normalize_text,"` | — |
-| [SRC-2822F30DAD-L000023](../../tests/test_sales_domain.py#L23) | 23 | `"    to_json_dict,"` | — |
-| [SRC-2822F30DAD-L000024](../../tests/test_sales_domain.py#L24) | 24 | `")"` | — |
-| [SRC-2822F30DAD-L000025](../../tests/test_sales_domain.py#L25) | 25 | `""` | — |
-| [SRC-2822F30DAD-L000026](../../tests/test_sales_domain.py#L26) | 26 | `""` | — |
-| [SRC-2822F30DAD-L000027](../../tests/test_sales_domain.py#L27) | 27 | `"def page_evidence(**overrides):"` | — |
-| [SRC-2822F30DAD-L000028](../../tests/test_sales_domain.py#L28) | 28 | `"    values = {"` | — |
-| [SRC-2822F30DAD-L000029](../../tests/test_sales_domain.py#L29) | 29 | `"        \"source_id\": \"source-1\","` | — |
-| [SRC-2822F30DAD-L000030](../../tests/test_sales_domain.py#L30) | 30 | `"        \"source_url\": \"https://example.org/public-post/1\","` | — |
-| [SRC-2822F30DAD-L000031](../../tests/test_sales_domain.py#L31) | 31 | `"        \"excerpt\": \"I am looking to buy a commercial fire alarm system.\","` | — |
-| [SRC-2822F30DAD-L000032](../../tests/test_sales_domain.py#L32) | 32 | `"        \"content_basis\": EvidenceBasis.PAGE_TEXT,"` | — |
-| [SRC-2822F30DAD-L000033](../../tests/test_sales_domain.py#L33) | 33 | `"        \"publication_date\": \"2026-10-20\","` | — |
-| [SRC-2822F30DAD-L000034](../../tests/test_sales_domain.py#L34) | 34 | `"        \"event_date\": None,"` | — |
-| [SRC-2822F30DAD-L000035](../../tests/test_sales_domain.py#L35) | 35 | `"        \"observed_at\": \"2026-10-31T08:00:00Z\","` | — |
-| [SRC-2822F30DAD-L000036](../../tests/test_sales_domain.py#L36) | 36 | `"        \"page_read\": True,"` | — |
-| [SRC-2822F30DAD-L000037](../../tests/test_sales_domain.py#L37) | 37 | `"    }"` | — |
-| [SRC-2822F30DAD-L000038](../../tests/test_sales_domain.py#L38) | 38 | `"    values.update(overrides)"` | — |
-| [SRC-2822F30DAD-L000039](../../tests/test_sales_domain.py#L39) | 39 | `"    return DemandEvidence(**values)"` | — |
-| [SRC-2822F30DAD-L000040](../../tests/test_sales_domain.py#L40) | 40 | `""` | — |
-| [SRC-2822F30DAD-L000041](../../tests/test_sales_domain.py#L41) | 41 | `""` | — |
-| [SRC-2822F30DAD-L000042](../../tests/test_sales_domain.py#L42) | 42 | `"def test_normalize_text_handles_arabic_and_latin_without_changing_display_value():"` | — |
-| [SRC-2822F30DAD-L000043](../../tests/test_sales_domain.py#L43) | 43 | `"    assert normalize_text(\"إِنذار الحَرِيق\") == \"انذار الحريق\""` | — |
-| [SRC-2822F30DAD-L000044](../../tests/test_sales_domain.py#L44) | 44 | `"    assert normalize_text(\"Café, FIRE-ALARM\") == \"café fire-alarm\""` | — |
-| [SRC-2822F30DAD-L000045](../../tests/test_sales_domain.py#L45) | 45 | `""` | — |
-| [SRC-2822F30DAD-L000046](../../tests/test_sales_domain.py#L46) | 46 | `""` | — |
-| [SRC-2822F30DAD-L000047](../../tests/test_sales_domain.py#L47) | 47 | `"def test_product_profile_requires_a_name_and_deduplicates_aliases():"` | — |
-| [SRC-2822F30DAD-L000048](../../tests/test_sales_domain.py#L48) | 48 | `"    with pytest.raises(ValueError, match=\"name is required\"):"` | — |
-| [SRC-2822F30DAD-L000049](../../tests/test_sales_domain.py#L49) | 49 | `"        ProductProfile(name=\" \")"` | — |
-| [SRC-2822F30DAD-L000050](../../tests/test_sales_domain.py#L50) | 50 | `""` | — |
-| [SRC-2822F30DAD-L000051](../../tests/test_sales_domain.py#L51) | 51 | `"    profile = ProductProfile("` | — |
-| [SRC-2822F30DAD-L000052](../../tests/test_sales_domain.py#L52) | 52 | `"        name=\"Fire Alarm Panel\","` | — |
-| [SRC-2822F30DAD-L000053](../../tests/test_sales_domain.py#L53) | 53 | `"        aliases=(\"لوحة إنذار\", \"لوحه انذار\", \"FACP\"),"` | — |
-| [SRC-2822F30DAD-L000054](../../tests/test_sales_domain.py#L54) | 54 | `"    )"` | — |
-| [SRC-2822F30DAD-L000055](../../tests/test_sales_domain.py#L55) | 55 | `""` | — |
-| [SRC-2822F30DAD-L000056](../../tests/test_sales_domain.py#L56) | 56 | `"    assert profile.aliases == (\"لوحة إنذار\", \"FACP\")"` | — |
-| [SRC-2822F30DAD-L000057](../../tests/test_sales_domain.py#L57) | 57 | `""` | — |
-| [SRC-2822F30DAD-L000058](../../tests/test_sales_domain.py#L58) | 58 | `""` | — |
-| [SRC-2822F30DAD-L000059](../../tests/test_sales_domain.py#L59) | 59 | `"def test_product_matching_uses_only_explicit_product_terms():"` | — |
-| [SRC-2822F30DAD-L000060](../../tests/test_sales_domain.py#L60) | 60 | `"    profile = ProductProfile("` | — |
-| [SRC-2822F30DAD-L000061](../../tests/test_sales_domain.py#L61) | 61 | `"        name=\"Fire Alarm Panel\","` | — |
-| [SRC-2822F30DAD-L000062](../../tests/test_sales_domain.py#L62) | 62 | `"        aliases=(\"لوحة إنذار الحريق\", \"FACP\"),"` | — |
-| [SRC-2822F30DAD-L000063](../../tests/test_sales_domain.py#L63) | 63 | `"    )"` | — |
-| [SRC-2822F30DAD-L000064](../../tests/test_sales_domain.py#L64) | 64 | `""` | — |
-| [SRC-2822F30DAD-L000065](../../tests/test_sales_domain.py#L65) | 65 | `"    assert profile.matching_terms(\"We need a FACP for a new building.\") == (\"FACP\",)"` | — |
-| [SRC-2822F30DAD-L000066](../../tests/test_sales_domain.py#L66) | 66 | `"    assert profile.matching_terms(\"نحتاج لوحة إنذار الحريق للمشروع\") == (\"لوحة إنذار الحريق\",)"` | — |
-| [SRC-2822F30DAD-L000067](../../tests/test_sales_domain.py#L67) | 67 | `"    assert profile.matching_terms(\"We need a fire alarm system.\") == ()"` | — |
-| [SRC-2822F30DAD-L000068](../../tests/test_sales_domain.py#L68) | 68 | `""` | — |
-| [SRC-2822F30DAD-L000069](../../tests/test_sales_domain.py#L69) | 69 | `""` | — |
-| [SRC-2822F30DAD-L000070](../../tests/test_sales_domain.py#L70) | 70 | `"def test_product_mention_does_not_create_demand_or_product_fit():"` | — |
-| [SRC-2822F30DAD-L000071](../../tests/test_sales_domain.py#L71) | 71 | `"    profile = ProductProfile("` | — |
-| [SRC-2822F30DAD-L000072](../../tests/test_sales_domain.py#L72) | 72 | `"        name=\"Fire Alarm Panel\","` | — |
-| [SRC-2822F30DAD-L000073](../../tests/test_sales_domain.py#L73) | 73 | `"        aliases=(\"Fire Alarm Panels\",),"` | — |
-| [SRC-2822F30DAD-L000074](../../tests/test_sales_domain.py#L74) | 74 | `"    )"` | — |
-| [SRC-2822F30DAD-L000075](../../tests/test_sales_domain.py#L75) | 75 | `"    assert profile.matching_terms(\"The company sells Fire Alarm Panels.\") == (\"Fire Alarm Panels\",)"` | — |
-| [SRC-2822F30DAD-L000076](../../tests/test_sales_domain.py#L76) | 76 | `""` | — |
-| [SRC-2822F30DAD-L000077](../../tests/test_sales_domain.py#L77) | 77 | `"    signal = DemandSignal("` | — |
-| [SRC-2822F30DAD-L000078](../../tests/test_sales_domain.py#L78) | 78 | `"        signal_id=\"signal-1\","` | — |
-| [SRC-2822F30DAD-L000079](../../tests/test_sales_domain.py#L79) | 79 | `"        signal_type=DemandSignalType.UNKNOWN,"` | — |
-| [SRC-2822F30DAD-L000080](../../tests/test_sales_domain.py#L80) | 80 | `"        evidence=page_evidence(),"` | — |
-| [SRC-2822F30DAD-L000081](../../tests/test_sales_domain.py#L81) | 81 | `"    )"` | — |
-| [SRC-2822F30DAD-L000082](../../tests/test_sales_domain.py#L82) | 82 | `""` | — |
-| [SRC-2822F30DAD-L000083](../../tests/test_sales_domain.py#L83) | 83 | `"    assert signal.signal_type == DemandSignalType.UNKNOWN"` | — |
-| [SRC-2822F30DAD-L000084](../../tests/test_sales_domain.py#L84) | 84 | `"    assert signal.product_fit == ProductFit.UNASSESSED"` | — |
-| [SRC-2822F30DAD-L000085](../../tests/test_sales_domain.py#L85) | 85 | `""` | — |
-| [SRC-2822F30DAD-L000086](../../tests/test_sales_domain.py#L86) | 86 | `""` | — |
-| [SRC-2822F30DAD-L000087](../../tests/test_sales_domain.py#L87) | 87 | `"def test_product_taxonomy_is_caller_defined_and_supports_multiple_sectors():"` | — |
-| [SRC-2822F30DAD-L000088](../../tests/test_sales_domain.py#L88) | 88 | `"    taxonomy = ProductTaxonomy("` | — |
-| [SRC-2822F30DAD-L000089](../../tests/test_sales_domain.py#L89) | 89 | `"        categories=("` | — |
-| [SRC-2822F30DAD-L000090](../../tests/test_sales_domain.py#L90) | 90 | `"            TaxonomyCategory("` | — |

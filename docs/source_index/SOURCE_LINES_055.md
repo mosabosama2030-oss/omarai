@@ -4,7 +4,7 @@
 
 - الصفحة: **055**
 - سجلات الأسطر: **800**
-- النطاق: SRC-44CDA52D01-L000060 إلى SRC-C353AAAC10-L000180
+- النطاق: SRC-44CDA52D01-L000060 إلى SRC-C353AAAC10-L000109
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -344,6 +344,77 @@
 | [SRC-851E7A87D6-L000170](../../tests/test_postgres_store.py#L170) | 170 | `"def test_postgres_database_url_cannot_be_combined_with_sqlite_path(tmp_path):"` | — |
 | [SRC-851E7A87D6-L000171](../../tests/test_postgres_store.py#L171) | 171 | `"    with pytest.raises(ValueError, match=\"either database_url or a SQLite path\"):"` | — |
 | [SRC-851E7A87D6-L000172](../../tests/test_postgres_store.py#L172) | 172 | `"        LeadStore(tmp_path / \"local.sqlite3\", database_url=\"postgresql://user:pass@example.com/db\")"` | — |
+| [SRC-851E7A87D6-L000173](../../tests/test_postgres_store.py#L173) | 173 | `""` | — |
+| [SRC-851E7A87D6-L000174](../../tests/test_postgres_store.py#L174) | 174 | `"def test_postgres_records_survive_a_new_python_process(postgres_store):"` | — |
+| [SRC-851E7A87D6-L000175](../../tests/test_postgres_store.py#L175) | 175 | `"    import json"` | — |
+| [SRC-851E7A87D6-L000176](../../tests/test_postgres_store.py#L176) | 176 | `"    import subprocess"` | — |
+| [SRC-851E7A87D6-L000177](../../tests/test_postgres_store.py#L177) | 177 | `"    import sys"` | — |
+| [SRC-851E7A87D6-L000178](../../tests/test_postgres_store.py#L178) | 178 | `"    from pathlib import Path"` | — |
+| [SRC-851E7A87D6-L000179](../../tests/test_postgres_store.py#L179) | 179 | `""` | — |
+| [SRC-851E7A87D6-L000180](../../tests/test_postgres_store.py#L180) | 180 | `"    marker = uuid.uuid4().hex"` | — |
+| [SRC-851E7A87D6-L000181](../../tests/test_postgres_store.py#L181) | 181 | `"    tenant_id, _user_id = _tenant_user(postgres_store, f\"restart-{marker}\")"` | — |
+| [SRC-851E7A87D6-L000182](../../tests/test_postgres_store.py#L182) | 182 | `"    lead, created = postgres_store.add("` | — |
+| [SRC-851E7A87D6-L000183](../../tests/test_postgres_store.py#L183) | 183 | `"        f\"نحتاج موردًا لنظام إنذار حريق {marker}\","` | — |
+| [SRC-851E7A87D6-L000184](../../tests/test_postgres_store.py#L184) | 184 | `"        f\"https://example.com/postgres/restart/{marker}\","` | — |
+| [SRC-851E7A87D6-L000185](../../tests/test_postgres_store.py#L185) | 185 | `"        tenant_id=tenant_id,"` | — |
+| [SRC-851E7A87D6-L000186](../../tests/test_postgres_store.py#L186) | 186 | `"    )"` | — |
+| [SRC-851E7A87D6-L000187](../../tests/test_postgres_store.py#L187) | 187 | `"    assert created is True"` | — |
+| [SRC-851E7A87D6-L000188](../../tests/test_postgres_store.py#L188) | 188 | `"    profile = postgres_store.save_product_profile("` | — |
+| [SRC-851E7A87D6-L000189](../../tests/test_postgres_store.py#L189) | 189 | `"        {"` | — |
+| [SRC-851E7A87D6-L000190](../../tests/test_postgres_store.py#L190) | 190 | `"            \"product\": {\"name\": f\"PostgreSQL restart {marker}\", \"aliases\": [\"FACP\"]},"` | — |
+| [SRC-851E7A87D6-L000191](../../tests/test_postgres_store.py#L191) | 191 | `"            \"market\": {\"locations\": [\"Cairo\"], \"industries\": [\"Manufacturing\"]},"` | — |
+| [SRC-851E7A87D6-L000192](../../tests/test_postgres_store.py#L192) | 192 | `"        },"` | — |
+| [SRC-851E7A87D6-L000193](../../tests/test_postgres_store.py#L193) | 193 | `"        tenant_id=tenant_id,"` | — |
+| [SRC-851E7A87D6-L000194](../../tests/test_postgres_store.py#L194) | 194 | `"    )"` | — |
+| [SRC-851E7A87D6-L000195](../../tests/test_postgres_store.py#L195) | 195 | `"    run = postgres_store.save_discovery_run("` | — |
+| [SRC-851E7A87D6-L000196](../../tests/test_postgres_store.py#L196) | 196 | `"        profile[\"id\"],"` | — |
+| [SRC-851E7A87D6-L000197](../../tests/test_postgres_store.py#L197) | 197 | `"        {"` | — |
+| [SRC-851E7A87D6-L000198](../../tests/test_postgres_store.py#L198) | 198 | `"            \"answer\": \"تم حفظ عملية اكتشاف اختبارية.\","` | — |
+| [SRC-851E7A87D6-L000199](../../tests/test_postgres_store.py#L199) | 199 | `"            \"kind\": \"lead_discovery\","` | — |
+| [SRC-851E7A87D6-L000200](../../tests/test_postgres_store.py#L200) | 200 | `"            \"search_queries\": [\"نحتاج موردًا لنظام إنذار حريق\"],"` | — |
+| [SRC-851E7A87D6-L000201](../../tests/test_postgres_store.py#L201) | 201 | `"            \"sources\": [{"` | — |
+| [SRC-851E7A87D6-L000202](../../tests/test_postgres_store.py#L202) | 202 | `"                \"title\": \"طلب توريد اختباري\","` | — |
+| [SRC-851E7A87D6-L000203](../../tests/test_postgres_store.py#L203) | 203 | `"                \"url\": f\"https://example.com/postgres/source/{marker}\","` | — |
+| [SRC-851E7A87D6-L000204](../../tests/test_postgres_store.py#L204) | 204 | `"                \"snippet\": \"نحتاج موردًا لنظام إنذار حريق\","` | — |
+| [SRC-851E7A87D6-L000205](../../tests/test_postgres_store.py#L205) | 205 | `"                \"lead_qualification\": \"public_demand_signal\","` | — |
+| [SRC-851E7A87D6-L000206](../../tests/test_postgres_store.py#L206) | 206 | `"                \"lead_intent_evidence\": {"` | — |
+| [SRC-851E7A87D6-L000207](../../tests/test_postgres_store.py#L207) | 207 | `"                    \"phrase\": \"نحتاج موردًا\","` | — |
+| [SRC-851E7A87D6-L000208](../../tests/test_postgres_store.py#L208) | 208 | `"                    \"basis\": \"source_text\","` | — |
+| [SRC-851E7A87D6-L000209](../../tests/test_postgres_store.py#L209) | 209 | `"                    \"signal_type\": \"direct_purchase_request\","` | — |
+| [SRC-851E7A87D6-L000210](../../tests/test_postgres_store.py#L210) | 210 | `"                },"` | — |
+| [SRC-851E7A87D6-L000211](../../tests/test_postgres_store.py#L211) | 211 | `"            }],"` | — |
+| [SRC-851E7A87D6-L000212](../../tests/test_postgres_store.py#L212) | 212 | `"            \"search_report\": {\"search_outcome\": \"results_found\"},"` | — |
+| [SRC-851E7A87D6-L000213](../../tests/test_postgres_store.py#L213) | 213 | `"        },"` | — |
+| [SRC-851E7A87D6-L000214](../../tests/test_postgres_store.py#L214) | 214 | `"        tenant_id=tenant_id,"` | — |
+| [SRC-851E7A87D6-L000215](../../tests/test_postgres_store.py#L215) | 215 | `"    )"` | — |
+| [SRC-851E7A87D6-L000216](../../tests/test_postgres_store.py#L216) | 216 | `""` | — |
+| [SRC-851E7A87D6-L000217](../../tests/test_postgres_store.py#L217) | 217 | `"    child_code = \"\"\""` | — |
+| [SRC-851E7A87D6-L000218](../../tests/test_postgres_store.py#L218) | 218 | `"import json"` | — |
+| [SRC-851E7A87D6-L000219](../../tests/test_postgres_store.py#L219) | 219 | `"import os"` | — |
+| [SRC-851E7A87D6-L000220](../../tests/test_postgres_store.py#L220) | 220 | `"import sys"` | — |
+| [SRC-851E7A87D6-L000221](../../tests/test_postgres_store.py#L221) | 221 | `"from agents.omarai import LeadStore"` | — |
+| [SRC-851E7A87D6-L000222](../../tests/test_postgres_store.py#L222) | 222 | `"store = LeadStore(database_url=os.environ[\"OMARAI_TEST_DATABASE_URL\"])"` | — |
+| [SRC-851E7A87D6-L000223](../../tests/test_postgres_store.py#L223) | 223 | `"tenant_id = sys.argv[1]"` | — |
+| [SRC-851E7A87D6-L000224](../../tests/test_postgres_store.py#L224) | 224 | `"print(json.dumps({"` | — |
+| [SRC-851E7A87D6-L000225](../../tests/test_postgres_store.py#L225) | 225 | `"    \"lead_ids\": [row[\"id\"] for row in store.list(tenant_id=tenant_id)],"` | — |
+| [SRC-851E7A87D6-L000226](../../tests/test_postgres_store.py#L226) | 226 | `"    \"profile_ids\": [row[\"id\"] for row in store.list_product_profiles(tenant_id=tenant_id)],"` | — |
+| [SRC-851E7A87D6-L000227](../../tests/test_postgres_store.py#L227) | 227 | `"    \"run_ids\": [row[\"id\"] for row in store.list_discovery_runs(tenant_id=tenant_id)],"` | — |
+| [SRC-851E7A87D6-L000228](../../tests/test_postgres_store.py#L228) | 228 | `"}))"` | — |
+| [SRC-851E7A87D6-L000229](../../tests/test_postgres_store.py#L229) | 229 | `"\"\"\""` | — |
+| [SRC-851E7A87D6-L000230](../../tests/test_postgres_store.py#L230) | 230 | `"    repository_root = Path(__file__).resolve().parents[1]"` | — |
+| [SRC-851E7A87D6-L000231](../../tests/test_postgres_store.py#L231) | 231 | `"    completed = subprocess.run("` | — |
+| [SRC-851E7A87D6-L000232](../../tests/test_postgres_store.py#L232) | 232 | `"        [sys.executable, \"-c\", child_code, tenant_id],"` | — |
+| [SRC-851E7A87D6-L000233](../../tests/test_postgres_store.py#L233) | 233 | `"        cwd=repository_root,"` | — |
+| [SRC-851E7A87D6-L000234](../../tests/test_postgres_store.py#L234) | 234 | `"        env=os.environ.copy(),"` | — |
+| [SRC-851E7A87D6-L000235](../../tests/test_postgres_store.py#L235) | 235 | `"        check=True,"` | — |
+| [SRC-851E7A87D6-L000236](../../tests/test_postgres_store.py#L236) | 236 | `"        capture_output=True,"` | — |
+| [SRC-851E7A87D6-L000237](../../tests/test_postgres_store.py#L237) | 237 | `"        text=True,"` | — |
+| [SRC-851E7A87D6-L000238](../../tests/test_postgres_store.py#L238) | 238 | `"    )"` | — |
+| [SRC-851E7A87D6-L000239](../../tests/test_postgres_store.py#L239) | 239 | `"    persisted = json.loads(completed.stdout)"` | — |
+| [SRC-851E7A87D6-L000240](../../tests/test_postgres_store.py#L240) | 240 | `""` | — |
+| [SRC-851E7A87D6-L000241](../../tests/test_postgres_store.py#L241) | 241 | `"    assert persisted[\"lead_ids\"] == [lead[\"id\"]]"` | — |
+| [SRC-851E7A87D6-L000242](../../tests/test_postgres_store.py#L242) | 242 | `"    assert persisted[\"profile_ids\"] == [profile[\"id\"]]"` | — |
+| [SRC-851E7A87D6-L000243](../../tests/test_postgres_store.py#L243) | 243 | `"    assert persisted[\"run_ids\"] == [run[\"id\"]]"` | — |
 ## اختبارات
 
 ### FILE-B106ADC5EF — [tests/test_proxy_origin.py](../../tests/test_proxy_origin.py#L1)
@@ -781,74 +852,3 @@
 | [SRC-C353AAAC10-L000107](../../tests/test_request_budget.py#L107) | 107 | `"        (\"search_queries\", 8),"` | — |
 | [SRC-C353AAAC10-L000108](../../tests/test_request_budget.py#L108) | 108 | `"        (\"search_calls\", 32),"` | — |
 | [SRC-C353AAAC10-L000109](../../tests/test_request_budget.py#L109) | 109 | `"        (\"model_calls\", 8),"` | — |
-| [SRC-C353AAAC10-L000110](../../tests/test_request_budget.py#L110) | 110 | `"        (\"page_fetches\", 8),"` | — |
-| [SRC-C353AAAC10-L000111](../../tests/test_request_budget.py#L111) | 111 | `"        (\"tool_calls\", 3),"` | — |
-| [SRC-C353AAAC10-L000112](../../tests/test_request_budget.py#L112) | 112 | `"    ],"` | — |
-| [SRC-C353AAAC10-L000113](../../tests/test_request_budget.py#L113) | 113 | `")"` | — |
-| [SRC-C353AAAC10-L000114](../../tests/test_request_budget.py#L114) | 114 | `"def test_each_resource_counter_stops_at_its_limit(resource, limit):"` | — |
-| [SRC-C353AAAC10-L000115](../../tests/test_request_budget.py#L115) | 115 | `"    budget = RequestBudget(timeout_seconds=10, limits={resource: limit})"` | — |
-| [SRC-C353AAAC10-L000116](../../tests/test_request_budget.py#L116) | 116 | `""` | — |
-| [SRC-C353AAAC10-L000117](../../tests/test_request_budget.py#L117) | 117 | `"    for expected_count in range(1, limit + 1):"` | — |
-| [SRC-C353AAAC10-L000118](../../tests/test_request_budget.py#L118) | 118 | `"        budget.reserve(resource)"` | — |
-| [SRC-C353AAAC10-L000119](../../tests/test_request_budget.py#L119) | 119 | `"        snapshot = budget.snapshot()"` | — |
-| [SRC-C353AAAC10-L000120](../../tests/test_request_budget.py#L120) | 120 | `"        assert snapshot[\"counts\"][resource] == expected_count"` | — |
-| [SRC-C353AAAC10-L000121](../../tests/test_request_budget.py#L121) | 121 | `"        assert snapshot[\"counts\"][resource] <= snapshot[\"limits\"][resource]"` | — |
-| [SRC-C353AAAC10-L000122](../../tests/test_request_budget.py#L122) | 122 | `""` | — |
-| [SRC-C353AAAC10-L000123](../../tests/test_request_budget.py#L123) | 123 | `"    with pytest.raises(RequestBudgetExceeded, match=resource):"` | — |
-| [SRC-C353AAAC10-L000124](../../tests/test_request_budget.py#L124) | 124 | `"        budget.reserve(resource)"` | — |
-| [SRC-C353AAAC10-L000125](../../tests/test_request_budget.py#L125) | 125 | `""` | — |
-| [SRC-C353AAAC10-L000126](../../tests/test_request_budget.py#L126) | 126 | `"    snapshot = budget.snapshot()"` | — |
-| [SRC-C353AAAC10-L000127](../../tests/test_request_budget.py#L127) | 127 | `"    assert snapshot[\"counts\"][resource] == limit"` | — |
-| [SRC-C353AAAC10-L000128](../../tests/test_request_budget.py#L128) | 128 | `"    assert resource in snapshot[\"exhausted_reasons\"]"` | — |
-| [SRC-C353AAAC10-L000129](../../tests/test_request_budget.py#L129) | 129 | `""` | — |
-| [SRC-C353AAAC10-L000130](../../tests/test_request_budget.py#L130) | 130 | `""` | — |
-| [SRC-C353AAAC10-L000131](../../tests/test_request_budget.py#L131) | 131 | `"@pytest.mark.parametrize("` | — |
-| [SRC-C353AAAC10-L000132](../../tests/test_request_budget.py#L132) | 132 | `"    \"resource\","` | — |
-| [SRC-C353AAAC10-L000133](../../tests/test_request_budget.py#L133) | 133 | `"    [\"search_queries\", \"search_calls\", \"model_calls\", \"page_fetches\", \"tool_calls\"],"` | — |
-| [SRC-C353AAAC10-L000134](../../tests/test_request_budget.py#L134) | 134 | `")"` | — |
-| [SRC-C353AAAC10-L000135](../../tests/test_request_budget.py#L135) | 135 | `"def test_disabled_resource_never_starts_work(resource):"` | — |
-| [SRC-C353AAAC10-L000136](../../tests/test_request_budget.py#L136) | 136 | `"    budget = RequestBudget(timeout_seconds=10, limits={resource: 0})"` | — |
-| [SRC-C353AAAC10-L000137](../../tests/test_request_budget.py#L137) | 137 | `""` | — |
-| [SRC-C353AAAC10-L000138](../../tests/test_request_budget.py#L138) | 138 | `"    assert budget.remaining_units(resource) == 0"` | — |
-| [SRC-C353AAAC10-L000139](../../tests/test_request_budget.py#L139) | 139 | `"    with pytest.raises(RequestBudgetExceeded, match=resource):"` | — |
-| [SRC-C353AAAC10-L000140](../../tests/test_request_budget.py#L140) | 140 | `"        budget.reserve(resource)"` | — |
-| [SRC-C353AAAC10-L000141](../../tests/test_request_budget.py#L141) | 141 | `""` | — |
-| [SRC-C353AAAC10-L000142](../../tests/test_request_budget.py#L142) | 142 | `"    snapshot = budget.snapshot()"` | — |
-| [SRC-C353AAAC10-L000143](../../tests/test_request_budget.py#L143) | 143 | `"    assert snapshot[\"counts\"][resource] == 0"` | — |
-| [SRC-C353AAAC10-L000144](../../tests/test_request_budget.py#L144) | 144 | `"    assert snapshot[\"limits\"][resource] == 0"` | — |
-| [SRC-C353AAAC10-L000145](../../tests/test_request_budget.py#L145) | 145 | `"    assert resource in snapshot[\"disabled_resources\"]"` | — |
-| [SRC-C353AAAC10-L000146](../../tests/test_request_budget.py#L146) | 146 | `"    assert resource in snapshot[\"exhausted_reasons\"]"` | — |
-| [SRC-C353AAAC10-L000147](../../tests/test_request_budget.py#L147) | 147 | `""` | — |
-| [SRC-C353AAAC10-L000148](../../tests/test_request_budget.py#L148) | 148 | `""` | — |
-| [SRC-C353AAAC10-L000149](../../tests/test_request_budget.py#L149) | 149 | `"def test_hosted_smoke_budget_profile_applies_strict_per_request_caps(monkeypatch):"` | — |
-| [SRC-C353AAAC10-L000150](../../tests/test_request_budget.py#L150) | 150 | `"    from agents.request_budget import HOSTED_SMOKE_BUDGET_LIMITS"` | — |
-| [SRC-C353AAAC10-L000151](../../tests/test_request_budget.py#L151) | 151 | `""` | — |
-| [SRC-C353AAAC10-L000152](../../tests/test_request_budget.py#L152) | 152 | `"    monkeypatch.setenv(\"OMARAI_REQUEST_BUDGET_SECONDS\", \"110\")"` | — |
-| [SRC-C353AAAC10-L000153](../../tests/test_request_budget.py#L153) | 153 | `"    monkeypatch.setenv(\"OMARAI_REQUEST_MAX_SEARCH_CALLS\", \"2\")"` | — |
-| [SRC-C353AAAC10-L000154](../../tests/test_request_budget.py#L154) | 154 | `"    monkeypatch.setenv(\"OMARAI_REQUEST_MAX_MODEL_CALLS\", \"10\")"` | — |
-| [SRC-C353AAAC10-L000155](../../tests/test_request_budget.py#L155) | 155 | `""` | — |
-| [SRC-C353AAAC10-L000156](../../tests/test_request_budget.py#L156) | 156 | `"    snapshot = RequestBudget.from_environment(profile=\"hosted_smoke\").snapshot()"` | — |
-| [SRC-C353AAAC10-L000157](../../tests/test_request_budget.py#L157) | 157 | `""` | — |
-| [SRC-C353AAAC10-L000158](../../tests/test_request_budget.py#L158) | 158 | `"    assert snapshot[\"profile\"] == \"hosted_smoke\""` | — |
-| [SRC-C353AAAC10-L000159](../../tests/test_request_budget.py#L159) | 159 | `"    assert snapshot[\"timeout_seconds\"] == 75"` | — |
-| [SRC-C353AAAC10-L000160](../../tests/test_request_budget.py#L160) | 160 | `"    assert snapshot[\"limits\"] == {"` | — |
-| [SRC-C353AAAC10-L000161](../../tests/test_request_budget.py#L161) | 161 | `"        **HOSTED_SMOKE_BUDGET_LIMITS,"` | — |
-| [SRC-C353AAAC10-L000162](../../tests/test_request_budget.py#L162) | 162 | `"        \"search_calls\": 2,"` | — |
-| [SRC-C353AAAC10-L000163](../../tests/test_request_budget.py#L163) | 163 | `"        \"model_calls\": min(10, HOSTED_SMOKE_BUDGET_LIMITS[\"model_calls\"]),"` | — |
-| [SRC-C353AAAC10-L000164](../../tests/test_request_budget.py#L164) | 164 | `"    }"` | — |
-| [SRC-C353AAAC10-L000165](../../tests/test_request_budget.py#L165) | 165 | `"    assert snapshot[\"limits\"][\"search_queries\"] <= 3"` | — |
-| [SRC-C353AAAC10-L000166](../../tests/test_request_budget.py#L166) | 166 | `"    assert snapshot[\"limits\"][\"search_calls\"] <= 12"` | — |
-| [SRC-C353AAAC10-L000167](../../tests/test_request_budget.py#L167) | 167 | `"    assert snapshot[\"limits\"][\"model_calls\"] <= 6"` | — |
-| [SRC-C353AAAC10-L000168](../../tests/test_request_budget.py#L168) | 168 | `"    assert snapshot[\"limits\"][\"page_fetches\"] <= 4"` | — |
-| [SRC-C353AAAC10-L000169](../../tests/test_request_budget.py#L169) | 169 | `"    assert snapshot[\"limits\"][\"tool_calls\"] == 0"` | — |
-| [SRC-C353AAAC10-L000170](../../tests/test_request_budget.py#L170) | 170 | `""` | — |
-| [SRC-C353AAAC10-L000171](../../tests/test_request_budget.py#L171) | 171 | `""` | — |
-| [SRC-C353AAAC10-L000172](../../tests/test_request_budget.py#L172) | 172 | `"def test_request_budget_rejects_unknown_profile():"` | — |
-| [SRC-C353AAAC10-L000173](../../tests/test_request_budget.py#L173) | 173 | `"    with pytest.raises(ValueError, match=\"unknown request-budget profile\"):"` | — |
-| [SRC-C353AAAC10-L000174](../../tests/test_request_budget.py#L174) | 174 | `"        RequestBudget.from_environment(profile=\"untrusted\")"` | — |
-| [SRC-C353AAAC10-L000175](../../tests/test_request_budget.py#L175) | 175 | `""` | — |
-| [SRC-C353AAAC10-L000176](../../tests/test_request_budget.py#L176) | 176 | `""` | — |
-| [SRC-C353AAAC10-L000177](../../tests/test_request_budget.py#L177) | 177 | `"def test_web_agent_answer_uses_the_selected_budget_profile(monkeypatch):"` | — |
-| [SRC-C353AAAC10-L000178](../../tests/test_request_budget.py#L178) | 178 | `"    from agents.web_agent import WebAgent"` | — |
-| [SRC-C353AAAC10-L000179](../../tests/test_request_budget.py#L179) | 179 | `""` | — |
-| [SRC-C353AAAC10-L000180](../../tests/test_request_budget.py#L180) | 180 | `"    agent = WebAgent()"` | — |
