@@ -236,3 +236,35 @@ def test_discovery_source_storage_accepts_public_http_source():
         }
     )
     assert source["url"] == "https://example.org/request"
+
+
+def _discovery_action_handler():
+    from pathlib import Path
+
+    workspace = Path(__file__).resolve().parents[1] / "web" / "workspace.html"
+    html = workspace.read_text(encoding="utf-8")
+    start = html.index('const run=action("بدء اكتشاف الطلب"')
+    end = html.index('controls.append(make("p","profile-note"', start)
+    return html[start:end]
+
+
+def test_discovery_search_failure_restores_action_and_announces_an_error():
+    handler = _discovery_action_handler()
+
+    assert "run.disabled=true" in handler
+    assert 'run.setAttribute("aria-busy","true")' in handler
+    assert 'status.setAttribute("role","alert")' in handler
+    assert 'status.setAttribute("aria-live","assertive")' in handler
+    assert "run.disabled=false" in handler
+    assert 'run.removeAttribute("aria-busy")' in handler
+
+
+def test_discovery_result_survives_history_refresh_failure():
+    handler = _discovery_action_handler()
+
+    assert "state.activeDiscovery=savedRun" in handler
+    assert 'let refreshWarning=""' in handler
+    assert "try{await loadDiscoveryRuns()}catch(historyError)" in handler
+    assert handler.index("state.activeDiscovery=savedRun") < handler.index("renderDiscovery()")
+    assert "حُفظت نتيجة البحث، لكن تعذر تحديث سجل عمليات الاكتشاف" in handler
+    assert "warning.setAttribute(\"role\",\"status\")" in handler
