@@ -8,14 +8,14 @@
 
 ## ملخص الفهرسة
 
-- ملفات المستودع في الجرد: **151**
-- ملفات Python المحللة: **90**
-- تعريفات Python المفهرسة: **2187**
-- تعريفات Python موثقة بوجود Docstring: **312**
+- ملفات المستودع في الجرد: **152**
+- ملفات Python المحللة: **91**
+- تعريفات Python المفهرسة: **2192**
+- تعريفات Python موثقة بوجود Docstring: **315**
 - تعريفات Python بلا Docstring: **1452**
-- تعريفات لا ينطبق عليها Docstring: **423**
-- الرموز الساكنة الإضافية: **2977**
-- الأسطر النصية المفهرسة حرفيًا: **55199**
+- تعريفات لا ينطبق عليها Docstring: **425**
+- الرموز الساكنة الإضافية: **2978**
+- الأسطر النصية المفهرسة حرفيًا: **55265**
 - وسوم المراجعة/الإصلاح المسجلة: **0**
 
 - فهرس الأسطر الكامل: [SOURCE LINES INDEX](SOURCE_LINES_INDEX.md)
@@ -36,7 +36,7 @@
 | FILE-84F7DE82AF | CI وأتمتة | [.github/workflows/update_index.yml](../.github/workflows/update_index.yml#L1) | YAML | 4949 | 105 | جرد الملف + مفاتيح إعداد ساكنة |
 | FILE-BC37D034BA | إعدادات وتشغيل | [.gitignore](../.gitignore#L1) | بدون امتداد | 158 | 16 | جرد ملف نصي فقط |
 | FILE-A54FF182C7 | وثائق ونصوص | [AGENTS.md](../AGENTS.md#L1) | Markdown | 12807 | 83 | جرد الملف + عناوين Markdown |
-| FILE-E120A62E2E | الوكيل والمنطق | [agents/__init__.py](../agents/__init__.py#L1) | Python | 40 | 1 | جرد الملف + AST Python |
+| FILE-E120A62E2E | الوكيل والمنطق | [agents/__init__.py](../agents/__init__.py#L1) | Python | 234 | 5 | جرد الملف + AST Python |
 | FILE-138992B1FC | الوكيل والمنطق | [agents/answer_validation.py](../agents/answer_validation.py#L1) | Python | 25716 | 532 | جرد الملف + AST Python |
 | FILE-01273BA196 | الوكيل والمنطق | [agents/aspect_planning.py](../agents/aspect_planning.py#L1) | Python | 11739 | 272 | جرد الملف + AST Python |
 | FILE-7D6FC391EC | الوكيل والمنطق | [agents/claim_evidence.py](../agents/claim_evidence.py#L1) | Python | 12762 | 296 | جرد الملف + AST Python |
@@ -52,6 +52,7 @@
 | FILE-20574F34B1 | الوكيل والمنطق | [agents/safe_xml.py](../agents/safe_xml.py#L1) | Python | 1012 | 27 | جرد الملف + AST Python |
 | FILE-8D00DCEC0D | الوكيل والمنطق | [agents/sales_domain.py](../agents/sales_domain.py#L1) | Python | 22371 | 612 | جرد الملف + AST Python |
 | FILE-6E58A660BC | الوكيل والمنطق | [agents/search_connectors.py](../agents/search_connectors.py#L1) | Python | 10484 | 239 | جرد الملف + AST Python |
+| FILE-08D2AA671D | الوكيل والمنطق | [agents/search_meta_tail.py](../agents/search_meta_tail.py#L1) | Python | 1682 | 44 | جرد الملف + AST Python |
 | FILE-086D574B4E | الوكيل والمنطق | [agents/semantic_claim_verifier.py](../agents/semantic_claim_verifier.py#L1) | Python | 18785 | 390 | جرد الملف + AST Python |
 | FILE-686F71AA50 | الوكيل والمنطق | [agents/task_understanding.py](../agents/task_understanding.py#L1) | Python | 108684 | 2046 | جرد الملف + AST Python |
 | FILE-FC84E5B115 | الوكيل والمنطق | [agents/text_normalization.py](../agents/text_normalization.py#L1) | Python | 1779 | 41 | جرد الملف + AST Python |
@@ -157,7 +158,7 @@
 | FILE-3D0DE98F65 | اختبارات | [tests/test_question_requirement_loop.py](../tests/test_question_requirement_loop.py#L1) | Python | 8804 | 215 | جرد الملف + AST Python |
 | FILE-C353AAAC10 | اختبارات | [tests/test_request_budget.py](../tests/test_request_budget.py#L1) | Python | 6732 | 191 | جرد الملف + AST Python |
 | FILE-50E7F53B84 | اختبارات | [tests/test_requirement_evidence.py](../tests/test_requirement_evidence.py#L1) | Python | 2509 | 59 | جرد الملف + AST Python |
-| FILE-6BF96689A8 | اختبارات | [tests/test_research.py](../tests/test_research.py#L1) | Python | 17041 | 362 | جرد الملف + AST Python |
+| FILE-6BF96689A8 | اختبارات | [tests/test_research.py](../tests/test_research.py#L1) | Python | 17802 | 380 | جرد الملف + AST Python |
 | FILE-AFFCF23BD4 | اختبارات | [tests/test_research_completion.py](../tests/test_research_completion.py#L1) | Python | 13753 | 348 | جرد الملف + AST Python |
 | FILE-01E35ABC46 | اختبارات | [tests/test_research_guardrails.py](../tests/test_research_guardrails.py#L1) | Python | 18680 | 489 | جرد الملف + AST Python |
 | FILE-96F6863E3C | اختبارات | [tests/test_research_pipeline.py](../tests/test_research_pipeline.py#L1) | Python | 8532 | 212 | جرد الملف + AST Python |
@@ -584,6 +585,10 @@
 | [agents/search_connectors.py](../agents/search_connectors.py#L214) | متغير/ثابت Python | CONNECTOR_REGISTRY | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 214 | [SRC-6E58A660BC-L000214](../agents/search_connectors.py#L214) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L222) | دالة | run_connector | لا توجد Docstring. | ناقص | 222 | [SRC-6E58A660BC-L000222](../agents/search_connectors.py#L222) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L235) | دالة | run_free_academic_connectors | لا توجد Docstring. | ناقص | 235 | [SRC-6E58A660BC-L000235](../agents/search_connectors.py#L235) |
+| [agents/search_meta_tail.py](../agents/search_meta_tail.py#L10) | متغير/ثابت Python | logger | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 10 | [SRC-08D2AA671D-L000010](../agents/search_meta_tail.py#L10) |
+| [agents/search_meta_tail.py](../agents/search_meta_tail.py#L14) | متغير/ثابت Python | SEARCH_META_TAIL_RE | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-08D2AA671D-L000014](../agents/search_meta_tail.py#L14) |
+| [agents/search_meta_tail.py](../agents/search_meta_tail.py#L26) | دالة | strip_trailing_conjunctions | Drop trailing Arabic/English conjunctions left after meta-tail removal. | موثق | 26 | [SRC-08D2AA671D-L000026](../agents/search_meta_tail.py#L26) |
+| [agents/search_meta_tail.py](../agents/search_meta_tail.py#L33) | دالة | rebind_research_meta_tail | Point agents.research._SEARCH_META_TAIL_RE at the expanded pattern. | موثق | 33 | [SRC-08D2AA671D-L000033](../agents/search_meta_tail.py#L33) |
 | [agents/semantic_claim_verifier.py](../agents/semantic_claim_verifier.py#L14) | متغير/ثابت Python | MAX_VERIFICATION_CLAIMS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 14 | [SRC-086D574B4E-L000014](../agents/semantic_claim_verifier.py#L14) |
 | [agents/semantic_claim_verifier.py](../agents/semantic_claim_verifier.py#L15) | متغير/ثابت Python | MAX_VERIFICATION_SOURCES | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 15 | [SRC-086D574B4E-L000015](../agents/semantic_claim_verifier.py#L15) |
 | [agents/semantic_claim_verifier.py](../agents/semantic_claim_verifier.py#L16) | متغير/ثابت Python | MAX_EVIDENCE_CHARS | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 16 | [SRC-086D574B4E-L000016](../agents/semantic_claim_verifier.py#L16) |
@@ -1791,8 +1796,8 @@
 | [tests/test_research.py](../tests/test_research.py#L44) | دالة | test_rank_fusion_promotes_cross_provider_consensus_and_deduplicates | لا توجد Docstring. | ناقص | 44 | [SRC-6BF96689A8-L000044](../tests/test_research.py#L44) |
 | [tests/test_research.py](../tests/test_research.py#L74) | دالة | test_source_classification_distinguishes_social_and_government | لا توجد Docstring. | ناقص | 74 | [SRC-6BF96689A8-L000074](../tests/test_research.py#L74) |
 | [tests/test_research.py](../tests/test_research.py#L81) | دالة | test_explicit_page_urls_are_extracted_and_not_left_in_search_terms | لا توجد Docstring. | ناقص | 81 | [SRC-6BF96689A8-L000081](../tests/test_research.py#L81) |
-| [tests/test_research.py](../tests/test_research.py#L90) | دالة | test_registrable_domain_groups_subdomains_and_respects_public_suffixes | لا توجد Docstring. | ناقص | 90 | [SRC-6BF96689A8-L000090](../tests/test_research.py#L90) |
-| [tests/test_research.py](../tests/test_research.py#L99) | دالة | test_evidence_coverage_does_not_count_sibling_subdomains_as_independent | لا توجد Docstring. | ناقص | 99 | [SRC-6BF96689A8-L000099](../tests/test_research.py#L99) |
+| [tests/test_research.py](../tests/test_research.py#L91) | دالة | test_registrable_domain_groups_subdomains_and_respects_public_suffixes | لا توجد Docstring. | ناقص | 91 | [SRC-6BF96689A8-L000091](../tests/test_research.py#L91) |
+| [tests/test_research.py](../tests/test_research.py#L100) | دالة | test_evidence_coverage_does_not_count_sibling_subdomains_as_independent | لا توجد Docstring. | ناقص | 100 | [SRC-6BF96689A8-L000100](../tests/test_research.py#L100) |
 | [tests/test_research.py](../tests/test_research.py#L117) | دالة | test_standard_fallback_plan_does_not_add_deep_research_query | لا توجد Docstring. | ناقص | 117 | [SRC-6BF96689A8-L000117](../tests/test_research.py#L117) |
 | [tests/test_research.py](../tests/test_research.py#L123) | دالة | test_deep_fallback_plan_adds_deep_research_query_for_explicit_comparison | لا توجد Docstring. | ناقص | 123 | [SRC-6BF96689A8-L000123](../tests/test_research.py#L123) |
 | [tests/test_research.py](../tests/test_research.py#L129) | دالة | test_fallback_plan_expands_warranty_followup_with_previous_topic | لا توجد Docstring. | ناقص | 129 | [SRC-6BF96689A8-L000129](../tests/test_research.py#L129) |
@@ -1802,18 +1807,19 @@
 | [tests/test_research.py](../tests/test_research.py#L195) | دالة | test_compact_search_query_preserves_site_operator_and_discards_separate_citation_instruction | لا توجد Docstring. | ناقص | 195 | [SRC-6BF96689A8-L000195](../tests/test_research.py#L195) |
 | [tests/test_research.py](../tests/test_research.py#L205) | دالة | test_compact_search_query_bounds_length_without_leaving_partial_tail_word | لا توجد Docstring. | ناقص | 205 | [SRC-6BF96689A8-L000205](../tests/test_research.py#L205) |
 | [tests/test_research.py](../tests/test_research.py#L214) | دالة | test_compact_search_query_preserves_subject_when_prompt_starts_with_action_verb | لا توجد Docstring. | ناقص | 214 | [SRC-6BF96689A8-L000214](../tests/test_research.py#L214) |
-| [tests/test_research.py](../tests/test_research.py#L231) | دالة | test_compact_search_query_returns_empty_for_instruction_only_request | لا توجد Docstring. | ناقص | 231 | [SRC-6BF96689A8-L000231](../tests/test_research.py#L231) |
-| [tests/test_research.py](../tests/test_research.py#L236) | دالة | test_compact_search_query_removes_diacritic_uncertainty_instruction | لا توجد Docstring. | ناقص | 236 | [SRC-6BF96689A8-L000236](../tests/test_research.py#L236) |
-| [tests/test_research.py](../tests/test_research.py#L248) | دالة | test_compact_search_query_preserves_topic_after_source_quality_lead_in | لا توجد Docstring. | ناقص | 248 | [SRC-6BF96689A8-L000248](../tests/test_research.py#L248) |
-| [tests/test_research.py](../tests/test_research.py#L266) | دالة | test_compact_search_query_preserves_topic_after_distinguish_action | لا توجد Docstring. | ناقص | 266 | [SRC-6BF96689A8-L000266](../tests/test_research.py#L266) |
-| [tests/test_research.py](../tests/test_research.py#L273) | دالة | test_compact_search_query_discards_standalone_fact_vs_inference_instruction | لا توجد Docstring. | ناقص | 273 | [SRC-6BF96689A8-L000273](../tests/test_research.py#L273) |
-| [tests/test_research.py](../tests/test_research.py#L277) | دالة | test_fallback_plan_does_not_invent_query_for_instruction_only_prompt | لا توجد Docstring. | ناقص | 277 | [SRC-6BF96689A8-L000277](../tests/test_research.py#L277) |
-| [tests/test_research.py](../tests/test_research.py#L282) | دالة | test_collect_research_compacts_queries_before_provider_calls | لا توجد Docstring. | ناقص | 282 | [SRC-6BF96689A8-L000282](../tests/test_research.py#L282) |
-| [tests/test_research.py](../tests/test_research.py#L305) | دالة | test_collect_research_skips_provider_calls_without_topic_or_direct_url | لا توجد Docstring. | ناقص | 305 | [SRC-6BF96689A8-L000305](../tests/test_research.py#L305) |
-| [tests/test_research.py](../tests/test_research.py#L327) | دالة | test_fallback_plan_keeps_direct_url_without_generic_keyword_query | لا توجد Docstring. | ناقص | 327 | [SRC-6BF96689A8-L000327](../tests/test_research.py#L327) |
-| [tests/test_research.py](../tests/test_research.py#L334) | دالة | test_followup_plan_keeps_topic_across_chained_turns | لا توجد Docstring. | ناقص | 334 | [SRC-6BF96689A8-L000334](../tests/test_research.py#L334) |
-| [tests/test_research.py](../tests/test_research.py#L347) | دالة | test_followup_plan_does_not_inherit_unrelated_social_intent | لا توجد Docstring. | ناقص | 347 | [SRC-6BF96689A8-L000347](../tests/test_research.py#L347) |
-| [tests/test_research.py](../tests/test_research.py#L358) | دالة | test_source_classification_does_not_trust_lookalike_news_domains | لا توجد Docstring. | ناقص | 358 | [SRC-6BF96689A8-L000358](../tests/test_research.py#L358) |
+| [tests/test_research.py](../tests/test_research.py#L230) | دالة | test_compact_search_query_returns_empty_for_instruction_only_request | لا توجد Docstring. | ناقص | 230 | [SRC-6BF96689A8-L000230](../tests/test_research.py#L230) |
+| [tests/test_research.py](../tests/test_research.py#L235) | دالة | test_compact_search_query_removes_diacritic_uncertainty_instruction | لا توجد Docstring. | ناقص | 235 | [SRC-6BF96689A8-L000235](../tests/test_research.py#L235) |
+| [tests/test_research.py](../tests/test_research.py#L247) | دالة | test_compact_search_query_preserves_topic_after_source_quality_lead_in | لا توجد Docstring. | ناقص | 247 | [SRC-6BF96689A8-L000247](../tests/test_research.py#L247) |
+| [tests/test_research.py](../tests/test_research.py#L265) | دالة | test_compact_search_query_preserves_topic_after_distinguish_action | لا توجد Docstring. | ناقص | 265 | [SRC-6BF96689A8-L000265](../tests/test_research.py#L265) |
+| [tests/test_research.py](../tests/test_research.py#L272) | دالة | test_compact_search_query_discards_standalone_fact_vs_inference_instruction | لا توجد Docstring. | ناقص | 272 | [SRC-6BF96689A8-L000272](../tests/test_research.py#L272) |
+| [tests/test_research.py](../tests/test_research.py#L276) | دالة | test_fallback_plan_does_not_invent_query_for_instruction_only_prompt | لا توجد Docstring. | ناقص | 276 | [SRC-6BF96689A8-L000276](../tests/test_research.py#L276) |
+| [tests/test_research.py](../tests/test_research.py#L281) | دالة | test_collect_research_compacts_queries_before_provider_calls | لا توجد Docstring. | ناقص | 281 | [SRC-6BF96689A8-L000281](../tests/test_research.py#L281) |
+| [tests/test_research.py](../tests/test_research.py#L304) | دالة | test_collect_research_skips_provider_calls_without_topic_or_direct_url | لا توجد Docstring. | ناقص | 304 | [SRC-6BF96689A8-L000304](../tests/test_research.py#L304) |
+| [tests/test_research.py](../tests/test_research.py#L326) | دالة | test_fallback_plan_keeps_direct_url_without_generic_keyword_query | لا توجد Docstring. | ناقص | 326 | [SRC-6BF96689A8-L000326](../tests/test_research.py#L326) |
+| [tests/test_research.py](../tests/test_research.py#L332) | دالة | test_followup_plan_keeps_topic_across_chained_turns | لا توجد Docstring. | ناقص | 332 | [SRC-6BF96689A8-L000332](../tests/test_research.py#L332) |
+| [tests/test_research.py](../tests/test_research.py#L345) | دالة | test_followup_plan_does_not_inherit_unrelated_social_intent | لا توجد Docstring. | ناقص | 345 | [SRC-6BF96689A8-L000345](../tests/test_research.py#L345) |
+| [tests/test_research.py](../tests/test_research.py#L355) | دالة | test_source_classification_does_not_trust_lookalike_news_domains | لا توجد Docstring. | ناقص | 355 | [SRC-6BF96689A8-L000355](../tests/test_research.py#L355) |
+| [tests/test_research.py](../tests/test_research.py#L362) | دالة | test_compact_search_query_strips_citation_tail_without_punctuation | Format tails joined without a comma must not pollute the topic. | موثق | 362 | [SRC-6BF96689A8-L000362](../tests/test_research.py#L362) |
 | [tests/test_research_completion.py](../tests/test_research_completion.py#L8) | متغير/ثابت Python | _VALID_CLAIM_LEDGER | تعريف على مستوى الوحدة أو الكلاس. | لا ينطبق | 8 | [SRC-AFFCF23BD4-L000008](../tests/test_research_completion.py#L8) |
 | [tests/test_research_completion.py](../tests/test_research_completion.py#L18) | دالة | test_non_research_answer_is_not_reported_as_web_research_complete | لا توجد Docstring. | ناقص | 18 | [SRC-AFFCF23BD4-L000018](../tests/test_research_completion.py#L18) |
 | [tests/test_research_completion.py](../tests/test_research_completion.py#L24) | دالة | test_empty_results_distinguish_zero_results_from_tool_failure | لا توجد Docstring. | ناقص | 24 | [SRC-AFFCF23BD4-L000024](../tests/test_research_completion.py#L24) |
@@ -2617,6 +2623,7 @@
 | [agents/search_connectors.py](../agents/search_connectors.py#L160) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CROSSREF_MAILTO | 160 | [SRC-6E58A660BC-L000160](../agents/search_connectors.py#L160) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L191) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SEMANTIC_SCHOLAR_API_KEY | 191 | [SRC-6E58A660BC-L000191](../agents/search_connectors.py#L191) |
 | [agents/search_connectors.py](../agents/search_connectors.py#L214) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | CONNECTOR_REGISTRY | 214 | [SRC-6E58A660BC-L000214](../agents/search_connectors.py#L214) |
+| [agents/search_meta_tail.py](../agents/search_meta_tail.py#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | SEARCH_META_TAIL_RE | 14 | [SRC-08D2AA671D-L000014](../agents/search_meta_tail.py#L14) |
 | [agents/semantic_claim_verifier.py](../agents/semantic_claim_verifier.py#L14) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_VERIFICATION_CLAIMS | 14 | [SRC-086D574B4E-L000014](../agents/semantic_claim_verifier.py#L14) |
 | [agents/semantic_claim_verifier.py](../agents/semantic_claim_verifier.py#L15) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_VERIFICATION_SOURCES | 15 | [SRC-086D574B4E-L000015](../agents/semantic_claim_verifier.py#L15) |
 | [agents/semantic_claim_verifier.py](../agents/semantic_claim_verifier.py#L16) | اسم ثابت/إعداد بصيغة UPPER_SNAKE_CASE | MAX_EVIDENCE_CHARS | 16 | [SRC-086D574B4E-L000016](../agents/semantic_claim_verifier.py#L16) |

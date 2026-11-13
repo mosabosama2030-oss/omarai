@@ -4,7 +4,7 @@
 
 - الصفحة: **016**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L002201 إلى SRC-1AE03B9EC3-L003000
+- النطاق: SRC-1AE03B9EC3-L002153 إلى SRC-1AE03B9EC3-L002952
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,54 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002153](../../agents/web_agent.py#L2153) | 2153 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L002154](../../agents/web_agent.py#L2154) | 2154 | `"            if len(combined) < 3 and any(marker in search_query.casefold() for marker in academic_markers):"` | — |
+| [SRC-1AE03B9EC3-L002155](../../agents/web_agent.py#L2155) | 2155 | `"                academic_adapters: list[tuple[str, Any]] = ["` | — |
+| [SRC-1AE03B9EC3-L002156](../../agents/web_agent.py#L2156) | 2156 | `"                    (\"openalex\", lambda q: search_openalex(q, limit=3)),"` | — |
+| [SRC-1AE03B9EC3-L002157](../../agents/web_agent.py#L2157) | 2157 | `"                    (\"arxiv\", lambda q: search_arxiv(q, limit=3)),"` | — |
+| [SRC-1AE03B9EC3-L002158](../../agents/web_agent.py#L2158) | 2158 | `"                    (\"crossref\", lambda q: search_crossref(q, limit=3)),"` | — |
+| [SRC-1AE03B9EC3-L002159](../../agents/web_agent.py#L2159) | 2159 | `"                ]"` | — |
+| [SRC-1AE03B9EC3-L002160](../../agents/web_agent.py#L2160) | 2160 | `""` | — |
+| [SRC-1AE03B9EC3-L002161](../../agents/web_agent.py#L2161) | 2161 | `"                async def run_academic_all() -> list[list[dict[str, Any]]]:"` | — |
+| [SRC-1AE03B9EC3-L002162](../../agents/web_agent.py#L2162) | 2162 | `"                    return await asyncio.gather("` | — |
+| [SRC-1AE03B9EC3-L002163](../../agents/web_agent.py#L2163) | 2163 | `"                        *(run_one(name, method) for name, method in academic_adapters)"` | — |
+| [SRC-1AE03B9EC3-L002164](../../agents/web_agent.py#L2164) | 2164 | `"                    )"` | — |
+| [SRC-1AE03B9EC3-L002165](../../agents/web_agent.py#L2165) | 2165 | `""` | — |
+| [SRC-1AE03B9EC3-L002166](../../agents/web_agent.py#L2166) | 2166 | `"                provider_batches.extend(asyncio.run(run_academic_all()))"` | — |
+| [SRC-1AE03B9EC3-L002167](../../agents/web_agent.py#L2167) | 2167 | `"        except RuntimeError as exc:"` | — |
+| [SRC-1AE03B9EC3-L002168](../../agents/web_agent.py#L2168) | 2168 | `"            # This method is synchronous by contract; the HTTP server invokes it in worker threads."` | — |
+| [SRC-1AE03B9EC3-L002169](../../agents/web_agent.py#L2169) | 2169 | `"            raise RuntimeError(\"تعذر تشغيل مجدول موصلات البحث.\") from exc"` | — |
+| [SRC-1AE03B9EC3-L002170](../../agents/web_agent.py#L2170) | 2170 | `"        combined = [item for batch in provider_batches for item in batch]"` | — |
+| [SRC-1AE03B9EC3-L002171](../../agents/web_agent.py#L2171) | 2171 | `"        # Collapse duplicates within one provider, but retain cross-provider discovery"` | — |
+| [SRC-1AE03B9EC3-L002172](../../agents/web_agent.py#L2172) | 2172 | `"        # until rank fusion can record the distinct provider provenance."` | — |
+| [SRC-1AE03B9EC3-L002173](../../agents/web_agent.py#L2173) | 2173 | `"        unique_by_provider: dict[tuple[str, str], dict[str, Any]] = {}"` | — |
+| [SRC-1AE03B9EC3-L002174](../../agents/web_agent.py#L2174) | 2174 | `"        for item in combined:"` | — |
+| [SRC-1AE03B9EC3-L002175](../../agents/web_agent.py#L2175) | 2175 | `"            provider = str(item.get(\"provider\") or \"web_search\")"` | — |
+| [SRC-1AE03B9EC3-L002176](../../agents/web_agent.py#L2176) | 2176 | `"            url_key = self._normalized_source_url_key(item.get(\"url\"))"` | — |
+| [SRC-1AE03B9EC3-L002177](../../agents/web_agent.py#L2177) | 2177 | `"            if not url_key:"` | — |
+| [SRC-1AE03B9EC3-L002178](../../agents/web_agent.py#L2178) | 2178 | `"                continue"` | — |
+| [SRC-1AE03B9EC3-L002179](../../agents/web_agent.py#L2179) | 2179 | `"            key = (provider, url_key)"` | — |
+| [SRC-1AE03B9EC3-L002180](../../agents/web_agent.py#L2180) | 2180 | `"            previous = unique_by_provider.get(key)"` | — |
+| [SRC-1AE03B9EC3-L002181](../../agents/web_agent.py#L2181) | 2181 | `"            candidate_quality = ("` | — |
+| [SRC-1AE03B9EC3-L002182](../../agents/web_agent.py#L2182) | 2182 | `"                float(item.get(\"retrieval_relevance_score\") or 0.0),"` | — |
+| [SRC-1AE03B9EC3-L002183](../../agents/web_agent.py#L2183) | 2183 | `"                len(str(item.get(\"snippet\") or \"\")),"` | — |
+| [SRC-1AE03B9EC3-L002184](../../agents/web_agent.py#L2184) | 2184 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L002185](../../agents/web_agent.py#L2185) | 2185 | `"            previous_quality = ("` | — |
+| [SRC-1AE03B9EC3-L002186](../../agents/web_agent.py#L2186) | 2186 | `"                float(previous.get(\"retrieval_relevance_score\") or 0.0),"` | — |
+| [SRC-1AE03B9EC3-L002187](../../agents/web_agent.py#L2187) | 2187 | `"                len(str(previous.get(\"snippet\") or \"\")),"` | — |
+| [SRC-1AE03B9EC3-L002188](../../agents/web_agent.py#L2188) | 2188 | `"            ) if previous is not None else None"` | — |
+| [SRC-1AE03B9EC3-L002189](../../agents/web_agent.py#L2189) | 2189 | `"            if previous is None or candidate_quality > previous_quality:"` | — |
+| [SRC-1AE03B9EC3-L002190](../../agents/web_agent.py#L2190) | 2190 | `"                unique_by_provider[key] = item"` | — |
+| [SRC-1AE03B9EC3-L002191](../../agents/web_agent.py#L2191) | 2191 | `"        if not unique_by_provider:"` | — |
+| [SRC-1AE03B9EC3-L002192](../../agents/web_agent.py#L2192) | 2192 | `"            raise RuntimeError(\"لم تُرجع موصلات البحث نتائج مرتبطة وقابلة للاستخدام.\")"` | — |
+| [SRC-1AE03B9EC3-L002193](../../agents/web_agent.py#L2193) | 2193 | `"        return list(unique_by_provider.values())"` | — |
+| [SRC-1AE03B9EC3-L002194](../../agents/web_agent.py#L2194) | 2194 | `""` | — |
+| [SRC-1AE03B9EC3-L002195](../../agents/web_agent.py#L2195) | 2195 | `"    def _reserve_search_call(self) -> None:"` | — |
+| [SRC-1AE03B9EC3-L002196](../../agents/web_agent.py#L2196) | 2196 | `"        \"\"\"Reserve one outbound search/social-provider request before network I/O.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L002197](../../agents/web_agent.py#L2197) | 2197 | `"        budget = getattr(self, \"_request_budget\", None)"` | — |
+| [SRC-1AE03B9EC3-L002198](../../agents/web_agent.py#L2198) | 2198 | `"        if budget is not None:"` | — |
+| [SRC-1AE03B9EC3-L002199](../../agents/web_agent.py#L2199) | 2199 | `"            budget.reserve(\"search_calls\")"` | — |
+| [SRC-1AE03B9EC3-L002200](../../agents/web_agent.py#L2200) | 2200 | `""` | — |
 | [SRC-1AE03B9EC3-L002201](../../agents/web_agent.py#L2201) | 2201 | `"    def _search_brave(self, query: str) -> list[dict[str, Any]]:"` | — |
 | [SRC-1AE03B9EC3-L002202](../../agents/web_agent.py#L2202) | 2202 | `"        \"\"\"Use Brave's official web-search API when the operator provides an API key.\"\"\""` | — |
 | [SRC-1AE03B9EC3-L002203](../../agents/web_agent.py#L2203) | 2203 | `"        api_key = os.getenv(\"BRAVE_SEARCH_API_KEY\", \"\").strip()"` | — |
@@ -768,51 +816,3 @@
 | [SRC-1AE03B9EC3-L002950](../../agents/web_agent.py#L2950) | 2950 | `"        def result("` | — |
 | [SRC-1AE03B9EC3-L002951](../../agents/web_agent.py#L2951) | 2951 | `"            title: str = \"\","` | — |
 | [SRC-1AE03B9EC3-L002952](../../agents/web_agent.py#L2952) | 2952 | `"            page_text: str = \"\","` | — |
-| [SRC-1AE03B9EC3-L002953](../../agents/web_agent.py#L2953) | 2953 | `"            status: str = \"unknown\","` | — |
-| [SRC-1AE03B9EC3-L002954](../../agents/web_agent.py#L2954) | 2954 | `"            error_class: str \| None = None,"` | — |
-| [SRC-1AE03B9EC3-L002955](../../agents/web_agent.py#L2955) | 2955 | `"        ) -> PageFetchResult:"` | — |
-| [SRC-1AE03B9EC3-L002956](../../agents/web_agent.py#L2956) | 2956 | `"            return PageFetchResult(title, page_text, status, error_class)"` | — |
-| [SRC-1AE03B9EC3-L002957](../../agents/web_agent.py#L2957) | 2957 | `""` | — |
-| [SRC-1AE03B9EC3-L002958](../../agents/web_agent.py#L2958) | 2958 | `"        current_url = _public_http_url(url)"` | — |
-| [SRC-1AE03B9EC3-L002959](../../agents/web_agent.py#L2959) | 2959 | `"        if not current_url:"` | — |
-| [SRC-1AE03B9EC3-L002960](../../agents/web_agent.py#L2960) | 2960 | `"            return result(status=\"rejected_url\", error_class=\"PublicUrlRejected\")"` | — |
-| [SRC-1AE03B9EC3-L002961](../../agents/web_agent.py#L2961) | 2961 | `"        budget = getattr(self, \"_request_budget\", None)"` | — |
-| [SRC-1AE03B9EC3-L002962](../../agents/web_agent.py#L2962) | 2962 | `"        if budget is not None:"` | — |
-| [SRC-1AE03B9EC3-L002963](../../agents/web_agent.py#L2963) | 2963 | `"            budget.reserve(\"page_fetches\")"` | — |
-| [SRC-1AE03B9EC3-L002964](../../agents/web_agent.py#L2964) | 2964 | `"        try:"` | — |
-| [SRC-1AE03B9EC3-L002965](../../agents/web_agent.py#L2965) | 2965 | `"            import httpx"` | — |
-| [SRC-1AE03B9EC3-L002966](../../agents/web_agent.py#L2966) | 2966 | `"            from bs4 import BeautifulSoup"` | — |
-| [SRC-1AE03B9EC3-L002967](../../agents/web_agent.py#L2967) | 2967 | `"        except ImportError as exc:"` | — |
-| [SRC-1AE03B9EC3-L002968](../../agents/web_agent.py#L2968) | 2968 | `"            raise AgentDependencyError("` | — |
-| [SRC-1AE03B9EC3-L002969](../../agents/web_agent.py#L2969) | 2969 | `"                \"حزم استخراج الصفحات غير مثبتة. نفّذ: python -m pip install -e .\""` | — |
-| [SRC-1AE03B9EC3-L002970](../../agents/web_agent.py#L2970) | 2970 | `"            ) from exc"` | — |
-| [SRC-1AE03B9EC3-L002971](../../agents/web_agent.py#L2971) | 2971 | `""` | — |
-| [SRC-1AE03B9EC3-L002972](../../agents/web_agent.py#L2972) | 2972 | `"        headers = {"` | — |
-| [SRC-1AE03B9EC3-L002973](../../agents/web_agent.py#L2973) | 2973 | `"            \"User-Agent\": \"OmaraiResearchBot/1.1 (public page research; no login)\","` | — |
-| [SRC-1AE03B9EC3-L002974](../../agents/web_agent.py#L2974) | 2974 | `"            \"Accept\": \"text/html,application/xhtml+xml,text/plain;q=0.8\","` | — |
-| [SRC-1AE03B9EC3-L002975](../../agents/web_agent.py#L2975) | 2975 | `"            \"Accept-Encoding\": \"identity\","` | — |
-| [SRC-1AE03B9EC3-L002976](../../agents/web_agent.py#L2976) | 2976 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L002977](../../agents/web_agent.py#L2977) | 2977 | `"        media_type = \"\""` | — |
-| [SRC-1AE03B9EC3-L002978](../../agents/web_agent.py#L2978) | 2978 | `"        html = \"\""` | — |
-| [SRC-1AE03B9EC3-L002979](../../agents/web_agent.py#L2979) | 2979 | `"        bytes_truncated = False"` | — |
-| [SRC-1AE03B9EC3-L002980](../../agents/web_agent.py#L2980) | 2980 | `"        try:"` | — |
-| [SRC-1AE03B9EC3-L002981](../../agents/web_agent.py#L2981) | 2981 | `"            with httpx.Client("` | — |
-| [SRC-1AE03B9EC3-L002982](../../agents/web_agent.py#L2982) | 2982 | `"                timeout=self._effective_timeout(8.0),"` | — |
-| [SRC-1AE03B9EC3-L002983](../../agents/web_agent.py#L2983) | 2983 | `"                follow_redirects=False,"` | — |
-| [SRC-1AE03B9EC3-L002984](../../agents/web_agent.py#L2984) | 2984 | `"                headers=headers,"` | — |
-| [SRC-1AE03B9EC3-L002985](../../agents/web_agent.py#L2985) | 2985 | `"                verify=True,"` | — |
-| [SRC-1AE03B9EC3-L002986](../../agents/web_agent.py#L2986) | 2986 | `"                trust_env=False,"` | — |
-| [SRC-1AE03B9EC3-L002987](../../agents/web_agent.py#L2987) | 2987 | `"            ) as client:"` | — |
-| [SRC-1AE03B9EC3-L002988](../../agents/web_agent.py#L2988) | 2988 | `"                for redirect_number in range(4):"` | — |
-| [SRC-1AE03B9EC3-L002989](../../agents/web_agent.py#L2989) | 2989 | `"                    parsed = urllib.parse.urlparse(current_url)"` | — |
-| [SRC-1AE03B9EC3-L002990](../../agents/web_agent.py#L2990) | 2990 | `"                    host = parsed.hostname or \"\""` | — |
-| [SRC-1AE03B9EC3-L002991](../../agents/web_agent.py#L2991) | 2991 | `"                    # Resolve and pin a public IP. Do not let the HTTP client resolve"` | — |
-| [SRC-1AE03B9EC3-L002992](../../agents/web_agent.py#L2992) | 2992 | `"                    # the original hostname a second time."` | — |
-| [SRC-1AE03B9EC3-L002993](../../agents/web_agent.py#L2993) | 2993 | `"                    public_ips = _public_ip_literals(host)"` | — |
-| [SRC-1AE03B9EC3-L002994](../../agents/web_agent.py#L2994) | 2994 | `"                    if not public_ips:"` | — |
-| [SRC-1AE03B9EC3-L002995](../../agents/web_agent.py#L2995) | 2995 | `"                        return result(status=\"blocked_or_unresolved_host\", error_class=\"HostResolutionOrSSRFCheck\")"` | — |
-| [SRC-1AE03B9EC3-L002996](../../agents/web_agent.py#L2996) | 2996 | `"                    connect_url = _pinned_connect_url(current_url, public_ips[0])"` | — |
-| [SRC-1AE03B9EC3-L002997](../../agents/web_agent.py#L2997) | 2997 | `"                    if not connect_url:"` | — |
-| [SRC-1AE03B9EC3-L002998](../../agents/web_agent.py#L2998) | 2998 | `"                        return result(status=\"blocked_connection_target\", error_class=\"PinnedTargetRejected\")"` | — |
-| [SRC-1AE03B9EC3-L002999](../../agents/web_agent.py#L2999) | 2999 | `"                    request_headers = {\"Host\": host}"` | — |
-| [SRC-1AE03B9EC3-L003000](../../agents/web_agent.py#L3000) | 3000 | `"                    extensions = {\"sni_hostname\": host} if parsed.scheme == \"https\" else {}"` | — |

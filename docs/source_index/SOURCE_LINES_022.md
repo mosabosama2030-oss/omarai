@@ -4,7 +4,7 @@
 
 - الصفحة: **022**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L007001 إلى SRC-EEF2E6447C-L000226
+- النطاق: SRC-1AE03B9EC3-L006953 إلى SRC-EEF2E6447C-L000178
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,54 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L006953](../../agents/web_agent.py#L6953) | 6953 | `"                        evidence_updated = False"` | — |
+| [SRC-1AE03B9EC3-L006954](../../agents/web_agent.py#L6954) | 6954 | `"                        for candidate in gap_sources:"` | — |
+| [SRC-1AE03B9EC3-L006955](../../agents/web_agent.py#L6955) | 6955 | `"                            if not isinstance(candidate, dict):"` | — |
+| [SRC-1AE03B9EC3-L006956](../../agents/web_agent.py#L6956) | 6956 | `"                                continue"` | — |
+| [SRC-1AE03B9EC3-L006957](../../agents/web_agent.py#L6957) | 6957 | `"                            if not self._source_matches_query(gap_query, candidate):"` | — |
+| [SRC-1AE03B9EC3-L006958](../../agents/web_agent.py#L6958) | 6958 | `"                                continue"` | — |
+| [SRC-1AE03B9EC3-L006959](../../agents/web_agent.py#L6959) | 6959 | `"                            source_key = self._normalized_source_url_key(candidate.get(\"url\"))"` | — |
+| [SRC-1AE03B9EC3-L006960](../../agents/web_agent.py#L6960) | 6960 | `"                            if not source_key:"` | — |
+| [SRC-1AE03B9EC3-L006961](../../agents/web_agent.py#L6961) | 6961 | `"                                continue"` | — |
+| [SRC-1AE03B9EC3-L006962](../../agents/web_agent.py#L6962) | 6962 | `"                            existing_index = source_indexes.get(source_key)"` | — |
+| [SRC-1AE03B9EC3-L006963](../../agents/web_agent.py#L6963) | 6963 | `"                            if existing_index is None:"` | — |
+| [SRC-1AE03B9EC3-L006964](../../agents/web_agent.py#L6964) | 6964 | `"                                source_indexes[source_key] = len(sources)"` | — |
+| [SRC-1AE03B9EC3-L006965](../../agents/web_agent.py#L6965) | 6965 | `"                                sources.append(candidate)"` | — |
+| [SRC-1AE03B9EC3-L006966](../../agents/web_agent.py#L6966) | 6966 | `"                                criterion_gap_research[\"new_sources_added\"] += 1"` | — |
+| [SRC-1AE03B9EC3-L006967](../../agents/web_agent.py#L6967) | 6967 | `"                                evidence_updated = True"` | — |
+| [SRC-1AE03B9EC3-L006968](../../agents/web_agent.py#L6968) | 6968 | `"                                continue"` | — |
+| [SRC-1AE03B9EC3-L006969](../../agents/web_agent.py#L6969) | 6969 | `"                            existing_source = sources[existing_index]"` | — |
+| [SRC-1AE03B9EC3-L006970](../../agents/web_agent.py#L6970) | 6970 | `"                            merged = dict(existing_source)"` | — |
+| [SRC-1AE03B9EC3-L006971](../../agents/web_agent.py#L6971) | 6971 | `"                            source_enriched = False"` | — |
+| [SRC-1AE03B9EC3-L006972](../../agents/web_agent.py#L6972) | 6972 | `"                            for text_key in (\"title\", \"snippet\", \"page_text\"):"` | — |
+| [SRC-1AE03B9EC3-L006973](../../agents/web_agent.py#L6973) | 6973 | `"                                old_text = str(merged.get(text_key) or \"\")"` | — |
+| [SRC-1AE03B9EC3-L006974](../../agents/web_agent.py#L6974) | 6974 | `"                                new_text = str(candidate.get(text_key) or \"\")"` | — |
+| [SRC-1AE03B9EC3-L006975](../../agents/web_agent.py#L6975) | 6975 | `"                                if len(new_text) > len(old_text):"` | — |
+| [SRC-1AE03B9EC3-L006976](../../agents/web_agent.py#L6976) | 6976 | `"                                    merged[text_key] = candidate[text_key]"` | — |
+| [SRC-1AE03B9EC3-L006977](../../agents/web_agent.py#L6977) | 6977 | `"                                    source_enriched = True"` | — |
+| [SRC-1AE03B9EC3-L006978](../../agents/web_agent.py#L6978) | 6978 | `"                            if candidate.get(\"page_fetched\") and not existing_source.get(\"page_fetched\"):"` | — |
+| [SRC-1AE03B9EC3-L006979](../../agents/web_agent.py#L6979) | 6979 | `"                                merged[\"page_fetched\"] = True"` | — |
+| [SRC-1AE03B9EC3-L006980](../../agents/web_agent.py#L6980) | 6980 | `"                                source_enriched = True"` | — |
+| [SRC-1AE03B9EC3-L006981](../../agents/web_agent.py#L6981) | 6981 | `"                            if source_enriched:"` | — |
+| [SRC-1AE03B9EC3-L006982](../../agents/web_agent.py#L6982) | 6982 | `"                                evidence_updated = True"` | — |
+| [SRC-1AE03B9EC3-L006983](../../agents/web_agent.py#L6983) | 6983 | `"                                criterion_gap_research[\"evidence_sources_enriched\"] += 1"` | — |
+| [SRC-1AE03B9EC3-L006984](../../agents/web_agent.py#L6984) | 6984 | `"                            merged[\"providers\"] = list(dict.fromkeys("` | — |
+| [SRC-1AE03B9EC3-L006985](../../agents/web_agent.py#L6985) | 6985 | `"                                list(existing_source.get(\"providers\", []))"` | — |
+| [SRC-1AE03B9EC3-L006986](../../agents/web_agent.py#L6986) | 6986 | `"                                + list(candidate.get(\"providers\", []))"` | — |
+| [SRC-1AE03B9EC3-L006987](../../agents/web_agent.py#L6987) | 6987 | `"                            ))"` | — |
+| [SRC-1AE03B9EC3-L006988](../../agents/web_agent.py#L6988) | 6988 | `"                            merged[\"queries\"] = list(dict.fromkeys("` | — |
+| [SRC-1AE03B9EC3-L006989](../../agents/web_agent.py#L6989) | 6989 | `"                                list(existing_source.get(\"queries\", []))"` | — |
+| [SRC-1AE03B9EC3-L006990](../../agents/web_agent.py#L6990) | 6990 | `"                                + list(candidate.get(\"queries\", []))"` | — |
+| [SRC-1AE03B9EC3-L006991](../../agents/web_agent.py#L6991) | 6991 | `"                                + [gap_query]"` | — |
+| [SRC-1AE03B9EC3-L006992](../../agents/web_agent.py#L6992) | 6992 | `"                            ))"` | — |
+| [SRC-1AE03B9EC3-L006993](../../agents/web_agent.py#L6993) | 6993 | `"                            sources[existing_index] = merged"` | — |
+| [SRC-1AE03B9EC3-L006994](../../agents/web_agent.py#L6994) | 6994 | `"                        # Re-apply the guardrails to the merged set as a final safety"` | — |
+| [SRC-1AE03B9EC3-L006995](../../agents/web_agent.py#L6995) | 6995 | `"                        # boundary. Count newly added sources only after this filter."` | — |
+| [SRC-1AE03B9EC3-L006996](../../agents/web_agent.py#L6996) | 6996 | `"                        sources, merged_guardrail_report = apply_source_guardrails("` | — |
+| [SRC-1AE03B9EC3-L006997](../../agents/web_agent.py#L6997) | 6997 | `"                            working_question, clean_mode, plan, sources"` | — |
+| [SRC-1AE03B9EC3-L006998](../../agents/web_agent.py#L6998) | 6998 | `"                        )"` | — |
+| [SRC-1AE03B9EC3-L006999](../../agents/web_agent.py#L6999) | 6999 | `"                        report[\"source_guardrails\"][\"after_criterion_gap_repair\"] = ("` | — |
+| [SRC-1AE03B9EC3-L007000](../../agents/web_agent.py#L7000) | 7000 | `"                            merged_guardrail_report"` | — |
 | [SRC-1AE03B9EC3-L007001](../../agents/web_agent.py#L7001) | 7001 | `"                        )"` | — |
 | [SRC-1AE03B9EC3-L007002](../../agents/web_agent.py#L7002) | 7002 | `"                        accepted_source_keys = {"` | — |
 | [SRC-1AE03B9EC3-L007003](../../agents/web_agent.py#L7003) | 7003 | `"                            self._normalized_source_url_key(item.get(\"url\"))"` | — |
@@ -786,51 +834,3 @@
 | [SRC-EEF2E6447C-L000176](../../api/omarai.py#L176) | 176 | `"        self.handler = handler"` | — |
 | [SRC-EEF2E6447C-L000177](../../api/omarai.py#L177) | 177 | `"        self._buffer = bytearray()"` | — |
 | [SRC-EEF2E6447C-L000178](../../api/omarai.py#L178) | 178 | `""` | — |
-| [SRC-EEF2E6447C-L000179](../../api/omarai.py#L179) | 179 | `"    def readline(self, limit=-1):"` | — |
-| [SRC-EEF2E6447C-L000180](../../api/omarai.py#L180) | 180 | `"        if limit == 0:"` | — |
-| [SRC-EEF2E6447C-L000181](../../api/omarai.py#L181) | 181 | `"            return b\"\""` | — |
-| [SRC-EEF2E6447C-L000182](../../api/omarai.py#L182) | 182 | `"        max_bytes = int(limit) if limit is not None and limit > 0 else 65_537"` | — |
-| [SRC-EEF2E6447C-L000183](../../api/omarai.py#L183) | 183 | `"        previous_timeout = self.connection.gettimeout()"` | — |
-| [SRC-EEF2E6447C-L000184](../../api/omarai.py#L184) | 184 | `"        line = bytearray()"` | — |
-| [SRC-EEF2E6447C-L000185](../../api/omarai.py#L185) | 185 | `"        try:"` | — |
-| [SRC-EEF2E6447C-L000186](../../api/omarai.py#L186) | 186 | `"            while len(line) < max_bytes:"` | — |
-| [SRC-EEF2E6447C-L000187](../../api/omarai.py#L187) | 187 | `"                deadline = getattr(self.handler, \"_request_header_deadline\", None)"` | — |
-| [SRC-EEF2E6447C-L000188](../../api/omarai.py#L188) | 188 | `"                if deadline is None:"` | — |
-| [SRC-EEF2E6447C-L000189](../../api/omarai.py#L189) | 189 | `"                    raise TimeoutError(\"request-header deadline is not active\")"` | — |
-| [SRC-EEF2E6447C-L000190](../../api/omarai.py#L190) | 190 | `"                remaining = deadline - time.monotonic()"` | — |
-| [SRC-EEF2E6447C-L000191](../../api/omarai.py#L191) | 191 | `"                if remaining <= 0:"` | — |
-| [SRC-EEF2E6447C-L000192](../../api/omarai.py#L192) | 192 | `"                    raise TimeoutError(\"absolute request-header deadline exceeded\")"` | — |
-| [SRC-EEF2E6447C-L000193](../../api/omarai.py#L193) | 193 | `""` | — |
-| [SRC-EEF2E6447C-L000194](../../api/omarai.py#L194) | 194 | `"                newline_index = self._buffer.find(b\"\\n\")"` | — |
-| [SRC-EEF2E6447C-L000195](../../api/omarai.py#L195) | 195 | `"                if newline_index >= 0:"` | — |
-| [SRC-EEF2E6447C-L000196](../../api/omarai.py#L196) | 196 | `"                    take = min(newline_index + 1, max_bytes - len(line))"` | — |
-| [SRC-EEF2E6447C-L000197](../../api/omarai.py#L197) | 197 | `"                    line.extend(self._buffer[:take])"` | — |
-| [SRC-EEF2E6447C-L000198](../../api/omarai.py#L198) | 198 | `"                    del self._buffer[:take]"` | — |
-| [SRC-EEF2E6447C-L000199](../../api/omarai.py#L199) | 199 | `"                    break"` | — |
-| [SRC-EEF2E6447C-L000200](../../api/omarai.py#L200) | 200 | `""` | — |
-| [SRC-EEF2E6447C-L000201](../../api/omarai.py#L201) | 201 | `"                if self._buffer:"` | — |
-| [SRC-EEF2E6447C-L000202](../../api/omarai.py#L202) | 202 | `"                    take = min(len(self._buffer), max_bytes - len(line))"` | — |
-| [SRC-EEF2E6447C-L000203](../../api/omarai.py#L203) | 203 | `"                    line.extend(self._buffer[:take])"` | — |
-| [SRC-EEF2E6447C-L000204](../../api/omarai.py#L204) | 204 | `"                    del self._buffer[:take]"` | — |
-| [SRC-EEF2E6447C-L000205](../../api/omarai.py#L205) | 205 | `"                    if len(line) >= max_bytes:"` | — |
-| [SRC-EEF2E6447C-L000206](../../api/omarai.py#L206) | 206 | `"                        break"` | — |
-| [SRC-EEF2E6447C-L000207](../../api/omarai.py#L207) | 207 | `""` | — |
-| [SRC-EEF2E6447C-L000208](../../api/omarai.py#L208) | 208 | `"                remaining = deadline - time.monotonic()"` | — |
-| [SRC-EEF2E6447C-L000209](../../api/omarai.py#L209) | 209 | `"                if remaining <= 0:"` | — |
-| [SRC-EEF2E6447C-L000210](../../api/omarai.py#L210) | 210 | `"                    raise TimeoutError(\"absolute request-header deadline exceeded\")"` | — |
-| [SRC-EEF2E6447C-L000211](../../api/omarai.py#L211) | 211 | `"                idle_timeout = max("` | — |
-| [SRC-EEF2E6447C-L000212](../../api/omarai.py#L212) | 212 | `"                    0.1,"` | — |
-| [SRC-EEF2E6447C-L000213](../../api/omarai.py#L213) | 213 | `"                    min("` | — |
-| [SRC-EEF2E6447C-L000214](../../api/omarai.py#L214) | 214 | `"                        float(REQUEST_HEADER_IDLE_TIMEOUT_SECONDS),"` | — |
-| [SRC-EEF2E6447C-L000215](../../api/omarai.py#L215) | 215 | `"                        MAX_REQUEST_HEADER_READ_TIMEOUT_SECONDS,"` | — |
-| [SRC-EEF2E6447C-L000216](../../api/omarai.py#L216) | 216 | `"                    ),"` | — |
-| [SRC-EEF2E6447C-L000217](../../api/omarai.py#L217) | 217 | `"                )"` | — |
-| [SRC-EEF2E6447C-L000218](../../api/omarai.py#L218) | 218 | `"                self.connection.settimeout(min(idle_timeout, remaining))"` | — |
-| [SRC-EEF2E6447C-L000219](../../api/omarai.py#L219) | 219 | `"                chunk = self.connection.recv(min(4_096, max_bytes - len(line)))"` | — |
-| [SRC-EEF2E6447C-L000220](../../api/omarai.py#L220) | 220 | `"                if not chunk:"` | — |
-| [SRC-EEF2E6447C-L000221](../../api/omarai.py#L221) | 221 | `"                    break"` | — |
-| [SRC-EEF2E6447C-L000222](../../api/omarai.py#L222) | 222 | `"                self._buffer.extend(chunk)"` | — |
-| [SRC-EEF2E6447C-L000223](../../api/omarai.py#L223) | 223 | `"        finally:"` | — |
-| [SRC-EEF2E6447C-L000224](../../api/omarai.py#L224) | 224 | `"            try:"` | — |
-| [SRC-EEF2E6447C-L000225](../../api/omarai.py#L225) | 225 | `"                self.connection.settimeout(previous_timeout)"` | — |
-| [SRC-EEF2E6447C-L000226](../../api/omarai.py#L226) | 226 | `"            except OSError:"` | — |

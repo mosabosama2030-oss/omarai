@@ -4,7 +4,7 @@
 
 - الصفحة: **015**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L001401 إلى SRC-1AE03B9EC3-L002200
+- النطاق: SRC-1AE03B9EC3-L001353 إلى SRC-1AE03B9EC3-L002152
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,54 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L001353](../../agents/web_agent.py#L1353) | 1353 | `"                            \"product_fit\": \"unassessed\","` | — |
+| [SRC-1AE03B9EC3-L001354](../../agents/web_agent.py#L1354) | 1354 | `"                        }"` | — |
+| [SRC-1AE03B9EC3-L001355](../../agents/web_agent.py#L1355) | 1355 | `"        return None"` | — |
+| [SRC-1AE03B9EC3-L001356](../../agents/web_agent.py#L1356) | 1356 | `""` | — |
+| [SRC-1AE03B9EC3-L001357](../../agents/web_agent.py#L1357) | 1357 | `"    @staticmethod"` | — |
+| [SRC-1AE03B9EC3-L001358](../../agents/web_agent.py#L1358) | 1358 | `"    def _is_buyer_intent_search_query(query: str) -> bool:"` | — |
+| [SRC-1AE03B9EC3-L001359](../../agents/web_agent.py#L1359) | 1359 | `"        \"\"\"Identify purchaser-language queries that must not be sent to news search.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L001360](../../agents/web_agent.py#L1360) | 1360 | `"        normalized = _normalize_search_query(query).casefold()"` | — |
+| [SRC-1AE03B9EC3-L001361](../../agents/web_agent.py#L1361) | 1361 | `"        buyer_phrases = ("` | — |
+| [SRC-1AE03B9EC3-L001362](../../agents/web_agent.py#L1362) | 1362 | `"            \"مطلوب شراء\", \"عايز اشتري\", \"عاوز اشتري\", \"اريد شراء\","` | — |
+| [SRC-1AE03B9EC3-L001363](../../agents/web_agent.py#L1363) | 1363 | `"            \"ارغب في شراء\", \"بدور على مورد\", \"بدور على موردين\", \"بدور على شركة توريد\", \"بدور على مصنع\", \"بدور على عرض سعر\", \"طلب عرض سعر\", \"نبحث عن مورد\","` | — |
+| [SRC-1AE03B9EC3-L001364](../../agents/web_agent.py#L1364) | 1364 | `"            \"نحتاج الى مورد\", \"محتاج مورد\", \"looking to buy\","` | — |
+| [SRC-1AE03B9EC3-L001365](../../agents/web_agent.py#L1365) | 1365 | `"            \"looking to purchase\", \"want to buy\", \"wants to buy\","` | — |
+| [SRC-1AE03B9EC3-L001366](../../agents/web_agent.py#L1366) | 1366 | `"            \"want to purchase\", \"request for quotation\", \"request for quote\","` | — |
+| [SRC-1AE03B9EC3-L001367](../../agents/web_agent.py#L1367) | 1367 | `"            \"looking for a supplier\", \"need a supplier\", \"seeking a supplier\","` | — |
+| [SRC-1AE03B9EC3-L001368](../../agents/web_agent.py#L1368) | 1368 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L001369](../../agents/web_agent.py#L1369) | 1369 | `"        return any("` | — |
+| [SRC-1AE03B9EC3-L001370](../../agents/web_agent.py#L1370) | 1370 | `"            _normalize_search_query(phrase).casefold() in normalized"` | — |
+| [SRC-1AE03B9EC3-L001371](../../agents/web_agent.py#L1371) | 1371 | `"            for phrase in buyer_phrases"` | — |
+| [SRC-1AE03B9EC3-L001372](../../agents/web_agent.py#L1372) | 1372 | `"        )"` | — |
+| [SRC-1AE03B9EC3-L001373](../../agents/web_agent.py#L1373) | 1373 | `""` | — |
+| [SRC-1AE03B9EC3-L001374](../../agents/web_agent.py#L1374) | 1374 | `"    @staticmethod"` | — |
+| [SRC-1AE03B9EC3-L001375](../../agents/web_agent.py#L1375) | 1375 | `"    def _lead_generation_queries("` | — |
+| [SRC-1AE03B9EC3-L001376](../../agents/web_agent.py#L1376) | 1376 | `"        question: str, existing_queries: list[str] \| None = None"` | — |
+| [SRC-1AE03B9EC3-L001377](../../agents/web_agent.py#L1377) | 1377 | `"    ) -> list[str]:"` | — |
+| [SRC-1AE03B9EC3-L001378](../../agents/web_agent.py#L1378) | 1378 | `"        \"\"\"Generate bounded, sector-neutral buyer queries anchored to the requested product.\"\"\""` | — |
+| [SRC-1AE03B9EC3-L001379](../../agents/web_agent.py#L1379) | 1379 | `"        subject = _normalize_search_query(question).strip()"` | — |
+| [SRC-1AE03B9EC3-L001380](../../agents/web_agent.py#L1380) | 1380 | `"        subject = re.sub(r\"(?<!\\w)عملاش(?!\\w)\", \"عملاء\", subject, flags=re.IGNORECASE)"` | — |
+| [SRC-1AE03B9EC3-L001381](../../agents/web_agent.py#L1381) | 1381 | `"        subject = re.sub(r\"(?<!\\w)شرا(?!\\w)\", \"شراء\", subject, flags=re.IGNORECASE)"` | — |
+| [SRC-1AE03B9EC3-L001382](../../agents/web_agent.py#L1382) | 1382 | `"        arabic = bool(re.search(r\"[\\u0600-\\u06FF]\", question))"` | — |
+| [SRC-1AE03B9EC3-L001383](../../agents/web_agent.py#L1383) | 1383 | `"        if arabic:"` | — |
+| [SRC-1AE03B9EC3-L001384](../../agents/web_agent.py#L1384) | 1384 | `"            subject = re.sub("` | — |
+| [SRC-1AE03B9EC3-L001385](../../agents/web_agent.py#L1385) | 1385 | `"                r\"^(?:(?:من فضلك\|لو سمحت)\\s*)?(?:ابحث\|بحث\|دور\|دورلي\|اعثر)(?:لي)?\\s+\""` | — |
+| [SRC-1AE03B9EC3-L001386](../../agents/web_agent.py#L1386) | 1386 | `"                r\"(?:لي\\s+)?(?:عن\|على)\\s*\","` | — |
+| [SRC-1AE03B9EC3-L001387](../../agents/web_agent.py#L1387) | 1387 | `"                \"\", subject, flags=re.IGNORECASE,"` | — |
+| [SRC-1AE03B9EC3-L001388](../../agents/web_agent.py#L1388) | 1388 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L001389](../../agents/web_agent.py#L1389) | 1389 | `"            subject = re.sub("` | — |
+| [SRC-1AE03B9EC3-L001390](../../agents/web_agent.py#L1390) | 1390 | `"                r\"^(?:[0-9٠-٩]+\\s*)?(?:عميل(?:\\s+محتمل)?\|عملاء(?:\\s+محتملين)?\|\""` | — |
+| [SRC-1AE03B9EC3-L001391](../../agents/web_agent.py#L1391) | 1391 | `"                r\"عملاش\|مشتري(?:ن)?\|مشترين)\\s*\","` | — |
+| [SRC-1AE03B9EC3-L001392](../../agents/web_agent.py#L1392) | 1392 | `"                \"\", subject, flags=re.IGNORECASE,"` | — |
+| [SRC-1AE03B9EC3-L001393](../../agents/web_agent.py#L1393) | 1393 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L001394](../../agents/web_agent.py#L1394) | 1394 | `"            intent_word = ("` | — |
+| [SRC-1AE03B9EC3-L001395](../../agents/web_agent.py#L1395) | 1395 | `"                r\"(?:يطلب(?:ون)?\|يريد(?:ون)?\|عايز(?:ين)?\|عاوز(?:ين)?\|محتاج(?:ين)?\|\""` | — |
+| [SRC-1AE03B9EC3-L001396](../../agents/web_agent.py#L1396) | 1396 | `"                r\"مهتم(?:ين)?\|بيطلب(?:وا)?\|يبحث(?:ون)?\|بيبحث(?:وا)?\|يدور(?:وا)?)\""` | — |
+| [SRC-1AE03B9EC3-L001397](../../agents/web_agent.py#L1397) | 1397 | `"            )"` | — |
+| [SRC-1AE03B9EC3-L001398](../../agents/web_agent.py#L1398) | 1398 | `"            subject = re.sub("` | — |
+| [SRC-1AE03B9EC3-L001399](../../agents/web_agent.py#L1399) | 1399 | `"                r\"^(?:(?:الذي\|اللي\|الذين)\\s*)?\" + intent_word"` | — |
+| [SRC-1AE03B9EC3-L001400](../../agents/web_agent.py#L1400) | 1400 | `"                + r\"(?:\\s+(?:او\|أو)\\s+\" + intent_word + r\")*\\s*\","` | — |
 | [SRC-1AE03B9EC3-L001401](../../agents/web_agent.py#L1401) | 1401 | `"                \"\", subject, flags=re.IGNORECASE,"` | — |
 | [SRC-1AE03B9EC3-L001402](../../agents/web_agent.py#L1402) | 1402 | `"            )"` | — |
 | [SRC-1AE03B9EC3-L001403](../../agents/web_agent.py#L1403) | 1403 | `"            subject = re.sub("` | — |
@@ -768,51 +816,3 @@
 | [SRC-1AE03B9EC3-L002150](../../agents/web_agent.py#L2150) | 2150 | `"                \"scientific study\", \"research paper\", \"peer reviewed\","` | — |
 | [SRC-1AE03B9EC3-L002151](../../agents/web_agent.py#L2151) | 2151 | `"                \"peer-reviewed\", \"scholarly\", \"literature review\","` | — |
 | [SRC-1AE03B9EC3-L002152](../../agents/web_agent.py#L2152) | 2152 | `"                \"systematic review\", \"arxiv\", \"openalex\", \"crossref\","` | — |
-| [SRC-1AE03B9EC3-L002153](../../agents/web_agent.py#L2153) | 2153 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L002154](../../agents/web_agent.py#L2154) | 2154 | `"            if len(combined) < 3 and any(marker in search_query.casefold() for marker in academic_markers):"` | — |
-| [SRC-1AE03B9EC3-L002155](../../agents/web_agent.py#L2155) | 2155 | `"                academic_adapters: list[tuple[str, Any]] = ["` | — |
-| [SRC-1AE03B9EC3-L002156](../../agents/web_agent.py#L2156) | 2156 | `"                    (\"openalex\", lambda q: search_openalex(q, limit=3)),"` | — |
-| [SRC-1AE03B9EC3-L002157](../../agents/web_agent.py#L2157) | 2157 | `"                    (\"arxiv\", lambda q: search_arxiv(q, limit=3)),"` | — |
-| [SRC-1AE03B9EC3-L002158](../../agents/web_agent.py#L2158) | 2158 | `"                    (\"crossref\", lambda q: search_crossref(q, limit=3)),"` | — |
-| [SRC-1AE03B9EC3-L002159](../../agents/web_agent.py#L2159) | 2159 | `"                ]"` | — |
-| [SRC-1AE03B9EC3-L002160](../../agents/web_agent.py#L2160) | 2160 | `""` | — |
-| [SRC-1AE03B9EC3-L002161](../../agents/web_agent.py#L2161) | 2161 | `"                async def run_academic_all() -> list[list[dict[str, Any]]]:"` | — |
-| [SRC-1AE03B9EC3-L002162](../../agents/web_agent.py#L2162) | 2162 | `"                    return await asyncio.gather("` | — |
-| [SRC-1AE03B9EC3-L002163](../../agents/web_agent.py#L2163) | 2163 | `"                        *(run_one(name, method) for name, method in academic_adapters)"` | — |
-| [SRC-1AE03B9EC3-L002164](../../agents/web_agent.py#L2164) | 2164 | `"                    )"` | — |
-| [SRC-1AE03B9EC3-L002165](../../agents/web_agent.py#L2165) | 2165 | `""` | — |
-| [SRC-1AE03B9EC3-L002166](../../agents/web_agent.py#L2166) | 2166 | `"                provider_batches.extend(asyncio.run(run_academic_all()))"` | — |
-| [SRC-1AE03B9EC3-L002167](../../agents/web_agent.py#L2167) | 2167 | `"        except RuntimeError as exc:"` | — |
-| [SRC-1AE03B9EC3-L002168](../../agents/web_agent.py#L2168) | 2168 | `"            # This method is synchronous by contract; the HTTP server invokes it in worker threads."` | — |
-| [SRC-1AE03B9EC3-L002169](../../agents/web_agent.py#L2169) | 2169 | `"            raise RuntimeError(\"تعذر تشغيل مجدول موصلات البحث.\") from exc"` | — |
-| [SRC-1AE03B9EC3-L002170](../../agents/web_agent.py#L2170) | 2170 | `"        combined = [item for batch in provider_batches for item in batch]"` | — |
-| [SRC-1AE03B9EC3-L002171](../../agents/web_agent.py#L2171) | 2171 | `"        # Collapse duplicates within one provider, but retain cross-provider discovery"` | — |
-| [SRC-1AE03B9EC3-L002172](../../agents/web_agent.py#L2172) | 2172 | `"        # until rank fusion can record the distinct provider provenance."` | — |
-| [SRC-1AE03B9EC3-L002173](../../agents/web_agent.py#L2173) | 2173 | `"        unique_by_provider: dict[tuple[str, str], dict[str, Any]] = {}"` | — |
-| [SRC-1AE03B9EC3-L002174](../../agents/web_agent.py#L2174) | 2174 | `"        for item in combined:"` | — |
-| [SRC-1AE03B9EC3-L002175](../../agents/web_agent.py#L2175) | 2175 | `"            provider = str(item.get(\"provider\") or \"web_search\")"` | — |
-| [SRC-1AE03B9EC3-L002176](../../agents/web_agent.py#L2176) | 2176 | `"            url_key = self._normalized_source_url_key(item.get(\"url\"))"` | — |
-| [SRC-1AE03B9EC3-L002177](../../agents/web_agent.py#L2177) | 2177 | `"            if not url_key:"` | — |
-| [SRC-1AE03B9EC3-L002178](../../agents/web_agent.py#L2178) | 2178 | `"                continue"` | — |
-| [SRC-1AE03B9EC3-L002179](../../agents/web_agent.py#L2179) | 2179 | `"            key = (provider, url_key)"` | — |
-| [SRC-1AE03B9EC3-L002180](../../agents/web_agent.py#L2180) | 2180 | `"            previous = unique_by_provider.get(key)"` | — |
-| [SRC-1AE03B9EC3-L002181](../../agents/web_agent.py#L2181) | 2181 | `"            candidate_quality = ("` | — |
-| [SRC-1AE03B9EC3-L002182](../../agents/web_agent.py#L2182) | 2182 | `"                float(item.get(\"retrieval_relevance_score\") or 0.0),"` | — |
-| [SRC-1AE03B9EC3-L002183](../../agents/web_agent.py#L2183) | 2183 | `"                len(str(item.get(\"snippet\") or \"\")),"` | — |
-| [SRC-1AE03B9EC3-L002184](../../agents/web_agent.py#L2184) | 2184 | `"            )"` | — |
-| [SRC-1AE03B9EC3-L002185](../../agents/web_agent.py#L2185) | 2185 | `"            previous_quality = ("` | — |
-| [SRC-1AE03B9EC3-L002186](../../agents/web_agent.py#L2186) | 2186 | `"                float(previous.get(\"retrieval_relevance_score\") or 0.0),"` | — |
-| [SRC-1AE03B9EC3-L002187](../../agents/web_agent.py#L2187) | 2187 | `"                len(str(previous.get(\"snippet\") or \"\")),"` | — |
-| [SRC-1AE03B9EC3-L002188](../../agents/web_agent.py#L2188) | 2188 | `"            ) if previous is not None else None"` | — |
-| [SRC-1AE03B9EC3-L002189](../../agents/web_agent.py#L2189) | 2189 | `"            if previous is None or candidate_quality > previous_quality:"` | — |
-| [SRC-1AE03B9EC3-L002190](../../agents/web_agent.py#L2190) | 2190 | `"                unique_by_provider[key] = item"` | — |
-| [SRC-1AE03B9EC3-L002191](../../agents/web_agent.py#L2191) | 2191 | `"        if not unique_by_provider:"` | — |
-| [SRC-1AE03B9EC3-L002192](../../agents/web_agent.py#L2192) | 2192 | `"            raise RuntimeError(\"لم تُرجع موصلات البحث نتائج مرتبطة وقابلة للاستخدام.\")"` | — |
-| [SRC-1AE03B9EC3-L002193](../../agents/web_agent.py#L2193) | 2193 | `"        return list(unique_by_provider.values())"` | — |
-| [SRC-1AE03B9EC3-L002194](../../agents/web_agent.py#L2194) | 2194 | `""` | — |
-| [SRC-1AE03B9EC3-L002195](../../agents/web_agent.py#L2195) | 2195 | `"    def _reserve_search_call(self) -> None:"` | — |
-| [SRC-1AE03B9EC3-L002196](../../agents/web_agent.py#L2196) | 2196 | `"        \"\"\"Reserve one outbound search/social-provider request before network I/O.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L002197](../../agents/web_agent.py#L2197) | 2197 | `"        budget = getattr(self, \"_request_budget\", None)"` | — |
-| [SRC-1AE03B9EC3-L002198](../../agents/web_agent.py#L2198) | 2198 | `"        if budget is not None:"` | — |
-| [SRC-1AE03B9EC3-L002199](../../agents/web_agent.py#L2199) | 2199 | `"            budget.reserve(\"search_calls\")"` | — |
-| [SRC-1AE03B9EC3-L002200](../../agents/web_agent.py#L2200) | 2200 | `""` | — |

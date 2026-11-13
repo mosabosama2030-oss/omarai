@@ -4,7 +4,7 @@
 
 - الصفحة: **007**
 - سجلات الأسطر: **800**
-- النطاق: SRC-59CF4B7DE8-L000516 إلى SRC-1E32639872-L000380
+- النطاق: SRC-59CF4B7DE8-L000512 إلى SRC-1E32639872-L000376
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-59CF4B7DE8-L000512](../../agents/research.py#L512) | 512 | `"        \"depth\": \"deep\" if candidate.get(\"depth\") == \"deep\" else base[\"depth\"],"` | — |
+| [SRC-59CF4B7DE8-L000513](../../agents/research.py#L513) | 513 | `"        \"platforms\": list(dict.fromkeys(safe_platforms))[:5],"` | — |
+| [SRC-59CF4B7DE8-L000514](../../agents/research.py#L514) | 514 | `"        \"planning_method\": \"language_model\","` | — |
+| [SRC-59CF4B7DE8-L000515](../../agents/research.py#L515) | 515 | `"    }"` | — |
 | [SRC-59CF4B7DE8-L000516](../../agents/research.py#L516) | 516 | `"    return _attach_task_understanding("` | — |
 | [SRC-59CF4B7DE8-L000517](../../agents/research.py#L517) | 517 | `"        validated_plan,"` | — |
 | [SRC-59CF4B7DE8-L000518](../../agents/research.py#L518) | 518 | `"        resolve_followup_query(question, history),"` | — |
@@ -821,7 +825,3 @@
 | [SRC-1E32639872-L000374](../../agents/research_completion.py#L374) | 374 | `"            \"claim_ledger_truncated_count\": claim_ledger_truncated_count,"` | — |
 | [SRC-1E32639872-L000375](../../agents/research_completion.py#L375) | 375 | `"            \"claim_ledger_status\": claim_ledger_status or \"missing\","` | — |
 | [SRC-1E32639872-L000376](../../agents/research_completion.py#L376) | 376 | `"            \"claim_ledger_reference_count_valid\": claim_ledger_reference_count_valid,"` | — |
-| [SRC-1E32639872-L000377](../../agents/research_completion.py#L377) | 377 | `"            \"claim_ledger_build_failure_count\": claim_ledger_build_failure_count,"` | — |
-| [SRC-1E32639872-L000378](../../agents/research_completion.py#L378) | 378 | `"            \"semantic_verification_failure_count\": semantic_verification_failure_count,"` | — |
-| [SRC-1E32639872-L000379](../../agents/research_completion.py#L379) | 379 | `"        },"` | — |
-| [SRC-1E32639872-L000380](../../agents/research_completion.py#L380) | 380 | `"        \"counter_consistency\": {"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **059**
 - سجلات الأسطر: **800**
-- النطاق: SRC-86913A3106-L000113 إلى SRC-AFEDC2645A-L000007
+- النطاق: SRC-86913A3106-L000047 إلى SRC-8FDC8527E5-L000019
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,72 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-86913A3106-L000047](../../tests/test_search_relevance_mixed_results.py#L47) | 47 | `"    assert diagnostics[\"bing_rss\"][\"rejection_counts\"][\"relevance_below_threshold\"] == 1"` | — |
+| [SRC-86913A3106-L000048](../../tests/test_search_relevance_mixed_results.py#L48) | 48 | `""` | — |
+| [SRC-86913A3106-L000049](../../tests/test_search_relevance_mixed_results.py#L49) | 49 | `""` | — |
+| [SRC-86913A3106-L000050](../../tests/test_search_relevance_mixed_results.py#L50) | 50 | `"def test_three_concept_query_rejects_candidate_matching_only_one_topic():"` | — |
+| [SRC-86913A3106-L000051](../../tests/test_search_relevance_mixed_results.py#L51) | 51 | `"    query = \"climate policy emissions\""` | — |
+| [SRC-86913A3106-L000052](../../tests/test_search_relevance_mixed_results.py#L52) | 52 | `"    assert len(_relevance_query_tokens(query)) == 3"` | — |
+| [SRC-86913A3106-L000053](../../tests/test_search_relevance_mixed_results.py#L53) | 53 | `"    assert _relevance_ratio(query, \"Climate report\") == 0.0"` | — |
+| [SRC-86913A3106-L000054](../../tests/test_search_relevance_mixed_results.py#L54) | 54 | `""` | — |
+| [SRC-86913A3106-L000055](../../tests/test_search_relevance_mixed_results.py#L55) | 55 | `""` | — |
+| [SRC-86913A3106-L000056](../../tests/test_search_relevance_mixed_results.py#L56) | 56 | `"def test_three_concept_query_documents_single_high_value_match_tradeoff():"` | — |
+| [SRC-86913A3106-L000057](../../tests/test_search_relevance_mixed_results.py#L57) | 57 | `"    query = \"central bank Egypt\""` | — |
+| [SRC-86913A3106-L000058](../../tests/test_search_relevance_mixed_results.py#L58) | 58 | `"    assert len(_relevance_query_tokens(query)) == 3"` | — |
+| [SRC-86913A3106-L000059](../../tests/test_search_relevance_mixed_results.py#L59) | 59 | `"    assert _relevance_ratio(query, \"Egypt\") == 0.0"` | — |
+| [SRC-86913A3106-L000060](../../tests/test_search_relevance_mixed_results.py#L60) | 60 | `""` | — |
+| [SRC-86913A3106-L000061](../../tests/test_search_relevance_mixed_results.py#L61) | 61 | `""` | — |
+| [SRC-86913A3106-L000062](../../tests/test_search_relevance_mixed_results.py#L62) | 62 | `"def test_short_two_concept_query_keeps_existing_relevance_floor():"` | — |
+| [SRC-86913A3106-L000063](../../tests/test_search_relevance_mixed_results.py#L63) | 63 | `"    assert _relevance_ratio(\"climate emissions\", \"Climate report\") >= _minimum_relevance_ratio(\"climate emissions\")"` | — |
+| [SRC-86913A3106-L000064](../../tests/test_search_relevance_mixed_results.py#L64) | 64 | `""` | — |
+| [SRC-86913A3106-L000065](../../tests/test_search_relevance_mixed_results.py#L65) | 65 | `""` | — |
+| [SRC-86913A3106-L000066](../../tests/test_search_relevance_mixed_results.py#L66) | 66 | `"def test_search_web_preserves_same_page_discovered_by_distinct_providers(monkeypatch):"` | — |
+| [SRC-86913A3106-L000067](../../tests/test_search_relevance_mixed_results.py#L67) | 67 | `"    agent = WebAgent()"` | — |
+| [SRC-86913A3106-L000068](../../tests/test_search_relevance_mixed_results.py#L68) | 68 | `"    query = \"Central Bank of Egypt official website\""` | — |
+| [SRC-86913A3106-L000069](../../tests/test_search_relevance_mixed_results.py#L69) | 69 | `"    candidate = {"` | — |
+| [SRC-86913A3106-L000070](../../tests/test_search_relevance_mixed_results.py#L70) | 70 | `"        \"title\": \"Central Bank of Egypt official website\","` | — |
+| [SRC-86913A3106-L000071](../../tests/test_search_relevance_mixed_results.py#L71) | 71 | `"        \"url\": \"https://example.com/cbe\","` | — |
+| [SRC-86913A3106-L000072](../../tests/test_search_relevance_mixed_results.py#L72) | 72 | `"        \"snippet\": \"Official Central Bank of Egypt website and monetary policy.\","` | — |
+| [SRC-86913A3106-L000073](../../tests/test_search_relevance_mixed_results.py#L73) | 73 | `"    }"` | — |
+| [SRC-86913A3106-L000074](../../tests/test_search_relevance_mixed_results.py#L74) | 74 | `"    for env_name in ("` | — |
+| [SRC-86913A3106-L000075](../../tests/test_search_relevance_mixed_results.py#L75) | 75 | `"        \"DEEPSEEK_SEARCH_API_KEY\","` | — |
+| [SRC-86913A3106-L000076](../../tests/test_search_relevance_mixed_results.py#L76) | 76 | `"        \"BRAVE_SEARCH_API_KEY\","` | — |
+| [SRC-86913A3106-L000077](../../tests/test_search_relevance_mixed_results.py#L77) | 77 | `"        \"TAVILY_API_KEY\","` | — |
+| [SRC-86913A3106-L000078](../../tests/test_search_relevance_mixed_results.py#L78) | 78 | `"    ):"` | — |
+| [SRC-86913A3106-L000079](../../tests/test_search_relevance_mixed_results.py#L79) | 79 | `"        monkeypatch.delenv(env_name, raising=False)"` | — |
+| [SRC-86913A3106-L000080](../../tests/test_search_relevance_mixed_results.py#L80) | 80 | `""` | — |
+| [SRC-86913A3106-L000081](../../tests/test_search_relevance_mixed_results.py#L81) | 81 | `"    monkeypatch.setattr("` | — |
+| [SRC-86913A3106-L000082](../../tests/test_search_relevance_mixed_results.py#L82) | 82 | `"        agent, \"_search_duckduckgo_html\","` | — |
+| [SRC-86913A3106-L000083](../../tests/test_search_relevance_mixed_results.py#L83) | 83 | `"        lambda _query: ["` | — |
+| [SRC-86913A3106-L000084](../../tests/test_search_relevance_mixed_results.py#L84) | 84 | `"            {**candidate, \"url\": \"https://example.com/cbe?utm_source=ddg#home\"},"` | — |
+| [SRC-86913A3106-L000085](../../tests/test_search_relevance_mixed_results.py#L85) | 85 | `"            dict(candidate),"` | — |
+| [SRC-86913A3106-L000086](../../tests/test_search_relevance_mixed_results.py#L86) | 86 | `"        ],"` | — |
+| [SRC-86913A3106-L000087](../../tests/test_search_relevance_mixed_results.py#L87) | 87 | `"    )"` | — |
+| [SRC-86913A3106-L000088](../../tests/test_search_relevance_mixed_results.py#L88) | 88 | `"    monkeypatch.setattr("` | — |
+| [SRC-86913A3106-L000089](../../tests/test_search_relevance_mixed_results.py#L89) | 89 | `"        agent, \"_search_bing_rss\","` | — |
+| [SRC-86913A3106-L000090](../../tests/test_search_relevance_mixed_results.py#L90) | 90 | `"        lambda _query: [{**candidate, \"url\": \"https://example.com/cbe?utm_source=bing\"}],"` | — |
+| [SRC-86913A3106-L000091](../../tests/test_search_relevance_mixed_results.py#L91) | 91 | `"    )"` | — |
+| [SRC-86913A3106-L000092](../../tests/test_search_relevance_mixed_results.py#L92) | 92 | `"    monkeypatch.setattr(agent, \"_search_news\", lambda _query: [])"` | — |
+| [SRC-86913A3106-L000093](../../tests/test_search_relevance_mixed_results.py#L93) | 93 | `""` | — |
+| [SRC-86913A3106-L000094](../../tests/test_search_relevance_mixed_results.py#L94) | 94 | `"    results = agent._search_web(query)"` | — |
+| [SRC-86913A3106-L000095](../../tests/test_search_relevance_mixed_results.py#L95) | 95 | `""` | — |
+| [SRC-86913A3106-L000096](../../tests/test_search_relevance_mixed_results.py#L96) | 96 | `"    assert len(results) == 2"` | — |
+| [SRC-86913A3106-L000097](../../tests/test_search_relevance_mixed_results.py#L97) | 97 | `"    assert {item[\"provider\"] for item in results} == {"` | — |
+| [SRC-86913A3106-L000098](../../tests/test_search_relevance_mixed_results.py#L98) | 98 | `"        \"duckduckgo_html\","` | — |
+| [SRC-86913A3106-L000099](../../tests/test_search_relevance_mixed_results.py#L99) | 99 | `"        \"bing_rss\","` | — |
+| [SRC-86913A3106-L000100](../../tests/test_search_relevance_mixed_results.py#L100) | 100 | `"    }"` | — |
+| [SRC-86913A3106-L000101](../../tests/test_search_relevance_mixed_results.py#L101) | 101 | `"    assert len({"` | — |
+| [SRC-86913A3106-L000102](../../tests/test_search_relevance_mixed_results.py#L102) | 102 | `"        agent._normalized_source_url_key(item[\"url\"])"` | — |
+| [SRC-86913A3106-L000103](../../tests/test_search_relevance_mixed_results.py#L103) | 103 | `"        for item in results"` | — |
+| [SRC-86913A3106-L000104](../../tests/test_search_relevance_mixed_results.py#L104) | 104 | `"    }) == 1"` | — |
+| [SRC-86913A3106-L000105](../../tests/test_search_relevance_mixed_results.py#L105) | 105 | `""` | — |
+| [SRC-86913A3106-L000106](../../tests/test_search_relevance_mixed_results.py#L106) | 106 | `""` | — |
+| [SRC-86913A3106-L000107](../../tests/test_search_relevance_mixed_results.py#L107) | 107 | `"def test_search_web_keeps_best_duplicate_per_provider_without_erasing_other_providers(monkeypatch):"` | — |
+| [SRC-86913A3106-L000108](../../tests/test_search_relevance_mixed_results.py#L108) | 108 | `"    agent = WebAgent()"` | — |
+| [SRC-86913A3106-L000109](../../tests/test_search_relevance_mixed_results.py#L109) | 109 | `"    query = \"Central Bank of Egypt official website\""` | — |
+| [SRC-86913A3106-L000110](../../tests/test_search_relevance_mixed_results.py#L110) | 110 | `"    short = {"` | — |
+| [SRC-86913A3106-L000111](../../tests/test_search_relevance_mixed_results.py#L111) | 111 | `"        \"title\": \"Central Bank of Egypt official website\","` | — |
+| [SRC-86913A3106-L000112](../../tests/test_search_relevance_mixed_results.py#L112) | 112 | `"        \"url\": \"https://example.com/cbe\","` | — |
 | [SRC-86913A3106-L000113](../../tests/test_search_relevance_mixed_results.py#L113) | 113 | `"        \"snippet\": \"Central Bank of Egypt.\","` | — |
 | [SRC-86913A3106-L000114](../../tests/test_search_relevance_mixed_results.py#L114) | 114 | `"    }"` | — |
 | [SRC-86913A3106-L000115](../../tests/test_search_relevance_mixed_results.py#L115) | 115 | `"    longer = {"` | — |
@@ -786,78 +852,3 @@
 | [SRC-8FDC8527E5-L000017](../../tests/test_storage_restart.py#L17) | 17 | `"    store.add_membership(tenant_id, user_id, \"owner\")"` | — |
 | [SRC-8FDC8527E5-L000018](../../tests/test_storage_restart.py#L18) | 18 | `""` | — |
 | [SRC-8FDC8527E5-L000019](../../tests/test_storage_restart.py#L19) | 19 | `"    lead, created = store.add("` | — |
-| [SRC-8FDC8527E5-L000020](../../tests/test_storage_restart.py#L20) | 20 | `"        f\"نحتاج موردًا لنظام إنذار حريق {marker}\","` | — |
-| [SRC-8FDC8527E5-L000021](../../tests/test_storage_restart.py#L21) | 21 | `"        f\"https://example.invalid/demand/{marker}\","` | — |
-| [SRC-8FDC8527E5-L000022](../../tests/test_storage_restart.py#L22) | 22 | `"        tenant_id=tenant_id,"` | — |
-| [SRC-8FDC8527E5-L000023](../../tests/test_storage_restart.py#L23) | 23 | `"    )"` | — |
-| [SRC-8FDC8527E5-L000024](../../tests/test_storage_restart.py#L24) | 24 | `"    assert created is True"` | — |
-| [SRC-8FDC8527E5-L000025](../../tests/test_storage_restart.py#L25) | 25 | `"    profile = store.save_product_profile("` | — |
-| [SRC-8FDC8527E5-L000026](../../tests/test_storage_restart.py#L26) | 26 | `"        {"` | — |
-| [SRC-8FDC8527E5-L000027](../../tests/test_storage_restart.py#L27) | 27 | `"            \"product\": {\"name\": f\"Fire alarm {marker}\", \"aliases\": [\"FACP\"]},"` | — |
-| [SRC-8FDC8527E5-L000028](../../tests/test_storage_restart.py#L28) | 28 | `"            \"market\": {\"locations\": [\"Cairo\"], \"industries\": [\"Manufacturing\"]},"` | — |
-| [SRC-8FDC8527E5-L000029](../../tests/test_storage_restart.py#L29) | 29 | `"        },"` | — |
-| [SRC-8FDC8527E5-L000030](../../tests/test_storage_restart.py#L30) | 30 | `"        tenant_id=tenant_id,"` | — |
-| [SRC-8FDC8527E5-L000031](../../tests/test_storage_restart.py#L31) | 31 | `"    )"` | — |
-| [SRC-8FDC8527E5-L000032](../../tests/test_storage_restart.py#L32) | 32 | `"    run = store.save_discovery_run("` | — |
-| [SRC-8FDC8527E5-L000033](../../tests/test_storage_restart.py#L33) | 33 | `"        profile[\"id\"],"` | — |
-| [SRC-8FDC8527E5-L000034](../../tests/test_storage_restart.py#L34) | 34 | `"        {"` | — |
-| [SRC-8FDC8527E5-L000035](../../tests/test_storage_restart.py#L35) | 35 | `"            \"answer\": \"تم حفظ عملية اكتشاف اختبارية.\","` | — |
-| [SRC-8FDC8527E5-L000036](../../tests/test_storage_restart.py#L36) | 36 | `"            \"kind\": \"lead_discovery\","` | — |
-| [SRC-8FDC8527E5-L000037](../../tests/test_storage_restart.py#L37) | 37 | `"            \"search_queries\": [\"نحتاج موردًا لنظام إنذار حريق\"],"` | — |
-| [SRC-8FDC8527E5-L000038](../../tests/test_storage_restart.py#L38) | 38 | `"            \"sources\": [{"` | — |
-| [SRC-8FDC8527E5-L000039](../../tests/test_storage_restart.py#L39) | 39 | `"                \"title\": \"طلب توريد اختباري\","` | — |
-| [SRC-8FDC8527E5-L000040](../../tests/test_storage_restart.py#L40) | 40 | `"                \"url\": f\"https://example.invalid/source/{marker}\","` | — |
-| [SRC-8FDC8527E5-L000041](../../tests/test_storage_restart.py#L41) | 41 | `"                \"snippet\": \"نحتاج موردًا لنظام إنذار حريق\","` | — |
-| [SRC-8FDC8527E5-L000042](../../tests/test_storage_restart.py#L42) | 42 | `"                \"lead_qualification\": \"public_demand_signal\","` | — |
-| [SRC-8FDC8527E5-L000043](../../tests/test_storage_restart.py#L43) | 43 | `"                \"lead_intent_evidence\": {"` | — |
-| [SRC-8FDC8527E5-L000044](../../tests/test_storage_restart.py#L44) | 44 | `"                    \"phrase\": \"نحتاج موردًا\","` | — |
-| [SRC-8FDC8527E5-L000045](../../tests/test_storage_restart.py#L45) | 45 | `"                    \"basis\": \"source_text\","` | — |
-| [SRC-8FDC8527E5-L000046](../../tests/test_storage_restart.py#L46) | 46 | `"                    \"signal_type\": \"direct_purchase_request\","` | — |
-| [SRC-8FDC8527E5-L000047](../../tests/test_storage_restart.py#L47) | 47 | `"                },"` | — |
-| [SRC-8FDC8527E5-L000048](../../tests/test_storage_restart.py#L48) | 48 | `"            }],"` | — |
-| [SRC-8FDC8527E5-L000049](../../tests/test_storage_restart.py#L49) | 49 | `"            \"search_report\": {\"search_outcome\": \"results_found\"},"` | — |
-| [SRC-8FDC8527E5-L000050](../../tests/test_storage_restart.py#L50) | 50 | `"        },"` | — |
-| [SRC-8FDC8527E5-L000051](../../tests/test_storage_restart.py#L51) | 51 | `"        tenant_id=tenant_id,"` | — |
-| [SRC-8FDC8527E5-L000052](../../tests/test_storage_restart.py#L52) | 52 | `"    )"` | — |
-| [SRC-8FDC8527E5-L000053](../../tests/test_storage_restart.py#L53) | 53 | `""` | — |
-| [SRC-8FDC8527E5-L000054](../../tests/test_storage_restart.py#L54) | 54 | `"    child_code = \"\"\""` | — |
-| [SRC-8FDC8527E5-L000055](../../tests/test_storage_restart.py#L55) | 55 | `"import json"` | — |
-| [SRC-8FDC8527E5-L000056](../../tests/test_storage_restart.py#L56) | 56 | `"import sys"` | — |
-| [SRC-8FDC8527E5-L000057](../../tests/test_storage_restart.py#L57) | 57 | `"from agents.omarai import LeadStore"` | — |
-| [SRC-8FDC8527E5-L000058](../../tests/test_storage_restart.py#L58) | 58 | `"store = LeadStore(sys.argv[1])"` | — |
-| [SRC-8FDC8527E5-L000059](../../tests/test_storage_restart.py#L59) | 59 | `"tenant_id = sys.argv[2]"` | — |
-| [SRC-8FDC8527E5-L000060](../../tests/test_storage_restart.py#L60) | 60 | `"print(json.dumps({"` | — |
-| [SRC-8FDC8527E5-L000061](../../tests/test_storage_restart.py#L61) | 61 | `"    \"lead_ids\": [row[\"id\"] for row in store.list(tenant_id=tenant_id)],"` | — |
-| [SRC-8FDC8527E5-L000062](../../tests/test_storage_restart.py#L62) | 62 | `"    \"profile_ids\": [row[\"id\"] for row in store.list_product_profiles(tenant_id=tenant_id)],"` | — |
-| [SRC-8FDC8527E5-L000063](../../tests/test_storage_restart.py#L63) | 63 | `"    \"run_ids\": [row[\"id\"] for row in store.list_discovery_runs(tenant_id=tenant_id)],"` | — |
-| [SRC-8FDC8527E5-L000064](../../tests/test_storage_restart.py#L64) | 64 | `"}))"` | — |
-| [SRC-8FDC8527E5-L000065](../../tests/test_storage_restart.py#L65) | 65 | `"\"\"\""` | — |
-| [SRC-8FDC8527E5-L000066](../../tests/test_storage_restart.py#L66) | 66 | `"    repository_root = Path(__file__).resolve().parents[1]"` | — |
-| [SRC-8FDC8527E5-L000067](../../tests/test_storage_restart.py#L67) | 67 | `"    completed = subprocess.run("` | — |
-| [SRC-8FDC8527E5-L000068](../../tests/test_storage_restart.py#L68) | 68 | `"        [sys.executable, \"-c\", child_code, str(database_path), tenant_id],"` | — |
-| [SRC-8FDC8527E5-L000069](../../tests/test_storage_restart.py#L69) | 69 | `"        cwd=repository_root,"` | — |
-| [SRC-8FDC8527E5-L000070](../../tests/test_storage_restart.py#L70) | 70 | `"        check=True,"` | — |
-| [SRC-8FDC8527E5-L000071](../../tests/test_storage_restart.py#L71) | 71 | `"        capture_output=True,"` | — |
-| [SRC-8FDC8527E5-L000072](../../tests/test_storage_restart.py#L72) | 72 | `"        text=True,"` | — |
-| [SRC-8FDC8527E5-L000073](../../tests/test_storage_restart.py#L73) | 73 | `"    )"` | — |
-| [SRC-8FDC8527E5-L000074](../../tests/test_storage_restart.py#L74) | 74 | `"    persisted = json.loads(completed.stdout)"` | — |
-| [SRC-8FDC8527E5-L000075](../../tests/test_storage_restart.py#L75) | 75 | `""` | — |
-| [SRC-8FDC8527E5-L000076](../../tests/test_storage_restart.py#L76) | 76 | `"    assert persisted[\"lead_ids\"] == [lead[\"id\"]]"` | — |
-| [SRC-8FDC8527E5-L000077](../../tests/test_storage_restart.py#L77) | 77 | `"    assert persisted[\"profile_ids\"] == [profile[\"id\"]]"` | — |
-| [SRC-8FDC8527E5-L000078](../../tests/test_storage_restart.py#L78) | 78 | `"    assert persisted[\"run_ids\"] == [run[\"id\"]]"` | — |
-## اختبارات
-
-### FILE-AFEDC2645A — [tests/test_task_understanding.py](../../tests/test_task_understanding.py#L1)
-
-- النوع: **Python**
-- نطاق الفهرسة: جرد الملف + AST Python
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-AFEDC2645A-L000001](../../tests/test_task_understanding.py#L1) | 1 | `"from __future__ import annotations"` | — |
-| [SRC-AFEDC2645A-L000002](../../tests/test_task_understanding.py#L2) | 2 | `""` | — |
-| [SRC-AFEDC2645A-L000003](../../tests/test_task_understanding.py#L3) | 3 | `"import pytest"` | — |
-| [SRC-AFEDC2645A-L000004](../../tests/test_task_understanding.py#L4) | 4 | `""` | — |
-| [SRC-AFEDC2645A-L000005](../../tests/test_task_understanding.py#L5) | 5 | `"from agents.task_understanding import build_query_strategy_matrix, build_task_spec"` | — |
-| [SRC-AFEDC2645A-L000006](../../tests/test_task_understanding.py#L6) | 6 | `""` | — |
-| [SRC-AFEDC2645A-L000007](../../tests/test_task_understanding.py#L7) | 7 | `""` | — |

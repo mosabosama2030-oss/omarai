@@ -4,7 +4,7 @@
 
 - الصفحة: **024**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EEF2E6447C-L001027 إلى SRC-C4C6C55E1A-L000184
+- النطاق: SRC-EEF2E6447C-L000979 إلى SRC-C4C6C55E1A-L000136
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهات API
@@ -16,6 +16,54 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EEF2E6447C-L000979](../../api/omarai.py#L979) | 979 | `"                        {"` | — |
+| [SRC-EEF2E6447C-L000980](../../api/omarai.py#L980) | 980 | `"                            \"error\": ("` | — |
+| [SRC-EEF2E6447C-L000981](../../api/omarai.py#L981) | 981 | `"                                \"shared application token must be rotated by the operator \""` | — |
+| [SRC-EEF2E6447C-L000982](../../api/omarai.py#L982) | 982 | `"                                \"through the deployment configuration\""` | — |
+| [SRC-EEF2E6447C-L000983](../../api/omarai.py#L983) | 983 | `"                            )"` | — |
+| [SRC-EEF2E6447C-L000984](../../api/omarai.py#L984) | 984 | `"                        },"` | — |
+| [SRC-EEF2E6447C-L000985](../../api/omarai.py#L985) | 985 | `"                    )"` | — |
+| [SRC-EEF2E6447C-L000986](../../api/omarai.py#L986) | 986 | `"                revoked = self.store.revoke_api_token("` | — |
+| [SRC-EEF2E6447C-L000987](../../api/omarai.py#L987) | 987 | `"                    token,"` | — |
+| [SRC-EEF2E6447C-L000988](../../api/omarai.py#L988) | 988 | `"                    tenant_id=self._authenticated_principal[\"tenant_id\"],"` | — |
+| [SRC-EEF2E6447C-L000989](../../api/omarai.py#L989) | 989 | `"                    user_id=self._authenticated_principal[\"user_id\"],"` | — |
+| [SRC-EEF2E6447C-L000990](../../api/omarai.py#L990) | 990 | `"                )"` | — |
+| [SRC-EEF2E6447C-L000991](../../api/omarai.py#L991) | 991 | `"                if not revoked:"` | — |
+| [SRC-EEF2E6447C-L000992](../../api/omarai.py#L992) | 992 | `"                    return self.respond(404, {\"error\": \"token not found\"})"` | — |
+| [SRC-EEF2E6447C-L000993](../../api/omarai.py#L993) | 993 | `"                return self.respond(200, {\"revoked\": True})"` | — |
+| [SRC-EEF2E6447C-L000994](../../api/omarai.py#L994) | 994 | `""` | — |
+| [SRC-EEF2E6447C-L000995](../../api/omarai.py#L995) | 995 | `"            if path == \"/api/diagnostics\":"` | — |
+| [SRC-EEF2E6447C-L000996](../../api/omarai.py#L996) | 996 | `"                test_model = data.get(\"test_model\", False)"` | — |
+| [SRC-EEF2E6447C-L000997](../../api/omarai.py#L997) | 997 | `"                test_social = data.get(\"test_social\", False)"` | — |
+| [SRC-EEF2E6447C-L000998](../../api/omarai.py#L998) | 998 | `"                allow_provider_usage = data.get(\"allow_provider_usage\", False)"` | — |
+| [SRC-EEF2E6447C-L000999](../../api/omarai.py#L999) | 999 | `"                if ("` | — |
+| [SRC-EEF2E6447C-L001000](../../api/omarai.py#L1000) | 1000 | `"                    not isinstance(test_model, bool)"` | — |
+| [SRC-EEF2E6447C-L001001](../../api/omarai.py#L1001) | 1001 | `"                    or not isinstance(test_social, bool)"` | — |
+| [SRC-EEF2E6447C-L001002](../../api/omarai.py#L1002) | 1002 | `"                    or not isinstance(allow_provider_usage, bool)"` | — |
+| [SRC-EEF2E6447C-L001003](../../api/omarai.py#L1003) | 1003 | `"                ):"` | — |
+| [SRC-EEF2E6447C-L001004](../../api/omarai.py#L1004) | 1004 | `"                    return self.respond("` | — |
+| [SRC-EEF2E6447C-L001005](../../api/omarai.py#L1005) | 1005 | `"                        400,"` | — |
+| [SRC-EEF2E6447C-L001006](../../api/omarai.py#L1006) | 1006 | `"                        {"` | — |
+| [SRC-EEF2E6447C-L001007](../../api/omarai.py#L1007) | 1007 | `"                            \"error\": ("` | — |
+| [SRC-EEF2E6447C-L001008](../../api/omarai.py#L1008) | 1008 | `"                                \"test_model, test_social, and allow_provider_usage \""` | — |
+| [SRC-EEF2E6447C-L001009](../../api/omarai.py#L1009) | 1009 | `"                                \"must be booleans\""` | — |
+| [SRC-EEF2E6447C-L001010](../../api/omarai.py#L1010) | 1010 | `"                            )"` | — |
+| [SRC-EEF2E6447C-L001011](../../api/omarai.py#L1011) | 1011 | `"                        },"` | — |
+| [SRC-EEF2E6447C-L001012](../../api/omarai.py#L1012) | 1012 | `"                    )"` | — |
+| [SRC-EEF2E6447C-L001013](../../api/omarai.py#L1013) | 1013 | `"                if not allow_provider_usage:"` | — |
+| [SRC-EEF2E6447C-L001014](../../api/omarai.py#L1014) | 1014 | `"                    return self.respond("` | — |
+| [SRC-EEF2E6447C-L001015](../../api/omarai.py#L1015) | 1015 | `"                        403,"` | — |
+| [SRC-EEF2E6447C-L001016](../../api/omarai.py#L1016) | 1016 | `"                        {"` | — |
+| [SRC-EEF2E6447C-L001017](../../api/omarai.py#L1017) | 1017 | `"                            \"error\": ("` | — |
+| [SRC-EEF2E6447C-L001018](../../api/omarai.py#L1018) | 1018 | `"                                \"live diagnostics perform outbound search and may consume \""` | — |
+| [SRC-EEF2E6447C-L001019](../../api/omarai.py#L1019) | 1019 | `"                                \"provider quota or incur charges; set allow_provider_usage=true \""` | — |
+| [SRC-EEF2E6447C-L001020](../../api/omarai.py#L1020) | 1020 | `"                                \"only after explicit owner approval\""` | — |
+| [SRC-EEF2E6447C-L001021](../../api/omarai.py#L1021) | 1021 | `"                            )"` | — |
+| [SRC-EEF2E6447C-L001022](../../api/omarai.py#L1022) | 1022 | `"                        },"` | — |
+| [SRC-EEF2E6447C-L001023](../../api/omarai.py#L1023) | 1023 | `"                    )"` | — |
+| [SRC-EEF2E6447C-L001024](../../api/omarai.py#L1024) | 1024 | `"                if self._authenticated_principal.get(\"role\") != \"owner\":"` | — |
+| [SRC-EEF2E6447C-L001025](../../api/omarai.py#L1025) | 1025 | `"                    return self.respond("` | — |
+| [SRC-EEF2E6447C-L001026](../../api/omarai.py#L1026) | 1026 | `"                        403,"` | — |
 | [SRC-EEF2E6447C-L001027](../../api/omarai.py#L1027) | 1027 | `"                        {\"error\": \"فحص الموصلات الحي واستهلاك الحصص متاح لمالك مساحة العمل فقط.\"},"` | — |
 | [SRC-EEF2E6447C-L001028](../../api/omarai.py#L1028) | 1028 | `"                    )"` | — |
 | [SRC-EEF2E6447C-L001029](../../api/omarai.py#L1029) | 1029 | `"                return self._run_bounded_agent_operation("` | — |
@@ -822,51 +870,3 @@
 | [SRC-C4C6C55E1A-L000134](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L134) | 134 | `"**الخلاصة:** لا يوجد في هذه الجولة عيب SSRF مؤكد من القراءة وحدها في مسار جلب الصفحات، لكن الأدلة ليست كافية لإصدار قبول أمني شامل. تبقى مراجعة Grok المستقلة، فحص الأسرار التاريخي، واختبارات XSS الحية عناصر غير مكتملة."` | — |
 | [SRC-C4C6C55E1A-L000135](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L135) | 135 | `""` | — |
 | [SRC-C4C6C55E1A-L000136](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L136) | 136 | `"## 5. بوابات الإغلاق"` | — |
-| [SRC-C4C6C55E1A-L000137](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L137) | 137 | `""` | — |
-| [SRC-C4C6C55E1A-L000138](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L138) | 138 | `"لا تغلق النتيجة إلا إذا توفر ما ينطبق عليها من:"` | — |
-| [SRC-C4C6C55E1A-L000139](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L139) | 139 | `"1. SHA واضح لنسخة المصدر."` | — |
-| [SRC-C4C6C55E1A-L000140](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L140) | 140 | `"2. وصف قابل لإعادة إنتاج للمشكلة أو للسلوك المطلوب."` | — |
-| [SRC-C4C6C55E1A-L000141](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L141) | 141 | `"3. اختبار مستقل عن التنفيذ يثبت النتيجة."` | — |
-| [SRC-C4C6C55E1A-L000142](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L142) | 142 | `"4. نتيجة CI مرتبطة بالـSHA الحالي."` | — |
-| [SRC-C4C6C55E1A-L000143](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L143) | 143 | `"5. دليل على أن اختبار Mock لم يُعرض بوصفه تكاملًا حيًا."` | — |
-| [SRC-C4C6C55E1A-L000144](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L144) | 144 | `"6. توثيق القيد المتبقي."` | — |
-| [SRC-C4C6C55E1A-L000145](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L145) | 145 | `"7. موافقة بشرية مستقلة على الدمج أو الاستضافة أو قبول المخاطر عند انطباقها."` | — |
-| [SRC-C4C6C55E1A-L000146](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L146) | 146 | `""` | — |
-| [SRC-C4C6C55E1A-L000147](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L147) | 147 | `"## 6. حكم الحالة"` | — |
-| [SRC-C4C6C55E1A-L000148](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L148) | 148 | `""` | — |
-| [SRC-C4C6C55E1A-L000149](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L149) | 149 | `"توجد أدلة مهمة على تحسن ضوابط الميزانية والإبلاغ عن الاستشهادات. ومع ذلك، لا تدعم الأدلة الحالية القول إن جميع متطلبات P0 مكتملة، أو أن الخدمة منشورة ومجربة حيًا، أو أن التخزين قابل للاستعادة على المضيف الفعلي، أو أن التطبيق جاهز لخدمة عامة متعددة المستخدمين."` | — |
-| [SRC-C4C6C55E1A-L000150](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L150) | 150 | `""` | — |
-| [SRC-C4C6C55E1A-L000151](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L151) | 151 | `"**القرار الآمن الحالي:** استمرار التطوير على فروع مستقلة، مع إبقاء المخاطر غير المثبتة مفتوحة، وعدم دمج أي PR أو نشر دون موافقة مدير المشروع."` | — |
-| [SRC-C4C6C55E1A-L000152](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L152) | 152 | `""` | — |
-| [SRC-C4C6C55E1A-L000153](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L153) | 153 | `"## تسوية إضافية بعد مرشح الإغلاق الموحد — 21 أكتوبر 2026"` | — |
-| [SRC-C4C6C55E1A-L000154](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L154) | 154 | `""` | — |
-| [SRC-C4C6C55E1A-L000155](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L155) | 155 | `"لا تمحو هذه الإضافة السجل التاريخي في بداية الوثيقة؛ بل تسجل أحدث دليل متاح."` | — |
-| [SRC-C4C6C55E1A-L000156](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L156) | 156 | `""` | — |
-| [SRC-C4C6C55E1A-L000157](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L157) | 157 | ``"- **في اللقطة التاريخية قبل دمج #76:** كان خط أساس `main` بعد #75 هو `d46a546aba97a9ca32a32c92f1cd6d8a9db2cc81`، وكان PR #76 ما زال مفتوحًا حينها."`` | — |
-| [SRC-C4C6C55E1A-L000158](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L158) | 158 | ``"- **الحالة اللاحقة المؤكدة:** دُمج PR #76 في `main` عبر `528a2552c0cda809d6c444713466e0e075c13ed9`. لا تستخدم الحالة التاريخية أعلاه لوصف الحالة الحالية."`` | — |
-| [SRC-C4C6C55E1A-L000159](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L159) | 159 | `"- آخر SHA للكود والوثائق الذي اجتاز CI بالكامل: 10d8a7d9f07ef3f91cbb90a5834ac6b71f963de1. [تشغيل #39650978817](https://github.com/mosabosama2030-oss/omarai/actions/runs/39650978817) سجل 380 اختبارًا ناجحًا على Python 3.11 و380 على Python 3.12، مع Ruff وبناء الحاوية واختبار API المحمي."` | — |
-| [SRC-C4C6C55E1A-L000160](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L160) | 160 | `"- [تشغيل فهرسة #39650974507](https://github.com/mosabosama2030-oss/omarai/actions/runs/39650974507) نجح. الرأس الحالي بعد الفهرسة هو b6aadf7ea02627bbf523501bb879b0fd6705a5c8؛ المقارنة مع 10d8a7d... تظهر ملفات فهرسة مولدة فقط. تشغيل الاختبارات المباشر على b6aadf7 رقم #39651004404 حالته action_required بلا jobs؛ لا توجد تغييرات كود/اختبارات بعد الرأس الكامل الأخضر."` | — |
-| [SRC-C4C6C55E1A-L000161](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L161) | 161 | `"- الإصلاحات الرئيسية في #76: توجيه الاستيضاح والمتابعة، رفع صرامة إشارة التطابق اللفظي مع إبقائها غير دلالية، CSP hash بدل unsafe-inline، رؤوس الحماية، هوية بناء موثقة، hosted smoke يقارن SHA، تشخيصات الموصلات وجلب الصفحات، مسار SQLite قابل للضبط، أداة البحث المحلي، وتحديث الوثائق."` | — |
-| [SRC-C4C6C55E1A-L000162](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L162) | 162 | `"- NOT_RUN/UNKNOWN: اختبار hosted smoke ضد خدمة منشورة فعلية؛ عمل كل موفر بحث/نموذج حيًا؛ تقييم الدقة الدلالية الفعلي لحالات AQ-001–045؛ Volume فعلي وبقاء SQLite والاستعادة؛ اختبار الحمل؛ red-team حي أوسع. هذه الحدود تمنع إعلان جاهزية إنتاجية عامة."` | — |
-| [SRC-C4C6C55E1A-L000163](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L163) | 163 | `"- نطاق التشغيل الحالي أحادي المشغّل. لا تدّعِ عزل عدة مستأجرين قبل تنفيذ الهوية والتفويض واختبارات الملكية والعزل."` | — |
-| [SRC-C4C6C55E1A-L000164](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L164) | 164 | `""` | — |
-| [SRC-C4C6C55E1A-L000165](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L165) | 165 | `""` | — |
-| [SRC-C4C6C55E1A-L000166](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L166) | 166 | `"## تحديث تحقق إضافي بعد إصلاح روابط البحث وفحص الفهرس — 21 أكتوبر 2026"` | — |
-| [SRC-C4C6C55E1A-L000167](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L167) | 167 | `""` | — |
-| [SRC-C4C6C55E1A-L000168](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L168) | 168 | `"هذا التحديث أحدث من ملحقات CI السابقة في هذه الوثيقة، ويجب قراءته معها دون حذف سجل النتائج التاريخية:"` | — |
-| [SRC-C4C6C55E1A-L000169](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L169) | 169 | `""` | — |
-| [SRC-C4C6C55E1A-L000170](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L170) | 170 | ``"- آخر تشغيل شامل أخضر **قبل** تغيير `docs/search_code.py` و`.github/workflows/tests.yml` هو [run #39651908777](https://github.com/mosabosama2030-oss/omarai/actions/runs/39651908777) على `5a2259ef787d4a4553a503276daf399fa6514f3f`: 380 اختبارًا لكل من Python 3.11 و3.12، وRuff، وفحص الفهرس، وبناء الحاوية واختبار API المحمي ناجحة. لا يغطي هذا التشغيل التغييرات التي أضيفت بعده."`` | — |
-| [SRC-C4C6C55E1A-L000171](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L171) | 171 | ``"- أُضيف إلى أداة البحث خيار `--ref`، مع `OMARAI_GITHUB_REF` والالتقاط الآمن لمرجع SHA المحلي/CI، حتى تشير الروابط إلى النسخة التي تُراجع بدل تثبيتها على `blob/main`. أضيفت اختبارات لهذه السلوكيات، لكن pytest لم يصل إليها في التشغيل الأخير."`` | — |
-| [SRC-C4C6C55E1A-L000172](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L172) | 172 | ``"- غُيّر CI إلى فحص الفهرس الملتزم مباشرة باستخدام `python docs/generate_index.py --check`. في [run #39652716421](https://github.com/mosabosama2030-oss/omarai/actions/runs/39652716421) نجح Ruff، لكن فحص الفهرس اكتشف ملفات مولدة قديمة في لقطة PR merge قبل تحديثها آليًا؛ لذلك توقفت pytest ولم تُشغّل."`` | — |
-| [SRC-C4C6C55E1A-L000173](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L173) | 173 | ``"- **ملاحظة تاريخية قبل الدمج:** بعد تحديث الفهرس، ظل تشغيل [#39653239007](https://github.com/mosabosama2030-oss/omarai/actions/runs/39653239007) على رأس bot بحالة `action_required` بلا jobs. رأس PR #76 شوهد وقت إضافة هذا المقطع كـ `de619aefc8375dcfbf0d96ab32b36e156b2273cb`؛ كان يلزم وقتها أخذ الرأس الحي قبل قرار الدمج لأن تحديث الفهرس قد يضيف commit آخر. دُمج PR #76 لاحقًا في `main` عبر `528a2552c0cda809d6c444713466e0e075c13ed9` كما يوضح ملحق ما بعد الدمج."`` | — |
-| [SRC-C4C6C55E1A-L000174](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L174) | 174 | ``"- لذلك حالة التغييرات الأخيرة للبحث وفحص الفهرس هي **PARTIAL / NOT YET FULLY TESTED**، وليست `FIXED_AND_TESTED`. يلزم اعتماد وتشغيل GitHub Actions على الرأس الحالي ثم مراجعة نتائج pytest وRuff والفهرس والحاوية."`` | — |
-| [SRC-C4C6C55E1A-L000175](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L175) | 175 | ``"- لا يغيّر ذلك حالة الاختبارات الحية المستقلة: `NOT_RUN/UNKNOWN` ما زالت تنطبق على hosted smoke، وتوافر كل موفري البحث والنموذج، والتقييم الدلالي لـAQ-001–045، ودوام التخزين/الاستعادة على المضيف، واختبار الحمل، وعزل تعدد المستأجرين، والتقرير المستقل الكامل من Grok."`` | — |
-| [SRC-C4C6C55E1A-L000176](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L176) | 176 | ``"- **السجل المركزي الوحيد لجميع المعرفات ومعايير الإغلاق:** [`OMARAI_REMEDIATION_REGISTER_AR.md`](../OMARAI_REMEDIATION_REGISTER_AR.md). لا تكرر بنودًا جديدة هنا دون إضافتها إلى ذلك السجل."`` | — |
-| [SRC-C4C6C55E1A-L000177](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L177) | 177 | `""` | — |
-| [SRC-C4C6C55E1A-L000178](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L178) | 178 | `"## تصحيح حالة التحقق بعد تشغيل PR #39653079608 — 21 أكتوبر 2026"` | — |
-| [SRC-C4C6C55E1A-L000179](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L179) | 179 | `""` | — |
-| [SRC-C4C6C55E1A-L000180](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L180) | 180 | ``"تم بعد الملاحظة التاريخية أعلاه إكمال بوابة CI على كود/اختبارات/Workflow مرشح الإغلاق: الالتزام `f2f1bb3c87c709383e0a8c18691f46cd3661e61b`، [تشغيل PR #39653079608](https://github.com/mosabosama2030-oss/omarai/actions/runs/39653079608) — 384 اختبارًا ناجحًا على Python 3.11 و384 على Python 3.12، وRuff وفحص الفهرس وبناء الحاوية واختبار API المحمي ناجحة. بعد ذلك تُظهر المقارنة مع رأس PR الذي شوهد `b848f96...` تغييرات وثائق وفهرسة مولّدة فقط، من دون تغيير التطبيق أو الاختبارات أو Workflow. يظل هذا التصحيح خاصًا بالاختبارات الآلية؛ الاستضافة الحقيقية، ومزودو البحث/النماذج الحيون، وتقييم الجودة الدلالي، ودوام التخزين/الاستعادة، والحمل، والتدقيق المستقل تبقى `NOT_RUN/UNKNOWN`. السجل التفصيلي المعتمد: [سجل الإغلاق المركزي](../OMARAI_REMEDIATION_REGISTER_AR.md)."`` | — |
-| [SRC-C4C6C55E1A-L000181](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L181) | 181 | `""` | — |
-| [SRC-C4C6C55E1A-L000182](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L182) | 182 | `""` | — |
-| [SRC-C4C6C55E1A-L000183](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L183) | 183 | `"## تحديث ما بعد دمج PR #76 — 21 أكتوبر 2026"` | — |
-| [SRC-C4C6C55E1A-L000184](../archive/OMARAI_OPERATIONAL_EVIDENCE_RECONCILIATION_2026-10-19_AR.md#L184) | 184 | `""` | — |

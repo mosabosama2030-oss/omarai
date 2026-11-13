@@ -4,7 +4,7 @@
 
 - الصفحة: **052**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1A176AD4F0-L000330 إلى SRC-EA6EC52573-L000351
+- النطاق: SRC-1A176AD4F0-L000282 إلى SRC-EA6EC52573-L000303
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,54 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1A176AD4F0-L000282](../../tests/test_hosted_smoke.py#L282) | 282 | `"        path = urlsplit(url).path"` | — |
+| [SRC-1A176AD4F0-L000283](../../tests/test_hosted_smoke.py#L283) | 283 | `"        calls.append((path, token, payload))"` | — |
+| [SRC-1A176AD4F0-L000284](../../tests/test_hosted_smoke.py#L284) | 284 | `"        if path == \"/\":"` | — |
+| [SRC-1A176AD4F0-L000285](../../tests/test_hosted_smoke.py#L285) | 285 | `"            return 200, None"` | — |
+| [SRC-1A176AD4F0-L000286](../../tests/test_hosted_smoke.py#L286) | 286 | `"        if path == \"/api/health\":"` | — |
+| [SRC-1A176AD4F0-L000287](../../tests/test_hosted_smoke.py#L287) | 287 | `"            return 200, {\"ok\": True, \"build\": {\"sha\": \"a\" * 40}}"` | — |
+| [SRC-1A176AD4F0-L000288](../../tests/test_hosted_smoke.py#L288) | 288 | `"        if path == \"/api/agent\" and not token:"` | — |
+| [SRC-1A176AD4F0-L000289](../../tests/test_hosted_smoke.py#L289) | 289 | `"            assert payload == {\"question\": \"\"}"` | — |
+| [SRC-1A176AD4F0-L000290](../../tests/test_hosted_smoke.py#L290) | 290 | `"            return 401, None"` | — |
+| [SRC-1A176AD4F0-L000291](../../tests/test_hosted_smoke.py#L291) | 291 | `"        raise AssertionError(\"preflight must not call authenticated agent/search/model paths\")"` | — |
+| [SRC-1A176AD4F0-L000292](../../tests/test_hosted_smoke.py#L292) | 292 | `""` | — |
+| [SRC-1A176AD4F0-L000293](../../tests/test_hosted_smoke.py#L293) | 293 | `"    monkeypatch.setattr(hosted_smoke_test, \"request_json\", fake_request)"` | — |
+| [SRC-1A176AD4F0-L000294](../../tests/test_hosted_smoke.py#L294) | 294 | `"    result = run_smoke("` | — |
+| [SRC-1A176AD4F0-L000295](../../tests/test_hosted_smoke.py#L295) | 295 | `"        \"https://omarai.example.test\","` | — |
+| [SRC-1A176AD4F0-L000296](../../tests/test_hosted_smoke.py#L296) | 296 | `"        \"\","` | — |
+| [SRC-1A176AD4F0-L000297](../../tests/test_hosted_smoke.py#L297) | 297 | `"        preflight_only=True,"` | — |
+| [SRC-1A176AD4F0-L000298](../../tests/test_hosted_smoke.py#L298) | 298 | `"        allow_provider_usage=False,"` | — |
+| [SRC-1A176AD4F0-L000299](../../tests/test_hosted_smoke.py#L299) | 299 | `"    )"` | — |
+| [SRC-1A176AD4F0-L000300](../../tests/test_hosted_smoke.py#L300) | 300 | `"    assert result[\"result\"] == \"preflight_passed\""` | — |
+| [SRC-1A176AD4F0-L000301](../../tests/test_hosted_smoke.py#L301) | 301 | `"    assert result[\"auth_mode\"] == \"preflight_no_token\""` | — |
+| [SRC-1A176AD4F0-L000302](../../tests/test_hosted_smoke.py#L302) | 302 | `"    assert result[\"checks\"][\"authentication\"] == \"passed\""` | — |
+| [SRC-1A176AD4F0-L000303](../../tests/test_hosted_smoke.py#L303) | 303 | `"    assert result[\"checks\"][\"homepage\"] == \"passed\""` | — |
+| [SRC-1A176AD4F0-L000304](../../tests/test_hosted_smoke.py#L304) | 304 | `"    assert result[\"endpoint_diagnostics\"][\"homepage\"][\"http_status\"] == 200"` | — |
+| [SRC-1A176AD4F0-L000305](../../tests/test_hosted_smoke.py#L305) | 305 | `"    assert result[\"endpoint_diagnostics\"][\"health\"][\"http_status\"] == 200"` | — |
+| [SRC-1A176AD4F0-L000306](../../tests/test_hosted_smoke.py#L306) | 306 | `"    assert result[\"endpoint_diagnostics\"][\"unauthenticated_agent\"][\"http_status\"] == 401"` | — |
+| [SRC-1A176AD4F0-L000307](../../tests/test_hosted_smoke.py#L307) | 307 | `"    assert calls == [(\"/\", \"\", None), (\"/api/health\", \"\", None), (\"/api/agent\", \"\", {\"question\": \"\"})]"` | — |
+| [SRC-1A176AD4F0-L000308](../../tests/test_hosted_smoke.py#L308) | 308 | `""` | — |
+| [SRC-1A176AD4F0-L000309](../../tests/test_hosted_smoke.py#L309) | 309 | `""` | — |
+| [SRC-1A176AD4F0-L000310](../../tests/test_hosted_smoke.py#L310) | 310 | `""` | — |
+| [SRC-1A176AD4F0-L000311](../../tests/test_hosted_smoke.py#L311) | 311 | `""` | — |
+| [SRC-1A176AD4F0-L000312](../../tests/test_hosted_smoke.py#L312) | 312 | `"def test_preflight_fails_closed_if_unauthenticated_agent_probe_reaches_validation(monkeypatch):"` | — |
+| [SRC-1A176AD4F0-L000313](../../tests/test_hosted_smoke.py#L313) | 313 | `"    calls = []"` | — |
+| [SRC-1A176AD4F0-L000314](../../tests/test_hosted_smoke.py#L314) | 314 | `""` | — |
+| [SRC-1A176AD4F0-L000315](../../tests/test_hosted_smoke.py#L315) | 315 | `"    def auth_bypass(url: str, *, token=\"\", payload=None, timeout=90):"` | — |
+| [SRC-1A176AD4F0-L000316](../../tests/test_hosted_smoke.py#L316) | 316 | `"        path = urlsplit(url).path"` | — |
+| [SRC-1A176AD4F0-L000317](../../tests/test_hosted_smoke.py#L317) | 317 | `"        calls.append((path, token, payload))"` | — |
+| [SRC-1A176AD4F0-L000318](../../tests/test_hosted_smoke.py#L318) | 318 | `"        if path == \"/\":"` | — |
+| [SRC-1A176AD4F0-L000319](../../tests/test_hosted_smoke.py#L319) | 319 | `"            return 200, None"` | — |
+| [SRC-1A176AD4F0-L000320](../../tests/test_hosted_smoke.py#L320) | 320 | `"        if path == \"/api/health\":"` | — |
+| [SRC-1A176AD4F0-L000321](../../tests/test_hosted_smoke.py#L321) | 321 | `"            return 200, {\"ok\": True}"` | — |
+| [SRC-1A176AD4F0-L000322](../../tests/test_hosted_smoke.py#L322) | 322 | `"        if path == \"/api/agent\" and not token:"` | — |
+| [SRC-1A176AD4F0-L000323](../../tests/test_hosted_smoke.py#L323) | 323 | `"            assert payload == {\"question\": \"\"}"` | — |
+| [SRC-1A176AD4F0-L000324](../../tests/test_hosted_smoke.py#L324) | 324 | `"            # The API reached question validation, so its auth gate did not reject first."` | — |
+| [SRC-1A176AD4F0-L000325](../../tests/test_hosted_smoke.py#L325) | 325 | `"            return 400, {\"error\": \"question must be a non-empty string\"}"` | — |
+| [SRC-1A176AD4F0-L000326](../../tests/test_hosted_smoke.py#L326) | 326 | `"        raise AssertionError(\"no authenticated agent request is allowed in preflight\")"` | — |
+| [SRC-1A176AD4F0-L000327](../../tests/test_hosted_smoke.py#L327) | 327 | `""` | — |
+| [SRC-1A176AD4F0-L000328](../../tests/test_hosted_smoke.py#L328) | 328 | `"    monkeypatch.setattr(hosted_smoke_test, \"request_json\", auth_bypass)"` | — |
+| [SRC-1A176AD4F0-L000329](../../tests/test_hosted_smoke.py#L329) | 329 | `"    with pytest.raises(SmokeError, match=\"per-endpoint HTTP diagnostics\") as failure:"` | — |
 | [SRC-1A176AD4F0-L000330](../../tests/test_hosted_smoke.py#L330) | 330 | `"        run_smoke(\"https://omarai.example.test\", \"\", preflight_only=True)"` | — |
 | [SRC-1A176AD4F0-L000331](../../tests/test_hosted_smoke.py#L331) | 331 | `"    assert calls == [(\"/\", \"\", None), (\"/api/health\", \"\", None), (\"/api/agent\", \"\", {\"question\": \"\"})]"` | — |
 | [SRC-1A176AD4F0-L000332](../../tests/test_hosted_smoke.py#L332) | 332 | `"    assert failure.value.report[\"endpoint_diagnostics\"][\"unauthenticated_agent\"][\"http_status\"] == 400"` | — |
@@ -786,51 +834,3 @@
 | [SRC-EA6EC52573-L000301](../../tests/test_intent_router.py#L301) | 301 | `""` | — |
 | [SRC-EA6EC52573-L000302](../../tests/test_intent_router.py#L302) | 302 | `"    resolved = resolve_followup_query(\"أقدر أشتريه منين؟\", history)"` | — |
 | [SRC-EA6EC52573-L000303](../../tests/test_intent_router.py#L303) | 303 | `""` | — |
-| [SRC-EA6EC52573-L000304](../../tests/test_intent_router.py#L304) | 304 | `"    assert \"Lenovo ThinkPad E14\" in resolved"` | — |
-| [SRC-EA6EC52573-L000305](../../tests/test_intent_router.py#L305) | 305 | `"    assert \"أقدر أشتريه منين\" in resolved"` | — |
-| [SRC-EA6EC52573-L000306](../../tests/test_intent_router.py#L306) | 306 | `""` | — |
-| [SRC-EA6EC52573-L000307](../../tests/test_intent_router.py#L307) | 307 | `"def test_no_duplicate_followup_leadin_symbols():"` | — |
-| [SRC-EA6EC52573-L000308](../../tests/test_intent_router.py#L308) | 308 | `"    \"\"\"Follow-up normalization symbols must have one authoritative definition.\"\"\""` | — |
-| [SRC-EA6EC52573-L000309](../../tests/test_intent_router.py#L309) | 309 | `"    import inspect"` | — |
-| [SRC-EA6EC52573-L000310](../../tests/test_intent_router.py#L310) | 310 | `"    from agents import intent_router"` | — |
-| [SRC-EA6EC52573-L000311](../../tests/test_intent_router.py#L311) | 311 | `""` | — |
-| [SRC-EA6EC52573-L000312](../../tests/test_intent_router.py#L312) | 312 | `"    module_source = inspect.getsource(intent_router)"` | — |
-| [SRC-EA6EC52573-L000313](../../tests/test_intent_router.py#L313) | 313 | `"    assert module_source.count(\"_FOLLOWUP_LEAD_IN_RE = re.compile\") == 1"` | — |
-| [SRC-EA6EC52573-L000314](../../tests/test_intent_router.py#L314) | 314 | `"    assert module_source.count(\"_FOLLOWUP_ASPECT_FRAGMENTS = frozenset\") == 1"` | — |
-| [SRC-EA6EC52573-L000315](../../tests/test_intent_router.py#L315) | 315 | `"    assert module_source.count(\"def _strip_followup_leadin\") == 1"` | — |
-| [SRC-EA6EC52573-L000316](../../tests/test_intent_router.py#L316) | 316 | `""` | — |
-| [SRC-EA6EC52573-L000317](../../tests/test_intent_router.py#L317) | 317 | `""` | — |
-| [SRC-EA6EC52573-L000318](../../tests/test_intent_router.py#L318) | 318 | `""` | — |
-| [SRC-EA6EC52573-L000319](../../tests/test_intent_router.py#L319) | 319 | `"@pytest.mark.parametrize("` | — |
-| [SRC-EA6EC52573-L000320](../../tests/test_intent_router.py#L320) | 320 | `"    \"followup\","` | — |
-| [SRC-EA6EC52573-L000321](../../tests/test_intent_router.py#L321) | 321 | `"    ["` | — |
-| [SRC-EA6EC52573-L000322](../../tests/test_intent_router.py#L322) | 322 | `"        \"وبالنسبة للضمان بتاعه؟\","` | — |
-| [SRC-EA6EC52573-L000323](../../tests/test_intent_router.py#L323) | 323 | `"        \"ممكن اعرف اسعارهم؟\","` | — |
-| [SRC-EA6EC52573-L000324](../../tests/test_intent_router.py#L324) | 324 | `"        \"ضمانه كام؟\","` | — |
-| [SRC-EA6EC52573-L000325](../../tests/test_intent_router.py#L325) | 325 | `"        \"والتقييمات؟\","` | — |
-| [SRC-EA6EC52573-L000326](../../tests/test_intent_router.py#L326) | 326 | `"        \"وبخصوص الاسعار\","` | — |
-| [SRC-EA6EC52573-L000327](../../tests/test_intent_router.py#L327) | 327 | `"    ],"` | — |
-| [SRC-EA6EC52573-L000328](../../tests/test_intent_router.py#L328) | 328 | `")"` | — |
-| [SRC-EA6EC52573-L000329](../../tests/test_intent_router.py#L329) | 329 | `"def test_arabic_referential_followups_are_joined_to_prior_topic(followup):"` | — |
-| [SRC-EA6EC52573-L000330](../../tests/test_intent_router.py#L330) | 330 | `"    history = ["` | — |
-| [SRC-EA6EC52573-L000331](../../tests/test_intent_router.py#L331) | 331 | `"        {\"role\": \"user\", \"content\": \"ايه سعر ايفون 15 في مصر\"},"` | — |
-| [SRC-EA6EC52573-L000332](../../tests/test_intent_router.py#L332) | 332 | `"        {\"role\": \"assistant\", \"content\": \"السعر حوالي 45 الف جنيه\"},"` | — |
-| [SRC-EA6EC52573-L000333](../../tests/test_intent_router.py#L333) | 333 | `"    ]"` | — |
-| [SRC-EA6EC52573-L000334](../../tests/test_intent_router.py#L334) | 334 | `"    resolved = resolve_followup_query(followup, history)"` | — |
-| [SRC-EA6EC52573-L000335](../../tests/test_intent_router.py#L335) | 335 | `"    assert resolved.startswith(\"ايه سعر ايفون 15 في مصر\")"` | — |
-| [SRC-EA6EC52573-L000336](../../tests/test_intent_router.py#L336) | 336 | `"    assert followup in resolved"` | — |
-| [SRC-EA6EC52573-L000337](../../tests/test_intent_router.py#L337) | 337 | `""` | — |
-| [SRC-EA6EC52573-L000338](../../tests/test_intent_router.py#L338) | 338 | `""` | — |
-| [SRC-EA6EC52573-L000339](../../tests/test_intent_router.py#L339) | 339 | `"@pytest.mark.parametrize("` | — |
-| [SRC-EA6EC52573-L000340](../../tests/test_intent_router.py#L340) | 340 | `"    \"standalone\","` | — |
-| [SRC-EA6EC52573-L000341](../../tests/test_intent_router.py#L341) | 341 | `"    ["` | — |
-| [SRC-EA6EC52573-L000342](../../tests/test_intent_router.py#L342) | 342 | `"        \"اسعار الذهب اليوم\","` | — |
-| [SRC-EA6EC52573-L000343](../../tests/test_intent_router.py#L343) | 343 | `"        \"ممكن اعرف اسعار الذهب\","` | — |
-| [SRC-EA6EC52573-L000344](../../tests/test_intent_router.py#L344) | 344 | `"        \"مواصفات لاب توب ديل\","` | — |
-| [SRC-EA6EC52573-L000345](../../tests/test_intent_router.py#L345) | 345 | `"        \"سعر الدولار النهاردة\","` | — |
-| [SRC-EA6EC52573-L000346](../../tests/test_intent_router.py#L346) | 346 | `"    ],"` | — |
-| [SRC-EA6EC52573-L000347](../../tests/test_intent_router.py#L347) | 347 | `")"` | — |
-| [SRC-EA6EC52573-L000348](../../tests/test_intent_router.py#L348) | 348 | `"def test_standalone_aspect_questions_are_not_merged_with_history(standalone):"` | — |
-| [SRC-EA6EC52573-L000349](../../tests/test_intent_router.py#L349) | 349 | `"    history = ["` | — |
-| [SRC-EA6EC52573-L000350](../../tests/test_intent_router.py#L350) | 350 | `"        {\"role\": \"user\", \"content\": \"ايه سعر ايفون 15 في مصر\"},"` | — |
-| [SRC-EA6EC52573-L000351](../../tests/test_intent_router.py#L351) | 351 | `"        {\"role\": \"assistant\", \"content\": \"السعر حوالي 45 الف جنيه\"},"` | — |

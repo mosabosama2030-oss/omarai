@@ -4,7 +4,7 @@
 
 - الصفحة: **004**
 - سجلات الأسطر: **800**
-- النطاق: SRC-5587371288-L000408 إلى SRC-C9CF9B54F8-L000603
+- النطاق: SRC-5587371288-L000404 إلى SRC-C9CF9B54F8-L000599
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-5587371288-L000404](../../agents/intent_router.py#L404) | 404 | `"        \"source-backed\", \"cite your sources\","` | — |
+| [SRC-5587371288-L000405](../../agents/intent_router.py#L405) | 405 | `"    )"` | — |
+| [SRC-5587371288-L000406](../../agents/intent_router.py#L406) | 406 | `"    return any(_normalize(marker) in normalized for marker in markers)"` | — |
+| [SRC-5587371288-L000407](../../agents/intent_router.py#L407) | 407 | `""` | — |
 | [SRC-5587371288-L000408](../../agents/intent_router.py#L408) | 408 | `""` | — |
 | [SRC-5587371288-L000409](../../agents/intent_router.py#L409) | 409 | `"def _is_deep(question: str) -> bool:"` | — |
 | [SRC-5587371288-L000410](../../agents/intent_router.py#L410) | 410 | `"    normalized = _normalize(question)"` | — |
@@ -821,7 +825,3 @@
 | [SRC-C9CF9B54F8-L000597](../../agents/omarai.py#L597) | 597 | `"        return value"` | — |
 | [SRC-C9CF9B54F8-L000598](../../agents/omarai.py#L598) | 598 | `""` | — |
 | [SRC-C9CF9B54F8-L000599](../../agents/omarai.py#L599) | 599 | `"    def default_principal(self) -> dict:"` | — |
-| [SRC-C9CF9B54F8-L000600](../../agents/omarai.py#L600) | 600 | `"        with self.connect() as db:"` | — |
-| [SRC-C9CF9B54F8-L000601](../../agents/omarai.py#L601) | 601 | `"            row = db.execute("` | — |
-| [SRC-C9CF9B54F8-L000602](../../agents/omarai.py#L602) | 602 | `"                \"\"\"SELECT m.tenant_id, m.user_id, m.role"` | — |
-| [SRC-C9CF9B54F8-L000603](../../agents/omarai.py#L603) | 603 | `"                   FROM tenant_memberships m"` | — |

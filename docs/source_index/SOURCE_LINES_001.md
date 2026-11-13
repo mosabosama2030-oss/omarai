@@ -4,7 +4,7 @@
 
 - الصفحة: **001**
 - سجلات الأسطر: **800**
-- النطاق: SRC-2F754321D6-L000001 إلى SRC-138992B1FC-L000238
+- النطاق: SRC-2F754321D6-L000001 إلى SRC-138992B1FC-L000234
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## إعدادات وتشغيل
@@ -650,6 +650,10 @@
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
 | [SRC-E120A62E2E-L000001](../../agents/__init__.py#L1) | 1 | `"\"\"\"Omarai lead-intent agent package.\"\"\""` | — |
+| [SRC-E120A62E2E-L000002](../../agents/__init__.py#L2) | 2 | `""` | — |
+| [SRC-E120A62E2E-L000003](../../agents/__init__.py#L3) | 3 | `"# Load search_meta_tail early so it can rebind research._SEARCH_META_TAIL_RE"` | — |
+| [SRC-E120A62E2E-L000004](../../agents/__init__.py#L4) | 4 | `"# once agents.research is available (cycle-safe)."` | — |
+| [SRC-E120A62E2E-L000005](../../agents/__init__.py#L5) | 5 | `"from . import search_meta_tail as _search_meta_tail  # noqa: F401"` | — |
 ## الوكيل والمنطق
 
 ### FILE-138992B1FC — [agents/answer_validation.py](../../agents/answer_validation.py#L1)
@@ -893,7 +897,3 @@
 | [SRC-138992B1FC-L000232](../../agents/answer_validation.py#L232) | 232 | `"            page_text"` | — |
 | [SRC-138992B1FC-L000233](../../agents/answer_validation.py#L233) | 233 | `"            if bool(source.get(\"page_fetched\")) and page_text.strip()"` | — |
 | [SRC-138992B1FC-L000234](../../agents/answer_validation.py#L234) | 234 | `"            else \"\""` | — |
-| [SRC-138992B1FC-L000235](../../agents/answer_validation.py#L235) | 235 | `"        )"` | — |
-| [SRC-138992B1FC-L000236](../../agents/answer_validation.py#L236) | 236 | `"        # A page_text field is not evidence of a successful read unless the"` | — |
-| [SRC-138992B1FC-L000237](../../agents/answer_validation.py#L237) | 237 | `"        # fetch boundary explicitly confirms page_fetched."` | — |
-| [SRC-138992B1FC-L000238](../../agents/answer_validation.py#L238) | 238 | `"        # Publication timestamps are source metadata, not evidence for unrelated"` | — |

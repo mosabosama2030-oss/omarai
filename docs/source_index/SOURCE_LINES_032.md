@@ -4,7 +4,7 @@
 
 - الصفحة: **032**
 - سجلات الأسطر: **800**
-- النطاق: SRC-8872CF2B16-L000052 إلى SRC-B9C3015420-L000017
+- النطاق: SRC-8872CF2B16-L000004 إلى SRC-62CE5126F9-L000666
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## وثائق وفهرسة
@@ -16,6 +16,54 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-8872CF2B16-L000004](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L4) | 4 | `"**المستودع:** [mosabosama2030-oss/omarai](https://github.com/mosabosama2030-oss/omarai)  "` | — |
+| [SRC-8872CF2B16-L000005](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L5) | 5 | ``"**الفرع المرجعي:** `main`  "`` | — |
+| [SRC-8872CF2B16-L000006](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L6) | 6 | ``"**SHA المرجعي:** `a297abd271d48f459effad083a9f424a1499cd39`  "`` | — |
+| [SRC-8872CF2B16-L000007](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L7) | 7 | `"**الغرض:** مصدر موحد للحالة التنفيذية والقرارات المنتجية في هذا التاريخ. هذه لقطة مؤرخة وليست بديلًا عن إعادة فحص GitHub عند كل مهمة."` | — |
+| [SRC-8872CF2B16-L000008](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L8) | 8 | `""` | — |
+| [SRC-8872CF2B16-L000009](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L9) | 9 | ``"> **قاعدة القراءة:** هذا الملف يصف ما ثبت على `main` وما بقي في فروع مفتوحة. لا تنقل وظيفة من PR مفتوح إلى قائمة قدرات `main` قبل الدمج والتحقق. الوثائق التأسيسية تحدد الاتجاه والمتطلبات؛ الشفرة والاختبارات والاستضافة تحدد ما نُفذ فعلًا."`` | — |
+| [SRC-8872CF2B16-L000010](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L10) | 10 | `""` | — |
+| [SRC-8872CF2B16-L000011](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L11) | 11 | `"## 1. هوية Omarai والهدف التجاري المعتمد"` | — |
+| [SRC-8872CF2B16-L000012](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L12) | 12 | `""` | — |
+| [SRC-8872CF2B16-L000013](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L13) | 13 | `"Omarai منصة عربية أولًا لذكاء المبيعات واكتساب العملاء (**Arabic-first Sales Intelligence & Customer Acquisition**)، متعددة المنتجات والقطاعات والأسواق. يبدأ المستخدم بوصف المنتج أو الخدمة والسوق المستهدف؛ يفهم النظام المنتج والمرادفات والاستخدامات والقيود والعملاء المحتملين، ثم يبحث في المصادر العامة والمسموح بها عن **إشارات احتياج أو طلب شراء معلنة**، ويربط كل إشارة بمصدرها وتاريخها ومقتطف الدليل، ويميّز قوة الصلة وما لا يزال مجهولًا، ثم يساعد في تأهيل الفرصة واقتراح خطوة مبيعات مناسبة."` | — |
+| [SRC-8872CF2B16-L000014](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L14) | 14 | `""` | — |
+| [SRC-8872CF2B16-L000015](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L15) | 15 | `"النجاح ليس عدد نتائج البحث ولا كثرة الأسماء أو بيانات الاتصال. النجاح هو فرص قابلة للمراجعة، لها دليل طلب أو احتياج مناسب، وتفسير واضح لملاءمتها للمنتج والسوق، وحدود موثقة للاستنتاج."` | — |
+| [SRC-8872CF2B16-L000016](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L16) | 16 | `""` | — |
+| [SRC-8872CF2B16-L000017](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L17) | 17 | `"### قواعد المنتج غير القابلة للتجاوز"` | — |
+| [SRC-8872CF2B16-L000018](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L18) | 18 | `""` | — |
+| [SRC-8872CF2B16-L000019](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L19) | 19 | `"1. **المصدر قبل الاستنتاج:** لا فرصة بلا مصدر يمكن فحصه، ولا استشهاد بلا إسناد صحيح."` | — |
+| [SRC-8872CF2B16-L000020](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L20) | 20 | `"2. **إشارة الطلب قبل بيانات الاتصال:** لا نجمع أرقام الهواتف أو البريد أو بيانات الأشخاص لمجرد أنهم يطابقون ملف العميل المستهدف."` | — |
+| [SRC-8872CF2B16-L000021](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L21) | 21 | ``"3. **النية قبل الملاءمة:** تطابق شركة مع ICP وحده ليس نية شراء؛ يجب فصل `icp_match_only` عن إشارة الطلب الفعلية."`` | — |
+| [SRC-8872CF2B16-L000022](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L22) | 22 | `"4. **تصنيف الإشارات:** افصل طلب الشراء المباشر، والاحتياج المعلن دون قرار شراء، والمؤشر غير المباشر، والتطابق مع ICP فقط، وإشارات النفي/الإلغاء/الانتهاء، والنتيجة غير المؤهلة."` | — |
+| [SRC-8872CF2B16-L000023](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L23) | 23 | `"5. **لا احتمالات شراء مختلقة:** لا تعرض Probability أو درجة احتمالية شراء دون بيانات معايرة واختبار يثبتان معناها."` | — |
+| [SRC-8872CF2B16-L000024](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L24) | 24 | `"6. **مراجعة بشرية قبل التواصل:** لا يرسل Omarai رسائل أو عروضًا أو يجري تواصلًا آليًا في النطاق المعتمد الحالي؛ اقتراح الخطوة أو إعداد مسودة لا يعني إرسالها."` | — |
+| [SRC-8872CF2B16-L000025](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L25) | 25 | `"7. **مصادر مشروعة فقط:** لا تجاوز لتسجيل الدخول أو الجدران المدفوعة أو ضوابط الوصول أو شروط المنصات."` | — |
+| [SRC-8872CF2B16-L000026](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L26) | 26 | `"8. **متعدد القطاعات:** لا يجوز تسرب عبارات أو افتراضات قطاع واحد إلى منتج آخر؛ يجب اختبار العقار والسيارات والمنتجات الصناعية والخدمات وغيرها بحالات إيجابية وسلبية."` | — |
+| [SRC-8872CF2B16-L000027](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L27) | 27 | `""` | — |
+| [SRC-8872CF2B16-L000028](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L28) | 28 | `"## 2. القرارات المعمارية الحاكمة"` | — |
+| [SRC-8872CF2B16-L000029](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L29) | 29 | `""` | — |
+| [SRC-8872CF2B16-L000030](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L30) | 30 | `"- **Modular Monolith أولًا:** تُحافظ النواة على حدود مسؤوليات وعقود واضحة دون تفكيك مبكر إلى خدمات مستقلة. لا تضاف بنية موزعة قبل وجود قياس يثبت الحاجة."` | — |
+| [SRC-8872CF2B16-L000031](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L31) | 31 | `"- **Shared Research Core:** البحث العام وقراءة الصفحات وRAG والنماذج وتقييم الأدلة قدرات منصة مشتركة تُعاد استخدامها لخدمة مجال المبيعات، ولا تنشأ محركات بحث متوازية بلا مبرر."` | — |
+| [SRC-8872CF2B16-L000032](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L32) | 32 | `"- **Skill-First, Agent-Later:** أدوات بعقود وصلاحيات وميزانيات، ثم مهارات وسير عمل قابلان للاختبار، ثم سياق مهمة مؤقت؛ لا وكلاء دائمون أو Meta-Agent أو توليد كود تنفيذي في المسار الأساسي قبل إثبات الحاجة والضوابط."` | — |
+| [SRC-8872CF2B16-L000033](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L33) | 33 | `"- **Policy before model:** مخرجات النماذج والصفحات والموصلات بيانات غير موثوقة؛ لا تمنح صلاحيات، ولا تتجاوز التحقق الحتمي أو حدود الموارد."` | — |
+| [SRC-8872CF2B16-L000034](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L34) | 34 | ``"- **Evidence and failure transparency:** ميّز `VERIFIED / INFERRED / PROPOSED / UNKNOWN`، وحالات التنفيذ `FIXED_AND_TESTED / PARTIAL / NOT_RUN / NOT_REQUIRED`. فشل الموصل لا يعني عدم وجود طلب، ونجاح الصحة لا يثبت اتصال المزود."`` | — |
+| [SRC-8872CF2B16-L000035](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L35) | 35 | `"- **Human-controlled changes:** لا دمج PR أو نشر إنتاج أو تعديل أسرار/استضافة أو استهلاك مدفوع دون التفويض المحدد."` | — |
+| [SRC-8872CF2B16-L000036](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L36) | 36 | `""` | — |
+| [SRC-8872CF2B16-L000037](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L37) | 37 | `"## 3. قرار تعدد المستأجرين"` | — |
+| [SRC-8872CF2B16-L000038](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L38) | 38 | `""` | — |
+| [SRC-8872CF2B16-L000039](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L39) | 39 | ``"**VERIFIED على main بعد PR #145:** القرار المعتمد هو **Multi-Tenant Architecture — Single-Tenant Initial Operation**: تبدأ الخدمة التشغيلية بشركة واحدة، مع تأسيس نموذج tenant/user/membership وربط بيانات العملاء والهوية والجلسات بسياق المستأجر من جهة الخادم. لا يُقبل `tenant_id` من المتصفح أو جسم الطلب بوصفه مصدر صلاحية؛ يُشتق من principal موثوق، ويُختبر منع الوصول المتبادل."`` | — |
+| [SRC-8872CF2B16-L000040](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L40) | 40 | `""` | — |
+| [SRC-8872CF2B16-L000041](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L41) | 41 | `"**حدود القرار:** دمج نواة العزل لا يعني اكتمال منتج SaaS متعدد الشركات. واجهة الإدارة الذاتية للمستخدمين والعضويات، والقبول على مضيف فعلي، واستمرارية volume والنسخ الاحتياطي والاستعادة لم تثبت في الأدلة التي راجعناها لهذه اللقطة."` | — |
+| [SRC-8872CF2B16-L000042](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L42) | 42 | `""` | — |
+| [SRC-8872CF2B16-L000043](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L43) | 43 | `"## 4. الحالة المثبتة على main في 6 نوفمبر 2026"` | — |
+| [SRC-8872CF2B16-L000044](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L44) | 44 | `""` | — |
+| [SRC-8872CF2B16-L000045](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L45) | 45 | `"### خط الأساس والفحوص"` | — |
+| [SRC-8872CF2B16-L000046](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L46) | 46 | `""` | — |
+| [SRC-8872CF2B16-L000047](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L47) | 47 | ``"- **VERIFIED:** رأس `main` هو `a297abd271d48f459effad083a9f424a1499cd39`."`` | — |
+| [SRC-8872CF2B16-L000048](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L48) | 48 | ``"- **VERIFIED:** مقارنة `main` مع رأس كود PR #154 المختبَر `f2d0d3eac7f1d37ddc17847f652d19ccda4a6680` أظهرت أن الالتزامين اللاحقين في `main` يتضمنان تحديثات فهرسة مولدة فقط؛ لذلك يمثل `f2d0d3...` خط أساس الكود الذي اختُبر قبل الدمج."`` | — |
+| [SRC-8872CF2B16-L000049](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L49) | 49 | ``"- **FIXED_AND_TESTED على رأس PR #154:** تشغيل CI رقم [41957439491](https://github.com/mosabosama2030-oss/omarai/actions/runs/41957439491) سجل 848 اختبارًا ناجحًا على Python 3.11 و848 على Python 3.12، ونجاح Ruff وفحوص الفهرسة وبناء الحاوية وprotected API smoke. لا أملك في هذه اللقطة نتيجة مستقلة مؤكدة لتشغيل push بعد الدمج على `a297...`."`` | — |
+| [SRC-8872CF2B16-L000050](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L50) | 50 | `"- **UNKNOWN / NOT_RUN:** قبول الاستضافة على SnapDeploy وهوية SHA المنشور في 6 نوفمبر؛ لم يُجر فحص حي للمضيف ضمن تحديث الوثائق هذا."` | — |
+| [SRC-8872CF2B16-L000051](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L51) | 51 | `""` | — |
 | [SRC-8872CF2B16-L000052](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L52) | 52 | `"### الدمجات التي أصبحت جزءًا من main"` | — |
 | [SRC-8872CF2B16-L000053](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L53) | 53 | `""` | — |
 | [SRC-8872CF2B16-L000054](../OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md#L54) | 54 | `"\| التغيير \| الحالة المثبتة \| ما أصبح موجودًا \| الحدود \|"` | — |
@@ -777,60 +825,3 @@
 | [SRC-62CE5126F9-L000664](../OMARAI_REMEDIATION_REGISTER_AR.md#L664) | 664 | `""` | — |
 | [SRC-62CE5126F9-L000665](../OMARAI_REMEDIATION_REGISTER_AR.md#L665) | 665 | ``"- الدليل المحلي هو تشغيل المجموعة الكاملة المذكور في OMR-SEARCH-004 على الفرع وSHA الأساس نفسيهما: **927 passed, 2 skipped**؛ Ruff و`git diff --check` ناجحان."`` | — |
 | [SRC-62CE5126F9-L000666](../OMARAI_REMEDIATION_REGISTER_AR.md#L666) | 666 | `"- **NOT_RUN:** اختبار النتائج الحية أو مراجعة بشرية لكل الصياغات العربية. يظل تصنيف اللغة الطبيعية بحاجة إلى corpus عربي موسوم ومراجعة فعلية."` | — |
-| [SRC-62CE5126F9-L000667](../OMARAI_REMEDIATION_REGISTER_AR.md#L667) | 667 | `"- يلزم تشغيل CI ثم مراجعة بشرية ودمج، ثم قبول حي منفصل قبل اعتبار السلوك فعالًا للمستخدمين."` | — |
-| [SRC-62CE5126F9-L000668](../OMARAI_REMEDIATION_REGISTER_AR.md#L668) | 668 | `""` | — |
-| [SRC-62CE5126F9-L000669](../OMARAI_REMEDIATION_REGISTER_AR.md#L669) | 669 | `"---"` | — |
-| [SRC-62CE5126F9-L000670](../OMARAI_REMEDIATION_REGISTER_AR.md#L670) | 670 | `""` | — |
-| [SRC-62CE5126F9-L000671](../OMARAI_REMEDIATION_REGISTER_AR.md#L671) | 671 | `"## SEARCH-QUALITY-002 — سلامة موصلات البحث وحفظ اتفاق المزودين — 8 نوفمبر 2026"` | — |
-| [SRC-62CE5126F9-L000672](../OMARAI_REMEDIATION_REGISTER_AR.md#L672) | 672 | `""` | — |
-| [SRC-62CE5126F9-L000673](../OMARAI_REMEDIATION_REGISTER_AR.md#L673) | 673 | ``"**الحالة:** FIXED_AND_TESTED على فرع PR #165 بعد إعادة تأسيس التغيير على `main` الحالي؛ غير مدمج."`` | — |
-| [SRC-62CE5126F9-L000674](../OMARAI_REMEDIATION_REGISTER_AR.md#L674) | 674 | `""` | — |
-| [SRC-62CE5126F9-L000675](../OMARAI_REMEDIATION_REGISTER_AR.md#L675) | 675 | `"### العيوب المثبتة"` | — |
-| [SRC-62CE5126F9-L000676](../OMARAI_REMEDIATION_REGISTER_AR.md#L676) | 676 | `"- إزالة التكرار العامة قبل RRF كانت تفقد اكتشافات المزودين الآخرين للصفحة نفسها."` | — |
-| [SRC-62CE5126F9-L000677](../OMARAI_REMEDIATION_REGISTER_AR.md#L677) | 677 | `"- إزالة التكرار داخل المزود كانت تعتمد على URL خام ولا توحد معاملات التتبع والـfragment."` | — |
-| [SRC-62CE5126F9-L000678](../OMARAI_REMEDIATION_REGISTER_AR.md#L678) | 678 | `"- كانت درجة الصلة تُستخدم للترشيح دون حفظها لتدقيق/كسر تعادل RRF."` | — |
-| [SRC-62CE5126F9-L000679](../OMARAI_REMEDIATION_REGISTER_AR.md#L679) | 679 | `"- كان تصنيف الاستثناءات يعتمد على نص HTTP فقط، فلا يصنف HTTPX structured errors."` | — |
-| [SRC-62CE5126F9-L000680](../OMARAI_REMEDIATION_REGISTER_AR.md#L680) | 680 | `""` | — |
-| [SRC-62CE5126F9-L000681](../OMARAI_REMEDIATION_REGISTER_AR.md#L681) | 681 | `"### الإصلاح"` | — |
-| [SRC-62CE5126F9-L000682](../OMARAI_REMEDIATION_REGISTER_AR.md#L682) | 682 | ``"- حفظ `retrieval_relevance_score` في المجال [0, 1] بعد اجتياز حد الصلة القائم دون تغييره."`` | — |
-| [SRC-62CE5126F9-L000683](../OMARAI_REMEDIATION_REGISTER_AR.md#L683) | 683 | `"- إزالة التكرار داخل المزود باستخدام URL مطبّع، وإبقاء اكتشافات المزودين المختلفين حتى RRF."` | — |
-| [SRC-62CE5126F9-L000684](../OMARAI_REMEDIATION_REGISTER_AR.md#L684) | 684 | `"- استخدام درجة الصلة فقط لكسر تعادل RRF الدقيق؛ ليست درجة ثقة أو حقيقة أو نية شراء."` | — |
-| [SRC-62CE5126F9-L000685](../OMARAI_REMEDIATION_REGISTER_AR.md#L685) | 685 | `"- التحقق من finite scores ورفض bool وNaN وInfinity والقيم خارج النطاق."` | — |
-| [SRC-62CE5126F9-L000686](../OMARAI_REMEDIATION_REGISTER_AR.md#L686) | 686 | `"- تصنيف HTTPX TimeoutException وDecodingError وHTTPStatusError من النوع والحالة الفعلية."` | — |
-| [SRC-62CE5126F9-L000687](../OMARAI_REMEDIATION_REGISTER_AR.md#L687) | 687 | `"- الحفاظ على عقد الحالة المتوافق مع PR #173: HTTP 202 = blocked، و3xx = http_error، و429 = rate_limited، و401/403 = unauthorized."` | — |
-| [SRC-62CE5126F9-L000688](../OMARAI_REMEDIATION_REGISTER_AR.md#L688) | 688 | `"- تقليل تفاصيل التشخيص حتى لا تكشف URL أو body أو بيانات الاعتماد."` | — |
-| [SRC-62CE5126F9-L000689](../OMARAI_REMEDIATION_REGISTER_AR.md#L689) | 689 | `""` | — |
-| [SRC-62CE5126F9-L000690](../OMARAI_REMEDIATION_REGISTER_AR.md#L690) | 690 | `"### الاختبارات والتحقق"` | — |
-| [SRC-62CE5126F9-L000691](../OMARAI_REMEDIATION_REGISTER_AR.md#L691) | 691 | `"- اختبارات اتفاق المزودين والتكرار داخل المزود ودرجات الصلة وتعادل RRF والقيم غير الصالحة."` | — |
-| [SRC-62CE5126F9-L000692](../OMARAI_REMEDIATION_REGISTER_AR.md#L692) | 692 | `"- اختبارات HTTPX status/timeout/decoding diagnostics."` | — |
-| [SRC-62CE5126F9-L000693](../OMARAI_REMEDIATION_REGISTER_AR.md#L693) | 693 | `"- RED سابق على فرع التغيير: 11 فشلًا مستهدفًا كشف العيوب."` | — |
-| [SRC-62CE5126F9-L000694](../OMARAI_REMEDIATION_REGISTER_AR.md#L694) | 694 | `"- GREEN: سيُثبت على SHA الفرع بعد اكتمال CI؛ لا تستخدم هذه الوثيقة وحدها لإثبات نجاح الاختبارات."` | — |
-| [SRC-62CE5126F9-L000695](../OMARAI_REMEDIATION_REGISTER_AR.md#L695) | 695 | `""` | — |
-| [SRC-62CE5126F9-L000696](../OMARAI_REMEDIATION_REGISTER_AR.md#L696) | 696 | `"### الحدود"` | — |
-| [SRC-62CE5126F9-L000697](../OMARAI_REMEDIATION_REGISTER_AR.md#L697) | 697 | `"هذه تغييرات provenance وترتيب الاسترجاع وتشخيص الموصلات؛ لا تثبت صحة الادعاءات أو الاستقلال التحريري أو نية الشراء. **NOT_RUN:** قبول الموصلات الحية على SnapDeploy وbenchmark precision/recall/NDCG على مجموعة استعلامات موسومة بشريًا. لم تُجرَ مكالمات Firecrawl مدفوعة ولا تعديلات على أسرار أو إعدادات الاستضافة."` | — |
-## وثائق وفهرسة
-
-### FILE-B9C3015420 — [docs/OMARAI_REQUIREMENTS_REGISTER.md](../OMARAI_REQUIREMENTS_REGISTER.md#L1)
-
-- النوع: **Markdown**
-- نطاق الفهرسة: جرد الملف + عناوين Markdown
-
-| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
-|---|---:|---|---|
-| [SRC-B9C3015420-L000001](../OMARAI_REQUIREMENTS_REGISTER.md#L1) | 1 | `"# Omarai — سجل المتطلبات الأساسية الأولي"` | — |
-| [SRC-B9C3015420-L000002](../OMARAI_REQUIREMENTS_REGISTER.md#L2) | 2 | `""` | — |
-| [SRC-B9C3015420-L000003](../OMARAI_REQUIREMENTS_REGISTER.md#L3) | 3 | `"**المعرّف:** OMARAI-REQ-REGISTER-001  "` | — |
-| [SRC-B9C3015420-L000004](../OMARAI_REQUIREMENTS_REGISTER.md#L4) | 4 | `"**الإصدار:** 1.2.0  "` | — |
-| [SRC-B9C3015420-L000005](../OMARAI_REQUIREMENTS_REGISTER.md#L5) | 5 | `"**الحالة:** سجل متطلبات أولي؛ دمج PR #42 لا يعني اعتمادًا بشريًا لكل متطلب.  "` | — |
-| [SRC-B9C3015420-L000006](../OMARAI_REQUIREMENTS_REGISTER.md#L6) | 6 | `"**الغرض:** تعريف متطلبات قابلة للتتبع وربطها بأدلة قبول؛ التفاصيل المعمارية الموسعة في الدستور الهندسي وخط الأساس ونموذج التتبع و[معمارية المهارات وسير العمل والوكلاء](OMARAI_SKILL_WORKFLOW_AGENT_ARCHITECTURE_AR.md).  "` | — |
-| [SRC-B9C3015420-L000007](../OMARAI_REQUIREMENTS_REGISTER.md#L7) | 7 | ``"**لقطة التقييم التاريخية:** جرى تدقيق P0 الأولي على `08319cce3652c332e414f691a71cc153dfbfd92e` بتاريخ 19 أكتوبر. حالات الصفوف الأصلية لا تصف تلقائيًا `main` الحالي؛ المرجع الحالي للعيوب ومعايير إغلاقها هو [سجل المعالجة المركزي](OMARAI_REMEDIATION_REGISTER_AR.md)، ولأدلة ما بعد الدمج [تقرير التحقق](OMARAI_POST_MERGE_VERIFICATION_2026-10-21_AR.md). لا يمثل هذا السجل شهادة امتثال شامل."`` | — |
-| [SRC-B9C3015420-L000008](../OMARAI_REQUIREMENTS_REGISTER.md#L8) | 8 | `""` | — |
-| [SRC-B9C3015420-L000009](../OMARAI_REQUIREMENTS_REGISTER.md#L9) | 9 | ``"**مصالحة الحالة — 6 نوفمبر 2026:** رأس `main` الذي تمت مراجعته هو `a297abd271d48f459effad083a9f424a1499cd39`. دُمج PR #145 (نواة tenant/session/evidence P0)، وPR #151 (مساحة العمل)، وPR #154 (جعل مساحة المبيعات الصفحة الرئيسية). مرجع الحالة التنفيذية والقرارات هو [حالة المشروع والقرارات الحاكمة](OMARAI_PROJECT_STATUS_AND_DECISIONS_AR.md)، والتفاصيل الزمنية في [سجل المعالجة المركزي](OMARAI_REMEDIATION_REGISTER_AR.md). PR #155 ما زال مفتوحًا وغير مدمج؛ لذلك لا تُرفع حالات الصفوف بناءً على اختبارات ذلك الفرع. **حالات الجدول أدناه لقطة التقييم الأولية في 19 أكتوبر 2026، ولا تُعد تقييمًا جديدًا على SHA الحالي.** لا تتحول أي حالة إلى VERIFIED دون دليل محدد على التنفيذ والاختبار والبيئة."`` | — |
-| [SRC-B9C3015420-L000010](../OMARAI_REQUIREMENTS_REGISTER.md#L10) | 10 | `""` | — |
-| [SRC-B9C3015420-L000011](../OMARAI_REQUIREMENTS_REGISTER.md#L11) | 11 | `"## طريقة القراءة"` | — |
-| [SRC-B9C3015420-L000012](../OMARAI_REQUIREMENTS_REGISTER.md#L12) | 12 | `""` | — |
-| [SRC-B9C3015420-L000013](../OMARAI_REQUIREMENTS_REGISTER.md#L13) | 13 | `"- **P0:** حاجز سلامة/صحة أساسي، يراجع قبل إتاحة المسار المرتبط به."` | — |
-| [SRC-B9C3015420-L000014](../OMARAI_REQUIREMENTS_REGISTER.md#L14) | 14 | `"- **P1:** أساس الاختبار والموثوقية والتشخيص."` | — |
-| [SRC-B9C3015420-L000015](../OMARAI_REQUIREMENTS_REGISTER.md#L15) | 15 | `"- **P2:** استعداد للنمو وتشغيل أكثر نضجًا عند انطباق الحاجة."` | — |
-| [SRC-B9C3015420-L000016](../OMARAI_REQUIREMENTS_REGISTER.md#L16) | 16 | `"- **P3:** قدرة مؤسسية أو موزعة مشروطة بحجم الاستخدام أو الالتزام أو الخطر."` | — |
-| [SRC-B9C3015420-L000017](../OMARAI_REQUIREMENTS_REGISTER.md#L17) | 17 | `"- **BASE:** ينطبق على المسار الأساسي."` | — |

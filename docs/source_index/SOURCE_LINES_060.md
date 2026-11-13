@@ -4,9 +4,77 @@
 
 - الصفحة: **060**
 - سجلات الأسطر: **800**
-- النطاق: SRC-AFEDC2645A-L000008 إلى SRC-AFEDC2645A-L000807
+- النطاق: SRC-8FDC8527E5-L000020 إلى SRC-AFEDC2645A-L000741
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-8FDC8527E5 — [tests/test_storage_restart.py](../../tests/test_storage_restart.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-8FDC8527E5-L000020](../../tests/test_storage_restart.py#L20) | 20 | `"        f\"نحتاج موردًا لنظام إنذار حريق {marker}\","` | — |
+| [SRC-8FDC8527E5-L000021](../../tests/test_storage_restart.py#L21) | 21 | `"        f\"https://example.invalid/demand/{marker}\","` | — |
+| [SRC-8FDC8527E5-L000022](../../tests/test_storage_restart.py#L22) | 22 | `"        tenant_id=tenant_id,"` | — |
+| [SRC-8FDC8527E5-L000023](../../tests/test_storage_restart.py#L23) | 23 | `"    )"` | — |
+| [SRC-8FDC8527E5-L000024](../../tests/test_storage_restart.py#L24) | 24 | `"    assert created is True"` | — |
+| [SRC-8FDC8527E5-L000025](../../tests/test_storage_restart.py#L25) | 25 | `"    profile = store.save_product_profile("` | — |
+| [SRC-8FDC8527E5-L000026](../../tests/test_storage_restart.py#L26) | 26 | `"        {"` | — |
+| [SRC-8FDC8527E5-L000027](../../tests/test_storage_restart.py#L27) | 27 | `"            \"product\": {\"name\": f\"Fire alarm {marker}\", \"aliases\": [\"FACP\"]},"` | — |
+| [SRC-8FDC8527E5-L000028](../../tests/test_storage_restart.py#L28) | 28 | `"            \"market\": {\"locations\": [\"Cairo\"], \"industries\": [\"Manufacturing\"]},"` | — |
+| [SRC-8FDC8527E5-L000029](../../tests/test_storage_restart.py#L29) | 29 | `"        },"` | — |
+| [SRC-8FDC8527E5-L000030](../../tests/test_storage_restart.py#L30) | 30 | `"        tenant_id=tenant_id,"` | — |
+| [SRC-8FDC8527E5-L000031](../../tests/test_storage_restart.py#L31) | 31 | `"    )"` | — |
+| [SRC-8FDC8527E5-L000032](../../tests/test_storage_restart.py#L32) | 32 | `"    run = store.save_discovery_run("` | — |
+| [SRC-8FDC8527E5-L000033](../../tests/test_storage_restart.py#L33) | 33 | `"        profile[\"id\"],"` | — |
+| [SRC-8FDC8527E5-L000034](../../tests/test_storage_restart.py#L34) | 34 | `"        {"` | — |
+| [SRC-8FDC8527E5-L000035](../../tests/test_storage_restart.py#L35) | 35 | `"            \"answer\": \"تم حفظ عملية اكتشاف اختبارية.\","` | — |
+| [SRC-8FDC8527E5-L000036](../../tests/test_storage_restart.py#L36) | 36 | `"            \"kind\": \"lead_discovery\","` | — |
+| [SRC-8FDC8527E5-L000037](../../tests/test_storage_restart.py#L37) | 37 | `"            \"search_queries\": [\"نحتاج موردًا لنظام إنذار حريق\"],"` | — |
+| [SRC-8FDC8527E5-L000038](../../tests/test_storage_restart.py#L38) | 38 | `"            \"sources\": [{"` | — |
+| [SRC-8FDC8527E5-L000039](../../tests/test_storage_restart.py#L39) | 39 | `"                \"title\": \"طلب توريد اختباري\","` | — |
+| [SRC-8FDC8527E5-L000040](../../tests/test_storage_restart.py#L40) | 40 | `"                \"url\": f\"https://example.invalid/source/{marker}\","` | — |
+| [SRC-8FDC8527E5-L000041](../../tests/test_storage_restart.py#L41) | 41 | `"                \"snippet\": \"نحتاج موردًا لنظام إنذار حريق\","` | — |
+| [SRC-8FDC8527E5-L000042](../../tests/test_storage_restart.py#L42) | 42 | `"                \"lead_qualification\": \"public_demand_signal\","` | — |
+| [SRC-8FDC8527E5-L000043](../../tests/test_storage_restart.py#L43) | 43 | `"                \"lead_intent_evidence\": {"` | — |
+| [SRC-8FDC8527E5-L000044](../../tests/test_storage_restart.py#L44) | 44 | `"                    \"phrase\": \"نحتاج موردًا\","` | — |
+| [SRC-8FDC8527E5-L000045](../../tests/test_storage_restart.py#L45) | 45 | `"                    \"basis\": \"source_text\","` | — |
+| [SRC-8FDC8527E5-L000046](../../tests/test_storage_restart.py#L46) | 46 | `"                    \"signal_type\": \"direct_purchase_request\","` | — |
+| [SRC-8FDC8527E5-L000047](../../tests/test_storage_restart.py#L47) | 47 | `"                },"` | — |
+| [SRC-8FDC8527E5-L000048](../../tests/test_storage_restart.py#L48) | 48 | `"            }],"` | — |
+| [SRC-8FDC8527E5-L000049](../../tests/test_storage_restart.py#L49) | 49 | `"            \"search_report\": {\"search_outcome\": \"results_found\"},"` | — |
+| [SRC-8FDC8527E5-L000050](../../tests/test_storage_restart.py#L50) | 50 | `"        },"` | — |
+| [SRC-8FDC8527E5-L000051](../../tests/test_storage_restart.py#L51) | 51 | `"        tenant_id=tenant_id,"` | — |
+| [SRC-8FDC8527E5-L000052](../../tests/test_storage_restart.py#L52) | 52 | `"    )"` | — |
+| [SRC-8FDC8527E5-L000053](../../tests/test_storage_restart.py#L53) | 53 | `""` | — |
+| [SRC-8FDC8527E5-L000054](../../tests/test_storage_restart.py#L54) | 54 | `"    child_code = \"\"\""` | — |
+| [SRC-8FDC8527E5-L000055](../../tests/test_storage_restart.py#L55) | 55 | `"import json"` | — |
+| [SRC-8FDC8527E5-L000056](../../tests/test_storage_restart.py#L56) | 56 | `"import sys"` | — |
+| [SRC-8FDC8527E5-L000057](../../tests/test_storage_restart.py#L57) | 57 | `"from agents.omarai import LeadStore"` | — |
+| [SRC-8FDC8527E5-L000058](../../tests/test_storage_restart.py#L58) | 58 | `"store = LeadStore(sys.argv[1])"` | — |
+| [SRC-8FDC8527E5-L000059](../../tests/test_storage_restart.py#L59) | 59 | `"tenant_id = sys.argv[2]"` | — |
+| [SRC-8FDC8527E5-L000060](../../tests/test_storage_restart.py#L60) | 60 | `"print(json.dumps({"` | — |
+| [SRC-8FDC8527E5-L000061](../../tests/test_storage_restart.py#L61) | 61 | `"    \"lead_ids\": [row[\"id\"] for row in store.list(tenant_id=tenant_id)],"` | — |
+| [SRC-8FDC8527E5-L000062](../../tests/test_storage_restart.py#L62) | 62 | `"    \"profile_ids\": [row[\"id\"] for row in store.list_product_profiles(tenant_id=tenant_id)],"` | — |
+| [SRC-8FDC8527E5-L000063](../../tests/test_storage_restart.py#L63) | 63 | `"    \"run_ids\": [row[\"id\"] for row in store.list_discovery_runs(tenant_id=tenant_id)],"` | — |
+| [SRC-8FDC8527E5-L000064](../../tests/test_storage_restart.py#L64) | 64 | `"}))"` | — |
+| [SRC-8FDC8527E5-L000065](../../tests/test_storage_restart.py#L65) | 65 | `"\"\"\""` | — |
+| [SRC-8FDC8527E5-L000066](../../tests/test_storage_restart.py#L66) | 66 | `"    repository_root = Path(__file__).resolve().parents[1]"` | — |
+| [SRC-8FDC8527E5-L000067](../../tests/test_storage_restart.py#L67) | 67 | `"    completed = subprocess.run("` | — |
+| [SRC-8FDC8527E5-L000068](../../tests/test_storage_restart.py#L68) | 68 | `"        [sys.executable, \"-c\", child_code, str(database_path), tenant_id],"` | — |
+| [SRC-8FDC8527E5-L000069](../../tests/test_storage_restart.py#L69) | 69 | `"        cwd=repository_root,"` | — |
+| [SRC-8FDC8527E5-L000070](../../tests/test_storage_restart.py#L70) | 70 | `"        check=True,"` | — |
+| [SRC-8FDC8527E5-L000071](../../tests/test_storage_restart.py#L71) | 71 | `"        capture_output=True,"` | — |
+| [SRC-8FDC8527E5-L000072](../../tests/test_storage_restart.py#L72) | 72 | `"        text=True,"` | — |
+| [SRC-8FDC8527E5-L000073](../../tests/test_storage_restart.py#L73) | 73 | `"    )"` | — |
+| [SRC-8FDC8527E5-L000074](../../tests/test_storage_restart.py#L74) | 74 | `"    persisted = json.loads(completed.stdout)"` | — |
+| [SRC-8FDC8527E5-L000075](../../tests/test_storage_restart.py#L75) | 75 | `""` | — |
+| [SRC-8FDC8527E5-L000076](../../tests/test_storage_restart.py#L76) | 76 | `"    assert persisted[\"lead_ids\"] == [lead[\"id\"]]"` | — |
+| [SRC-8FDC8527E5-L000077](../../tests/test_storage_restart.py#L77) | 77 | `"    assert persisted[\"profile_ids\"] == [profile[\"id\"]]"` | — |
+| [SRC-8FDC8527E5-L000078](../../tests/test_storage_restart.py#L78) | 78 | `"    assert persisted[\"run_ids\"] == [run[\"id\"]]"` | — |
 ## اختبارات
 
 ### FILE-AFEDC2645A — [tests/test_task_understanding.py](../../tests/test_task_understanding.py#L1)
@@ -16,6 +84,13 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-AFEDC2645A-L000001](../../tests/test_task_understanding.py#L1) | 1 | `"from __future__ import annotations"` | — |
+| [SRC-AFEDC2645A-L000002](../../tests/test_task_understanding.py#L2) | 2 | `""` | — |
+| [SRC-AFEDC2645A-L000003](../../tests/test_task_understanding.py#L3) | 3 | `"import pytest"` | — |
+| [SRC-AFEDC2645A-L000004](../../tests/test_task_understanding.py#L4) | 4 | `""` | — |
+| [SRC-AFEDC2645A-L000005](../../tests/test_task_understanding.py#L5) | 5 | `"from agents.task_understanding import build_query_strategy_matrix, build_task_spec"` | — |
+| [SRC-AFEDC2645A-L000006](../../tests/test_task_understanding.py#L6) | 6 | `""` | — |
+| [SRC-AFEDC2645A-L000007](../../tests/test_task_understanding.py#L7) | 7 | `""` | — |
 | [SRC-AFEDC2645A-L000008](../../tests/test_task_understanding.py#L8) | 8 | `"@pytest.mark.parametrize("` | — |
 | [SRC-AFEDC2645A-L000009](../../tests/test_task_understanding.py#L9) | 9 | `"    (\"question\", \"family\"),"` | — |
 | [SRC-AFEDC2645A-L000010](../../tests/test_task_understanding.py#L10) | 10 | `"    ["` | — |
@@ -750,69 +825,3 @@
 | [SRC-AFEDC2645A-L000739](../../tests/test_task_understanding.py#L739) | 739 | `"        question,"` | — |
 | [SRC-AFEDC2645A-L000740](../../tests/test_task_understanding.py#L740) | 740 | `"        mode=\"auto\","` | — |
 | [SRC-AFEDC2645A-L000741](../../tests/test_task_understanding.py#L741) | 741 | `"        intent_route=\"WEB_SIMPLE\","` | — |
-| [SRC-AFEDC2645A-L000742](../../tests/test_task_understanding.py#L742) | 742 | `"        dialogue_context=context,"` | — |
-| [SRC-AFEDC2645A-L000743](../../tests/test_task_understanding.py#L743) | 743 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000744](../../tests/test_task_understanding.py#L744) | 744 | `""` | — |
-| [SRC-AFEDC2645A-L000745](../../tests/test_task_understanding.py#L745) | 745 | `"    rows = build_query_strategy_matrix(question, spec, [question], limit=8)"` | — |
-| [SRC-AFEDC2645A-L000746](../../tests/test_task_understanding.py#L746) | 746 | `""` | — |
-| [SRC-AFEDC2645A-L000747](../../tests/test_task_understanding.py#L747) | 747 | `"    assert len(rows) >= 1"` | — |
-| [SRC-AFEDC2645A-L000748](../../tests/test_task_understanding.py#L748) | 748 | `"    assert all(\"iPhone 17\" not in row[\"query\"] for row in rows)"` | — |
-| [SRC-AFEDC2645A-L000749](../../tests/test_task_understanding.py#L749) | 749 | `"    assert all(\"اليورو\" not in row[\"query\"] for row in rows)"` | — |
-| [SRC-AFEDC2645A-L000750](../../tests/test_task_understanding.py#L750) | 750 | `"    assert all(\"256 جيجابايت\" not in row[\"query\"] for row in rows)"` | — |
-| [SRC-AFEDC2645A-L000751](../../tests/test_task_understanding.py#L751) | 751 | `"    assert all(\"الضمان\" not in row[\"query\"] for row in rows)"` | — |
-| [SRC-AFEDC2645A-L000752](../../tests/test_task_understanding.py#L752) | 752 | `""` | — |
-| [SRC-AFEDC2645A-L000753](../../tests/test_task_understanding.py#L753) | 753 | `""` | — |
-| [SRC-AFEDC2645A-L000754](../../tests/test_task_understanding.py#L754) | 754 | `"def test_query_strategy_matrix_uses_resolved_topic_instead_of_imperative_query_prefix():"` | — |
-| [SRC-AFEDC2645A-L000755](../../tests/test_task_understanding.py#L755) | 755 | `"    spec = {"` | — |
-| [SRC-AFEDC2645A-L000756](../../tests/test_task_understanding.py#L756) | 756 | `"        \"task_family\": \"recommendation\","` | — |
-| [SRC-AFEDC2645A-L000757](../../tests/test_task_understanding.py#L757) | 757 | `"        \"mode\": \"deep\","` | — |
-| [SRC-AFEDC2645A-L000758](../../tests/test_task_understanding.py#L758) | 758 | `"        \"intent_route\": \"WEB_DEEP\","` | — |
-| [SRC-AFEDC2645A-L000759](../../tests/test_task_understanding.py#L759) | 759 | `"        \"hypothesis_interpretations\": [],"` | — |
-| [SRC-AFEDC2645A-L000760](../../tests/test_task_understanding.py#L760) | 760 | `"        \"constraints\": {"` | — |
-| [SRC-AFEDC2645A-L000761](../../tests/test_task_understanding.py#L761) | 761 | `"            \"explicit_aspects\": [],"` | — |
-| [SRC-AFEDC2645A-L000762](../../tests/test_task_understanding.py#L762) | 762 | `"            \"explicit_locations\": [],"` | — |
-| [SRC-AFEDC2645A-L000763](../../tests/test_task_understanding.py#L763) | 763 | `"            \"explicit_budgets\": [],"` | — |
-| [SRC-AFEDC2645A-L000764](../../tests/test_task_understanding.py#L764) | 764 | `"        },"` | — |
-| [SRC-AFEDC2645A-L000765](../../tests/test_task_understanding.py#L765) | 765 | `"        \"context_resolution\": {"` | — |
-| [SRC-AFEDC2645A-L000766](../../tests/test_task_understanding.py#L766) | 766 | `"            \"topic\": \"لابتوب للعمل\","` | — |
-| [SRC-AFEDC2645A-L000767](../../tests/test_task_understanding.py#L767) | 767 | `"            \"entities\": [\"Dell\"],"` | — |
-| [SRC-AFEDC2645A-L000768](../../tests/test_task_understanding.py#L768) | 768 | `"            \"slots\": {\"product\": \"لابتوب\", \"model\": \"Dell\"},"` | — |
-| [SRC-AFEDC2645A-L000769](../../tests/test_task_understanding.py#L769) | 769 | `"            \"is_follow_up\": True,"` | — |
-| [SRC-AFEDC2645A-L000770](../../tests/test_task_understanding.py#L770) | 770 | `"            \"topic_shift\": False,"` | — |
-| [SRC-AFEDC2645A-L000771](../../tests/test_task_understanding.py#L771) | 771 | `"            \"needs_clarification\": False,"` | — |
-| [SRC-AFEDC2645A-L000772](../../tests/test_task_understanding.py#L772) | 772 | `"        },"` | — |
-| [SRC-AFEDC2645A-L000773](../../tests/test_task_understanding.py#L773) | 773 | `"    }"` | — |
-| [SRC-AFEDC2645A-L000774](../../tests/test_task_understanding.py#L774) | 774 | `""` | — |
-| [SRC-AFEDC2645A-L000775](../../tests/test_task_understanding.py#L775) | 775 | `"    rows = build_query_strategy_matrix("` | — |
-| [SRC-AFEDC2645A-L000776](../../tests/test_task_understanding.py#L776) | 776 | `"        \"في وضعي، أبدأ بإيه؟\","` | — |
-| [SRC-AFEDC2645A-L000777](../../tests/test_task_understanding.py#L777) | 777 | `"        spec,"` | — |
-| [SRC-AFEDC2645A-L000778](../../tests/test_task_understanding.py#L778) | 778 | `"        [\"ابحث لي عن أفضل لابتوب للعمل\"],"` | — |
-| [SRC-AFEDC2645A-L000779](../../tests/test_task_understanding.py#L779) | 779 | `"        limit=6,"` | — |
-| [SRC-AFEDC2645A-L000780](../../tests/test_task_understanding.py#L780) | 780 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000781](../../tests/test_task_understanding.py#L781) | 781 | `""` | — |
-| [SRC-AFEDC2645A-L000782](../../tests/test_task_understanding.py#L782) | 782 | `"    assert any("` | — |
-| [SRC-AFEDC2645A-L000783](../../tests/test_task_understanding.py#L783) | 783 | `"        row[\"strategy\"] == \"tradeoffs_ar\""` | — |
-| [SRC-AFEDC2645A-L000784](../../tests/test_task_understanding.py#L784) | 784 | `"        and row[\"query\"].startswith(\"لابتوب للعمل Dell\")"` | — |
-| [SRC-AFEDC2645A-L000785](../../tests/test_task_understanding.py#L785) | 785 | `"        for row in rows"` | — |
-| [SRC-AFEDC2645A-L000786](../../tests/test_task_understanding.py#L786) | 786 | `"    )"` | — |
-| [SRC-AFEDC2645A-L000787](../../tests/test_task_understanding.py#L787) | 787 | `""` | — |
-| [SRC-AFEDC2645A-L000788](../../tests/test_task_understanding.py#L788) | 788 | `""` | — |
-| [SRC-AFEDC2645A-L000789](../../tests/test_task_understanding.py#L789) | 789 | `"@pytest.mark.parametrize("` | — |
-| [SRC-AFEDC2645A-L000790](../../tests/test_task_understanding.py#L790) | 790 | `"    (\"seed_query\", \"expected_source_phrase\"),"` | — |
-| [SRC-AFEDC2645A-L000791](../../tests/test_task_understanding.py#L791) | 791 | `"    ["` | — |
-| [SRC-AFEDC2645A-L000792](../../tests/test_task_understanding.py#L792) | 792 | `"        (\"ما سعر iPhone 17 باليورو؟\", \"مصدر رسمي\"),"` | — |
-| [SRC-AFEDC2645A-L000793](../../tests/test_task_understanding.py#L793) | 793 | `"        (\"iPhone 17 price in euros\", \"official source\"),"` | — |
-| [SRC-AFEDC2645A-L000794](../../tests/test_task_understanding.py#L794) | 794 | `"    ],"` | — |
-| [SRC-AFEDC2645A-L000795](../../tests/test_task_understanding.py#L795) | 795 | `")"` | — |
-| [SRC-AFEDC2645A-L000796](../../tests/test_task_understanding.py#L796) | 796 | `"def test_short_contextual_followup_adds_source_angle_in_seed_language("` | — |
-| [SRC-AFEDC2645A-L000797](../../tests/test_task_understanding.py#L797) | 797 | `"    seed_query, expected_source_phrase"` | — |
-| [SRC-AFEDC2645A-L000798](../../tests/test_task_understanding.py#L798) | 798 | `"):"` | — |
-| [SRC-AFEDC2645A-L000799](../../tests/test_task_understanding.py#L799) | 799 | `"    question = \"سعره؟\""` | — |
-| [SRC-AFEDC2645A-L000800](../../tests/test_task_understanding.py#L800) | 800 | `"    context = {"` | — |
-| [SRC-AFEDC2645A-L000801](../../tests/test_task_understanding.py#L801) | 801 | `"        \"resolved_question\": \"ما سعر iPhone 17 باليورو؟\","` | — |
-| [SRC-AFEDC2645A-L000802](../../tests/test_task_understanding.py#L802) | 802 | `"        \"topic\": \"سعر iPhone 17\","` | — |
-| [SRC-AFEDC2645A-L000803](../../tests/test_task_understanding.py#L803) | 803 | `"        \"entities\": [\"iPhone 17\"],"` | — |
-| [SRC-AFEDC2645A-L000804](../../tests/test_task_understanding.py#L804) | 804 | `"        \"slots\": {\"product\": \"iPhone 17\", \"currency\": \"اليورو\"},"` | — |
-| [SRC-AFEDC2645A-L000805](../../tests/test_task_understanding.py#L805) | 805 | `"        \"changed_slots\": [\"currency\"],"` | — |
-| [SRC-AFEDC2645A-L000806](../../tests/test_task_understanding.py#L806) | 806 | `"        \"is_follow_up\": True,"` | — |
-| [SRC-AFEDC2645A-L000807](../../tests/test_task_understanding.py#L807) | 807 | `"        \"topic_shift\": False,"` | — |

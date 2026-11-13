@@ -4,7 +4,7 @@
 
 - الصفحة: **005**
 - سجلات الأسطر: **800**
-- النطاق: SRC-C9CF9B54F8-L000604 إلى SRC-FDEEAFDFCA-L000027
+- النطاق: SRC-C9CF9B54F8-L000600 إلى SRC-FDEEAFDFCA-L000023
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-C9CF9B54F8-L000600](../../agents/omarai.py#L600) | 600 | `"        with self.connect() as db:"` | — |
+| [SRC-C9CF9B54F8-L000601](../../agents/omarai.py#L601) | 601 | `"            row = db.execute("` | — |
+| [SRC-C9CF9B54F8-L000602](../../agents/omarai.py#L602) | 602 | `"                \"\"\"SELECT m.tenant_id, m.user_id, m.role"` | — |
+| [SRC-C9CF9B54F8-L000603](../../agents/omarai.py#L603) | 603 | `"                   FROM tenant_memberships m"` | — |
 | [SRC-C9CF9B54F8-L000604](../../agents/omarai.py#L604) | 604 | `"                   JOIN tenants t ON t.id=m.tenant_id AND t.active=1"` | — |
 | [SRC-C9CF9B54F8-L000605](../../agents/omarai.py#L605) | 605 | `"                   JOIN users u ON u.id=m.user_id AND u.active=1"` | — |
 | [SRC-C9CF9B54F8-L000606](../../agents/omarai.py#L606) | 606 | `"                   WHERE m.tenant_id=? AND m.user_id=? AND m.active=1\"\"\","` | — |
@@ -821,7 +825,3 @@
 | [SRC-FDEEAFDFCA-L000021](../../agents/request_budget.py#L21) | 21 | `"DEFAULT_TIMEOUT_SECONDS = 90"` | — |
 | [SRC-FDEEAFDFCA-L000022](../../agents/request_budget.py#L22) | 22 | `"MAX_TIMEOUT_SECONDS = 120"` | — |
 | [SRC-FDEEAFDFCA-L000023](../../agents/request_budget.py#L23) | 23 | `"RESOURCE_LIMITS = {"` | — |
-| [SRC-FDEEAFDFCA-L000024](../../agents/request_budget.py#L24) | 24 | `"    \"search_queries\": (8, 8),"` | — |
-| [SRC-FDEEAFDFCA-L000025](../../agents/request_budget.py#L25) | 25 | `"    \"search_calls\": (32, 40),"` | — |
-| [SRC-FDEEAFDFCA-L000026](../../agents/request_budget.py#L26) | 26 | `"    \"model_calls\": (8, 12),"` | — |
-| [SRC-FDEEAFDFCA-L000027](../../agents/request_budget.py#L27) | 27 | `"    \"page_fetches\": (8, 8),"` | — |

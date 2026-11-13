@@ -4,7 +4,7 @@
 
 - الصفحة: **003**
 - سجلات الأسطر: **800**
-- النطاق: SRC-7D6FC391EC-L000235 إلى SRC-5587371288-L000407
+- النطاق: SRC-7D6FC391EC-L000231 إلى SRC-5587371288-L000403
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-7D6FC391EC-L000231](../../agents/claim_evidence.py#L231) | 231 | `"        uncited += not bool(raw_indexes)"` | — |
+| [SRC-7D6FC391EC-L000232](../../agents/claim_evidence.py#L232) | 232 | `"        readable_cited += bool(raw_indexes) and has_readable"` | — |
+| [SRC-7D6FC391EC-L000233](../../agents/claim_evidence.py#L233) | 233 | `"        alignment = alignment_by_sentence.get(number, {})"` | — |
+| [SRC-7D6FC391EC-L000234](../../agents/claim_evidence.py#L234) | 234 | `"        lexical_status = str(alignment.get(\"status\") or \"not_assessed_no_citation_alignment\")"` | — |
 | [SRC-7D6FC391EC-L000235](../../agents/claim_evidence.py#L235) | 235 | `"        lexical_signals += lexical_status == \"lexical_overlap_signal_found\""` | — |
 | [SRC-7D6FC391EC-L000236](../../agents/claim_evidence.py#L236) | 236 | `"        weak_signals += lexical_status == \"weak_lexical_overlap\""` | — |
 | [SRC-7D6FC391EC-L000237](../../agents/claim_evidence.py#L237) | 237 | `"        if any(ref[\"reference_status\"] == \"index_out_of_citable_range\" for ref in refs):"` | — |
@@ -830,7 +834,3 @@
 | [SRC-5587371288-L000401](../../agents/intent_router.py#L401) | 401 | `"        \"استشهد بمصادر\", \"وثق الاجابة\", \"وثق الإجابة\", \"المراجع\","` | — |
 | [SRC-5587371288-L000402](../../agents/intent_router.py#L402) | 402 | `"        \"with sources\", \"cite sources\", \"trusted sources\", \"reliable sources\","` | — |
 | [SRC-5587371288-L000403](../../agents/intent_router.py#L403) | 403 | `"        \"official sources\", \"include references\", \"with citations\","` | — |
-| [SRC-5587371288-L000404](../../agents/intent_router.py#L404) | 404 | `"        \"source-backed\", \"cite your sources\","` | — |
-| [SRC-5587371288-L000405](../../agents/intent_router.py#L405) | 405 | `"    )"` | — |
-| [SRC-5587371288-L000406](../../agents/intent_router.py#L406) | 406 | `"    return any(_normalize(marker) in normalized for marker in markers)"` | — |
-| [SRC-5587371288-L000407](../../agents/intent_router.py#L407) | 407 | `""` | — |

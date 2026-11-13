@@ -3,8 +3,8 @@
 <!-- ملف مولّد آليًا بواسطة docs/generate_index.py؛ لا تعدّله يدويًا. -->
 
 - الصفحة: **069**
-- سجلات الأسطر: **799**
-- النطاق: SRC-2C8F288796-L000295 إلى SRC-2C8F288796-L001093
+- سجلات الأسطر: **800**
+- النطاق: SRC-2C8F288796-L000229 إلى SRC-2C8F288796-L001028
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## واجهة الويب
@@ -16,6 +16,72 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-2C8F288796-L000229](../../web/workspace.html#L229) | 229 | `"@media(max-width:520px){"` | — |
+| [SRC-2C8F288796-L000230](../../web/workspace.html#L230) | 230 | `" .indicator-hero{align-items:flex-start;flex-direction:column}"` | — |
+| [SRC-2C8F288796-L000231](../../web/workspace.html#L231) | 231 | `" .indicator-ring{width:112px;height:112px;flex-basis:112px;align-self:center}"` | — |
+| [SRC-2C8F288796-L000232](../../web/workspace.html#L232) | 232 | `" .indicator-ring-value{font-size:24px}"` | — |
+| [SRC-2C8F288796-L000233](../../web/workspace.html#L233) | 233 | `" .indicator-grid{gap:8px}"` | — |
+| [SRC-2C8F288796-L000234](../../web/workspace.html#L234) | 234 | `" .indicator-grid .stat{min-height:94px;padding:12px}"` | — |
+| [SRC-2C8F288796-L000235](../../web/workspace.html#L235) | 235 | `" .indicator-row{grid-template-columns:86px minmax(0,1fr) 26px;gap:7px;font-size:10px}"` | — |
+| [SRC-2C8F288796-L000236](../../web/workspace.html#L236) | 236 | `" .indicator-summary{grid-template-columns:1fr 1fr}"` | — |
+| [SRC-2C8F288796-L000237](../../web/workspace.html#L237) | 237 | `"}"` | — |
+| [SRC-2C8F288796-L000238](../../web/workspace.html#L238) | 238 | `"@media(max-width:360px){.indicator-summary{grid-template-columns:1fr}.indicator-row{grid-template-columns:76px minmax(0,1fr) 24px}}"` | — |
+| [SRC-2C8F288796-L000239](../../web/workspace.html#L239) | 239 | `""` | — |
+| [SRC-2C8F288796-L000240](../../web/workspace.html#L240) | 240 | `".chat-panel{display:flex;flex-direction:column;gap:12px}.chat-modes{display:flex;gap:8px;flex-wrap:wrap}.chat-mode-active{border-color:var(--teal);color:#fff}"` | — |
+| [SRC-2C8F288796-L000241](../../web/workspace.html#L241) | 241 | `".chat-list{display:flex;flex-direction:column;gap:12px;min-height:320px;max-height:calc(100vh - 430px);overflow:auto;padding:4px}"` | — |
+| [SRC-2C8F288796-L000242](../../web/workspace.html#L242) | 242 | `".chat-empty{color:var(--muted);font-size:12px;line-height:1.9;text-align:center;margin:auto;padding:24px;border:1px dashed rgba(145,174,211,.28);border-radius:14px}"` | — |
+| [SRC-2C8F288796-L000243](../../web/workspace.html#L243) | 243 | `".chat-msg{max-width:88%;padding:12px 14px;border-radius:14px;border:1px solid rgba(145,174,211,.22);background:rgba(7,16,29,.62)}.chat-user{align-self:flex-start;border-color:rgba(57,207,255,.35)}.chat-assistant{align-self:flex-end}"` | — |
+| [SRC-2C8F288796-L000244](../../web/workspace.html#L244) | 244 | `".chat-who{font-size:10px;color:var(--muted);margin-bottom:6px}.chat-text{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;line-height:1.9}"` | — |
+| [SRC-2C8F288796-L000245](../../web/workspace.html#L245) | 245 | `".chat-sources{margin:6px 0 0;padding:0 18px;font-size:11px;line-height:1.9}.chat-sources a{color:var(--teal)}.chat-citation{color:var(--teal);text-decoration:underline;text-underline-offset:2px}.chat-note{margin-top:8px;font-size:10px;color:var(--muted)}"` | — |
+| [SRC-2C8F288796-L000246](../../web/workspace.html#L246) | 246 | `".chat-form{display:flex;gap:9px;align-items:flex-end}.chat-form textarea{flex:1;min-height:52px;max-height:160px}"` | — |
+| [SRC-2C8F288796-L000247](../../web/workspace.html#L247) | 247 | `"@media(max-width:740px){.chat-msg{max-width:100%}.chat-list{max-height:none}}"` | — |
+| [SRC-2C8F288796-L000248](../../web/workspace.html#L248) | 248 | `"</style>"` | — |
+| [SRC-2C8F288796-L000249](../../web/workspace.html#L249) | 249 | `"</head>"` | — |
+| [SRC-2C8F288796-L000250](../../web/workspace.html#L250) | 250 | `"<body>"` | — |
+| [SRC-2C8F288796-L000251](../../web/workspace.html#L251) | 251 | `"<div class=\"app\">"` | — |
+| [SRC-2C8F288796-L000252](../../web/workspace.html#L252) | 252 | `"<aside class=\"sidebar\">"` | — |
+| [SRC-2C8F288796-L000253](../../web/workspace.html#L253) | 253 | `"  <div class=\"brand\"><div class=\"logo\">O</div><div><div class=\"brand-name\">Omarai</div><div class=\"brand-sub\">ذكاء المبيعات واكتساب العملاء</div></div></div>"` | — |
+| [SRC-2C8F288796-L000254](../../web/workspace.html#L254) | 254 | `"  <div class=\"workspace-label\">مساحة العمل</div>"` | — |
+| [SRC-2C8F288796-L000255](../../web/workspace.html#L255) | 255 | `"  <nav class=\"nav\" id=\"mainNav\" aria-label=\"التنقل الرئيسي\"></nav>"` | — |
+| [SRC-2C8F288796-L000256](../../web/workspace.html#L256) | 256 | `"  <div class=\"side-bottom\">"` | — |
+| [SRC-2C8F288796-L000257](../../web/workspace.html#L257) | 257 | `"    <div class=\"connection\"><div class=\"connection-title\"><span class=\"dot\" id=\"apiDot\"></span><span id=\"apiStatus\">التحقق من الخادم</span></div><small id=\"apiStatusNote\">حالة الخادم لا تعني أن موصلات البحث الخارجية تعمل.</small></div>"` | — |
+| [SRC-2C8F288796-L000258](../../web/workspace.html#L258) | 258 | `"    <div class=\"connection\"><div class=\"connection-title\">الهوية والصلاحيات</div><small id=\"roleSummary\">لم يتم التحقق من جلسة المستخدم بعد.</small></div>"` | — |
+| [SRC-2C8F288796-L000259](../../web/workspace.html#L259) | 259 | `"    <div class=\"side-links\"><button class=\"side-link-button\" id=\"chatNav\" type=\"button\">محادثة Omarai</button><button class=\"side-link-button\" id=\"systemNav\" type=\"button\">حالة النظام</button><a href=\"/agent\">وكيل البحث</a></div>"` | — |
+| [SRC-2C8F288796-L000260](../../web/workspace.html#L260) | 260 | `"  </div>"` | — |
+| [SRC-2C8F288796-L000261](../../web/workspace.html#L261) | 261 | `"</aside>"` | — |
+| [SRC-2C8F288796-L000262](../../web/workspace.html#L262) | 262 | `"<main class=\"main\">"` | — |
+| [SRC-2C8F288796-L000263](../../web/workspace.html#L263) | 263 | `"  <header class=\"topbar\">"` | — |
+| [SRC-2C8F288796-L000264](../../web/workspace.html#L264) | 264 | `"    <div class=\"breadcrumb\">Omarai <span aria-hidden=\"true\">/</span> <strong id=\"crumb\">نظرة عامة</strong></div>"` | — |
+| [SRC-2C8F288796-L000265](../../web/workspace.html#L265) | 265 | `"    <div class=\"top-actions\"><span class=\"role-pill\" id=\"rolePill\">التحقق من الجلسة…</span><button class=\"button ghost\" id=\"logoutButton\" type=\"button\">تسجيل الخروج</button><button class=\"button primary\" id=\"addSignalTop\" type=\"button\">＋ إشارة جديدة</button></div>"` | — |
+| [SRC-2C8F288796-L000266](../../web/workspace.html#L266) | 266 | `"  </header>"` | — |
+| [SRC-2C8F288796-L000267](../../web/workspace.html#L267) | 267 | `"  <section class=\"page-head\"><div><div class=\"eyebrow\" id=\"pageEyebrow\">SALES INTELLIGENCE WORKSPACE</div><h1 id=\"pageTitle\">حوّل إشارات الطلب إلى فرص قابلة للمراجعة</h1><p id=\"pageDescription\">مساحة عمل عربية لإدارة إشارات الطلب والأدلة والمتابعة. الأرقام هنا تُقرأ من سجل Omarai الفعلي، ولا تُعرض بيانات تجريبية على أنها فرص حقيقية.</p></div></section>"` | — |
+| [SRC-2C8F288796-L000268](../../web/workspace.html#L268) | 268 | `"  <div id=\"viewRoot\" aria-live=\"polite\"><div class=\"glass panel empty\"><strong>جارٍ تحميل مساحة العمل</strong>يتم التحقق من الجلسة ثم قراءة بياناتك المصرح بها.</div></div>"` | — |
+| [SRC-2C8F288796-L000269](../../web/workspace.html#L269) | 269 | `"  <footer class=\"footer\">Omarai · تُعرض الإشارات من السجل المرتبط بمساحة العمل المصادق عليها. درجات القواعد ليست احتمالات شراء. البحث الخارجي واستهلاك حصص الموصلات لا يبدأان تلقائيًا من هذه الشاشة.</footer>"` | — |
+| [SRC-2C8F288796-L000270](../../web/workspace.html#L270) | 270 | `"</main>"` | — |
+| [SRC-2C8F288796-L000271](../../web/workspace.html#L271) | 271 | `"</div>"` | — |
+| [SRC-2C8F288796-L000272](../../web/workspace.html#L272) | 272 | `""` | — |
+| [SRC-2C8F288796-L000273](../../web/workspace.html#L273) | 273 | `"<div class=\"detail\" id=\"detailDrawer\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"detailTitle\">"` | — |
+| [SRC-2C8F288796-L000274](../../web/workspace.html#L274) | 274 | `"  <section class=\"detail-panel\"><div class=\"detail-head\"><h2 id=\"detailTitle\">تفاصيل الإشارة</h2><button class=\"button ghost\" id=\"closeDetail\" type=\"button\">إغلاق ✕</button></div><div class=\"detail-body\" id=\"detailBody\"></div></section>"` | — |
+| [SRC-2C8F288796-L000275](../../web/workspace.html#L275) | 275 | `"</div>"` | — |
+| [SRC-2C8F288796-L000276](../../web/workspace.html#L276) | 276 | `"<div class=\"auth-gate open\" id=\"authGate\">"` | — |
+| [SRC-2C8F288796-L000277](../../web/workspace.html#L277) | 277 | `"  <section class=\"auth-card glass\">"` | — |
+| [SRC-2C8F288796-L000278](../../web/workspace.html#L278) | 278 | `"    <div class=\"eyebrow\">OMARAI SECURE WORKSPACE</div>"` | — |
+| [SRC-2C8F288796-L000279](../../web/workspace.html#L279) | 279 | `"    <h2>تسجيل الدخول إلى مساحة العمل</h2>"` | — |
+| [SRC-2C8F288796-L000280](../../web/workspace.html#L280) | 280 | `"    <p>تستخدم هذه الصفحة جلسة الخادم الآمنة HttpOnly. رمز الوصول لا يُحفظ في Local Storage أو Session Storage، ويُمسح من حقل الإدخال بعد نجاح الدخول.</p>"` | — |
+| [SRC-2C8F288796-L000281](../../web/workspace.html#L281) | 281 | `"    <form id=\"loginForm\">"` | — |
+| [SRC-2C8F288796-L000282](../../web/workspace.html#L282) | 282 | `"      <div class=\"field\"><label for=\"accessToken\">رمز الوصول الخاص بالتطبيق</label><input id=\"accessToken\" type=\"password\" autocomplete=\"current-password\" required minlength=\"32\" placeholder=\"أدخل رمز الوصول\"></div>"` | — |
+| [SRC-2C8F288796-L000283](../../web/workspace.html#L283) | 283 | `"      <button class=\"button primary\" type=\"submit\" id=\"loginButton\">تسجيل الدخول</button>"` | — |
+| [SRC-2C8F288796-L000284](../../web/workspace.html#L284) | 284 | `"      <div class=\"auth-error\" id=\"authError\" role=\"alert\"></div>"` | — |
+| [SRC-2C8F288796-L000285](../../web/workspace.html#L285) | 285 | `"    </form>"` | — |
+| [SRC-2C8F288796-L000286](../../web/workspace.html#L286) | 286 | `"    <p>لا تدخل مفاتيح موفر البحث أو كلمات مرور خارجية في هذا الحقل.</p>"` | — |
+| [SRC-2C8F288796-L000287](../../web/workspace.html#L287) | 287 | `"  </section>"` | — |
+| [SRC-2C8F288796-L000288](../../web/workspace.html#L288) | 288 | `"</div>"` | — |
+| [SRC-2C8F288796-L000289](../../web/workspace.html#L289) | 289 | `""` | — |
+| [SRC-2C8F288796-L000290](../../web/workspace.html#L290) | 290 | `"<script>"` | — |
+| [SRC-2C8F288796-L000291](../../web/workspace.html#L291) | 291 | `"(function(){"` | — |
+| [SRC-2C8F288796-L000292](../../web/workspace.html#L292) | 292 | `"\"use strict\";"` | — |
+| [SRC-2C8F288796-L000293](../../web/workspace.html#L293) | 293 | `"const $=id=>document.getElementById(id);"` | — |
+| [SRC-2C8F288796-L000294](../../web/workspace.html#L294) | 294 | `"const state={authSessionVersion:0,role:null,leads:[],profiles:[],discoveryRuns:[],loadWarnings:[],activeDiscovery:null,activeProfileId:null,activeView:\"overview\",chat:{messages:[],history:[],busy:false,mode:\"deep\",sessionVersion:0},analysis:null,filtered:[],search:\"\",filter:\"all\"};"` | — |
 | [SRC-2C8F288796-L000295](../../web/workspace.html#L295) | 295 | `"const statuses=["` | — |
 | [SRC-2C8F288796-L000296](../../web/workspace.html#L296) | 296 | `" {id:\"new\",label:\"جديد\"},"` | — |
 | [SRC-2C8F288796-L000297](../../web/workspace.html#L297) | 297 | `" {id:\"needs_review\",label:\"يحتاج مراجعة\"},"` | — |
@@ -750,68 +816,3 @@
 | [SRC-2C8F288796-L001026](../../web/workspace.html#L1026) | 1026 | `"async function bootstrap(){"` | — |
 | [SRC-2C8F288796-L001027](../../web/workspace.html#L1027) | 1027 | `" let session;"` | — |
 | [SRC-2C8F288796-L001028](../../web/workspace.html#L1028) | 1028 | `" try{"` | — |
-| [SRC-2C8F288796-L001029](../../web/workspace.html#L1029) | 1029 | `"  session=await api(\"/api/session\");"` | — |
-| [SRC-2C8F288796-L001030](../../web/workspace.html#L1030) | 1030 | `" }catch(e){"` | — |
-| [SRC-2C8F288796-L001031](../../web/workspace.html#L1031) | 1031 | `"  setConnection(false,\"يلزم تسجيل الدخول\",\"تعذر التحقق من جلسة المستخدم.\");"` | — |
-| [SRC-2C8F288796-L001032](../../web/workspace.html#L1032) | 1032 | `"  showAuth(e.message);"` | — |
-| [SRC-2C8F288796-L001033](../../web/workspace.html#L1033) | 1033 | `"  $(\"viewRoot\").replaceChildren(emptyState(\"مساحة العمل مقفلة\",\"سجّل الدخول لقراءة البيانات المرتبطة بمساحة العمل.\"));"` | — |
-| [SRC-2C8F288796-L001034](../../web/workspace.html#L1034) | 1034 | `"  return;"` | — |
-| [SRC-2C8F288796-L001035](../../web/workspace.html#L1035) | 1035 | `" }"` | — |
-| [SRC-2C8F288796-L001036](../../web/workspace.html#L1036) | 1036 | `" state.role=session.role\|\|\"unknown\";"` | — |
-| [SRC-2C8F288796-L001037](../../web/workspace.html#L1037) | 1037 | `" $(\"rolePill\").textContent=\"صلاحية: \"+state.role;"` | — |
-| [SRC-2C8F288796-L001038](../../web/workspace.html#L1038) | 1038 | `" $(\"roleSummary\").textContent=\"الدور: \"+state.role+(canWrite()?\" — إضافة وتحديث السجلات متاح.\":\" — قراءة فقط.\");"` | — |
-| [SRC-2C8F288796-L001039](../../web/workspace.html#L1039) | 1039 | `" hideAuth();"` | — |
-| [SRC-2C8F288796-L001040](../../web/workspace.html#L1040) | 1040 | `" const results=await Promise.allSettled(["` | — |
-| [SRC-2C8F288796-L001041](../../web/workspace.html#L1041) | 1041 | `"  loadLeads(),"` | — |
-| [SRC-2C8F288796-L001042](../../web/workspace.html#L1042) | 1042 | `"  loadProductProfiles(),"` | — |
-| [SRC-2C8F288796-L001043](../../web/workspace.html#L1043) | 1043 | `"  loadDiscoveryRuns()"` | — |
-| [SRC-2C8F288796-L001044](../../web/workspace.html#L1044) | 1044 | `" ]);"` | — |
-| [SRC-2C8F288796-L001045](../../web/workspace.html#L1045) | 1045 | `" if($(\"authGate\").classList.contains(\"open\")){"` | — |
-| [SRC-2C8F288796-L001046](../../web/workspace.html#L1046) | 1046 | `"  setConnection(false,\"يلزم تسجيل الدخول\",\"انتهت الجلسة أثناء تحميل البيانات.\");"` | — |
-| [SRC-2C8F288796-L001047](../../web/workspace.html#L1047) | 1047 | `"  $(\"viewRoot\").replaceChildren(emptyState(\"مساحة العمل مقفلة\",\"سجّل الدخول لقراءة البيانات المرتبطة بمساحة العمل.\"));"` | — |
-| [SRC-2C8F288796-L001048](../../web/workspace.html#L1048) | 1048 | `"  return;"` | — |
-| [SRC-2C8F288796-L001049](../../web/workspace.html#L1049) | 1049 | `" }"` | — |
-| [SRC-2C8F288796-L001050](../../web/workspace.html#L1050) | 1050 | `" state.loadWarnings=[];"` | — |
-| [SRC-2C8F288796-L001051](../../web/workspace.html#L1051) | 1051 | `" const labels=[\"سجل الإشارات\",\"ملفات المنتجات\",\"سجل الاكتشاف\"];"` | — |
-| [SRC-2C8F288796-L001052](../../web/workspace.html#L1052) | 1052 | `" results.forEach((result,index)=>{"` | — |
-| [SRC-2C8F288796-L001053](../../web/workspace.html#L1053) | 1053 | `"  if(result.status!==\"rejected\")return;"` | — |
-| [SRC-2C8F288796-L001054](../../web/workspace.html#L1054) | 1054 | `"  state.loadWarnings.push(labels[index]);"` | — |
-| [SRC-2C8F288796-L001055](../../web/workspace.html#L1055) | 1055 | `"  if(index===0)state.leads=[];"` | — |
-| [SRC-2C8F288796-L001056](../../web/workspace.html#L1056) | 1056 | `"  else if(index===1)state.profiles=[];"` | — |
-| [SRC-2C8F288796-L001057](../../web/workspace.html#L1057) | 1057 | `"  else state.discoveryRuns=[];"` | — |
-| [SRC-2C8F288796-L001058](../../web/workspace.html#L1058) | 1058 | `" });"` | — |
-| [SRC-2C8F288796-L001059](../../web/workspace.html#L1059) | 1059 | `" const note=state.loadWarnings.length"` | — |
-| [SRC-2C8F288796-L001060](../../web/workspace.html#L1060) | 1060 | `"  ?\"الجلسة مصادق عليها؛ تعذر تحميل بعض البيانات: \"+state.loadWarnings.join(\"، \")+\". حاول تحديث الوحدة لاحقًا.\""` | — |
-| [SRC-2C8F288796-L001061](../../web/workspace.html#L1061) | 1061 | `"  :\"تم تحميل الإشارات وملفات المنتج وسجل الاكتشاف. هذا لا يثبت اتصال جميع الموصلات.\";"` | — |
-| [SRC-2C8F288796-L001062](../../web/workspace.html#L1062) | 1062 | `" setConnection(true,state.loadWarnings.length?\"الجلسة مصادق عليها — بيانات جزئية\":\"الجلسة مصادق عليها\",note);"` | — |
-| [SRC-2C8F288796-L001063](../../web/workspace.html#L1063) | 1063 | `" renderCurrent();"` | — |
-| [SRC-2C8F288796-L001064](../../web/workspace.html#L1064) | 1064 | `"}"` | — |
-| [SRC-2C8F288796-L001065](../../web/workspace.html#L1065) | 1065 | `"$(\"loginForm\").addEventListener(\"submit\",async event=>{"` | — |
-| [SRC-2C8F288796-L001066](../../web/workspace.html#L1066) | 1066 | `" event.preventDefault();const token=$(\"accessToken\").value.trim();const button=$(\"loginButton\");button.disabled=true;$(\"authError\").textContent=\"\";"` | — |
-| [SRC-2C8F288796-L001067](../../web/workspace.html#L1067) | 1067 | `" try{"` | — |
-| [SRC-2C8F288796-L001068](../../web/workspace.html#L1068) | 1068 | `"  await api(\"/api/session\",{method:\"POST\",body:{access_token:token}});"` | — |
-| [SRC-2C8F288796-L001069](../../web/workspace.html#L1069) | 1069 | `"  advanceWorkspaceSessionVersion();clearChatSession();"` | — |
-| [SRC-2C8F288796-L001070](../../web/workspace.html#L1070) | 1070 | `"  $(\"accessToken\").value=\"\";await bootstrap();"` | — |
-| [SRC-2C8F288796-L001071](../../web/workspace.html#L1071) | 1071 | `" }catch(e){$(\"authError\").textContent=escapeMessage(e.message)}"` | — |
-| [SRC-2C8F288796-L001072](../../web/workspace.html#L1072) | 1072 | `" finally{button.disabled=false}"` | — |
-| [SRC-2C8F288796-L001073](../../web/workspace.html#L1073) | 1073 | `"});"` | — |
-| [SRC-2C8F288796-L001074](../../web/workspace.html#L1074) | 1074 | `"$(\"logoutButton\").addEventListener(\"click\",async()=>{"` | — |
-| [SRC-2C8F288796-L001075](../../web/workspace.html#L1075) | 1075 | `" try{"` | — |
-| [SRC-2C8F288796-L001076](../../web/workspace.html#L1076) | 1076 | `"  await api(\"/api/session/logout\",{method:\"POST\",body:{}});"` | — |
-| [SRC-2C8F288796-L001077](../../web/workspace.html#L1077) | 1077 | `" }catch(e){"` | — |
-| [SRC-2C8F288796-L001078](../../web/workspace.html#L1078) | 1078 | `"  alert(\"تعذر تسجيل الخروج من الخادم؛ لم يتم تغيير حالة الجلسة في الواجهة. \"+escapeMessage(e.message));"` | — |
-| [SRC-2C8F288796-L001079](../../web/workspace.html#L1079) | 1079 | `"  return;"` | — |
-| [SRC-2C8F288796-L001080](../../web/workspace.html#L1080) | 1080 | `" }"` | — |
-| [SRC-2C8F288796-L001081](../../web/workspace.html#L1081) | 1081 | `" state.role=null;state.leads=[];state.profiles=[];state.discoveryRuns=[];state.loadWarnings=[];state.activeDiscovery=null;state.activeProfileId=null;state.activeView=\"overview\";showAuth(\"تم تسجيل الخروج. أدخل رمز الوصول للمتابعة.\");setConnection(false,\"غير متصل\",\"سجّل الدخول لعرض السجلات.\");"` | — |
-| [SRC-2C8F288796-L001082](../../web/workspace.html#L1082) | 1082 | `"});"` | — |
-| [SRC-2C8F288796-L001083](../../web/workspace.html#L1083) | 1083 | `"$(\"addSignalTop\").addEventListener(\"click\",()=>navigate(\"signals\"));"` | — |
-| [SRC-2C8F288796-L001084](../../web/workspace.html#L1084) | 1084 | `"$(\"closeDetail\").addEventListener(\"click\",closeDetails);"` | — |
-| [SRC-2C8F288796-L001085](../../web/workspace.html#L1085) | 1085 | `"$(\"chatNav\").addEventListener(\"click\",()=>navigate(\"chat\"));"` | — |
-| [SRC-2C8F288796-L001086](../../web/workspace.html#L1086) | 1086 | `"$(\"systemNav\").addEventListener(\"click\",()=>navigate(\"system\"));"` | — |
-| [SRC-2C8F288796-L001087](../../web/workspace.html#L1087) | 1087 | `"$(\"detailDrawer\").addEventListener(\"click\",e=>{if(e.target===$(\"detailDrawer\"))closeDetails()});"` | — |
-| [SRC-2C8F288796-L001088](../../web/workspace.html#L1088) | 1088 | `"document.addEventListener(\"keydown\",e=>{if(e.key===\"Escape\")closeDetails()});"` | — |
-| [SRC-2C8F288796-L001089](../../web/workspace.html#L1089) | 1089 | `"renderNav();bootstrap();"` | — |
-| [SRC-2C8F288796-L001090](../../web/workspace.html#L1090) | 1090 | `"})();"` | — |
-| [SRC-2C8F288796-L001091](../../web/workspace.html#L1091) | 1091 | `"</script>"` | — |
-| [SRC-2C8F288796-L001092](../../web/workspace.html#L1092) | 1092 | `"</body>"` | — |
-| [SRC-2C8F288796-L001093](../../web/workspace.html#L1093) | 1093 | `"</html>"` | — |

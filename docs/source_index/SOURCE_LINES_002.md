@@ -4,7 +4,7 @@
 
 - الصفحة: **002**
 - سجلات الأسطر: **800**
-- النطاق: SRC-138992B1FC-L000239 إلى SRC-7D6FC391EC-L000234
+- النطاق: SRC-138992B1FC-L000235 إلى SRC-7D6FC391EC-L000230
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-138992B1FC-L000235](../../agents/answer_validation.py#L235) | 235 | `"        )"` | — |
+| [SRC-138992B1FC-L000236](../../agents/answer_validation.py#L236) | 236 | `"        # A page_text field is not evidence of a successful read unless the"` | — |
+| [SRC-138992B1FC-L000237](../../agents/answer_validation.py#L237) | 237 | `"        # fetch boundary explicitly confirms page_fetched."` | — |
+| [SRC-138992B1FC-L000238](../../agents/answer_validation.py#L238) | 238 | `"        # Publication timestamps are source metadata, not evidence for unrelated"` | — |
 | [SRC-138992B1FC-L000239](../../agents/answer_validation.py#L239) | 239 | `"        # numeric claims in the cited content."` | — |
 | [SRC-138992B1FC-L000240](../../agents/answer_validation.py#L240) | 240 | `"        source_text = \" \".join("` | — |
 | [SRC-138992B1FC-L000241](../../agents/answer_validation.py#L241) | 241 | `"            part for part in (title, snippet, fetched_page_text) if part"` | — |
@@ -830,7 +834,3 @@
 | [SRC-7D6FC391EC-L000228](../../agents/claim_evidence.py#L228) | 228 | `"            })"` | — |
 | [SRC-7D6FC391EC-L000229](../../agents/claim_evidence.py#L229) | 229 | `""` | — |
 | [SRC-7D6FC391EC-L000230](../../agents/claim_evidence.py#L230) | 230 | `"        cited += bool(raw_indexes)"` | — |
-| [SRC-7D6FC391EC-L000231](../../agents/claim_evidence.py#L231) | 231 | `"        uncited += not bool(raw_indexes)"` | — |
-| [SRC-7D6FC391EC-L000232](../../agents/claim_evidence.py#L232) | 232 | `"        readable_cited += bool(raw_indexes) and has_readable"` | — |
-| [SRC-7D6FC391EC-L000233](../../agents/claim_evidence.py#L233) | 233 | `"        alignment = alignment_by_sentence.get(number, {})"` | — |
-| [SRC-7D6FC391EC-L000234](../../agents/claim_evidence.py#L234) | 234 | `"        lexical_status = str(alignment.get(\"status\") or \"not_assessed_no_citation_alignment\")"` | — |

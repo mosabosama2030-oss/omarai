@@ -4,7 +4,7 @@
 
 - الصفحة: **067**
 - سجلات الأسطر: **800**
-- النطاق: SRC-F725E90B2A-L004410 إلى SRC-DE7EABE998-L000097
+- النطاق: SRC-F725E90B2A-L004344 إلى SRC-DE7EABE998-L000031
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,72 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-F725E90B2A-L004344](../../tests/test_web_agent.py#L4344) | 4344 | `"    system_content = \"\\n\".join("` | — |
+| [SRC-F725E90B2A-L004345](../../tests/test_web_agent.py#L4345) | 4345 | `"        message[\"content\"] for message in messages if message[\"role\"] == \"system\""` | — |
+| [SRC-F725E90B2A-L004346](../../tests/test_web_agent.py#L4346) | 4346 | `"    )"` | — |
+| [SRC-F725E90B2A-L004347](../../tests/test_web_agent.py#L4347) | 4347 | `"    user_contents = ["` | — |
+| [SRC-F725E90B2A-L004348](../../tests/test_web_agent.py#L4348) | 4348 | `"        message[\"content\"] for message in messages if message[\"role\"] == \"user\""` | — |
+| [SRC-F725E90B2A-L004349](../../tests/test_web_agent.py#L4349) | 4349 | `"    ]"` | — |
+| [SRC-F725E90B2A-L004350](../../tests/test_web_agent.py#L4350) | 4350 | `""` | — |
+| [SRC-F725E90B2A-L004351](../../tests/test_web_agent.py#L4351) | 4351 | `"    assert answer == \"تم تدقيق الإجابة.\""` | — |
+| [SRC-F725E90B2A-L004352](../../tests/test_web_agent.py#L4352) | 4352 | `"    assert injected_text not in system_content"` | — |
+| [SRC-F725E90B2A-L004353](../../tests/test_web_agent.py#L4353) | 4353 | `"    assert any(injected_text in value for value in user_contents)"` | — |
+| [SRC-F725E90B2A-L004354](../../tests/test_web_agent.py#L4354) | 4354 | `""` | — |
+| [SRC-F725E90B2A-L004355](../../tests/test_web_agent.py#L4355) | 4355 | `""` | — |
+| [SRC-F725E90B2A-L004356](../../tests/test_web_agent.py#L4356) | 4356 | `""` | — |
+| [SRC-F725E90B2A-L004357](../../tests/test_web_agent.py#L4357) | 4357 | `"@pytest.mark.parametrize("` | — |
+| [SRC-F725E90B2A-L004358](../../tests/test_web_agent.py#L4358) | 4358 | `"    \"url\","` | — |
+| [SRC-F725E90B2A-L004359](../../tests/test_web_agent.py#L4359) | 4359 | `"    ["` | — |
+| [SRC-F725E90B2A-L004360](../../tests/test_web_agent.py#L4360) | 4360 | `"        \"https://api.example.test/v1\","` | — |
+| [SRC-F725E90B2A-L004361](../../tests/test_web_agent.py#L4361) | 4361 | `"        \"http://localhost:11434/v1\","` | — |
+| [SRC-F725E90B2A-L004362](../../tests/test_web_agent.py#L4362) | 4362 | `"        \"http://127.0.0.1:8080/v1\","` | — |
+| [SRC-F725E90B2A-L004363](../../tests/test_web_agent.py#L4363) | 4363 | `"        \"http://[::1]:8000/v1\","` | — |
+| [SRC-F725E90B2A-L004364](../../tests/test_web_agent.py#L4364) | 4364 | `"    ],"` | — |
+| [SRC-F725E90B2A-L004365](../../tests/test_web_agent.py#L4365) | 4365 | `")"` | — |
+| [SRC-F725E90B2A-L004366](../../tests/test_web_agent.py#L4366) | 4366 | `"def test_model_provider_base_url_allows_https_or_loopback(url):"` | — |
+| [SRC-F725E90B2A-L004367](../../tests/test_web_agent.py#L4367) | 4367 | `"    from agents.web_agent import _is_safe_model_base_url"` | — |
+| [SRC-F725E90B2A-L004368](../../tests/test_web_agent.py#L4368) | 4368 | `""` | — |
+| [SRC-F725E90B2A-L004369](../../tests/test_web_agent.py#L4369) | 4369 | `"    assert _is_safe_model_base_url(url) is True"` | — |
+| [SRC-F725E90B2A-L004370](../../tests/test_web_agent.py#L4370) | 4370 | `""` | — |
+| [SRC-F725E90B2A-L004371](../../tests/test_web_agent.py#L4371) | 4371 | `""` | — |
+| [SRC-F725E90B2A-L004372](../../tests/test_web_agent.py#L4372) | 4372 | `"@pytest.mark.parametrize("` | — |
+| [SRC-F725E90B2A-L004373](../../tests/test_web_agent.py#L4373) | 4373 | `"    \"url\","` | — |
+| [SRC-F725E90B2A-L004374](../../tests/test_web_agent.py#L4374) | 4374 | `"    ["` | — |
+| [SRC-F725E90B2A-L004375](../../tests/test_web_agent.py#L4375) | 4375 | `"        \"http://api.example.test/v1\","` | — |
+| [SRC-F725E90B2A-L004376](../../tests/test_web_agent.py#L4376) | 4376 | `"        \"ftp://api.example.test/v1\","` | — |
+| [SRC-F725E90B2A-L004377](../../tests/test_web_agent.py#L4377) | 4377 | `"        \"https://user:password@api.example.test/v1\","` | — |
+| [SRC-F725E90B2A-L004378](../../tests/test_web_agent.py#L4378) | 4378 | `"        \"https://api.example.test/v1?token=secret\","` | — |
+| [SRC-F725E90B2A-L004379](../../tests/test_web_agent.py#L4379) | 4379 | `"        \"https://api.example.test/v1#fragment\","` | — |
+| [SRC-F725E90B2A-L004380](../../tests/test_web_agent.py#L4380) | 4380 | `"        \"https:///missing-host\","` | — |
+| [SRC-F725E90B2A-L004381](../../tests/test_web_agent.py#L4381) | 4381 | `"        \"https://api.example.test:99999/v1\","` | — |
+| [SRC-F725E90B2A-L004382](../../tests/test_web_agent.py#L4382) | 4382 | `"    ],"` | — |
+| [SRC-F725E90B2A-L004383](../../tests/test_web_agent.py#L4383) | 4383 | `")"` | — |
+| [SRC-F725E90B2A-L004384](../../tests/test_web_agent.py#L4384) | 4384 | `"def test_model_provider_base_url_rejects_insecure_or_ambiguous_urls(url):"` | — |
+| [SRC-F725E90B2A-L004385](../../tests/test_web_agent.py#L4385) | 4385 | `"    from agents.web_agent import _is_safe_model_base_url"` | — |
+| [SRC-F725E90B2A-L004386](../../tests/test_web_agent.py#L4386) | 4386 | `""` | — |
+| [SRC-F725E90B2A-L004387](../../tests/test_web_agent.py#L4387) | 4387 | `"    assert _is_safe_model_base_url(url) is False"` | — |
+| [SRC-F725E90B2A-L004388](../../tests/test_web_agent.py#L4388) | 4388 | `""` | — |
+| [SRC-F725E90B2A-L004389](../../tests/test_web_agent.py#L4389) | 4389 | `""` | — |
+| [SRC-F725E90B2A-L004390](../../tests/test_web_agent.py#L4390) | 4390 | `"def test_model_provider_rejects_remote_http_before_sending_bearer_key(monkeypatch):"` | — |
+| [SRC-F725E90B2A-L004391](../../tests/test_web_agent.py#L4391) | 4391 | `"    from agents import web_agent"` | — |
+| [SRC-F725E90B2A-L004392](../../tests/test_web_agent.py#L4392) | 4392 | `""` | — |
+| [SRC-F725E90B2A-L004393](../../tests/test_web_agent.py#L4393) | 4393 | `"    agent = WebAgent()"` | — |
+| [SRC-F725E90B2A-L004394](../../tests/test_web_agent.py#L4394) | 4394 | `"    agent.api_key = \"unit-test-secret\""` | — |
+| [SRC-F725E90B2A-L004395](../../tests/test_web_agent.py#L4395) | 4395 | `"    agent.base_url = \"http://provider.example/api/v1\""` | — |
+| [SRC-F725E90B2A-L004396](../../tests/test_web_agent.py#L4396) | 4396 | `""` | — |
+| [SRC-F725E90B2A-L004397](../../tests/test_web_agent.py#L4397) | 4397 | `"    def unexpected_request(*_args, **_kwargs):"` | — |
+| [SRC-F725E90B2A-L004398](../../tests/test_web_agent.py#L4398) | 4398 | `"        pytest.fail(\"bearer credentials must not be sent to a remote HTTP URL\")"` | — |
+| [SRC-F725E90B2A-L004399](../../tests/test_web_agent.py#L4399) | 4399 | `""` | — |
+| [SRC-F725E90B2A-L004400](../../tests/test_web_agent.py#L4400) | 4400 | `"    monkeypatch.setattr(web_agent, \"_open_model_request\", unexpected_request)"` | — |
+| [SRC-F725E90B2A-L004401](../../tests/test_web_agent.py#L4401) | 4401 | `"    with pytest.raises(RuntimeError, match=\"HTTPS\"):"` | — |
+| [SRC-F725E90B2A-L004402](../../tests/test_web_agent.py#L4402) | 4402 | `"        agent._request_completion("` | — |
+| [SRC-F725E90B2A-L004403](../../tests/test_web_agent.py#L4403) | 4403 | `"            [{\"role\": \"user\", \"content\": \"test\"}],"` | — |
+| [SRC-F725E90B2A-L004404](../../tests/test_web_agent.py#L4404) | 4404 | `"            max_tokens=100,"` | — |
+| [SRC-F725E90B2A-L004405](../../tests/test_web_agent.py#L4405) | 4405 | `"        )"` | — |
+| [SRC-F725E90B2A-L004406](../../tests/test_web_agent.py#L4406) | 4406 | `""` | — |
+| [SRC-F725E90B2A-L004407](../../tests/test_web_agent.py#L4407) | 4407 | `"    assert agent.generation_diagnostics[-1][\"status\"] == \"unsafe_provider_url\""` | — |
+| [SRC-F725E90B2A-L004408](../../tests/test_web_agent.py#L4408) | 4408 | `"    assert agent.generation_diagnostics[-1][\"request_started\"] is False"` | — |
+| [SRC-F725E90B2A-L004409](../../tests/test_web_agent.py#L4409) | 4409 | `""` | — |
 | [SRC-F725E90B2A-L004410](../../tests/test_web_agent.py#L4410) | 4410 | `""` | — |
 | [SRC-F725E90B2A-L004411](../../tests/test_web_agent.py#L4411) | 4411 | `"def test_health_status_redacts_model_provider_userinfo_path_and_query(monkeypatch):"` | — |
 | [SRC-F725E90B2A-L004412](../../tests/test_web_agent.py#L4412) | 4412 | `"    monkeypatch.setenv("` | — |
@@ -786,69 +852,3 @@
 | [SRC-DE7EABE998-L000029](../../web/agent.html#L29) | 29 | `".details{margin-top:9px;border:1px solid #2b4059;background:#0d1929;border-radius:12px;padding:10px 12px;font-size:11px;color:#c6d5e7;line-height:1.8}.details summary{cursor:pointer;color:#b9f8eb;font-weight:700}.details ol{margin:8px 0 0;padding-inline-start:22px}.details li{overflow-wrap:anywhere;margin:4px 0}"` | — |
 | [SRC-DE7EABE998-L000030](../../web/agent.html#L30) | 30 | `".warning{border:1px solid #6c5831;background:#292216;color:#ffdfa2;padding:11px 13px;border-radius:12px;font-size:11px;line-height:1.85}.sources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:4px}.source{border:1px solid #293e56;background:#0b1726;border-radius:13px;padding:12px;min-width:0;display:flex;flex-direction:column;gap:6px}.source a{color:#c2d9ff;text-decoration:none;font-weight:800;font-size:11px;line-height:1.75;overflow-wrap:anywhere}.source a:hover{text-decoration:underline;color:white}.source p{color:#acbdd1;font-size:11px;line-height:1.8;margin:0;overflow-wrap:anywhere}.source-meta{display:flex;gap:5px;flex-wrap:wrap;margin-top:auto;padding-top:4px}.tag{border:1px solid #31435a;background:#132237;border-radius:99px;padding:4px 7px;color:#aabbd0;font-size:9px}.tag.read{border-color:#28574b;background:#102821;color:#9deac6}.tag.social{border-color:#594c37;color:#f0cc8f}.no-sources{font-size:11px;color:var(--muted);margin-top:6px}"` | — |
 | [SRC-DE7EABE998-L000031](../../web/agent.html#L31) | 31 | `".composer{padding:14px;border-top:1px solid #24384f;background:#0b1523}.inputwrap{display:flex;align-items:flex-end;gap:9px;padding:8px;border:1px solid #314861;border-radius:16px;background:#07111e}.inputwrap:focus-within{border-color:var(--teal);box-shadow:0 0 0 3px #65e5d00e}.inputwrap textarea{flex:1;min-width:0;max-height:150px;min-height:48px;resize:vertical;color:var(--text);background:transparent;border:0;outline:0;padding:10px;font-size:13px;line-height:1.8}.inputwrap textarea::placeholder{color:#7186a0}.send{min-height:44px;min-width:82px}.hint{color:#7589a2;font-size:10px;line-height:1.8;margin:8px 5px 1px}"` | — |
-| [SRC-DE7EABE998-L000032](../../web/agent.html#L32) | 32 | `".sidepanel{padding:16px}.sidepanel h3{font-size:13px;margin:0 0 12px}.sideblock{padding:13px 0;border-bottom:1px solid #24374d}.sideblock:first-child{padding-top:0}.sideblock:last-child{border-bottom:0;padding-bottom:0}.sideblock p{font-size:11px;color:var(--muted);line-height:1.9;margin:0}.sidefeature{display:flex;gap:9px;align-items:flex-start;margin:12px 0}.sideicon{flex:none;width:29px;height:29px;display:grid;place-items:center;background:#142b3c;border:1px solid #2a475d;border-radius:9px;color:var(--teal);font-size:13px}.sidefeature b{display:block;font-size:11px;margin:0 0 3px}.sidefeature span{display:block;color:var(--muted);font-size:10px;line-height:1.7}"` | — |
-| [SRC-DE7EABE998-L000033](../../web/agent.html#L33) | 33 | `".checkbutton{width:100%;margin-top:10px}.diag{font-size:10px;line-height:1.8;color:#b7c9de;white-space:pre-wrap;overflow-wrap:anywhere;margin:10px 0 0}.config-label{display:inline-block;color:var(--teal);border:1px solid #27534f;background:#0e2827;border-radius:99px;padding:4px 8px;font-size:9px;margin-top:6px}.foot{text-align:center;font-size:10px;color:#71859c;line-height:1.8;padding:16px 4px}"` | — |
-| [SRC-DE7EABE998-L000034](../../web/agent.html#L34) | 34 | `"@media(max-width:950px){.layout{grid-template-columns:minmax(0,1fr) 245px}.trust{width:200px}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}"` | — |
-| [SRC-DE7EABE998-L000035](../../web/agent.html#L35) | 35 | `"@media(max-width:740px){.shell{padding:10px}.layout{grid-template-columns:1fr}.sidepanel{order:2}.hero{align-items:stretch;flex-direction:column;padding:19px 3px 14px}.trust{width:auto}.hero h2{font-size:28px}.topbar{padding-bottom:13px}.brand h1{font-size:19px}.status{display:none}.chatpanel{min-height:70vh}.messages{max-height:unset;min-height:350px;padding:12px}.sidepanel{padding:14px}.sources{grid-template-columns:1fr}.message.user{max-width:94%}.chathead{padding:13px}.modebar{padding:10px;gap:6px}.mode-btn{padding:8px 10px}.composer{padding:10px}.inputwrap{gap:5px}.send{min-width:65px;padding:9px}.bubble{padding:12px;font-size:12px}}"` | — |
-| [SRC-DE7EABE998-L000036](../../web/agent.html#L36) | 36 | `"@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;scroll-behavior:auto!important;transition:none!important}}"` | — |
-| [SRC-DE7EABE998-L000037](../../web/agent.html#L37) | 37 | `".message-context{margin:0 0 9px;padding:8px 10px;border-inline-start:3px solid var(--teal);border-radius:8px;background:rgba(40,190,170,.07);color:var(--muted);font-size:11px;line-height:1.7;overflow-wrap:anywhere}.retry-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.retry-button{border:1px solid #496780;border-radius:10px;background:#152c40;color:var(--text);font:inherit;font-size:12px;font-weight:700;padding:9px 12px;cursor:pointer}.retry-button:focus-visible{outline:2px solid var(--teal);outline-offset:2px}.retry-button:hover{border-color:var(--teal)}"` | — |
-| [SRC-DE7EABE998-L000038](../../web/agent.html#L38) | 38 | `"</style>"` | — |
-| [SRC-DE7EABE998-L000039](../../web/agent.html#L39) | 39 | `"</head>"` | — |
-| [SRC-DE7EABE998-L000040](../../web/agent.html#L40) | 40 | `"<body>"` | — |
-| [SRC-DE7EABE998-L000041](../../web/agent.html#L41) | 41 | `"<div class=\"shell\">"` | — |
-| [SRC-DE7EABE998-L000042](../../web/agent.html#L42) | 42 | `"<header class=\"topbar\">"` | — |
-| [SRC-DE7EABE998-L000043](../../web/agent.html#L43) | 43 | `"  <div class=\"brand\"><div class=\"logo\" aria-hidden=\"true\">O</div><div><h1>Omarai</h1><p>وكيل البحث الحي والتحليل متعدد المصادر</p></div></div>"` | — |
-| [SRC-DE7EABE998-L000044](../../web/agent.html#L44) | 44 | `"  <div class=\"top-actions\"><div class=\"status\" id=\"status\" role=\"status\"><span class=\"dot\"></span><span>يفحص الإعداد...</span></div><button class=\"ghost\" id=\"clear\" type=\"button\">بحث جديد ↻</button></div>"` | — |
-| [SRC-DE7EABE998-L000045](../../web/agent.html#L45) | 45 | `"<a class=\"ghost\" href=\"/workspace\">مساحة عمل المبيعات ↗</a></header>"` | — |
-| [SRC-DE7EABE998-L000046](../../web/agent.html#L46) | 46 | `""` | — |
-| [SRC-DE7EABE998-L000047](../../web/agent.html#L47) | 47 | `"<section class=\"hero\">"` | — |
-| [SRC-DE7EABE998-L000048](../../web/agent.html#L48) | 48 | `"  <div><span class=\"eyebrow\">بحث حي · مصادر قابلة للمراجعة · تحليل واضح</span><h2>من السؤال إلى <span>صورة أوضح مدعومة بالأدلة</span></h2><p>اكتب سؤالك بطريقتك الطبيعية. يبحث Omarai عبر محركات ويب ومصادر عامة متاحة، يقرأ الصفحات التي تسمح بالوصول، ويقارن تنوع المصادر وحداثتها ونوعها قبل صياغة إجابة بروابط واضحة. لا يعتبر عدد النتائج وحده إثباتًا للحقيقة.</p></div>"` | — |
-| [SRC-DE7EABE998-L000049](../../web/agent.html#L49) | 49 | `"  <div class=\"trust\"><b>◈ شفافية الأدلة أولًا</b>سترى عدد المصادر والنطاقات والصفحات المقروءة ومحركات البحث المستخدمة، مع التنبيه إلى الفجوات. مؤشرات التغطية تصف البحث ولا تمثل احتمال صحة المعلومة.</div>"` | — |
-| [SRC-DE7EABE998-L000050](../../web/agent.html#L50) | 50 | `"</section>"` | — |
-| [SRC-DE7EABE998-L000051](../../web/agent.html#L51) | 51 | `""` | — |
-| [SRC-DE7EABE998-L000052](../../web/agent.html#L52) | 52 | `"<main class=\"layout\">"` | — |
-| [SRC-DE7EABE998-L000053](../../web/agent.html#L53) | 53 | `"  <section class=\"chatpanel\" aria-label=\"واجهة البحث\">"` | — |
-| [SRC-DE7EABE998-L000054](../../web/agent.html#L54) | 54 | `"    <div class=\"chathead\"><div><h3>مساحة البحث والتحليل</h3><p>تُرسل أسئلة البحث إلى محركات الإنترنت، وقد تُرسل مقتطفات المصادر إلى مزود نموذج اللغة المضبوط.</p></div><span class=\"live-tag\"><span class=\"dot\"></span> بحث ويب</span></div>"` | — |
-| [SRC-DE7EABE998-L000055](../../web/agent.html#L55) | 55 | `"    <div class=\"modebar\" role=\"group\" aria-label=\"نمط البحث\">"` | — |
-| [SRC-DE7EABE998-L000056](../../web/agent.html#L56) | 56 | `"      <span class=\"mode-label\">عمق البحث:</span>"` | — |
-| [SRC-DE7EABE998-L000057](../../web/agent.html#L57) | 57 | `"      <button class=\"mode-btn\" data-mode=\"auto\" type=\"button\">تلقائي</button>"` | — |
-| [SRC-DE7EABE998-L000058](../../web/agent.html#L58) | 58 | `"      <button class=\"mode-btn active\" data-mode=\"deep\" type=\"button\" aria-pressed=\"true\">بحث معمّق</button>"` | — |
-| [SRC-DE7EABE998-L000059](../../web/agent.html#L59) | 59 | `"      <button class=\"mode-btn\" data-mode=\"latest\" type=\"button\">الأحدث الآن</button>"` | — |
-| [SRC-DE7EABE998-L000060](../../web/agent.html#L60) | 60 | `"      <button class=\"mode-btn\" data-mode=\"social\" type=\"button\">آراء الناس</button>"` | — |
-| [SRC-DE7EABE998-L000061](../../web/agent.html#L61) | 61 | `"    </div>"` | — |
-| [SRC-DE7EABE998-L000062](../../web/agent.html#L62) | 62 | `"    <div class=\"messages\" id=\"messages\" aria-live=\"polite\">"` | — |
-| [SRC-DE7EABE998-L000063](../../web/agent.html#L63) | 63 | `"      <div class=\"welcome\" id=\"welcome\"><div class=\"welcome-icon\">⌕</div><h3>ما الذي تريد أن تبحث عنه؟</h3><p>ابدأ بسؤال أو مهمة بحث. اختر بحثًا معمقًا لتوسيع زوايا البحث، أو «الأحدث الآن» للمعلومات الزمنية، أو «آراء الناس» للمحتوى الاجتماعي العام المتاح.</p><div class=\"suggestions\"><button type=\"button\">حلّل أحدث تطورات وكلاء الذكاء الاصطناعي مع المصادر</button><button type=\"button\">قارن سوق العقارات في التجمع والعاصمة الإدارية بالأدلة</button><button type=\"button\">اجمع آراء وتجارب عامة حول منتج أو خدمة</button></div></div>"` | — |
-| [SRC-DE7EABE998-L000064](../../web/agent.html#L64) | 64 | `"    </div>"` | — |
-| [SRC-DE7EABE998-L000065](../../web/agent.html#L65) | 65 | `"    <div class=\"composer\"><div class=\"inputwrap\"><textarea id=\"question\" rows=\"2\" maxlength=\"4000\" placeholder=\"اسأل باللهجة المصرية أو العربية الفصحى أو الإنجليزية…\"></textarea><button class=\"primary send\" id=\"send\" type=\"button\">ابحث ←</button></div><div class=\"hint\">Enter للإرسال · Shift + Enter لسطر جديد · لا تضع كلمات مرور أو مفاتيح API أو بيانات شخصية سرية داخل السؤال.</div></div>"` | — |
-| [SRC-DE7EABE998-L000066](../../web/agent.html#L66) | 66 | `"  </section>"` | — |
-| [SRC-DE7EABE998-L000067](../../web/agent.html#L67) | 67 | `""` | — |
-| [SRC-DE7EABE998-L000068](../../web/agent.html#L68) | 68 | `"  <aside class=\"sidepanel\">"` | — |
-| [SRC-DE7EABE998-L000069](../../web/agent.html#L69) | 69 | `"    <div class=\"sideblock\">"` | — |
-| [SRC-DE7EABE998-L000070](../../web/agent.html#L70) | 70 | `"      <h3>الوصول الآمن إلى النسخة المستضافة</h3>"` | — |
-| [SRC-DE7EABE998-L000071](../../web/agent.html#L71) | 71 | `"      <label for=\"accessToken\" style=\"display:block;font-size:11px;color:#b9c9dc;margin:9px 0\">رمز الوصول الخاص بالتطبيق</label>"` | — |
-| [SRC-DE7EABE998-L000072](../../web/agent.html#L72) | 72 | `"      <input id=\"accessToken\" type=\"password\" autocomplete=\"off\" spellcheck=\"false\" placeholder=\"أدخل رمز الاستضافة الذي أنشأته\" style=\"width:100%;padding:11px;border:1px solid #314861;border-radius:11px;background:#07111e;color:var(--text);font-size:12px\">"` | — |
-| [SRC-DE7EABE998-L000073](../../web/agent.html#L73) | 73 | `"      <button id=\"saveAccessToken\" type=\"button\" class=\"ghost checkbutton\">تسجيل الدخول</button>"` | — |
-| [SRC-DE7EABE998-L000074](../../web/agent.html#L74) | 74 | `"      <button id=\"logoutSession\" type=\"button\" class=\"ghost checkbutton\">تسجيل الخروج</button>"` | — |
-| [SRC-DE7EABE998-L000075](../../web/agent.html#L75) | 75 | `"      <p id=\"authStatus\" style=\"font-size:10px;color:var(--muted);line-height:1.8;margin-top:7px\" aria-live=\"polite\">لا يُحفظ رمز الوصول في تخزين JavaScript؛ بعد الدخول يستخدم المتصفح ملف ارتباط HttpOnly محدود المدة.</p>"` | — |
-| [SRC-DE7EABE998-L000076](../../web/agent.html#L76) | 76 | `"    </div>"` | — |
-| [SRC-DE7EABE998-L000077](../../web/agent.html#L77) | 77 | `"    <div class=\"sideblock\">"` | — |
-| [SRC-DE7EABE998-L000078](../../web/agent.html#L78) | 78 | `"      <h3>حالة الاتصال الفعلية</h3>"` | — |
-| [SRC-DE7EABE998-L000079](../../web/agent.html#L79) | 79 | `"      <p id=\"setupStatus\">جارٍ فحص إعدادات الخادم. إعداد المحرك لا يعني أن البحث الحي نجح بعد؛ استخدم الاختبار أدناه للتحقق من الاتصال الفعلي.</p>"` | — |
-| [SRC-DE7EABE998-L000080](../../web/agent.html#L80) | 80 | `"      <label style=\"display:flex;gap:8px;align-items:flex-start;margin:11px 0;font-size:10px;color:#b9c9dc;line-height:1.7\"><input id=\"diagSocial\" type=\"checkbox\" style=\"margin-top:3px\"> اختبار المصادر الاجتماعية العامة والموصلات المهيأة أيضًا</label>"` | — |
-| [SRC-DE7EABE998-L000081](../../web/agent.html#L81) | 81 | `"      <button id=\"runDiagnostics\" type=\"button\" class=\"primary checkbutton\">اختبار حي للإنترنت والنموذج</button>"` | — |
-| [SRC-DE7EABE998-L000082](../../web/agent.html#L82) | 82 | `"      <p id=\"diagnosticsResult\" class=\"diag\" aria-live=\"polite\"></p>"` | — |
-| [SRC-DE7EABE998-L000083](../../web/agent.html#L83) | 83 | `"    </div>"` | — |
-| [SRC-DE7EABE998-L000084](../../web/agent.html#L84) | 84 | `"    <div class=\"sideblock\">"` | — |
-| [SRC-DE7EABE998-L000085](../../web/agent.html#L85) | 85 | `"      <h3>مصادر البحث</h3>"` | — |
-| [SRC-DE7EABE998-L000086](../../web/agent.html#L86) | 86 | `"      <div class=\"sidefeature\"><div class=\"sideicon\">⌕</div><div><b>محركات الويب</b><span>DuckDuckGo وBing؛ ويمكن إضافة Brave وTavily بمفتاح API اختياري.</span></div></div>"` | — |
-| [SRC-DE7EABE998-L000087](../../web/agent.html#L87) | 87 | `"      <div class=\"sidefeature\"><div class=\"sideicon\">▤</div><div><b>الأخبار والمصادر العامة</b><span>Google News عند طلب معلومات حديثة، وقراءة الصفحات التي تسمح بالوصول العام.</span></div></div>"` | — |
-| [SRC-DE7EABE998-L000088](../../web/agent.html#L88) | 88 | `"      <div class=\"sidefeature\"><div class=\"sideicon\">◎</div><div><b>الشبكات الاجتماعية</b><span>مصادر عامة موصولة فعليًا أو نتائج مفهرسة؛ ليست تغطية كاملة لكل المنصات أو المنشورات.</span></div></div>"` | — |
-| [SRC-DE7EABE998-L000089](../../web/agent.html#L89) | 89 | `"      <div id=\"providerSetup\"></div>"` | — |
-| [SRC-DE7EABE998-L000090](../../web/agent.html#L90) | 90 | `"    </div>"` | — |
-| [SRC-DE7EABE998-L000091](../../web/agent.html#L91) | 91 | `"    <div class=\"sideblock\">"` | — |
-| [SRC-DE7EABE998-L000092](../../web/agent.html#L92) | 92 | `"      <h3>كيف تقرأ النتيجة؟</h3>"` | — |
-| [SRC-DE7EABE998-L000093](../../web/agent.html#L93) | 93 | `"      <p>تنوع النطاقات ومحركات البحث والصفحات المقروءة وتواريخ النشر إشارات إلى مدى تغطية البحث، لا دليلًا قاطعًا على صحة الادعاء. افتح المصادر المهمة، وانتبه إلى التضارب والمعلومات غير المؤرخة.</p>"` | — |
-| [SRC-DE7EABE998-L000094](../../web/agent.html#L94) | 94 | `"    </div>"` | — |
-| [SRC-DE7EABE998-L000095](../../web/agent.html#L95) | 95 | `"  </aside>"` | — |
-| [SRC-DE7EABE998-L000096](../../web/agent.html#L96) | 96 | `"</main>"` | — |
-| [SRC-DE7EABE998-L000097](../../web/agent.html#L97) | 97 | `"<footer class=\"foot\">Omarai · لا يتجاوز تسجيل الدخول أو الصفحات الخاصة أو الحواجز المدفوعة، ولا يرسل رسائل تلقائية. الإتاحة الفعلية تعتمد على اتصال الإنترنت، وحدود محركات البحث، ومفاتيح الخدمات الاختيارية.</footer>"` | — |

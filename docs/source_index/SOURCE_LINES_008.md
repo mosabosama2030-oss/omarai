@@ -4,7 +4,7 @@
 
 - الصفحة: **008**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1E32639872-L000381 إلى SRC-8D00DCEC0D-L000239
+- النطاق: SRC-1E32639872-L000377 إلى SRC-8D00DCEC0D-L000235
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1E32639872-L000377](../../agents/research_completion.py#L377) | 377 | `"            \"claim_ledger_build_failure_count\": claim_ledger_build_failure_count,"` | — |
+| [SRC-1E32639872-L000378](../../agents/research_completion.py#L378) | 378 | `"            \"semantic_verification_failure_count\": semantic_verification_failure_count,"` | — |
+| [SRC-1E32639872-L000379](../../agents/research_completion.py#L379) | 379 | `"        },"` | — |
+| [SRC-1E32639872-L000380](../../agents/research_completion.py#L380) | 380 | `"        \"counter_consistency\": {"` | — |
 | [SRC-1E32639872-L000381](../../agents/research_completion.py#L381) | 381 | `"            \"status\": \"mismatch_detected\" if counter_issues else ("` | — |
 | [SRC-1E32639872-L000382](../../agents/research_completion.py#L382) | 382 | `"                \"matched\" if reported_sources is not None or reported_fetched is not None"` | — |
 | [SRC-1E32639872-L000383](../../agents/research_completion.py#L383) | 383 | `"                else \"not_computable\""` | — |
@@ -848,7 +852,3 @@
 | [SRC-8D00DCEC0D-L000233](../../agents/sales_domain.py#L233) | 233 | `"    def to_dict(self) -> dict[str, str \| None]:"` | — |
 | [SRC-8D00DCEC0D-L000234](../../agents/sales_domain.py#L234) | 234 | `"        return {"` | — |
 | [SRC-8D00DCEC0D-L000235](../../agents/sales_domain.py#L235) | 235 | `"            \"field\": self.field,"` | — |
-| [SRC-8D00DCEC0D-L000236](../../agents/sales_domain.py#L236) | 236 | `"            \"value\": self.value,"` | — |
-| [SRC-8D00DCEC0D-L000237](../../agents/sales_domain.py#L237) | 237 | `"            \"origin\": self.origin.value,"` | — |
-| [SRC-8D00DCEC0D-L000238](../../agents/sales_domain.py#L238) | 238 | `"            \"evidence_id\": self.evidence_id,"` | — |
-| [SRC-8D00DCEC0D-L000239](../../agents/sales_domain.py#L239) | 239 | `"        }"` | — |

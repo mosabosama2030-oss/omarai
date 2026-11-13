@@ -4,7 +4,7 @@
 
 - الصفحة: **044**
 - سجلات الأسطر: **800**
-- النطاق: SRC-B3062EB677-L000153 إلى SRC-3451CC474D-L000133
+- النطاق: SRC-B3062EB677-L000105 إلى SRC-3451CC474D-L000085
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,54 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-B3062EB677-L000105](../../tests/test_answer_quality_runner.py#L105) | 105 | `"    def fake_post(base_url, question, timeout, token):"` | — |
+| [SRC-B3062EB677-L000106](../../tests/test_answer_quality_runner.py#L106) | 106 | `"        return 200, {"` | — |
+| [SRC-B3062EB677-L000107](../../tests/test_answer_quality_runner.py#L107) | 107 | `"            \"answer\": \"hello used_web_search should not force PASS\","` | — |
+| [SRC-B3062EB677-L000108](../../tests/test_answer_quality_runner.py#L108) | 108 | `"            \"used_web_search\": False,"` | — |
+| [SRC-B3062EB677-L000109](../../tests/test_answer_quality_runner.py#L109) | 109 | `"            \"used_language_model\": True,"` | — |
+| [SRC-B3062EB677-L000110](../../tests/test_answer_quality_runner.py#L110) | 110 | `"            \"sources\": [],"` | — |
+| [SRC-B3062EB677-L000111](../../tests/test_answer_quality_runner.py#L111) | 111 | `"        }"` | — |
+| [SRC-B3062EB677-L000112](../../tests/test_answer_quality_runner.py#L112) | 112 | `""` | — |
+| [SRC-B3062EB677-L000113](../../tests/test_answer_quality_runner.py#L113) | 113 | `"    monkeypatch.setattr(mod, \"get_verified_build_sha\", lambda base_url, timeout, token=None: \"a\" * 40)"` | — |
+| [SRC-B3062EB677-L000114](../../tests/test_answer_quality_runner.py#L114) | 114 | `"    monkeypatch.setattr(mod, \"post_agent\", fake_post)"` | — |
+| [SRC-B3062EB677-L000115](../../tests/test_answer_quality_runner.py#L115) | 115 | `"    out = tmp_path / \"results.json\""` | — |
+| [SRC-B3062EB677-L000116](../../tests/test_answer_quality_runner.py#L116) | 116 | `"    rc = mod.main("` | — |
+| [SRC-B3062EB677-L000117](../../tests/test_answer_quality_runner.py#L117) | 117 | `"        ["` | — |
+| [SRC-B3062EB677-L000118](../../tests/test_answer_quality_runner.py#L118) | 118 | `"            \"--mode\","` | — |
+| [SRC-B3062EB677-L000119](../../tests/test_answer_quality_runner.py#L119) | 119 | `"            \"live\","` | — |
+| [SRC-B3062EB677-L000120](../../tests/test_answer_quality_runner.py#L120) | 120 | `"            \"--corpus\","` | — |
+| [SRC-B3062EB677-L000121](../../tests/test_answer_quality_runner.py#L121) | 121 | `"            str(CORPUS),"` | — |
+| [SRC-B3062EB677-L000122](../../tests/test_answer_quality_runner.py#L122) | 122 | `"            \"--case-id\","` | — |
+| [SRC-B3062EB677-L000123](../../tests/test_answer_quality_runner.py#L123) | 123 | `"            \"AQ-001\","` | — |
+| [SRC-B3062EB677-L000124](../../tests/test_answer_quality_runner.py#L124) | 124 | `"            \"--limit\","` | — |
+| [SRC-B3062EB677-L000125](../../tests/test_answer_quality_runner.py#L125) | 125 | `"            \"1\","` | — |
+| [SRC-B3062EB677-L000126](../../tests/test_answer_quality_runner.py#L126) | 126 | `"            \"--out\","` | — |
+| [SRC-B3062EB677-L000127](../../tests/test_answer_quality_runner.py#L127) | 127 | `"            str(out),"` | — |
+| [SRC-B3062EB677-L000128](../../tests/test_answer_quality_runner.py#L128) | 128 | `"        ]"` | — |
+| [SRC-B3062EB677-L000129](../../tests/test_answer_quality_runner.py#L129) | 129 | `"    )"` | — |
+| [SRC-B3062EB677-L000130](../../tests/test_answer_quality_runner.py#L130) | 130 | `"    assert rc == 0"` | — |
+| [SRC-B3062EB677-L000131](../../tests/test_answer_quality_runner.py#L131) | 131 | `"    payload = json.loads(out.read_text(encoding=\"utf-8\"))"` | — |
+| [SRC-B3062EB677-L000132](../../tests/test_answer_quality_runner.py#L132) | 132 | `"    assert payload[\"results\"][0][\"status\"] == \"NOT_TESTED\""` | — |
+| [SRC-B3062EB677-L000133](../../tests/test_answer_quality_runner.py#L133) | 133 | `"    assert payload[\"results\"][0][\"evidence_fixture_injected\"] is False"` | — |
+| [SRC-B3062EB677-L000134](../../tests/test_answer_quality_runner.py#L134) | 134 | `"    assert payload[\"results\"][0][\"transport_ok\"] is True"` | — |
+| [SRC-B3062EB677-L000135](../../tests/test_answer_quality_runner.py#L135) | 135 | `"    assert payload[\"build_sha\"] == \"a\" * 40"` | — |
+| [SRC-B3062EB677-L000136](../../tests/test_answer_quality_runner.py#L136) | 136 | `"    assert payload[\"build_sha_verification\"] == \"confirmed_by_api_health\""` | — |
+| [SRC-B3062EB677-L000137](../../tests/test_answer_quality_runner.py#L137) | 137 | `""` | — |
+| [SRC-B3062EB677-L000138](../../tests/test_answer_quality_runner.py#L138) | 138 | `""` | — |
+| [SRC-B3062EB677-L000139](../../tests/test_answer_quality_runner.py#L139) | 139 | `"def test_validate_base_url_rejects_non_loopback_http():"` | — |
+| [SRC-B3062EB677-L000140](../../tests/test_answer_quality_runner.py#L140) | 140 | `"    mod = _load_runner()"` | — |
+| [SRC-B3062EB677-L000141](../../tests/test_answer_quality_runner.py#L141) | 141 | `"    with pytest.raises(ValueError, match=\"Plain HTTP\"):"` | — |
+| [SRC-B3062EB677-L000142](../../tests/test_answer_quality_runner.py#L142) | 142 | `"        mod.validate_base_url(\"http://research.example\")"` | — |
+| [SRC-B3062EB677-L000143](../../tests/test_answer_quality_runner.py#L143) | 143 | `""` | — |
+| [SRC-B3062EB677-L000144](../../tests/test_answer_quality_runner.py#L144) | 144 | `""` | — |
+| [SRC-B3062EB677-L000145](../../tests/test_answer_quality_runner.py#L145) | 145 | `"@pytest.mark.parametrize("` | — |
+| [SRC-B3062EB677-L000146](../../tests/test_answer_quality_runner.py#L146) | 146 | `"    \"url\","` | — |
+| [SRC-B3062EB677-L000147](../../tests/test_answer_quality_runner.py#L147) | 147 | `"    ["` | — |
+| [SRC-B3062EB677-L000148](../../tests/test_answer_quality_runner.py#L148) | 148 | `"        \"https://user:password@example.com\","` | — |
+| [SRC-B3062EB677-L000149](../../tests/test_answer_quality_runner.py#L149) | 149 | `"        \"https://example.com/private/path\","` | — |
+| [SRC-B3062EB677-L000150](../../tests/test_answer_quality_runner.py#L150) | 150 | `"        \"https://example.com/?token=oops\","` | — |
+| [SRC-B3062EB677-L000151](../../tests/test_answer_quality_runner.py#L151) | 151 | `"        \"https://example.com/#fragment\","` | — |
+| [SRC-B3062EB677-L000152](../../tests/test_answer_quality_runner.py#L152) | 152 | `"    ],"` | — |
 | [SRC-B3062EB677-L000153](../../tests/test_answer_quality_runner.py#L153) | 153 | `")"` | — |
 | [SRC-B3062EB677-L000154](../../tests/test_answer_quality_runner.py#L154) | 154 | `"def test_validate_base_url_rejects_ambiguous_or_credential_bearing_urls(url):"` | — |
 | [SRC-B3062EB677-L000155](../../tests/test_answer_quality_runner.py#L155) | 155 | `"    mod = _load_runner()"` | — |
@@ -795,51 +843,3 @@
 | [SRC-3451CC474D-L000083](../../tests/test_api.py#L83) | 83 | `"def test_api_health_analyze_save_duplicate_list_and_status(local_api):"` | — |
 | [SRC-3451CC474D-L000084](../../tests/test_api.py#L84) | 84 | `"    status, health = request_json(local_api, \"/api/health\")"` | — |
 | [SRC-3451CC474D-L000085](../../tests/test_api.py#L85) | 85 | `"    assert status == 200"` | — |
-| [SRC-3451CC474D-L000086](../../tests/test_api.py#L86) | 86 | `"    assert health[\"app\"] == \"Omarai\""` | — |
-| [SRC-3451CC474D-L000087](../../tests/test_api.py#L87) | 87 | `"    assert health[\"mode\"] == \"web-research\""` | — |
-| [SRC-3451CC474D-L000088](../../tests/test_api.py#L88) | 88 | `"    assert health[\"storage\"][\"durability_status\"] == \"not_guaranteed\""` | — |
-| [SRC-3451CC474D-L000089](../../tests/test_api.py#L89) | 89 | `"    assert health[\"storage\"][\"persistent_volume_operator_asserted\"] is False"` | — |
-| [SRC-3451CC474D-L000090](../../tests/test_api.py#L90) | 90 | `"    assert \"ephemeral filesystem\" in health[\"storage\"][\"warning\"]"` | — |
-| [SRC-3451CC474D-L000091](../../tests/test_api.py#L91) | 91 | `"    assert health[\"storage\"][\"durability_status\"] == \"not_guaranteed\""` | — |
-| [SRC-3451CC474D-L000092](../../tests/test_api.py#L92) | 92 | `"    assert health[\"storage\"][\"persistent_volume_operator_asserted\"] is False"` | — |
-| [SRC-3451CC474D-L000093](../../tests/test_api.py#L93) | 93 | `"    assert \"ephemeral filesystem\" in health[\"storage\"][\"warning\"]"` | — |
-| [SRC-3451CC474D-L000094](../../tests/test_api.py#L94) | 94 | `"    assert health[\"agent\"][\"verification_scope\"][\"live_network_checks_performed\"] is False"` | — |
-| [SRC-3451CC474D-L000095](../../tests/test_api.py#L95) | 95 | `"    assert health[\"agent\"][\"verification_scope\"][\"live_diagnostics_endpoint\"] == \"POST /api/diagnostics\""` | — |
-| [SRC-3451CC474D-L000096](../../tests/test_api.py#L96) | 96 | `""` | — |
-| [SRC-3451CC474D-L000097](../../tests/test_api.py#L97) | 97 | `"    text = \"بدور على شقة في التجمع الخامس وممكن معاينة\""` | — |
-| [SRC-3451CC474D-L000098](../../tests/test_api.py#L98) | 98 | `"    status, assessment = request_json("` | — |
-| [SRC-3451CC474D-L000099](../../tests/test_api.py#L99) | 99 | `"        local_api,"` | — |
-| [SRC-3451CC474D-L000100](../../tests/test_api.py#L100) | 100 | `"        \"/api/analyze\","` | — |
-| [SRC-3451CC474D-L000101](../../tests/test_api.py#L101) | 101 | `"        method=\"POST\","` | — |
-| [SRC-3451CC474D-L000102](../../tests/test_api.py#L102) | 102 | `"        payload={\"text\": text, \"product_terms\": [\"شقة\"], \"location_terms\": [\"التجمع الخامس\"]},"` | — |
-| [SRC-3451CC474D-L000103](../../tests/test_api.py#L103) | 103 | `"    )"` | — |
-| [SRC-3451CC474D-L000104](../../tests/test_api.py#L104) | 104 | `"    assert status == 200"` | — |
-| [SRC-3451CC474D-L000105](../../tests/test_api.py#L105) | 105 | `"    assert assessment[\"label\"] == \"high_intent\""` | — |
-| [SRC-3451CC474D-L000106](../../tests/test_api.py#L106) | 106 | `"    assert {item[\"category\"] for item in assessment[\"matched_signals\"]} >= {"` | — |
-| [SRC-3451CC474D-L000107](../../tests/test_api.py#L107) | 107 | `"        \"high\", \"next_step\", \"product_context\", \"location_context\""` | — |
-| [SRC-3451CC474D-L000108](../../tests/test_api.py#L108) | 108 | `"    }"` | — |
-| [SRC-3451CC474D-L000109](../../tests/test_api.py#L109) | 109 | `""` | — |
-| [SRC-3451CC474D-L000110](../../tests/test_api.py#L110) | 110 | `"    payload = {"` | — |
-| [SRC-3451CC474D-L000111](../../tests/test_api.py#L111) | 111 | `"        \"text\": text,"` | — |
-| [SRC-3451CC474D-L000112](../../tests/test_api.py#L112) | 112 | `"        \"source_url\": \"https://example.com/posts/123\","` | — |
-| [SRC-3451CC474D-L000113](../../tests/test_api.py#L113) | 113 | `"        \"platform\": \"Public website\","` | — |
-| [SRC-3451CC474D-L000114](../../tests/test_api.py#L114) | 114 | `"        \"product_terms\": [\"شقة\"],"` | — |
-| [SRC-3451CC474D-L000115](../../tests/test_api.py#L115) | 115 | `"        \"location_terms\": [\"التجمع الخامس\"],"` | — |
-| [SRC-3451CC474D-L000116](../../tests/test_api.py#L116) | 116 | `"    }"` | — |
-| [SRC-3451CC474D-L000117](../../tests/test_api.py#L117) | 117 | `"    status, saved = request_json(local_api, \"/api/leads\", method=\"POST\", payload=payload)"` | — |
-| [SRC-3451CC474D-L000118](../../tests/test_api.py#L118) | 118 | `"    assert status == 201"` | — |
-| [SRC-3451CC474D-L000119](../../tests/test_api.py#L119) | 119 | `"    assert saved[\"created\"] is True"` | — |
-| [SRC-3451CC474D-L000120](../../tests/test_api.py#L120) | 120 | `"    assert saved[\"lead\"][\"assessment\"][\"label\"] == \"high_intent\""` | — |
-| [SRC-3451CC474D-L000121](../../tests/test_api.py#L121) | 121 | `"    assert \"product_context\" in {"` | — |
-| [SRC-3451CC474D-L000122](../../tests/test_api.py#L122) | 122 | `"        item[\"category\"] for item in saved[\"lead\"][\"assessment\"][\"matched_signals\"]"` | — |
-| [SRC-3451CC474D-L000123](../../tests/test_api.py#L123) | 123 | `"    }"` | — |
-| [SRC-3451CC474D-L000124](../../tests/test_api.py#L124) | 124 | `"    status, duplicate = request_json(local_api, \"/api/leads\", method=\"POST\", payload=payload)"` | — |
-| [SRC-3451CC474D-L000125](../../tests/test_api.py#L125) | 125 | `"    assert status == 200"` | — |
-| [SRC-3451CC474D-L000126](../../tests/test_api.py#L126) | 126 | `"    assert duplicate[\"created\"] is False"` | — |
-| [SRC-3451CC474D-L000127](../../tests/test_api.py#L127) | 127 | `""` | — |
-| [SRC-3451CC474D-L000128](../../tests/test_api.py#L128) | 128 | `"    status, listing = request_json(local_api, \"/api/leads?limit=25\")"` | — |
-| [SRC-3451CC474D-L000129](../../tests/test_api.py#L129) | 129 | `"    assert status == 200"` | — |
-| [SRC-3451CC474D-L000130](../../tests/test_api.py#L130) | 130 | `"    assert listing[\"count\"] == 1"` | — |
-| [SRC-3451CC474D-L000131](../../tests/test_api.py#L131) | 131 | `"    lead_id = listing[\"leads\"][0][\"id\"]"` | — |
-| [SRC-3451CC474D-L000132](../../tests/test_api.py#L132) | 132 | `""` | — |
-| [SRC-3451CC474D-L000133](../../tests/test_api.py#L133) | 133 | `"    status, changed = request_json("` | — |

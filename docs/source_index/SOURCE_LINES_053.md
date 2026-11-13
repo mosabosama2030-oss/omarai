@@ -4,7 +4,7 @@
 
 - الصفحة: **053**
 - سجلات الأسطر: **800**
-- النطاق: SRC-EA6EC52573-L000352 إلى SRC-D67DCEB693-L000193
+- النطاق: SRC-EA6EC52573-L000304 إلى SRC-D67DCEB693-L000145
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,54 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-EA6EC52573-L000304](../../tests/test_intent_router.py#L304) | 304 | `"    assert \"Lenovo ThinkPad E14\" in resolved"` | — |
+| [SRC-EA6EC52573-L000305](../../tests/test_intent_router.py#L305) | 305 | `"    assert \"أقدر أشتريه منين\" in resolved"` | — |
+| [SRC-EA6EC52573-L000306](../../tests/test_intent_router.py#L306) | 306 | `""` | — |
+| [SRC-EA6EC52573-L000307](../../tests/test_intent_router.py#L307) | 307 | `"def test_no_duplicate_followup_leadin_symbols():"` | — |
+| [SRC-EA6EC52573-L000308](../../tests/test_intent_router.py#L308) | 308 | `"    \"\"\"Follow-up normalization symbols must have one authoritative definition.\"\"\""` | — |
+| [SRC-EA6EC52573-L000309](../../tests/test_intent_router.py#L309) | 309 | `"    import inspect"` | — |
+| [SRC-EA6EC52573-L000310](../../tests/test_intent_router.py#L310) | 310 | `"    from agents import intent_router"` | — |
+| [SRC-EA6EC52573-L000311](../../tests/test_intent_router.py#L311) | 311 | `""` | — |
+| [SRC-EA6EC52573-L000312](../../tests/test_intent_router.py#L312) | 312 | `"    module_source = inspect.getsource(intent_router)"` | — |
+| [SRC-EA6EC52573-L000313](../../tests/test_intent_router.py#L313) | 313 | `"    assert module_source.count(\"_FOLLOWUP_LEAD_IN_RE = re.compile\") == 1"` | — |
+| [SRC-EA6EC52573-L000314](../../tests/test_intent_router.py#L314) | 314 | `"    assert module_source.count(\"_FOLLOWUP_ASPECT_FRAGMENTS = frozenset\") == 1"` | — |
+| [SRC-EA6EC52573-L000315](../../tests/test_intent_router.py#L315) | 315 | `"    assert module_source.count(\"def _strip_followup_leadin\") == 1"` | — |
+| [SRC-EA6EC52573-L000316](../../tests/test_intent_router.py#L316) | 316 | `""` | — |
+| [SRC-EA6EC52573-L000317](../../tests/test_intent_router.py#L317) | 317 | `""` | — |
+| [SRC-EA6EC52573-L000318](../../tests/test_intent_router.py#L318) | 318 | `""` | — |
+| [SRC-EA6EC52573-L000319](../../tests/test_intent_router.py#L319) | 319 | `"@pytest.mark.parametrize("` | — |
+| [SRC-EA6EC52573-L000320](../../tests/test_intent_router.py#L320) | 320 | `"    \"followup\","` | — |
+| [SRC-EA6EC52573-L000321](../../tests/test_intent_router.py#L321) | 321 | `"    ["` | — |
+| [SRC-EA6EC52573-L000322](../../tests/test_intent_router.py#L322) | 322 | `"        \"وبالنسبة للضمان بتاعه؟\","` | — |
+| [SRC-EA6EC52573-L000323](../../tests/test_intent_router.py#L323) | 323 | `"        \"ممكن اعرف اسعارهم؟\","` | — |
+| [SRC-EA6EC52573-L000324](../../tests/test_intent_router.py#L324) | 324 | `"        \"ضمانه كام؟\","` | — |
+| [SRC-EA6EC52573-L000325](../../tests/test_intent_router.py#L325) | 325 | `"        \"والتقييمات؟\","` | — |
+| [SRC-EA6EC52573-L000326](../../tests/test_intent_router.py#L326) | 326 | `"        \"وبخصوص الاسعار\","` | — |
+| [SRC-EA6EC52573-L000327](../../tests/test_intent_router.py#L327) | 327 | `"    ],"` | — |
+| [SRC-EA6EC52573-L000328](../../tests/test_intent_router.py#L328) | 328 | `")"` | — |
+| [SRC-EA6EC52573-L000329](../../tests/test_intent_router.py#L329) | 329 | `"def test_arabic_referential_followups_are_joined_to_prior_topic(followup):"` | — |
+| [SRC-EA6EC52573-L000330](../../tests/test_intent_router.py#L330) | 330 | `"    history = ["` | — |
+| [SRC-EA6EC52573-L000331](../../tests/test_intent_router.py#L331) | 331 | `"        {\"role\": \"user\", \"content\": \"ايه سعر ايفون 15 في مصر\"},"` | — |
+| [SRC-EA6EC52573-L000332](../../tests/test_intent_router.py#L332) | 332 | `"        {\"role\": \"assistant\", \"content\": \"السعر حوالي 45 الف جنيه\"},"` | — |
+| [SRC-EA6EC52573-L000333](../../tests/test_intent_router.py#L333) | 333 | `"    ]"` | — |
+| [SRC-EA6EC52573-L000334](../../tests/test_intent_router.py#L334) | 334 | `"    resolved = resolve_followup_query(followup, history)"` | — |
+| [SRC-EA6EC52573-L000335](../../tests/test_intent_router.py#L335) | 335 | `"    assert resolved.startswith(\"ايه سعر ايفون 15 في مصر\")"` | — |
+| [SRC-EA6EC52573-L000336](../../tests/test_intent_router.py#L336) | 336 | `"    assert followup in resolved"` | — |
+| [SRC-EA6EC52573-L000337](../../tests/test_intent_router.py#L337) | 337 | `""` | — |
+| [SRC-EA6EC52573-L000338](../../tests/test_intent_router.py#L338) | 338 | `""` | — |
+| [SRC-EA6EC52573-L000339](../../tests/test_intent_router.py#L339) | 339 | `"@pytest.mark.parametrize("` | — |
+| [SRC-EA6EC52573-L000340](../../tests/test_intent_router.py#L340) | 340 | `"    \"standalone\","` | — |
+| [SRC-EA6EC52573-L000341](../../tests/test_intent_router.py#L341) | 341 | `"    ["` | — |
+| [SRC-EA6EC52573-L000342](../../tests/test_intent_router.py#L342) | 342 | `"        \"اسعار الذهب اليوم\","` | — |
+| [SRC-EA6EC52573-L000343](../../tests/test_intent_router.py#L343) | 343 | `"        \"ممكن اعرف اسعار الذهب\","` | — |
+| [SRC-EA6EC52573-L000344](../../tests/test_intent_router.py#L344) | 344 | `"        \"مواصفات لاب توب ديل\","` | — |
+| [SRC-EA6EC52573-L000345](../../tests/test_intent_router.py#L345) | 345 | `"        \"سعر الدولار النهاردة\","` | — |
+| [SRC-EA6EC52573-L000346](../../tests/test_intent_router.py#L346) | 346 | `"    ],"` | — |
+| [SRC-EA6EC52573-L000347](../../tests/test_intent_router.py#L347) | 347 | `")"` | — |
+| [SRC-EA6EC52573-L000348](../../tests/test_intent_router.py#L348) | 348 | `"def test_standalone_aspect_questions_are_not_merged_with_history(standalone):"` | — |
+| [SRC-EA6EC52573-L000349](../../tests/test_intent_router.py#L349) | 349 | `"    history = ["` | — |
+| [SRC-EA6EC52573-L000350](../../tests/test_intent_router.py#L350) | 350 | `"        {\"role\": \"user\", \"content\": \"ايه سعر ايفون 15 في مصر\"},"` | — |
+| [SRC-EA6EC52573-L000351](../../tests/test_intent_router.py#L351) | 351 | `"        {\"role\": \"assistant\", \"content\": \"السعر حوالي 45 الف جنيه\"},"` | — |
 | [SRC-EA6EC52573-L000352](../../tests/test_intent_router.py#L352) | 352 | `"    ]"` | — |
 | [SRC-EA6EC52573-L000353](../../tests/test_intent_router.py#L353) | 353 | `"    assert resolve_followup_query(standalone, history) == standalone"` | — |
 | [SRC-EA6EC52573-L000354](../../tests/test_intent_router.py#L354) | 354 | `""` | — |
@@ -795,51 +843,3 @@
 | [SRC-D67DCEB693-L000143](../../tests/test_model_provider_failover.py#L143) | 143 | `"        \"gemini-3.1-flash-lite\","` | — |
 | [SRC-D67DCEB693-L000144](../../tests/test_model_provider_failover.py#L144) | 144 | `"        \"mistral-small-latest\","` | — |
 | [SRC-D67DCEB693-L000145](../../tests/test_model_provider_failover.py#L145) | 145 | `"    ]"` | — |
-| [SRC-D67DCEB693-L000146](../../tests/test_model_provider_failover.py#L146) | 146 | `"    assert calls[-1][0] == \"https://api.mistral.ai/v1/chat/completions\""` | — |
-| [SRC-D67DCEB693-L000147](../../tests/test_model_provider_failover.py#L147) | 147 | `"    assert calls[-1][2] == \"Bearer test-mistral-key\""` | — |
-| [SRC-D67DCEB693-L000148](../../tests/test_model_provider_failover.py#L148) | 148 | `"    assert agent.model_usage[-1][\"used_model\"] == \"mistral-small-latest\""` | — |
-| [SRC-D67DCEB693-L000149](../../tests/test_model_provider_failover.py#L149) | 149 | `""` | — |
-| [SRC-D67DCEB693-L000150](../../tests/test_model_provider_failover.py#L150) | 150 | `""` | — |
-| [SRC-D67DCEB693-L000151](../../tests/test_model_provider_failover.py#L151) | 151 | `"def test_semantic_verifier_request_does_not_fail_over_to_another_provider(monkeypatch):"` | — |
-| [SRC-D67DCEB693-L000152](../../tests/test_model_provider_failover.py#L152) | 152 | `"    _clear_model_environment(monkeypatch)"` | — |
-| [SRC-D67DCEB693-L000153](../../tests/test_model_provider_failover.py#L153) | 153 | `"    monkeypatch.setenv(\"OPENROUTER_API_KEY\", \"test-openrouter-key\")"` | — |
-| [SRC-D67DCEB693-L000154](../../tests/test_model_provider_failover.py#L154) | 154 | `"    monkeypatch.setenv(\"GEMINI_API_KEY\", \"test-gemini-key\")"` | — |
-| [SRC-D67DCEB693-L000155](../../tests/test_model_provider_failover.py#L155) | 155 | `"    agent = WebAgent()"` | — |
-| [SRC-D67DCEB693-L000156](../../tests/test_model_provider_failover.py#L156) | 156 | `"    calls = []"` | — |
-| [SRC-D67DCEB693-L000157](../../tests/test_model_provider_failover.py#L157) | 157 | `""` | — |
-| [SRC-D67DCEB693-L000158](../../tests/test_model_provider_failover.py#L158) | 158 | `"    def fake_open(request, timeout):"` | — |
-| [SRC-D67DCEB693-L000159](../../tests/test_model_provider_failover.py#L159) | 159 | `"        calls.append(request.full_url)"` | — |
-| [SRC-D67DCEB693-L000160](../../tests/test_model_provider_failover.py#L160) | 160 | `"        raise HTTPError(request.full_url, 401, \"unauthorized\", None, None)"` | — |
-| [SRC-D67DCEB693-L000161](../../tests/test_model_provider_failover.py#L161) | 161 | `""` | — |
-| [SRC-D67DCEB693-L000162](../../tests/test_model_provider_failover.py#L162) | 162 | `"    monkeypatch.setattr(\"agents.web_agent._open_model_request\", fake_open)"` | — |
-| [SRC-D67DCEB693-L000163](../../tests/test_model_provider_failover.py#L163) | 163 | `"    try:"` | — |
-| [SRC-D67DCEB693-L000164](../../tests/test_model_provider_failover.py#L164) | 164 | `"        agent._request_completion("` | — |
-| [SRC-D67DCEB693-L000165](../../tests/test_model_provider_failover.py#L165) | 165 | `"            [{\"role\": \"user\", \"content\": \"claim verification\"}],"` | — |
-| [SRC-D67DCEB693-L000166](../../tests/test_model_provider_failover.py#L166) | 166 | `"            model=agent.verifier_model,"` | — |
-| [SRC-D67DCEB693-L000167](../../tests/test_model_provider_failover.py#L167) | 167 | `"            allow_fallback=False,"` | — |
-| [SRC-D67DCEB693-L000168](../../tests/test_model_provider_failover.py#L168) | 168 | `"        )"` | — |
-| [SRC-D67DCEB693-L000169](../../tests/test_model_provider_failover.py#L169) | 169 | `"    except RuntimeError as exc:"` | — |
-| [SRC-D67DCEB693-L000170](../../tests/test_model_provider_failover.py#L170) | 170 | `"        assert \"HTTP 401\" in str(exc)"` | — |
-| [SRC-D67DCEB693-L000171](../../tests/test_model_provider_failover.py#L171) | 171 | `"    else:"` | — |
-| [SRC-D67DCEB693-L000172](../../tests/test_model_provider_failover.py#L172) | 172 | `"        raise AssertionError(\"semantic verifier unexpectedly accepted a failed provider request\")"` | — |
-| [SRC-D67DCEB693-L000173](../../tests/test_model_provider_failover.py#L173) | 173 | `""` | — |
-| [SRC-D67DCEB693-L000174](../../tests/test_model_provider_failover.py#L174) | 174 | `"    assert calls == [\"https://openrouter.ai/api/v1/chat/completions\"]"` | — |
-| [SRC-D67DCEB693-L000175](../../tests/test_model_provider_failover.py#L175) | 175 | `""` | — |
-| [SRC-D67DCEB693-L000176](../../tests/test_model_provider_failover.py#L176) | 176 | `""` | — |
-| [SRC-D67DCEB693-L000177](../../tests/test_model_provider_failover.py#L177) | 177 | `"def test_openrouter_web_search_tool_is_not_sent_to_fallback_provider(monkeypatch):"` | — |
-| [SRC-D67DCEB693-L000178](../../tests/test_model_provider_failover.py#L178) | 178 | `"    _clear_model_environment(monkeypatch)"` | — |
-| [SRC-D67DCEB693-L000179](../../tests/test_model_provider_failover.py#L179) | 179 | `"    monkeypatch.setenv(\"OPENROUTER_API_KEY\", \"test-openrouter-key\")"` | — |
-| [SRC-D67DCEB693-L000180](../../tests/test_model_provider_failover.py#L180) | 180 | `"    monkeypatch.setenv(\"GEMINI_API_KEY\", \"test-gemini-key\")"` | — |
-| [SRC-D67DCEB693-L000181](../../tests/test_model_provider_failover.py#L181) | 181 | `"    monkeypatch.setenv(\"OMARAI_OPENROUTER_WEB_SEARCH\", \"1\")"` | — |
-| [SRC-D67DCEB693-L000182](../../tests/test_model_provider_failover.py#L182) | 182 | `"    agent = WebAgent()"` | — |
-| [SRC-D67DCEB693-L000183](../../tests/test_model_provider_failover.py#L183) | 183 | `"    observed = []"` | — |
-| [SRC-D67DCEB693-L000184](../../tests/test_model_provider_failover.py#L184) | 184 | `""` | — |
-| [SRC-D67DCEB693-L000185](../../tests/test_model_provider_failover.py#L185) | 185 | `"    def fake_open(request, timeout):"` | — |
-| [SRC-D67DCEB693-L000186](../../tests/test_model_provider_failover.py#L186) | 186 | `"        payload = json.loads(request.data.decode(\"utf-8\"))"` | — |
-| [SRC-D67DCEB693-L000187](../../tests/test_model_provider_failover.py#L187) | 187 | `"        observed.append((request.full_url, payload))"` | — |
-| [SRC-D67DCEB693-L000188](../../tests/test_model_provider_failover.py#L188) | 188 | `"        if \"openrouter.ai\" in request.full_url:"` | — |
-| [SRC-D67DCEB693-L000189](../../tests/test_model_provider_failover.py#L189) | 189 | `"            raise HTTPError(request.full_url, 503, \"temporary\", None, None)"` | — |
-| [SRC-D67DCEB693-L000190](../../tests/test_model_provider_failover.py#L190) | 190 | `"        return FakeCompletionResponse(\"إجابة احتياطية\")"` | — |
-| [SRC-D67DCEB693-L000191](../../tests/test_model_provider_failover.py#L191) | 191 | `""` | — |
-| [SRC-D67DCEB693-L000192](../../tests/test_model_provider_failover.py#L192) | 192 | `"    monkeypatch.setattr(\"agents.web_agent._open_model_request\", fake_open)"` | — |
-| [SRC-D67DCEB693-L000193](../../tests/test_model_provider_failover.py#L193) | 193 | `"    answer = agent._request_completion("` | — |

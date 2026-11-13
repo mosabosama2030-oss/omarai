@@ -4,7 +4,7 @@
 
 - الصفحة: **012**
 - سجلات الأسطر: **800**
-- النطاق: SRC-686F71AA50-L001399 إلى SRC-0799EEEB02-L000111
+- النطاق: SRC-686F71AA50-L001351 إلى SRC-0799EEEB02-L000063
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,54 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-686F71AA50-L001351](../../agents/task_understanding.py#L1351) | 1351 | `"            \"aspect\": {"` | — |
+| [SRC-686F71AA50-L001352](../../agents/task_understanding.py#L1352) | 1352 | `"                normalize_text(\"الضمان\"): (\"الضمان\", \"ضمان\", \"warranty\", \"guarantee\"),"` | — |
+| [SRC-686F71AA50-L001353](../../agents/task_understanding.py#L1353) | 1353 | `"                normalize_text(\"التقييمات\"): (\"التقييمات\", \"التقييم\", \"reviews\", \"ratings\", \"review\"),"` | — |
+| [SRC-686F71AA50-L001354](../../agents/task_understanding.py#L1354) | 1354 | `"                normalize_text(\"المراجعات\"): (\"المراجعات\", \"مراجعات\", \"reviews\", \"ratings\"),"` | — |
+| [SRC-686F71AA50-L001355](../../agents/task_understanding.py#L1355) | 1355 | `"                normalize_text(\"الصيانة\"): (\"الصيانة\", \"الصيانه\", \"maintenance\", \"repair\", \"service\"),"` | — |
+| [SRC-686F71AA50-L001356](../../agents/task_understanding.py#L1356) | 1356 | `"                normalize_text(\"السعر\"): (\"السعر\", \"سعر\", \"price\", \"pricing\", \"cost\"),"` | — |
+| [SRC-686F71AA50-L001357](../../agents/task_understanding.py#L1357) | 1357 | `"            },"` | — |
+| [SRC-686F71AA50-L001358](../../agents/task_understanding.py#L1358) | 1358 | `"            \"capacity\": {"` | — |
+| [SRC-686F71AA50-L001359](../../agents/task_understanding.py#L1359) | 1359 | `"                normalize_text(\"256 جيجابايت\"): (\"256 جيجابايت\", \"256gb\", \"256 gb\"),"` | — |
+| [SRC-686F71AA50-L001360](../../agents/task_understanding.py#L1360) | 1360 | `"                normalize_text(\"512 جيجابايت\"): (\"512 جيجابايت\", \"512gb\", \"512 gb\"),"` | — |
+| [SRC-686F71AA50-L001361](../../agents/task_understanding.py#L1361) | 1361 | `"                normalize_text(\"1 تيرابايت\"): (\"1 تيرابايت\", \"1tb\", \"1 tb\", \"1024gb\"),"` | — |
+| [SRC-686F71AA50-L001362](../../agents/task_understanding.py#L1362) | 1362 | `"            },"` | — |
+| [SRC-686F71AA50-L001363](../../agents/task_understanding.py#L1363) | 1363 | `"        }"` | — |
+| [SRC-686F71AA50-L001364](../../agents/task_understanding.py#L1364) | 1364 | `"        changed = ("` | — |
+| [SRC-686F71AA50-L001365](../../agents/task_understanding.py#L1365) | 1365 | `"            context_resolution.get(\"changed_slots\")"` | — |
+| [SRC-686F71AA50-L001366](../../agents/task_understanding.py#L1366) | 1366 | `"            if isinstance(context_resolution.get(\"changed_slots\"), list) else []"` | — |
+| [SRC-686F71AA50-L001367](../../agents/task_understanding.py#L1367) | 1367 | `"        )"` | — |
+| [SRC-686F71AA50-L001368](../../agents/task_understanding.py#L1368) | 1368 | `"        slots = ("` | — |
+| [SRC-686F71AA50-L001369](../../agents/task_understanding.py#L1369) | 1369 | `"            context_resolution.get(\"slots\")"` | — |
+| [SRC-686F71AA50-L001370](../../agents/task_understanding.py#L1370) | 1370 | `"            if isinstance(context_resolution.get(\"slots\"), dict) else {}"` | — |
+| [SRC-686F71AA50-L001371](../../agents/task_understanding.py#L1371) | 1371 | `"        )"` | — |
+| [SRC-686F71AA50-L001372](../../agents/task_understanding.py#L1372) | 1372 | `"        relevant = ["` | — |
+| [SRC-686F71AA50-L001373](../../agents/task_understanding.py#L1373) | 1373 | `"            slot for slot in changed"` | — |
+| [SRC-686F71AA50-L001374](../../agents/task_understanding.py#L1374) | 1374 | `"            if slot in {"` | — |
+| [SRC-686F71AA50-L001375](../../agents/task_understanding.py#L1375) | 1375 | `"                \"location\", \"country\", \"budget\", \"currency\", \"time_range\","` | — |
+| [SRC-686F71AA50-L001376](../../agents/task_understanding.py#L1376) | 1376 | `"                \"capacity\", \"aspect\", \"version\", \"entity\", \"product\", \"model\", \"variant\","` | — |
+| [SRC-686F71AA50-L001377](../../agents/task_understanding.py#L1377) | 1377 | `"            }"` | — |
+| [SRC-686F71AA50-L001378](../../agents/task_understanding.py#L1378) | 1378 | `"        ]"` | — |
+| [SRC-686F71AA50-L001379](../../agents/task_understanding.py#L1379) | 1379 | `"        if not relevant:"` | — |
+| [SRC-686F71AA50-L001380](../../agents/task_understanding.py#L1380) | 1380 | `"            return False"` | — |
+| [SRC-686F71AA50-L001381](../../agents/task_understanding.py#L1381) | 1381 | `"        for slot in relevant:"` | — |
+| [SRC-686F71AA50-L001382](../../agents/task_understanding.py#L1382) | 1382 | `"            value = slots.get(slot)"` | — |
+| [SRC-686F71AA50-L001383](../../agents/task_understanding.py#L1383) | 1383 | `"            if not isinstance(value, str) or not value.strip():"` | — |
+| [SRC-686F71AA50-L001384](../../agents/task_understanding.py#L1384) | 1384 | `"                return False"` | — |
+| [SRC-686F71AA50-L001385](../../agents/task_understanding.py#L1385) | 1385 | `"            normalized_value = normalize_text(value)"` | — |
+| [SRC-686F71AA50-L001386](../../agents/task_understanding.py#L1386) | 1386 | `"            candidates = aliases.get(slot, {}).get(normalized_value, (value,))"` | — |
+| [SRC-686F71AA50-L001387](../../agents/task_understanding.py#L1387) | 1387 | `"            if slot == \"budget\":"` | — |
+| [SRC-686F71AA50-L001388](../../agents/task_understanding.py#L1388) | 1388 | `"                numbers = {"` | — |
+| [SRC-686F71AA50-L001389](../../agents/task_understanding.py#L1389) | 1389 | `"                    item.replace(\",\", \"\").replace(\".\", \"\")"` | — |
+| [SRC-686F71AA50-L001390](../../agents/task_understanding.py#L1390) | 1390 | `"                    for item in re.findall(r\"\\d+(?:[,.]\\d+)*\", normalized_value)"` | — |
+| [SRC-686F71AA50-L001391](../../agents/task_understanding.py#L1391) | 1391 | `"                }"` | — |
+| [SRC-686F71AA50-L001392](../../agents/task_understanding.py#L1392) | 1392 | `"                seed_numbers = {"` | — |
+| [SRC-686F71AA50-L001393](../../agents/task_understanding.py#L1393) | 1393 | `"                    item.replace(\",\", \"\").replace(\".\", \"\")"` | — |
+| [SRC-686F71AA50-L001394](../../agents/task_understanding.py#L1394) | 1394 | `"                    for item in re.findall(r\"\\d+(?:[,.]\\d+)*\", normalized_seed)"` | — |
+| [SRC-686F71AA50-L001395](../../agents/task_understanding.py#L1395) | 1395 | `"                }"` | — |
+| [SRC-686F71AA50-L001396](../../agents/task_understanding.py#L1396) | 1396 | `"                if not numbers or not numbers.issubset(seed_numbers):"` | — |
+| [SRC-686F71AA50-L001397](../../agents/task_understanding.py#L1397) | 1397 | `"                    return False"` | — |
+| [SRC-686F71AA50-L001398](../../agents/task_understanding.py#L1398) | 1398 | `"                continue"` | — |
 | [SRC-686F71AA50-L001399](../../agents/task_understanding.py#L1399) | 1399 | `"            if slot == \"capacity\":"` | — |
 | [SRC-686F71AA50-L001400](../../agents/task_understanding.py#L1400) | 1400 | `"                numbers = {"` | — |
 | [SRC-686F71AA50-L001401](../../agents/task_understanding.py#L1401) | 1401 | `"                    item.replace(\",\", \"\").replace(\".\", \"\")"` | — |
@@ -786,51 +834,3 @@
 | [SRC-0799EEEB02-L000061](../../agents/tool_execution_status.py#L61) | 61 | `"    requirements = spec.get(\"tool_requirements\")"` | — |
 | [SRC-0799EEEB02-L000062](../../agents/tool_execution_status.py#L62) | 62 | `"    required = {"` | — |
 | [SRC-0799EEEB02-L000063](../../agents/tool_execution_status.py#L63) | 63 | `"        item for item in requirements"` | — |
-| [SRC-0799EEEB02-L000064](../../agents/tool_execution_status.py#L64) | 64 | `"        if isinstance(item, str) and item in _TOOL_LABELS"` | — |
-| [SRC-0799EEEB02-L000065](../../agents/tool_execution_status.py#L65) | 65 | `"    } if isinstance(requirements, list) else set()"` | — |
-| [SRC-0799EEEB02-L000066](../../agents/tool_execution_status.py#L66) | 66 | `""` | — |
-| [SRC-0799EEEB02-L000067](../../agents/tool_execution_status.py#L67) | 67 | `"    outcome = str(search_report.get(\"search_outcome\") or \"unknown\")"` | — |
-| [SRC-0799EEEB02-L000068](../../agents/tool_execution_status.py#L68) | 68 | `"    attempted = output.get(\"search_attempted\", search_report.get(\"search_attempted\"))"` | — |
-| [SRC-0799EEEB02-L000069](../../agents/tool_execution_status.py#L69) | 69 | `"    reported_accepted_sources = _nonnegative_int("` | — |
-| [SRC-0799EEEB02-L000070](../../agents/tool_execution_status.py#L70) | 70 | `"        search_report.get(\"usable_sources_after_filtering\")"` | — |
-| [SRC-0799EEEB02-L000071](../../agents/tool_execution_status.py#L71) | 71 | `"    )"` | — |
-| [SRC-0799EEEB02-L000072](../../agents/tool_execution_status.py#L72) | 72 | `"    reported_pages_read = _nonnegative_int(search_report.get(\"pages_fetched\"))"` | — |
-| [SRC-0799EEEB02-L000073](../../agents/tool_execution_status.py#L73) | 73 | `"    pages_attempted = _nonnegative_int(search_report.get(\"pages_fetch_attempted\"))"` | — |
-| [SRC-0799EEEB02-L000074](../../agents/tool_execution_status.py#L74) | 74 | `"    raw_source_rows = output.get(\"sources\")"` | — |
-| [SRC-0799EEEB02-L000075](../../agents/tool_execution_status.py#L75) | 75 | `"    returned_sources_known = isinstance(raw_source_rows, list)"` | — |
-| [SRC-0799EEEB02-L000076](../../agents/tool_execution_status.py#L76) | 76 | `"    source_rows = raw_source_rows if returned_sources_known else []"` | — |
-| [SRC-0799EEEB02-L000077](../../agents/tool_execution_status.py#L77) | 77 | `"    readable_page_rows = sum("` | — |
-| [SRC-0799EEEB02-L000078](../../agents/tool_execution_status.py#L78) | 78 | `"        1 for source in source_rows"` | — |
-| [SRC-0799EEEB02-L000079](../../agents/tool_execution_status.py#L79) | 79 | `"        if isinstance(source, dict)"` | — |
-| [SRC-0799EEEB02-L000080](../../agents/tool_execution_status.py#L80) | 80 | `"        and source.get(\"page_fetched\") is True"` | — |
-| [SRC-0799EEEB02-L000081](../../agents/tool_execution_status.py#L81) | 81 | `"    )"` | — |
-| [SRC-0799EEEB02-L000082](../../agents/tool_execution_status.py#L82) | 82 | `"    # The public return value is the final accepted source set. Prefer it when"` | — |
-| [SRC-0799EEEB02-L000083](../../agents/tool_execution_status.py#L83) | 83 | `"    # present; preserve report counters separately so disagreements stay visible."` | — |
-| [SRC-0799EEEB02-L000084](../../agents/tool_execution_status.py#L84) | 84 | `"    returned_source_count = len(source_rows) if returned_sources_known else None"` | — |
-| [SRC-0799EEEB02-L000085](../../agents/tool_execution_status.py#L85) | 85 | `"    accepted_sources = ("` | — |
-| [SRC-0799EEEB02-L000086](../../agents/tool_execution_status.py#L86) | 86 | `"        returned_source_count if returned_sources_known else reported_accepted_sources"` | — |
-| [SRC-0799EEEB02-L000087](../../agents/tool_execution_status.py#L87) | 87 | `"    )"` | — |
-| [SRC-0799EEEB02-L000088](../../agents/tool_execution_status.py#L88) | 88 | `"    pages_read = reported_pages_read if reported_pages_read is not None else readable_page_rows"` | — |
-| [SRC-0799EEEB02-L000089](../../agents/tool_execution_status.py#L89) | 89 | `"    source_count_mismatch = ("` | — |
-| [SRC-0799EEEB02-L000090](../../agents/tool_execution_status.py#L90) | 90 | `"        returned_sources_known"` | — |
-| [SRC-0799EEEB02-L000091](../../agents/tool_execution_status.py#L91) | 91 | `"        and reported_accepted_sources is not None"` | — |
-| [SRC-0799EEEB02-L000092](../../agents/tool_execution_status.py#L92) | 92 | `"        and reported_accepted_sources != returned_source_count"` | — |
-| [SRC-0799EEEB02-L000093](../../agents/tool_execution_status.py#L93) | 93 | `"    )"` | — |
-| [SRC-0799EEEB02-L000094](../../agents/tool_execution_status.py#L94) | 94 | `"    page_count_mismatch = ("` | — |
-| [SRC-0799EEEB02-L000095](../../agents/tool_execution_status.py#L95) | 95 | `"        returned_sources_known"` | — |
-| [SRC-0799EEEB02-L000096](../../agents/tool_execution_status.py#L96) | 96 | `"        and reported_pages_read is not None"` | — |
-| [SRC-0799EEEB02-L000097](../../agents/tool_execution_status.py#L97) | 97 | `"        and reported_pages_read != readable_page_rows"` | — |
-| [SRC-0799EEEB02-L000098](../../agents/tool_execution_status.py#L98) | 98 | `"    )"` | — |
-| [SRC-0799EEEB02-L000099](../../agents/tool_execution_status.py#L99) | 99 | `""` | — |
-| [SRC-0799EEEB02-L000100](../../agents/tool_execution_status.py#L100) | 100 | `"    rows: list[dict[str, Any]] = []"` | — |
-| [SRC-0799EEEB02-L000101](../../agents/tool_execution_status.py#L101) | 101 | `""` | — |
-| [SRC-0799EEEB02-L000102](../../agents/tool_execution_status.py#L102) | 102 | `"    # Search completion and evidence acceptance are distinct: zero accepted sources"` | — |
-| [SRC-0799EEEB02-L000103](../../agents/tool_execution_status.py#L103) | 103 | `"    # means this retrieval attempt supplied no eligible evidence, not that the fact"` | — |
-| [SRC-0799EEEB02-L000104](../../agents/tool_execution_status.py#L104) | 104 | `"    # or source does not exist."` | — |
-| [SRC-0799EEEB02-L000105](../../agents/tool_execution_status.py#L105) | 105 | `"    tool = \"web_search\""` | — |
-| [SRC-0799EEEB02-L000106](../../agents/tool_execution_status.py#L106) | 106 | `"    if tool not in required:"` | — |
-| [SRC-0799EEEB02-L000107](../../agents/tool_execution_status.py#L107) | 107 | `"        status = \"not_required\""` | — |
-| [SRC-0799EEEB02-L000108](../../agents/tool_execution_status.py#L108) | 108 | `"    elif outcome == \"attempted_research_error\":"` | — |
-| [SRC-0799EEEB02-L000109](../../agents/tool_execution_status.py#L109) | 109 | `"        status = \"failed\""` | — |
-| [SRC-0799EEEB02-L000110](../../agents/tool_execution_status.py#L110) | 110 | `"    elif outcome in {\"unknown_after_research_error\", \"unknown_after_budget_exhaustion\"}:"` | — |
-| [SRC-0799EEEB02-L000111](../../agents/tool_execution_status.py#L111) | 111 | `"        status = \"unknown\""` | — |

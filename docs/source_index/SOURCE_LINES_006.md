@@ -4,7 +4,7 @@
 
 - الصفحة: **006**
 - سجلات الأسطر: **800**
-- النطاق: SRC-FDEEAFDFCA-L000028 إلى SRC-59CF4B7DE8-L000515
+- النطاق: SRC-FDEEAFDFCA-L000024 إلى SRC-59CF4B7DE8-L000511
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,10 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-FDEEAFDFCA-L000024](../../agents/request_budget.py#L24) | 24 | `"    \"search_queries\": (8, 8),"` | — |
+| [SRC-FDEEAFDFCA-L000025](../../agents/request_budget.py#L25) | 25 | `"    \"search_calls\": (32, 40),"` | — |
+| [SRC-FDEEAFDFCA-L000026](../../agents/request_budget.py#L26) | 26 | `"    \"model_calls\": (8, 12),"` | — |
+| [SRC-FDEEAFDFCA-L000027](../../agents/request_budget.py#L27) | 27 | `"    \"page_fetches\": (8, 8),"` | — |
 | [SRC-FDEEAFDFCA-L000028](../../agents/request_budget.py#L28) | 28 | `"    \"tool_calls\": (3, 3),"` | — |
 | [SRC-FDEEAFDFCA-L000029](../../agents/request_budget.py#L29) | 29 | `"}"` | — |
 | [SRC-FDEEAFDFCA-L000030](../../agents/request_budget.py#L30) | 30 | `""` | — |
@@ -830,7 +834,3 @@
 | [SRC-59CF4B7DE8-L000509](../../agents/research.py#L509) | 509 | `"        \"direct_urls\": fallback[\"direct_urls\"],"` | — |
 | [SRC-59CF4B7DE8-L000510](../../agents/research.py#L510) | 510 | `"        \"social_focus\": bool(candidate.get(\"social_focus\", base[\"social_focus\"])),"` | — |
 | [SRC-59CF4B7DE8-L000511](../../agents/research.py#L511) | 511 | `"        \"freshness\": \"current\" if candidate.get(\"freshness\") == \"current\" else base[\"freshness\"],"` | — |
-| [SRC-59CF4B7DE8-L000512](../../agents/research.py#L512) | 512 | `"        \"depth\": \"deep\" if candidate.get(\"depth\") == \"deep\" else base[\"depth\"],"` | — |
-| [SRC-59CF4B7DE8-L000513](../../agents/research.py#L513) | 513 | `"        \"platforms\": list(dict.fromkeys(safe_platforms))[:5],"` | — |
-| [SRC-59CF4B7DE8-L000514](../../agents/research.py#L514) | 514 | `"        \"planning_method\": \"language_model\","` | — |
-| [SRC-59CF4B7DE8-L000515](../../agents/research.py#L515) | 515 | `"    }"` | — |

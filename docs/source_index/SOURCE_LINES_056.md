@@ -4,7 +4,7 @@
 
 - الصفحة: **056**
 - سجلات الأسطر: **800**
-- النطاق: SRC-C353AAAC10-L000051 إلى SRC-AFFCF23BD4-L000238
+- النطاق: SRC-C353AAAC10-L000003 إلى SRC-AFFCF23BD4-L000172
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,54 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-C353AAAC10-L000003](../../tests/test_request_budget.py#L3) | 3 | `""` | — |
+| [SRC-C353AAAC10-L000004](../../tests/test_request_budget.py#L4) | 4 | `"import pytest"` | — |
+| [SRC-C353AAAC10-L000005](../../tests/test_request_budget.py#L5) | 5 | `""` | — |
+| [SRC-C353AAAC10-L000006](../../tests/test_request_budget.py#L6) | 6 | `"from agents.request_budget import RequestBudget, RequestBudgetExceeded"` | — |
+| [SRC-C353AAAC10-L000007](../../tests/test_request_budget.py#L7) | 7 | `""` | — |
+| [SRC-C353AAAC10-L000008](../../tests/test_request_budget.py#L8) | 8 | `""` | — |
+| [SRC-C353AAAC10-L000009](../../tests/test_request_budget.py#L9) | 9 | `"class FakeClock:"` | — |
+| [SRC-C353AAAC10-L000010](../../tests/test_request_budget.py#L10) | 10 | `"    def __init__(self, value: float = 100.0) -> None:"` | — |
+| [SRC-C353AAAC10-L000011](../../tests/test_request_budget.py#L11) | 11 | `"        self.value = value"` | — |
+| [SRC-C353AAAC10-L000012](../../tests/test_request_budget.py#L12) | 12 | `""` | — |
+| [SRC-C353AAAC10-L000013](../../tests/test_request_budget.py#L13) | 13 | `"    def __call__(self) -> float:"` | — |
+| [SRC-C353AAAC10-L000014](../../tests/test_request_budget.py#L14) | 14 | `"        return self.value"` | — |
+| [SRC-C353AAAC10-L000015](../../tests/test_request_budget.py#L15) | 15 | `""` | — |
+| [SRC-C353AAAC10-L000016](../../tests/test_request_budget.py#L16) | 16 | `""` | — |
+| [SRC-C353AAAC10-L000017](../../tests/test_request_budget.py#L17) | 17 | `"def test_resource_reservations_are_bounded_and_thread_safe_in_snapshot():"` | — |
+| [SRC-C353AAAC10-L000018](../../tests/test_request_budget.py#L18) | 18 | `"    clock = FakeClock()"` | — |
+| [SRC-C353AAAC10-L000019](../../tests/test_request_budget.py#L19) | 19 | `"    budget = RequestBudget("` | — |
+| [SRC-C353AAAC10-L000020](../../tests/test_request_budget.py#L20) | 20 | `"        timeout_seconds=10,"` | — |
+| [SRC-C353AAAC10-L000021](../../tests/test_request_budget.py#L21) | 21 | `"        limits={\"search_calls\": 1},"` | — |
+| [SRC-C353AAAC10-L000022](../../tests/test_request_budget.py#L22) | 22 | `"        clock=clock,"` | — |
+| [SRC-C353AAAC10-L000023](../../tests/test_request_budget.py#L23) | 23 | `"    )"` | — |
+| [SRC-C353AAAC10-L000024](../../tests/test_request_budget.py#L24) | 24 | `""` | — |
+| [SRC-C353AAAC10-L000025](../../tests/test_request_budget.py#L25) | 25 | `"    budget.reserve(\"search_calls\")"` | — |
+| [SRC-C353AAAC10-L000026](../../tests/test_request_budget.py#L26) | 26 | `"    with pytest.raises(RequestBudgetExceeded, match=\"search_calls\"):"` | — |
+| [SRC-C353AAAC10-L000027](../../tests/test_request_budget.py#L27) | 27 | `"        budget.reserve(\"search_calls\")"` | — |
+| [SRC-C353AAAC10-L000028](../../tests/test_request_budget.py#L28) | 28 | `""` | — |
+| [SRC-C353AAAC10-L000029](../../tests/test_request_budget.py#L29) | 29 | `"    snapshot = budget.snapshot()"` | — |
+| [SRC-C353AAAC10-L000030](../../tests/test_request_budget.py#L30) | 30 | `"    assert snapshot[\"counts\"][\"search_calls\"] == 1"` | — |
+| [SRC-C353AAAC10-L000031](../../tests/test_request_budget.py#L31) | 31 | `"    assert snapshot[\"limits\"][\"search_calls\"] == 1"` | — |
+| [SRC-C353AAAC10-L000032](../../tests/test_request_budget.py#L32) | 32 | `"    assert snapshot[\"deadline_exceeded\"] is False"` | — |
+| [SRC-C353AAAC10-L000033](../../tests/test_request_budget.py#L33) | 33 | `""` | — |
+| [SRC-C353AAAC10-L000034](../../tests/test_request_budget.py#L34) | 34 | `""` | — |
+| [SRC-C353AAAC10-L000035](../../tests/test_request_budget.py#L35) | 35 | `"def test_deadline_blocks_new_work_and_caps_outbound_timeout():"` | — |
+| [SRC-C353AAAC10-L000036](../../tests/test_request_budget.py#L36) | 36 | `"    clock = FakeClock()"` | — |
+| [SRC-C353AAAC10-L000037](../../tests/test_request_budget.py#L37) | 37 | `"    budget = RequestBudget(timeout_seconds=10, clock=clock)"` | — |
+| [SRC-C353AAAC10-L000038](../../tests/test_request_budget.py#L38) | 38 | `""` | — |
+| [SRC-C353AAAC10-L000039](../../tests/test_request_budget.py#L39) | 39 | `"    clock.value += 7"` | — |
+| [SRC-C353AAAC10-L000040](../../tests/test_request_budget.py#L40) | 40 | `"    assert budget.timeout_for(30) == pytest.approx(3)"` | — |
+| [SRC-C353AAAC10-L000041](../../tests/test_request_budget.py#L41) | 41 | `"    assert budget.timeout_for(1) == pytest.approx(1)"` | — |
+| [SRC-C353AAAC10-L000042](../../tests/test_request_budget.py#L42) | 42 | `""` | — |
+| [SRC-C353AAAC10-L000043](../../tests/test_request_budget.py#L43) | 43 | `"    clock.value += 4"` | — |
+| [SRC-C353AAAC10-L000044](../../tests/test_request_budget.py#L44) | 44 | `"    assert budget.remaining_seconds() == 0"` | — |
+| [SRC-C353AAAC10-L000045](../../tests/test_request_budget.py#L45) | 45 | `"    with pytest.raises(RequestBudgetExceeded, match=\"وقت الطلب\"):"` | — |
+| [SRC-C353AAAC10-L000046](../../tests/test_request_budget.py#L46) | 46 | `"        budget.reserve(\"model_calls\")"` | — |
+| [SRC-C353AAAC10-L000047](../../tests/test_request_budget.py#L47) | 47 | `"    with pytest.raises(RequestBudgetExceeded, match=\"وقت الطلب\"):"` | — |
+| [SRC-C353AAAC10-L000048](../../tests/test_request_budget.py#L48) | 48 | `"        budget.timeout_for(3)"` | — |
+| [SRC-C353AAAC10-L000049](../../tests/test_request_budget.py#L49) | 49 | `""` | — |
+| [SRC-C353AAAC10-L000050](../../tests/test_request_budget.py#L50) | 50 | `""` | — |
 | [SRC-C353AAAC10-L000051](../../tests/test_request_budget.py#L51) | 51 | `"def test_environment_overrides_are_clamped(monkeypatch):"` | — |
 | [SRC-C353AAAC10-L000052](../../tests/test_request_budget.py#L52) | 52 | `"    monkeypatch.setenv(\"OMARAI_REQUEST_BUDGET_SECONDS\", \"999\")"` | — |
 | [SRC-C353AAAC10-L000053](../../tests/test_request_budget.py#L53) | 53 | `"    monkeypatch.setenv(\"OMARAI_REQUEST_MAX_SEARCH_CALLS\", \"999\")"` | — |
@@ -323,31 +371,31 @@
 | [SRC-6BF96689A8-L000087](../../tests/test_research.py#L87) | 87 | `"    assert plan[\"direct_urls\"] == [\"https://example.com/a?utm_source=chat#section\"]"` | — |
 | [SRC-6BF96689A8-L000088](../../tests/test_research.py#L88) | 88 | `"    assert \"https://\" not in plan[\"queries\"][0]"` | — |
 | [SRC-6BF96689A8-L000089](../../tests/test_research.py#L89) | 89 | `""` | — |
-| [SRC-6BF96689A8-L000090](../../tests/test_research.py#L90) | 90 | `"def test_registrable_domain_groups_subdomains_and_respects_public_suffixes():"` | — |
-| [SRC-6BF96689A8-L000091](../../tests/test_research.py#L91) | 91 | `"    assert registrable_domain(\"news.example.com\") == \"example.com\""` | — |
-| [SRC-6BF96689A8-L000092](../../tests/test_research.py#L92) | 92 | `"    assert registrable_domain(\"offers.example.com\") == \"example.com\""` | — |
-| [SRC-6BF96689A8-L000093](../../tests/test_research.py#L93) | 93 | `"    assert registrable_domain(\"news.example.co.uk\") == \"example.co.uk\""` | — |
-| [SRC-6BF96689A8-L000094](../../tests/test_research.py#L94) | 94 | `"    assert registrable_domain(\"other.co.uk\") == \"other.co.uk\""` | — |
-| [SRC-6BF96689A8-L000095](../../tests/test_research.py#L95) | 95 | `"    assert registrable_domain(\"alice.github.io\") == \"alice.github.io\""` | — |
-| [SRC-6BF96689A8-L000096](../../tests/test_research.py#L96) | 96 | `"    assert registrable_domain(\"https://www.example.com/path\") == \"example.com\""` | — |
-| [SRC-6BF96689A8-L000097](../../tests/test_research.py#L97) | 97 | `""` | — |
+| [SRC-6BF96689A8-L000090](../../tests/test_research.py#L90) | 90 | `""` | — |
+| [SRC-6BF96689A8-L000091](../../tests/test_research.py#L91) | 91 | `"def test_registrable_domain_groups_subdomains_and_respects_public_suffixes():"` | — |
+| [SRC-6BF96689A8-L000092](../../tests/test_research.py#L92) | 92 | `"    assert registrable_domain(\"news.example.com\") == \"example.com\""` | — |
+| [SRC-6BF96689A8-L000093](../../tests/test_research.py#L93) | 93 | `"    assert registrable_domain(\"offers.example.com\") == \"example.com\""` | — |
+| [SRC-6BF96689A8-L000094](../../tests/test_research.py#L94) | 94 | `"    assert registrable_domain(\"news.example.co.uk\") == \"example.co.uk\""` | — |
+| [SRC-6BF96689A8-L000095](../../tests/test_research.py#L95) | 95 | `"    assert registrable_domain(\"other.co.uk\") == \"other.co.uk\""` | — |
+| [SRC-6BF96689A8-L000096](../../tests/test_research.py#L96) | 96 | `"    assert registrable_domain(\"alice.github.io\") == \"alice.github.io\""` | — |
+| [SRC-6BF96689A8-L000097](../../tests/test_research.py#L97) | 97 | `"    assert registrable_domain(\"https://www.example.com/path\") == \"example.com\""` | — |
 | [SRC-6BF96689A8-L000098](../../tests/test_research.py#L98) | 98 | `""` | — |
-| [SRC-6BF96689A8-L000099](../../tests/test_research.py#L99) | 99 | `"def test_evidence_coverage_does_not_count_sibling_subdomains_as_independent():"` | — |
-| [SRC-6BF96689A8-L000100](../../tests/test_research.py#L100) | 100 | `"    report = evidence_signal_report(["` | — |
-| [SRC-6BF96689A8-L000101](../../tests/test_research.py#L101) | 101 | `"        {"` | — |
-| [SRC-6BF96689A8-L000102](../../tests/test_research.py#L102) | 102 | `"            \"url\": \"https://news.example.com/story\","` | — |
-| [SRC-6BF96689A8-L000103](../../tests/test_research.py#L103) | 103 | `"            \"domain\": \"news.example.com\","` | — |
-| [SRC-6BF96689A8-L000104](../../tests/test_research.py#L104) | 104 | `"            \"providers\": [\"search_a\"],"` | — |
-| [SRC-6BF96689A8-L000105](../../tests/test_research.py#L105) | 105 | `"        },"` | — |
-| [SRC-6BF96689A8-L000106](../../tests/test_research.py#L106) | 106 | `"        {"` | — |
-| [SRC-6BF96689A8-L000107](../../tests/test_research.py#L107) | 107 | `"            \"url\": \"https://offers.example.com/second-story\","` | — |
-| [SRC-6BF96689A8-L000108](../../tests/test_research.py#L108) | 108 | `"            \"domain\": \"offers.example.com\","` | — |
-| [SRC-6BF96689A8-L000109](../../tests/test_research.py#L109) | 109 | `"            \"providers\": [\"search_b\"],"` | — |
-| [SRC-6BF96689A8-L000110](../../tests/test_research.py#L110) | 110 | `"        },"` | — |
-| [SRC-6BF96689A8-L000111](../../tests/test_research.py#L111) | 111 | `"    ])"` | — |
-| [SRC-6BF96689A8-L000112](../../tests/test_research.py#L112) | 112 | `"    assert report[\"unique_domains\"] == 1"` | — |
-| [SRC-6BF96689A8-L000113](../../tests/test_research.py#L113) | 113 | `"    assert report[\"coverage_level\"] == \"محدود\""` | — |
-| [SRC-6BF96689A8-L000114](../../tests/test_research.py#L114) | 114 | `""` | — |
+| [SRC-6BF96689A8-L000099](../../tests/test_research.py#L99) | 99 | `""` | — |
+| [SRC-6BF96689A8-L000100](../../tests/test_research.py#L100) | 100 | `"def test_evidence_coverage_does_not_count_sibling_subdomains_as_independent():"` | — |
+| [SRC-6BF96689A8-L000101](../../tests/test_research.py#L101) | 101 | `"    report = evidence_signal_report(["` | — |
+| [SRC-6BF96689A8-L000102](../../tests/test_research.py#L102) | 102 | `"        {"` | — |
+| [SRC-6BF96689A8-L000103](../../tests/test_research.py#L103) | 103 | `"            \"url\": \"https://news.example.com/story\","` | — |
+| [SRC-6BF96689A8-L000104](../../tests/test_research.py#L104) | 104 | `"            \"domain\": \"news.example.com\","` | — |
+| [SRC-6BF96689A8-L000105](../../tests/test_research.py#L105) | 105 | `"            \"providers\": [\"search_a\"],"` | — |
+| [SRC-6BF96689A8-L000106](../../tests/test_research.py#L106) | 106 | `"        },"` | — |
+| [SRC-6BF96689A8-L000107](../../tests/test_research.py#L107) | 107 | `"        {"` | — |
+| [SRC-6BF96689A8-L000108](../../tests/test_research.py#L108) | 108 | `"            \"url\": \"https://offers.example.com/second-story\","` | — |
+| [SRC-6BF96689A8-L000109](../../tests/test_research.py#L109) | 109 | `"            \"domain\": \"offers.example.com\","` | — |
+| [SRC-6BF96689A8-L000110](../../tests/test_research.py#L110) | 110 | `"            \"providers\": [\"search_b\"],"` | — |
+| [SRC-6BF96689A8-L000111](../../tests/test_research.py#L111) | 111 | `"        },"` | — |
+| [SRC-6BF96689A8-L000112](../../tests/test_research.py#L112) | 112 | `"    ])"` | — |
+| [SRC-6BF96689A8-L000113](../../tests/test_research.py#L113) | 113 | `"    assert report[\"unique_domains\"] == 1"` | — |
+| [SRC-6BF96689A8-L000114](../../tests/test_research.py#L114) | 114 | `"    assert report[\"coverage_level\"] == \"محدود\""` | — |
 | [SRC-6BF96689A8-L000115](../../tests/test_research.py#L115) | 115 | `""` | — |
 | [SRC-6BF96689A8-L000116](../../tests/test_research.py#L116) | 116 | `""` | — |
 | [SRC-6BF96689A8-L000117](../../tests/test_research.py#L117) | 117 | `"def test_standard_fallback_plan_does_not_add_deep_research_query():"` | — |
@@ -430,7 +478,7 @@
 | [SRC-6BF96689A8-L000194](../../tests/test_research.py#L194) | 194 | `""` | — |
 | [SRC-6BF96689A8-L000195](../../tests/test_research.py#L195) | 195 | `"def test_compact_search_query_preserves_site_operator_and_discards_separate_citation_instruction():"` | — |
 | [SRC-6BF96689A8-L000196](../../tests/test_research.py#L196) | 196 | `"    query = compact_search_query("` | — |
-| [SRC-6BF96689A8-L000197](../../tests/test_research.py#L197) | 197 | `"        'site:reddit.com electric car reviews Egypt. Cite the original posts and provide links.'"` | — |
+| [SRC-6BF96689A8-L000197](../../tests/test_research.py#L197) | 197 | `"        \"site:reddit.com electric car reviews Egypt. Cite the original posts and provide links.\""` | — |
 | [SRC-6BF96689A8-L000198](../../tests/test_research.py#L198) | 198 | `"    )"` | — |
 | [SRC-6BF96689A8-L000199](../../tests/test_research.py#L199) | 199 | `"    assert query.startswith(\"site:reddit.com\")"` | — |
 | [SRC-6BF96689A8-L000200](../../tests/test_research.py#L200) | 200 | `"    assert \"electric car reviews Egypt\" in query"` | — |
@@ -463,139 +511,157 @@
 | [SRC-6BF96689A8-L000227](../../tests/test_research.py#L227) | 227 | `"    assert \"اذكر أبرز\" not in query"` | — |
 | [SRC-6BF96689A8-L000228](../../tests/test_research.py#L228) | 228 | `""` | — |
 | [SRC-6BF96689A8-L000229](../../tests/test_research.py#L229) | 229 | `""` | — |
-| [SRC-6BF96689A8-L000230](../../tests/test_research.py#L230) | 230 | `""` | — |
-| [SRC-6BF96689A8-L000231](../../tests/test_research.py#L231) | 231 | `"def test_compact_search_query_returns_empty_for_instruction_only_request():"` | — |
-| [SRC-6BF96689A8-L000232](../../tests/test_research.py#L232) | 232 | `"    query = compact_search_query(\"اذكر مصادر موثوقة، روابط مباشرة، باختصار\")"` | — |
-| [SRC-6BF96689A8-L000233](../../tests/test_research.py#L233) | 233 | `"    assert query == \"\""` | — |
+| [SRC-6BF96689A8-L000230](../../tests/test_research.py#L230) | 230 | `"def test_compact_search_query_returns_empty_for_instruction_only_request():"` | — |
+| [SRC-6BF96689A8-L000231](../../tests/test_research.py#L231) | 231 | `"    query = compact_search_query(\"اذكر مصادر موثوقة، روابط مباشرة، باختصار\")"` | — |
+| [SRC-6BF96689A8-L000232](../../tests/test_research.py#L232) | 232 | `"    assert query == \"\""` | — |
+| [SRC-6BF96689A8-L000233](../../tests/test_research.py#L233) | 233 | `""` | — |
 | [SRC-6BF96689A8-L000234](../../tests/test_research.py#L234) | 234 | `""` | — |
-| [SRC-6BF96689A8-L000235](../../tests/test_research.py#L235) | 235 | `""` | — |
-| [SRC-6BF96689A8-L000236](../../tests/test_research.py#L236) | 236 | `"def test_compact_search_query_removes_diacritic_uncertainty_instruction():"` | — |
-| [SRC-6BF96689A8-L000237](../../tests/test_research.py#L237) | 237 | `"    question = ("` | — |
-| [SRC-6BF96689A8-L000238](../../tests/test_research.py#L238) | 238 | `"        \"اجمع آراء العملاء عن السيارات الكهربائية. \""` | — |
-| [SRC-6BF96689A8-L000239](../../tests/test_research.py#L239) | 239 | `"        \"وَضِّحْ إِذَا كَانَتِ النَّتَائِجُ غَيْرَ كَافِيَةٍ \""` | — |
-| [SRC-6BF96689A8-L000240](../../tests/test_research.py#L240) | 240 | `"        \"لِتَمْثِيلِ آراء المستخدمين عمومًا.\""` | — |
-| [SRC-6BF96689A8-L000241](../../tests/test_research.py#L241) | 241 | `"    )"` | — |
-| [SRC-6BF96689A8-L000242](../../tests/test_research.py#L242) | 242 | `"    query = compact_search_query(question)"` | — |
-| [SRC-6BF96689A8-L000243](../../tests/test_research.py#L243) | 243 | `"    assert \"السيارات الكهربائية\" in query"` | — |
-| [SRC-6BF96689A8-L000244](../../tests/test_research.py#L244) | 244 | `"    assert \"النتائج\" not in query"` | — |
-| [SRC-6BF96689A8-L000245](../../tests/test_research.py#L245) | 245 | `"    assert \"تمثيل آراء المستخدمين\" not in query"` | — |
+| [SRC-6BF96689A8-L000235](../../tests/test_research.py#L235) | 235 | `"def test_compact_search_query_removes_diacritic_uncertainty_instruction():"` | — |
+| [SRC-6BF96689A8-L000236](../../tests/test_research.py#L236) | 236 | `"    question = ("` | — |
+| [SRC-6BF96689A8-L000237](../../tests/test_research.py#L237) | 237 | `"        \"اجمع آراء العملاء عن السيارات الكهربائية. \""` | — |
+| [SRC-6BF96689A8-L000238](../../tests/test_research.py#L238) | 238 | `"        \"وَضِّحْ إِذَا كَانَتِ النَّتَائِجُ غَيْرَ كَافِيَةٍ \""` | — |
+| [SRC-6BF96689A8-L000239](../../tests/test_research.py#L239) | 239 | `"        \"لِتَمْثِيلِ آراء المستخدمين عمومًا.\""` | — |
+| [SRC-6BF96689A8-L000240](../../tests/test_research.py#L240) | 240 | `"    )"` | — |
+| [SRC-6BF96689A8-L000241](../../tests/test_research.py#L241) | 241 | `"    query = compact_search_query(question)"` | — |
+| [SRC-6BF96689A8-L000242](../../tests/test_research.py#L242) | 242 | `"    assert \"السيارات الكهربائية\" in query"` | — |
+| [SRC-6BF96689A8-L000243](../../tests/test_research.py#L243) | 243 | `"    assert \"النتائج\" not in query"` | — |
+| [SRC-6BF96689A8-L000244](../../tests/test_research.py#L244) | 244 | `"    assert \"تمثيل آراء المستخدمين\" not in query"` | — |
+| [SRC-6BF96689A8-L000245](../../tests/test_research.py#L245) | 245 | `""` | — |
 | [SRC-6BF96689A8-L000246](../../tests/test_research.py#L246) | 246 | `""` | — |
-| [SRC-6BF96689A8-L000247](../../tests/test_research.py#L247) | 247 | `""` | — |
-| [SRC-6BF96689A8-L000248](../../tests/test_research.py#L248) | 248 | `"def test_compact_search_query_preserves_topic_after_source_quality_lead_in():"` | — |
-| [SRC-6BF96689A8-L000249](../../tests/test_research.py#L249) | 249 | `"    cases = ("` | — |
-| [SRC-6BF96689A8-L000250](../../tests/test_research.py#L250) | 250 | `"        ("` | — |
-| [SRC-6BF96689A8-L000251](../../tests/test_research.py#L251) | 251 | `"            \"استخدم مصادر متعددة للبحث عن السيارات الكهربائية في مصر\","` | — |
-| [SRC-6BF96689A8-L000252](../../tests/test_research.py#L252) | 252 | `"            (\"السيارات الكهربائية\", \"مصر\"),"` | — |
-| [SRC-6BF96689A8-L000253](../../tests/test_research.py#L253) | 253 | `"        ),"` | — |
-| [SRC-6BF96689A8-L000254](../../tests/test_research.py#L254) | 254 | `"        ("` | — |
-| [SRC-6BF96689A8-L000255](../../tests/test_research.py#L255) | 255 | `"            \"Use multiple sources to research electric vehicle charging in Egypt\","` | — |
-| [SRC-6BF96689A8-L000256](../../tests/test_research.py#L256) | 256 | `"            (\"electric vehicle charging\", \"Egypt\"),"` | — |
-| [SRC-6BF96689A8-L000257](../../tests/test_research.py#L257) | 257 | `"        ),"` | — |
-| [SRC-6BF96689A8-L000258](../../tests/test_research.py#L258) | 258 | `"    )"` | — |
-| [SRC-6BF96689A8-L000259](../../tests/test_research.py#L259) | 259 | `"    for question, required_terms in cases:"` | — |
-| [SRC-6BF96689A8-L000260](../../tests/test_research.py#L260) | 260 | `"        query = compact_search_query(question)"` | — |
-| [SRC-6BF96689A8-L000261](../../tests/test_research.py#L261) | 261 | `"        assert query"` | — |
-| [SRC-6BF96689A8-L000262](../../tests/test_research.py#L262) | 262 | `"        for term in required_terms:"` | — |
-| [SRC-6BF96689A8-L000263](../../tests/test_research.py#L263) | 263 | `"            assert term in query, f\"lost topic term {term!r}: {query!r}\""` | — |
+| [SRC-6BF96689A8-L000247](../../tests/test_research.py#L247) | 247 | `"def test_compact_search_query_preserves_topic_after_source_quality_lead_in():"` | — |
+| [SRC-6BF96689A8-L000248](../../tests/test_research.py#L248) | 248 | `"    cases = ("` | — |
+| [SRC-6BF96689A8-L000249](../../tests/test_research.py#L249) | 249 | `"        ("` | — |
+| [SRC-6BF96689A8-L000250](../../tests/test_research.py#L250) | 250 | `"            \"استخدم مصادر متعددة للبحث عن السيارات الكهربائية في مصر\","` | — |
+| [SRC-6BF96689A8-L000251](../../tests/test_research.py#L251) | 251 | `"            (\"السيارات الكهربائية\", \"مصر\"),"` | — |
+| [SRC-6BF96689A8-L000252](../../tests/test_research.py#L252) | 252 | `"        ),"` | — |
+| [SRC-6BF96689A8-L000253](../../tests/test_research.py#L253) | 253 | `"        ("` | — |
+| [SRC-6BF96689A8-L000254](../../tests/test_research.py#L254) | 254 | `"            \"Use multiple sources to research electric vehicle charging in Egypt\","` | — |
+| [SRC-6BF96689A8-L000255](../../tests/test_research.py#L255) | 255 | `"            (\"electric vehicle charging\", \"Egypt\"),"` | — |
+| [SRC-6BF96689A8-L000256](../../tests/test_research.py#L256) | 256 | `"        ),"` | — |
+| [SRC-6BF96689A8-L000257](../../tests/test_research.py#L257) | 257 | `"    )"` | — |
+| [SRC-6BF96689A8-L000258](../../tests/test_research.py#L258) | 258 | `"    for question, required_terms in cases:"` | — |
+| [SRC-6BF96689A8-L000259](../../tests/test_research.py#L259) | 259 | `"        query = compact_search_query(question)"` | — |
+| [SRC-6BF96689A8-L000260](../../tests/test_research.py#L260) | 260 | `"        assert query"` | — |
+| [SRC-6BF96689A8-L000261](../../tests/test_research.py#L261) | 261 | `"        for term in required_terms:"` | — |
+| [SRC-6BF96689A8-L000262](../../tests/test_research.py#L262) | 262 | `"            assert term in query, f\"lost topic term {term!r}: {query!r}\""` | — |
+| [SRC-6BF96689A8-L000263](../../tests/test_research.py#L263) | 263 | `""` | — |
 | [SRC-6BF96689A8-L000264](../../tests/test_research.py#L264) | 264 | `""` | — |
-| [SRC-6BF96689A8-L000265](../../tests/test_research.py#L265) | 265 | `""` | — |
-| [SRC-6BF96689A8-L000266](../../tests/test_research.py#L266) | 266 | `"def test_compact_search_query_preserves_topic_after_distinguish_action():"` | — |
-| [SRC-6BF96689A8-L000267](../../tests/test_research.py#L267) | 267 | `"    query = compact_search_query(\"ميّز بين السيارات الكهربائية وسيارات البنزين في مصر\")"` | — |
-| [SRC-6BF96689A8-L000268](../../tests/test_research.py#L268) | 268 | `"    assert \"السيارات الكهربائية\" in query"` | — |
-| [SRC-6BF96689A8-L000269](../../tests/test_research.py#L269) | 269 | `"    assert \"سيارات البنزين\" in query"` | — |
-| [SRC-6BF96689A8-L000270](../../tests/test_research.py#L270) | 270 | `"    assert \"مصر\" in query"` | — |
+| [SRC-6BF96689A8-L000265](../../tests/test_research.py#L265) | 265 | `"def test_compact_search_query_preserves_topic_after_distinguish_action():"` | — |
+| [SRC-6BF96689A8-L000266](../../tests/test_research.py#L266) | 266 | `"    query = compact_search_query(\"ميّز بين السيارات الكهربائية وسيارات البنزين في مصر\")"` | — |
+| [SRC-6BF96689A8-L000267](../../tests/test_research.py#L267) | 267 | `"    assert \"السيارات الكهربائية\" in query"` | — |
+| [SRC-6BF96689A8-L000268](../../tests/test_research.py#L268) | 268 | `"    assert \"سيارات البنزين\" in query"` | — |
+| [SRC-6BF96689A8-L000269](../../tests/test_research.py#L269) | 269 | `"    assert \"مصر\" in query"` | — |
+| [SRC-6BF96689A8-L000270](../../tests/test_research.py#L270) | 270 | `""` | — |
 | [SRC-6BF96689A8-L000271](../../tests/test_research.py#L271) | 271 | `""` | — |
-| [SRC-6BF96689A8-L000272](../../tests/test_research.py#L272) | 272 | `""` | — |
-| [SRC-6BF96689A8-L000273](../../tests/test_research.py#L273) | 273 | `"def test_compact_search_query_discards_standalone_fact_vs_inference_instruction():"` | — |
-| [SRC-6BF96689A8-L000274](../../tests/test_research.py#L274) | 274 | `"    assert compact_search_query(\"ميّز بين الحقائق والاستنتاجات.\") == \"\""` | — |
+| [SRC-6BF96689A8-L000272](../../tests/test_research.py#L272) | 272 | `"def test_compact_search_query_discards_standalone_fact_vs_inference_instruction():"` | — |
+| [SRC-6BF96689A8-L000273](../../tests/test_research.py#L273) | 273 | `"    assert compact_search_query(\"ميّز بين الحقائق والاستنتاجات.\") == \"\""` | — |
+| [SRC-6BF96689A8-L000274](../../tests/test_research.py#L274) | 274 | `""` | — |
 | [SRC-6BF96689A8-L000275](../../tests/test_research.py#L275) | 275 | `""` | — |
-| [SRC-6BF96689A8-L000276](../../tests/test_research.py#L276) | 276 | `""` | — |
-| [SRC-6BF96689A8-L000277](../../tests/test_research.py#L277) | 277 | `"def test_fallback_plan_does_not_invent_query_for_instruction_only_prompt():"` | — |
-| [SRC-6BF96689A8-L000278](../../tests/test_research.py#L278) | 278 | `"    plan = fallback_plan(\"اذكر مصادر موثوقة، روابط مباشرة، باختصار\")"` | — |
-| [SRC-6BF96689A8-L000279](../../tests/test_research.py#L279) | 279 | `"    assert plan[\"queries\"] == []"` | — |
+| [SRC-6BF96689A8-L000276](../../tests/test_research.py#L276) | 276 | `"def test_fallback_plan_does_not_invent_query_for_instruction_only_prompt():"` | — |
+| [SRC-6BF96689A8-L000277](../../tests/test_research.py#L277) | 277 | `"    plan = fallback_plan(\"اذكر مصادر موثوقة، روابط مباشرة، باختصار\")"` | — |
+| [SRC-6BF96689A8-L000278](../../tests/test_research.py#L278) | 278 | `"    assert plan[\"queries\"] == []"` | — |
+| [SRC-6BF96689A8-L000279](../../tests/test_research.py#L279) | 279 | `""` | — |
 | [SRC-6BF96689A8-L000280](../../tests/test_research.py#L280) | 280 | `""` | — |
-| [SRC-6BF96689A8-L000281](../../tests/test_research.py#L281) | 281 | `""` | — |
-| [SRC-6BF96689A8-L000282](../../tests/test_research.py#L282) | 282 | `"def test_collect_research_compacts_queries_before_provider_calls(monkeypatch):"` | — |
-| [SRC-6BF96689A8-L000283](../../tests/test_research.py#L283) | 283 | `"    from agents.web_agent import WebAgent"` | — |
-| [SRC-6BF96689A8-L000284](../../tests/test_research.py#L284) | 284 | `""` | — |
-| [SRC-6BF96689A8-L000285](../../tests/test_research.py#L285) | 285 | `"    agent = WebAgent()"` | — |
-| [SRC-6BF96689A8-L000286](../../tests/test_research.py#L286) | 286 | `"    seen = []"` | — |
-| [SRC-6BF96689A8-L000287](../../tests/test_research.py#L287) | 287 | `"    monkeypatch.setattr(agent, \"_search_web\", lambda query: seen.append(query) or [])"` | — |
-| [SRC-6BF96689A8-L000288](../../tests/test_research.py#L288) | 288 | `"    sources, _warnings, report = agent._collect_research({"` | — |
-| [SRC-6BF96689A8-L000289](../../tests/test_research.py#L289) | 289 | `"        \"queries\": ["` | — |
-| [SRC-6BF96689A8-L000290](../../tests/test_research.py#L290) | 290 | `"            \"ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر، وأجب بالعربية بإيجاز.\""` | — |
-| [SRC-6BF96689A8-L000291](../../tests/test_research.py#L291) | 291 | `"        ],"` | — |
-| [SRC-6BF96689A8-L000292](../../tests/test_research.py#L292) | 292 | `"        \"direct_urls\": [],"` | — |
-| [SRC-6BF96689A8-L000293](../../tests/test_research.py#L293) | 293 | `"        \"social_focus\": False,"` | — |
-| [SRC-6BF96689A8-L000294](../../tests/test_research.py#L294) | 294 | `"        \"freshness\": \"any\","` | — |
-| [SRC-6BF96689A8-L000295](../../tests/test_research.py#L295) | 295 | `"        \"depth\": \"standard\","` | — |
-| [SRC-6BF96689A8-L000296](../../tests/test_research.py#L296) | 296 | `"        \"platforms\": [],"` | — |
-| [SRC-6BF96689A8-L000297](../../tests/test_research.py#L297) | 297 | `"    })"` | — |
-| [SRC-6BF96689A8-L000298](../../tests/test_research.py#L298) | 298 | `""` | — |
-| [SRC-6BF96689A8-L000299](../../tests/test_research.py#L299) | 299 | `"    assert sources == []"` | — |
-| [SRC-6BF96689A8-L000300](../../tests/test_research.py#L300) | 300 | `"    assert seen == [\"ما عاصمة مصر؟\"]"` | — |
-| [SRC-6BF96689A8-L000301](../../tests/test_research.py#L301) | 301 | `"    assert report[\"queries_planned\"] == 1"` | — |
-| [SRC-6BF96689A8-L000302](../../tests/test_research.py#L302) | 302 | `"    assert report[\"queries_attempted\"] == 1"` | — |
+| [SRC-6BF96689A8-L000281](../../tests/test_research.py#L281) | 281 | `"def test_collect_research_compacts_queries_before_provider_calls(monkeypatch):"` | — |
+| [SRC-6BF96689A8-L000282](../../tests/test_research.py#L282) | 282 | `"    from agents.web_agent import WebAgent"` | — |
+| [SRC-6BF96689A8-L000283](../../tests/test_research.py#L283) | 283 | `""` | — |
+| [SRC-6BF96689A8-L000284](../../tests/test_research.py#L284) | 284 | `"    agent = WebAgent()"` | — |
+| [SRC-6BF96689A8-L000285](../../tests/test_research.py#L285) | 285 | `"    seen = []"` | — |
+| [SRC-6BF96689A8-L000286](../../tests/test_research.py#L286) | 286 | `"    monkeypatch.setattr(agent, \"_search_web\", lambda query: seen.append(query) or [])"` | — |
+| [SRC-6BF96689A8-L000287](../../tests/test_research.py#L287) | 287 | `"    sources, _warnings, report = agent._collect_research({"` | — |
+| [SRC-6BF96689A8-L000288](../../tests/test_research.py#L288) | 288 | `"        \"queries\": ["` | — |
+| [SRC-6BF96689A8-L000289](../../tests/test_research.py#L289) | 289 | `"            \"ما عاصمة مصر؟ اذكر مصدرًا موثوقًا مع رابط مباشر، وأجب بالعربية بإيجاز.\""` | — |
+| [SRC-6BF96689A8-L000290](../../tests/test_research.py#L290) | 290 | `"        ],"` | — |
+| [SRC-6BF96689A8-L000291](../../tests/test_research.py#L291) | 291 | `"        \"direct_urls\": [],"` | — |
+| [SRC-6BF96689A8-L000292](../../tests/test_research.py#L292) | 292 | `"        \"social_focus\": False,"` | — |
+| [SRC-6BF96689A8-L000293](../../tests/test_research.py#L293) | 293 | `"        \"freshness\": \"any\","` | — |
+| [SRC-6BF96689A8-L000294](../../tests/test_research.py#L294) | 294 | `"        \"depth\": \"standard\","` | — |
+| [SRC-6BF96689A8-L000295](../../tests/test_research.py#L295) | 295 | `"        \"platforms\": [],"` | — |
+| [SRC-6BF96689A8-L000296](../../tests/test_research.py#L296) | 296 | `"    })"` | — |
+| [SRC-6BF96689A8-L000297](../../tests/test_research.py#L297) | 297 | `""` | — |
+| [SRC-6BF96689A8-L000298](../../tests/test_research.py#L298) | 298 | `"    assert sources == []"` | — |
+| [SRC-6BF96689A8-L000299](../../tests/test_research.py#L299) | 299 | `"    assert seen == [\"ما عاصمة مصر؟\"]"` | — |
+| [SRC-6BF96689A8-L000300](../../tests/test_research.py#L300) | 300 | `"    assert report[\"queries_planned\"] == 1"` | — |
+| [SRC-6BF96689A8-L000301](../../tests/test_research.py#L301) | 301 | `"    assert report[\"queries_attempted\"] == 1"` | — |
+| [SRC-6BF96689A8-L000302](../../tests/test_research.py#L302) | 302 | `""` | — |
 | [SRC-6BF96689A8-L000303](../../tests/test_research.py#L303) | 303 | `""` | — |
-| [SRC-6BF96689A8-L000304](../../tests/test_research.py#L304) | 304 | `""` | — |
-| [SRC-6BF96689A8-L000305](../../tests/test_research.py#L305) | 305 | `"def test_collect_research_skips_provider_calls_without_topic_or_direct_url(monkeypatch):"` | — |
-| [SRC-6BF96689A8-L000306](../../tests/test_research.py#L306) | 306 | `"    from agents.web_agent import WebAgent"` | — |
-| [SRC-6BF96689A8-L000307](../../tests/test_research.py#L307) | 307 | `""` | — |
-| [SRC-6BF96689A8-L000308](../../tests/test_research.py#L308) | 308 | `"    agent = WebAgent()"` | — |
-| [SRC-6BF96689A8-L000309](../../tests/test_research.py#L309) | 309 | `"    seen = []"` | — |
-| [SRC-6BF96689A8-L000310](../../tests/test_research.py#L310) | 310 | `"    monkeypatch.setattr(agent, \"_search_web\", lambda query: seen.append(query) or [])"` | — |
-| [SRC-6BF96689A8-L000311](../../tests/test_research.py#L311) | 311 | `"    sources, warnings, report = agent._collect_research({"` | — |
-| [SRC-6BF96689A8-L000312](../../tests/test_research.py#L312) | 312 | `"        \"queries\": [\"اذكر مصادر موثوقة، روابط مباشرة، باختصار\"],"` | — |
-| [SRC-6BF96689A8-L000313](../../tests/test_research.py#L313) | 313 | `"        \"direct_urls\": [],"` | — |
-| [SRC-6BF96689A8-L000314](../../tests/test_research.py#L314) | 314 | `"        \"social_focus\": False,"` | — |
-| [SRC-6BF96689A8-L000315](../../tests/test_research.py#L315) | 315 | `"        \"freshness\": \"any\","` | — |
-| [SRC-6BF96689A8-L000316](../../tests/test_research.py#L316) | 316 | `"        \"depth\": \"standard\","` | — |
-| [SRC-6BF96689A8-L000317](../../tests/test_research.py#L317) | 317 | `"        \"platforms\": [],"` | — |
-| [SRC-6BF96689A8-L000318](../../tests/test_research.py#L318) | 318 | `"    })"` | — |
-| [SRC-6BF96689A8-L000319](../../tests/test_research.py#L319) | 319 | `""` | — |
-| [SRC-6BF96689A8-L000320](../../tests/test_research.py#L320) | 320 | `"    assert sources == []"` | — |
-| [SRC-6BF96689A8-L000321](../../tests/test_research.py#L321) | 321 | `"    assert report[\"queries_planned\"] == 0"` | — |
-| [SRC-6BF96689A8-L000322](../../tests/test_research.py#L322) | 322 | `"    assert report[\"queries_attempted\"] == 0"` | — |
-| [SRC-6BF96689A8-L000323](../../tests/test_research.py#L323) | 323 | `"    assert seen == []"` | — |
-| [SRC-6BF96689A8-L000324](../../tests/test_research.py#L324) | 324 | `"    assert any(\"لم تُستدعَ محركات البحث\" in warning for warning in warnings)"` | — |
+| [SRC-6BF96689A8-L000304](../../tests/test_research.py#L304) | 304 | `"def test_collect_research_skips_provider_calls_without_topic_or_direct_url(monkeypatch):"` | — |
+| [SRC-6BF96689A8-L000305](../../tests/test_research.py#L305) | 305 | `"    from agents.web_agent import WebAgent"` | — |
+| [SRC-6BF96689A8-L000306](../../tests/test_research.py#L306) | 306 | `""` | — |
+| [SRC-6BF96689A8-L000307](../../tests/test_research.py#L307) | 307 | `"    agent = WebAgent()"` | — |
+| [SRC-6BF96689A8-L000308](../../tests/test_research.py#L308) | 308 | `"    seen = []"` | — |
+| [SRC-6BF96689A8-L000309](../../tests/test_research.py#L309) | 309 | `"    monkeypatch.setattr(agent, \"_search_web\", lambda query: seen.append(query) or [])"` | — |
+| [SRC-6BF96689A8-L000310](../../tests/test_research.py#L310) | 310 | `"    sources, warnings, report = agent._collect_research({"` | — |
+| [SRC-6BF96689A8-L000311](../../tests/test_research.py#L311) | 311 | `"        \"queries\": [\"اذكر مصادر موثوقة، روابط مباشرة، باختصار\"],"` | — |
+| [SRC-6BF96689A8-L000312](../../tests/test_research.py#L312) | 312 | `"        \"direct_urls\": [],"` | — |
+| [SRC-6BF96689A8-L000313](../../tests/test_research.py#L313) | 313 | `"        \"social_focus\": False,"` | — |
+| [SRC-6BF96689A8-L000314](../../tests/test_research.py#L314) | 314 | `"        \"freshness\": \"any\","` | — |
+| [SRC-6BF96689A8-L000315](../../tests/test_research.py#L315) | 315 | `"        \"depth\": \"standard\","` | — |
+| [SRC-6BF96689A8-L000316](../../tests/test_research.py#L316) | 316 | `"        \"platforms\": [],"` | — |
+| [SRC-6BF96689A8-L000317](../../tests/test_research.py#L317) | 317 | `"    })"` | — |
+| [SRC-6BF96689A8-L000318](../../tests/test_research.py#L318) | 318 | `""` | — |
+| [SRC-6BF96689A8-L000319](../../tests/test_research.py#L319) | 319 | `"    assert sources == []"` | — |
+| [SRC-6BF96689A8-L000320](../../tests/test_research.py#L320) | 320 | `"    assert report[\"queries_planned\"] == 0"` | — |
+| [SRC-6BF96689A8-L000321](../../tests/test_research.py#L321) | 321 | `"    assert report[\"queries_attempted\"] == 0"` | — |
+| [SRC-6BF96689A8-L000322](../../tests/test_research.py#L322) | 322 | `"    assert seen == []"` | — |
+| [SRC-6BF96689A8-L000323](../../tests/test_research.py#L323) | 323 | `"    assert any(\"لم تُستدعَ محركات البحث\" in warning for warning in warnings)"` | — |
+| [SRC-6BF96689A8-L000324](../../tests/test_research.py#L324) | 324 | `""` | — |
 | [SRC-6BF96689A8-L000325](../../tests/test_research.py#L325) | 325 | `""` | — |
-| [SRC-6BF96689A8-L000326](../../tests/test_research.py#L326) | 326 | `""` | — |
-| [SRC-6BF96689A8-L000327](../../tests/test_research.py#L327) | 327 | `"def test_fallback_plan_keeps_direct_url_without_generic_keyword_query():"` | — |
-| [SRC-6BF96689A8-L000328](../../tests/test_research.py#L328) | 328 | `"    plan = fallback_plan(\"https://example.com/research\")"` | — |
-| [SRC-6BF96689A8-L000329](../../tests/test_research.py#L329) | 329 | `"    assert plan[\"direct_urls\"] == [\"https://example.com/research\"]"` | — |
-| [SRC-6BF96689A8-L000330](../../tests/test_research.py#L330) | 330 | `"    assert plan[\"queries\"] == []"` | — |
+| [SRC-6BF96689A8-L000326](../../tests/test_research.py#L326) | 326 | `"def test_fallback_plan_keeps_direct_url_without_generic_keyword_query():"` | — |
+| [SRC-6BF96689A8-L000327](../../tests/test_research.py#L327) | 327 | `"    plan = fallback_plan(\"https://example.com/research\")"` | — |
+| [SRC-6BF96689A8-L000328](../../tests/test_research.py#L328) | 328 | `"    assert plan[\"direct_urls\"] == [\"https://example.com/research\"]"` | — |
+| [SRC-6BF96689A8-L000329](../../tests/test_research.py#L329) | 329 | `"    assert plan[\"queries\"] == []"` | — |
+| [SRC-6BF96689A8-L000330](../../tests/test_research.py#L330) | 330 | `""` | — |
 | [SRC-6BF96689A8-L000331](../../tests/test_research.py#L331) | 331 | `""` | — |
-| [SRC-6BF96689A8-L000332](../../tests/test_research.py#L332) | 332 | `""` | — |
-| [SRC-6BF96689A8-L000333](../../tests/test_research.py#L333) | 333 | `""` | — |
-| [SRC-6BF96689A8-L000334](../../tests/test_research.py#L334) | 334 | `"def test_followup_plan_keeps_topic_across_chained_turns():"` | — |
-| [SRC-6BF96689A8-L000335](../../tests/test_research.py#L335) | 335 | `"    history = ["` | — |
-| [SRC-6BF96689A8-L000336](../../tests/test_research.py#L336) | 336 | `"        {\"role\": \"user\", \"content\": \"ما سعر iPhone 16 في مصر؟\"},"` | — |
-| [SRC-6BF96689A8-L000337](../../tests/test_research.py#L337) | 337 | `"        {\"role\": \"assistant\", \"content\": \"السعر يختلف حسب المتجر.\"},"` | — |
-| [SRC-6BF96689A8-L000338](../../tests/test_research.py#L338) | 338 | `"        {\"role\": \"user\", \"content\": \"والضمان؟\"},"` | — |
-| [SRC-6BF96689A8-L000339](../../tests/test_research.py#L339) | 339 | `"        {\"role\": \"assistant\", \"content\": \"سأوضح الضمان.\"},"` | — |
-| [SRC-6BF96689A8-L000340](../../tests/test_research.py#L340) | 340 | `"    ]"` | — |
-| [SRC-6BF96689A8-L000341](../../tests/test_research.py#L341) | 341 | `"    plan = fallback_plan(\"والبطارية؟\", history)"` | — |
-| [SRC-6BF96689A8-L000342](../../tests/test_research.py#L342) | 342 | `"    assert plan[\"queries\"]"` | — |
-| [SRC-6BF96689A8-L000343](../../tests/test_research.py#L343) | 343 | `"    assert \"iPhone 16\" in plan[\"queries\"][0]"` | — |
-| [SRC-6BF96689A8-L000344](../../tests/test_research.py#L344) | 344 | `"    assert \"البطارية\" in plan[\"queries\"][0]"` | — |
-| [SRC-6BF96689A8-L000345](../../tests/test_research.py#L345) | 345 | `""` | — |
-| [SRC-6BF96689A8-L000346](../../tests/test_research.py#L346) | 346 | `""` | — |
-| [SRC-6BF96689A8-L000347](../../tests/test_research.py#L347) | 347 | `"def test_followup_plan_does_not_inherit_unrelated_social_intent():"` | — |
-| [SRC-6BF96689A8-L000348](../../tests/test_research.py#L348) | 348 | `"    history = ["` | — |
-| [SRC-6BF96689A8-L000349](../../tests/test_research.py#L349) | 349 | `"        {\"role\": \"user\", \"content\": \"اجمع آراء مستخدمي السيارات الكهربائية على Reddit\"},"` | — |
-| [SRC-6BF96689A8-L000350](../../tests/test_research.py#L350) | 350 | `"        {\"role\": \"assistant\", \"content\": \"هذه النتائج.\"},"` | — |
-| [SRC-6BF96689A8-L000351](../../tests/test_research.py#L351) | 351 | `"    ]"` | — |
-| [SRC-6BF96689A8-L000352](../../tests/test_research.py#L352) | 352 | `"    plan = fallback_plan(\"اشرح طريقة عمل المحرك الكهربائي\", history)"` | — |
-| [SRC-6BF96689A8-L000353](../../tests/test_research.py#L353) | 353 | `"    assert plan[\"social_focus\"] is False"` | — |
-| [SRC-6BF96689A8-L000354](../../tests/test_research.py#L354) | 354 | `"    assert plan[\"platforms\"] == []"` | — |
-| [SRC-6BF96689A8-L000355](../../tests/test_research.py#L355) | 355 | `""` | — |
-| [SRC-6BF96689A8-L000356](../../tests/test_research.py#L356) | 356 | `""` | — |
-| [SRC-6BF96689A8-L000357](../../tests/test_research.py#L357) | 357 | `""` | — |
-| [SRC-6BF96689A8-L000358](../../tests/test_research.py#L358) | 358 | `"def test_source_classification_does_not_trust_lookalike_news_domains():"` | — |
-| [SRC-6BF96689A8-L000359](../../tests/test_research.py#L359) | 359 | `"    assert classify_source(\"https://www.reuters.com/world/article\")[\"source_class\"] == \"news\""` | — |
-| [SRC-6BF96689A8-L000360](../../tests/test_research.py#L360) | 360 | `"    lookalike = classify_source(\"https://reuters.com.attacker.example/article\")"` | — |
-| [SRC-6BF96689A8-L000361](../../tests/test_research.py#L361) | 361 | `"    assert lookalike[\"source_class\"] == \"general\""` | — |
-| [SRC-6BF96689A8-L000362](../../tests/test_research.py#L362) | 362 | `"    assert lookalike[\"domain\"] == \"reuters.com.attacker.example\""` | — |
+| [SRC-6BF96689A8-L000332](../../tests/test_research.py#L332) | 332 | `"def test_followup_plan_keeps_topic_across_chained_turns():"` | — |
+| [SRC-6BF96689A8-L000333](../../tests/test_research.py#L333) | 333 | `"    history = ["` | — |
+| [SRC-6BF96689A8-L000334](../../tests/test_research.py#L334) | 334 | `"        {\"role\": \"user\", \"content\": \"ما سعر iPhone 16 في مصر؟\"},"` | — |
+| [SRC-6BF96689A8-L000335](../../tests/test_research.py#L335) | 335 | `"        {\"role\": \"assistant\", \"content\": \"السعر يختلف حسب المتجر.\"},"` | — |
+| [SRC-6BF96689A8-L000336](../../tests/test_research.py#L336) | 336 | `"        {\"role\": \"user\", \"content\": \"والضمان؟\"},"` | — |
+| [SRC-6BF96689A8-L000337](../../tests/test_research.py#L337) | 337 | `"        {\"role\": \"assistant\", \"content\": \"سأوضح الضمان.\"},"` | — |
+| [SRC-6BF96689A8-L000338](../../tests/test_research.py#L338) | 338 | `"    ]"` | — |
+| [SRC-6BF96689A8-L000339](../../tests/test_research.py#L339) | 339 | `"    plan = fallback_plan(\"والبطارية؟\", history)"` | — |
+| [SRC-6BF96689A8-L000340](../../tests/test_research.py#L340) | 340 | `"    assert plan[\"queries\"]"` | — |
+| [SRC-6BF96689A8-L000341](../../tests/test_research.py#L341) | 341 | `"    assert \"iPhone 16\" in plan[\"queries\"][0]"` | — |
+| [SRC-6BF96689A8-L000342](../../tests/test_research.py#L342) | 342 | `"    assert \"البطارية\" in plan[\"queries\"][0]"` | — |
+| [SRC-6BF96689A8-L000343](../../tests/test_research.py#L343) | 343 | `""` | — |
+| [SRC-6BF96689A8-L000344](../../tests/test_research.py#L344) | 344 | `""` | — |
+| [SRC-6BF96689A8-L000345](../../tests/test_research.py#L345) | 345 | `"def test_followup_plan_does_not_inherit_unrelated_social_intent():"` | — |
+| [SRC-6BF96689A8-L000346](../../tests/test_research.py#L346) | 346 | `"    history = ["` | — |
+| [SRC-6BF96689A8-L000347](../../tests/test_research.py#L347) | 347 | `"        {\"role\": \"user\", \"content\": \"اجمع آراء مستخدمي السيارات الكهربائية على Reddit\"},"` | — |
+| [SRC-6BF96689A8-L000348](../../tests/test_research.py#L348) | 348 | `"        {\"role\": \"assistant\", \"content\": \"هذه النتائج.\"},"` | — |
+| [SRC-6BF96689A8-L000349](../../tests/test_research.py#L349) | 349 | `"    ]"` | — |
+| [SRC-6BF96689A8-L000350](../../tests/test_research.py#L350) | 350 | `"    plan = fallback_plan(\"اشرح طريقة عمل المحرك الكهربائي\", history)"` | — |
+| [SRC-6BF96689A8-L000351](../../tests/test_research.py#L351) | 351 | `"    assert plan[\"social_focus\"] is False"` | — |
+| [SRC-6BF96689A8-L000352](../../tests/test_research.py#L352) | 352 | `"    assert plan[\"platforms\"] == []"` | — |
+| [SRC-6BF96689A8-L000353](../../tests/test_research.py#L353) | 353 | `""` | — |
+| [SRC-6BF96689A8-L000354](../../tests/test_research.py#L354) | 354 | `""` | — |
+| [SRC-6BF96689A8-L000355](../../tests/test_research.py#L355) | 355 | `"def test_source_classification_does_not_trust_lookalike_news_domains():"` | — |
+| [SRC-6BF96689A8-L000356](../../tests/test_research.py#L356) | 356 | `"    assert classify_source(\"https://www.reuters.com/world/article\")[\"source_class\"] == \"news\""` | — |
+| [SRC-6BF96689A8-L000357](../../tests/test_research.py#L357) | 357 | `"    lookalike = classify_source(\"https://reuters.com.attacker.example/article\")"` | — |
+| [SRC-6BF96689A8-L000358](../../tests/test_research.py#L358) | 358 | `"    assert lookalike[\"source_class\"] == \"general\""` | — |
+| [SRC-6BF96689A8-L000359](../../tests/test_research.py#L359) | 359 | `"    assert lookalike[\"domain\"] == \"reuters.com.attacker.example\""` | — |
+| [SRC-6BF96689A8-L000360](../../tests/test_research.py#L360) | 360 | `""` | — |
+| [SRC-6BF96689A8-L000361](../../tests/test_research.py#L361) | 361 | `""` | — |
+| [SRC-6BF96689A8-L000362](../../tests/test_research.py#L362) | 362 | `"def test_compact_search_query_strips_citation_tail_without_punctuation():"` | — |
+| [SRC-6BF96689A8-L000363](../../tests/test_research.py#L363) | 363 | `"    \"\"\"Format tails joined without a comma must not pollute the topic.\"\"\""` | — |
+| [SRC-6BF96689A8-L000364](../../tests/test_research.py#L364) | 364 | `"    import agents  # noqa: F401"` | — |
+| [SRC-6BF96689A8-L000365](../../tests/test_research.py#L365) | 365 | `""` | — |
+| [SRC-6BF96689A8-L000366](../../tests/test_research.py#L366) | 366 | `"    query = compact_search_query("` | — |
+| [SRC-6BF96689A8-L000367](../../tests/test_research.py#L367) | 367 | `"        \"السيارات الكهربائية في مصر واذكر مصادر وروابط موثوقة\""` | — |
+| [SRC-6BF96689A8-L000368](../../tests/test_research.py#L368) | 368 | `"    )"` | — |
+| [SRC-6BF96689A8-L000369](../../tests/test_research.py#L369) | 369 | `"    assert \"السيارات الكهربائية\" in query"` | — |
+| [SRC-6BF96689A8-L000370](../../tests/test_research.py#L370) | 370 | `"    assert \"مصر\" in query"` | — |
+| [SRC-6BF96689A8-L000371](../../tests/test_research.py#L371) | 371 | `"    assert \"مصادر\" not in query"` | — |
+| [SRC-6BF96689A8-L000372](../../tests/test_research.py#L372) | 372 | `"    assert \"روابط\" not in query"` | — |
+| [SRC-6BF96689A8-L000373](../../tests/test_research.py#L373) | 373 | `"    assert query"` | — |
+| [SRC-6BF96689A8-L000374](../../tests/test_research.py#L374) | 374 | `""` | — |
+| [SRC-6BF96689A8-L000375](../../tests/test_research.py#L375) | 375 | `"    query_en = compact_search_query("` | — |
+| [SRC-6BF96689A8-L000376](../../tests/test_research.py#L376) | 376 | `"        \"electric vehicles in Egypt and please cite sources with links\""` | — |
+| [SRC-6BF96689A8-L000377](../../tests/test_research.py#L377) | 377 | `"    )"` | — |
+| [SRC-6BF96689A8-L000378](../../tests/test_research.py#L378) | 378 | `"    assert \"egypt\" in query_en.lower()"` | — |
+| [SRC-6BF96689A8-L000379](../../tests/test_research.py#L379) | 379 | `"    assert \"please cite\" not in query_en.lower()"` | — |
+| [SRC-6BF96689A8-L000380](../../tests/test_research.py#L380) | 380 | `"    assert not query_en.lower().endswith(\" and\")"` | — |
 ## اختبارات
 
 ### FILE-AFFCF23BD4 — [tests/test_research_completion.py](../../tests/test_research_completion.py#L1)
@@ -777,69 +843,3 @@
 | [SRC-AFFCF23BD4-L000170](../../tests/test_research_completion.py#L170) | 170 | `"        \"search_report\": {},"` | — |
 | [SRC-AFFCF23BD4-L000171](../../tests/test_research_completion.py#L171) | 171 | `"    })"` | — |
 | [SRC-AFFCF23BD4-L000172](../../tests/test_research_completion.py#L172) | 172 | `"    assert result[\"counters\"][\"page_text_without_fetched_flag_count\"] == 1"` | — |
-| [SRC-AFFCF23BD4-L000173](../../tests/test_research_completion.py#L173) | 173 | `""` | — |
-| [SRC-AFFCF23BD4-L000174](../../tests/test_research_completion.py#L174) | 174 | `""` | — |
-| [SRC-AFFCF23BD4-L000175](../../tests/test_research_completion.py#L175) | 175 | `""` | — |
-| [SRC-AFFCF23BD4-L000176](../../tests/test_research_completion.py#L176) | 176 | `"def test_unresolved_citation_support_flags_prevent_completed_research_status() -> None:"` | — |
-| [SRC-AFFCF23BD4-L000177](../../tests/test_research_completion.py#L177) | 177 | `"    base = {"` | — |
-| [SRC-AFFCF23BD4-L000178](../../tests/test_research_completion.py#L178) | 178 | `"        \"kind\": \"web_research\","` | — |
-| [SRC-AFFCF23BD4-L000179](../../tests/test_research_completion.py#L179) | 179 | `"        \"search_attempted\": True,"` | — |
-| [SRC-AFFCF23BD4-L000180](../../tests/test_research_completion.py#L180) | 180 | `"        \"used_language_model\": True,"` | — |
-| [SRC-AFFCF23BD4-L000181](../../tests/test_research_completion.py#L181) | 181 | `"        \"final_answer_status\": \"model_answer_generated\","` | — |
-| [SRC-AFFCF23BD4-L000182](../../tests/test_research_completion.py#L182) | 182 | `"        \"citation_validation\": {"` | — |
-| [SRC-AFFCF23BD4-L000183](../../tests/test_research_completion.py#L183) | 183 | `"            \"status\": \"index_range_check_passed\","` | — |
-| [SRC-AFFCF23BD4-L000184](../../tests/test_research_completion.py#L184) | 184 | `"            \"valid_citation_count\": 1,"` | — |
-| [SRC-AFFCF23BD4-L000185](../../tests/test_research_completion.py#L185) | 185 | `"        },"` | — |
-| [SRC-AFFCF23BD4-L000186](../../tests/test_research_completion.py#L186) | 186 | `"        \"claim_evidence_ledger\": _VALID_CLAIM_LEDGER,"` | — |
-| [SRC-AFFCF23BD4-L000187](../../tests/test_research_completion.py#L187) | 187 | `"        \"sources\": ["` | — |
-| [SRC-AFFCF23BD4-L000188](../../tests/test_research_completion.py#L188) | 188 | `"            {"` | — |
-| [SRC-AFFCF23BD4-L000189](../../tests/test_research_completion.py#L189) | 189 | `"                \"url\": \"https://example.com/report\","` | — |
-| [SRC-AFFCF23BD4-L000190](../../tests/test_research_completion.py#L190) | 190 | `"                \"snippet\": \"A readable report excerpt.\","` | — |
-| [SRC-AFFCF23BD4-L000191](../../tests/test_research_completion.py#L191) | 191 | `"                \"page_fetched\": True,"` | — |
-| [SRC-AFFCF23BD4-L000192](../../tests/test_research_completion.py#L192) | 192 | `"                \"page_text\": \"A readable report excerpt.\","` | — |
-| [SRC-AFFCF23BD4-L000193](../../tests/test_research_completion.py#L193) | 193 | `"            }"` | — |
-| [SRC-AFFCF23BD4-L000194](../../tests/test_research_completion.py#L194) | 194 | `"        ],"` | — |
-| [SRC-AFFCF23BD4-L000195](../../tests/test_research_completion.py#L195) | 195 | `"        \"search_report\": {\"unique_sources\": 1, \"pages_fetched\": 1},"` | — |
-| [SRC-AFFCF23BD4-L000196](../../tests/test_research_completion.py#L196) | 196 | `"    }"` | — |
-| [SRC-AFFCF23BD4-L000197](../../tests/test_research_completion.py#L197) | 197 | `""` | — |
-| [SRC-AFFCF23BD4-L000198](../../tests/test_research_completion.py#L198) | 198 | `"    unsupported_number = build_research_completion({"` | — |
-| [SRC-AFFCF23BD4-L000199](../../tests/test_research_completion.py#L199) | 199 | `"        **base,"` | — |
-| [SRC-AFFCF23BD4-L000200](../../tests/test_research_completion.py#L200) | 200 | `"        \"answer_integrity\": {"` | — |
-| [SRC-AFFCF23BD4-L000201](../../tests/test_research_completion.py#L201) | 201 | `"            \"potentially_unsupported_numeric_by_citation_count\": 1,"` | — |
-| [SRC-AFFCF23BD4-L000202](../../tests/test_research_completion.py#L202) | 202 | `"        },"` | — |
-| [SRC-AFFCF23BD4-L000203](../../tests/test_research_completion.py#L203) | 203 | `"    })"` | — |
-| [SRC-AFFCF23BD4-L000204](../../tests/test_research_completion.py#L204) | 204 | `"    weak_alignment = build_research_completion({"` | — |
-| [SRC-AFFCF23BD4-L000205](../../tests/test_research_completion.py#L205) | 205 | `"        **base,"` | — |
-| [SRC-AFFCF23BD4-L000206](../../tests/test_research_completion.py#L206) | 206 | `"        \"answer_integrity\": {\"weak_citation_alignment_count\": 1},"` | — |
-| [SRC-AFFCF23BD4-L000207](../../tests/test_research_completion.py#L207) | 207 | `"    })"` | — |
-| [SRC-AFFCF23BD4-L000208](../../tests/test_research_completion.py#L208) | 208 | `""` | — |
-| [SRC-AFFCF23BD4-L000209](../../tests/test_research_completion.py#L209) | 209 | `"    assert unsupported_number[\"status\"] == \"partial_answer_evidence_gaps_detected\""` | — |
-| [SRC-AFFCF23BD4-L000210](../../tests/test_research_completion.py#L210) | 210 | `"    assert weak_alignment[\"status\"] == \"partial_answer_evidence_gaps_detected\""` | — |
-| [SRC-AFFCF23BD4-L000211](../../tests/test_research_completion.py#L211) | 211 | `"    assert unsupported_number[\"counters\"][\"citation_support_warning_count\"] == 1"` | — |
-| [SRC-AFFCF23BD4-L000212](../../tests/test_research_completion.py#L212) | 212 | `"    assert weak_alignment[\"counters\"][\"citation_support_warning_count\"] == 1"` | — |
-| [SRC-AFFCF23BD4-L000213](../../tests/test_research_completion.py#L213) | 213 | `"    assert unsupported_number[\"phases\"][\"semantic_verification\"] == \"not_performed\""` | — |
-| [SRC-AFFCF23BD4-L000214](../../tests/test_research_completion.py#L214) | 214 | `"    assert weak_alignment[\"phases\"][\"semantic_verification\"] == \"not_performed\""` | — |
-| [SRC-AFFCF23BD4-L000215](../../tests/test_research_completion.py#L215) | 215 | `""` | — |
-| [SRC-AFFCF23BD4-L000216](../../tests/test_research_completion.py#L216) | 216 | `""` | — |
-| [SRC-AFFCF23BD4-L000217](../../tests/test_research_completion.py#L217) | 217 | `"def test_missing_claim_ledger_prevents_a_clean_research_completion():"` | — |
-| [SRC-AFFCF23BD4-L000218](../../tests/test_research_completion.py#L218) | 218 | `"    result = build_research_completion({"` | — |
-| [SRC-AFFCF23BD4-L000219](../../tests/test_research_completion.py#L219) | 219 | `"        \"kind\": \"web_research\","` | — |
-| [SRC-AFFCF23BD4-L000220](../../tests/test_research_completion.py#L220) | 220 | `"        \"search_attempted\": True,"` | — |
-| [SRC-AFFCF23BD4-L000221](../../tests/test_research_completion.py#L221) | 221 | `"        \"used_language_model\": True,"` | — |
-| [SRC-AFFCF23BD4-L000222](../../tests/test_research_completion.py#L222) | 222 | `"        \"final_answer_status\": \"model_answer_generated\","` | — |
-| [SRC-AFFCF23BD4-L000223](../../tests/test_research_completion.py#L223) | 223 | `"        \"citation_validation\": {\"status\": \"index_range_check_passed\", \"valid_citation_count\": 1},"` | — |
-| [SRC-AFFCF23BD4-L000224](../../tests/test_research_completion.py#L224) | 224 | `"        \"sources\": [{"` | — |
-| [SRC-AFFCF23BD4-L000225](../../tests/test_research_completion.py#L225) | 225 | `"            \"url\": \"https://example.org/report\","` | — |
-| [SRC-AFFCF23BD4-L000226](../../tests/test_research_completion.py#L226) | 226 | `"            \"snippet\": \"Source excerpt\","` | — |
-| [SRC-AFFCF23BD4-L000227](../../tests/test_research_completion.py#L227) | 227 | `"            \"page_fetched\": True,"` | — |
-| [SRC-AFFCF23BD4-L000228](../../tests/test_research_completion.py#L228) | 228 | `"            \"page_text\": \"Source excerpt\","` | — |
-| [SRC-AFFCF23BD4-L000229](../../tests/test_research_completion.py#L229) | 229 | `"        }],"` | — |
-| [SRC-AFFCF23BD4-L000230](../../tests/test_research_completion.py#L230) | 230 | `"        \"search_report\": {\"unique_sources\": 1, \"pages_fetched\": 1},"` | — |
-| [SRC-AFFCF23BD4-L000231](../../tests/test_research_completion.py#L231) | 231 | `"    })"` | — |
-| [SRC-AFFCF23BD4-L000232](../../tests/test_research_completion.py#L232) | 232 | `"    assert result[\"status\"] == \"partial_answer_evidence_gaps_detected\""` | — |
-| [SRC-AFFCF23BD4-L000233](../../tests/test_research_completion.py#L233) | 233 | `"    assert result[\"counters\"][\"claim_ledger_build_failure_count\"] == 1"` | — |
-| [SRC-AFFCF23BD4-L000234](../../tests/test_research_completion.py#L234) | 234 | `"    assert result[\"counters\"][\"claim_ledger_status\"] == \"missing\""` | — |
-| [SRC-AFFCF23BD4-L000235](../../tests/test_research_completion.py#L235) | 235 | `""` | — |
-| [SRC-AFFCF23BD4-L000236](../../tests/test_research_completion.py#L236) | 236 | `""` | — |
-| [SRC-AFFCF23BD4-L000237](../../tests/test_research_completion.py#L237) | 237 | `"def test_semantic_verifier_failure_is_preserved_in_completion_diagnostics():"` | — |
-| [SRC-AFFCF23BD4-L000238](../../tests/test_research_completion.py#L238) | 238 | `"    result = build_research_completion({"` | — |

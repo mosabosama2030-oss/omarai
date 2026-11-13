@@ -4,7 +4,7 @@
 
 - الصفحة: **017**
 - سجلات الأسطر: **800**
-- النطاق: SRC-1AE03B9EC3-L003001 إلى SRC-1AE03B9EC3-L003800
+- النطاق: SRC-1AE03B9EC3-L002953 إلى SRC-1AE03B9EC3-L003752
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## الوكيل والمنطق
@@ -16,6 +16,54 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-1AE03B9EC3-L002953](../../agents/web_agent.py#L2953) | 2953 | `"            status: str = \"unknown\","` | — |
+| [SRC-1AE03B9EC3-L002954](../../agents/web_agent.py#L2954) | 2954 | `"            error_class: str \| None = None,"` | — |
+| [SRC-1AE03B9EC3-L002955](../../agents/web_agent.py#L2955) | 2955 | `"        ) -> PageFetchResult:"` | — |
+| [SRC-1AE03B9EC3-L002956](../../agents/web_agent.py#L2956) | 2956 | `"            return PageFetchResult(title, page_text, status, error_class)"` | — |
+| [SRC-1AE03B9EC3-L002957](../../agents/web_agent.py#L2957) | 2957 | `""` | — |
+| [SRC-1AE03B9EC3-L002958](../../agents/web_agent.py#L2958) | 2958 | `"        current_url = _public_http_url(url)"` | — |
+| [SRC-1AE03B9EC3-L002959](../../agents/web_agent.py#L2959) | 2959 | `"        if not current_url:"` | — |
+| [SRC-1AE03B9EC3-L002960](../../agents/web_agent.py#L2960) | 2960 | `"            return result(status=\"rejected_url\", error_class=\"PublicUrlRejected\")"` | — |
+| [SRC-1AE03B9EC3-L002961](../../agents/web_agent.py#L2961) | 2961 | `"        budget = getattr(self, \"_request_budget\", None)"` | — |
+| [SRC-1AE03B9EC3-L002962](../../agents/web_agent.py#L2962) | 2962 | `"        if budget is not None:"` | — |
+| [SRC-1AE03B9EC3-L002963](../../agents/web_agent.py#L2963) | 2963 | `"            budget.reserve(\"page_fetches\")"` | — |
+| [SRC-1AE03B9EC3-L002964](../../agents/web_agent.py#L2964) | 2964 | `"        try:"` | — |
+| [SRC-1AE03B9EC3-L002965](../../agents/web_agent.py#L2965) | 2965 | `"            import httpx"` | — |
+| [SRC-1AE03B9EC3-L002966](../../agents/web_agent.py#L2966) | 2966 | `"            from bs4 import BeautifulSoup"` | — |
+| [SRC-1AE03B9EC3-L002967](../../agents/web_agent.py#L2967) | 2967 | `"        except ImportError as exc:"` | — |
+| [SRC-1AE03B9EC3-L002968](../../agents/web_agent.py#L2968) | 2968 | `"            raise AgentDependencyError("` | — |
+| [SRC-1AE03B9EC3-L002969](../../agents/web_agent.py#L2969) | 2969 | `"                \"حزم استخراج الصفحات غير مثبتة. نفّذ: python -m pip install -e .\""` | — |
+| [SRC-1AE03B9EC3-L002970](../../agents/web_agent.py#L2970) | 2970 | `"            ) from exc"` | — |
+| [SRC-1AE03B9EC3-L002971](../../agents/web_agent.py#L2971) | 2971 | `""` | — |
+| [SRC-1AE03B9EC3-L002972](../../agents/web_agent.py#L2972) | 2972 | `"        headers = {"` | — |
+| [SRC-1AE03B9EC3-L002973](../../agents/web_agent.py#L2973) | 2973 | `"            \"User-Agent\": \"OmaraiResearchBot/1.1 (public page research; no login)\","` | — |
+| [SRC-1AE03B9EC3-L002974](../../agents/web_agent.py#L2974) | 2974 | `"            \"Accept\": \"text/html,application/xhtml+xml,text/plain;q=0.8\","` | — |
+| [SRC-1AE03B9EC3-L002975](../../agents/web_agent.py#L2975) | 2975 | `"            \"Accept-Encoding\": \"identity\","` | — |
+| [SRC-1AE03B9EC3-L002976](../../agents/web_agent.py#L2976) | 2976 | `"        }"` | — |
+| [SRC-1AE03B9EC3-L002977](../../agents/web_agent.py#L2977) | 2977 | `"        media_type = \"\""` | — |
+| [SRC-1AE03B9EC3-L002978](../../agents/web_agent.py#L2978) | 2978 | `"        html = \"\""` | — |
+| [SRC-1AE03B9EC3-L002979](../../agents/web_agent.py#L2979) | 2979 | `"        bytes_truncated = False"` | — |
+| [SRC-1AE03B9EC3-L002980](../../agents/web_agent.py#L2980) | 2980 | `"        try:"` | — |
+| [SRC-1AE03B9EC3-L002981](../../agents/web_agent.py#L2981) | 2981 | `"            with httpx.Client("` | — |
+| [SRC-1AE03B9EC3-L002982](../../agents/web_agent.py#L2982) | 2982 | `"                timeout=self._effective_timeout(8.0),"` | — |
+| [SRC-1AE03B9EC3-L002983](../../agents/web_agent.py#L2983) | 2983 | `"                follow_redirects=False,"` | — |
+| [SRC-1AE03B9EC3-L002984](../../agents/web_agent.py#L2984) | 2984 | `"                headers=headers,"` | — |
+| [SRC-1AE03B9EC3-L002985](../../agents/web_agent.py#L2985) | 2985 | `"                verify=True,"` | — |
+| [SRC-1AE03B9EC3-L002986](../../agents/web_agent.py#L2986) | 2986 | `"                trust_env=False,"` | — |
+| [SRC-1AE03B9EC3-L002987](../../agents/web_agent.py#L2987) | 2987 | `"            ) as client:"` | — |
+| [SRC-1AE03B9EC3-L002988](../../agents/web_agent.py#L2988) | 2988 | `"                for redirect_number in range(4):"` | — |
+| [SRC-1AE03B9EC3-L002989](../../agents/web_agent.py#L2989) | 2989 | `"                    parsed = urllib.parse.urlparse(current_url)"` | — |
+| [SRC-1AE03B9EC3-L002990](../../agents/web_agent.py#L2990) | 2990 | `"                    host = parsed.hostname or \"\""` | — |
+| [SRC-1AE03B9EC3-L002991](../../agents/web_agent.py#L2991) | 2991 | `"                    # Resolve and pin a public IP. Do not let the HTTP client resolve"` | — |
+| [SRC-1AE03B9EC3-L002992](../../agents/web_agent.py#L2992) | 2992 | `"                    # the original hostname a second time."` | — |
+| [SRC-1AE03B9EC3-L002993](../../agents/web_agent.py#L2993) | 2993 | `"                    public_ips = _public_ip_literals(host)"` | — |
+| [SRC-1AE03B9EC3-L002994](../../agents/web_agent.py#L2994) | 2994 | `"                    if not public_ips:"` | — |
+| [SRC-1AE03B9EC3-L002995](../../agents/web_agent.py#L2995) | 2995 | `"                        return result(status=\"blocked_or_unresolved_host\", error_class=\"HostResolutionOrSSRFCheck\")"` | — |
+| [SRC-1AE03B9EC3-L002996](../../agents/web_agent.py#L2996) | 2996 | `"                    connect_url = _pinned_connect_url(current_url, public_ips[0])"` | — |
+| [SRC-1AE03B9EC3-L002997](../../agents/web_agent.py#L2997) | 2997 | `"                    if not connect_url:"` | — |
+| [SRC-1AE03B9EC3-L002998](../../agents/web_agent.py#L2998) | 2998 | `"                        return result(status=\"blocked_connection_target\", error_class=\"PinnedTargetRejected\")"` | — |
+| [SRC-1AE03B9EC3-L002999](../../agents/web_agent.py#L2999) | 2999 | `"                    request_headers = {\"Host\": host}"` | — |
+| [SRC-1AE03B9EC3-L003000](../../agents/web_agent.py#L3000) | 3000 | `"                    extensions = {\"sni_hostname\": host} if parsed.scheme == \"https\" else {}"` | — |
 | [SRC-1AE03B9EC3-L003001](../../agents/web_agent.py#L3001) | 3001 | `"                    with client.stream("` | — |
 | [SRC-1AE03B9EC3-L003002](../../agents/web_agent.py#L3002) | 3002 | `"                        \"GET\","` | — |
 | [SRC-1AE03B9EC3-L003003](../../agents/web_agent.py#L3003) | 3003 | `"                        connect_url,"` | — |
@@ -768,51 +816,3 @@
 | [SRC-1AE03B9EC3-L003750](../../agents/web_agent.py#L3750) | 3750 | `"        remote_response_received: bool \| None = None,"` | — |
 | [SRC-1AE03B9EC3-L003751](../../agents/web_agent.py#L3751) | 3751 | `"        http_status_code: int \| None = None,"` | — |
 | [SRC-1AE03B9EC3-L003752](../../agents/web_agent.py#L3752) | 3752 | `"    ) -> None:"` | — |
-| [SRC-1AE03B9EC3-L003753](../../agents/web_agent.py#L3753) | 3753 | `"        \"\"\"Store bounded metadata for each model attempt; never retain prompts or output.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L003754](../../agents/web_agent.py#L3754) | 3754 | `"        self._generation_attempt_sequence = getattr(self, \"_generation_attempt_sequence\", 0) + 1"` | — |
-| [SRC-1AE03B9EC3-L003755](../../agents/web_agent.py#L3755) | 3755 | `"        record: dict[str, Any] = {"` | — |
-| [SRC-1AE03B9EC3-L003756](../../agents/web_agent.py#L3756) | 3756 | `"            \"attempt_number\": self._generation_attempt_sequence,"` | — |
-| [SRC-1AE03B9EC3-L003757](../../agents/web_agent.py#L3757) | 3757 | `"            \"requested_model\": str(requested_model)[:160],"` | — |
-| [SRC-1AE03B9EC3-L003758](../../agents/web_agent.py#L3758) | 3758 | `"            \"attempted_model\": str(attempted_model)[:160],"` | — |
-| [SRC-1AE03B9EC3-L003759](../../agents/web_agent.py#L3759) | 3759 | `"            \"fallback_used\": str(attempted_model) != str(requested_model),"` | — |
-| [SRC-1AE03B9EC3-L003760](../../agents/web_agent.py#L3760) | 3760 | `"            \"request_started\": bool(request_started),"` | — |
-| [SRC-1AE03B9EC3-L003761](../../agents/web_agent.py#L3761) | 3761 | `"            \"status\": str(status)[:48],"` | — |
-| [SRC-1AE03B9EC3-L003762](../../agents/web_agent.py#L3762) | 3762 | `"        }"` | — |
-| [SRC-1AE03B9EC3-L003763](../../agents/web_agent.py#L3763) | 3763 | `"        if remote_response_received is None and isinstance(finish_reason, str) and finish_reason.strip():"` | — |
-| [SRC-1AE03B9EC3-L003764](../../agents/web_agent.py#L3764) | 3764 | `"            # A concrete finish_reason can only be observed after a provider response was received."` | — |
-| [SRC-1AE03B9EC3-L003765](../../agents/web_agent.py#L3765) | 3765 | `"            remote_response_received = True"` | — |
-| [SRC-1AE03B9EC3-L003766](../../agents/web_agent.py#L3766) | 3766 | `"        if remote_response_received is not None:"` | — |
-| [SRC-1AE03B9EC3-L003767](../../agents/web_agent.py#L3767) | 3767 | `"            record[\"remote_response_received\"] = bool(remote_response_received)"` | — |
-| [SRC-1AE03B9EC3-L003768](../../agents/web_agent.py#L3768) | 3768 | `"        if isinstance(finish_reason, str) and finish_reason.strip():"` | — |
-| [SRC-1AE03B9EC3-L003769](../../agents/web_agent.py#L3769) | 3769 | `"            record[\"finish_reason\"] = finish_reason.strip()[:48]"` | — |
-| [SRC-1AE03B9EC3-L003770](../../agents/web_agent.py#L3770) | 3770 | `"        if isinstance(error_class, str) and error_class:"` | — |
-| [SRC-1AE03B9EC3-L003771](../../agents/web_agent.py#L3771) | 3771 | `"            record[\"error_class\"] = error_class[:80]"` | — |
-| [SRC-1AE03B9EC3-L003772](../../agents/web_agent.py#L3772) | 3772 | `"        if ("` | — |
-| [SRC-1AE03B9EC3-L003773](../../agents/web_agent.py#L3773) | 3773 | `"            isinstance(http_status_code, int)"` | — |
-| [SRC-1AE03B9EC3-L003774](../../agents/web_agent.py#L3774) | 3774 | `"            and not isinstance(http_status_code, bool)"` | — |
-| [SRC-1AE03B9EC3-L003775](../../agents/web_agent.py#L3775) | 3775 | `"            and 100 <= http_status_code <= 599"` | — |
-| [SRC-1AE03B9EC3-L003776](../../agents/web_agent.py#L3776) | 3776 | `"        ):"` | — |
-| [SRC-1AE03B9EC3-L003777](../../agents/web_agent.py#L3777) | 3777 | `"            record[\"http_status_code\"] = http_status_code"` | — |
-| [SRC-1AE03B9EC3-L003778](../../agents/web_agent.py#L3778) | 3778 | `"        self.generation_diagnostics.append(record)"` | — |
-| [SRC-1AE03B9EC3-L003779](../../agents/web_agent.py#L3779) | 3779 | `"        self.generation_diagnostics = self.generation_diagnostics[-12:]"` | — |
-| [SRC-1AE03B9EC3-L003780](../../agents/web_agent.py#L3780) | 3780 | `""` | — |
-| [SRC-1AE03B9EC3-L003781](../../agents/web_agent.py#L3781) | 3781 | `"    def _request_completion("` | — |
-| [SRC-1AE03B9EC3-L003782](../../agents/web_agent.py#L3782) | 3782 | `"        self,"` | — |
-| [SRC-1AE03B9EC3-L003783](../../agents/web_agent.py#L3783) | 3783 | `"        messages: list[dict[str, str]],"` | — |
-| [SRC-1AE03B9EC3-L003784](../../agents/web_agent.py#L3784) | 3784 | `"        max_tokens: int = 1400,"` | — |
-| [SRC-1AE03B9EC3-L003785](../../agents/web_agent.py#L3785) | 3785 | `"        temperature: float = 0.2,"` | — |
-| [SRC-1AE03B9EC3-L003786](../../agents/web_agent.py#L3786) | 3786 | `"        timeout: int \| None = None,"` | — |
-| [SRC-1AE03B9EC3-L003787](../../agents/web_agent.py#L3787) | 3787 | `"        model: str \| None = None,"` | — |
-| [SRC-1AE03B9EC3-L003788](../../agents/web_agent.py#L3788) | 3788 | `"        enable_web_search: bool = False,"` | — |
-| [SRC-1AE03B9EC3-L003789](../../agents/web_agent.py#L3789) | 3789 | `"        allow_fallback: bool = True,"` | — |
-| [SRC-1AE03B9EC3-L003790](../../agents/web_agent.py#L3790) | 3790 | `"    ) -> str:"` | — |
-| [SRC-1AE03B9EC3-L003791](../../agents/web_agent.py#L3791) | 3791 | `"        \"\"\"Call configured OpenAI-compatible providers with bounded failover.\"\"\""` | — |
-| [SRC-1AE03B9EC3-L003792](../../agents/web_agent.py#L3792) | 3792 | `"        requested_model = (model or self.answer_model).strip()"` | — |
-| [SRC-1AE03B9EC3-L003793](../../agents/web_agent.py#L3793) | 3793 | `"        provider_configs = list(getattr(self, \"model_providers\", []) or [])"` | — |
-| [SRC-1AE03B9EC3-L003794](../../agents/web_agent.py#L3794) | 3794 | `"        if not provider_configs and getattr(self, \"api_key\", \"\"):"` | — |
-| [SRC-1AE03B9EC3-L003795](../../agents/web_agent.py#L3795) | 3795 | `"            host = ("` | — |
-| [SRC-1AE03B9EC3-L003796](../../agents/web_agent.py#L3796) | 3796 | `"                urllib.parse.urlsplit(getattr(self, \"base_url\", \"\")).hostname or \"\""` | — |
-| [SRC-1AE03B9EC3-L003797](../../agents/web_agent.py#L3797) | 3797 | `"            ).lower().rstrip(\".\")"` | — |
-| [SRC-1AE03B9EC3-L003798](../../agents/web_agent.py#L3798) | 3798 | `"            provider_configs = [{"` | — |
-| [SRC-1AE03B9EC3-L003799](../../agents/web_agent.py#L3799) | 3799 | `"                \"name\": \"openrouter\" if host == \"openrouter.ai\" else \"custom\","` | — |
-| [SRC-1AE03B9EC3-L003800](../../agents/web_agent.py#L3800) | 3800 | `"                \"api_key\": self.api_key,"` | — |

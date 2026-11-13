@@ -4,9 +4,45 @@
 
 - الصفحة: **047**
 - سجلات الأسطر: **800**
-- النطاق: SRC-6B37B7D6D3-L000022 إلى SRC-3D0A619359-L000252
+- النطاق: SRC-6CBA87B20C-L000091 إلى SRC-3D0A619359-L000204
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
+## اختبارات
+
+### FILE-6CBA87B20C — [tests/test_aspect_planning.py](../../tests/test_aspect_planning.py#L1)
+
+- النوع: **Python**
+- نطاق الفهرسة: جرد الملف + AST Python
+
+| كود السطر | السطر | النص الكامل للسطر | كود الوسم |
+|---|---:|---|---|
+| [SRC-6CBA87B20C-L000091](../../tests/test_aspect_planning.py#L91) | 91 | `"        assert expected in normalized"` | — |
+| [SRC-6CBA87B20C-L000092](../../tests/test_aspect_planning.py#L92) | 92 | `"    assert len(aspects) <= 8"` | — |
+| [SRC-6CBA87B20C-L000093](../../tests/test_aspect_planning.py#L93) | 93 | `""` | — |
+| [SRC-6CBA87B20C-L000094](../../tests/test_aspect_planning.py#L94) | 94 | `""` | — |
+| [SRC-6CBA87B20C-L000095](../../tests/test_aspect_planning.py#L95) | 95 | `"def test_extracts_joined_facets_without_formal_comparison_marker():"` | — |
+| [SRC-6CBA87B20C-L000096](../../tests/test_aspect_planning.py#L96) | 96 | `"    aspects = extract_aspects(\"ما سعر الهاتف ومدة الضمان والصيانة؟\")"` | — |
+| [SRC-6CBA87B20C-L000097](../../tests/test_aspect_planning.py#L97) | 97 | `"    joined = \" \".join(aspects)"` | — |
+| [SRC-6CBA87B20C-L000098](../../tests/test_aspect_planning.py#L98) | 98 | `"    assert \"السعر\" in joined"` | — |
+| [SRC-6CBA87B20C-L000099](../../tests/test_aspect_planning.py#L99) | 99 | `"    assert \"الضمان\" in joined"` | — |
+| [SRC-6CBA87B20C-L000100](../../tests/test_aspect_planning.py#L100) | 100 | `"    assert \"الصيانة\" in joined"` | — |
+| [SRC-6CBA87B20C-L000101](../../tests/test_aspect_planning.py#L101) | 101 | `""` | — |
+| [SRC-6CBA87B20C-L000102](../../tests/test_aspect_planning.py#L102) | 102 | `""` | — |
+| [SRC-6CBA87B20C-L000103](../../tests/test_aspect_planning.py#L103) | 103 | `"def test_extracts_general_factual_aspects_from_compound_arabic_question():"` | — |
+| [SRC-6CBA87B20C-L000104](../../tests/test_aspect_planning.py#L104) | 104 | `"    question = \"اذكر عاصمة مصر وعدد سكان القاهرة، مع مصدر وتاريخ لكل معلومة\""` | — |
+| [SRC-6CBA87B20C-L000105](../../tests/test_aspect_planning.py#L105) | 105 | `"    aspects = extract_aspects(question)"` | — |
+| [SRC-6CBA87B20C-L000106](../../tests/test_aspect_planning.py#L106) | 106 | `"    joined = \" \".join(aspects)"` | — |
+| [SRC-6CBA87B20C-L000107](../../tests/test_aspect_planning.py#L107) | 107 | `"    assert \"العاصمة\" in joined"` | — |
+| [SRC-6CBA87B20C-L000108](../../tests/test_aspect_planning.py#L108) | 108 | `"    assert \"عدد السكان\" in joined"` | — |
+| [SRC-6CBA87B20C-L000109](../../tests/test_aspect_planning.py#L109) | 109 | `"    assert len(aspects) <= 8"` | — |
+| [SRC-6CBA87B20C-L000110](../../tests/test_aspect_planning.py#L110) | 110 | `""` | — |
+| [SRC-6CBA87B20C-L000111](../../tests/test_aspect_planning.py#L111) | 111 | `""` | — |
+| [SRC-6CBA87B20C-L000112](../../tests/test_aspect_planning.py#L112) | 112 | `"def test_builds_separate_queries_for_capital_and_population_aspects():"` | — |
+| [SRC-6CBA87B20C-L000113](../../tests/test_aspect_planning.py#L113) | 113 | `"    question = \"اذكر عاصمة مصر وعدد سكان القاهرة\""` | — |
+| [SRC-6CBA87B20C-L000114](../../tests/test_aspect_planning.py#L114) | 114 | `"    aspects = extract_aspects(question)"` | — |
+| [SRC-6CBA87B20C-L000115](../../tests/test_aspect_planning.py#L115) | 115 | `"    queries = build_aspect_queries(\"مصر القاهرة\", aspects)"` | — |
+| [SRC-6CBA87B20C-L000116](../../tests/test_aspect_planning.py#L116) | 116 | `"    assert any(\"العاصمة\" in query for query in queries)"` | — |
+| [SRC-6CBA87B20C-L000117](../../tests/test_aspect_planning.py#L117) | 117 | `"    assert any(\"عدد السكان\" in query for query in queries)"` | — |
 ## اختبارات
 
 ### FILE-6B37B7D6D3 — [tests/test_claim_evidence_metadata.py](../../tests/test_claim_evidence_metadata.py#L1)
@@ -16,6 +52,27 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-6B37B7D6D3-L000001](../../tests/test_claim_evidence_metadata.py#L1) | 1 | `"from __future__ import annotations"` | — |
+| [SRC-6B37B7D6D3-L000002](../../tests/test_claim_evidence_metadata.py#L2) | 2 | `""` | — |
+| [SRC-6B37B7D6D3-L000003](../../tests/test_claim_evidence_metadata.py#L3) | 3 | `"from agents.claim_evidence import audit_source_metadata, build_claim_evidence_ledger"` | — |
+| [SRC-6B37B7D6D3-L000004](../../tests/test_claim_evidence_metadata.py#L4) | 4 | `""` | — |
+| [SRC-6B37B7D6D3-L000005](../../tests/test_claim_evidence_metadata.py#L5) | 5 | `""` | — |
+| [SRC-6B37B7D6D3-L000006](../../tests/test_claim_evidence_metadata.py#L6) | 6 | `"def test_source_metadata_accepts_complete_population_metadata_without_asserting_truth():"` | — |
+| [SRC-6B37B7D6D3-L000007](../../tests/test_claim_evidence_metadata.py#L7) | 7 | `"    result = audit_source_metadata("` | — |
+| [SRC-6B37B7D6D3-L000008](../../tests/test_claim_evidence_metadata.py#L8) | 8 | `"        {"` | — |
+| [SRC-6B37B7D6D3-L000009](../../tests/test_claim_evidence_metadata.py#L9) | 9 | `"            \"url\": \"https://example.org/census\","` | — |
+| [SRC-6B37B7D6D3-L000010](../../tests/test_claim_evidence_metadata.py#L10) | 10 | `"            \"title\": \"Population table\","` | — |
+| [SRC-6B37B7D6D3-L000011](../../tests/test_claim_evidence_metadata.py#L11) | 11 | `"            \"publisher\": \"Example Statistics Office\","` | — |
+| [SRC-6B37B7D6D3-L000012](../../tests/test_claim_evidence_metadata.py#L12) | 12 | `"            \"published_at\": \"2025-06-01\","` | — |
+| [SRC-6B37B7D6D3-L000013](../../tests/test_claim_evidence_metadata.py#L13) | 13 | `"            \"data_reference_period\": \"2025 estimate\","` | — |
+| [SRC-6B37B7D6D3-L000014](../../tests/test_claim_evidence_metadata.py#L14) | 14 | `"            \"geographic_scope\": \"Cairo Governorate administrative boundaries\","` | — |
+| [SRC-6B37B7D6D3-L000015](../../tests/test_claim_evidence_metadata.py#L15) | 15 | `"            \"snippet\": \"Population estimate for the governorate.\","` | — |
+| [SRC-6B37B7D6D3-L000016](../../tests/test_claim_evidence_metadata.py#L16) | 16 | `"        },"` | — |
+| [SRC-6B37B7D6D3-L000017](../../tests/test_claim_evidence_metadata.py#L17) | 17 | `"        claim_text=\"عدد سكان محافظة القاهرة\","` | — |
+| [SRC-6B37B7D6D3-L000018](../../tests/test_claim_evidence_metadata.py#L18) | 18 | `"    )"` | — |
+| [SRC-6B37B7D6D3-L000019](../../tests/test_claim_evidence_metadata.py#L19) | 19 | `""` | — |
+| [SRC-6B37B7D6D3-L000020](../../tests/test_claim_evidence_metadata.py#L20) | 20 | `"    assert result[\"status\"] == \"metadata_complete\""` | — |
+| [SRC-6B37B7D6D3-L000021](../../tests/test_claim_evidence_metadata.py#L21) | 21 | `"    assert result[\"required_fields_missing\"] == []"` | — |
 | [SRC-6B37B7D6D3-L000022](../../tests/test_claim_evidence_metadata.py#L22) | 22 | `"    assert result[\"claim_entailment\"] == \"not_checked\""` | — |
 | [SRC-6B37B7D6D3-L000023](../../tests/test_claim_evidence_metadata.py#L23) | 23 | `"    assert result[\"fact_correctness\"] == \"not_checked\""` | — |
 | [SRC-6B37B7D6D3-L000024](../../tests/test_claim_evidence_metadata.py#L24) | 24 | `"    assert result[\"semantic_verification\"] is False"` | — |
@@ -795,51 +852,3 @@
 | [SRC-3D0A619359-L000202](../../tests/test_dashboard_security.py#L202) | 202 | `""` | — |
 | [SRC-3D0A619359-L000203](../../tests/test_dashboard_security.py#L203) | 203 | `""` | — |
 | [SRC-3D0A619359-L000204](../../tests/test_dashboard_security.py#L204) | 204 | `"def test_workspace_discovery_result_survives_history_refresh_failure():"` | — |
-| [SRC-3D0A619359-L000205](../../tests/test_dashboard_security.py#L205) | 205 | `"    workspace = Path(__file__).resolve().parents[1] / \"web\" / \"workspace.html\""` | — |
-| [SRC-3D0A619359-L000206](../../tests/test_dashboard_security.py#L206) | 206 | `"    html = workspace.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-3D0A619359-L000207](../../tests/test_dashboard_security.py#L207) | 207 | `"    discovery = html.split(\"function renderDiscovery(){\", 1)[1].split("` | — |
-| [SRC-3D0A619359-L000208](../../tests/test_dashboard_security.py#L208) | 208 | `"        \"\\nfunction renderCurrent(\", 1"` | — |
-| [SRC-3D0A619359-L000209](../../tests/test_dashboard_security.py#L209) | 209 | `"    )[0]"` | — |
-| [SRC-3D0A619359-L000210](../../tests/test_dashboard_security.py#L210) | 210 | `""` | — |
-| [SRC-3D0A619359-L000211](../../tests/test_dashboard_security.py#L211) | 211 | `"    assert 'const savedRun=await api(\"/api/discoveries\"' in discovery"` | — |
-| [SRC-3D0A619359-L000212](../../tests/test_dashboard_security.py#L212) | 212 | `"    assert \"state.activeDiscovery=savedRun\" in discovery"` | — |
-| [SRC-3D0A619359-L000213](../../tests/test_dashboard_security.py#L213) | 213 | `"    assert \"try{await loadDiscoveryRuns()}catch(refreshError)\" in discovery"` | — |
-| [SRC-3D0A619359-L000214](../../tests/test_dashboard_security.py#L214) | 214 | `"    assert \"حُفظت نتيجة البحث، لكن تعذر تحديث سجل العمليات\" in discovery"` | — |
-| [SRC-3D0A619359-L000215](../../tests/test_dashboard_security.py#L215) | 215 | `""` | — |
-| [SRC-3D0A619359-L000216](../../tests/test_dashboard_security.py#L216) | 216 | `""` | — |
-| [SRC-3D0A619359-L000217](../../tests/test_dashboard_security.py#L217) | 217 | `"def test_workspace_exposes_ai_chat_as_secondary_entry_using_agent_api_safely():"` | — |
-| [SRC-3D0A619359-L000218](../../tests/test_dashboard_security.py#L218) | 218 | `"    workspace = Path(__file__).resolve().parents[1] / \"web\" / \"workspace.html\""` | — |
-| [SRC-3D0A619359-L000219](../../tests/test_dashboard_security.py#L219) | 219 | `"    html = workspace.read_text(encoding=\"utf-8\")"` | — |
-| [SRC-3D0A619359-L000220](../../tests/test_dashboard_security.py#L220) | 220 | `"    chat = html.split(\"function chatMessageNode(\", 1)[1].split(\"function renderCurrent(){\", 1)[0]"` | — |
-| [SRC-3D0A619359-L000221](../../tests/test_dashboard_security.py#L221) | 221 | `""` | — |
-| [SRC-3D0A619359-L000222](../../tests/test_dashboard_security.py#L222) | 222 | `"    assert 'id=\"chatNav\"' in html"` | — |
-| [SRC-3D0A619359-L000223](../../tests/test_dashboard_security.py#L223) | 223 | `"    assert '$(\"chatNav\").addEventListener(\"click\",()=>navigate(\"chat\"))' in html"` | — |
-| [SRC-3D0A619359-L000224](../../tests/test_dashboard_security.py#L224) | 224 | `"    assert 'state.activeView===\"chat\"' in html"` | — |
-| [SRC-3D0A619359-L000225](../../tests/test_dashboard_security.py#L225) | 225 | `"    assert 'api(\"/api/agent\"' in chat"` | — |
-| [SRC-3D0A619359-L000226](../../tests/test_dashboard_security.py#L226) | 226 | `"    assert \"history:chat.history.slice(-8)\" in chat"` | — |
-| [SRC-3D0A619359-L000227](../../tests/test_dashboard_security.py#L227) | 227 | `"    # Untrusted model/source text must only be rendered with textContent-based helpers."` | — |
-| [SRC-3D0A619359-L000228](../../tests/test_dashboard_security.py#L228) | 228 | `"    assert \"innerHTML\" not in chat"` | — |
-| [SRC-3D0A619359-L000229](../../tests/test_dashboard_security.py#L229) | 229 | `"    assert \"safeHttp(src.url)\" in chat"` | — |
-| [SRC-3D0A619359-L000230](../../tests/test_dashboard_security.py#L230) | 230 | `"    assert \"a.rel=\\\"noopener noreferrer\\\"\" in chat"` | — |
-| [SRC-3D0A619359-L000231](../../tests/test_dashboard_security.py#L231) | 231 | `""` | — |
-| [SRC-3D0A619359-L000232](../../tests/test_dashboard_security.py#L232) | 232 | `""` | — |
-| [SRC-3D0A619359-L000233](../../tests/test_dashboard_security.py#L233) | 233 | `"def test_workspace_clears_chat_at_auth_boundaries_and_ignores_stale_responses():"` | — |
-| [SRC-3D0A619359-L000234](../../tests/test_dashboard_security.py#L234) | 234 | `"    workspace = Path(__file__).resolve().parents[1] / \"web\" / \"workspace.html\""` | — |
-| [SRC-3D0A619359-L000235](../../tests/test_dashboard_security.py#L235) | 235 | `"    script = workspace.read_text(encoding=\"utf-8\").split(\"<script>\", 1)[1].split(\"</script>\", 1)[0]"` | — |
-| [SRC-3D0A619359-L000236](../../tests/test_dashboard_security.py#L236) | 236 | `"    auth = script.split(\"function showAuth(\", 1)[1].split(\"function hideAuth(\", 1)[0]"` | — |
-| [SRC-3D0A619359-L000237](../../tests/test_dashboard_security.py#L237) | 237 | `"    chat = script.split(\"async function sendChat(\", 1)[1].split(\"function renderCurrent(\", 1)[0]"` | — |
-| [SRC-3D0A619359-L000238](../../tests/test_dashboard_security.py#L238) | 238 | `""` | — |
-| [SRC-3D0A619359-L000239](../../tests/test_dashboard_security.py#L239) | 239 | `"    assert \"function clearWorkspaceSession()\" in script"` | — |
-| [SRC-3D0A619359-L000240](../../tests/test_dashboard_security.py#L240) | 240 | `"    assert \"clearWorkspaceSession()\" in auth"` | — |
-| [SRC-3D0A619359-L000241](../../tests/test_dashboard_security.py#L241) | 241 | `"    assert \"state.authSessionVersion=(state.authSessionVersion\|\|0)+1\" in script"` | — |
-| [SRC-3D0A619359-L000242](../../tests/test_dashboard_security.py#L242) | 242 | `"    for field in ("` | — |
-| [SRC-3D0A619359-L000243](../../tests/test_dashboard_security.py#L243) | 243 | `"        \"state.role=null\","` | — |
-| [SRC-3D0A619359-L000244](../../tests/test_dashboard_security.py#L244) | 244 | `"        \"state.leads=[]\","` | — |
-| [SRC-3D0A619359-L000245](../../tests/test_dashboard_security.py#L245) | 245 | `"        \"state.profiles=[]\","` | — |
-| [SRC-3D0A619359-L000246](../../tests/test_dashboard_security.py#L246) | 246 | `"        \"state.discoveryRuns=[]\","` | — |
-| [SRC-3D0A619359-L000247](../../tests/test_dashboard_security.py#L247) | 247 | `"        \"state.loadWarnings=[]\","` | — |
-| [SRC-3D0A619359-L000248](../../tests/test_dashboard_security.py#L248) | 248 | `"        \"state.activeDiscovery=null\","` | — |
-| [SRC-3D0A619359-L000249](../../tests/test_dashboard_security.py#L249) | 249 | `"        \"state.activeProfileId=null\","` | — |
-| [SRC-3D0A619359-L000250](../../tests/test_dashboard_security.py#L250) | 250 | `"        \"state.analysis=null\","` | — |
-| [SRC-3D0A619359-L000251](../../tests/test_dashboard_security.py#L251) | 251 | `"    ):"` | — |
-| [SRC-3D0A619359-L000252](../../tests/test_dashboard_security.py#L252) | 252 | `"        assert field in script"` | — |

@@ -4,7 +4,7 @@
 
 - الصفحة: **048**
 - سجلات الأسطر: **800**
-- النطاق: SRC-3D0A619359-L000253 إلى SRC-6BCB799CEC-L000063
+- النطاق: SRC-3D0A619359-L000205 إلى SRC-6BCB799CEC-L000015
 - الفهرس الرئيسي: [SOURCE LINES INDEX](../SOURCE_LINES_INDEX.md)
 
 ## اختبارات
@@ -16,6 +16,54 @@
 
 | كود السطر | السطر | النص الكامل للسطر | كود الوسم |
 |---|---:|---|---|
+| [SRC-3D0A619359-L000205](../../tests/test_dashboard_security.py#L205) | 205 | `"    workspace = Path(__file__).resolve().parents[1] / \"web\" / \"workspace.html\""` | — |
+| [SRC-3D0A619359-L000206](../../tests/test_dashboard_security.py#L206) | 206 | `"    html = workspace.read_text(encoding=\"utf-8\")"` | — |
+| [SRC-3D0A619359-L000207](../../tests/test_dashboard_security.py#L207) | 207 | `"    discovery = html.split(\"function renderDiscovery(){\", 1)[1].split("` | — |
+| [SRC-3D0A619359-L000208](../../tests/test_dashboard_security.py#L208) | 208 | `"        \"\\nfunction renderCurrent(\", 1"` | — |
+| [SRC-3D0A619359-L000209](../../tests/test_dashboard_security.py#L209) | 209 | `"    )[0]"` | — |
+| [SRC-3D0A619359-L000210](../../tests/test_dashboard_security.py#L210) | 210 | `""` | — |
+| [SRC-3D0A619359-L000211](../../tests/test_dashboard_security.py#L211) | 211 | `"    assert 'const savedRun=await api(\"/api/discoveries\"' in discovery"` | — |
+| [SRC-3D0A619359-L000212](../../tests/test_dashboard_security.py#L212) | 212 | `"    assert \"state.activeDiscovery=savedRun\" in discovery"` | — |
+| [SRC-3D0A619359-L000213](../../tests/test_dashboard_security.py#L213) | 213 | `"    assert \"try{await loadDiscoveryRuns()}catch(refreshError)\" in discovery"` | — |
+| [SRC-3D0A619359-L000214](../../tests/test_dashboard_security.py#L214) | 214 | `"    assert \"حُفظت نتيجة البحث، لكن تعذر تحديث سجل العمليات\" in discovery"` | — |
+| [SRC-3D0A619359-L000215](../../tests/test_dashboard_security.py#L215) | 215 | `""` | — |
+| [SRC-3D0A619359-L000216](../../tests/test_dashboard_security.py#L216) | 216 | `""` | — |
+| [SRC-3D0A619359-L000217](../../tests/test_dashboard_security.py#L217) | 217 | `"def test_workspace_exposes_ai_chat_as_secondary_entry_using_agent_api_safely():"` | — |
+| [SRC-3D0A619359-L000218](../../tests/test_dashboard_security.py#L218) | 218 | `"    workspace = Path(__file__).resolve().parents[1] / \"web\" / \"workspace.html\""` | — |
+| [SRC-3D0A619359-L000219](../../tests/test_dashboard_security.py#L219) | 219 | `"    html = workspace.read_text(encoding=\"utf-8\")"` | — |
+| [SRC-3D0A619359-L000220](../../tests/test_dashboard_security.py#L220) | 220 | `"    chat = html.split(\"function chatMessageNode(\", 1)[1].split(\"function renderCurrent(){\", 1)[0]"` | — |
+| [SRC-3D0A619359-L000221](../../tests/test_dashboard_security.py#L221) | 221 | `""` | — |
+| [SRC-3D0A619359-L000222](../../tests/test_dashboard_security.py#L222) | 222 | `"    assert 'id=\"chatNav\"' in html"` | — |
+| [SRC-3D0A619359-L000223](../../tests/test_dashboard_security.py#L223) | 223 | `"    assert '$(\"chatNav\").addEventListener(\"click\",()=>navigate(\"chat\"))' in html"` | — |
+| [SRC-3D0A619359-L000224](../../tests/test_dashboard_security.py#L224) | 224 | `"    assert 'state.activeView===\"chat\"' in html"` | — |
+| [SRC-3D0A619359-L000225](../../tests/test_dashboard_security.py#L225) | 225 | `"    assert 'api(\"/api/agent\"' in chat"` | — |
+| [SRC-3D0A619359-L000226](../../tests/test_dashboard_security.py#L226) | 226 | `"    assert \"history:chat.history.slice(-8)\" in chat"` | — |
+| [SRC-3D0A619359-L000227](../../tests/test_dashboard_security.py#L227) | 227 | `"    # Untrusted model/source text must only be rendered with textContent-based helpers."` | — |
+| [SRC-3D0A619359-L000228](../../tests/test_dashboard_security.py#L228) | 228 | `"    assert \"innerHTML\" not in chat"` | — |
+| [SRC-3D0A619359-L000229](../../tests/test_dashboard_security.py#L229) | 229 | `"    assert \"safeHttp(src.url)\" in chat"` | — |
+| [SRC-3D0A619359-L000230](../../tests/test_dashboard_security.py#L230) | 230 | `"    assert \"a.rel=\\\"noopener noreferrer\\\"\" in chat"` | — |
+| [SRC-3D0A619359-L000231](../../tests/test_dashboard_security.py#L231) | 231 | `""` | — |
+| [SRC-3D0A619359-L000232](../../tests/test_dashboard_security.py#L232) | 232 | `""` | — |
+| [SRC-3D0A619359-L000233](../../tests/test_dashboard_security.py#L233) | 233 | `"def test_workspace_clears_chat_at_auth_boundaries_and_ignores_stale_responses():"` | — |
+| [SRC-3D0A619359-L000234](../../tests/test_dashboard_security.py#L234) | 234 | `"    workspace = Path(__file__).resolve().parents[1] / \"web\" / \"workspace.html\""` | — |
+| [SRC-3D0A619359-L000235](../../tests/test_dashboard_security.py#L235) | 235 | `"    script = workspace.read_text(encoding=\"utf-8\").split(\"<script>\", 1)[1].split(\"</script>\", 1)[0]"` | — |
+| [SRC-3D0A619359-L000236](../../tests/test_dashboard_security.py#L236) | 236 | `"    auth = script.split(\"function showAuth(\", 1)[1].split(\"function hideAuth(\", 1)[0]"` | — |
+| [SRC-3D0A619359-L000237](../../tests/test_dashboard_security.py#L237) | 237 | `"    chat = script.split(\"async function sendChat(\", 1)[1].split(\"function renderCurrent(\", 1)[0]"` | — |
+| [SRC-3D0A619359-L000238](../../tests/test_dashboard_security.py#L238) | 238 | `""` | — |
+| [SRC-3D0A619359-L000239](../../tests/test_dashboard_security.py#L239) | 239 | `"    assert \"function clearWorkspaceSession()\" in script"` | — |
+| [SRC-3D0A619359-L000240](../../tests/test_dashboard_security.py#L240) | 240 | `"    assert \"clearWorkspaceSession()\" in auth"` | — |
+| [SRC-3D0A619359-L000241](../../tests/test_dashboard_security.py#L241) | 241 | `"    assert \"state.authSessionVersion=(state.authSessionVersion\|\|0)+1\" in script"` | — |
+| [SRC-3D0A619359-L000242](../../tests/test_dashboard_security.py#L242) | 242 | `"    for field in ("` | — |
+| [SRC-3D0A619359-L000243](../../tests/test_dashboard_security.py#L243) | 243 | `"        \"state.role=null\","` | — |
+| [SRC-3D0A619359-L000244](../../tests/test_dashboard_security.py#L244) | 244 | `"        \"state.leads=[]\","` | — |
+| [SRC-3D0A619359-L000245](../../tests/test_dashboard_security.py#L245) | 245 | `"        \"state.profiles=[]\","` | — |
+| [SRC-3D0A619359-L000246](../../tests/test_dashboard_security.py#L246) | 246 | `"        \"state.discoveryRuns=[]\","` | — |
+| [SRC-3D0A619359-L000247](../../tests/test_dashboard_security.py#L247) | 247 | `"        \"state.loadWarnings=[]\","` | — |
+| [SRC-3D0A619359-L000248](../../tests/test_dashboard_security.py#L248) | 248 | `"        \"state.activeDiscovery=null\","` | — |
+| [SRC-3D0A619359-L000249](../../tests/test_dashboard_security.py#L249) | 249 | `"        \"state.activeProfileId=null\","` | — |
+| [SRC-3D0A619359-L000250](../../tests/test_dashboard_security.py#L250) | 250 | `"        \"state.analysis=null\","` | — |
+| [SRC-3D0A619359-L000251](../../tests/test_dashboard_security.py#L251) | 251 | `"    ):"` | — |
+| [SRC-3D0A619359-L000252](../../tests/test_dashboard_security.py#L252) | 252 | `"        assert field in script"` | — |
 | [SRC-3D0A619359-L000253](../../tests/test_dashboard_security.py#L253) | 253 | `"    assert 'replaceChildren(emptyState(\"مساحة العمل مقفلة\"' in script"` | — |
 | [SRC-3D0A619359-L000254](../../tests/test_dashboard_security.py#L254) | 254 | `"    assert \"function clearChatSession()\" in script"` | — |
 | [SRC-3D0A619359-L000255](../../tests/test_dashboard_security.py#L255) | 255 | `"    assert \"clearChatSession()\" in script"` | — |
@@ -804,51 +852,3 @@
 | [SRC-6BCB799CEC-L000013](../../tests/test_evidence_provenance.py#L13) | 13 | `"    return [(family, socket.SOCK_STREAM, 6, \"\", (ip, 0))]"` | — |
 | [SRC-6BCB799CEC-L000014](../../tests/test_evidence_provenance.py#L14) | 14 | `""` | — |
 | [SRC-6BCB799CEC-L000015](../../tests/test_evidence_provenance.py#L15) | 15 | `""` | — |
-| [SRC-6BCB799CEC-L000016](../../tests/test_evidence_provenance.py#L16) | 16 | `"def test_failed_page_read_is_not_reported_as_fetched(monkeypatch):"` | — |
-| [SRC-6BCB799CEC-L000017](../../tests/test_evidence_provenance.py#L17) | 17 | `"    \"\"\"An empty extraction must not set page_fetched through the real collector.\"\"\""` | — |
-| [SRC-6BCB799CEC-L000018](../../tests/test_evidence_provenance.py#L18) | 18 | `"    agent = WebAgent()"` | — |
-| [SRC-6BCB799CEC-L000019](../../tests/test_evidence_provenance.py#L19) | 19 | `""` | — |
-| [SRC-6BCB799CEC-L000020](../../tests/test_evidence_provenance.py#L20) | 20 | `"    def search(query):"` | — |
-| [SRC-6BCB799CEC-L000021](../../tests/test_evidence_provenance.py#L21) | 21 | `"        return [{"` | — |
-| [SRC-6BCB799CEC-L000022](../../tests/test_evidence_provenance.py#L22) | 22 | `"            \"title\": \"عنوان فقط\","` | — |
-| [SRC-6BCB799CEC-L000023](../../tests/test_evidence_provenance.py#L23) | 23 | `"            \"url\": \"https://example.com/unread\","` | — |
-| [SRC-6BCB799CEC-L000024](../../tests/test_evidence_provenance.py#L24) | 24 | `"            \"snippet\": \"مقتطف محرك بحث\","` | — |
-| [SRC-6BCB799CEC-L000025](../../tests/test_evidence_provenance.py#L25) | 25 | `"            \"provider\": \"duckduckgo_html\","` | — |
-| [SRC-6BCB799CEC-L000026](../../tests/test_evidence_provenance.py#L26) | 26 | `"            \"provider_rank\": 1,"` | — |
-| [SRC-6BCB799CEC-L000027](../../tests/test_evidence_provenance.py#L27) | 27 | `"            \"search_query\": query,"` | — |
-| [SRC-6BCB799CEC-L000028](../../tests/test_evidence_provenance.py#L28) | 28 | `"            \"published_at\": \"\","` | — |
-| [SRC-6BCB799CEC-L000029](../../tests/test_evidence_provenance.py#L29) | 29 | `"        }]"` | — |
-| [SRC-6BCB799CEC-L000030](../../tests/test_evidence_provenance.py#L30) | 30 | `""` | — |
-| [SRC-6BCB799CEC-L000031](../../tests/test_evidence_provenance.py#L31) | 31 | `"    monkeypatch.setattr(agent, \"_search_web\", search)"` | — |
-| [SRC-6BCB799CEC-L000032](../../tests/test_evidence_provenance.py#L32) | 32 | `"    monkeypatch.setattr(agent, \"_search_news\", lambda query: [])"` | — |
-| [SRC-6BCB799CEC-L000033](../../tests/test_evidence_provenance.py#L33) | 33 | `"    monkeypatch.setattr(agent, \"_search_social\", lambda query, platforms: ([], []))"` | — |
-| [SRC-6BCB799CEC-L000034](../../tests/test_evidence_provenance.py#L34) | 34 | `"    monkeypatch.setattr(agent, \"_fetch_page\", lambda url: (\"\", \"\"))"` | — |
-| [SRC-6BCB799CEC-L000035](../../tests/test_evidence_provenance.py#L35) | 35 | `""` | — |
-| [SRC-6BCB799CEC-L000036](../../tests/test_evidence_provenance.py#L36) | 36 | `"    sources, warnings, report = agent._collect_research({"` | — |
-| [SRC-6BCB799CEC-L000037](../../tests/test_evidence_provenance.py#L37) | 37 | `"        \"queries\": [\"سؤال دون قراءة صفحة\"],"` | — |
-| [SRC-6BCB799CEC-L000038](../../tests/test_evidence_provenance.py#L38) | 38 | `"        \"direct_urls\": [],"` | — |
-| [SRC-6BCB799CEC-L000039](../../tests/test_evidence_provenance.py#L39) | 39 | `"        \"social_focus\": False,"` | — |
-| [SRC-6BCB799CEC-L000040](../../tests/test_evidence_provenance.py#L40) | 40 | `"        \"freshness\": \"any\","` | — |
-| [SRC-6BCB799CEC-L000041](../../tests/test_evidence_provenance.py#L41) | 41 | `"        \"depth\": \"standard\","` | — |
-| [SRC-6BCB799CEC-L000042](../../tests/test_evidence_provenance.py#L42) | 42 | `"        \"platforms\": [],"` | — |
-| [SRC-6BCB799CEC-L000043](../../tests/test_evidence_provenance.py#L43) | 43 | `"        \"planning_method\": \"test\","` | — |
-| [SRC-6BCB799CEC-L000044](../../tests/test_evidence_provenance.py#L44) | 44 | `"    })"` | — |
-| [SRC-6BCB799CEC-L000045](../../tests/test_evidence_provenance.py#L45) | 45 | `""` | — |
-| [SRC-6BCB799CEC-L000046](../../tests/test_evidence_provenance.py#L46) | 46 | `"    assert any(\"لم يمكن استخراج نص\" in warning for warning in warnings)"` | — |
-| [SRC-6BCB799CEC-L000047](../../tests/test_evidence_provenance.py#L47) | 47 | `"    assert len(sources) == 1"` | — |
-| [SRC-6BCB799CEC-L000048](../../tests/test_evidence_provenance.py#L48) | 48 | `"    assert sources[0][\"url\"] == \"https://example.com/unread\""` | — |
-| [SRC-6BCB799CEC-L000049](../../tests/test_evidence_provenance.py#L49) | 49 | `"    assert sources[0].get(\"page_fetched\") is not True"` | — |
-| [SRC-6BCB799CEC-L000050](../../tests/test_evidence_provenance.py#L50) | 50 | `"    assert report[\"pages_fetched\"] == 0"` | — |
-| [SRC-6BCB799CEC-L000051](../../tests/test_evidence_provenance.py#L51) | 51 | `"    assert report[\"queries_attempted\"] == 1"` | — |
-| [SRC-6BCB799CEC-L000052](../../tests/test_evidence_provenance.py#L52) | 52 | `"    assert report[\"unique_sources\"] == 1"` | — |
-| [SRC-6BCB799CEC-L000053](../../tests/test_evidence_provenance.py#L53) | 53 | `""` | — |
-| [SRC-6BCB799CEC-L000054](../../tests/test_evidence_provenance.py#L54) | 54 | `""` | — |
-| [SRC-6BCB799CEC-L000055](../../tests/test_evidence_provenance.py#L55) | 55 | `"def test_openrouter_citations_stay_unread_in_public_answer(monkeypatch):"` | — |
-| [SRC-6BCB799CEC-L000056](../../tests/test_evidence_provenance.py#L56) | 56 | `"    \"\"\"Server-side citations must not be misreported as direct source-page reads.\"\"\""` | — |
-| [SRC-6BCB799CEC-L000057](../../tests/test_evidence_provenance.py#L57) | 57 | `"    agent = WebAgent()"` | — |
-| [SRC-6BCB799CEC-L000058](../../tests/test_evidence_provenance.py#L58) | 58 | `"    agent.api_key = \"test-key\""` | — |
-| [SRC-6BCB799CEC-L000059](../../tests/test_evidence_provenance.py#L59) | 59 | `"    question = \"ما آخر المعلومات؟\""` | — |
-| [SRC-6BCB799CEC-L000060](../../tests/test_evidence_provenance.py#L60) | 60 | `""` | — |
-| [SRC-6BCB799CEC-L000061](../../tests/test_evidence_provenance.py#L61) | 61 | `"    def collect(plan):"` | — |
-| [SRC-6BCB799CEC-L000062](../../tests/test_evidence_provenance.py#L62) | 62 | `"        sources = ["` | — |
-| [SRC-6BCB799CEC-L000063](../../tests/test_evidence_provenance.py#L63) | 63 | `"            {"` | — |
