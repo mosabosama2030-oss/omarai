@@ -4,7 +4,10 @@ Kept separate so the regex can be updated without rewriting the full research mo
 """
 from __future__ import annotations
 
+import logging
 import re
+
+logger = logging.getLogger(__name__)
 
 # Citation/format tails may appear after punctuation OR after a plain conjunction
 # space (e.g. Arabic topic + citation instruction) without a preceding comma.
@@ -33,9 +36,9 @@ def rebind_research_meta_tail() -> None:
         from agents import research as _research
 
         _research._SEARCH_META_TAIL_RE = SEARCH_META_TAIL_RE
-    except Exception:
+    except Exception as exc:
         # Partial test environments may import this module without research.
-        pass
+        logger.debug("search_meta_tail rebind skipped: %s", exc)
 
 
 rebind_research_meta_tail()
