@@ -7,7 +7,7 @@ from __future__ import annotations
 import re
 
 # Citation/format tails may appear after punctuation OR after a plain conjunction
-# space (e.g. "السيارات ... واذكر مصادر") without a preceding comma.
+# space (e.g. Arabic topic + citation instruction) without a preceding comma.
 SEARCH_META_TAIL_RE = re.compile(
     r"(?:\s*[,،؛;]\s*|\s+)(?:(?:و\s*)|(?:and\s+))?(?:"
     r"استخدم\s+مصادر|استعمل\s+مصادر|ميّز\s+بين\s+الحقائق|ميز\s+بين\s+الحقائق|"
